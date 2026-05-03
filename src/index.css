@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Outfit", system-ui, sans-serif;
+  --color-dark-navy: #0B0F19;
+  --color-glass: #1A233A;
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-primary: #8B5CF6;
+  --color-secondary: #3B82F6;
+  --color-accent: #10B981;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-navy text-slate-300 antialiased selection:bg-primary/30 selection:text-white;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-glass border border-glass-border rounded-xl backdrop-blur-md shadow-xl;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+}
