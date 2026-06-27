@@ -199,7 +199,7 @@ A curated catalog of every runtime and service the app supports — install with
 | **Cloud sync (zero-knowledge)** of SSH hosts, keys, crons | — | ✅ |
 | **One-click VPS deploys** with Let's Encrypt | — | ✅ |
 | **Auto-deploy on git push** | — | ✅ |
-| Web dashboard at [laraenv.com/dashboard](https://laraenv.com/dashboard) | — | ✅ |
+| Web dashboard at [laraenv.com/dashboard](https://laraenv.com/dashboard) | ✅ | ✅ |
 
 **LaraEnv Pro — $3 / month.** Subscribe via Stripe or PayPal at [laraenv.com/pricing](https://laraenv.com/pricing). Cancel anytime.
 
