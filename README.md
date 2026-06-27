@@ -59,12 +59,15 @@ All versions are on the [Releases page](https://github.com/thayronarrais/laraenv
 
 | | |
 |---|---|
+| ⌨️ **Command Center** | Spotlight-style command palette. Press **Ctrl+K** in-app — or a configurable **global hotkey** that summons it even when LaraEnv is hidden to the tray. Navigate pages, start/stop services, open projects, scaffold new ones, and type-to-run `php artisan` / `npm` in any project. Save your own commands with custom hotkeys. |
 | 🚀 **Multi-runtime** | PHP 5.6 → 8.4 + multiple Node versions + Python 3.13 in parallel. Per-project overrides. Each PHP version gets its own FPM on a dedicated port (9074 for 7.4, 9084 for 8.4, etc). |
 | 🌐 **Web servers** | Both **Nginx and Apache** with auto-generated vhosts per project. mod_proxy_fcgi / mod_rewrite / mod_ssl loaded automatically. Self-signed SSL toggle per project. |
 | ⚙️ **Web server tuning UI** | Edit `client_max_body_size`, `fastcgi_read_timeout`, `proxy_read_timeout`, `worker_connections`, hash sizes — and Apache `Timeout`, `KeepAliveTimeout`, `LimitRequestBody`, `ProxyTimeout`. Saves rewrite the live config and reload the running service. Fixes 504-on-slow-uploads in dev. |
 | 🗄️ **Databases** | MySQL **and** PostgreSQL with first-run init (`mysqld --initialize-insecure`, `initdb`). Auto-create the project DB and patch `.env` for Laravel scaffolds. |
 | 📨 **Mail + cache** | Mailpit (SMTP catcher with UI on `:8025`) and Redis ready to start with one click. |
-| 💻 **Terminal** | PowerShell, CMD, Git Bash, Cmder. Multi-tab plus **split panes** (horizontal and vertical). Tabs persist across page navigation. cwd and PATH wired to the active project's PHP/Node. |
+| 💻 **Terminal** | PowerShell, CMD, Git Bash, Cmder. Multi-tab plus **split panes** (horizontal and vertical) and a **floating-groups workspace** — tear a tab off into its own always-on-top window and dock it back later. Tabs persist across page navigation. cwd and PATH wired to the active project's PHP/Node. |
+| 🔌 **Ports manager** | List every process listening on a port and **kill it in one click** — no more hunting for a stray `node`/`php` holding `:5173` or `:8000`. |
+| 📜 **Service logs** | Live log viewer per service (Nginx / Apache / MySQL / PHP-FPM …), with a running badge in Libs/Tools so you can see what's actually up. |
 | 🔐 **SSH manager** | ED25519 / RSA-4096 / ECDSA-P256 key generation, key import, host registry with tags, **ProxyJump** + ProxyCommand, latency + version probe, in-app interactive shell. |
 | ⏰ **Cron** | 5/6-field expressions plus descriptors (`@hourly`, `@daily`). Per-job project context (PATH + cwd). Output captured into the UI. **Opt-in: run jobs even when LaraEnv is closed** via Windows Task Scheduler. |
 | 📊 **System monitor** | Live CPU, Memory, GPU gauges with sparklines, plus a system-drive **Disk** progress bar. Sampled every 1.5 s. |
@@ -89,6 +92,45 @@ Live status of every service, the runtimes you have installed, the PHP-FPM ports
   <img src="./docs/dashboard.png" alt="Dashboard" width="100%" />
 </p>
 
+### Command Center
+
+A keyboard-first launcher for the whole app, in the spirit of Spotlight / VS Code's command palette.
+
+**Opening it**
+
+- **Ctrl+K** — opens the palette inside the app window (the in-app hotkey is configurable in **Settings → Command Center**).
+- **Global hotkey** — set an OS-wide shortcut (e.g. `Win+Shift+K`) and the palette pops up as a standalone Spotlight-style bar **even when LaraEnv is hidden to the system tray**. It opens already focused, so you can start typing immediately. Configure it in **Settings → Command Center** (empty = disabled).
+
+**What you can do**
+
+Just start typing — results are fuzzy-filtered and grouped:
+
+- **Navigation** — jump to any page (`Dashboard`, `Projects`, `Terminal`, `SSH`, `Cron`, `Deployments`, `Libs/Tools`, `Settings`).
+- **Services** — `Start all`, `Stop all`, `Reload web stack`, or start/stop/reload any individual service.
+- **Projects** — open a project's folder, editor, or browser; or scaffold a new one (`New Laravel project`, `Clone from Git`, `New Vite project`, …) — selecting it opens the New Project form pre-filled to that type.
+- **Custom commands** — save your own (a terminal command, a service action, or a navigation) and optionally bind each to its own hotkey.
+
+**Run commands in a project (launcher mode)**
+
+Type a project name followed by a command and the palette switches into launcher mode:
+
+```
+myapp php artisan migrate
+myapp npm run dev
+```
+
+`artisan` sub-commands and `npm` scripts for that project autocomplete as you type — press **Tab** to complete the highlighted suggestion. You can also type `ssh:<host>` to open a saved SSH host. Tip: highlight an **Open terminal · <project>** row and press **Tab** to drop the project name into the input, ready for a command.
+
+**Keys**
+
+| Key | Action |
+|---|---|
+| `↑` / `↓` | Move selection |
+| `Tab` | Complete the highlighted token / project |
+| `Enter` | Run — opens terminal commands in the **native** external terminal |
+| `Shift+Enter` | Run terminal / SSH commands in the **in-app xterm.js** tab instead |
+| `Esc` | Close |
+
 ### Projects
 
 Auto-detection identifies what kind of project lives in each `www\` subfolder. Each card shows the URL, PHP version, SSL toggle, terminal kind, vhost config, and free-form tags. The TLD is configurable globally.
@@ -99,7 +141,7 @@ Auto-detection identifies what kind of project lives in each `www\` subfolder. E
 
 ### Terminal
 
-A real ConPTY terminal — not a fake one. Multi-tab, with split panes (`split →` horizontal, `split ↓` vertical). Each pane is a real session with persistent layout per tab. PowerShell, CMD, Git Bash, Cmder.
+A real ConPTY terminal — not a fake one. Multi-tab, with split panes (`split →` horizontal, `split ↓` vertical). Each pane is a real session with persistent layout per tab. PowerShell, CMD, Git Bash, Cmder. **Tear any tab off into its own floating, always-on-top window** and dock it back when you're done — the layout is remembered between launches. Shells spawn with the live Windows PATH and honour each project's PHP/Node version.
 
 <p align="center">
   <img src="./docs/terminal.png" alt="Terminal" width="100%" />
@@ -119,7 +161,7 @@ Per-project schedules with output capture. Toggle **"Run when LaraEnv is closed"
 
 ### Deployments *(Pro)*
 
-Pick a saved SSH host, choose project type, web server (Apache or Nginx), database (MySQL or PostgreSQL), PHP version, optional Let's Encrypt HTTPS, and a build script. Auto-deploy is a remote crontab that polls `git pull` at your chosen interval. Activity log of every apply / pull is kept per deployment.
+Pick a saved SSH host, choose project type, web server (Apache or Nginx), database (MySQL or PostgreSQL), PHP version, optional Let's Encrypt HTTPS, and a build script — with **reusable script presets and variables** so common deploy recipes are one selection away. Hit **Deploy now** to push on demand, or let auto-deploy run a remote crontab that polls `git pull` at your chosen interval. Re-applying config is `.env`-safe and **preserves `storage/`** across runs. An activity log of every apply / pull is kept per deployment.
 
 <p align="center">
   <img src="./docs/deployments.png" alt="Deployments — Apply config" width="100%" />
@@ -133,6 +175,7 @@ A curated catalog of every runtime and service the app supports — install with
 
 - **Account** — log in to LaraEnv Cloud (email/password or GitHub OAuth), see entitlements, manage billing.
 - **Appearance** — pick one of 6 themes, terminal copy mode.
+- **Command Center** — set the in-app palette hotkey and the OS-wide global hotkey, and manage your saved custom commands.
 - **Services** — tuning UI for Nginx and Apache (`client_max_body_size`, timeouts, `LimitRequestBody`, etc).
 - **Updates** — manual check, download, and install the latest MSI.
 
@@ -149,6 +192,7 @@ A curated catalog of every runtime and service the app supports — install with
 | Full local stack (PHP / Node / Nginx / Apache / MySQL / PostgreSQL / Redis / Mailpit) | ✅ | ✅ |
 | Multi-PHP / multi-Node side-by-side | ✅ | ✅ |
 | Project scaffolding & vhost management | ✅ | ✅ |
+| Command Center (palette + global hotkey + custom commands) | ✅ | ✅ |
 | SSH manager with ProxyJump | ✅ | ✅ |
 | Cron with Task Scheduler integration | ✅ | ✅ |
 | 6 themes & auto-update | ✅ | ✅ |
