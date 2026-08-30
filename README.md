@@ -96,6 +96,15 @@ Live status of every service, the runtimes you have installed, the PHP-FPM ports
 
 A keyboard-first launcher for the whole app, in the spirit of Spotlight / VS Code's command palette.
 
+<p align="center">
+  <img src="./docs/command-center.gif" alt="The command bar summoned over the desktop: naming a project, then its own artisan commands and package.json scripts" width="100%" />
+</p>
+
+<p align="center">
+  <sub>Name a project and ask for <code>php artisan</code> or <code>npm run</code> — the suggestions are read from that project, not from a fixed list.<br/>
+  The global hotkey in the clip is one you set yourself; it ships disabled.</sub>
+</p>
+
 **Opening it**
 
 - **Ctrl+K** — opens the palette inside the app window (the in-app hotkey is configurable in **Settings → Command Center**).
