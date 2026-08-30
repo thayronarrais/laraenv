@@ -26,7 +26,7 @@
 </p>
 
 <p align="center">
-  <img src="./docs/dashboard.png" alt="LaraEnv Dashboard" width="100%" />
+  <img src="./docs/dashboard.jpg" alt="LaraEnv Dashboard" width="100%" />
 </p>
 
 ---
@@ -89,7 +89,7 @@ All versions are on the [Releases page](https://github.com/thayronarrais/laraenv
 Live status of every service, the runtimes you have installed, the PHP-FPM ports in use, and a real-time system monitor (CPU / Memory / GPU + Disk). Start everything with **Start all** or pick services individually.
 
 <p align="center">
-  <img src="./docs/dashboard.png" alt="Dashboard" width="100%" />
+  <img src="./docs/dashboard.jpg" alt="Dashboard" width="100%" />
 </p>
 
 ### Command Center
@@ -136,7 +136,7 @@ myapp npm run dev
 Auto-detection identifies what kind of project lives in each `www\` subfolder. Each card shows the URL, PHP version, SSL toggle, terminal kind, vhost config, and free-form tags. The TLD is configurable globally.
 
 <p align="center">
-  <img src="./docs/projects.png" alt="Projects" width="100%" />
+  <img src="./docs/projects.jpg" alt="Projects" width="100%" />
 </p>
 
 ### Terminal
@@ -144,7 +144,7 @@ Auto-detection identifies what kind of project lives in each `www\` subfolder. E
 A real ConPTY terminal — not a fake one. Multi-tab, with split panes (`split →` horizontal, `split ↓` vertical). Each pane is a real session with persistent layout per tab. PowerShell, CMD, Git Bash, Cmder. **Tear any tab off into its own floating, always-on-top window** and dock it back when you're done — the layout is remembered between launches. Shells spawn with the live Windows PATH and honour each project's PHP/Node version.
 
 <p align="center">
-  <img src="./docs/terminal.png" alt="Terminal" width="100%" />
+  <img src="./docs/terminal.jpg" alt="Terminal" width="100%" />
 </p>
 
 ### SSH
@@ -152,7 +152,7 @@ A real ConPTY terminal — not a fake one. Multi-tab, with split panes (`split �
 Manage hosts, generate or import keys, test connections (TCP + handshake + version probe). Connect with one click — the session opens in the Terminal page. Filter by tag. Supports **ProxyJump** through any saved host (no credential re-entry) and an advanced **ProxyCommand** field for tools like `cloudflared access ssh`.
 
 <p align="center">
-  <img src="./docs/ssh.png" alt="SSH" width="100%" />
+  <img src="./docs/ssh.jpg" alt="SSH" width="100%" />
 </p>
 
 ### Cron
@@ -164,7 +164,7 @@ Per-project schedules with output capture. Toggle **"Run when LaraEnv is closed"
 Pick a saved SSH host, choose project type, web server (Apache or Nginx), database (MySQL or PostgreSQL), PHP version, optional Let's Encrypt HTTPS, and a build script — with **reusable script presets and variables** so common deploy recipes are one selection away. Hit **Deploy now** to push on demand, or let auto-deploy run a remote crontab that polls `git pull` at your chosen interval. Re-applying config is `.env`-safe and **preserves `storage/`** across runs. An activity log of every apply / pull is kept per deployment.
 
 <p align="center">
-  <img src="./docs/deployments.png" alt="Deployments — Apply config" width="100%" />
+  <img src="./docs/deployments.jpg" alt="Deployments — Apply config" width="100%" />
 </p>
 
 ### Libs / Tools
@@ -180,7 +180,7 @@ A curated catalog of every runtime and service the app supports — install with
 - **Updates** — manual check, download, and install the latest MSI.
 
 <p align="center">
-  <img src="./docs/themes.png" alt="Settings — Appearance" width="100%" />
+  <img src="./docs/themes.jpg" alt="Settings — Appearance" width="100%" />
 </p>
 
 ---
