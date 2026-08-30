@@ -86,11 +86,16 @@ what changed in the code, and say plainly when an upgrade is optional.
 not a specific file. So the new release is live the moment it is published, with
 no site redeploy, and **no fixed asset filename is required**.
 
-> An earlier version of this document required an extra copy named
-> `LaraEnv-Setup.msi`, because a previous GitHub Pages site linked straight to
-> that file. That site no longer exists and the download route no longer works
-> that way. Releases from v0.4.29 onward ship only the versioned MSI and its
-> sidecar.
+The README's **Download MSI** button points at the same URL, for the same
+reason.
+
+> Earlier releases were expected to carry an extra copy named
+> `LaraEnv-Setup.msi`, so that a fixed URL
+> (`releases/latest/download/LaraEnv-Setup.msi`) always resolved. That rule is
+> gone. It relied on remembering the copy in every single release — and it was
+> already forgotten in v0.4.29, which left the README's download button
+> returning 404 until v0.4.30. Both consumers now point at the releases page,
+> which cannot go stale.
 
 ---
 

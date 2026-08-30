@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/thayronarrais/laraenv/releases/latest/download/LaraEnv-Setup.msi"><strong>⬇️ Download MSI</strong></a> ·
+  <a href="https://github.com/thayronarrais/laraenv/releases/latest"><strong>⬇️ Download MSI</strong></a> ·
   <a href="https://laraenv.com">🌐 Website</a> ·
   <a href="https://laraenv.com/pricing">💎 Pro</a> ·
   <a href="https://github.com/thayronarrais/laraenv/issues">🐞 Issues</a>
