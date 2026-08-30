@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./docs/logo.png" alt="LaraEnv" width="160" />
+  <img src="./docs/icon.png" alt="LaraEnv" width="160" />
 </p>
 
 <h1 align="center">LaraEnv</h1>
