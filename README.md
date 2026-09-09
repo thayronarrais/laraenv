@@ -42,12 +42,16 @@
 
 ## Download
 
-| Asset | Notes |
+Two editions, same application.
+
+| Edition | What you get |
 |---|---|
-| [`LaraEnv-Setup.msi`](https://github.com/thayronarrais/laraenv/releases/latest/download/LaraEnv-Setup.msi) | **Recommended.** Installs to `%ProgramFiles%\LaraEnv\`, Start Menu + Desktop shortcuts, clean uninstall via Control Panel. |
-| `LaraEnv-x.y.z.msi` | Versioned copy of the same MSI (kept for archival). |
-| `LaraEnv.exe` | Portable binary. No installer, just run. |
-| `LaraEnv-x.y.z.msi.sha256` | SHA-256 sidecar. The in-app updater uses it to verify the download. |
+| **[Installer (MSI)](https://github.com/thayronarrais/laraenv/releases/latest)** | Recommended. Installs to `%ProgramFiles%\LaraEnv\`, Start Menu and Desktop shortcuts, clean uninstall via Control Panel. Your projects, databases and config live in `C:\laraenv` and survive uninstalling. |
+| **[Portable (ZIP)](https://github.com/thayronarrais/laraenv/releases/latest)** | `LaraEnv-x.y.z-portable-win64.zip`. Extract anywhere and run &mdash; nothing is installed. The entire environment (config, projects, PHP, Nginx, MySQL) lives inside the extracted folder, so it travels with you and leaves nothing behind. |
+
+Every asset ships with a `.sha256` sidecar. The in-app updater verifies against it before installing, and a portable copy refuses to update at all without one.
+
+**Portable, in one line:** what makes it portable is the `.laraenv-portable` file next to `LaraEnv.exe`. Keep it. Extract somewhere that will not collide with `C:\laraenv` &mdash; Windows ignores letter case, so `C:\LaraEnv` is the *same folder* as the installed location.
 
 **Requirements:** Windows 10/11 x64 · WebView2 Runtime (preinstalled on Win 11) · Administrator rights on first launch (to write `C:\Windows\System32\drivers\etc\hosts`).
 
