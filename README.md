@@ -34,7 +34,7 @@
 ## Why LaraEnv?
 
 - **No Docker. No WSL. No Electron.** Native Windows binary (~13 MB) running on WebView2.
-- **Multi-runtime out of the box** — PHP 5.6 → 8.4 side-by-side, multiple Node versions, Python 3.13.
+- **Multi-runtime out of the box** — PHP 5.6 → 8.5 side-by-side (8.6 available as a beta), multiple Node versions, Python 3.13.
 - **Real services, not containers** — Nginx, Apache, MySQL, PostgreSQL, Redis, Mailpit. Installed and started by the app.
 - **Pro tier** — zero-knowledge cloud sync of your SSH keys / cron jobs and one-click VPS deploys.
 
@@ -66,7 +66,8 @@ All versions are on the [Releases page](https://github.com/thayronarrais/laraenv
 | | |
 |---|---|
 | ⌨️ **Command Center** | Spotlight-style command palette. Press **Ctrl+K** in-app — or a configurable **global hotkey** that summons it even when LaraEnv is hidden to the tray. Navigate pages, start/stop services, open projects, scaffold new ones, and type-to-run `php artisan` / `npm` in any project. Save your own commands with custom hotkeys. |
-| 🚀 **Multi-runtime** | PHP 5.6 → 8.4 + multiple Node versions + Python 3.13 in parallel. Per-project overrides. Each PHP version gets its own FPM on a dedicated port (9074 for 7.4, 9084 for 8.4, etc). |
+| 🚀 **Multi-runtime** | PHP 5.6 → 8.5 + multiple Node versions + Python 3.13 in parallel. Per-project overrides. Each PHP version gets its own FPM on a dedicated port (9074 for 7.4, 9085 for 8.5, etc). PHP 8.6 is offered as a **beta**, marked as such: it has no stable release yet, needs the VS 2026 redistributable, and no PECL extensions are published for it. |
+| 🧩 **PHP extensions** | Install Xdebug, Redis, MongoDB, APCu, Imagick or Memcached into any PHP version from the gear beside its FPM entry — the right build for that version, no hunting for DLLs. Swoole is not offered: it needs `epoll`/`kqueue` and has no native Windows build, so on Windows the route is WSL. |
 | 🌐 **Web servers** | **Nginx, Apache and Caddy**, with config auto-generated per project for whichever ones you install — switching between them needs no regeneration. Only one serves at a time; starting a second tells you which is already holding port 80 instead of failing at the socket. Per-project SSL is signed by a local CA the browser trusts, and all three share the same certificates. |
 | ⚙️ **Web server tuning UI** | Edit `client_max_body_size`, `fastcgi_read_timeout`, `proxy_read_timeout`, `worker_connections`, hash sizes — and Apache `Timeout`, `KeepAliveTimeout`, `LimitRequestBody`, `ProxyTimeout`. Saves rewrite the live config and reload the running service. Fixes 504-on-slow-uploads in dev. |
 | 🗄️ **Databases** | MySQL **and** PostgreSQL with first-run init (`mysqld --initialize-insecure`, `initdb`). Auto-create the project DB and patch `.env` for Laravel scaffolds. |
