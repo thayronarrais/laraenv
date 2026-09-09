@@ -224,7 +224,7 @@ A curated catalog of every runtime and service the app supports — install with
 
 ## Quick start
 
-1. Download [`LaraEnv-Setup.msi`](https://github.com/thayronarrais/laraenv/releases/latest/download/LaraEnv-Setup.msi) and double-click.
+1. Grab the installer or the portable ZIP from the [latest release](https://github.com/thayronarrais/laraenv/releases/latest). The MSI installs; the ZIP just runs.
 2. On first launch, open **Libs/Tools** and install the runtimes you need (e.g. PHP 8.5, Node 22, Nginx, MySQL).
 3. Hit **Start all** on the Dashboard.
 4. Open **Projects** → **New project**, pick a template, give it a name. Vhost, hosts entry, and SSL are generated automatically.
