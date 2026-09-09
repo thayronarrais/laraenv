@@ -53,6 +53,8 @@ Every asset ships with a `.sha256` sidecar. The in-app updater verifies against 
 
 **Portable, in one line:** what makes it portable is the `.laraenv-portable` file next to `LaraEnv.exe`. Keep it. Extract somewhere that will not collide with `C:\laraenv` &mdash; Windows ignores letter case, so `C:\LaraEnv` is the *same folder* as the installed location.
 
+A portable copy also leaves the machine's certificate store alone. Local HTTPS needs a certificate authority Windows trusts, and installing one is a real change to a computer that may not be yours &mdash; so a portable copy asks instead of doing it silently: **Settings &rarr; Services &rarr; Local HTTPS**. An installed copy still sets it up automatically, as it always has.
+
 **Requirements:** Windows 10/11 x64 · WebView2 Runtime (preinstalled on Win 11) · Administrator rights on first launch (to write `C:\Windows\System32\drivers\etc\hosts`).
 
 All versions are on the [Releases page](https://github.com/thayronarrais/laraenv/releases). The in-app updater checks for new releases automatically and verifies them with SHA-256 before installing.
@@ -65,7 +67,7 @@ All versions are on the [Releases page](https://github.com/thayronarrais/laraenv
 |---|---|
 | ⌨️ **Command Center** | Spotlight-style command palette. Press **Ctrl+K** in-app — or a configurable **global hotkey** that summons it even when LaraEnv is hidden to the tray. Navigate pages, start/stop services, open projects, scaffold new ones, and type-to-run `php artisan` / `npm` in any project. Save your own commands with custom hotkeys. |
 | 🚀 **Multi-runtime** | PHP 5.6 → 8.4 + multiple Node versions + Python 3.13 in parallel. Per-project overrides. Each PHP version gets its own FPM on a dedicated port (9074 for 7.4, 9084 for 8.4, etc). |
-| 🌐 **Web servers** | Both **Nginx and Apache** with auto-generated vhosts per project. mod_proxy_fcgi / mod_rewrite / mod_ssl loaded automatically. Self-signed SSL toggle per project. |
+| 🌐 **Web servers** | **Nginx, Apache and Caddy**, with config auto-generated per project for whichever ones you install — switching between them needs no regeneration. Only one serves at a time; starting a second tells you which is already holding port 80 instead of failing at the socket. Per-project SSL is signed by a local CA the browser trusts, and all three share the same certificates. |
 | ⚙️ **Web server tuning UI** | Edit `client_max_body_size`, `fastcgi_read_timeout`, `proxy_read_timeout`, `worker_connections`, hash sizes — and Apache `Timeout`, `KeepAliveTimeout`, `LimitRequestBody`, `ProxyTimeout`. Saves rewrite the live config and reload the running service. Fixes 504-on-slow-uploads in dev. |
 | 🗄️ **Databases** | MySQL **and** PostgreSQL with first-run init (`mysqld --initialize-insecure`, `initdb`). Auto-create the project DB and patch `.env` for Laravel scaffolds. |
 | 📨 **Mail + cache** | Mailpit (SMTP catcher with UI on `:8025`) and Redis ready to start with one click. |
@@ -189,7 +191,8 @@ A curated catalog of every runtime and service the app supports — install with
 - **Account** — log in to LaraEnv Cloud (email/password or GitHub OAuth), see entitlements, manage billing.
 - **Appearance** — pick one of 6 themes, terminal copy mode.
 - **Command Center** — set the in-app palette hotkey and the OS-wide global hotkey, and manage your saved custom commands.
-- **Services** — tuning UI for Nginx and Apache (`client_max_body_size`, timeouts, `LimitRequestBody`, etc).
+- **Services** — tuning UI for Nginx and Apache (`client_max_body_size`, timeouts, `LimitRequestBody`, etc). Caddy has none: its config is short enough to edit directly in the built-in editor, which opens any of the three.
+- **Local HTTPS** — shows the local certificate authority, whether Windows trusts it, and a button to install it. A portable copy never installs it on its own; on a machine that is not yours, that is a deliberate choice, not a side effect of opening the app.
 - **Updates** — manual check, download, and install the latest MSI.
 
 <p align="center">
