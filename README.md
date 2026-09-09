@@ -35,7 +35,7 @@
 
 - **No Docker. No WSL. No Electron.** Native Windows binary (~13 MB) running on WebView2.
 - **Multi-runtime out of the box** — PHP 5.6 → 8.5 side-by-side (8.6 available as a beta), multiple Node versions, Python 3.13.
-- **Real services, not containers** — Nginx, Apache, MySQL, PostgreSQL, Redis, Mailpit. Installed and started by the app.
+- **Real services, not containers** — Nginx, Apache, Caddy, MySQL, PostgreSQL, Redis, Mailpit. Installed and started by the app.
 - **Pro tier** — zero-knowledge cloud sync of your SSH keys / cron jobs and one-click VPS deploys.
 
 ---
@@ -185,7 +185,7 @@ Pick a saved SSH host, choose project type, web server (Apache or Nginx), databa
 
 ### Libs / Tools
 
-A curated catalog of every runtime and service the app supports — install with one click. PHP 5.6 to 8.4, Node LTS + Current, Python 3.13, Nginx, Apache, MySQL, PostgreSQL, Redis, Mailpit, Cmder.
+A curated catalog of every runtime and service the app supports — install with one click. PHP 5.6 to 8.5 (8.6 as a beta), Node LTS + Current, Python 3.13, Nginx, Apache, Caddy, MySQL, PostgreSQL, Redis, Mailpit, Cmder.
 
 ### Settings
 
@@ -225,7 +225,7 @@ A curated catalog of every runtime and service the app supports — install with
 ## Quick start
 
 1. Download [`LaraEnv-Setup.msi`](https://github.com/thayronarrais/laraenv/releases/latest/download/LaraEnv-Setup.msi) and double-click.
-2. On first launch, open **Libs/Tools** and install the runtimes you need (e.g. PHP 8.4, Node 22, Nginx, MySQL).
+2. On first launch, open **Libs/Tools** and install the runtimes you need (e.g. PHP 8.5, Node 22, Nginx, MySQL).
 3. Hit **Start all** on the Dashboard.
 4. Open **Projects** → **New project**, pick a template, give it a name. Vhost, hosts entry, and SSL are generated automatically.
 5. Browse to `https://your-project.test`.
