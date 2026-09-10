@@ -1,0 +1,2587 @@
+{
+  "$meta": {
+    "code": "zh-CN",
+    "name": "Chinese (Simplified)",
+    "nativeName": "简体中文",
+    "needsNativeReview": true
+  },
+  "backend": {
+    "tray": {
+      "tooltip": "LaraEnv — 本地开发环境管理工具",
+      "showWindow": "显示窗口",
+      "services": "服务",
+      "projects": "项目",
+      "startAll": "启动全部",
+      "stopAll": "停止全部",
+      "quit": "退出 LaraEnv",
+      "untagged": "未分类",
+      "statusRunning": "运行中",
+      "statusStopped": "已停止"
+    },
+    "notifications": {
+      "sessionNeedsInput": "{{title}} 等待输入",
+      "sessionDone": "{{title}} 已完成",
+      "sessionError": "{{title}} 异常停止",
+      "usageReachedTitle": "{{provider}} 使用量已达 {{percent}}%",
+      "usageMessage": "{{label}} 已使用 {{percent}}%。",
+      "localCAUntrustedTitle": "本地 HTTPS 证书尚未被信任",
+      "localCAUntrustedMessage": "此计算机尚未信任 LaraEnv 的本地根证书颁发机构，因此浏览器会对该 HTTPS 站点发出警告。请前往「设置 → 服务 → 本地 HTTPS」进行信任。",
+      "historyMalformed": "通知历史记录格式异常，已重置。"
+    },
+    "updater": {
+      "verifyingIntegrity": "正在验证完整性…",
+      "hashFailed": "哈希校验失败: {{error}}"
+    },
+    "app": {
+      "relocationTitle": "LaraEnv 已移动至新文件夹",
+      "relocationMessage": "已从 {{previousRoot}} 移动。已更新 {{moved}} 个保存路径，重新指向 {{inis}} 个 PHP 配置。项目、虚拟主机和证书将在本次启动时重新构建。",
+      "reclaimedPorts": "已回收残留端口: {{ports}}",
+      "rekeyedItems": "已重新加密 {{count}} 个项目",
+      "rekeySkipped": "，跳过 {{count}} 个无法解密的项目",
+      "cloudSyncSummary": "已推送 {{pushed}} 台主机 + {{pushedCrons}} 个定时任务 + {{pushedPresets}} 个预设，拉取 {{pulled}} 台主机 + {{pulledCrons}} 个定时任务 + {{pulledPresets}} 个预设",
+      "pickZipTitle": "选择 {{kind}} {{version}} 的 zip 文件",
+      "pickPrivateKeyTitle": "选择导入到 {{host}} 的私钥",
+      "pickPrivateKeyFileTitle": "选择私钥文件",
+      "sshKeyFilterLabel": "SSH 私钥 (*, id_*, *.pem)",
+      "allFilesFilterLabel": "所有文件 (*.*)",
+      "addFolderToAgentSessionTitle": "添加文件夹至智能体会话",
+      "deployConnecting": "--- 正在连接到 {{user}}@{{address}}:{{port}} ---",
+      "deployPlan": "--- 部署方案: 共 {{count}} 步 ---",
+      "deployDetectionComplete": "--- 检测完成: {{osFamily}} {{osVersion}}，找到 {{count}} 个二进制程序 ---",
+      "vhostSweepFailed": "{{label}} 虚拟主机扫描清理失败: {{error}}",
+      "projectVhostError": "{{name}}: {{error}}",
+      "repairProjectRoutesFailed": "修复项目路由失败: {{error}}",
+      "remoteWipedServerDeleteFailed": "远程环境已清除但服务器记录删除失败: {{error}}",
+      "storeNoticePreservedAt": "{{message}} 已保留在 {{path}}",
+      "sshConnectionOk": "连接正常",
+      "projectNotice": "{{name}}: {{message}}"
+    },
+    "cloud": {
+      "apiErrorWithMessage": "服务器: {{message}} (HTTP {{status}})",
+      "apiErrorStatus": "服务器 HTTP {{status}}",
+      "undecryptableSkipped": "服务器上有 {{count}} 项数据由不同密码加密已被跳过 — 请从仍能正常工作的设备重新加密同步数据（设置 → 账户）",
+      "stepHeader": "=== [{{idx}}/{{total}}] {{title}} ===",
+      "nonZeroExitIgnored": "(已忽略非零退出代码: {{error}})",
+      "presetVarBuiltinIgnored": "变量 \"{{name}}\" 为内置变量 — 自定义值已忽略",
+      "presetLaravelProductionDescription": "维护模式、根据需要安装 composer/npm、migrate --force、optimize、重启队列。",
+      "presetLaravelDevelopmentDescription": "轻量流程: 开发依赖、migrate、optimize:clear — 不进入维护模式且不重启队列。",
+      "presetStaticNodeDescription": "仅在包文件变更时执行 pull + npm ci/build；纯静态代码库仅执行 pull。"
+    },
+    "services": {
+      "firstRunInitializing": "首次运行: 正在初始化数据目录，这需要几秒钟…",
+      "initializationFailed": "初始化失败: {{error}}",
+      "startFailed": "启动失败: {{error}}",
+      "exitedNoMessage": "进程在运行 {{uptime}} 后退出且无返回消息",
+      "restartLoopGivingUp": "{{name}} 连续失败 {{streak}} 次，放弃自动重启: {{detail}}",
+      "restartAfterCrash": "进程在运行 {{uptime}} 后崩溃，将在 {{delay}} 后重启 ({{detail}})",
+      "restartFailed": "重启 {{name}} 失败: {{error}}"
+    },
+    "projectroutes": {
+      "canonicalRestored": "主域名已还原到主检出分支，因为其对应的工作树不存在。",
+      "previewRemoved": "预览域名 {{hostname}} 已移除，因为其对应的工作树不存在。",
+      "routeStateMalformed": "项目路由状态异常，已重置。"
+    },
+    "agents": {
+      "sharedCheckoutWarning": "{{title}} 已在此检出分支中运行。两个智能体可以编辑相同的文件。",
+      "cliNotFound": "在 PATH 或支持的安装路径中未找到 CLI",
+      "versionProbeTimedOut": "版本探测超时",
+      "versionUnavailable": "版本不可用: {{error}}",
+      "sessionHistoryMalformed": "智能体会话历史记录异常，已重置。",
+      "hookConfigFolderNotFound": "未找到 {{label}} 配置文件夹",
+      "kimiUsageUnsupported": "Kimi 仅在其交互式 /usage 界面中显示配额。",
+      "openCodeUsageUnsupported": "OpenCode 统计仅报告 Token 总量和费用，不报告订阅限制。",
+      "usageNotSupportedFor": "{{provider}} 不支持用量限制查询。",
+      "claudeSignInRequired": "请登录 Claude Code 以读取订阅额度。",
+      "claudeCredentialsUnavailable": "Claude Code 订阅凭据不可用。",
+      "claudeCannotPrepareRequest": "无法准备 Claude 用量查询请求。",
+      "claudeCouldNotReachLimits": "无法访问 Claude 订阅额度服务。",
+      "claudeMustRenewLogin": "必须更新 Claude Code 登录状态后才能读取订阅额度。",
+      "claudeRateLimited": "Claude 用量刷新触发频控；正在等待重试。",
+      "claudeTemporarilyUnavailable": "Claude 用量服务暂时不可用 (HTTP {{status}})。",
+      "claudeCouldNotReadLimits": "无法读取 Claude 订阅额度。",
+      "claudeUnreadableResponse": "Claude 返回了无法解析的订阅额度响应。",
+      "claudeNoLimitWindows": "Claude 未返回任何订阅限额窗口。",
+      "codexNoChatGptRateLimitWindows": "Codex 未返回 ChatGPT 频控窗口。",
+      "codexNoRateLimitWindows": "Codex 未返回频控窗口。",
+      "windowLabelFiveHour": "5 小时",
+      "windowLabelWeekly": "每周",
+      "windowLabelSonnetWeekly": "Sonnet 每周",
+      "windowLabelOpusWeekly": "Opus 每周",
+      "windowLabelFableWeekly": "Fable 每周",
+      "windowLabelModelWeekly": "{{model}} 每周",
+      "windowLabelMonthly": "每月",
+      "windowLabelLimit": "额度",
+      "windowLabelMinutes": "{{minutes}} 分钟"
+    },
+    "routes": {
+      "worktreeServerStoppedRouteFailed": "工作树服务器停止，因为其路由无法跟随监听端口: {{error}}",
+      "blockerWorktreeMissing": "工作树文件夹丢失",
+      "blockerWorktreeDirty": "工作树有未提交的更改",
+      "blockerDevServerRunning": "预览开发服务器正在运行",
+      "blockerOwnsDomainRoutes": "工作树仍然占用域名路由",
+      "blockerAgentSessionRunning": "智能体会话仍在运行: {{title}}"
+    },
+    "projects": {
+      "runningCommand": "正在运行 {{command}}",
+      "installingDependencies": "正在安装依赖 ({{pm}} install)…",
+      "installFailedWarn": "警告: 安装失败: {{error}}",
+      "creatingBlankProject": "正在 {{target}} 创建空白项目",
+      "done": "完成。",
+      "composerPharDownloading": "未找到 composer.phar — 正在从 getcomposer.org 下载…",
+      "composerPharSaved": "composer.phar 已保存至 {{path}}",
+      "gitCloneCommand": "git clone {{url}} {{target}}",
+      "downloadingWordpress": "正在下载最新版 WordPress…",
+      "extracting": "正在解压…",
+      "cacheHit": "命中缓存: {{path}}",
+      "creatingMysqlDb": "正在创建 MySQL 数据库 `{{name}}`…",
+      "warnGeneric": "警告: {{error}}",
+      "creatingPostgresDb": "正在创建 PostgreSQL 数据库 `{{name}}`…",
+      "noDatabaseInStack": "当前技术栈中没有数据库 — 跳过数据库创建",
+      "envPatchFailedWarn": "警告: 无法修改 .env: {{error}}",
+      "envUpdated": ".env 已更新数据库配置",
+      "noDatabaseSkipMigrate": "未创建数据库 — 跳过迁移",
+      "noPhpForMigrations": "警告: 没有可用于执行数据库迁移的 PHP 环境 — 已跳过（请手动运行 `php artisan migrate --seed`）",
+      "runningMigrate": "正在执行 php artisan migrate --seed --force…",
+      "migrateFailedWarn": "警告: migrate --seed 执行失败: {{error}}",
+      "skippingFrontendBuildNoNode": "跳过前端构建: 未安装 Node.js（请从「库/工具」中安装以启用）",
+      "runningNpmInstall": "正在执行 npm install ({{npm}})…",
+      "npmInstallFailedWarn": "警告: npm install 失败: {{error}}",
+      "runningNpmBuild": "正在执行 npm run build…",
+      "npmBuildFailedWarn": "警告: npm run build 失败: {{error}}"
+    },
+    "installer": {
+      "copyingFile": "正在复制文件…",
+      "extracting": "正在解压…",
+      "cacheHit": "命中缓存",
+      "installing": "正在安装…",
+      "extractingDll": "正在解压 {{name}}.dll…",
+      "extXdebugDescription": "单步调试器、性能分析器及 var_dump 增强替代方案。",
+      "extRedisDescription": "Redis 客户端扩展（在 C 语言层面解析对象/数组回复）。",
+      "extMongodbDescription": "MongoDB 驱动扩展。需在 Composer 中配合 mongodb/mongodb 使用。",
+      "extApcuDescription": "用户空间内存缓存。适合无操作码缓存诉求的 APC 替代场景。",
+      "extImagickDescription": "ImageMagick 绑定库。压缩包内自带 ImageMagick DLL。",
+      "extMemcachedDescription": "Memcached 客户端扩展。依赖 libmemcached（已包含在压缩包内）。",
+      "notes": {
+        "nginxStable": "Windows 稳定版本。",
+        "nginxMainline": "Windows 主线开发版本。",
+        "caddySingleBinary": "单一二进制文件。通过 Caddyfile 配置，各项目可单独修改。",
+        "mailpitPorts": "SMTP 运行在 :1025，Web 界面位于 http://localhost:8025。",
+        "postgresManualDownload": "下载 'PostgreSQL Binaries' Windows x86-64 包。安装完成后执行 `bin\\initdb -D ..\\data -U postgres`。",
+        "postgresPreviousStable": "上一代稳定版本。",
+        "postgresLtsPatches2028": "LTS 长期支持 — 安全更新至 2028 年。",
+        "postgresPatchesUntil2027": "安全补丁维护至 2027 年。",
+        "pgvectorPg18": "适用于 PostgreSQL 18 的向量相似度搜索扩展。安装后请在每个数据库中执行 `CREATE EXTENSION vector;`。",
+        "pgvectorGeneric": "适用于 PostgreSQL {{pg}} 的向量相似度搜索扩展。",
+        "apacheLoungeBlocked": "Apache Lounge 阻止了直接下载。请点击「打开页面」，下载 zip 包并保存至 C:\\laraenv\\cache\\apache-{{version}}.zip",
+        "mysqlCurrentLts": "当前创新/LTS 版。安装后执行 `bin\\mysqld --initialize-insecure`。",
+        "mysql84Lts": "LTS 8.4 系列。安装后执行 `bin\\mysqld --initialize-insecure`。",
+        "mysqlInitInsecure": "安装后执行 `bin\\mysqld --initialize-insecure`。",
+        "phpBetaWarning": "测试版 — 请勿用于生产环境。PECL 扩展（Xdebug、Redis 等）尚未针对 8.6 构建 — 官方上游提供之前此处不会显示任何扩展。",
+        "phpSecurityFixOnlyEol2025": "仅提供安全修复 — 2025 年 12 月停止支持 (EOL)。",
+        "phpEndOfLifeNoPatches": "已停止支持 (EOL) — 不再提供任何安全更新。",
+        "eolRequiresRedist": "已停止支持。需要安装 {{redist}} 运行库。",
+        "pythonEmbeddable": "嵌入式精简版（不含原生 pip — 需通过 get-pip.py 安装）。",
+        "nodejsLatestLts": "最新 LTS 长期支持版。包含 npm 和 npx。",
+        "nodejsJodLts": "LTS (Jod) — 维护支持至 2027 年 4 月。",
+        "nodejsEolLegacy": "已停更 (EOL) — 仅供遗留旧项目使用。",
+        "redisWindowsPort": "社区维护的 Windows 移植版本 (tporadowski)。默认端口 6379。",
+        "composerLatestStable": "Composer 2（最新稳定版）。需要先启用有效的 PHP 版本。",
+        "composer22Lts": "Composer 2.2 LTS — 适合锁定在 PHP 5.3 / 7.0+ 的旧项目。",
+        "cmderFull": "带标签页的多功能终端 (~85MB，内置 msys-git)。安装后可在「项目 → 终端」中选用。",
+        "cmderMini": "Cmder mini 迷你版 (~6MB，不含 msys-git)。适合已在 Windows 上安装 Git 的环境。"
+      }
+    },
+    "gitworkspace": {
+      "notAGitRepository": "项目不是 Git 仓库"
+    },
+    "editor": {
+      "customLabel": "自定义…"
+    }
+  },
+  "common": {
+    "windowControls": {
+      "minimize": "最小化",
+      "maximize": "最大化",
+      "close": "关闭"
+    },
+    "typeBadge": {
+      "plain": "普通"
+    },
+    "errorBoundary": {
+      "title": "出了点问题",
+      "description": "界面遇到了意外错误。通常重新加载即可解决 — 如果问题持续出现，请反馈下方详细信息。",
+      "reload": "重新加载界面"
+    },
+    "cancel": "取消",
+    "save": "保存",
+    "close": "关闭",
+    "closeTooltip": "关闭",
+    "ok": "确定",
+    "confirm": "确认"
+  },
+  "settings": {
+    "tabs": {
+      "account": "账户",
+      "appearance": "外观",
+      "services": "服务",
+      "commandcenter": "命令中心",
+      "experimental": "实验性功能",
+      "updates": "更新"
+    },
+    "appearance": {
+      "language": "语言",
+      "languageHint": "立即生效，包括已打开的终端窗口。",
+      "needsNativeReviewBadge": "（需要母语审核）",
+      "needsNativeReviewNotice": "此翻译由机器生成，尚未经过母语使用者审核。如果您使用这种语言，欢迎在此处提交更正：https://github.com/thayronarrais/laraenv/tree/main/langs",
+      "themeHint": "选择配色方案。更改会立即应用并保存用于下次启动。",
+      "themes": {
+        "nebula": "默认: 紫色与薄荷绿",
+        "aurora": "翡翠绿与冰青色",
+        "sunset": "暖橙与琥珀黄",
+        "crimson": "绯红与浅粉色",
+        "oceanic": "深海蓝与天青色",
+        "midnight": "纯黑与石墨灰"
+      },
+      "themeAppliedFlash": "主题已应用",
+      "terminalCardTitle": "终端",
+      "terminalHint": "选择在终端中复制和粘贴的方式。",
+      "terminalModeSavedFlash": "终端模式已保存",
+      "terminalMode": {
+        "keyboardTitle": "键盘",
+        "mouseTitle": "鼠标",
+        "mouseDesc": "右键点击复制选中内容或粘贴"
+      },
+      "overrideActive": "正在使用来自 {{path}} 的本地翻译",
+      "overrideUnreadable": "无法读取 {{file}}，已跳过：{{reason}}",
+      "overrideRejected": {
+        "other": "{{count}} 条本地翻译被忽略：它们必须包含特定文本，但并未包含：{{keys}}"
+      }
+    },
+    "common": {
+      "saveFailed": "保存失败: {{message}}",
+      "savingLabel": "正在保存…"
+    },
+    "services": {
+      "nginx": {
+        "intro1": "全局指令位于",
+        "intro2": "。如果大文件上传过慢返回错误，可调高",
+        "intro3": "以及下方的超时时间",
+        "bucketSizeError": "Hash 桶大小必须是 2 的幂次方 (32, 64, 128, 256, 512, 1024)",
+        "maxSizeError": "最大大小必须大于或等于 Hash 桶大小",
+        "savedFlash": "Nginx 配置已保存 — 运行中的 Nginx 已重载",
+        "clientMaxBodyHint": "最大上传大小。默认 512。需保持 >= php post_max_size。",
+        "clientBodyTimeoutHint": "客户端请求体两次数据包之间的最大间隔时间。默认 300。",
+        "fastcgiReadTimeoutHint": "等待 PHP-FPM 响应的超时时间。默认 300。耗时较长的导入/导出时可调大。",
+        "proxyReadTimeoutHint": "等待反向代理开发服务器（Vite/Next 等）的超时时间。默认 300。",
+        "keepaliveTimeoutHint": "空闲 Keep-Alive 超时时间。默认 75。",
+        "workerConnectionsHint": "每个 worker 进程的并发连接数。默认 1024。",
+        "bucketSizeHint": "2 的幂次方。默认 128。若 Nginx 报 'could not build server_names_hash' 可调高。",
+        "maxSizeHint": "默认 1024。如果您有数百个虚拟主机可调大此值。",
+        "saveButton": "保存 Nginx"
+      },
+      "php": {
+        "intro1": "上传与运行时限制已写入每个版本的",
+        "intro2": "，以及每个版本的",
+        "intro3": "工作进程数。更多的工作进程可避免单次大文件上传导致整个站点卡死（php-cgi 一次处理一个请求）。保存后立即生效并重载 PHP-FPM 进程池。",
+        "workersLabel": "工作进程数 (php-cgi 进程池)",
+        "workersRangeError": "工作进程数必须在 1 到 16 之间",
+        "postMaxWarning": "post_max_size 应该 >= upload_max_filesize",
+        "clientMaxBodyTip": "提示: 请将 Nginx 的 client_max_body_size 调至 >= post_max_size，否则上传内容在到达 PHP 之前就会被拒绝",
+        "savedFlash": "PHP 配置已保存 — php.ini 已更新且 PHP-FPM 进程池已重载",
+        "uploadMaxHint": "单个上传文件的最大限制。默认 512。",
+        "postMaxHint": "POST 请求体的最大总大小。必须 >= upload_max_filesize。默认 512。",
+        "memoryLimitHint": "每个请求的最大内存限制。默认 512。",
+        "workersHint": "每个版本并发运行的 php-cgi 进程数。范围 1–16。默认 4。",
+        "maxExecutionTimeHint": "脚本最大执行时间。默认 300。耗时较长的导入可调大。",
+        "maxInputTimeHint": "解析请求输入（含上传）的最大允许时间。默认 300。",
+        "saveButton": "保存 PHP"
+      },
+      "apache": {
+        "intro1": "全局指令位于",
+        "intro2": "。生效机制与 Nginx 相同 — 立即应用并重载运行中的 Apache。",
+        "savedFlash": "Apache 配置已保存 — 运行中的 Apache 已重载",
+        "timeoutHint": "请求总超时时间。默认 300。",
+        "keepAliveTimeoutHint": "空闲 Keep-Alive 超时时间。默认 5。",
+        "limitRequestBodyHint": "请求体最大字节限制。0 = 无限制。默认 100。",
+        "proxyTimeoutHint": "代理后端的等待时间 (mod_proxy / mod_proxy_fcgi)。默认 300。",
+        "saveButton": "保存 Apache"
+      },
+      "localHttps": {
+        "cardTitle": "本地 HTTPS",
+        "certIntro": "LaraEnv 使用在此计算机上生成的根证书颁发机构，为本地站点（如",
+        "certMiddle": "）签署 HTTPS 证书。下方的",
+        "trustHighlight": "信任",
+        "certOutro": "按钮会将该根证书安装到 Windows 中，以便该计算机信任 LaraEnv 为本地站点签发的 HTTPS 证书 — 不会对其他任何计算机产生影响。",
+        "pillCheckError": "无法检查",
+        "pillTrusted": "已信任",
+        "pillNotTrusted": "未信任",
+        "checkErrorDetail": "无法检查信任状态: {{error}}",
+        "trustButton": "信任本地根证书 (CA)",
+        "trustingLabel": "正在配置信任…",
+        "loadingLabel": "加载中…",
+        "loadErrorDetail": "无法读取本地根证书: {{error}}",
+        "noneYet": "暂无本地 CA — 当项目首次开启 HTTPS 时会自动创建。",
+        "trustedFlash": "已信任本地证书颁发机构",
+        "trustFailedFlash": "信任配置失败: {{message}}"
+      }
+    },
+    "commandcenter": {
+      "actions": {
+        "terminal": "在终端中运行命令",
+        "openTerminal": "打开终端",
+        "service": "服务操作",
+        "navigate": "跳转至页面"
+      },
+      "serviceOps": {
+        "start": "启动服务",
+        "stop": "停止服务",
+        "reload": "重载服务",
+        "startAll": "启动所有服务",
+        "stopAll": "停止所有服务",
+        "reloadStack": "重载 Web 技术栈"
+      },
+      "summary": {
+        "terminal": "运行 \"{{command}}\"",
+        "terminalWithProject": "运行 \"{{command}}\" · {{project}}",
+        "openTerminal": "打开终端",
+        "openTerminalWithProject": "打开终端 · {{project}}",
+        "serviceWithTarget": "{{op}}: {{service}}",
+        "navigate": "转到 {{page}}"
+      },
+      "hotkeyCapture": {
+        "listening": "请按下按键… (按 Esc 取消)",
+        "notSet": "未设置"
+      },
+      "palette": {
+        "cardTitle": "命令面板",
+        "description": "在任意位置按下快捷键即可呼出命令面板。内置命令（导航、服务、项目）会自动与您的自定义命令一并呈现。",
+        "paletteHotkeyLabel": "面板快捷键",
+        "globalHotkeyLabel": "全局快捷键",
+        "disableButton": "禁用",
+        "globalHotkeyHintPart1": "全局快捷键可在整个操作系统任意位置唤出面板 — 即使 LaraEnv 已最小化或缩小到托盘（需在托盘保持运行）。某些",
+        "globalHotkeyHintPart2": "按键组合可能被 Windows 系统保留而无法注册；如果无效，请尝试",
+        "globalHotkeyHintPart3": "组合键。",
+        "terminalHotkeysPart1": "终端标签页同时支持",
+        "terminalHotkeysPart2": "（新建标签页）与",
+        "terminalHotkeysPart3": "（关闭标签页）。"
+      },
+      "custom": {
+        "cardTitle": "自定义命令",
+        "description": "您的命令会显示在面板中，并可绑定专属快捷键。",
+        "addButton": "添加命令",
+        "empty": "暂无自定义命令。",
+        "untitled": "(未命名)",
+        "editTooltip": "编辑",
+        "deleteTooltip": "删除"
+      },
+      "editor": {
+        "editTitle": "编辑 · {{label}}",
+        "newTitle": "新建命令",
+        "shellLabel": "Shell",
+        "shellDefaultOption": "默认",
+        "projectLabel": "项目（选填）",
+        "projectNoneOption": "无",
+        "labelLabel": "名称",
+        "labelPlaceholder": "例如：执行迁移",
+        "actionLabel": "动作",
+        "commandLabel": "命令",
+        "operationLabel": "操作",
+        "serviceLabel": "服务",
+        "serviceSelectOption": "请选择…",
+        "pageLabel": "页面",
+        "hotkeyLabel": "快捷键（选填）",
+        "saveButton": "保存命令",
+        "cancelButton": "取消"
+      },
+      "errors": {
+        "labelRequired": "命令需要填写名称"
+      },
+      "saveSuccessFlash": "命令已保存",
+      "removeSuccessFlash": "命令已删除"
+    },
+    "experimental": {
+      "agentSessions": {
+        "cardTitle": "智能体会话",
+        "title": "项目优先的 AI 编程智能体",
+        "description": "在现有项目内运行 Claude Code、Codex、Kimi 和 OpenCode。当前检出为默认路径；切换分支或独立工作树均由您自主明确选择。",
+        "enabledFlash": "智能体会话已启用",
+        "disabledFlash": "智能体会话已禁用"
+      },
+      "terminalAgents": {
+        "cardTitle": "LaraEnv 终端中的智能体",
+        "title": "追踪您手动启动的智能体",
+        "description": "默认与智能体会话同步启用。在 LaraEnv 终端中输入 claude、codex、kimi 或 opencode 时，会将该会话添加到「智能体」中，具备实时状态和断点恢复能力。LaraEnv 会在每个提供商的全局配置中保留一个轻量生命周期钩子；该钩子在 LaraEnv 终端外部不会执行任何操作。关闭此选项可移除这些钩子。",
+        "hookInstalled": "已安装钩子",
+        "hookNotInstalled": "未安装",
+        "enabledFlash": "终端智能体追踪已启用",
+        "disabledFlash": "终端智能体追踪已禁用"
+      },
+      "localMetadata": {
+        "cardTitle": "本地元数据",
+        "title": "重置 LaraEnv 智能体元数据",
+        "description": "清除 LaraEnv 的会话卡片和恢复 ID。先前的元数据文件将附带时间戳归档备份。提供商的对话记录、凭据、仓库、路由及工作树绝不会被删除。",
+        "resettingLabel": "正在重置…",
+        "resetButton": "重置元数据",
+        "confirmTitle": "重置 LaraEnv 智能体会话？",
+        "confirmMessage": "提供商对话记录和凭据绝不会被删除。托管的工作树必须预先移除。",
+        "confirmLabel": "重置",
+        "resetFlashWithPath": "智能体元数据已重置。旧文件归档于 {{path}}",
+        "resetFlash": "智能体元数据已重置"
+      }
+    },
+    "phpExtensions": {
+      "header": {
+        "extensionsLabel": "扩展",
+        "summary": "{{enabled}} 已启用 · 共 {{total}} 个",
+        "backToExtensions": "返回扩展列表",
+        "viewIni": "查看 php.ini"
+      },
+      "ini": {
+        "revertButton": "还原",
+        "saveButton": "保存并重启 FPM"
+      },
+      "search": {
+        "placeholder": "筛选扩展…"
+      },
+      "pecl": {
+        "summary": "PECL 扩展（已安装 {{installed}}/{{total}}）",
+        "installedBadge": "已安装",
+        "reinstallTooltip": "重新安装（重新下载 zip）",
+        "installTooltip": "下载并启用",
+        "reinstallButton": "重新安装",
+        "installButton": "安装",
+        "phaseDownload": "下载",
+        "phaseExtract": "解压"
+      },
+      "download": {
+        "downloading": "正在从 windows.php.net 下载 PHP zip ({{percent}}%)",
+        "extracting": "正在解压…",
+        "progressDetail": "{{done}} / {{total}} MB · {{speed}}"
+      },
+      "errors": {
+        "generic": "错误: {{error}}",
+        "itemMessage": "{{name}}: {{message}}",
+        "dismissTooltip": "忽略错误"
+      },
+      "list": {
+        "empty": "没有匹配的扩展。",
+        "downloadDllTooltip": "从 windows.php.net 下载缺失的 DLL（仅限内置扩展）",
+        "fetchingLabel": "获取中",
+        "noDllLabel": "无 DLL"
+      },
+      "iniChooser": {
+        "title": "您希望如何编辑 php.ini？",
+        "builtinTitle": "内置编辑器 (VSCode Monaco)",
+        "builtinDesc": "Monaco 编辑器 · 搜索、语法高亮 · 保存并自动重启 FPM",
+        "systemTitle": "系统默认编辑器",
+        "systemDesc": "使用操作系统默认应用程序打开 · 在外部应用保存后手动重启 FPM",
+        "cancelButton": "取消"
+      },
+      "flash": {
+        "peclInstalled": "{{version}} 已安装 — FPM 已重启",
+        "installFailed": "安装失败",
+        "enabledWord": "已启用",
+        "disabledWord": "已禁用",
+        "extensionToggled": "{{name}} {{state}} — FPM 已重启",
+        "dllInstalled": "{{name}}.dll 已安装 — FPM 已重启",
+        "openedInSystemEditor": "已在系统编辑器中打开 {{path}}",
+        "iniSaved": "php.ini 已保存 — FPM 已重启"
+      }
+    },
+    "vcRedist": {
+      "title": "需要 Visual C++ Redistributable 运行库",
+      "binaryReason": "由于系统尚未安装 Microsoft Visual C++ Redistributable，无法启动。",
+      "genericReason": "LaraEnv 所需的二进制程序无法启动，因为本系统尚未安装 Microsoft Visual C++ Redistributable。",
+      "installNote": "这是来自微软的一次性安装包（约 14 MB），PHP、MySQL、Apache 等工具均依赖它。安装完成后，重启 LaraEnv 即可。",
+      "copyTooltip": "复制下载链接",
+      "copiedLabel": "已复制",
+      "copyLabel": "复制",
+      "dismissButton": "忽略",
+      "openPageButton": "打开下载页面"
+    }
+  },
+  "sidebar": {
+    "nav": {
+      "dashboard": "仪表盘",
+      "projects": "项目",
+      "terminal": "终端",
+      "cron": "定时任务",
+      "deployments": "部署",
+      "downloads": "库/工具",
+      "settings": "设置"
+    },
+    "account": {
+      "viewPlan": "查看套餐",
+      "pro": "Pro",
+      "free": "免费版"
+    },
+    "footer": {
+      "supportTooltip": "支持此项目",
+      "donate": "赞助",
+      "githubTooltip": "GitHub 上的 LaraEnv — 欢迎 Star、反馈问题或贡献代码",
+      "github": "LaraEnv GitHub",
+      "madeWithLove": "倾心打造",
+      "hateForAds": "拒绝广告"
+    }
+  },
+  "dashboard": {
+    "services": {
+      "title": "服务",
+      "emptyPrefix": "尚未配置任何服务。点击",
+      "setupAndStart": "一键配置并启动",
+      "emptySuffix": "以下载推荐技术栈（PHP、nginx、MySQL、Mailpit、Node.js）并一键启动。",
+      "startAll": "启动全部",
+      "stopAll": "停止全部",
+      "starting": "正在启动…",
+      "stopping": "正在停止…",
+      "stoppedAll": "已停止所有服务",
+      "startedAll": "已启动所有服务"
+    },
+    "serviceTooltips": {
+      "webServer": "Web 服务器 · http://localhost",
+      "mysql": "主机: localhost · 端口: 3306 · 用户: root · 密码: (空)",
+      "postgres": "主机: localhost · 端口: 5432 · 用户: postgres · 密码: (空)",
+      "mailpit": "SMTP :1025 · Web 界面 http://localhost:8025",
+      "redis": "主机: localhost · 端口: 6379"
+    },
+    "hero": {
+      "tagline": "让本地开发更简单",
+      "quoteFallbackText": "先解决问题，再编写代码。",
+      "quoteFallbackAuthor": "John Johnson"
+    },
+    "system": {
+      "title": "系统"
+    },
+    "runtimes": {
+      "title": "运行环境",
+      "noneInstalled": "未安装 — 请通过「库/工具」安装",
+      "reloadPhpTooltip": "刷新 PHP 版本",
+      "reloadNodeTooltip": "刷新 Node 版本",
+      "phpActive": "PHP {{version}} 当前处于活动状态 — 新终端将使用此版本",
+      "nodeActive": "Node {{version}} 当前处于活动状态 — 新终端将使用此版本"
+    },
+    "errors": {
+      "generic": "错误: {{message}}"
+    },
+    "serviceCard": {
+      "pleaseWait": "请稍候…"
+    },
+    "status": {
+      "running": "运行中",
+      "stopped": "已停止",
+      "starting": "正在启动…",
+      "stopping": "正在停止…",
+      "unknown": "…"
+    },
+    "metrics": {
+      "loading": "加载中…",
+      "cpu": "CPU",
+      "memory": "内存",
+      "gpu": "GPU",
+      "disk": "磁盘",
+      "gpuUnavailable": "不可用"
+    },
+    "phpFpm": {
+      "empty": "未安装任何 PHP 版本。",
+      "extensionsTooltip": "扩展与 php.ini",
+      "stopTooltip": "停止",
+      "startTooltip": "启动"
+    }
+  },
+  "projects": {
+    "title": "项目",
+    "reload": {
+      "title": "重载 nginx/apache/php-fpm 并刷新列表",
+      "label": "刷新"
+    },
+    "newProjectButton": "新建项目",
+    "tld": {
+      "dropdownTitle": "更改所有项目的顶层域名 (TLD)",
+      "custom": "自定义…",
+      "promptTitle": "自定义顶级域名 (TLD)",
+      "promptLabel": "TLD（不带前导点）"
+    },
+    "filters": {
+      "label": "筛选",
+      "all": {
+        "other": "全部 ({{count}})"
+      },
+      "untagged": {
+        "other": "未分类 ({{count}})"
+      },
+      "tagged": {
+        "other": "{{tag}} ({{count}})"
+      }
+    },
+    "list": {
+      "configuredSites": "已配置的站点",
+      "searchPlaceholder": "筛选…",
+      "searchTooltip": "筛选项目",
+      "emptyPrefix": "暂无项目。点击",
+      "emptySuffix": "或拖放文件夹至",
+      "noMatch": "没有符合当前筛选条件的项目。"
+    },
+    "common": {
+      "current": "(当前)",
+      "defaultLabel": "默认",
+      "workingLabel": "处理中…",
+      "removeTagTooltip": "移除标签",
+      "tagsPlaceholder": "staging, prod, client-x…",
+      "deleteLabel": "删除",
+      "startLabel": "启动",
+      "terminalFallback": "终端",
+      "editorFallback": "编辑器",
+      "customFallback": "自定义"
+    },
+    "errors": {
+      "generic": "错误: {{message}}"
+    },
+    "flash": {
+      "reloaded": "已刷新",
+      "sslEnabled": "{{name}} → HTTPS 已启用",
+      "sslDisabled": "{{name}} → HTTPS 已禁用",
+      "phpVersionSet": "{{project}} → PHP {{version}}",
+      "nodeVersionSet": "{{project}} → Node {{version}}",
+      "devServerStopped": "{{name}} → 开发服务器已停止",
+      "devServerStarting": "{{name}} → 开发服务器启动中…",
+      "queueWorkerStopped": "{{name}} → 队列工作进程已停止",
+      "queueWorkerStarting": "{{name}} → 队列工作进程启动中…",
+      "queueWorkerRestarting": "{{name}} → 队列工作进程重启中…",
+      "devCommandUpdated": "{{name}} → 开发命令已更新",
+      "devCommandReset": "{{name}} → 开发命令已重置为默认值",
+      "noPortDetected": "{{name}} 尚未检测到端口",
+      "proxyWired": "{{name}} → 反向代理至 localhost:{{port}}",
+      "proxyDisabled": "{{name}} → 代理已禁用",
+      "projectAdded": "已添加项目: {{name}}",
+      "projectRemoved": "已移除项目: {{name}}",
+      "phpInstalled": "PHP {{version}} 已安装",
+      "kindInstalled": "{{kind}} {{version}} 已安装",
+      "defaultTerminal": "默认终端: {{kind}}",
+      "defaultEditor": "默认编辑器: {{kind}}"
+    },
+    "sslCertDialog": {
+      "title": "HTTPS 需要受信任的证书",
+      "checkFailedReason": "LaraEnv 无法检测证书颁发机构是否受信任。",
+      "message": "在此计算机信任 LaraEnv 签发本地证书的 CA 之前，浏览器会对每次 HTTPS 请求发出警告。您可以在「设置 → 服务」中进行配置。",
+      "confirmLabel": "打开设置",
+      "cancelLabel": "稍后"
+    },
+    "trustCaDialog": {
+      "title": "信任本地根证书颁发机构？",
+      "introBeforeHost": "LaraEnv 使用在此计算机上生成的根证书颁发机构，为包括",
+      "afterHost": "在内的本地 HTTPS 证书进行签名 — 但 Windows 尚未信任该机构，因此浏览器会弹出警告。信任操作会将该根证书安装进 Windows，使本设备信任 LaraEnv 为本地站点签发的证书；此操作绝不影响其他任何计算机。此版本以绿色免安装文件夹方式运行，绝不会在未经同意的情况下修改系统设置 — 安装版则会自动完成该步骤。",
+      "confirmLabel": "信任本地 CA",
+      "cancelLabel": "暂不",
+      "trustedFlash": "已信任本地证书颁发机构 — {{host}} 现已完全支持 HTTPS",
+      "trustFailedFlash": "信任配置失败: {{message}}"
+    },
+    "row": {
+      "dotNoServer": "未运行 Web 服务器 — 请从仪表盘启动",
+      "dotRunning": "站点可访问 · 开发服务器运行中",
+      "dotReachable": "站点可访问",
+      "packageManagerTooltip": "检测到的包管理器: {{manager}}",
+      "proxyBadgeTitle": "反向代理 → localhost:{{port}}",
+      "proxyBadge": "代理:{{port}}",
+      "tagFilterTooltip": "按标签 \"{{tag}}\" 筛选",
+      "addTagLabel": "标签",
+      "editTagsLabel": "编辑",
+      "editTagsTooltip": "编辑标签",
+      "sslBadgeOn": "SSL",
+      "sslBadgeOff": "无 SSL",
+      "groupRuntime": "运行环境",
+      "groupAgents": "智能体",
+      "groupOpen": "打开",
+      "groupDev": "开发",
+      "groupManage": "管理",
+      "folder": "文件夹",
+      "browser": "浏览器",
+      "logs": "日志",
+      "proxyOnLabel": "代理开启",
+      "wireProxyLabel": "绑定代理",
+      "proxyActiveTitle": "反向代理生效中 → localhost:{{port}}。点击可禁用。",
+      "proxyActiveStoppedTitle": "反向代理生效中 → localhost:{{port}} (开发服务器已停止)。点击可禁用。",
+      "wireProxyTitle": "绑定 {{host}} → localhost:{{port}}",
+      "sslButtonOn": "SSL 开启",
+      "sslButtonOff": "SSL 关闭",
+      "sslButtonOnTooltip": "禁用 HTTPS",
+      "sslButtonOffTooltip": "启用 HTTPS (自签名)",
+      "config": "配置",
+      "history": "历史"
+    },
+    "terminalDropdown": {
+      "title": "在项目文件夹中打开终端（使用该项目的 PHP 版本）",
+      "header": "打开终端",
+      "none": "无可用终端",
+      "notInstalledHeader": "未安装",
+      "installHint": "— 请通过「库/工具」安装",
+      "setDefaultTooltip": "设为默认终端"
+    },
+    "editorDropdown": {
+      "title": "为此项目选择代码编辑器",
+      "header": "在编辑器中打开",
+      "none": "未检测到编辑器",
+      "notDetectedHeader": "未检测到",
+      "customHeader": "自定义命令",
+      "customPlaceholder": "例如: code",
+      "openButton": "打开",
+      "openButtonTooltip": "使用此命令打开",
+      "setDefaultTooltip": "设为默认编辑器",
+      "setDefaultCustomTooltip": "设为默认"
+    },
+    "nodeDropdown": {
+      "title": "为此项目设置 Node 版本",
+      "noneInstalledTitle": "未安装 Node 版本 — 请在「库/工具」中安装",
+      "noneInstalledBody": "未安装 Node — 请在「库/工具」中安装"
+    },
+    "phpDropdown": {
+      "title": "为此项目设置 PHP 版本"
+    },
+    "queueWorker": {
+      "onLabel": "队列开启",
+      "offLabel": "队列",
+      "runningTitle": "队列进程 PID {{pid}} — 点击停止",
+      "startTitle": "启动 php artisan queue:work",
+      "moreTooltip": "更多队列操作",
+      "restart": "重启",
+      "startWithParams": "带参数启动…",
+      "startWithParamsDisabledTooltip": "请先停止进程以使用新参数启动"
+    },
+    "devServer": {
+      "stopLabel": "停止",
+      "runningTitle": "运行中 — 点击停止",
+      "runningWithPortTitle": "运行在 :{{port}} — 点击停止",
+      "startWithCmdTitle": "启动: {{cmd}}",
+      "startDefaultTitle": "启动开发服务器 (npm run dev)",
+      "customCmdDotTitle": "自定义命令",
+      "optionsTooltip": "开发命令选项",
+      "configureButton": "配置命令…",
+      "configureDisabledTooltip": "请先停止开发服务器以修改命令"
+    },
+    "queueParams": {
+      "title": "启动队列工作进程 — {{project}}",
+      "commandLabel": "命令",
+      "argsLabel": "额外参数",
+      "hint": "按项目保存 — 下次打开将自动恢复上次的数值。"
+    },
+    "devCommandModal": {
+      "title": "开发命令 — {{project}}",
+      "commandLabel": "命令",
+      "windowsWarningA": "在 Windows 上，",
+      "windowsWarningB": "可能会崩溃，因为 Laravel 的开发脚本会运行",
+      "windowsWarningC": "，这需要",
+      "windowsWarningD": "扩展（Windows 不支持该扩展）。",
+      "patchingLabel": "正在修补…",
+      "makeSafeButton": "修复 composer run dev 以安全兼容 Windows",
+      "makeSafeTooltip": "修改 composer.json 以从 dev 脚本中移除 pail 进程",
+      "windowsNotePrefix": "修改您项目的",
+      "windowsNoteSuffix": "开发脚本以移除 Pail 进程。可逆操作 — 这是您的本地文件。",
+      "hintA": "留空则使用默认的",
+      "hintB": "。使用",
+      "hintC": "占位符指定开发服务器端口的位置 — 它将被替换为 LaraEnv 预留的空闲端口。如果不加，工具将自行选择端口（仍可通过日志自动识别用于反向代理）。",
+      "hintD": "示例:",
+      "resetButton": "重置为默认",
+      "resetTooltip": "恢复为 npm run dev"
+    },
+    "newModal": {
+      "title": "新建项目",
+      "types": {
+        "blankLabel": "空白",
+        "blankDesc": "空文件夹 + 欢迎页面",
+        "gitLabel": "从 Git 克隆",
+        "wordpressDesc": "来自 wordpress.org 的最新版 WP",
+        "viteDesc": "create vite (react/vue/svelte/…)",
+        "nextDesc": "create-next-app (React + SSR)",
+        "nuxtDesc": "create nuxt (Vue + SSR)",
+        "astroDesc": "create astro (内容驱动型框架)"
+      },
+      "nameLabel": "项目名称",
+      "tagsLabel": "标签",
+      "tagsOptional": "(选填)",
+      "gitUrlLabel": "Git 仓库链接",
+      "laravelVersionLabel": "Laravel 版本",
+      "phpVersionLabel": "PHP 版本",
+      "phpMinHint": "需要 PHP ≥{{min}}",
+      "activeSuffix": " (当前激活)",
+      "noPhpAvailable": "未安装 PHP ≥{{min}} — 请在「库/工具」中安装。",
+      "packageManagerLabel": "包管理器",
+      "viteTemplateLabel": "Vite 模板",
+      "createButton": "创建",
+      "nameRequired": "项目名称必填",
+      "gitUrlRequired": "Git URL 必填",
+      "installPhpRequired": "请安装 PHP ≥{{min}} 以适配 Laravel {{version}}",
+      "creatingLog": "正在创建 {{kind}} 项目 \"{{name}}\"…"
+    },
+    "deleteDialog": {
+      "title": "移除 {{name}}",
+      "prompt": "您希望如何处理",
+      "vhostOnlyTitle": "仅移除虚拟主机",
+      "vhostOnlyDescPrefix": "删除 nginx 配置和 hosts 解析条目。文件夹",
+      "vhostOnlyDescSuffix": "仍保留在磁盘上。",
+      "fullDeleteTitle": "彻底删除项目",
+      "fullDeleteDescPrefix": "移除虚拟主机 + 永久删除磁盘文件夹",
+      "fullDeleteDescSuffix": "。此操作不可撤销。",
+      "dropDbLabel": "同时删除项目的数据库（仅适用于彻底删除）",
+      "confirmTitle": "确认永久删除 {{name}}？",
+      "confirmMessage": "{{path}} 将被删除。此操作无法撤销。",
+      "confirmMessageWithDb": "{{path}} 及其关联数据库将被删除。此操作无法撤销。",
+      "vhostRemovedFlash": "虚拟主机与 hosts 条目已移除（文件夹已保留）",
+      "deletedFlash": "{{name}} 已删除（文件夹 + 虚拟主机）",
+      "deletedFlashWithDb": "{{name}} 已删除（文件夹 + 虚拟主机 + 数据库）"
+    },
+    "tagsModal": {
+      "title": "标签 · {{name}}",
+      "matchingTags": "匹配的标签",
+      "existingTags": "已有标签",
+      "keyboardHint": "按方向键选择，按 Tab 或 Enter 键添加",
+      "suggestionsAriaLabel": "标签建议",
+      "savedFlash": "标签已保存: {{name}}"
+    },
+    "vhostModal": {
+      "title": "虚拟主机 · {{name}}",
+      "warning": "手动修改的内容将一直保留，直到您点击「重置」，或者更改项目的 PHP 版本 / TLD（这些操作会根据模板重新生成配置）。",
+      "notGenerated": "未针对 {{server}} 生成 — 此服务可能尚未针对此项目安装。",
+      "resetButton": "重置为模板",
+      "resetTooltip": "根据模板重新生成",
+      "resetConfirmTitle": "根据模板重新生成？",
+      "resetConfirmMessage": "对该虚拟主机的任何手动修改都将被丢弃。",
+      "resetConfirmLabel": "重新生成",
+      "resetFlash": "虚拟主机已重置为模板",
+      "discardConfirmTitle": "放弃未保存的更改？",
+      "discardConfirmLabel": "放弃",
+      "saveButton": "保存并重载",
+      "savedFlash": "虚拟主机配置已保存并重载 {{server}}"
+    },
+    "portsModal": {
+      "title": "正在使用的端口",
+      "searchPlaceholder": "按所属对象、进程、端口或类型筛选…",
+      "clearTooltip": "清除",
+      "portColumn": "端口",
+      "processColumn": "进程",
+      "pidColumn": "PID",
+      "actionsColumn": "操作",
+      "empty": "目前没有正在使用的 LaraEnv 端口。",
+      "noMatch": "未找到匹配 “{{query}}” 的端口。",
+      "portCount": {
+        "other": "{{count}} 个端口"
+      },
+      "kill": "强制终止",
+      "killing": "正在终止…",
+      "killTooltip": "终止占用此端口的进程",
+      "footer": "显示 LaraEnv 开发服务器和服务占用的 TCP 端口，按所有者归类。\"{{killWord}}\" 可释放卡住的端口。",
+      "badgeDev": "开发",
+      "badgeService": "服务",
+      "badgeOrphan": "孤儿进程"
+    },
+    "bootstrap": {
+      "titleConfirm": "配置推荐技术栈",
+      "titleInstalling": "正在安装推荐技术栈…",
+      "titleStarting": "正在启动服务…",
+      "titleDone": "技术栈已就绪",
+      "titleError": "初始化配置失败",
+      "descAllInstalled": "所有组件均已安装。点击「启动」即可运行所有服务。",
+      "descNeedsInstall": "这些组件将并行下载并安装，完成后自动启动。",
+      "prereleaseBadge": "测试版",
+      "prereleaseTooltip": "非稳定发布版 — 安装前请参阅下方说明",
+      "alreadyInstalled": "已安装",
+      "queued": "排队中",
+      "downloadingPercent": "正在下载 {{percent}}%",
+      "extracting": "正在解压…",
+      "doneLabel": "已安装",
+      "installAndStartButton": "安装并启动",
+      "startServices": "启动服务",
+      "readyFlash": "推荐技术栈已就绪",
+      "errorFlash": "初始化配置错误: {{message}}"
+    }
+  },
+  "deployments": {
+    "deletedFlash": "部署已删除",
+    "title": "部署",
+    "loading": "加载中…",
+    "reloadButton": "刷新",
+    "sshHostLabel": "SSH 主机",
+    "deleteLabel": "删除",
+    "destroyButton": "完全销毁",
+    "builtInSuffix": "(内置)",
+    "waitingForOutput": "(等待输出)",
+    "errors": {
+      "generic": "错误: {{message}}"
+    },
+    "steps": {
+      "aptUpdate": "apt update",
+      "addSuryRepo": "添加 sury.org PHP 源（用于安装现代化 PHP 版本）",
+      "installMissingPackages": "安装缺失的软件包: {{packages}}",
+      "verifyPhpInstalled": "验证 php{{version}} 是否已安装",
+      "createDeployDir": "创建部署目录 {{path}}",
+      "cloneRepo": "克隆代码仓库",
+      "bootstrapMysqlDb": "为 {{name}} 初始化 MySQL 数据库和用户",
+      "ensureEnvExists": "确保 .env 文件存在",
+      "runBuildScript": "运行构建脚本",
+      "runDeployPipeline": "运行部署流水线",
+      "setLaravelPermissions": "设置 Laravel 运行时权限 (storage, bootstrap/cache)",
+      "writePhpFpmPool": "写入 {{name}} 的 PHP-FPM 进程池配置",
+      "disableDefaultPhpFpmPool": "禁用默认的 PHP-FPM www 进程池",
+      "systemdDropinFpm": "为 {{unit}} 注入 systemd Restart=always 配置",
+      "systemdDropinNginx": "为 nginx 注入 systemd Restart=always 配置",
+      "reloadSystemdRestartFpm": "重载 systemd 并重启 php{{version}}-fpm",
+      "enableApacheModules": "启用 apache 模块 (rewrite, php{{version}})",
+      "writeApacheVhost": "为 {{domain}} 写入 apache 虚拟主机配置",
+      "reloadApache": "重载 apache",
+      "writeNginxVhost": "为 {{domain}} 写入 nginx 虚拟主机配置",
+      "reloadNginx": "重载 nginx",
+      "installCertbot": "安装 certbot",
+      "obtainCertificate": "为 {{domain}} 获取 Let's Encrypt 证书",
+      "installAutopullScript": "安装自动拉取脚本",
+      "scheduleAutopull": "配置自动拉取计划任务 ({{schedule}})",
+      "removeAutopullCron": "移除自动拉取的 Cron 定时条目",
+      "removeAutopullScript": "移除自动拉取脚本",
+      "disableRemoveApacheVhost": "禁用并移除 apache 虚拟主机",
+      "removeNginxVhost": "移除 nginx 虚拟主机",
+      "removePhpFpmPoolConfig": "移除 PHP-FPM 进程池配置和慢日志",
+      "reloadPhpFpm": "重载 PHP-FPM",
+      "revokeCertificate": "吊销 {{domain}} 的 Let's Encrypt 证书",
+      "dropMysqlDb": "删除 MySQL 数据库 {{dbName}} 及用户 {{dbUser}}",
+      "wipeDeployDir": "清空部署目录 {{path}}",
+      "deployProject": "部署 {{name}}"
+    },
+    "status": {
+      "never": "从未",
+      "ok": "正常",
+      "error": "错误",
+      "running": "运行中"
+    },
+    "proFeature": {
+      "title": "Pro 功能",
+      "description": "Mini-Forge 自动化配置远程服务器（检测系统及安装的技术栈、安装缺失软件包、配置虚拟主机、注册 Cron、集成自动部署脚本） — 全流程直接基于您在此处配置的 SSH 主机完成。",
+      "upgradeBefore": "前往",
+      "upgradePath": "设置 → 账户",
+      "upgradeAfter": "进行升级。"
+    },
+    "presetsButton": {
+      "tooltip": "管理部署脚本预设",
+      "label": "脚本预设"
+    },
+    "newButton": {
+      "needHostTooltip": "请先添加一台 SSH 主机",
+      "tooltip": "创建新部署",
+      "label": "新建部署"
+    },
+    "empty": {
+      "needHost": "请先在 SSH 页面添加 SSH 主机 — 部署操作需指向已有主机。",
+      "noDeployments": "暂无部署。点击「新建部署」以配置您的首个远程目标。"
+    },
+    "card": {
+      "osLabel": "操作系统",
+      "osNotDetected": "尚未检测",
+      "projectLabel": "项目",
+      "projectNotSet": "未设置",
+      "lastRunLabel": "上次运行",
+      "detectTooltip": "通过 SSH 连接到主机并探测其操作系统及已安装软件",
+      "detectButton": "检测",
+      "applyNeedDetectTooltip": "请先运行检测",
+      "applyTooltip": "配置并执行应用",
+      "applyButton": "应用配置",
+      "deployTooltip": "立即执行部署流水线: 拉取代码 + 条件构建。不会改动软件包、虚拟主机或 SSL。",
+      "deployButton": "部署",
+      "activityTooltip": "查看自动部署拉取历史",
+      "activityButton": "活动记录",
+      "destroyTooltip": "从远程主机彻底清理一切: 目录、虚拟主机、数据库、Cron、SSL",
+      "deleteTooltip": "删除部署记录",
+      "deleteAppliedTooltip": "仅移除此部署记录（不会影响远程主机 — 如需清理请使用「完全销毁」）"
+    },
+    "deleteConfirm": {
+      "title": "删除部署 \"{{name}}\"？",
+      "message": "运行历史记录也将被删除。"
+    },
+    "newModal": {
+      "nameLabel": "名称",
+      "hostHint": "检测与应用操作将使用您在 SSH 页面保存的凭据通过 SSH 连接到此主机。",
+      "nameRequired": "名称必填",
+      "pickHostRequired": "请选择一台 SSH 主机",
+      "createdFlash": "部署已创建",
+      "createButton": "创建"
+    },
+    "detectModal": {
+      "inProgress": "正在检测…",
+      "failed": "检测失败",
+      "complete": "检测完成"
+    },
+    "applyModal": {
+      "heading": "应用配置 — {{name}}",
+      "projectTypeLabel": "项目类型",
+      "projectKind": {
+        "laravel": "Laravel",
+        "static": "静态站点 (HTML/CSS/JS)",
+        "custom": "自定义"
+      },
+      "domainLabel": "域名",
+      "domainHintEffective": "生效域名: {{domain}}",
+      "domainHintExample": "例如: example.com",
+      "environmentLabel": "运行环境",
+      "env": {
+        "production": "生产环境 (production)",
+        "development": "开发环境 (development)",
+        "staging": "预发布环境 (staging)"
+      },
+      "gitSourceHeader": "Git 源码",
+      "gitUrlLabel": "仓库链接 (HTTPS)",
+      "gitUrlHint": "公开仓库: 直接粘贴即可。私有仓库: 粘贴常规 URL 并在下方填入 PAT — 我们会自动拼接。",
+      "gitPatLabel": "GitHub 个人访问令牌 (PAT) — 仅私有仓库需要",
+      "gitPatHint": "在 https://github.com/settings/tokens 生成 (Classic，权限勾选: repo)。公开仓库留空。会自动拼接入 URL — 绝不写入本机磁盘。",
+      "branchLabel": "分支",
+      "webServerLabel": "Web 服务器",
+      "phpNoneOption": "无 (跳过 PHP)",
+      "databaseLabel": "数据库",
+      "databaseNoneOption": "无",
+      "pipelineHeader": "部署流水线",
+      "previewScriptTooltip": "查看即将执行的完整脚本（变量已替换）",
+      "previewScriptButton": "预览脚本",
+      "presetLabel": "预设",
+      "presetHint": "在克隆后（应用配置时）、点击「部署」按钮时以及自动部署 Cron 中执行。内置预设会在 lock 文件未变化时自动跳过 composer/npm。",
+      "legacyOption": "自由文本构建脚本（旧版）",
+      "buildScriptLabel": "构建脚本",
+      "buildScriptHint": "git pull 后在项目根目录下运行。多行 Bash 脚本。不支持变量替换。",
+      "presetVarHint": "{{token}}",
+      "presetVarHintWithDefault": "{{token}} — 默认: {{default}}",
+      "customScriptHeader": "专属于此部署的定制脚本",
+      "resetToPresetTooltip": "丢弃自定义修改，恢复为预设脚本",
+      "resetToPresetButton": "恢复为预设",
+      "overrideHint": "仍可使用 {{token}} — 它们将在运行时替换。预设模板本身不会被更改。",
+      "customizeScriptTooltip": "编辑专属于此部署的私有脚本副本",
+      "customizeScriptButton": "为此部署定制脚本",
+      "httpsHeader": "HTTPS 与自动部署",
+      "enableSslLabel": "通过 Let's Encrypt 启用 HTTPS",
+      "enableSslHint": "安装 certbot 并为 {{domain}} 签发正式证书。域名必须已解析至此服务器 IP。",
+      "domainFallback": "域名",
+      "letsEncryptEmailLabel": "Let's Encrypt 通知邮箱",
+      "autoDeployLabel": "代码推送时自动部署 (Git push)",
+      "autoDeployHintBefore": "在远程主机添加定时任务，定期拉取并重新构建。日志写入到",
+      "autoDeployHintAfter": "。",
+      "cronLabel": "拉取计划 (Cron)",
+      "cronHint": "5 段式表达式。默认: 每 5 分钟执行一次。",
+      "footerA": "应用操作将通过 SSH 登录到",
+      "footerB": "，运行",
+      "footerC": "以安装系统包（需要免密 sudo），克隆仓库至",
+      "footerD": "，配置 nginx 虚拟主机并重载 nginx。整合后的日志将在上传前使用您的同步密钥加密。",
+      "runApplyButton": "执行应用",
+      "domainRequired": "域名必填",
+      "letsEncryptEmailRequired": "Let's Encrypt 需要提供邮箱",
+      "autoDeployGitUrlRequired": "自动部署需要指定 Git 仓库链接",
+      "pickPresetRequired": "请选择部署预设（或切换到自由文本脚本）"
+    },
+    "runLog": {
+      "applying": "正在应用配置 — {{name}} @ {{host}}",
+      "deploying": "正在部署 — {{name}} @ {{host}}",
+      "destroying": "正在销毁 — {{name}} @ {{host}}",
+      "applyFailed": "应用配置失败 — {{name}}",
+      "deployFailed": "部署失败 — {{name}}",
+      "destroyFailed": "销毁失败 — {{name}}",
+      "destroyed": "已销毁 — {{name}}",
+      "deployed": "已部署",
+      "deployedTo": "已部署到 {{domain}}",
+      "busyTooltip": "正在执行…",
+      "failedSeeLog": "执行失败 — 详见下方日志",
+      "done": "完成",
+      "preparing": "准备中…",
+      "buildingPlan": "正在构建方案…"
+    },
+    "destroyModal": {
+      "title": "完全销毁 {{name}}？",
+      "introBefore": "此操作将通过 SSH 登录到",
+      "introAfter": "并不可逆地移除:",
+      "itemVhost": "nginx 虚拟主机配置 {{name}}.conf (+ 重载)",
+      "itemMysql": "MySQL 数据库及用户 ({{name}})",
+      "itemCron": "{{name}} 的 crontab 定时条目",
+      "itemSsl": "{{domain}} 的 Let's Encrypt 证书",
+      "domainFallback": "域名",
+      "recordDeletedNote": "此部署记录本身也将被删除。SSH 主机配置将保留。",
+      "typeToConfirmBefore": "请输入",
+      "typeToConfirmAfter": "以确认"
+    },
+    "activityModal": {
+      "title": "活动记录 — {{name}}",
+      "loadingLabel": "正在读取自动拉取日志…",
+      "emptyTitle": "暂无自动拉取活动。",
+      "emptyDetailBefore": "定时任务会将每次成功的",
+      "emptyDetailAfter": "记录在此处。如果您刚开启自动部署，请等待一个调度周期后再试。",
+      "openOnGithubTooltip": "在 GitHub 上查看 {{before}}...{{after}}",
+      "footer": {
+        "other": "显示最新的 {{count}} 次拉取。当日志截断时，较旧的记录会被轮转清理。"
+      }
+    },
+    "presetsModal": {
+      "title": "部署脚本预设",
+      "backButtonTooltip": "返回列表",
+      "editTitle": "编辑 — {{name}}",
+      "newPresetLabel": "新建预设",
+      "introBefore": "预设是包含",
+      "introAfter": "的 Bash 脚本流水线 — 每个部署选择一个，填写对应变量，并在执行前预览最终脚本。内置预设为只读模式: 可复制一份以适配客户需求。",
+      "loadingLabel": "加载中…",
+      "builtInBadge": "内置",
+      "viewButton": "查看",
+      "editButton": "编辑",
+      "duplicateTooltip": "创建可编辑的副本",
+      "duplicateButton": "复制副本",
+      "deleteTooltip": "删除预设",
+      "deletedFlash": "预设已删除",
+      "deleteConfirm": {
+        "title": "删除预设 \"{{name}}\"？",
+        "message": "使用该预设的部署项将需要重新选择预设。"
+      },
+      "nameRequired": "预设名称必填",
+      "invalidVarKey": "变量键名 \"{{key}}\" 无效 — 请使用小写字母、数字和下划线 _",
+      "reservedVarKey": "\"{{key}}\" 为内置变量名 — 请换一个名称",
+      "savedFlash": "预设已保存",
+      "builtinTokens": {
+        "name": "部署名称 (过滤处理后)",
+        "domain": "生效域名 (带环境前缀)",
+        "rawDomain": "原始域名 (不带环境前缀)",
+        "branch": "Git 分支",
+        "phpVersion": "例如: 8.3",
+        "gitUrl": "代码仓库 URL"
+      },
+      "editor": {
+        "nameLabel": "名称",
+        "descriptionLabel": "描述",
+        "descriptionPlaceholder": "说明此流水线的作用",
+        "builtinVarsHeader": "内置变量",
+        "customVarsHeader": "自定义变量",
+        "customVarsDescBefore": "在此处声明，在各个部署中赋值。在脚本中作为",
+        "customVarsDescAfter": "使用。",
+        "noneLabel": "无",
+        "keyPlaceholder": "键名",
+        "labelPlaceholder": "标签名（选填）",
+        "defaultValuePlaceholder": "默认值",
+        "addVariableButton": "添加变量",
+        "duplicateToCustomizeButton": "复制并定制",
+        "savePresetButton": "保存预设"
+      }
+    },
+    "previewModal": {
+      "titleDeploy": "部署脚本预览",
+      "titleApply": "渲染后的部署流水线",
+      "legacyBadge": "旧版构建脚本",
+      "subtitle": "这是将在服务器上实际运行的精确脚本 — 变量已完成替换。",
+      "unresolvedVars": "未解析的变量（保留原样）: {{tokens}} — 请在部署配置的预设变量中定义它们。",
+      "renderingLabel": "渲染中…"
+    }
+  },
+  "account": {
+    "accountCardTitle": "账户",
+    "syncCardTitle": "同步",
+    "planCardTitle": "套餐",
+    "logoutButton": "退出登录",
+    "syncRequiresProFlash": "同步功能需要 Pro 套餐",
+    "passphraseTooShortFlash": "同步密码至少需要 8 个字符",
+    "passphraseMismatchFlash": "两次输入的密码不匹配",
+    "passphraseSetFlash": "同步密码已设置。加密密钥已派生。",
+    "rekeyPasswordRequiredFlash": "请输入您的账户密码",
+    "checkingSubscriptionFlash": "正在查询订阅状态…",
+    "fillAllFieldsFlash": "请填写所有字段",
+    "accountCreatedFlash": "账户创建成功",
+    "loggedInFlash": "登录成功",
+    "loggedOutFlash": "已退出登录",
+    "signedInWithGithubFlash": "已通过 GitHub 登录",
+    "serverReachableFlash": "服务器连通正常",
+    "errors": {
+      "generic": "错误: {{message}}",
+      "unreachable": "无法连接: {{message}}"
+    },
+    "tierNames": {
+      "free": "免费版",
+      "pro": "Pro"
+    },
+    "sync": {
+      "enabledLabel": "已启用",
+      "disabledLabel": "已禁用",
+      "noKeyBadge": "无密钥",
+      "upsellPro": "升级到 Pro，在多台设备间通过端到端加密同步 SSH 主机、定时任务和偏好设置。",
+      "setPassphrasePrompt": "设置同步密码以派生加密密钥（独立于您的 GitHub 登录密码）。",
+      "hostsWatching": {
+        "other": "正在监视 {{count}} 台 SSH 主机。本地更改将自动推送。"
+      },
+      "toggleOnPrompt": "开启开关以开始同步。",
+      "rekeyTooltip": "重新加密同步数据（解决多设备间的密码不一致问题）",
+      "syncNowTooltip": "立即同步",
+      "setPassphraseTooltip": "点击设置同步密码",
+      "encryptionEnabledLabel": "端到端加密",
+      "encryptionMissingLabel": "未设置加密密钥",
+      "kdfKeyLabel": "{{kdf}} 密钥",
+      "encryptedDetail1": "所有数据在上传前均在此设备上加密。服务器仅保存密文。",
+      "encryptedDetail2": "密钥由您的密码或同步密码在本地派生，绝不会上传至服务器。",
+      "encryptedDetail3": "密文带有身份认证: 被篡改的内容或错误的密码会导致解密失败，而不会返回错误数据。",
+      "noKeyDetail": "请在此设备上设置同步密码以生成密钥。设置完成前不会上传任何数据。",
+      "passphraseModal": {
+        "title": "选择同步密码。",
+        "body": "该密码仅在此设备上用于派生 AES-256 加密密钥。服务器永远不会获取该密码。",
+        "warning": "如果您遗失此密码，同步的数据将无法恢复。",
+        "passphrasePlaceholder": "同步密码（至少 8 个字符）",
+        "confirmPlaceholder": "确认密码",
+        "submitButton": "设置密码并启用同步"
+      },
+      "rekeyModal": {
+        "title": "重新加密同步数据。",
+        "intro": "使用您当前的",
+        "accountPassword": "账户密码",
+        "middle": "重新加密服务器上的所有内容，并在此处应用新密钥。请在",
+        "canStillSync": "仍能正常同步",
+        "afterwards": "的设备上执行此操作 — 之后其他设备（使用相同密码登录）便可解密所有内容。若某台设备提示",
+        "differentPassphrase": "密码不一致",
+        "warningSuffix": "警告，可使用此功能修复。",
+        "passwordPlaceholder": "账户密码",
+        "submitButton": "立即重新加密"
+      }
+    },
+    "plan": {
+      "proTitle": "LaraEnv Pro",
+      "proSubtitle": "已启用同步与远程部署",
+      "freeSubtitle": "升级到 Pro 每月仅需 $3，解锁跨设备同步和远程部署功能",
+      "manageSubscriptionButton": "管理订阅",
+      "payWithStripeButton": "通过 Stripe 支付",
+      "payWithStripeTooltip": "通过 Stripe 使用信用卡支付",
+      "payWithPaypalButton": "通过 PayPal 支付",
+      "payWithPaypalTooltip": "使用 PayPal 支付",
+      "table": {
+        "featureHeader": "功能特性",
+        "currentBadge": "当前"
+      },
+      "features": {
+        "projects": "项目管理",
+        "sshHosts": "SSH 主机",
+        "cronJobs": "定时任务",
+        "localTerminal": "本地终端",
+        "crossDeviceSync": "跨设备同步",
+        "remoteDeploy": "远程部署",
+        "priorityUpdates": "优先更新"
+      }
+    },
+    "signIn": {
+      "signInLabel": "登录",
+      "createAccountLabel": "注册账户",
+      "continueWithGithubButton": "使用 GitHub 继续",
+      "orDivider": "或",
+      "nameLabel": "姓名",
+      "namePlaceholder": "您的称呼",
+      "emailLabel": "邮箱",
+      "passwordLabel": "密码",
+      "passwordHint": "至少 8 个字符。用于派生您的加密密钥 — 如果遗忘，同步数据将无法恢复。"
+    }
+  },
+  "agents": {
+    "status": {
+      "starting": "启动中",
+      "working": "工作中",
+      "needsInput": "等待输入",
+      "done": "完成",
+      "idle": "空闲",
+      "stopped": "已停止",
+      "error": "错误"
+    },
+    "launchModeLabel": {
+      "current": "当前",
+      "branch": "分支",
+      "worktree": "工作树"
+    },
+    "usage": {
+      "usedLabel": "已用",
+      "remainingLabel": "剩余",
+      "leftLabel": "剩余",
+      "unknownLabel": "未知",
+      "resetUnknown": "重置时间未知",
+      "resetsAt": "{{when}} 重置",
+      "availableLabel": "可用"
+    },
+    "filters": {
+      "searchPlaceholder": "搜索标题、项目、提供商或输出…",
+      "allProviders": "所有提供商",
+      "allStates": "所有状态",
+      "archivedLabel": "已归档"
+    },
+    "onboarding": {
+      "badge": "项目优先会话",
+      "title": "直接在项目所在的地方开始工作。",
+      "description": "选择项目和编程智能体。除非您明确指定分支或隔离的工作树，否则 LaraEnv 默认使用当前检出。",
+      "steps": {
+        "project": "项目",
+        "agent": "智能体",
+        "workingCopy": "工作副本"
+      },
+      "projectPlaceholder": "选择项目",
+      "workingCopyValue": "当前检出 · 分支 · 工作树",
+      "readyLabel": "就绪",
+      "notFoundLabel": "未找到",
+      "startButton": "启动智能体会话",
+      "addProjectButton": "请先添加项目"
+    },
+    "contextFolders": {
+      "heading": "会话文件夹",
+      "folderCount": {
+        "other": "{{count}} 个文件夹"
+      },
+      "newWorktreeLabel": "新工作树",
+      "mainLabel": "主干",
+      "removeFolderAria": "移除文件夹 {{directory}}",
+      "pathPlaceholder": "粘贴完整文件夹路径",
+      "pathInputAria": "附加文件夹路径",
+      "addFolderAria": "添加文件夹路径",
+      "addFolderTooltip": "添加文件夹",
+      "browseButton": "浏览",
+      "hint": "智能体可以读取和编辑这些文件夹。在您恢复此会话时它们依然有效。",
+      "worktreeHint": "附加文件夹使用其原始位置，与其他会话共享。",
+      "unsupportedHasFolders": "{{provider}} 不支持附加文件夹。请移除它们或改用 Claude Code、Codex 或 Kimi Code。",
+      "unsupportedNoFolders": "{{provider}} 不支持附加文件夹。如需添加，请选用 Claude Code、Codex 或 Kimi Code。",
+      "errorInvalidPath": "请输入完整的文件夹路径，或点击「浏览」选取。",
+      "errorDuplicate": "此文件夹已存在于会话上下文中。",
+      "errorBrowseFailed": "无法选取文件夹: {{message}}"
+    },
+    "sessionCard": {
+      "noPreviewFallback": "暂无输出预览",
+      "terminalBadge": "终端",
+      "terminalBadgeTooltip": "在 LaraEnv 终端中手动启动",
+      "openButton": "打开",
+      "resumeButton": "恢复",
+      "newSessionButton": "新会话",
+      "renameButton": "重命名",
+      "archiveButton": "归档",
+      "stopButton": "停止",
+      "stopTooltipAdopted": "停止将关闭此终端标签页",
+      "stopTooltipDefault": "停止此智能体",
+      "worktreeRuntimeLabel": "工作树运行时",
+      "runningBadge": "运行中 :{{port}}",
+      "dirtyBadge": "有未提交改动",
+      "logsButton": "日志",
+      "stopServerButton": "停止服务器",
+      "startServerButton": "启动服务器 :{{port}}",
+      "disconnectUrlsButton": "断开 URL 映射",
+      "removeWorktreeButton": "移除工作树",
+      "removeWorktreeDefaultTooltip": "移除此干净、未使用的工作树"
+    },
+    "usageBar": {
+      "limitsLabel": "额度",
+      "staleTooltip": "上次可用的读数；等待刷新",
+      "refreshTooltip": "刷新使用额度",
+      "sessionWindowPrefix": "5 小时",
+      "weeklyWindowPrefix": "周"
+    },
+    "usagePopover": {
+      "title": "智能体使用额度",
+      "subtitle": "仅显示提供商官方报告的配额；无估算百分比。",
+      "emptyMessage": "暂无可用的订阅额度信息。",
+      "staleNotice": "上次记录的读数。{{message}}",
+      "unavailableFallback": "用量不可用"
+    },
+    "domainRouting": {
+      "heading": "域名路由",
+      "hint": "选填。仅在工作树就绪后生效。",
+      "primaryOwner": "主要所有者: {{owner}}",
+      "mainCheckoutLabel": "主检出",
+      "restoreButton": "将主域名恢复到主检出",
+      "routingChangeHeading": "路由变更",
+      "fromLabel": "从: {{path}}",
+      "toLabel": "至: {{path}}",
+      "confirmRestoreButton": "确认恢复",
+      "leaveUnchangedOption": "保持主域名不变",
+      "serveFromWorktreeOption": "由此工作树提供主域名服务",
+      "serveFromWorktreeHint": "将转移 {{host}}；稍后可以恢复。",
+      "previewOption": "创建备用预览 URL",
+      "previewHint": "保持主 URL 可用的同时，为此工作树添加专属预览主机名。",
+      "previewHostnameLabel": "预览主机名",
+      "devServerPortLabel": "工作树开发服务器端口",
+      "portHint": "主检出已占用端口 {{port}}；此工作树需要另一个不同的运行端口。"
+    },
+    "gitLocation": {
+      "current": {
+        "label": "当前检出",
+        "detail": "使用已打开的分支。不改变 Git 状态。"
+      },
+      "branch": {
+        "label": "切换主检出分支",
+        "detail": "为整个项目切换分支。"
+      },
+      "worktree": {
+        "label": "隔离的工作树",
+        "detail": "创建或复用独立的代码检出目录。"
+      },
+      "selectedBadge": "已选择"
+    },
+    "routeBadge": {
+      "primaryTooltip": "项目主域名",
+      "alternativeTooltip": "备用工作树预览",
+      "mainLabel": "主站",
+      "previewLabel": "预览"
+    },
+    "launcher": {
+      "triggerTooltip": "在 {{project}} 中启动 AI 编程智能体",
+      "defaultButtonLabel": "智能体",
+      "header": "启动智能体",
+      "searchProjectSrLabel": "搜索项目",
+      "searchAria": "搜索要开启智能体会话的项目",
+      "searchPlaceholder": "搜索项目 · 已选 {{project}}",
+      "noProjectsFound": "未找到项目",
+      "detachedLabel": "游离状态",
+      "dirtyLabel": "未提交修改",
+      "cliUnavailable": "CLI 不可用",
+      "notDetected": "未检测到",
+      "workingCopyHeading": "工作副本",
+      "branchLabel": "分支",
+      "createBranchLabel": "创建此分支",
+      "baseRefLabel": "基准引用 (Base ref)",
+      "worktreeNameLabel": "工作树名称",
+      "dirtyWarning": "主检出目录有未提交的改动。在切换前请先 commit 或 stash。",
+      "gitUnavailableReason": "Git 信息不可用",
+      "checkoutStillAvailableSuffix": "。当前检出仍保持可用。",
+      "sharedCheckoutNotice": "与 {{titles}} 共享检出目录。两个智能体都可以编辑相同的文件。关闭此菜单可取消。",
+      "continueSharedButton": "使用共享检出继续",
+      "startAgentButton": "启动 {{agent}}",
+      "genericAgentFallback": "智能体",
+      "restoredFlash": "{{host}} 已恢复至主检出",
+      "restoreFailedFlash": "无法恢复 {{host}}: {{message}}",
+      "thisAgentFallback": "此智能体"
+    },
+    "page": {
+      "header": {
+        "title": "智能体",
+        "offBadge": "已关闭",
+        "newButtonLabel": "新建",
+        "refreshTooltip": "刷新会话",
+        "sessionViewAria": "会话视图",
+        "searchPlaceholder": "搜索会话...",
+        "allProjectsOption": "所有项目",
+        "projectFilterSrLabel": "按项目筛选会话",
+        "scopeLabels": {
+          "active": "活动",
+          "recent": "近期",
+          "archived": "已归档"
+        }
+      },
+      "disabled": {
+        "heading": "启用智能体会话",
+        "description": "按项目管理代码编程智能体，并在此导航器旁保持多个对话并行打开。",
+        "enablingButton": "正在启用…",
+        "enableButton": "启用智能体",
+        "footer": "在您明确选择分支或工作树之前，Git 中不会发生任何改动。"
+      },
+      "empty": {
+        "filtered": "没有符合这些筛选条件的会话",
+        "active": "暂无活动的会话",
+        "recent": "暂无近期会话",
+        "archived": "暂无归档会话",
+        "activeHint": "启动新的智能体，或打开可恢复的近期会话。",
+        "newSessionButton": "新建会话",
+        "viewRecentButton": "查看近期"
+      },
+      "locationWorktreeBadge": "工作树",
+      "locationSelectedBranch": "所选分支",
+      "locationCurrentCheckout": "当前检出",
+      "sessionAgeNow": "刚刚",
+      "projectGroup": {
+        "newSessionButtonLabel": "新建会话"
+      },
+      "actionsMenu": {
+        "triggerAria": "{{title}} 的操作菜单",
+        "foldersHeading": "会话文件夹",
+        "openSession": "打开会话",
+        "resumeSession": "恢复会话",
+        "newSessionHere": "在此处新建会话",
+        "rename": "重命名",
+        "markAsRead": "标为已读",
+        "stop": "停止",
+        "worktreeHeader": "工作树",
+        "stopServer": "停止服务器 :{{port}}",
+        "startServer": "启动服务器 :{{port}}",
+        "serverLogs": "服务器日志",
+        "disconnectUrls": "断开 URL 映射",
+        "removeWorktree": "移除工作树",
+        "archive": "归档"
+      },
+      "renameDialog": {
+        "title": "重命名会话",
+        "label": "会话名称"
+      },
+      "flash": {
+        "sessionRenamed": "会话已重命名",
+        "agentStopped": "智能体已停止",
+        "sessionArchived": "会话已归档",
+        "markedAsRead": "已标为已读",
+        "worktreeServerStarted": "工作树服务器已启动",
+        "worktreeServerStopped": "工作树服务器已停止",
+        "worktreeUrlsDisconnected": "工作树 URL 映射已断开",
+        "worktreeRemoved": "工作树已移除，会话已归档"
+      },
+      "errors": {
+        "loadSessions": "无法加载智能体会话: {{message}}",
+        "actionFailed": "智能体操作失败: {{message}}",
+        "worktreeActionFailed": "工作树操作失败: {{message}}"
+      },
+      "detachRoutesDialog": {
+        "title": "断开工作树的 URL 绑定？",
+        "message": "{{hostnames}} 将被断开，主域名在必要时将被恢复。",
+        "fallbackSubject": "此工作树",
+        "confirmLabel": "断开"
+      },
+      "removeWorktreeDialog": {
+        "title": "移除工作树？",
+        "message": "位于 {{path}} 的干净工作树将被移除。此操作不可逆。",
+        "confirmLabel": "移除"
+      },
+      "autoSwitch": {
+        "tooltipBase": "自动切换到正在等待输入的智能体",
+        "tooltip": "自动切换到正在等待输入的智能体，当前有 {{count}} 个等待中"
+      },
+      "footer": "项目 → 工作副本 → 会话"
+    }
+  },
+  "ssh": {
+    "page": {
+      "reloadButton": "刷新",
+      "newHostButton": "新建主机",
+      "searchAria": "搜索 SSH 主机",
+      "searchPlaceholder": "按名称、用户或 IP 搜索主机...",
+      "clearSearchAria": "清除搜索",
+      "filterByTagAria": "按标签筛选主机",
+      "hostViewAria": "主机视图",
+      "gridViewAria": "网格视图",
+      "listViewAria": "列表视图",
+      "filters": {
+        "all": "全部",
+        "untagged": "未分类"
+      },
+      "empty": {
+        "loading": "正在加载主机…",
+        "noHostsFound": "未找到主机",
+        "welcomeTitle": "服务器随时一键连接",
+        "tryAnother": "尝试其他名称、用户、IP 或标签。",
+        "addFirstHost": "添加您的第一台 SSH 主机以开始。",
+        "clearFiltersButton": "清除筛选",
+        "addHostButton": "添加主机"
+      },
+      "sections": {
+        "matchingTitle": "匹配的主机",
+        "matchingSubtitle": {
+          "other": "找到 {{count}} 台主机"
+        },
+        "recentTitle": "近期",
+        "recentSubtitle": "您最近打开过的主机",
+        "productionTitle": "生产环境",
+        "productionSubtitle": "生产环境服务器 — 请谨慎操作",
+        "otherTitle": "其他主机",
+        "otherSubtitle": "其他服务器与环境"
+      },
+      "tip": {
+        "title": "使用技巧",
+        "body": "使用 SSH 密钥连接更快速、更安全。在添加或编辑主机时配置密钥即可。",
+        "dismissAria": "忽略提示"
+      }
+    },
+    "hostCard": {
+      "noRecentConnection": "近期无连接",
+      "lastOpened": "上次打开: {{when}}",
+      "authPassword": "密码",
+      "authKeyPassword": "密钥 / 密码",
+      "authSshKey": "SSH 密钥",
+      "filterByTag": "按 {{tag}} 筛选",
+      "actionsAria": "{{name}} 的操作",
+      "editHost": "编辑主机",
+      "deleteHost": "删除主机",
+      "sshPortTooltip": "SSH 端口",
+      "connectAria": "连接到 {{name}}",
+      "connect": "连接",
+      "viaLabel": "经由 {{target}}"
+    },
+    "deleteConfirm": {
+      "title": "删除主机 \"{{name}}\"？",
+      "message": "保存在 C:\\laraenv\\ssh\\{{name}}\\ 的密钥文件仍将保留。"
+    },
+    "deleteLabel": "删除",
+    "flash": {
+      "hostRemoved": "主机已删除: {{name}}",
+      "hostAdded": "主机已添加: {{name}}",
+      "hostSaved": "主机已保存: {{name}}"
+    },
+    "errors": {
+      "generic": "错误: {{message}}",
+      "loadHosts": "无法加载 SSH 主机: {{error}}",
+      "hostNameRequired": "请先设置主机名称"
+    },
+    "hostModal": {
+      "newTitle": "新建 SSH 主机",
+      "editTitle": "编辑主机 · {{name}}",
+      "nameLabel": "名称",
+      "tagsLabel": "标签",
+      "removeTagTooltip": "移除标签",
+      "addressLabel": "地址",
+      "portLabel": "端口",
+      "userLabel": "用户名",
+      "authMethodLabel": "认证方式",
+      "authKey": "密钥",
+      "authPassword": "密码",
+      "authBoth": "两者兼用",
+      "bothHint": "优先尝试密钥登录，若服务器拒绝则回退到密码认证。",
+      "passwordLabel": "密码",
+      "passwordPlaceholder": "(在 config.json 中明文保存)",
+      "showPasswordTooltip": "显示密码",
+      "hidePasswordTooltip": "隐藏密码",
+      "keyFileLabel": "密钥文件",
+      "noneOption": "— 无 —",
+      "setNameFirstTooltip": "请先设置名称",
+      "generateTooltip": "生成新密钥对",
+      "generateButton": "生成",
+      "importTooltip": "粘贴 / 拖放 / 选择已有密钥",
+      "importButton": "导入",
+      "setNameHint": "请先设置主机名 — 密钥将保存至 C:\\laraenv\\ssh\\<name>\\",
+      "publicKeyLabel": "公钥（粘贴到远程 ~/.ssh/authorized_keys 中）",
+      "advancedToggle": "高级设置 — 代理 / 跳板机 (Jump host)",
+      "viaSummary": "· 经由 {{target}}",
+      "proxyJumpLabel": "Proxy Jump（已保存的主机）",
+      "noneDirectOption": "— 无 (直连) —",
+      "proxyJumpAria": "Proxy Jump 跳板主机",
+      "proxyJumpHintPrefix": "通过另一个已保存的主机建立隧道（相当于 ",
+      "proxyJumpHintSuffix": "）。自动复用跳板机自身的凭据 — 无需重复输入。",
+      "proxyCommandLabel": "Proxy Command（高级命令）",
+      "proxyCommandHintPrefix": "启动一个外部命令，其标准输入输出将作为网络连接通道。 ",
+      "proxyCommandHintMiddle": " / ",
+      "proxyCommandHintSuffix": " 展开为主机/端口。设置后优先级高于 Proxy Jump。",
+      "testTooltip": "仅进行连接探测与身份认证，不保存",
+      "testButton": "测试连接",
+      "addHostButton": "添加主机",
+      "errors": {
+        "addressRequired": "主机地址必填",
+        "userRequired": "用户名必填",
+        "passwordRequired": "密码必填",
+        "pickKeyFile": "请选择密钥文件",
+        "provideCredential": "请提供密钥、密码，或两者兼备",
+        "nameRequired": "主机名称必填",
+        "duplicateHost": "主机 \"{{name}}\" 已存在 ({{user}}@{{address}}:{{port}}) — 请选择其他名称或编辑已有主机"
+      },
+      "flash": {
+        "keyGenerated": "已为 {{name}} 生成密钥",
+        "keyImported": "已导入密钥: {{name}}"
+      }
+    },
+    "importKeyModal": {
+      "title": "导入 SSH 密钥",
+      "hostPrefix": "主机: ",
+      "noneFallback": "(无)",
+      "storedAt": "· 保存于 C:\\laraenv\\ssh\\{{host}}\\",
+      "filenameLabel": "文件名",
+      "privateKeyLabel": "私钥",
+      "publicKeyLabel": "公钥",
+      "publicKeyPlaceholder": "ssh-ed25519 AAAA... (选填 — 留空时从私钥派生)",
+      "dragDropText": "拖放私钥文件（或 .pub）到此处",
+      "importFromFileButton": "从密钥文件导入",
+      "saveKeyButton": "保存密钥",
+      "errors": {
+        "readFile": "读取文件出错: {{message}}",
+        "filenameRequired": "文件名必填",
+        "privateKeyRequired": "私钥内容必填"
+      }
+    },
+    "keyGenModal": {
+      "title": "生成 SSH 密钥",
+      "kinds": {
+        "ed25519": {
+          "desc": "现代化、高速、紧凑短小（推荐）"
+        },
+        "rsa4096": {
+          "desc": "对较旧服务器具有广泛兼容性"
+        },
+        "ecdsa256": {
+          "desc": "ED25519 的现代替代方案"
+        }
+      },
+      "filenameLabel": "文件名",
+      "commentLabel": "备注",
+      "writeHintPrefix": "密钥对将被写入到 ",
+      "writeHintSuffix": "。",
+      "generateButton": "生成",
+      "resultIntroPrefix": "密钥对已保存至 ",
+      "resultIntroMiddle": "。请复制公钥并添加到远程服务器的 ",
+      "resultIntroSuffix": " 文件中:",
+      "copyTooltip": "复制到剪贴板",
+      "useThisKeyButton": "使用此密钥",
+      "errors": {
+        "filenameRequired": "密钥文件名必填",
+        "copyFailed": "复制失败"
+      }
+    },
+    "sftp": {
+      "opening": "正在打开 SFTP…",
+      "localTitle": "本地",
+      "remoteTitle": "远程",
+      "parentDirTooltip": "上级目录",
+      "refreshTooltip": "刷新",
+      "newFolderTooltip": "新建文件夹",
+      "renameTooltip": "重命名",
+      "editFileLabel": "编辑文件",
+      "editButton": "编辑",
+      "deleteTooltip": "删除",
+      "emptyPane": "空",
+      "uploadTooltip": "上传所选项目 → 远程",
+      "downloadTooltip": "下载所选项目 ← 远程",
+      "cancelAction": "取消",
+      "autoSaveLabel": "自动保存",
+      "openSystemEditorButton": "使用系统编辑器打开",
+      "mkdir": {
+        "remoteTitle": "新建远程文件夹",
+        "localTitle": "新建本地文件夹",
+        "folderNameLabel": "文件夹名称"
+      },
+      "removeConfirm": {
+        "title": {
+          "other": "删除远程主机上的 {{count}} 个项目？"
+        },
+        "message": "此操作无法撤销。"
+      },
+      "renamePrompt": {
+        "title": "重命名",
+        "label": "新名称"
+      },
+      "errors": {
+        "local": "本地错误: {{message}}",
+        "remote": "远程错误: {{message}}"
+      },
+      "contextMenu": {
+        "openBuiltIn": "在内置编辑器中打开"
+      },
+      "editChooser": {
+        "title": "您希望如何编辑？",
+        "builtInLabel": "内置编辑器 (VSCode Monaco)",
+        "builtInDesc": "Monaco · 搜索、语法高亮、自动保存",
+        "systemLabel": "系统默认编辑器",
+        "systemDesc": "使用操作系统默认应用打开 · 重新上传按钮 / 基于修改时间自动保存"
+      },
+      "transfers": {
+        "heading": "传输列表",
+        "uploadLabel": "↑ 上传",
+        "downloadLabel": "↓ 下载",
+        "dismissTooltip": "清除"
+      },
+      "editor": {
+        "editingPrefix": "正在编辑 ",
+        "unsavedBadge": "未保存",
+        "tooLarge": "文件过大，无法在内置编辑器中打开。",
+        "binaryFile": "此文件似乎是二进制文件，无法作为文本编辑。",
+        "loading": "加载中…",
+        "savingStatus": "正在保存…",
+        "savedAt": "已保存 · {{time}}",
+        "autoSaveOnStatus": "自动保存开启",
+        "ctrlSHint": "按 Ctrl+S 保存",
+        "resetButton": "重置",
+        "discardLabel": "放弃更改",
+        "resetConfirm": {
+          "title": "放弃本地修改并重新加载？"
+        },
+        "closeConfirm": {
+          "title": "放弃未保存的更改？"
+        }
+      },
+      "external": {
+        "discardTooltip": "丢弃（删除临时文件）",
+        "uploadingStatus": "正在上传…",
+        "watchingStatus": "正在监视更改…",
+        "editAndClickHint": "编辑完成后点击「重新上传」",
+        "reuploadButton": "重新上传"
+      }
+    }
+  },
+  "cron": {
+    "page": {
+      "title": "定时任务"
+    },
+    "reloadButton": "刷新",
+    "newCronButton": "新建定时任务",
+    "filter": {
+      "all": "全部",
+      "globalOnly": "仅全局"
+    },
+    "table": {
+      "on": "启用",
+      "name": "名称",
+      "schedule": "调度规则",
+      "project": "项目",
+      "lastRun": "上次执行",
+      "status": "状态",
+      "actions": "操作"
+    },
+    "empty": {
+      "noCronsYet": "暂无定时任务 — 请点击「新建定时任务」。",
+      "noMatch": "没有符合此筛选条件的定时任务。"
+    },
+    "actions": {
+      "runNow": "立即执行",
+      "viewOutput": "查看上次输出",
+      "edit": "编辑",
+      "delete": "删除"
+    },
+    "status": {
+      "running": "运行中",
+      "ok": "正常",
+      "error": "错误",
+      "never": "从未运行"
+    },
+    "presets": {
+      "everyMinute": "每分钟",
+      "every5Min": "每 5 分钟",
+      "every15Min": "每 15 分钟",
+      "everyHour": "每小时",
+      "daily3am": "每天 03:00",
+      "laravelScheduler": "Laravel 调度器"
+    },
+    "flash": {
+      "updated": "定时任务已更新",
+      "created": "定时任务已创建",
+      "deleted": "定时任务已删除",
+      "runningNow": "正在运行「{{name}}」…"
+    },
+    "deleteConfirm": {
+      "title": "删除此定时任务？"
+    },
+    "deleteLabel": "删除",
+    "errors": {
+      "generic": "错误: {{message}}"
+    },
+    "modal": {
+      "newTitle": "新建定时任务",
+      "editTitle": "编辑定时任务",
+      "nameLabel": "名称",
+      "namePlaceholder": "运行 Laravel 调度器",
+      "scheduleLabel": "调度规则",
+      "scheduleHint": "标准 5 段式 Cron 表达式，或 @every 1m / @hourly / @daily",
+      "commandLabel": "命令",
+      "commandHint": "在 cmd.exe 中运行，项目对应的 PHP 和 Node.js 会优先加至 PATH",
+      "projectLabel": "项目",
+      "projectHint": "留空表示全局定时任务，在应用工作目录中执行",
+      "globalOption": "— 全局 —",
+      "workingDirLabel": "覆盖工作目录",
+      "workingDirHint": "选填 — 默认为项目根目录",
+      "enabledLabel": "启用（立即注册至调度器）",
+      "backgroundModeLabel": "LaraEnv 关闭时依然运行",
+      "backgroundModeHint": "将任务注册至 Windows 任务计划程序，即使应用已关闭也会每分钟触发。运行器每分钟重新评估调度表达式 — 仅在匹配的时间才会真正执行命令。"
+    },
+    "logModal": {
+      "summary": "上次执行: {{lastRun}} · 状态: {{status}}",
+      "noOutput": "(无输出)"
+    }
+  },
+  "downloads": {
+    "page": {
+      "title": "库 / 工具",
+      "reloadButton": "刷新",
+      "searchPlaceholder": "搜索版本、工具、说明…",
+      "filterLabel": "筛选",
+      "filterAll": "全部",
+      "noMatch": "没有匹配您搜索的工具。"
+    },
+    "groups": {
+      "server": "服务器",
+      "database": "数据库",
+      "mail": "邮件",
+      "language": "语言",
+      "extras": "其他"
+    },
+    "card": {
+      "notInstalled": "未安装",
+      "running": "运行中",
+      "stopped": "已停止",
+      "showOnDashboard": "在仪表盘显示",
+      "installFirstTooltip": "请先安装版本",
+      "hideFromDashboardTooltip": "从仪表盘隐藏",
+      "showOnDashboardTooltip": "在仪表盘显示"
+    },
+    "source": {
+      "betaTooltip": "非稳定版本 — 安装前请参阅下方说明",
+      "betaBadge": "测试版",
+      "installedBadge": "已安装",
+      "openPageTooltip": "在浏览器中打开官方页面",
+      "downloadButton": "下载",
+      "pickZipTooltip": "选择已下载的 zip 文件",
+      "installFromFileButton": "从本地文件安装…",
+      "reinstallButton": "重新安装",
+      "installButton": "安装",
+      "extractingFiles": "正在解压文件…"
+    },
+    "phase": {
+      "download": "下载",
+      "extract": "解压"
+    },
+    "flash": {
+      "installed": "{{name}} {{version}} 已安装",
+      "dashboardVisibility": "{{name}} 在仪表盘上已{{state}}",
+      "enabledState": "启用",
+      "hiddenState": "隐藏"
+    },
+    "errors": {
+      "generic": "错误: {{message}}"
+    }
+  },
+  "updates": {
+    "page": {
+      "title": "更新",
+      "currentVersionLabel": "当前版本",
+      "checkButton": "检查更新"
+    },
+    "upToDate": {
+      "title": "已是最新版本",
+      "message": "v{{version}} 是最新发布版本。"
+    },
+    "flash": {
+      "updateAvailable": "发现新版本: v{{version}}",
+      "checkFailed": "检查更新失败: {{error}}",
+      "downloadFailed": "下载失败: {{error}}",
+      "installFailed": "安装失败: {{error}}"
+    },
+    "available": {
+      "title": "v{{version}} 可用",
+      "released": "发布于 {{date}}",
+      "verifyingIntegrity": "正在验证完整性…",
+      "downloadButton": "下载更新",
+      "restartButton": "重启并安装",
+      "kindPortable": "便携版 — 将替换此文件夹中的 LaraEnv.exe，不会向系统安装额外内容。",
+      "kindInstalled": "安装版 — 将运行安装程序就地升级。",
+      "preserveNotePrefix": "您在 ",
+      "preserveNoteSuffix": " 中的项目、PHP 版本、MySQL 数据及配置会在更新期间完整保留。",
+      "preserveNotePortable": "您的项目、PHP 版本、MySQL 数据及配置保存在可执行文件同级目录中，更新不会影响它们。"
+    },
+    "phase": {
+      "download": "下载",
+      "verify": "验证"
+    }
+  },
+  "notifications": {
+    "bellTooltip": "通知",
+    "title": "通知",
+    "unreadCount": {
+      "other": "{{count}} 条未读"
+    },
+    "allCaughtUp": "已全部读完",
+    "markAllRead": "全部标为已读",
+    "emptyMessage": "智能体错误和使用量警告将在此处显示。",
+    "preferencesHeader": "通知选项",
+    "preferences": {
+      "errors": "错误",
+      "usage": "使用量",
+      "completion": "已完成",
+      "needsInput": "等待输入"
+    },
+    "windowsUnavailableNote": "桌面端版本加固期间，Windows 原生通知暂时不可用。",
+    "errors": {
+      "sessionGone": "该智能体会话已不存在。"
+    }
+  },
+  "terminal": {
+    "pickTerminalTypeTooltip": "选择终端类型",
+    "openTerminalHeader": "打开终端",
+    "noTerminalAvailable": "无可用终端",
+    "defaultSuffix": " (默认)",
+    "serviceLogs": {
+      "title": "服务日志",
+      "noServicesYet": "尚未启动任何服务。",
+      "selectService": "请选择一项服务。",
+      "noOutputYet": "尚未捕获任何输出…"
+    },
+    "devServerLogs": {
+      "titlePrefix": "开发服务器 — ",
+      "worktreeSuffix": " · 工作树",
+      "noOutputYet": "暂无输出…"
+    },
+    "pane": {
+      "dragTooltip": "拖动以移动 / 拆分此分栏",
+      "closeTooltip": "关闭分栏",
+      "connectionFailed": "连接失败",
+      "unknownError": "未知错误",
+      "paneLabelPrefix": "分栏:"
+    },
+    "sshTimeline": {
+      "connecting": "连接中…",
+      "inProgress": "正在进行…",
+      "stages": {
+        "dial": "正在建立连接 (TCP)",
+        "handshake": "SSH 握手与认证",
+        "session": "打开会话",
+        "pty": "分配伪终端 (PTY)",
+        "shell": "启动 Shell"
+      }
+    },
+    "group": {
+      "tabTooltip": "拖动以重新排序 / 移动 / 拆离 · 双击重命名",
+      "closeTabTooltip": "关闭标签页",
+      "newTabTooltip": "新建标签页",
+      "sftpTooltip": "SFTP 文件传输",
+      "runtimeTooltip": "为此终端设置 PHP / Node 版本",
+      "autoBadge": "自动",
+      "autoOption": "自动",
+      "splitRightTooltip": "向右拆分",
+      "splitDownTooltip": "向下拆分",
+      "attachTooltip": "吸附回 LaraEnv 窗口",
+      "detachTooltip": "弹出到独立窗口",
+      "restoreTooltip": "恢复",
+      "maximizeTooltip": "最大化",
+      "closeGroupTooltip": "关闭分组",
+      "setDefaultTooltip": "设为默认终端",
+      "notInstalledHeader": "未安装",
+      "installViaDownloads": "— 通过「库/工具」安装",
+      "phpVersionHeader": "PHP 版本",
+      "nodeVersionHeader": "Node 版本",
+      "activeSuffix": " (活动)",
+      "restartNote": "更改版本将重启此终端。",
+      "mainBadge": "主干",
+      "previewBadge": "预览",
+      "noRouteBadge": "无路由"
+    },
+    "workspace": {
+      "agentNotInWorkspace": "此活动的智能体终端不在当前工作区中。",
+      "detachFailed": "无法打开独立窗口: {{error}}",
+      "routingReady": "{{project}} 路由已就绪: {{routed}}",
+      "primaryDomain": "主域名",
+      "routingFailed": "{{agent}} 已启动，但域名路由失败: {{error}}",
+      "agentHistoryUnavailable": "{{agent}} 的历史记录已不可用。请在智能体标签页中启动新会话。",
+      "noTerminalOpen": "未打开任何终端。",
+      "openNewTerminalTooltip": "打开新终端",
+      "newTerminalButton": "新建终端",
+      "projectFallback": "项目",
+      "agentFallback": "智能体",
+      "sshConnectingLabel": "ssh · {{host}} (连接中…)",
+      "agentStartingLabel": "{{project}} · {{agent}} (启动中…)",
+      "projectStartingLabel": "{{project}} (启动中…)",
+      "shellStartingLabel": "{{shell}} (启动中…)",
+      "failedLabel": "{{base}} (失败)",
+      "agentNoTerminalError": "{{agent}} 未返回终端",
+      "agentSessionMetadataMissing": "缺少智能体会话元数据。",
+      "agentNoTerminalGeneric": "智能体未返回终端。"
+    },
+    "app": {
+      "portsInUseTooltip": "正在使用的端口",
+      "serviceLogsTooltip": "服务日志",
+      "hideSessionNavigatorTooltip": "隐藏会话导航器",
+      "showSessionNavigatorTooltip": "显示会话导航器",
+      "detachedWindowBadge": "独立窗口",
+      "hideAgentsTooltip": "隐藏智能体",
+      "showAgentsTooltip": "显示智能体",
+      "agentsLabel": "智能体",
+      "terminalLabel": "终端",
+      "sessionsStayOpenNote": "会话保持为标签页打开",
+      "flash": {
+        "enableAgentSessionsFailed": "无法启用智能体会话: {{error}}",
+        "agentSessionsEnabled": "智能体会话已启用",
+        "enableAgentSessionsFirst": "请先在「设置 → 实验性功能」中启用智能体会话"
+      }
+    }
+  },
+  "commandCenter": {
+    "pages": {
+      "dashboard": "仪表盘",
+      "projects": "项目",
+      "terminal": "终端",
+      "ssh": "SSH",
+      "cron": "定时任务",
+      "deployments": "部署",
+      "downloads": "库/工具",
+      "settings": "设置"
+    },
+    "groups": {
+      "navigation": "导航",
+      "services": "服务",
+      "agentSessions": "智能体会话",
+      "run": "运行",
+      "custom": "自定义"
+    },
+    "builtins": {
+      "goTo": "转到 {{page}}",
+      "startAllServices": "启动所有服务",
+      "stopAllServices": "停止所有服务",
+      "reloadWebStack": "重载 Web 技术栈",
+      "startService": "启动 {{service}}",
+      "stopService": "停止 {{service}}",
+      "reloadService": "重载 {{service}}",
+      "openTerminal": "打开终端 · {{name}}",
+      "openFolder": "打开文件夹 · {{name}}",
+      "openInEditor": "在编辑器中打开 · {{name}}",
+      "openInBrowser": "在浏览器中打开 · {{name}}",
+      "focusVerb": "聚焦",
+      "resumeVerb": "恢复",
+      "restartVerb": "重启",
+      "sessionEntry": "{{verb}} {{title}} · {{project}}",
+      "newProject": {
+        "laravel": "新建 Laravel 项目",
+        "wordpress": "新建 WordPress 站点",
+        "git": "从 Git 克隆",
+        "blank": "新建空白项目",
+        "vite": "新建 Vite 项目",
+        "next": "新建 Next.js 项目",
+        "nuxt": "新建 Nuxt 项目",
+        "astro": "新建 Astro 项目"
+      }
+    },
+    "flash": {
+      "startingAllServices": "正在启动所有服务…",
+      "stoppingAllServices": "正在停止所有服务…",
+      "reloadingStack": "正在重载技术栈…",
+      "startingService": "正在启动 {{service}}…",
+      "stoppingService": "正在停止 {{service}}…",
+      "reloadingService": "正在重载 {{service}}…"
+    },
+    "palette": {
+      "searchPlaceholder": "搜索命令，或输入例如 {{examples}}",
+      "noCommandsFound": "未找到命令",
+      "hints": {
+        "navigate": "导航",
+        "complete": "补全",
+        "run": "运行"
+      }
+    },
+    "launcher": {
+      "connectSsh": "SSH 连接 · {{host}}",
+      "sshHostHint": "SSH 主机",
+      "startAgentHint": "启动智能体 · 当前检出",
+      "agentForProject": "{{project}} 的智能体",
+      "runCommand": "运行: {{command}}",
+      "inProject": "在 {{project}} 中",
+      "loadingArtisan": "正在加载 artisan 命令…",
+      "artisanHint": "artisan",
+      "loadingNpmScripts": "正在加载 npm 脚本…",
+      "npmScriptHint": "npm 脚本"
+    },
+    "errors": {
+      "generic": "失败: {{message}}"
+    }
+  },
+  "errors": {
+    "services": {
+      "unknownService": "未知服务: {{name}}",
+      "depFailed": "依赖 {{dep}}",
+      "exclusiveConflict": "{{label}} 已在运行，同一时间只能有一个 Web 服务器对外提供服务 — 请先停止它",
+      "notRegistered": "服务未注册: {{name}}",
+      "binaryNotFound": "在 {{path}} 未找到二进制程序 — 请先安装该服务",
+      "processFailed": "{{bin}}: {{message}}",
+      "openProcessTokenFailed": "OpenProcessToken 失败",
+      "createAdminsSidFailed": "CreateWellKnownSid(Administrators) 失败",
+      "createPowerUsersSidFailed": "CreateWellKnownSid(PowerUsers) 失败",
+      "createRestrictedTokenFailed": "CreateRestrictedToken 失败",
+      "getTokenDefaultDaclFailed": "GetTokenInformation(TokenDefaultDacl) 失败",
+      "setTokenDefaultDaclFailed": "SetTokenInformation(TokenDefaultDacl) 失败",
+      "getTokenUserFailed": "GetTokenUser 失败",
+      "aclFromEntriesFailed": "ACLFromEntries 失败"
+    },
+    "vhost": {
+      "rootCAFailed": "根证书颁发机构 (CA)",
+      "installRootCertFailed": "安装根证书",
+      "checkLocalCATrustFailed": "检查本地 CA 信任状态",
+      "readHostsFailed": "读取 hosts 文件",
+      "openHostsFailed": "打开 hosts 文件（需要管理员权限？）",
+      "httpBlockNotFound": "在 {{path}} 中找不到 http { 配置块",
+      "noBraceAfterHttp": "格式错误的 nginx.conf: http 后面缺少 {",
+      "unmatchedHttpBrace": "格式错误的 nginx.conf: http 块中存在未闭合的 {",
+      "blockNotFound": "找不到 {{block}} { 配置块",
+      "noBraceAfterBlock": "格式错误的 nginx.conf: {{block}} 后面缺少 {"
+    },
+    "ssh": {
+      "hostMissingAddress": "主机 \"{{host}}\" 缺少连接地址",
+      "hostMissingUser": "主机 \"{{host}}\" 缺少用户名",
+      "connectFailed": "无法连接至 {{addr}} — 请检查 IP/端口与防火墙 ({{error}})",
+      "keyNameRequired": "密钥名称必填",
+      "keyAlreadyExists": "密钥已存在: {{path}}",
+      "marshalPrivateKeyFailed": "序列化私钥失败",
+      "unsupportedKeyKind": "不支持的密钥类型: {{kind}}",
+      "privateKeyContentRequired": "私钥内容必填",
+      "invalidPrivateKey": "无效私钥（暂不支持带密码加密的私钥）",
+      "keyNameConflict": "名为 \"{{name}}\" 的密钥已存在于 {{dir}}",
+      "pathRequired": "路径必填",
+      "keyFileTooLarge": "文件过大，不符合密钥规格 ({{sizeMB}} MB)",
+      "sourcePathRequired": "源路径必填",
+      "readSourceFailed": "读取源文件",
+      "invalidImportedKey": "文件不是有效的 SSH 私钥（暂不支持带密码加密的私钥）",
+      "clientNotFound": "未找到 ssh 客户端 — 请安装 Windows OpenSSH 客户端（设置 -> 应用 -> 可选功能）",
+      "proxyJumpNoLookup": "已设置 ProxyJump \"{{name}}\" 但未连接主机检索 — 无法解析跳板主机",
+      "proxyJumpHostNotFound": "在已保存的主机列表中未找到 ProxyJump 主机 \"{{name}}\"",
+      "dialJumpHostFailed": "连接跳板主机 \"{{name}}\" 失败",
+      "openChannelFailed": "经由 {{via}} 开启到 {{addr}} 的通道失败",
+      "jumpHostMissingUser": "跳板主机 \"{{host}}\" 缺少用户名",
+      "proxyCommandStdinFailed": "proxy command 标准输入失败",
+      "proxyCommandStdoutFailed": "proxy command 标准输出失败",
+      "startProxyCommandFailed": "启动 proxy command 失败",
+      "openSessionFailed": "打开会话失败",
+      "requestPtyFailed": "请求 PTY 失败",
+      "stdinPipeFailed": "标准输入管道失败",
+      "stdoutPipeFailed": "标准输出管道失败",
+      "stderrPipeFailed": "标准错误管道失败",
+      "startShellFailed": "启动 shell 失败",
+      "authFailed": "在 {{addr}} 认证失败: {{hint}}\n\n(原始信息: {{error}})",
+      "noSupportedAuthMethods": "位于 {{addr}} 的服务器未提供我们支持的认证方式（通常是启用了 2FA / 交互式键盘挑战） — 请设置 PubkeyAuthentication yes 并添加密钥，或使用接受纯密码的主机\n\n(原始信息: {{error}})",
+      "handshakeTimeout": "在 {{addr}} 上的 SSH 握手超时 — 服务器可达但响应极为缓慢\n\n(原始信息: {{error}})",
+      "handshakeFailed": "SSH 握手 {{addr}} 失败",
+      "unknownAuthMode": "未知认证模式: \"{{mode}}\"",
+      "keyAuthNoFileChosen": "已选择密钥认证但未指定密钥文件",
+      "readKeyFailed": "读取密钥 {{path}}",
+      "parseKeyFailed": "解析密钥 {{path}}",
+      "passwordAuthEmpty": "已选择密码认证但密码为空",
+      "authModeNoCredentials": "认证模式 \"{{mode}}\" 没有可用的凭据",
+      "noLiveConnection": "终端 \"{{termID}}\" 没有处于活动状态的 SSH 连接",
+      "openSftpSubsystemFailed": "打开 SFTP 子系统失败",
+      "transferCancelled": "已取消",
+      "pathIsDirectory": "路径是一个目录",
+      "fileTooLarge": "file too large: {{size}} 字节 (限制 {{limit}})",
+      "binaryFile": "binary file: {{path}}",
+      "cleanupOutsideTempDir": "拒绝清理临时目录之外的路径: {{path}}",
+      "pathNotUnder": "路径 \"{{full}}\" 不在 \"{{base}}\" 之下"
+    },
+    "agents": {
+      "unsupportedAgent": "不支持的智能体 \"{{agent}}\"",
+      "resumeSessionIdRequired": "恢复会话需要提供商会话 ID",
+      "agentUnavailable": "智能体 \"{{agent}}\" 不可用",
+      "projectPathRequired": "项目路径必填",
+      "additionalDirectoriesUnsupported": "{{label}} 不支持附加会话目录",
+      "additionalDirectoryNotAbsolute": "附加目录必须是文件夹的绝对路径: \"{{directory}}\"",
+      "additionalDirectoryUnavailable": "附加目录 \"{{directory}}\" 不可用",
+      "additionalDirectoryNotFolder": "附加目录 \"{{directory}}\" 不是文件夹",
+      "executablePathUnsafeForHooks": "LaraEnv 可执行文件路径无法供提供商钩子使用",
+      "notJSONObject": "{{file}} 不是 JSON 对象",
+      "hooksShapeUnexpected": "{{file}}: \"hooks\" 格式异常；文件保持原样未修改",
+      "pluginFileNotManaged": "现有的插件文件并非由 LaraEnv 管理",
+      "executablePathUnsafeForLifecycleHooks": "LaraEnv 可执行文件路径无法供提供商生命周期钩子使用",
+      "sessionStillRunning": "智能体会话 \"{{title}}\" 仍在运行中",
+      "resolveWorkspaceFailed": "解析 {{project}} 的工作区失败",
+      "launchFailed": "为 {{project}} 启动 {{agent}} 失败",
+      "sessionNotFound": "未找到智能体会话 \"{{id}}\"",
+      "sessionAlreadyRunning": "智能体会话 \"{{id}}\" 已在终端 {{terminal}} 中运行",
+      "resumeSessionFailed": "恢复 {{agent}} 会话失败",
+      "resumeUpdateMetadataFailed": "(同时更新会话元数据失败: {{storeError}})",
+      "configureLifecycleSignalsFailed": "配置 {{agent}} 生命周期信号失败",
+      "resumeForProjectFailed": "为 {{project}} 恢复 {{agent}} 失败",
+      "providerSessionMissing": "provider conversation is unavailable: {{agent}} 没有保存 {{cwd}} 的会话 ID",
+      "providerSessionNotFound": "provider conversation is unavailable: {{agent}} 在 {{cwd}} 中找不到会话 {{session}}",
+      "stopBeforeArchiving": "归档前请先停止该智能体会话",
+      "stopBeforeResettingMetadata": "重置元数据前请先停止所有活动的智能体会话",
+      "removeWorktreeBeforeReset": "重置元数据前请先移除 \"{{title}}\" 的托管工作树",
+      "inspectWorktreeFailed": "检查 \"{{title}}\" 的工作树失败",
+      "agentUnavailableWithReason": "智能体 {{agent}} 不可用: {{reason}}",
+      "unknownAgent": "未知智能体 \"{{agent}}\"",
+      "discoveryNotSupported": "不支持提供商会话自动发现",
+      "decodeCodexSessionMetadataFailed": "解码 Codex 会话元数据失败",
+      "codexExecutableUnavailable": "Codex 可执行文件不可用",
+      "openCodeSessionMetadataCommandFailed": "OpenCode 会话元数据命令执行失败",
+      "openCodeSessionMetadataTooLarge": "OpenCode 会话元数据响应过大",
+      "decodeOpenCodeSessionMetadataFailed": "解码 OpenCode 会话元数据失败",
+      "readKimiSessionMetadataFailed": "读取 Kimi 会话元数据失败",
+      "invalidSignalEnvelope": "无效的智能体信号信封",
+      "decodeSessionsFailed": "解码智能体会话失败（尝试备份损坏文件也失败: {{renameError}}）",
+      "unsupportedSessionSchema": "不支持的智能体会话架构版本 {{version}}",
+      "sessionIdRequired": "智能体会话 ID 必填",
+      "sessionTitleRequired": "智能体会话标题必填",
+      "archiveSessionMetadataFailed": "归档智能体会话元数据失败",
+      "claudeConfigDirUnavailable": "Claude Code 配置目录不可用",
+      "decodeClaudeUsageFailed": "解码 Claude 订阅额度失败",
+      "initializeCodexUsageFailed": "初始化 Codex 用量读取器失败",
+      "codexRpcStderr": "Codex app-server 错误输出: {{stderr}}",
+      "codexRpcError": "RPC 错误 {{code}}: {{message}}",
+      "codexAppServerClosed": "Codex app-server 在响应前已关闭",
+      "decodeCodexRateLimitsFailed": "解码 Codex 频控限制失败"
+    },
+    "cloud": {
+      "openSessionFailed": "[{{step}}] 打开会话失败",
+      "stdoutPipeFailed": "[{{step}}] 标准输出管道失败",
+      "stderrPipeFailed": "[{{step}}] 标准错误管道失败",
+      "stepStartFailed": "[{{step}}] 启动失败",
+      "stepFailed": "步骤 \"{{step}}\" 失败: {{error}}\n{{tail}}",
+      "bindAddressFailed": "绑定 {{address}} 失败",
+      "openBrowserFailed": "打开浏览器失败",
+      "paypalTimeout": "PayPal 响应超时 — 未收到回调",
+      "billingTimeout": "计费超时 — Stripe 未返回响应",
+      "unexpectedServerResponse": "服务器返回意外响应: {{response}}",
+      "notLoggedIn": "尚未登录",
+      "kdfSaltInvalid": "KDF 盐无效",
+      "kdfSaltTooShort": "KDF 盐过短: {{bytes}} 字节",
+      "keyMustBe32Bytes": "密钥必须为 32 字节 (实为 {{got}})",
+      "ciphertextTooShort": "密文过短",
+      "bindLoopbackFailed": "绑定本地环回地址失败",
+      "noTokenInCallback": "回调中未包含令牌",
+      "tokenVerifyFailed": "令牌校验失败",
+      "oauthTimeout": "OAuth 超时 — 是否在登录前关闭了浏览器？",
+      "presetLookupUnavailable": "预设 \"{{preset}}\": 无可用的预设查询",
+      "deployPresetNotFound": "未找到部署预设 \"{{preset}}\" — 可能已被删除",
+      "kdfSaltMissing": "服务器未返回 kdf_salt",
+      "syncKeyMissing": "未找到同步密钥 — 请使用密码登录以启用同步",
+      "encryptFailed": "加密失败",
+      "newKeyMustBe32Bytes": "新密钥必须为 32 字节 (实为 {{got}})",
+      "reencryptResourceFailed": "重新加密 {{kind}}/{{externalId}} 失败",
+      "rekeyResourceFailed": "更新 {{kind}}/{{externalId}} 密钥失败",
+      "rekeyNothingDecrypted": "使用当前密钥无法解密服务器上的任何 {{count}} 项数据 — 请在仍能正常同步的设备上执行重新加密"
+    },
+    "projectroutes": {
+      "previewHostnameDomainMismatch": "预览主机名 \"{{host}}\" 与先前项目域名不匹配",
+      "canonicalRouteMissing": "缺少规范主路由",
+      "previewRequiresWorktree": "预览路由必须指向已注册的工作树",
+      "hostnameAlreadyUsed": "主机名 \"{{hostname}}\" 已被项目 \"{{project}}\" 使用",
+      "worktreeRoutingRequiresWorktree": "工作树路由需要已注册的工作树目标",
+      "proxyPortUpdateRequiresWorktree": "代理端口更新需要已注册的工作树目标",
+      "noRouteForWorktree": "没有指向此工作树的路由",
+      "routeCleanupRequiresWorktree": "清理路由需要已注册的工作树目标",
+      "canonicalRouteCannotBeRemoved": "规范主路由不能删除；请将其恢复到主检出分支",
+      "routeNotFound": "未找到项目路由 \"{{id}}\"",
+      "applyRoutesFailed": "应用路由失败（尝试回滚路由状态也失败: {{rollbackError}}）",
+      "routeBelongsToAnotherProject": "该路由属于其他项目",
+      "duplicateHostname": "重复的主机名 \"{{host}}\"",
+      "canonicalHostnameMismatch": "规范主机名必须为 \"{{expected}}\"",
+      "canonicalRouteCountInvalid": "项目必须且只能有 1 条规范主路由，实有 {{count}} 条",
+      "invalidPreviewHostname": "无效的预览主机名 \"{{hostname}}\"",
+      "previewHostnameMissingLabel": "预览主机名必须在项目域名前包含前缀标签",
+      "invalidHostnameLabel": "无效的主机名前缀标签 \"{{label}}\"",
+      "previewHostnameSuffixMismatch": "预览主机名必须以 \"{{suffix}}\" 结尾",
+      "previewLabelReserved": "预览标签 \"{{label}}\" 为系统保留词",
+      "proxyPortOutOfRange": "代理端口必须在 1 到 65535 之间",
+      "dedicatedWorktreePortRequired": "此代理项目需要专属的工作树开发服务器端口",
+      "worktreeProxyPortConflict": "工作树代理端口 {{port}} 已分配给主检出分支",
+      "decodeRoutesFailed": "解码项目路由失败",
+      "unsupportedRouteSchema": "不支持的项目路由架构版本 {{version}}",
+      "migrateRoutesFailed": "迁移项目路由失败",
+      "preserveCorruptFailed": "尝试备份损坏文件也失败: {{renameError}}",
+      "routeIdRequired": "项目路由 ID 必填"
+    },
+    "gitworkspace": {
+      "projectFolderFailed": "项目文件夹错误",
+      "branchWorktreeRequiresRepo": "分支与工作树模式需要有效的 Git 仓库",
+      "mainCheckoutDirty": "主检出目录有未提交的改动；切换分支前请提交或暂存 (stash)",
+      "unknownWorkspaceMode": "未知的工作区模式 \"{{mode}}\"",
+      "notAGitRepository": "项目不是 Git 仓库",
+      "mainCheckoutCannotBeRemoved": "项目的主检出分支无法作为工作树删除",
+      "worktreeNotRegistered": "工作树未在此项目中注册",
+      "removeWorktreeFailed": "移除工作树失败",
+      "baseRefRequiredForBranch": "创建分支时基准引用 (base ref) 必填",
+      "localBranchAlreadyExists": "本地分支 \"{{branch}}\" 已存在",
+      "createSwitchBranchFailed": "创建并切换到分支 \"{{branch}}\" 失败",
+      "localBranchNotFound": "本地分支 \"{{branch}}\" 不存在",
+      "switchBranchFailed": "切换到分支 \"{{branch}}\" 失败",
+      "invalidWorktreeName": "工作树名称必须使用 1-64 位字母、数字、点、破折号或下划线",
+      "registeredWorktreeMissing": "已注册的工作树丢失",
+      "worktreeBranchMismatch": "工作树 \"{{name}}\" 注册的分支为 \"{{registered}}\"，而非 \"{{requested}}\"",
+      "worktreeDestinationUnregistered": "工作树目标目录已存在但未在此仓库中注册",
+      "baseRefRequiredForWorktreeBranch": "创建工作树分支时基准引用 (base ref) 必填",
+      "createWorktreeFailed": "创建工作树 \"{{name}}\" 失败",
+      "branchRequired": "分支名必填",
+      "invalidBranch": "无效的分支名 \"{{branch}}\"",
+      "baseRefNotACommit": "基准引用 \"{{ref}}\" 无法解析为有效的提交 (commit)",
+      "gitCommandTimedOut": "git {{command}} 命令超时",
+      "worktreeDestinationEscapesRoot": "工作树目标路径 \"{{destination}}\" 超出了受管根目录 \"{{root}}\""
+    },
+    "projects": {
+      "readComposerJsonFailed": "读取 composer.json 失败",
+      "parseComposerJsonFailed": "解析 composer.json 失败",
+      "parseScriptsFailed": "解析 scripts 失败",
+      "unexpectedDevScriptShape": "`dev` 脚本格式异常",
+      "writeComposerJsonFailed": "写入 composer.json 失败",
+      "invalidProjectName": "无效名称（仅限小写字母、数字、_ 和 -）: \"{{name}}\"",
+      "folderAlreadyExists": "文件夹已存在: {{path}}",
+      "gitUrlRequired": "Git URL 必填",
+      "unknownProjectKind": "未知的项目类型: {{kind}}",
+      "packageManagerNotFound": "未找到包管理器 {{manager}} — 请安装它（或选用其他包管理器）",
+      "phpVersionNotInstalled": "PHP {{version}} 未安装 — 请先在「库/工具」中安装",
+      "noPhpAvailable": "无可用 PHP 版本 — 请先在「库/工具」中安装",
+      "downloadComposerPharFailed": "下载 composer.phar 失败",
+      "gitNotFound": "在 PATH 中未找到 git — 请从 https://git-scm.com 安装",
+      "downloadFailed": "下载 {{url}} 失败: HTTP {{status}}",
+      "unsafeZipPath": "zip 中包含不安全路径: {{name}}",
+      "mysqlExeNotFound": "在 {{path}} 未找到 mysql.exe — 是否已安装 MySQL？",
+      "dropdbExeNotFound": "在 {{path}} 未找到 dropdb.exe — 是否已安装 PostgreSQL？",
+      "createdbExeNotFound": "在 {{path}} 未找到 createdb.exe — 是否已安装 PostgreSQL？",
+      "envFileMissing": "缺少 .env 或 .env.example 文件"
+    },
+    "installer": {
+      "notAValidZip": "所选文件不是有效的 zip 压缩包",
+      "cachedFileNotValidZip": "位于 {{path}} 的文件不是有效的 zip — 请从官方页面重新下载",
+      "manualSourceMissing": "手动下载源: 请从官方页面下载并保存至 {{path}}",
+      "httpStatus": "HTTP 状态码 {{status}}",
+      "serverReturnedHtml": "服务器返回了 HTML（可能启用了防盗链保护）: {{contentType}}",
+      "downloadFailed": "无法下载 {{kind}} {{version}}: {{reason}}",
+      "downloadedFileNotValidZip": "下载的文件不是有效的 zip 压缩包 — 源站可能阻止了直接下载",
+      "notAZip": "不是 zip 格式 (magic={{magic}})",
+      "unsafePathInArchive": "压缩包中包含不安全路径: {{name}}",
+      "extensionNotBundled": "PHP {{version}} 未内置 \"{{name}}\" 扩展 — 可能是 PECL 扩展（xdebug, redis, imagick 等），当前安装程序尚不支持",
+      "noPeclBuildPinned": "PHP {{series}} 尚未指定针对 \"{{name}}\" 的 Windows PECL 构建版本 — 请提交 issue 或更新 internal/installer/pecl.go",
+      "peclZipMissingDll": "PECL zip 压缩包中缺少 php_{{name}}.dll",
+      "downloadReasonUnknown": "未知错误",
+      "downloadReasonDnsFailed": "无法解析 {{host}} — 请检查网络连接后重试",
+      "downloadReasonTimeout": "下载超时 — 请检查网络连接后重试",
+      "downloadReasonNetworkFailed": "无法连接到下载服务器 — 请检查网络连接后重试 ({{error}})"
+    },
+    "cron": {
+      "nameRequired": "任务名称必填",
+      "scheduleRequired": "调度表达式必填",
+      "commandRequired": "执行命令必填",
+      "invalidSchedule": "无效的调度表达式",
+      "jobNotFound": "未找到任务: {{id}}",
+      "registerTaskFailed": "向 Windows 任务计划程序注册任务失败",
+      "scheduleFailed": "调度失败",
+      "executionTimedOut": "执行超过 5 分钟超时",
+      "jobIdRequired": "--cron-run 需要指定任务 ID",
+      "parseScheduleFailed": "解析调度表达式失败",
+      "readConfigFailed": "读取配置失败",
+      "parseConfigFailed": "解析配置失败",
+      "jobNotFoundInConfig": "在 {{path}} 中未找到任务 {{id}}",
+      "backgroundTaskArgsRequired": "EnsureBackgroundTask: 缺少 jobID 或 exePath 参数",
+      "registerSchtasksFailed": "schtasks /Create {{task}} 执行失败 ({{output}})"
+    },
+    "devserver": {
+      "instanceIdRequired": "开发服务器实例 ID 必填",
+      "alreadyRunning": "{{instanceId}} 的开发服务器已在运行中",
+      "noDevOrStartScript": "package.json 中没有 `dev` 或 `start` 脚本",
+      "taskkillFailed": "taskkill 失败: {{output}}",
+      "readPackageJsonFailed": "读取 package.json 失败",
+      "parsePackageJsonFailed": "解析 package.json 失败"
+    },
+    "queueworker": {
+      "unterminatedQuote": "参数中包含未闭合的引号",
+      "alreadyRunning": "{{project}} 的队列工作进程已在运行中",
+      "phpUnavailable": "{{project}} 没有可用的 PHP 可执行程序",
+      "artisanNotFound": "在 {{path}} 未找到 artisan",
+      "taskkillFailed": "taskkill 失败: {{output}}"
+    },
+    "php": {
+      "downloadCacertFailed": "下载 cacert.pem 失败",
+      "httpStatus": "HTTP 状态码 {{status}}",
+      "versionNotFound": "未找到 PHP 版本",
+      "removeOldLinkFailed": "移除旧链接失败",
+      "createDirectoryLinkFailed": "创建目录链接 {{link}} -> {{target}} 失败: {{error}}: {{output}}"
+    },
+    "config": {
+      "sshHostNameRequired": "SSH 主机名称必填",
+      "deployPresetIdRequired": "部署预设 ID 必填",
+      "builtinPresetImmutable": "内置预设不可修改 — 请复制副本后再定制",
+      "builtinPresetNotDeletable": "内置预设无法删除"
+    },
+    "nodejs": {
+      "versionNotFound": "未找到 Node 版本",
+      "removeOldLinkFailed": "移除旧链接失败",
+      "createDirectoryLinkFailed": "创建目录链接 {{link}} -> {{target}} 失败: {{error}}: {{output}}"
+    },
+    "netports": {
+      "getExtendedTcpTableSizeFailed": "GetExtendedTcpTable 获取大小失败: {{code}}",
+      "getExtendedTcpTableFailed": "GetExtendedTcpTable 失败: {{code}}",
+      "taskkillFailed": "taskkill {{pid}} 失败: {{output}}"
+    },
+    "terminal": {
+      "notAvailable": "终端不可用: {{kind}}",
+      "unsupported": "不支持的终端: {{kind}}"
+    },
+    "hotkey": {
+      "unknownKey": "未知按键 \"{{key}}\"",
+      "noKey": "快捷键 \"{{hotkey}}\" 没有按键"
+    },
+    "editor": {
+      "noCustomCommand": "未配置自定义编辑器命令",
+      "notAvailable": "编辑器不可用: {{kind}}"
+    },
+    "updater": {
+      "reachServerFailed": "无法连接到更新服务器",
+      "noPublishedRelease": "尚未找到发布的 Release",
+      "rateLimited": "更新服务器频控限制；请稍后再试",
+      "githubApiError": "GitHub API 错误 {{status}}: {{body}}",
+      "invalidGithubResponse": "无效的 GitHub API 响应",
+      "releaseIsDraft": "最新发布仍为草稿状态",
+      "sha256FetchFailed": "获取 sha256 失败 HTTP {{status}}",
+      "emptySha256File": "sha256 文件为空",
+      "invalidSha256Length": "sha256 长度无效: {{length}}",
+      "noExeAsset": "发布版本 {{version}} 不包含 .exe 资产 — 便携版无法通过安装包升级",
+      "noChecksumForExe": "发布版本 {{version}} 未提供 {{exeName}} 的校验和；拒绝未经验证替换正在运行的程序",
+      "noMsiAsset": "发布版本 {{version}} 未附加 .msi 资产",
+      "noReleaseToDownload": "没有可供下载的发布版本",
+      "checksumMismatch": "校验和不匹配（预期 {{expected}}，实际 {{got}}）",
+      "httpErrorDownloading": "下载 {{name}} 时 HTTP 出错 {{status}}",
+      "updateNotFound": "在 {{path}} 未找到更新文件",
+      "locateExecutableFailed": "无法定位当前正在运行的可执行程序以进行替换",
+      "installerOverPortable": "拒绝在 {{dir}} 的便携版上运行安装程序 — 这会导致产生第二个安装实例且指向默认空目录；请从 Release 页面下载便携版 ZIP 并手动替换 LaraEnv.exe",
+      "portableUpdateWindowsOnly": "便携版自更新仅在 Windows 上实现",
+      "applyWindowsOnly": "自更新仅支持 Windows 平台",
+      "writePortableScriptFailed": "写入便携更新脚本失败",
+      "writeUpdateScriptFailed": "写入更新脚本失败",
+      "launchUpdateScriptFailed": "启动更新脚本失败"
+    },
+    "vcruntime": {
+      "redistNotInstalled": "{{binary}} can't launch: Microsoft Visual C++ Redistributable not installed — download and install it from {{url}}, then retry"
+    },
+    "notifications": {
+      "unsupportedSchema": "不支持的通知架构版本 {{version}}",
+      "decodeFailed": "解码通知失败（尝试备份损坏文件也失败: {{renameError}}）"
+    },
+    "app": {
+      "agentUsingMainCheckout": "另一个智能体正在使用主检出分支；切换分支前请停止它",
+      "projectNotFound": "未找到项目 \"{{name}}\"",
+      "noCatalogEntryForPhp": "目录中没有 PHP {{version}} 的条目",
+      "phpNotInstalled": "PHP {{version}} 未安装",
+      "projectRoutesFailed": "无法加载项目路由",
+      "sslCertFailed": "无法创建 SSL 证书",
+      "vhostFailed": "无法写入 {{name}} 虚拟主机配置",
+      "hostsEntryFailed": "无法更新 hosts 文件解析条目",
+      "removeProjectRouteStateFailed": "无法移除项目的路由状态",
+      "sourceNotFound": "未找到安装源: {{kind}} {{version}}",
+      "unknownWebServer": "未知 Web 服务器: {{server}}",
+      "nameRequired": "名称必填",
+      "invalidTld": "无效的顶级域名 (TLD)",
+      "migrateRoutesFailed": "为 {{name}} 迁移路由失败",
+      "deleteFolderFailed": "删除文件夹 {{target}} 失败",
+      "projectFolderNotFound": "未找到项目文件夹",
+      "noEditorAvailable": "无可用编辑器",
+      "hostRequired": "主机必填",
+      "sshHostNotFound": "未找到 SSH 主机: {{host}}",
+      "noTerminalAvailable": "无可用终端",
+      "terminalNotInstalled": "终端未安装: {{kind}}",
+      "stopLiveAgentSessionsFirst": "禁用智能体会话前请先停止所有活动的智能体会话",
+      "stopWorktreeDevServersFirst": "禁用智能体会话前请先停止所有工作树开发服务器",
+      "agentSessionsDisabled": "智能体会话已禁用；请在「设置 → 实验性功能」中启用",
+      "terminalKindNotEmbeddable": "终端类型不可嵌入: {{kind}}",
+      "ptyNotFound": "未找到 PTY {{id}}",
+      "noSshConnectionForTerminal": "终端 \"{{termId}}\" 没有 SSH 连接",
+      "sftpNotOpenForTerminal": "终端 \"{{termId}}\" 未开启 SFTP",
+      "launchEditorAfterDownloadFailed": "已下载到 {{local}} 但启动编辑器失败",
+      "emptyPath": "路径为空",
+      "sshHostNotFoundLocally": "本地未找到 SSH 主机 \"{{host}}\"",
+      "saveConfigFailed": "无法保存部署配置",
+      "sshDialFailed": "无法建立 SSH 连接",
+      "openSessionFailed": "无法打开 SSH 会话",
+      "sshHostNotFoundCannotDestroy": "本地未找到 SSH 主机 \"{{host}}\" — 无法销毁远程状态",
+      "sshHostNotFoundSyncOrRecreate": "本地未找到 SSH 主机 \"{{host}}\" — 请同步主机列表或重新创建",
+      "presetNameRequired": "预设名称必填",
+      "builtinPresetReadOnly": "内置预设为只读 — 请复制副本后再定制",
+      "builtinPresetNotDeletable": "内置预设无法删除",
+      "deploymentNoSavedConfig": "部署没有保存的配置 — 请先运行「应用配置」",
+      "noDeployScriptConfigured": "未配置部署脚本 — 请在部署配置中选择预设（或构建脚本）",
+      "notLoggedInSignInFirst": "尚未登录 — 请先登录",
+      "notLoggedIn": "尚未登录",
+      "syncRequiresProPlan": "同步需要 Pro 套餐",
+      "noSyncKeySignInAgain": "无同步密钥 — 请使用密码重新登录",
+      "syncDisabled": "同步已禁用 — 请先开启",
+      "unknownLanguage": "未知语言代码 \"{{code}}\"",
+      "windowNotReady": "应用程序窗口尚未就绪",
+      "codexPayloadMissing": "缺少 Codex 通知有效负载",
+      "decodeCodexNotificationType": "解码 Codex 通知类型失败",
+      "unknownAgentEventSource": "未知智能体事件源",
+      "decodeBoundedPayloadMissing": "缺少提供商通知有效负载",
+      "decodeBoundedTypeFailed": "解码提供商通知类型失败",
+      "openCodeArgsMissing": "缺少 OpenCode 钩子参数",
+      "unknownAgentHookProvider": "未知智能体钩子提供商"
+    },
+    "routes": {
+      "agentSessionNotFound": "未找到智能体会话 \"{{sessionId}}\"",
+      "agentSessionNotWorktree": "智能体会话未使用工作树",
+      "worktreeServedDirectly": "此工作树直接提供服务，不需要代理开发服务器",
+      "dedicatedProxyPortRequired": "需要专属的工作树代理端口",
+      "updateWorktreeRouteFailed": "选定端口后更新工作树路由失败",
+      "worktreeCannotBeRemoved": "工作树无法移除: {{blockers}}",
+      "projectNotFound": "未找到项目 \"{{name}}\"",
+      "routeTargetFailed": "无法解析路由目标",
+      "projectNotGitRepository": "项目不是 Git 仓库",
+      "routeTargetNotRegisteredWorktree": "路由目标不是此项目已注册的工作树",
+      "snapshotHostsFileFailed": "无法备份 hosts 文件快照",
+      "rollbackErrors": "回滚错误: {{rollbackErrors}}",
+      "writeRouteVhostFailed": "无法写入路由的虚拟主机配置",
+      "removeOldRouteVhostFailed": "无法移除旧路由的虚拟主机配置",
+      "removeHostsEntryFailed": "无法移除 hosts 文件条目",
+      "addHostsEntryFailed": "无法添加 hosts 文件条目",
+      "routeTargetPathFailed": "无法解析路由目标路径 \"{{path}}\"",
+      "routeCertificateFailed": "无法为 {{hostname}} 创建证书",
+      "nginxConfigTestFailed": "nginx 配置测试失败",
+      "apacheConfigTestFailed": "apache 配置测试失败",
+      "caddyConfigTestFailed": "caddy 配置测试失败",
+      "configTestCommandFailed": "校验工具返回: {{output}}",
+      "restartServiceFailed": "无法重启 {{name}}",
+      "routeTargetOutsideManagedDir": "路由目标位于 LaraEnv 托管工作树目录之外"
+    }
+  }
+}

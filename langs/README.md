@@ -18,6 +18,32 @@ pull request. The build downloads these files and puts them in the app.
 3. Translate the values. Do not change any key. Keys are code, not text.
 4. Open a pull request. CI checks your file and tells you what is missing.
 
+## Machine-translated languages
+
+Some languages ship without a native speaker checking them first. That is
+better than not shipping the language at all, but the app has to say so.
+
+If a language has not been checked by a native speaker, add this to its
+`$meta` block:
+
+```json
+"$meta": {
+  "code": "ru",
+  "name": "Russian",
+  "nativeName": "Русский",
+  "needsNativeReview": true
+}
+```
+
+This does two things. The language selector marks the language before
+someone picks it, and it shows a short note, in that language, explaining
+that the translation is machine-made and inviting a fix.
+
+Leave the flag off, or set it to `false`, once a native speaker has read the
+file. If you review a language and fix what needs fixing, remove
+`needsNativeReview` in the same pull request. Do not open a second PR just
+for that.
+
 ## The rules CI enforces
 
 **Keep `{{placeholders}}` in English.** `{{name}}` is a slot. The app fills

@@ -126,6 +126,13 @@ export function check(files, doNotTranslate = {}) {
       for (const field of ["name", "nativeName"]) {
         if (!meta[field]) errors.push(`${code}.json: $meta.${field} is missing`);
       }
+      // Optional: absent means reviewed. But present-and-wrong-shaped is
+      // worse than absent — a string "true" is truthy everywhere a caller
+      // might carelessly check it, so it must fail loudly rather than
+      // silently mean nothing.
+      if ("needsNativeReview" in meta && typeof meta.needsNativeReview !== "boolean") {
+        errors.push(`${code}.json: $meta.needsNativeReview must be a boolean, got ${JSON.stringify(meta.needsNativeReview)}`);
+      }
     }
 
     const loc = flatten(doc);

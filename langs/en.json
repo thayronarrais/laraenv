@@ -230,6 +230,14 @@
     "appearance": {
       "language": "Language",
       "languageHint": "Applies immediately, including open terminal windows.",
+      "needsNativeReviewBadge": "(needs native review)",
+      "needsNativeReviewNotice": "This translation was machine-generated and has not yet been checked by a native speaker. If you speak this language, corrections are welcome: https://github.com/thayronarrais/laraenv/tree/main/langs",
+      "overrideActive": "Using local translations from {{path}}",
+      "overrideRejected": {
+        "one": "{{count}} local translation was ignored because it must contain specific text and doesn't: {{keys}}",
+        "other": "{{count}} local translations were ignored because they must contain specific text and don't: {{keys}}"
+      },
+      "overrideUnreadable": "{{file}} could not be read and was skipped: {{reason}}",
       "themeHint": "Pick a color template. Changes apply instantly and are saved for next launch.",
       "themes": {
         "nebula": "Default purple & mint",

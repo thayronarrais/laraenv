@@ -1,0 +1,2620 @@
+{
+  "$meta": {
+    "code": "ru",
+    "name": "Russian",
+    "nativeName": "Русский",
+    "needsNativeReview": true
+  },
+  "backend": {
+    "tray": {
+      "tooltip": "LaraEnv — менеджер локальной среды разработки",
+      "showWindow": "Показать окно",
+      "services": "Службы",
+      "projects": "Проекты",
+      "startAll": "Запустить все",
+      "stopAll": "Остановить все",
+      "quit": "Выйти из LaraEnv",
+      "untagged": "Без тегов",
+      "statusRunning": "работает",
+      "statusStopped": "остановлено"
+    },
+    "notifications": {
+      "sessionNeedsInput": "{{title}} ожидает ввода",
+      "sessionDone": "{{title}} завершено",
+      "sessionError": "{{title}} остановлено из-за ошибки",
+      "usageReachedTitle": "Использование {{provider}} достигло {{percent}}%",
+      "usageMessage": "{{label}} использовано на {{percent}}%.",
+      "localCAUntrustedTitle": "Локальный HTTPS-сертификат ещё не добавлен в доверенные",
+      "localCAUntrustedMessage": "Этот компьютер пока не доверяет локальному центру сертификации LaraEnv, поэтому браузеры будут предупреждать об этом HTTPS-сайте. Добавьте его в доверенные в Настройки → Службы → Локальный HTTPS.",
+      "historyMalformed": "История уведомлений была повреждена и сброшена."
+    },
+    "updater": {
+      "verifyingIntegrity": "проверка целостности…",
+      "hashFailed": "ошибка проверки хэша: {{error}}"
+    },
+    "app": {
+      "relocationTitle": "LaraEnv перемещён в новую папку",
+      "relocationMessage": "Перемещено из {{previousRoot}}. Обновлено сохранённых путей: {{moved}}, перенаправлено конфигураций PHP: {{inis}}. Проекты, виртуальные хосты и сертификаты пересобираются при этом запуске.",
+      "reclaimedPorts": "Освобождены потерянные порты: {{ports}}",
+      "rekeyedItems": "перешифровано элементов: {{count}}",
+      "rekeySkipped": ", пропущено элементов, которые не удалось расшифровать: {{count}}",
+      "cloudSyncSummary": "отправлено хостов: {{pushed}} + crons: {{pushedCrons}} + пресетов: {{pushedPresets}}, получено хостов: {{pulled}} + crons: {{pulledCrons}} + пресетов: {{pulledPresets}}",
+      "pickZipTitle": "Выберите zip-архив для {{kind}} {{version}}",
+      "pickPrivateKeyTitle": "Выберите приватный ключ для импорта для {{host}}",
+      "pickPrivateKeyFileTitle": "Выберите файл приватного ключа",
+      "sshKeyFilterLabel": "Приватные ключи SSH (*, id_*, *.pem)",
+      "allFilesFilterLabel": "Все файлы (*.*)",
+      "addFolderToAgentSessionTitle": "Добавить папку в сессию агента",
+      "deployConnecting": "--- Подключение к {{user}}@{{address}}:{{port}} ---",
+      "deployPlan": "--- План: шагов — {{count}} ---",
+      "deployDetectionComplete": "--- Определение завершено: {{osFamily}} {{osVersion}}, найдено бинарных файлов: {{count}} ---",
+      "vhostSweepFailed": "очистка vhost {{label}}: {{error}}",
+      "projectVhostError": "{{name}}: {{error}}",
+      "repairProjectRoutesFailed": "восстановление маршрутов проекта: {{error}}",
+      "remoteWipedServerDeleteFailed": "удалённый сервер очищен, но удалить запись сервера не удалось: {{error}}",
+      "storeNoticePreservedAt": "{{message}} Сохранено в {{path}}",
+      "sshConnectionOk": "подключение успешно",
+      "projectNotice": "{{name}}: {{message}}"
+    },
+    "cloud": {
+      "apiErrorWithMessage": "сервер: {{message}} (HTTP {{status}})",
+      "apiErrorStatus": "сервер HTTP {{status}}",
+      "undecryptableSkipped": "На сервере пропущено {{count}} элемент(ов), зашифрованных другой кодовой фразой — перешифруйте данные синхронизации с устройства, где они всё ещё работают (Настройки → Аккаунт)",
+      "stepHeader": "=== [{{idx}}/{{total}}] {{title}} ===",
+      "nonZeroExitIgnored": "(ненулевой код завершения проигнорирован: {{error}})",
+      "presetVarBuiltinIgnored": "переменная «{{name}}» является встроенной — пользовательское значение проигнорировано",
+      "presetLaravelProductionDescription": "Режим обслуживания, условная установка composer/npm, migrate --force, optimize, перезапуск очередей.",
+      "presetLaravelDevelopmentDescription": "Облегчённый процесс: зависимости dev, migrate, optimize:clear — без режима обслуживания и перезапуска очередей.",
+      "presetStaticNodeDescription": "Pull + npm ci/build только при изменении файлов пакетов; для простых статических репозиториев — только pull."
+    },
+    "services": {
+      "firstRunInitializing": "первый запуск: инициализация директории данных, это займёт несколько секунд…",
+      "initializationFailed": "ошибка инициализации: {{error}}",
+      "startFailed": "не удалось запустить: {{error}}",
+      "exitedNoMessage": "процесс завершился через {{uptime}} без сообщений",
+      "restartLoopGivingUp": "сбой {{name}} {{streak}} раз(а) подряд, автоматический перезапуск отменён: {{detail}}",
+      "restartAfterCrash": "процесс аварийно завершился через {{uptime}}, перезапуск через {{delay}} ({{detail}})",
+      "restartFailed": "не удалось перезапустить {{name}}: {{error}}"
+    },
+    "projectroutes": {
+      "canonicalRestored": "Основной домен был возвращён к главной рабочей копии, так как её worktree отсутствует.",
+      "previewRemoved": "Предпросмотр {{hostname}} был удалён, так как его worktree отсутствует.",
+      "routeStateMalformed": "Состояние маршрутов проекта было повреждено и сброшено."
+    },
+    "agents": {
+      "sharedCheckoutWarning": "{{title}} уже выполняется в этой рабочей копии. Оба агента могут редактировать одни и те же файлы.",
+      "cliNotFound": "CLI не найден в PATH или в поддерживаемом месте установки",
+      "versionProbeTimedOut": "время ожидания проверки версии истекло",
+      "versionUnavailable": "версия недоступна: {{error}}",
+      "sessionHistoryMalformed": "История сессий агентов была повреждена и сброшена.",
+      "hookConfigFolderNotFound": "папка конфигурации {{label}} не найдена",
+      "kimiUsageUnsupported": "Kimi показывает квоту только внутри интерактивного экрана /usage.",
+      "openCodeUsageUnsupported": "Статистика OpenCode сообщает общее количество токенов и стоимость, а не лимиты подписки.",
+      "usageNotSupportedFor": "Лимиты использования не поддерживаются для {{provider}}.",
+      "claudeSignInRequired": "Войдите в Claude Code, чтобы просмотреть лимиты подписки.",
+      "claudeCredentialsUnavailable": "Учётные данные подписки Claude Code недоступны.",
+      "claudeCannotPrepareRequest": "Не удалось подготовить запрос лимитов Claude.",
+      "claudeCouldNotReachLimits": "Не удалось получить лимиты подписки Claude.",
+      "claudeMustRenewLogin": "Сеанс Claude Code необходимо обновить перед считыванием лимитов подписки.",
+      "claudeRateLimited": "Запросы к Claude ограничены по частоте; ожидание перед повтором.",
+      "claudeTemporarilyUnavailable": "Сервис использования Claude временно недоступен (HTTP {{status}}).",
+      "claudeCouldNotReadLimits": "Не удалось прочитать лимиты подписки Claude.",
+      "claudeUnreadableResponse": "Claude вернул нечитаемый ответ о лимитах использования.",
+      "claudeNoLimitWindows": "Claude не вернул периодов лимитов подписки.",
+      "codexNoChatGptRateLimitWindows": "Codex не вернул периодов лимитов скорости ChatGPT.",
+      "codexNoRateLimitWindows": "Codex не вернул периодов лимитов скорости.",
+      "windowLabelFiveHour": "5 часов",
+      "windowLabelWeekly": "Еженедельно",
+      "windowLabelSonnetWeekly": "Sonnet еженедельно",
+      "windowLabelOpusWeekly": "Opus weekly",
+      "windowLabelFableWeekly": "Fable еженедельно",
+      "windowLabelModelWeekly": "{{model}} еженедельно",
+      "windowLabelMonthly": "Ежемесячно",
+      "windowLabelLimit": "Лимит",
+      "windowLabelMinutes": "{{minutes}} мин"
+    },
+    "routes": {
+      "worktreeServerStoppedRouteFailed": "Сервер worktree остановлен, так как его маршрут не смог отслеживать порт прослушивания: {{error}}",
+      "blockerWorktreeMissing": "папка worktree отсутствует",
+      "blockerWorktreeDirty": "в worktree есть незафиксированные изменения",
+      "blockerDevServerRunning": "сервер разработки для предпросмотра запущен",
+      "blockerOwnsDomainRoutes": "worktree всё ещё владеет маршрутами домена",
+      "blockerAgentSessionRunning": "сессия агента всё ещё выполняется: {{title}}"
+    },
+    "projects": {
+      "runningCommand": "выполнение {{command}}",
+      "installingDependencies": "установка зависимостей ({{pm}} install)…",
+      "installFailedWarn": "ПРЕДУПРЕЖДЕНИЕ: ошибка установки: {{error}}",
+      "creatingBlankProject": "создание пустого проекта в {{target}}",
+      "done": "готово.",
+      "composerPharDownloading": "composer.phar не найден — скачивание с getcomposer.org…",
+      "composerPharSaved": "composer.phar сохранён в {{path}}",
+      "gitCloneCommand": "git clone {{url}} {{target}}",
+      "downloadingWordpress": "скачивание последней версии WordPress…",
+      "extracting": "распаковка…",
+      "cacheHit": "найдено в кэше: {{path}}",
+      "creatingMysqlDb": "создание базы данных MySQL `{{name}}`…",
+      "warnGeneric": "ПРЕДУПРЕЖДЕНИЕ: {{error}}",
+      "creatingPostgresDb": "создание базы данных PostgreSQL `{{name}}`…",
+      "noDatabaseInStack": "в активном стеке нет базы данных — создание БД пропущено",
+      "envPatchFailedWarn": "ПРЕДУПРЕЖДЕНИЕ: не удалось обновить .env: {{error}}",
+      "envUpdated": ".env обновлён настройками БД",
+      "noDatabaseSkipMigrate": "база данных не создана — выполнение миграций пропущено",
+      "noPhpForMigrations": "ПРЕДУПРЕЖДЕНИЕ: нет доступного PHP для выполнения миграций — пропуск (выполните `php artisan migrate --seed` вручную)",
+      "runningMigrate": "выполнение php artisan migrate --seed --force…",
+      "migrateFailedWarn": "ПРЕДУПРЕЖДЕНИЕ: ошибка migrate --seed: {{error}}",
+      "skippingFrontendBuildNoNode": "пропуск сборки фронтенда: Node.js не установлен (установите через Библиотеки/Утилиты)",
+      "runningNpmInstall": "выполнение npm install ({{npm}})…",
+      "npmInstallFailedWarn": "ПРЕДУПРЕЖДЕНИЕ: ошибка npm install: {{error}}",
+      "runningNpmBuild": "выполнение npm run build…",
+      "npmBuildFailedWarn": "ПРЕДУПРЕЖДЕНИЕ: ошибка npm run build: {{error}}"
+    },
+    "installer": {
+      "copyingFile": "копирование файла…",
+      "extracting": "распаковка…",
+      "cacheHit": "найдено в кэше",
+      "installing": "установка…",
+      "extractingDll": "распаковка {{name}}.dll…",
+      "extXdebugDescription": "Пошаговый отладчик, профилировщик и замена var_dump.",
+      "extRedisDescription": "Клиентское расширение для Redis (парсинг ответов объектов/массивов на C).",
+      "extMongodbDescription": "Драйвер для MongoDB. Используйте вместе с mongodb/mongodb в Composer.",
+      "extApcuDescription": "Пользовательский кэш в оперативной памяти. Прямая замена APC для задач без опкодов.",
+      "extImagickDescription": "Привязки ImageMagick. Включает собственные DLL ImageMagick в архиве.",
+      "extMemcachedDescription": "Клиент для Memcached. Требует libmemcached (в комплекте в архиве).",
+      "notes": {
+        "nginxStable": "Стабильная сборка для Windows.",
+        "nginxMainline": "Основная (Mainline) сборка для Windows.",
+        "caddySingleBinary": "Один бинарный файл. Настраивается через Caddyfile, редактируется для каждого проекта.",
+        "mailpitPorts": "SMTP на :1025, веб-интерфейс на http://localhost:8025.",
+        "postgresManualDownload": "Скачайте бинарные файлы 'PostgreSQL Binaries' для Windows x86-64. После установки выполните `bin\\initdb -D ..\\data -U postgres`.",
+        "postgresPreviousStable": "Предыдущая стабильная версия.",
+        "postgresLtsPatches2028": "LTS — исправления безопасности до 2028 года.",
+        "postgresPatchesUntil2027": "Исправления безопасности до 2027 года.",
+        "pgvectorPg18": "Поиск векторного сходства для PostgreSQL 18. После установки выполните `CREATE EXTENSION vector;` в каждой базе данных.",
+        "pgvectorGeneric": "Поиск векторного сходства для PostgreSQL {{pg}}.",
+        "apacheLoungeBlocked": "Apache Lounge блокирует прямое скачивание. Нажмите «Открыть страницу», скачайте zip-архив и сохраните его в C:\\laraenv\\cache\\apache-{{version}}.zip",
+        "mysqlCurrentLts": "Текущая версия Innovation/LTS. После установки выполните `bin\\mysqld --initialize-insecure`.",
+        "mysql84Lts": "Серия LTS 8.4. После установки выполните `bin\\mysqld --initialize-insecure`.",
+        "mysqlInitInsecure": "После установки выполните `bin\\mysqld --initialize-insecure`.",
+        "phpBetaWarning": "БЕТА — не для продакшена. Расширения PECL (Xdebug, Redis, …) ещё не собраны для 8.6 — они появятся здесь, когда апстрим их выпустит.",
+        "phpSecurityFixOnlyEol2025": "Только исправления безопасности — EOL в декабре 2025 года.",
+        "phpEndOfLifeNoPatches": "Срок поддержки завершён — обновлений безопасности нет.",
+        "eolRequiresRedist": "EOL. Требуется распространяемый пакет {{redist}}.",
+        "pythonEmbeddable": "Встраиваемая сборка (без нативного pip — установите через get-pip.py).",
+        "nodejsLatestLts": "Последняя LTS. Включает npm и npx.",
+        "nodejsJodLts": "LTS (Jod) — поддержка до апреля 2027 года.",
+        "nodejsEolLegacy": "EOL — только для устаревших проектов.",
+        "redisWindowsPort": "Сборка для Windows от сообщества (tporadowski). По умолчанию порт 6379.",
+        "composerLatestStable": "Composer 2 (последняя стабильная версия). Требует активной версии PHP.",
+        "composer22Lts": "Composer 2.2 LTS — для проектов, привязанных к PHP 5.3 / 7.0+.",
+        "cmderFull": "Полнофункциональный терминал со вкладками (~85 МБ, включает msys-git). После установки появляется в Проекты → терминал.",
+        "cmderMini": "Cmder mini (~6 МБ, без msys-git). Используйте, если у вас уже установлен Git for Windows."
+      }
+    },
+    "gitworkspace": {
+      "notAGitRepository": "Проект не является Git-репозиторием"
+    },
+    "editor": {
+      "customLabel": "Пользовательский…"
+    }
+  },
+  "common": {
+    "windowControls": {
+      "minimize": "свернуть",
+      "maximize": "развернуть",
+      "close": "закрыть"
+    },
+    "typeBadge": {
+      "plain": "Обычный"
+    },
+    "errorBoundary": {
+      "title": "Что-то пошло не так",
+      "description": "В интерфейсе произошла непредвиденная ошибка. Перезагрузка обычно исправляет это — если ошибка повторяется, сообщите подробности ниже.",
+      "reload": "Перезагрузить интерфейс"
+    },
+    "cancel": "Отмена",
+    "save": "Сохранить",
+    "close": "Закрыть",
+    "closeTooltip": "закрыть",
+    "ok": "ОК",
+    "confirm": "Подтвердить"
+  },
+  "settings": {
+    "tabs": {
+      "account": "Аккаунт",
+      "appearance": "Внешний вид",
+      "services": "Службы",
+      "commandcenter": "Командный центр",
+      "experimental": "Экспериментальные",
+      "updates": "Обновления"
+    },
+    "appearance": {
+      "language": "Язык",
+      "languageHint": "Применяется немедленно, включая открытые окна терминала.",
+      "needsNativeReviewBadge": "(требует проверки носителем)",
+      "needsNativeReviewNotice": "Этот перевод создан машиной и пока не проверен носителем языка. Если вы говорите на этом языке, ваши правки приветствуются: https://github.com/thayronarrais/laraenv/tree/main/langs",
+      "themeHint": "Выберите цветовую схему. Изменения применяются мгновенно и сохраняются для следующего запуска.",
+      "themes": {
+        "nebula": "По умолчанию: фиолетовый и мята",
+        "aurora": "Изумрудный и ледяной циан",
+        "sunset": "Оранжевый и янтарь",
+        "crimson": "Красный и нежно-розовый",
+        "oceanic": "Глубокий синий и небесный",
+        "midnight": "Чисто тёмный, графитовые акценты"
+      },
+      "themeAppliedFlash": "Тема применена",
+      "terminalCardTitle": "Терминал",
+      "terminalHint": "Выберите способ копирования и вставки в терминале.",
+      "terminalModeSavedFlash": "Режим терминала сохранён",
+      "terminalMode": {
+        "keyboardTitle": "Клавиатура",
+        "mouseTitle": "Мышь",
+        "mouseDesc": "Правый клик копирует выделенное или вставляет"
+      },
+      "overrideActive": "Используются локальные переводы из {{path}}",
+      "overrideUnreadable": "Не удалось прочитать {{file}}, файл пропущен: {{reason}}",
+      "overrideRejected": {
+        "one": "{{count}} локальный перевод проигнорирован: он должен содержать определённый текст, но не содержит: {{keys}}",
+        "few": "{{count}} локальных перевода проигнорировано: они должны содержать определённый текст, но не содержат: {{keys}}",
+        "many": "{{count}} локальных переводов проигнорировано: они должны содержать определённый текст, но не содержат: {{keys}}",
+        "other": "{{count}} локального перевода проигнорировано: он должен содержать определённый текст, но не содержит: {{keys}}"
+      }
+    },
+    "common": {
+      "saveFailed": "Ошибка сохранения: {{message}}",
+      "savingLabel": "Сохранение…"
+    },
+    "services": {
+      "nginx": {
+        "intro1": "Глобальные директивы в",
+        "intro2": ". Увеличьте",
+        "intro3": "и тайм-ауты ниже, если медленные загрузки возвращают",
+        "bucketSizeError": "Размер bucket должен быть степенью двойки (32, 64, 128, 256, 512, 1024)",
+        "maxSizeError": "Максимальный размер должен быть больше или равен размеру bucket",
+        "savedFlash": "Настройки Nginx сохранены — запущенный Nginx перезагружен",
+        "clientMaxBodyHint": "Максимальный размер загрузки. По умолчанию 512. Должен быть >= post_max_size в PHP.",
+        "clientBodyTimeoutHint": "Макс. время между фрагментами тела запроса клиента. По умолчанию 300.",
+        "fastcgiReadTimeoutHint": "Время ожидания ответа PHP-FPM. По умолчанию 300. Увеличьте для длительного импорта/экспорта.",
+        "proxyReadTimeoutHint": "Время ожидания серверов разработки через обратный прокси (Vite/Next/др.). По умолчанию 300.",
+        "keepaliveTimeoutHint": "Тайм-аут ожидания keep-alive. По умолчанию 75.",
+        "workerConnectionsHint": "Количество одновременных подключений на воркер. По умолчанию 1024.",
+        "bucketSizeHint": "Степень двойки. По умолчанию 128. Увеличьте, если Nginx выдаёт ошибку 'could not build server_names_hash'.",
+        "maxSizeHint": "По умолчанию 1024. Увеличьте, если у вас сотни виртуальных хостов.",
+        "saveButton": "Сохранить Nginx"
+      },
+      "php": {
+        "intro1": "Лимиты загрузки/выполнения записываются в файл каждой версии",
+        "intro2": ", плюс количество воркеров",
+        "intro3": "на версию. Большее число воркеров предотвращает зависание всего сайта из-за одной большой загрузки (php-cgi обрабатывает по одному запросу за раз). Сохраняется мгновенно, пулы PHP-FPM перезагружаются.",
+        "workersLabel": "Воркеры (пул php-cgi)",
+        "workersRangeError": "Количество воркеров должно быть от 1 до 16",
+        "postMaxWarning": "post_max_size должен быть >= upload_max_filesize",
+        "clientMaxBodyTip": "Совет: увеличьте client_max_body_size в Nginx до >= post_max_size, иначе загрузки будут отклонены до попадания в PHP",
+        "savedFlash": "Настройки PHP сохранены — php.ini обновлён, пулы PHP-FPM перезагружены",
+        "uploadMaxHint": "Максимальный размер одного загружаемого файла. По умолчанию 512.",
+        "postMaxHint": "Максимальный размер тела POST-запроса. Должен быть >= upload_max_filesize. По умолчанию 512.",
+        "memoryLimitHint": "Максимальный объём памяти на запрос. По умолчанию 512.",
+        "workersHint": "Количество параллельных процессов php-cgi на версию. От 1 до 16. По умолчанию 4.",
+        "maxExecutionTimeHint": "Максимальное время выполнения скрипта. По умолчанию 300. Увеличьте для медленного импорта.",
+        "maxInputTimeHint": "Максимальное время разбора входных данных запроса (включая загрузку). По умолчанию 300.",
+        "saveButton": "Сохранить PHP"
+      },
+      "apache": {
+        "intro1": "Глобальные директивы в",
+        "intro2": ". Применяются так же, как в Nginx — применяются сразу, работающий Apache перезагружается.",
+        "savedFlash": "Настройки Apache сохранены — запущенный Apache перезагружен",
+        "timeoutHint": "Общий тайм-аут запроса. По умолчанию 300.",
+        "keepAliveTimeoutHint": "Тайм-аут ожидания keep-alive. По умолчанию 5.",
+        "limitRequestBodyHint": "Максимальный размер тела запроса. 0 = без ограничений. По умолчанию 100.",
+        "proxyTimeoutHint": "Время ожидания проксируемых бэкендов (mod_proxy / mod_proxy_fcgi). По умолчанию 300.",
+        "saveButton": "Сохранить Apache"
+      },
+      "localHttps": {
+        "cardTitle": "Локальный HTTPS",
+        "certIntro": "LaraEnv подписывает сертификаты HTTPS для локальных сайтов (таких как",
+        "certMiddle": ") с помощью корневого центра сертификации (CA), который генерируется на этом компьютере. Кнопка",
+        "trustHighlight": "Доверять",
+        "certOutro": "ниже устанавливает этот корневой сертификат в Windows, чтобы этот компьютер доверял сертификатам HTTPS, выпускаемым LaraEnv для локальных сайтов — это не влияет на другие компьютеры.",
+        "pillCheckError": "Не удалось проверить",
+        "pillTrusted": "Доверенный",
+        "pillNotTrusted": "Не доверен",
+        "checkErrorDetail": "Не удалось проверить статус доверия: {{error}}",
+        "trustButton": "Доверять локальному CA",
+        "trustingLabel": "Добавление доверия…",
+        "loadingLabel": "Загрузка…",
+        "loadErrorDetail": "Не удалось прочитать локальный CA: {{error}}",
+        "noneYet": "Локального CA пока нет — он создаётся при первом включении HTTPS в проекте.",
+        "trustedFlash": "Локальный центр сертификации добавлен в доверенные",
+        "trustFailedFlash": "Не удалось добавить в доверенные: {{message}}"
+      }
+    },
+    "commandcenter": {
+      "actions": {
+        "terminal": "Выполнить команду в терминале",
+        "openTerminal": "Открыть терминал",
+        "service": "Действие со службой",
+        "navigate": "Перейти на страницу"
+      },
+      "serviceOps": {
+        "start": "Запустить службу",
+        "stop": "Остановить службу",
+        "reload": "Перезагрузить службу",
+        "startAll": "Запустить все службы",
+        "stopAll": "Остановить все службы",
+        "reloadStack": "Перезагрузить веб-стек"
+      },
+      "summary": {
+        "terminal": "Выполнить «{{command}}»",
+        "terminalWithProject": "Выполнить «{{command}}» · {{project}}",
+        "openTerminal": "Открыть терминал",
+        "openTerminalWithProject": "Открыть терминал · {{project}}",
+        "serviceWithTarget": "{{op}}: {{service}}",
+        "navigate": "Перейти: {{page}}"
+      },
+      "hotkeyCapture": {
+        "listening": "Нажмите клавиши… (Esc для отмены)",
+        "notSet": "Не задано"
+      },
+      "palette": {
+        "cardTitle": "Командная палитра",
+        "description": "Нажмите горячую клавишу палитры в любом месте, чтобы открыть командную палитру. Встроенные команды (навигация, службы, проекты) отображаются автоматически рядом с вашими пользовательскими командами.",
+        "paletteHotkeyLabel": "Горячая клавиша палитры",
+        "globalHotkeyLabel": "Глобальная горячая клавиша",
+        "disableButton": "отключить",
+        "globalHotkeyHintPart1": "Глобальная горячая клавиша открывает палитру во всей системе — даже когда LaraEnv свернут или скрыт в трей (приложение должно оставаться запущенным в трее). Некоторые",
+        "globalHotkeyHintPart2": "комбинации зарезервированы Windows и могут не регистрироваться; если комбинация не работает, попробуйте",
+        "globalHotkeyHintPart3": ".",
+        "terminalHotkeysPart1": "Вкладки терминала также реагируют на",
+        "terminalHotkeysPart2": "(новая вкладка) и",
+        "terminalHotkeysPart3": "(закрыть вкладку)."
+      },
+      "custom": {
+        "cardTitle": "Пользовательские команды",
+        "description": "Ваши команды отображаются в палитре и могут быть назначены на горячую клавишу.",
+        "addButton": "Добавить команду",
+        "empty": "Пользовательских команд пока нет.",
+        "untitled": "(без названия)",
+        "editTooltip": "редактировать",
+        "deleteTooltip": "удалить"
+      },
+      "editor": {
+        "editTitle": "Редактировать · {{label}}",
+        "newTitle": "Новая команда",
+        "shellLabel": "Оболочка",
+        "shellDefaultOption": "По умолчанию",
+        "projectLabel": "Проект (необязательно)",
+        "projectNoneOption": "Нет",
+        "labelLabel": "Название",
+        "labelPlaceholder": "например, Выполнить миграции",
+        "actionLabel": "Действие",
+        "commandLabel": "Команда",
+        "operationLabel": "Операция",
+        "serviceLabel": "Служба",
+        "serviceSelectOption": "Выберите…",
+        "pageLabel": "Страница",
+        "hotkeyLabel": "Горячая клавиша (необязательно)",
+        "saveButton": "Сохранить команду",
+        "cancelButton": "Отмена"
+      },
+      "errors": {
+        "labelRequired": "Команде требуется название"
+      },
+      "saveSuccessFlash": "Команда сохранена",
+      "removeSuccessFlash": "Команда удалена"
+    },
+    "experimental": {
+      "agentSessions": {
+        "cardTitle": "Сессии агентов",
+        "title": "ИИ-агенты кодинга с упором на проект",
+        "description": "Запускайте Claude Code, Codex, Kimi и OpenCode внутри существующих проектов. Текущий checkout используется по умолчанию; переключение веток и изолированные worktree выбираются явно.",
+        "enabledFlash": "Сессии агентов включены",
+        "disabledFlash": "Сессии агентов отключены"
+      },
+      "terminalAgents": {
+        "cardTitle": "Агенты в терминалах LaraEnv",
+        "title": "Отслеживание агентов, запущенных вручную",
+        "description": "Включено по умолчанию вместе с сессиями агентов. Ввод claude, codex, kimi или opencode внутри терминала LaraEnv добавляет сессию в «Агенты» с живым статусом и возможностью возобновления. LaraEnv сохраняет небольшой хук жизненного цикла в глобальной конфигурации каждого провайдера; этот хук ничего не делает за пределами терминалов LaraEnv. Отключите эту опцию, чтобы удалить хуки.",
+        "hookInstalled": "хук установлен",
+        "hookNotInstalled": "не установлен",
+        "enabledFlash": "Отслеживание агентов в терминале включено",
+        "disabledFlash": "Отслеживание агентов в терминале отключено"
+      },
+      "localMetadata": {
+        "cardTitle": "Локальные метаданные",
+        "title": "Сброс метаданных агентов LaraEnv",
+        "description": "Очищает карточки сессий и идентификаторы восстановления LaraEnv. Предыдущий файл метаданных архивируется с меткой времени. Диалоги с провайдерами, учётные данные, репозитории, маршруты и worktree не удаляются.",
+        "resettingLabel": "Сброс…",
+        "resetButton": "Сбросить метаданные",
+        "confirmTitle": "Сбросить сессии агентов LaraEnv?",
+        "confirmMessage": "Диалоги и учётные данные провайдеров никогда не удаляются. Управляемые worktree необходимо предварительно удалить.",
+        "confirmLabel": "Сбросить",
+        "resetFlashWithPath": "Метаданные агентов сброшены. Предыдущий файл заархивирован в {{path}}",
+        "resetFlash": "Метаданные агентов сброшены"
+      }
+    },
+    "phpExtensions": {
+      "header": {
+        "extensionsLabel": "Расширения",
+        "summary": "включено {{enabled}} · всего {{total}}",
+        "backToExtensions": "назад к расширениям",
+        "viewIni": "просмотр php.ini"
+      },
+      "ini": {
+        "revertButton": "откатить",
+        "saveButton": "Сохранить и перезапустить FPM"
+      },
+      "search": {
+        "placeholder": "фильтр расширений…"
+      },
+      "pecl": {
+        "summary": "Расширения PECL (установлено {{installed}}/{{total}})",
+        "installedBadge": "установлено",
+        "reinstallTooltip": "переустановить (повторно скачивает zip)",
+        "installTooltip": "скачать и включить",
+        "reinstallButton": "переустановить",
+        "installButton": "установить",
+        "phaseDownload": "скачивание",
+        "phaseExtract": "распаковка"
+      },
+      "download": {
+        "downloading": "скачивание архива PHP с windows.php.net ({{percent}}%)",
+        "extracting": "распаковка…",
+        "progressDetail": "{{done}} / {{total}} МБ · {{speed}}"
+      },
+      "errors": {
+        "generic": "ошибка: {{error}}",
+        "itemMessage": "{{name}}: {{message}}",
+        "dismissTooltip": "скрыть ошибку"
+      },
+      "list": {
+        "empty": "Подходящих расширений не найдено.",
+        "downloadDllTooltip": "Скачать недостающую библиотеку DLL с windows.php.net (только для встроенных расширений)",
+        "fetchingLabel": "получение",
+        "noDllLabel": "нет dll"
+      },
+      "iniChooser": {
+        "title": "Как вы хотите редактировать php.ini?",
+        "builtinTitle": "Встроенный редактор (VSCode)",
+        "builtinDesc": "Monaco · поиск, подсветка синтаксиса · Сохранение и перезапуск FPM",
+        "systemTitle": "Системный редактор",
+        "systemDesc": "Открывает в приложении ОС по умолчанию · сохраните во внешней программе, затем перезапустите FPM вручную",
+        "cancelButton": "отмена"
+      },
+      "flash": {
+        "peclInstalled": "{{version}} установлено — FPM перезапущен",
+        "installFailed": "ошибка установки",
+        "enabledWord": "включено",
+        "disabledWord": "отключено",
+        "extensionToggled": "{{name}} {{state}} — FPM перезапущен",
+        "dllInstalled": "{{name}}.dll установлено — FPM перезапущен",
+        "openedInSystemEditor": "{{path}} открыт в системном редакторе",
+        "iniSaved": "php.ini сохранён — FPM перезапущен"
+      }
+    },
+    "vcRedist": {
+      "title": "Требуется Visual C++ Redistributable",
+      "binaryReason": "не может запуститься в этой системе, поскольку распространяемый пакет Microsoft Visual C++ Redistributable не установлен.",
+      "genericReason": "Исполняемый файл, необходимый LaraEnv, не может запуститься, поскольку в системе не установлен Microsoft Visual C++ Redistributable.",
+      "installNote": "Это однократная установка от Microsoft (~14 МБ), от которой зависят PHP, MySQL, Apache и подобные инструменты. Установите его, перезапустите LaraEnv и попробуйте снова.",
+      "copyTooltip": "скопировать URL",
+      "copiedLabel": "скопировано",
+      "copyLabel": "копировать",
+      "dismissButton": "Закрыть",
+      "openPageButton": "Открыть страницу загрузки"
+    }
+  },
+  "sidebar": {
+    "nav": {
+      "dashboard": "Панель управления",
+      "projects": "Проекты",
+      "terminal": "Терминал",
+      "cron": "Cron",
+      "deployments": "Деплой",
+      "downloads": "Библиотеки/Утилиты",
+      "settings": "Настройки"
+    },
+    "account": {
+      "viewPlan": "Тарифный план",
+      "pro": "Pro",
+      "free": "Бесплатный"
+    },
+    "footer": {
+      "supportTooltip": "Поддержать проект",
+      "donate": "Пожертвовать",
+      "githubTooltip": "LaraEnv на GitHub — звёзды, отчёты об ошибках, участие в разработке",
+      "github": "LaraEnv на GitHub",
+      "madeWithLove": "Сделано с любовью",
+      "hateForAds": "и ненавистью к рекламе"
+    }
+  },
+  "dashboard": {
+    "services": {
+      "title": "Службы",
+      "emptyPrefix": "Ещё ничего не настроено. Нажмите",
+      "setupAndStart": "Установить и запустить",
+      "emptySuffix": "чтобы скачать рекомендуемый стек (PHP, nginx, MySQL, Mailpit, Node.js) и запустить его за один шаг.",
+      "startAll": "Запустить все",
+      "stopAll": "Остановить все",
+      "starting": "Запуск…",
+      "stopping": "Остановка…",
+      "stoppedAll": "все службы остановлены",
+      "startedAll": "все службы запущены"
+    },
+    "serviceTooltips": {
+      "webServer": "Веб-сервер · http://localhost",
+      "mysql": "хост: localhost · порт: 3306 · пользователь: root · пароль: (пусто)",
+      "postgres": "хост: localhost · порт: 5432 · пользователь: postgres · пароль: (пусто)",
+      "mailpit": "SMTP :1025 · веб-интерфейс http://localhost:8025",
+      "redis": "хост: localhost · порт: 6379"
+    },
+    "hero": {
+      "tagline": "локальная разработка, проще простого",
+      "quoteFallbackText": "Сначала решите задачу. Затем напишите код.",
+      "quoteFallbackAuthor": "Джон Джонсон"
+    },
+    "system": {
+      "title": "Система"
+    },
+    "runtimes": {
+      "title": "Среды выполнения",
+      "noneInstalled": "не установлены — установите через Библиотеки/Утилиты",
+      "reloadPhpTooltip": "обновить версии PHP",
+      "reloadNodeTooltip": "обновить версии Node",
+      "phpActive": "Активна версия PHP {{version}} — новые терминалы будут использовать эту версию",
+      "nodeActive": "Активна версия Node {{version}} — новые терминалы будут использовать эту версию"
+    },
+    "errors": {
+      "generic": "ошибка: {{message}}"
+    },
+    "serviceCard": {
+      "pleaseWait": "пожалуйста, подождите…"
+    },
+    "status": {
+      "running": "работает",
+      "stopped": "остановлено",
+      "starting": "запуск…",
+      "stopping": "остановка…",
+      "unknown": "…"
+    },
+    "metrics": {
+      "loading": "загрузка…",
+      "cpu": "ЦП",
+      "memory": "Память",
+      "gpu": "ГП",
+      "disk": "Диск",
+      "gpuUnavailable": "н/д"
+    },
+    "phpFpm": {
+      "empty": "Версии PHP не установлены.",
+      "extensionsTooltip": "расширения и php.ini",
+      "stopTooltip": "остановить",
+      "startTooltip": "запустить"
+    }
+  },
+  "projects": {
+    "title": "Проекты",
+    "reload": {
+      "title": "Перезагрузить nginx/apache/php-fpm и обновить списки",
+      "label": "обновить"
+    },
+    "newProjectButton": "Новый проект",
+    "tld": {
+      "dropdownTitle": "изменить TLD для всех проектов",
+      "custom": "Пользовательский…",
+      "promptTitle": "Пользовательский TLD",
+      "promptLabel": "TLD (без точки в начале)"
+    },
+    "filters": {
+      "label": "Фильтр",
+      "all": {
+        "one": "все ({{count}})",
+        "few": "все ({{count}})",
+        "many": "все ({{count}})",
+        "other": "все ({{count}})"
+      },
+      "untagged": {
+        "one": "без тегов ({{count}})",
+        "few": "без тегов ({{count}})",
+        "many": "без тегов ({{count}})",
+        "other": "без тегов ({{count}})"
+      },
+      "tagged": {
+        "one": "{{tag}} ({{count}})",
+        "few": "{{tag}} ({{count}})",
+        "many": "{{tag}} ({{count}})",
+        "other": "{{tag}} ({{count}})"
+      }
+    },
+    "list": {
+      "configuredSites": "Настроенные сайты",
+      "searchPlaceholder": "фильтр…",
+      "searchTooltip": "фильтр проектов",
+      "emptyPrefix": "Проектов пока нет. Нажмите",
+      "emptySuffix": "или перетащите папку в",
+      "noMatch": "Нет проектов, соответствующих текущему фильтру."
+    },
+    "common": {
+      "current": "(текущий)",
+      "defaultLabel": "по умолчанию",
+      "workingLabel": "работает…",
+      "removeTagTooltip": "удалить тег",
+      "tagsPlaceholder": "staging, prod, client-x…",
+      "deleteLabel": "Удалить",
+      "startLabel": "Запустить",
+      "terminalFallback": "Терминал",
+      "editorFallback": "Редактор",
+      "customFallback": "Пользовательский"
+    },
+    "errors": {
+      "generic": "ошибка: {{message}}"
+    },
+    "flash": {
+      "reloaded": "обновлено",
+      "sslEnabled": "{{name}} → HTTPS включён",
+      "sslDisabled": "{{name}} → HTTPS отключён",
+      "phpVersionSet": "{{project}} → PHP {{version}}",
+      "nodeVersionSet": "{{project}} → Node {{version}}",
+      "devServerStopped": "{{name}} → сервер разработки остановлен",
+      "devServerStarting": "{{name}} → запуск сервера разработки…",
+      "queueWorkerStopped": "{{name}} → обработчик очередей остановлен",
+      "queueWorkerStarting": "{{name}} → запуск обработчика очередей…",
+      "queueWorkerRestarting": "{{name}} → перезапуск обработчика очередей…",
+      "devCommandUpdated": "{{name}} → команда разработки обновлена",
+      "devCommandReset": "{{name}} → команда разработки сброшена на значение по умолчанию",
+      "noPortDetected": "порт для {{name}} ещё не определён",
+      "proxyWired": "{{name}} → обратное проксирование на localhost:{{port}}",
+      "proxyDisabled": "{{name}} → прокси отключён",
+      "projectAdded": "проект добавлен: {{name}}",
+      "projectRemoved": "проект удалён: {{name}}",
+      "phpInstalled": "PHP {{version}} установлен",
+      "kindInstalled": "{{kind}} {{version}} установлено",
+      "defaultTerminal": "терминал по умолчанию: {{kind}}",
+      "defaultEditor": "редактор по умолчанию: {{kind}}"
+    },
+    "sslCertDialog": {
+      "title": "Для HTTPS требуется доверенный сертификат",
+      "checkFailedReason": "LaraEnv не удалось проверить, является ли центр сертификации доверенным.",
+      "message": "Пока этот компьютер не доверяет центру сертификации, которым LaraEnv подписывает локальные сертификаты, браузер будет предупреждать при каждом запросе HTTPS. Вы можете настроить это в Настройках, в разделе «Службы».",
+      "confirmLabel": "Открыть настройки",
+      "cancelLabel": "Позже"
+    },
+    "trustCaDialog": {
+      "title": "Доверять локальному центру сертификации?",
+      "introBeforeHost": "LaraEnv подписывает локальные HTTPS-сертификаты, включая",
+      "afterHost": ", с помощью корневого центра сертификации, созданного на этом компьютере — Windows пока ему не доверяет, поэтому браузер будет выдавать предупреждение. Добавление в доверенные устанавливает этот корневой CA в Windows, чтобы компьютер доверял сертификатам LaraEnv для локальных сайтов; это не затрагивает другие компьютеры. Эта копия работает из папки без инсталляции, поэтому она никогда не меняет настройки системы без спроса — установленная копия делает это автоматически.",
+      "confirmLabel": "Доверять локальному CA",
+      "cancelLabel": "Не сейчас",
+      "trustedFlash": "Локальный центр сертификации добавлен в доверенные — {{host}} теперь полностью работает по HTTPS",
+      "trustFailedFlash": "Не удалось добавить в доверенные: {{message}}"
+    },
+    "row": {
+      "dotNoServer": "веб-сервер не запущен — запустите его на панели управления",
+      "dotRunning": "сайт доступен · сервер разработки работает",
+      "dotReachable": "сайт доступен",
+      "packageManagerTooltip": "обнаружен менеджер пакетов: {{manager}}",
+      "proxyBadgeTitle": "обратный прокси → localhost:{{port}}",
+      "proxyBadge": "прокси:{{port}}",
+      "tagFilterTooltip": "фильтр по тегу «{{tag}}»",
+      "addTagLabel": "тег",
+      "editTagsLabel": "изменить",
+      "editTagsTooltip": "редактировать теги",
+      "sslBadgeOn": "SSL",
+      "sslBadgeOff": "нет SSL",
+      "groupRuntime": "Среда",
+      "groupAgents": "Агенты",
+      "groupOpen": "Открыть",
+      "groupDev": "Разработка",
+      "groupManage": "Управление",
+      "folder": "Папка",
+      "browser": "Браузер",
+      "logs": "Журналы",
+      "proxyOnLabel": "Прокси вкл",
+      "wireProxyLabel": "Связать прокси",
+      "proxyActiveTitle": "обратный прокси активен → localhost:{{port}}. Нажмите, чтобы отключить.",
+      "proxyActiveStoppedTitle": "обратный прокси активен → localhost:{{port}} (сервер разработки остановлен). Нажмите, чтобы отключить.",
+      "wireProxyTitle": "связать {{host}} → localhost:{{port}}",
+      "sslButtonOn": "SSL вкл",
+      "sslButtonOff": "SSL выкл",
+      "sslButtonOnTooltip": "отключить HTTPS",
+      "sslButtonOffTooltip": "включить HTTPS (самоподписанный)",
+      "config": "Конфиг",
+      "history": "История"
+    },
+    "terminalDropdown": {
+      "title": "открыть терминал в папке проекта с версией PHP проекта",
+      "header": "Открыть терминал",
+      "none": "терминал недоступен",
+      "notInstalledHeader": "Не установлено",
+      "installHint": "— установите через Библиотеки/Утилиты",
+      "setDefaultTooltip": "назначить терминалом по умолчанию"
+    },
+    "editorDropdown": {
+      "title": "выбрать редактор кода для этого проекта",
+      "header": "Открыть в редакторе",
+      "none": "редактор не обнаружен",
+      "notDetectedHeader": "Не обнаружено",
+      "customHeader": "Пользовательская команда",
+      "customPlaceholder": "например, code",
+      "openButton": "Открыть",
+      "openButtonTooltip": "открыть с помощью этой команды",
+      "setDefaultTooltip": "назначить редактором по умолчанию",
+      "setDefaultCustomTooltip": "назначить по умолчанию"
+    },
+    "nodeDropdown": {
+      "title": "выбрать версию Node для этого проекта",
+      "noneInstalledTitle": "версии Node не установлены — установите в Библиотеки/Утилиты",
+      "noneInstalledBody": "Node не установлен — установите в Библиотеки/Утилиты"
+    },
+    "phpDropdown": {
+      "title": "выбрать версию PHP для этого проекта"
+    },
+    "queueWorker": {
+      "onLabel": "Очередь вкл",
+      "offLabel": "Очередь",
+      "runningTitle": "обработчик очередей pid {{pid}} — нажмите, чтобы остановить",
+      "startTitle": "запустить php artisan queue:work",
+      "moreTooltip": "другие действия с очередью",
+      "restart": "Перезапустить",
+      "startWithParams": "Запустить с параметрами…",
+      "startWithParamsDisabledTooltip": "сначала остановите обработчик, чтобы запустить с другими параметрами"
+    },
+    "devServer": {
+      "stopLabel": "Остановить",
+      "runningTitle": "работает — нажмите, чтобы остановить",
+      "runningWithPortTitle": "работает на :{{port}} — нажмите, чтобы остановить",
+      "startWithCmdTitle": "запуск: {{cmd}}",
+      "startDefaultTitle": "запуск сервера разработки (npm run dev)",
+      "customCmdDotTitle": "пользовательская команда",
+      "optionsTooltip": "параметры команды разработки",
+      "configureButton": "Настроить команду…",
+      "configureDisabledTooltip": "сначала остановите сервер разработки, чтобы изменить команду"
+    },
+    "queueParams": {
+      "title": "Запуск обработчика очередей — {{project}}",
+      "commandLabel": "Команда",
+      "argsLabel": "Дополнительные аргументы",
+      "hint": "Сохраняется для каждого проекта — в следующий раз откроется с последним значением."
+    },
+    "devCommandModal": {
+      "title": "Команда разработки — {{project}}",
+      "commandLabel": "Команда",
+      "windowsWarningA": "В Windows,",
+      "windowsWarningB": "завершается сбоем, поскольку dev-скрипт Laravel запускает",
+      "windowsWarningC": ", которому требуется расширение",
+      "windowsWarningD": " (недоступно в Windows).",
+      "patchingLabel": "Применение исправления…",
+      "makeSafeButton": "Сделать composer run dev безопасным для Windows",
+      "makeSafeTooltip": "отредактировать composer.json, чтобы удалить процесс pail из dev-скрипта",
+      "windowsNotePrefix": "Редактирует dev-скрипт в",
+      "windowsNoteSuffix": "вашего проекта, удаляя процесс Pail. Действие обратимо — это ваш файл.",
+      "hintA": "Оставьте пустым, чтобы использовать значение по умолчанию",
+      "hintB": ". Используйте токен",
+      "hintC": "в месте, куда должен подставляться порт сервера разработки — он заменяется свободным портом, который резервирует LaraEnv. Без него инструмент выберет собственный порт (он всё равно определится из логов для прокси).",
+      "hintD": "Примеры:",
+      "resetButton": "Сбросить на значение по умолчанию",
+      "resetTooltip": "вернуть npm run dev"
+    },
+    "newModal": {
+      "title": "Новый проект",
+      "types": {
+        "blankLabel": "Пустой",
+        "blankDesc": "Пустая папка + страница приветствия",
+        "gitLabel": "Клонировать из Git",
+        "wordpressDesc": "Свежий WP с wordpress.org",
+        "viteDesc": "create vite (react/vue/svelte/…)",
+        "nextDesc": "create-next-app (React + SSR)",
+        "nuxtDesc": "create nuxt (Vue + SSR)",
+        "astroDesc": "create astro (для контентных сайтов)"
+      },
+      "nameLabel": "Название",
+      "tagsLabel": "Теги",
+      "tagsOptional": "(необязательно)",
+      "gitUrlLabel": "Git URL",
+      "laravelVersionLabel": "Версия Laravel",
+      "phpVersionLabel": "Версия PHP",
+      "phpMinHint": "требуется PHP ≥{{min}}",
+      "activeSuffix": " (активно)",
+      "noPhpAvailable": "Нет установленного PHP ≥{{min}} — установите в Библиотеки/Утилиты.",
+      "packageManagerLabel": "Менеджер пакетов",
+      "viteTemplateLabel": "Шаблон Vite",
+      "createButton": "Создать",
+      "nameRequired": "укажите название",
+      "gitUrlRequired": "укажите URL Git",
+      "installPhpRequired": "установите PHP ≥{{min}} для Laravel {{version}}",
+      "creatingLog": "создание проекта {{kind}} «{{name}}»…"
+    },
+    "deleteDialog": {
+      "title": "Удалить {{name}}",
+      "prompt": "Что вы хотите сделать с",
+      "vhostOnlyTitle": "Удалить только vhost",
+      "vhostOnlyDescPrefix": "Удаляет конфигурацию nginx и запись в hosts. Папка",
+      "vhostOnlyDescSuffix": "остаётся на диске.",
+      "fullDeleteTitle": "Удалить проект полностью",
+      "fullDeleteDescPrefix": "Удаляет vhost + безвозвратно удаляет папку",
+      "fullDeleteDescSuffix": ". Действие необратимо.",
+      "dropDbLabel": "Также удалить базу данных проекта (при полном удалении)",
+      "confirmTitle": "Безвозвратно удалить {{name}}?",
+      "confirmMessage": "{{path}} будет удалено. Это действие нельзя отменить.",
+      "confirmMessageWithDb": "{{path}} и его база данных будут удалены. Это действие нельзя отменить.",
+      "vhostRemovedFlash": "vhost и запись hosts удалены (папка сохранена)",
+      "deletedFlash": "{{name}} удалён (папка + vhost)",
+      "deletedFlashWithDb": "{{name}} удалён (папка + vhost + база данных)"
+    },
+    "tagsModal": {
+      "title": "Теги · {{name}}",
+      "matchingTags": "Подходящие теги",
+      "existingTags": "Существующие теги",
+      "keyboardHint": "Стрелки для выбора, Tab или Enter для добавления",
+      "suggestionsAriaLabel": "Подсказки тегов",
+      "savedFlash": "теги сохранены: {{name}}"
+    },
+    "vhostModal": {
+      "title": "vhost · {{name}}",
+      "warning": "Ручные изменения сохраняются до нажатия кнопки «Сбросить» или до изменения версии PHP / TLD проекта (они перегенерируются из шаблона).",
+      "notGenerated": "Не сгенерировано для {{server}} — этот сервер, скорее всего, не установлен для данного проекта.",
+      "resetButton": "Сбросить к шаблону",
+      "resetTooltip": "перегенерировать из шаблона",
+      "resetConfirmTitle": "Перегенерировать из шаблона?",
+      "resetConfirmMessage": "Ручные изменения в этом vhost будут утеряны.",
+      "resetConfirmLabel": "Перегенерировать",
+      "resetFlash": "vhost сброшен к шаблону",
+      "discardConfirmTitle": "Отменить несохранённые изменения?",
+      "discardConfirmLabel": "Отменить",
+      "saveButton": "Сохранить и перезагрузить",
+      "savedFlash": "vhost сохранён, {{server}} перезагружен"
+    },
+    "portsModal": {
+      "title": "Используемые порты",
+      "searchPlaceholder": "Фильтр по владельцу, процессу, порту или типу…",
+      "clearTooltip": "очистить",
+      "portColumn": "Порт",
+      "processColumn": "Процесс",
+      "pidColumn": "PID",
+      "actionsColumn": "Действия",
+      "empty": "Порты LaraEnv сейчас не используются.",
+      "noMatch": "Нет портов, соответствующих «{{query}}».",
+      "portCount": {
+        "one": "{{count}} порт",
+        "few": "{{count}} порта",
+        "many": "{{count}} портов",
+        "other": "{{count}} портов"
+      },
+      "kill": "Завершить",
+      "killing": "Завершение…",
+      "killTooltip": "завершить процесс, занимающий этот порт",
+      "footer": "Показывает TCP-порты, занятые серверами разработки и службами LaraEnv, сгруппированные по владельцу. «{{killWord}}» освобождает зависший порт.",
+      "badgeDev": "DEV",
+      "badgeService": "СЛУЖБА",
+      "badgeOrphan": "СИРОТА"
+    },
+    "bootstrap": {
+      "titleConfirm": "Установка рекомендуемого стека",
+      "titleInstalling": "Установка рекомендуемого стека…",
+      "titleStarting": "Запуск служб…",
+      "titleDone": "Стек готов",
+      "titleError": "Ошибка начальной настройки",
+      "descAllInstalled": "Всё уже установлено. Нажмите «Запустить», чтобы поднять службы.",
+      "descNeedsInstall": "Компоненты скачаются и установятся параллельно, затем запустятся автоматически.",
+      "prereleaseBadge": "бета",
+      "prereleaseTooltip": "Нестабильный релиз — ознакомьтесь с примечаниями ниже перед установкой",
+      "alreadyInstalled": "уже установлено",
+      "queued": "в очереди",
+      "downloadingPercent": "скачивание {{percent}}%",
+      "extracting": "распаковка…",
+      "doneLabel": "установлено",
+      "installAndStartButton": "Установить и запустить",
+      "startServices": "Запустить службы",
+      "readyFlash": "рекомендуемый стек готов",
+      "errorFlash": "ошибка начальной настройки: {{message}}"
+    }
+  },
+  "deployments": {
+    "deletedFlash": "Деплой удалён",
+    "title": "Деплой",
+    "loading": "Загрузка…",
+    "reloadButton": "обновить",
+    "sshHostLabel": "SSH-хост",
+    "deleteLabel": "Удалить",
+    "destroyButton": "Уничтожить",
+    "builtInSuffix": "(встроенный)",
+    "waitingForOutput": "(ожидание вывода)",
+    "errors": {
+      "generic": "ошибка: {{message}}"
+    },
+    "steps": {
+      "aptUpdate": "apt update",
+      "addSuryRepo": "Добавление репозитория sury.org PHP (для современных версий PHP)",
+      "installMissingPackages": "Установка недостающих пакетов: {{packages}}",
+      "verifyPhpInstalled": "Проверка установки php{{version}}",
+      "createDeployDir": "Создание директории деплоя {{path}}",
+      "cloneRepo": "Клонирование репозитория",
+      "bootstrapMysqlDb": "Начальная настройка БД MySQL + пользователя для {{name}}",
+      "ensureEnvExists": "Проверка наличия .env",
+      "runBuildScript": "Выполнение скрипта сборки",
+      "runDeployPipeline": "Выполнение пайплайна деплоя",
+      "setLaravelPermissions": "Установка прав среды Laravel (storage, bootstrap/cache)",
+      "writePhpFpmPool": "Запись пула PHP-FPM для {{name}}",
+      "disableDefaultPhpFpmPool": "Отключение стандартного пула www PHP-FPM",
+      "systemdDropinFpm": "Конфигурация systemd Restart=always для {{unit}}",
+      "systemdDropinNginx": "Конфигурация systemd Restart=always для nginx",
+      "reloadSystemdRestartFpm": "Перезагрузка systemd + перезапуск php{{version}}-fpm",
+      "enableApacheModules": "Включение модулей apache (rewrite, php{{version}})",
+      "writeApacheVhost": "Запись виртуального хоста apache для {{domain}}",
+      "reloadApache": "Перезагрузка apache",
+      "writeNginxVhost": "Запись виртуального хоста nginx для {{domain}}",
+      "reloadNginx": "Перезагрузка nginx",
+      "installCertbot": "Установка certbot",
+      "obtainCertificate": "Получение сертификата Let's Encrypt для {{domain}}",
+      "installAutopullScript": "Установка скрипта авто-pull",
+      "scheduleAutopull": "Планирование авто-pull ({{schedule}})",
+      "removeAutopullCron": "Удаление задачи cron для авто-pull",
+      "removeAutopullScript": "Удаление скрипта авто-pull",
+      "disableRemoveApacheVhost": "Отключение и удаление vhost apache",
+      "removeNginxVhost": "Удаление vhost nginx",
+      "removePhpFpmPoolConfig": "Удаление конфигурации пула PHP-FPM + slow log",
+      "reloadPhpFpm": "Перезагрузка PHP-FPM",
+      "revokeCertificate": "Отказ от сертификата Let's Encrypt для {{domain}}",
+      "dropMysqlDb": "Удаление БД MySQL {{dbName}} + пользователя {{dbUser}}",
+      "wipeDeployDir": "Очистка директории деплоя {{path}}",
+      "deployProject": "Деплой {{name}}"
+    },
+    "status": {
+      "never": "никогда",
+      "ok": "ок",
+      "error": "ошибка",
+      "running": "выполняется"
+    },
+    "proFeature": {
+      "title": "Возможность Pro",
+      "description": "Mini-Forge автоматически подготавливает удалённый сервер (определяет ОС + установленный стек, устанавливает недостающие пакеты, настраивает vhost, регистрирует cron, настраивает скрипты авто-деплоя) — на основе уже добавленных сюда SSH-хостов.",
+      "upgradeBefore": "Откройте",
+      "upgradePath": "Настройки → Аккаунт",
+      "upgradeAfter": "для перехода на Pro."
+    },
+    "presetsButton": {
+      "tooltip": "Управление пресетами скрипта деплоя",
+      "label": "Пресеты скриптов"
+    },
+    "newButton": {
+      "needHostTooltip": "Сначала добавьте SSH-хост",
+      "tooltip": "Создать новый деплой",
+      "label": "Новый деплой"
+    },
+    "empty": {
+      "needHost": "Сначала добавьте SSH-хост на странице SSH — деплой ориентирован на существующий хост.",
+      "noDeployments": "Деплоев пока нет. Нажмите «Новый деплой», чтобы подготовить первый удалённый сервер."
+    },
+    "card": {
+      "osLabel": "ОС",
+      "osNotDetected": "ещё не определена",
+      "projectLabel": "Проект",
+      "projectNotSet": "не задан",
+      "lastRunLabel": "Последний запуск",
+      "detectTooltip": "Подключиться по SSH к хосту и проверить его ОС + установленное ПО",
+      "detectButton": "Определить",
+      "applyNeedDetectTooltip": "Сначала выполните определение",
+      "applyTooltip": "Настроить и применить",
+      "applyButton": "Применить",
+      "deployTooltip": "Запустить пайплайн деплоя сейчас: pull + условные сборки. Не затрагивает пакеты, vhost или SSL.",
+      "deployButton": "Деплой",
+      "activityTooltip": "Просмотр истории авто-pull деплоя",
+      "activityButton": "Активность",
+      "destroyTooltip": "Стереть всё с удалённого сервера: каталог, vhost, БД, cron, SSL",
+      "deleteTooltip": "Удалить запись деплоя",
+      "deleteAppliedTooltip": "Забыть эту запись деплоя (НЕ затрагивает удалённый сервер — используйте «Уничтожить» для этого)"
+    },
+    "deleteConfirm": {
+      "title": "Удалить деплой «{{name}}»?",
+      "message": "История запусков также будет удалена."
+    },
+    "newModal": {
+      "nameLabel": "Название",
+      "hostHint": "Определение и применение будут подключаться по SSH к этому хосту, используя учётные данные со страницы SSH.",
+      "nameRequired": "Укажите название",
+      "pickHostRequired": "Выберите SSH-хост",
+      "createdFlash": "Деплой создан",
+      "createButton": "Создать"
+    },
+    "detectModal": {
+      "inProgress": "Определение…",
+      "failed": "Ошибка определения",
+      "complete": "Определение завершено"
+    },
+    "applyModal": {
+      "heading": "Применение — {{name}}",
+      "projectTypeLabel": "Тип проекта",
+      "projectKind": {
+        "laravel": "Laravel",
+        "static": "Статический (HTML/CSS/JS)",
+        "custom": "Пользовательский"
+      },
+      "domainLabel": "Домен",
+      "domainHintEffective": "Действующий: {{domain}}",
+      "domainHintExample": "например, example.com",
+      "environmentLabel": "Окружение",
+      "env": {
+        "production": "production",
+        "development": "development",
+        "staging": "staging"
+      },
+      "gitSourceHeader": "Источник Git",
+      "gitUrlLabel": "URL репозитория (HTTPS)",
+      "gitUrlHint": "Публичные репозитории: вставьте как есть. Приватные: вставьте обычный URL + укажите PAT ниже — мы соединим их автоматически.",
+      "gitPatLabel": "GitHub PAT — только для приватных репозиториев",
+      "gitPatHint": "Создайте на https://github.com/settings/tokens (Classic, область видимости: repo). Оставьте пустым для публичных. Подставляется в URL автоматически — никогда не сохраняется на диск этого компьютера.",
+      "branchLabel": "Ветка",
+      "webServerLabel": "Веб-сервер",
+      "phpNoneOption": "нет (без PHP)",
+      "databaseLabel": "База данных",
+      "databaseNoneOption": "нет",
+      "pipelineHeader": "Пайплайн деплоя",
+      "previewScriptTooltip": "Посмотреть точный скрипт, который будет выполнен, с подставленными переменными",
+      "previewScriptButton": "Предпросмотр скрипта",
+      "presetLabel": "Пресет",
+      "presetHint": "Выполняется после клонирования (Применить), по кнопке «Деплой» и в cron авто-деплоя. Встроенные пресеты пропускают composer/npm, если их lock-файлы не менялись.",
+      "legacyOption": "Произвольный скрипт сборки (устаревший)",
+      "buildScriptLabel": "Скрипт сборки",
+      "buildScriptHint": "Выполняется из корня проекта после git pull. Многострочный bash. Без подстановки переменных.",
+      "presetVarHint": "{{token}}",
+      "presetVarHintWithDefault": "{{token}} — по умолчанию: {{default}}",
+      "customScriptHeader": "Специальный скрипт для этого деплоя",
+      "resetToPresetTooltip": "Сбросить изменения и вернуться к скрипту пресета",
+      "resetToPresetButton": "Сбросить к пресету",
+      "overrideHint": "По-прежнему использует {{token}} — они подставляются во время выполнения. Сам пресет не изменяется.",
+      "customizeScriptTooltip": "Редактировать собственную копию скрипта пресета только для этого деплоя",
+      "customizeScriptButton": "Настроить скрипт для этого деплоя",
+      "httpsHeader": "HTTPS и авто-деплой",
+      "enableSslLabel": "Включить HTTPS через Let's Encrypt",
+      "enableSslHint": "Устанавливает certbot и получает настоящий сертификат для {{domain}}. Домен уже должен указывать на IP этого сервера.",
+      "domainFallback": "домен",
+      "letsEncryptEmailLabel": "Email для уведомлений Let's Encrypt",
+      "autoDeployLabel": "Авто-деплой при git push",
+      "autoDeployHintBefore": "Добавляет запись crontab на удалённом сервере для периодического pull и пересборки. Логи пишутся в",
+      "autoDeployHintAfter": ".",
+      "cronLabel": "Расписание pull (cron)",
+      "cronHint": "5 полей. По умолчанию: каждые 5 минут.",
+      "footerA": "Применение подключится по SSH к",
+      "footerB": ", выполнит",
+      "footerC": "для системных пакетов (требуется sudo без пароля), клонирует репозиторий в",
+      "footerD": ", настроит vhost nginx и перезагрузит nginx. Объединённый журнал будет зашифрован вашим ключом синхронизации перед отправкой.",
+      "runApplyButton": "Применить настройки",
+      "domainRequired": "Укажите домен",
+      "letsEncryptEmailRequired": "Укажите Email для Let's Encrypt",
+      "autoDeployGitUrlRequired": "Для авто-деплоя требуется URL Git",
+      "pickPresetRequired": "Выберите пресет деплоя (или переключитесь на произвольный скрипт)"
+    },
+    "runLog": {
+      "applying": "Применение — {{name}} @ {{host}}",
+      "deploying": "Деплой — {{name}} @ {{host}}",
+      "destroying": "Уничтожение — {{name}} @ {{host}}",
+      "applyFailed": "Ошибка применения — {{name}}",
+      "deployFailed": "Ошибка деплоя — {{name}}",
+      "destroyFailed": "Ошибка уничтожения — {{name}}",
+      "destroyed": "Уничтожено — {{name}}",
+      "deployed": "Развёрнуто",
+      "deployedTo": "Развёрнуто на {{domain}}",
+      "busyTooltip": "выполняется…",
+      "failedSeeLog": "ошибка — см. журнал ниже",
+      "done": "готово",
+      "preparing": "подготовка…",
+      "buildingPlan": "Построение плана…"
+    },
+    "destroyModal": {
+      "title": "Уничтожить {{name}}?",
+      "introBefore": "Это действие подключится по SSH к",
+      "introAfter": "и безвозвратно удалит:",
+      "itemVhost": "vhost nginx {{name}}.conf (+ перезагрузка)",
+      "itemMysql": "БД MySQL + пользователя ({{name}})",
+      "itemCron": "строку crontab для {{name}}",
+      "itemSsl": "сертификат Let's Encrypt для {{domain}}",
+      "domainFallback": "домен",
+      "recordDeletedNote": "Сама запись деплоя также удаляется. SSH-хост остаётся.",
+      "typeToConfirmBefore": "Введите",
+      "typeToConfirmAfter": "для подтверждения"
+    },
+    "activityModal": {
+      "title": "Активность — {{name}}",
+      "loadingLabel": "Чтение журнала авто-pull…",
+      "emptyTitle": "Активности авто-pull пока нет.",
+      "emptyDetailBefore": "Cron записывает каждый успешный",
+      "emptyDetailAfter": "сюда. Если вы только что включили авто-деплой, подождите один интервал cron и повторите попытку.",
+      "openOnGithubTooltip": "Открыть {{before}}...{{after}} на GitHub",
+      "footer": {
+        "one": "Показан последний {{count}} pull. Более старые записи удаляются при ротации журнала.",
+        "few": "Показаны последние {{count}} pull'а. Более старые записи удаляются при ротации журнала.",
+        "many": "Показаны последние {{count}} pull'ов. Более старые записи удаляются при ротации журнала.",
+        "other": "Показаны последние {{count}} pull'ов. Более старые записи удаляются при ротации журнала."
+      }
+    },
+    "presetsModal": {
+      "title": "Пресеты скриптов деплоя",
+      "backButtonTooltip": "Назад к списку",
+      "editTitle": "Редактировать — {{name}}",
+      "newPresetLabel": "Новый пресет",
+      "introBefore": "Пресеты представляют собой bash-пайплайны с",
+      "introAfter": "— выбирайте по одному на деплой, заполняйте переменные и просматривайте итоговый скрипт перед запуском. Встроенные доступны только для чтения: дублируйте их для адаптации под клиента.",
+      "loadingLabel": "загрузка…",
+      "builtInBadge": "встроенный",
+      "viewButton": "Просмотр",
+      "editButton": "Редактировать",
+      "duplicateTooltip": "Создать редактируемую копию",
+      "duplicateButton": "Дублировать",
+      "deleteTooltip": "Удалить пресет",
+      "deletedFlash": "Пресет удалён",
+      "deleteConfirm": {
+        "title": "Удалить пресет «{{name}}»?",
+        "message": "Деплоям, использующим его, потребуется назначить новый пресет."
+      },
+      "nameRequired": "Укажите название пресета",
+      "invalidVarKey": "Недопустимый ключ переменной «{{key}}» — используйте строчные латинские буквы, цифры и _",
+      "reservedVarKey": "«{{key}}» — это встроенная переменная, выберите другое имя",
+      "savedFlash": "Пресет сохранён",
+      "builtinTokens": {
+        "name": "название деплоя (очищенное)",
+        "domain": "действующий домен (с префиксом среды)",
+        "rawDomain": "домен без префикса среды",
+        "branch": "ветка git",
+        "phpVersion": "например, 8.3",
+        "gitUrl": "URL репозитория"
+      },
+      "editor": {
+        "nameLabel": "Название",
+        "descriptionLabel": "Описание",
+        "descriptionPlaceholder": "Что делает этот пайплайн",
+        "builtinVarsHeader": "Встроенные переменные",
+        "customVarsHeader": "Пользовательские переменные",
+        "customVarsDescBefore": "Объявляются здесь, заполняются для каждого деплоя. Используются как",
+        "customVarsDescAfter": "в скрипте.",
+        "noneLabel": "нет",
+        "keyPlaceholder": "ключ",
+        "labelPlaceholder": "Название (необязательно)",
+        "defaultValuePlaceholder": "Значение по умолчанию",
+        "addVariableButton": "Добавить переменную",
+        "duplicateToCustomizeButton": "Дублировать для настройки",
+        "savePresetButton": "Сохранить пресет"
+      }
+    },
+    "previewModal": {
+      "titleDeploy": "Предпросмотр скрипта деплоя",
+      "titleApply": "Сформированный пайплайн деплоя",
+      "legacyBadge": "устаревший скрипт сборки",
+      "subtitle": "Это точный скрипт, выполняемый на сервере — переменные уже подставлены.",
+      "unresolvedVars": "Неразрешённые переменные (оставлены как есть): {{tokens}} — определите их в переменных пресета деплоя.",
+      "renderingLabel": "формирование…"
+    }
+  },
+  "account": {
+    "accountCardTitle": "Аккаунт",
+    "syncCardTitle": "Синхронизация",
+    "planCardTitle": "Тарифный план",
+    "logoutButton": "Выйти",
+    "syncRequiresProFlash": "Для синхронизации требуется Pro",
+    "passphraseTooShortFlash": "Кодовая фраза должна содержать не менее 8 символов",
+    "passphraseMismatchFlash": "Кодовые фразы не совпадают",
+    "passphraseSetFlash": "Кодовая фраза синхронизации установлена. Ключ шифрования сгенерирован.",
+    "rekeyPasswordRequiredFlash": "Введите пароль от вашего аккаунта",
+    "checkingSubscriptionFlash": "Проверка статуса подписки…",
+    "fillAllFieldsFlash": "Заполните все поля",
+    "accountCreatedFlash": "Аккаунт создан",
+    "loggedInFlash": "Вход выполнен",
+    "loggedOutFlash": "Выход выполнен",
+    "signedInWithGithubFlash": "Вход выполнен через GitHub",
+    "serverReachableFlash": "Сервер доступен",
+    "errors": {
+      "generic": "ошибка: {{message}}",
+      "unreachable": "недоступно: {{message}}"
+    },
+    "tierNames": {
+      "free": "Бесплатный",
+      "pro": "Pro"
+    },
+    "sync": {
+      "enabledLabel": "Включено",
+      "disabledLabel": "Отключено",
+      "noKeyBadge": "нет ключа",
+      "upsellPro": "Перейдите на Pro для синхронизации SSH-хостов, cron-задач и настроек между компьютерами со сквозным шифрованием.",
+      "setPassphrasePrompt": "Задайте кодовую фразу синхронизации для генерации ключа шифрования (не зависит от вашего входа через GitHub).",
+      "hostsWatching": {
+        "one": "Отслеживается {{count}} SSH-хост. Локальные изменения отправляются автоматически.",
+        "few": "Отслеживается {{count}} SSH-хоста. Локальные изменения отправляются автоматически.",
+        "many": "Отслеживается {{count}} SSH-хостов. Локальные изменения отправляются автоматически.",
+        "other": "Отслеживается {{count}} SSH-хостов. Локальные изменения отправляются автоматически."
+      },
+      "toggleOnPrompt": "Включите переключатель, чтобы начать синхронизацию.",
+      "rekeyTooltip": "Сменить ключ синхронизации (исправить несовпадение кодовых фраз на разных устройствах)",
+      "syncNowTooltip": "Синхронизировать сейчас",
+      "setPassphraseTooltip": "Нажмите, чтобы задать кодовую фразу синхронизации",
+      "encryptionEnabledLabel": "Сквозное шифрование",
+      "encryptionMissingLabel": "Ключ шифрования не установлен",
+      "kdfKeyLabel": "Ключ {{kdf}}",
+      "encryptedDetail1": "Каждый элемент шифруется на этом устройстве перед отправкой. Сервер хранит только зашифрованные данные.",
+      "encryptedDetail2": "Ключ генерируется локально из вашего пароля или кодовой фразы синхронизации и никогда не передаётся на сервер.",
+      "encryptedDetail3": "Шифротекст проходит аутентификацию: повреждённый элемент или неверная кодовая фраза приведут к ошибке расшифровки вместо возврата неверных данных.",
+      "noKeyDetail": "Задайте кодовую фразу синхронизации для генерации ключа на этом устройстве. До этого момента ничего не отправляется.",
+      "passphraseModal": {
+        "title": "Выберите кодовую фразу синхронизации.",
+        "body": "Она используется только на этом устройстве для генерации ключа шифрования AES-256. Сервер никогда её не увидит.",
+        "warning": "Если вы её забудете, восстановить синхронизированные данные будет невозможно.",
+        "passphrasePlaceholder": "Кодовая фраза синхронизации (минимум 8 символов)",
+        "confirmPlaceholder": "Подтвердите кодовую фразу",
+        "submitButton": "Установить фразу и включить синхронизацию"
+      },
+      "rekeyModal": {
+        "title": "Смена ключа данных синхронизации.",
+        "intro": "Перезашифровывает всё на сервере с помощью вашего текущего",
+        "accountPassword": "пароля от аккаунта",
+        "middle": ", затем применяет этот ключ здесь. Выполните это на устройстве, которое",
+        "canStillSync": "всё ещё может синхронизироваться",
+        "afterwards": "— после этого остальные ваши устройства (вошедшие с тем же паролем) смогут всё расшифровать. Используйте это, если на устройстве появляется предупреждение о",
+        "differentPassphrase": "другой кодовой фразе",
+        "warningSuffix": ".",
+        "passwordPlaceholder": "Пароль от аккаунта",
+        "submitButton": "Сменить ключ сейчас"
+      }
+    },
+    "plan": {
+      "proTitle": "LaraEnv Pro",
+      "proSubtitle": "Синхронизация и удалённый деплой включены",
+      "freeSubtitle": "Перейдите на Pro за $3/мес, чтобы разблокировать синхронизацию и удалённый деплой",
+      "manageSubscriptionButton": "Управление подпиской",
+      "payWithStripeButton": "Оплатить через Stripe",
+      "payWithStripeTooltip": "Оплата банковской картой через Stripe",
+      "payWithPaypalButton": "Оплатить через PayPal",
+      "payWithPaypalTooltip": "Оплата через PayPal",
+      "table": {
+        "featureHeader": "Возможность",
+        "currentBadge": "Текущий"
+      },
+      "features": {
+        "projects": "Проекты",
+        "sshHosts": "SSH-хосты",
+        "cronJobs": "Задачи Cron",
+        "localTerminal": "Локальный терминал",
+        "crossDeviceSync": "Синхронизация между устройствами",
+        "remoteDeploy": "Удалённый деплой",
+        "priorityUpdates": "Приоритетные обновления"
+      }
+    },
+    "signIn": {
+      "signInLabel": "Вход",
+      "createAccountLabel": "Создать аккаунт",
+      "continueWithGithubButton": "Продолжить с GitHub",
+      "orDivider": "или",
+      "nameLabel": "Имя",
+      "namePlaceholder": "Ваше имя",
+      "emailLabel": "Электронная почта",
+      "passwordLabel": "Пароль",
+      "passwordHint": "Не менее 8 символов. Используется для генерации ключа шифрования — если вы его забудете, синхронизированные данные восстановить не удастся."
+    }
+  },
+  "agents": {
+    "status": {
+      "starting": "Запуск",
+      "working": "В работе",
+      "needsInput": "Требуется ввод",
+      "done": "Готово",
+      "idle": "Ожидание",
+      "stopped": "Остановлен",
+      "error": "Ошибка"
+    },
+    "launchModeLabel": {
+      "current": "текущий",
+      "branch": "ветка",
+      "worktree": "worktree"
+    },
+    "usage": {
+      "usedLabel": "использовано",
+      "remainingLabel": "осталось",
+      "leftLabel": "осталось",
+      "unknownLabel": "неизвестно",
+      "resetUnknown": "сброс неизвестен",
+      "resetsAt": "сброс {{when}}",
+      "availableLabel": "доступно"
+    },
+    "filters": {
+      "searchPlaceholder": "Поиск по названию, проекту, провайдеру или выводу…",
+      "allProviders": "Все провайдеры",
+      "allStates": "Все статусы",
+      "archivedLabel": "В архиве"
+    },
+    "onboarding": {
+      "badge": "Сессии с фокусом на проект",
+      "title": "Начинайте работу там, где уже находится проект.",
+      "description": "Выберите проект и агента для кодинга. LaraEnv использует текущую рабочую копию, если вы явно не выберете ветку или изолированное worktree.",
+      "steps": {
+        "project": "Проект",
+        "agent": "Агент",
+        "workingCopy": "Рабочая копия"
+      },
+      "projectPlaceholder": "Выберите проект",
+      "workingCopyValue": "Текущий · Ветка · Worktree",
+      "readyLabel": "готов",
+      "notFoundLabel": "не найден",
+      "startButton": "Запустить сессию агента",
+      "addProjectButton": "Сначала добавьте проект"
+    },
+    "contextFolders": {
+      "heading": "Папки сессии",
+      "folderCount": {
+        "one": "{{count}} папка",
+        "few": "{{count}} папки",
+        "many": "{{count}} папок",
+        "other": "{{count}} папок"
+      },
+      "newWorktreeLabel": "новое worktree",
+      "mainLabel": "основной",
+      "removeFolderAria": "Удалить папку {{directory}}",
+      "pathPlaceholder": "Вставьте полный путь к папке",
+      "pathInputAria": "Путь к дополнительной папке",
+      "addFolderAria": "Добавить путь к папке",
+      "addFolderTooltip": "Добавить папку",
+      "browseButton": "Обзор",
+      "hint": "Агент может читать и редактировать эти папки. Они сохраняются в этой сессии при её возобновлении.",
+      "worktreeHint": "Дополнительные папки используют своё исходное расположение и доступны другим сессиям.",
+      "unsupportedHasFolders": "{{provider}} не поддерживает дополнительные папки. Удалите их или выберите Claude Code, Codex или Kimi Code.",
+      "unsupportedNoFolders": "{{provider}} не поддерживает дополнительные папки. Выберите Claude Code, Codex или Kimi Code для добавления.",
+      "errorInvalidPath": "Введите полный путь к папке или нажмите «Обзор».",
+      "errorDuplicate": "Эта папка уже добавлена в контекст сессии.",
+      "errorBrowseFailed": "Не удалось выбрать папку: {{message}}"
+    },
+    "sessionCard": {
+      "noPreviewFallback": "Предпросмотра вывода пока нет",
+      "terminalBadge": "Терминал",
+      "terminalBadgeTooltip": "Запущено вручную в терминале LaraEnv",
+      "openButton": "Открыть",
+      "resumeButton": "Возобновить",
+      "newSessionButton": "Новая сессия",
+      "renameButton": "Переименовать",
+      "archiveButton": "В архив",
+      "stopButton": "Остановить",
+      "stopTooltipAdopted": "Остановка закрывает эту вкладку терминала",
+      "stopTooltipDefault": "Остановить этого агента",
+      "worktreeRuntimeLabel": "Среда worktree",
+      "runningBadge": "РАБОТАЕТ :{{port}}",
+      "dirtyBadge": "ИЗМЕНЁН",
+      "logsButton": "Журналы",
+      "stopServerButton": "Остановить сервер",
+      "startServerButton": "Запустить сервер :{{port}}",
+      "disconnectUrlsButton": "Отключить URL",
+      "removeWorktreeButton": "Удалить worktree",
+      "removeWorktreeDefaultTooltip": "Удалить это чистое, неиспользуемое worktree"
+    },
+    "usageBar": {
+      "limitsLabel": "Лимиты",
+      "staleTooltip": "Последние доступные данные; ожидание обновления",
+      "refreshTooltip": "обновить лимиты использования",
+      "sessionWindowPrefix": "5 ч",
+      "weeklyWindowPrefix": "нед"
+    },
+    "usagePopover": {
+      "title": "Лимиты использования агентов",
+      "subtitle": "Только квота, сообщённая провайдером; без расчётных процентов.",
+      "emptyMessage": "Лимиты подписки пока недоступны.",
+      "staleNotice": "Последние доступные показания. {{message}}",
+      "unavailableFallback": "Лимиты недоступны"
+    },
+    "domainRouting": {
+      "heading": "Маршрутизация доменов",
+      "hint": "Необязательно. Применяется только после готовности worktree.",
+      "primaryOwner": "Основной владелец: {{owner}}",
+      "mainCheckoutLabel": "основной checkout",
+      "restoreButton": "Вернуть основной домен к главному checkout",
+      "routingChangeHeading": "Изменение маршрутизации",
+      "fromLabel": "Из: {{path}}",
+      "toLabel": "В: {{path}}",
+      "confirmRestoreButton": "Подтвердить возврат",
+      "leaveUnchangedOption": "Оставить основной домен без изменений",
+      "serveFromWorktreeOption": "Обслуживать основной домен из этого worktree",
+      "serveFromWorktreeHint": "Перемещает {{host}}; его можно будет восстановить позже.",
+      "previewOption": "Создать альтернативный URL для предпросмотра",
+      "previewHint": "Сохраняет основной URL доступным и добавляет имя хоста для этого worktree.",
+      "previewHostnameLabel": "Имя хоста для предпросмотра",
+      "devServerPortLabel": "Порт сервера разработки worktree",
+      "portHint": "Основной checkout уже использует порт {{port}}; этому worktree нужен другой свободный порт."
+    },
+    "gitLocation": {
+      "current": {
+        "label": "Текущий checkout",
+        "detail": "Использовать уже открытую ветку. Без изменений в Git."
+      },
+      "branch": {
+        "label": "Переключить основной checkout",
+        "detail": "Меняет ветку для всего проекта."
+      },
+      "worktree": {
+        "label": "Изолированное worktree",
+        "detail": "Создать или повторно использовать отдельную копию."
+      },
+      "selectedBadge": "выбрано"
+    },
+    "routeBadge": {
+      "primaryTooltip": "Основной домен проекта",
+      "alternativeTooltip": "Альтернативный предпросмотр worktree",
+      "mainLabel": "ОСНОВНОЙ",
+      "previewLabel": "ПРЕДПРОСМОТР"
+    },
+    "launcher": {
+      "triggerTooltip": "запустить ИИ-агента кодинга в {{project}}",
+      "defaultButtonLabel": "Агенты",
+      "header": "Запуск агента",
+      "searchProjectSrLabel": "Поиск проекта",
+      "searchAria": "Поиск проекта для новой сессии агента",
+      "searchPlaceholder": "Поиск проектов · выбран {{project}}",
+      "noProjectsFound": "Проекты не найдены",
+      "detachedLabel": "откреплён",
+      "dirtyLabel": "изменён",
+      "cliUnavailable": "CLI недоступен",
+      "notDetected": "не обнаружен",
+      "workingCopyHeading": "Рабочая копия",
+      "branchLabel": "Ветка",
+      "createBranchLabel": "Создать эту ветку",
+      "baseRefLabel": "Базовая ветка/коммит",
+      "worktreeNameLabel": "Имя worktree",
+      "dirtyWarning": "В основной копии есть незафиксированные изменения. Сделайте коммит или stash перед переключением.",
+      "gitUnavailableReason": "Информация о Git недоступна",
+      "checkoutStillAvailableSuffix": ". Текущий checkout остаётся доступным.",
+      "sharedCheckoutNotice": "Общий checkout с {{titles}}. Оба агента могут редактировать одни и те же файлы. Закройте это меню для отмены.",
+      "continueSharedButton": "Продолжить с общим checkout",
+      "startAgentButton": "Запустить {{agent}}",
+      "genericAgentFallback": "агент",
+      "restoredFlash": "{{host}} возвращён к основному checkout",
+      "restoreFailedFlash": "Не удалось восстановить {{host}}: {{message}}",
+      "thisAgentFallback": "Этот агент"
+    },
+    "page": {
+      "header": {
+        "title": "Агенты",
+        "offBadge": "выкл",
+        "newButtonLabel": "Новая",
+        "refreshTooltip": "обновить сессии",
+        "sessionViewAria": "Просмотр сессий",
+        "searchPlaceholder": "Поиск сессий...",
+        "allProjectsOption": "Все проекты",
+        "projectFilterSrLabel": "Фильтр сессий по проекту",
+        "scopeLabels": {
+          "active": "Активные",
+          "recent": "Недавние",
+          "archived": "В архиве"
+        }
+      },
+      "disabled": {
+        "heading": "Включить сессии агентов",
+        "description": "Организуйте агентов кодинга по проектам и держите несколько диалогов открытыми рядом с этим навигатором.",
+        "enablingButton": "Включение…",
+        "enableButton": "Включить агентов",
+        "footer": "В Git ничего не меняется, пока вы явно не выберете ветку или worktree."
+      },
+      "empty": {
+        "filtered": "Нет сессий, соответствующих этим фильтрам",
+        "active": "Нет активных сессий",
+        "recent": "Нет недавних сессий",
+        "archived": "Нет архивных сессий",
+        "activeHint": "Запустите агента или откройте недавние сессии, которые можно возобновить.",
+        "newSessionButton": "Новая сессия",
+        "viewRecentButton": "Посмотреть недавние"
+      },
+      "locationWorktreeBadge": "worktree",
+      "locationSelectedBranch": "Выбранная ветка",
+      "locationCurrentCheckout": "Текущий checkout",
+      "sessionAgeNow": "сейчас",
+      "projectGroup": {
+        "newSessionButtonLabel": "Новая сессия"
+      },
+      "actionsMenu": {
+        "triggerAria": "Действия для {{title}}",
+        "foldersHeading": "Папки сессии",
+        "openSession": "Открыть сессию",
+        "resumeSession": "Возобновить сессию",
+        "newSessionHere": "Новая сессия здесь",
+        "rename": "Переименовать",
+        "markAsRead": "Отметить как прочитанное",
+        "stop": "Остановить",
+        "worktreeHeader": "Worktree",
+        "stopServer": "Остановить сервер :{{port}}",
+        "startServer": "Запустить сервер :{{port}}",
+        "serverLogs": "Журналы сервера",
+        "disconnectUrls": "Отключить URL",
+        "removeWorktree": "Удалить worktree",
+        "archive": "В архив"
+      },
+      "renameDialog": {
+        "title": "Переименовать сессию",
+        "label": "Название сессии"
+      },
+      "flash": {
+        "sessionRenamed": "Сессия переименована",
+        "agentStopped": "Агент остановлен",
+        "sessionArchived": "Сессия перенесена в архив",
+        "markedAsRead": "Отмечено как прочитанное",
+        "worktreeServerStarted": "Сервер worktree запущен",
+        "worktreeServerStopped": "Сервер worktree остановлен",
+        "worktreeUrlsDisconnected": "URL-адреса worktree отключены",
+        "worktreeRemoved": "Worktree удалено, сессии архивированы"
+      },
+      "errors": {
+        "loadSessions": "Не удалось загрузить сессии агентов: {{message}}",
+        "actionFailed": "Сбой действия агента: {{message}}",
+        "worktreeActionFailed": "Сбой действия worktree: {{message}}"
+      },
+      "detachRoutesDialog": {
+        "title": "Отключить URL worktree?",
+        "message": "{{hostnames}} будут отключены, а основной домен восстановлен при необходимости.",
+        "fallbackSubject": "Это worktree",
+        "confirmLabel": "Отключить"
+      },
+      "removeWorktreeDialog": {
+        "title": "Удалить worktree?",
+        "message": "Чистое worktree по пути {{path}} будет удалено. Это действие нельзя отменить.",
+        "confirmLabel": "Удалить"
+      },
+      "autoSwitch": {
+        "tooltipBase": "Автоматически переключаться на агентов, ожидающих ввода",
+        "tooltip": "Автоматически переключаться на агентов, ожидающих ввода, ожидает: {{count}}"
+      },
+      "footer": "Проект → рабочая копия → сессия"
+    }
+  },
+  "ssh": {
+    "page": {
+      "reloadButton": "обновить",
+      "newHostButton": "Новый хост",
+      "searchAria": "Поиск SSH-хостов",
+      "searchPlaceholder": "Поиск хостов по имени, пользователю или IP...",
+      "clearSearchAria": "Очистить поиск",
+      "filterByTagAria": "Фильтр хостов по тегу",
+      "hostViewAria": "Вид хостов",
+      "gridViewAria": "Сетка",
+      "listViewAria": "Список",
+      "filters": {
+        "all": "Все",
+        "untagged": "Без тегов"
+      },
+      "empty": {
+        "loading": "Загрузка хостов…",
+        "noHostsFound": "Хосты не найдены",
+        "welcomeTitle": "Ваши серверы на расстоянии одного клика",
+        "tryAnother": "Попробуйте другое имя, пользователя, IP или тег.",
+        "addFirstHost": "Добавьте свой первый SSH-хост, чтобы начать.",
+        "clearFiltersButton": "Очистить фильтры",
+        "addHostButton": "Добавить хост"
+      },
+      "sections": {
+        "matchingTitle": "Подходящие хосты",
+        "matchingSubtitle": {
+          "one": "Найден {{count}} хост",
+          "few": "Найдено {{count}} хоста",
+          "many": "Найдено {{count}} хостов",
+          "other": "Найдено {{count}} хостов"
+        },
+        "recentTitle": "Недавние",
+        "recentSubtitle": "Недавно открытые хосты",
+        "productionTitle": "Production",
+        "productionSubtitle": "Боевые серверы — работайте с осторожностью",
+        "otherTitle": "Другие хосты",
+        "otherSubtitle": "Дополнительные серверы и среды"
+      },
+      "tip": {
+        "title": "Полезный совет",
+        "body": "Используйте ключи SSH для более быстрого и безопасного подключения. Настройте ключ при добавлении или редактировании хоста.",
+        "dismissAria": "Закрыть совет"
+      }
+    },
+    "hostCard": {
+      "noRecentConnection": "Нет недавних подключений",
+      "lastOpened": "Открыто: {{when}}",
+      "authPassword": "Пароль",
+      "authKeyPassword": "Ключ / пароль",
+      "authSshKey": "Ключ SSH",
+      "filterByTag": "Фильтр по {{tag}}",
+      "actionsAria": "Действия для {{name}}",
+      "editHost": "Редактировать хост",
+      "deleteHost": "Удалить хост",
+      "sshPortTooltip": "Порт SSH",
+      "connectAria": "Подключиться к {{name}}",
+      "connect": "Подключиться",
+      "viaLabel": "через {{target}}"
+    },
+    "deleteConfirm": {
+      "title": "Удалить хост «{{name}}»?",
+      "message": "Файлы ключей в C:\\laraenv\\ssh\\{{name}}\\ будут сохранены."
+    },
+    "deleteLabel": "Удалить",
+    "flash": {
+      "hostRemoved": "хост удалён: {{name}}",
+      "hostAdded": "хост добавлен: {{name}}",
+      "hostSaved": "хост сохранён: {{name}}"
+    },
+    "errors": {
+      "generic": "ошибка: {{message}}",
+      "loadHosts": "Не удалось загрузить SSH-хосты: {{error}}",
+      "hostNameRequired": "сначала укажите имя хоста"
+    },
+    "hostModal": {
+      "newTitle": "Новый SSH-хост",
+      "editTitle": "Редактирование хоста · {{name}}",
+      "nameLabel": "Имя",
+      "tagsLabel": "Теги",
+      "removeTagTooltip": "удалить тег",
+      "addressLabel": "Адрес",
+      "portLabel": "Порт",
+      "userLabel": "Пользователь",
+      "authMethodLabel": "Способ аутентификации",
+      "authKey": "Ключ",
+      "authPassword": "Пароль",
+      "authBoth": "И то, и другое",
+      "bothHint": "Сначала пробует ключ, переключается на пароль, если сервер его отклоняет.",
+      "passwordLabel": "Пароль",
+      "passwordPlaceholder": "(хранится в открытом виде в config.json)",
+      "showPasswordTooltip": "показать пароль",
+      "hidePasswordTooltip": "скрыть пароль",
+      "keyFileLabel": "Файл ключа",
+      "noneOption": "— нет —",
+      "setNameFirstTooltip": "сначала укажите имя",
+      "generateTooltip": "сгенерировать новую пару ключей",
+      "generateButton": "сгенерировать",
+      "importTooltip": "вставить / перетащить / выбрать существующий ключ",
+      "importButton": "импортировать",
+      "setNameHint": "сначала задайте имя хоста — ключи сохраняются в C:\\laraenv\\ssh\\<name>\\",
+      "publicKeyLabel": "Открытый ключ (вставьте на удалённом сервере в ~/.ssh/authorized_keys)",
+      "advancedToggle": "Дополнительно — Proxy / Jump-хост",
+      "viaSummary": "· через {{target}}",
+      "proxyJumpLabel": "Proxy Jump (сохранённый хост)",
+      "noneDirectOption": "— нет (напрямую) —",
+      "proxyJumpAria": "Хост Proxy Jump",
+      "proxyJumpHintPrefix": "Туннелирование через другой сохранённый хост (эквивалентно ",
+      "proxyJumpHintSuffix": "). Используются собственные учётные данные промежуточного хоста — повторно вводить их не нужно.",
+      "proxyCommandLabel": "Proxy Command (дополнительно)",
+      "proxyCommandHintPrefix": "Запускает команду, чей стандартный ввод-вывод становится подключением. ",
+      "proxyCommandHintMiddle": " / ",
+      "proxyCommandHintSuffix": " раскрываются в хост/порт. При установке имеет приоритет над Proxy Jump.",
+      "testTooltip": "проверить подключение и аутентификацию без сохранения",
+      "testButton": "Проверить подключение",
+      "addHostButton": "Добавить хост",
+      "errors": {
+        "addressRequired": "укажите адрес",
+        "userRequired": "укажите пользователя",
+        "passwordRequired": "укажите пароль",
+        "pickKeyFile": "выберите файл ключа",
+        "provideCredential": "предоставьте ключ, пароль или оба варианта",
+        "nameRequired": "укажите имя",
+        "duplicateHost": "хост «{{name}}» уже существует ({{user}}@{{address}}:{{port}}) — выберите другое имя или отредактируйте существующий"
+      },
+      "flash": {
+        "keyGenerated": "ключ сгенерирован для {{name}}",
+        "keyImported": "ключ импортирован: {{name}}"
+      }
+    },
+    "importKeyModal": {
+      "title": "Импорт ключа SSH",
+      "hostPrefix": "хост: ",
+      "noneFallback": "(нет)",
+      "storedAt": "· сохраняется в C:\\laraenv\\ssh\\{{host}}\\",
+      "filenameLabel": "Имя файла",
+      "privateKeyLabel": "Приватный ключ",
+      "publicKeyLabel": "Открытый ключ",
+      "publicKeyPlaceholder": "ssh-ed25519 AAAA... (необязательно — извлекается из приватного ключа, если пусто)",
+      "dragDropText": "Перетащите файл приватного ключа (или .pub) сюда",
+      "importFromFileButton": "Импортировать из файла",
+      "saveKeyButton": "Сохранить ключ",
+      "errors": {
+        "readFile": "ошибка чтения файла: {{message}}",
+        "filenameRequired": "укажите имя файла",
+        "privateKeyRequired": "укажите приватный ключ"
+      }
+    },
+    "keyGenModal": {
+      "title": "Генерация ключа SSH",
+      "kinds": {
+        "ed25519": {
+          "desc": "Современные, быстрые и компактные ключи (рекомендуется)"
+        },
+        "rsa4096": {
+          "desc": "Широкая совместимость со старыми серверами"
+        },
+        "ecdsa256": {
+          "desc": "Современная альтернатива ED25519"
+        }
+      },
+      "filenameLabel": "Имя файла",
+      "commentLabel": "Комментарий",
+      "writeHintPrefix": "Пара ключей будет записана в ",
+      "writeHintSuffix": ".",
+      "generateButton": "Сгенерировать",
+      "resultIntroPrefix": "Пара ключей записана в ",
+      "resultIntroMiddle": ". Скопируйте открытый ключ и добавьте его на удалённом сервере в ",
+      "resultIntroSuffix": ":",
+      "copyTooltip": "скопировать в буфер обмена",
+      "useThisKeyButton": "Использовать этот ключ",
+      "errors": {
+        "filenameRequired": "укажите имя файла ключа",
+        "copyFailed": "не удалось скопировать"
+      }
+    },
+    "sftp": {
+      "opening": "открытие SFTP…",
+      "localTitle": "Локально",
+      "remoteTitle": "Удалённо",
+      "parentDirTooltip": "Родительская папка",
+      "refreshTooltip": "Обновить",
+      "newFolderTooltip": "Новая папка",
+      "renameTooltip": "Переименовать",
+      "editFileLabel": "Редактировать файл",
+      "editButton": "Изменить",
+      "deleteTooltip": "Удалить",
+      "emptyPane": "пусто",
+      "uploadTooltip": "Загрузить выбранное → на сервер",
+      "downloadTooltip": "Скачать выбранное ← с сервера",
+      "cancelAction": "отмена",
+      "autoSaveLabel": "Автосохранение",
+      "openSystemEditorButton": "Открыть в системном редакторе",
+      "mkdir": {
+        "remoteTitle": "Новая удалённая папка",
+        "localTitle": "Новая локальная папка",
+        "folderNameLabel": "Имя папки"
+      },
+      "removeConfirm": {
+        "title": {
+          "one": "Удалить {{count}} элемент на удалённом сервере?",
+          "few": "Удалить {{count}} элемента на удалённом сервере?",
+          "many": "Удалить {{count}} элементов на удалённом сервере?",
+          "other": "Удалить {{count}} элементов на удалённом сервере?"
+        },
+        "message": "Это действие нельзя отменить."
+      },
+      "renamePrompt": {
+        "title": "Переименование",
+        "label": "Новое имя"
+      },
+      "errors": {
+        "local": "локально: {{message}}",
+        "remote": "удалённо: {{message}}"
+      },
+      "contextMenu": {
+        "openBuiltIn": "Открыть во встроенном редакторе"
+      },
+      "editChooser": {
+        "title": "Как вы хотите редактировать?",
+        "builtInLabel": "Встроенный редактор (VSCode)",
+        "builtInDesc": "Monaco · поиск, подсветка синтаксиса, автосохранение",
+        "systemLabel": "Системный редактор",
+        "systemDesc": "Открывает в стандартной программе ОС · кнопка «Загрузить повторно» / автосохранение по mtime"
+      },
+      "transfers": {
+        "heading": "Передачи файлов",
+        "uploadLabel": "↑ отправка",
+        "downloadLabel": "↓ скачивание",
+        "dismissTooltip": "скрыть"
+      },
+      "editor": {
+        "editingPrefix": "Редактирование ",
+        "unsavedBadge": "не сохранено",
+        "tooLarge": "Этот файл слишком велик для встроенного редактора.",
+        "binaryFile": "Этот файл является бинарным и не может быть отредактирован как текст.",
+        "loading": "загрузка…",
+        "savingStatus": "сохранение…",
+        "savedAt": "сохранено · {{time}}",
+        "autoSaveOnStatus": "автосохранение вкл",
+        "ctrlSHint": "Ctrl+S для сохранения",
+        "resetButton": "Сбросить",
+        "discardLabel": "Отклонить",
+        "resetConfirm": {
+          "title": "Отменить локальные изменения и перезагрузить?"
+        },
+        "closeConfirm": {
+          "title": "Отменить несохранённые изменения?"
+        }
+      },
+      "external": {
+        "discardTooltip": "Отклонить (удаляет временный файл)",
+        "uploadingStatus": "отправка…",
+        "watchingStatus": "отслеживание…",
+        "editAndClickHint": "отредактируйте и нажмите «Загрузить повторно»",
+        "reuploadButton": "Загрузить повторно"
+      }
+    }
+  },
+  "cron": {
+    "page": {
+      "title": "Cron"
+    },
+    "reloadButton": "обновить",
+    "newCronButton": "Новая задача cron",
+    "filter": {
+      "all": "Все",
+      "globalOnly": "Только глобальные"
+    },
+    "table": {
+      "on": "Вкл",
+      "name": "Название",
+      "schedule": "Расписание",
+      "project": "Проект",
+      "lastRun": "Последний запуск",
+      "status": "Статус",
+      "actions": "Действия"
+    },
+    "empty": {
+      "noCronsYet": "Задач cron пока нет — нажмите «Новая задача cron».",
+      "noMatch": "Нет задач cron, соответствующих этому фильтру."
+    },
+    "actions": {
+      "runNow": "Запустить сейчас",
+      "viewOutput": "Посмотреть последний вывод",
+      "edit": "Редактировать",
+      "delete": "Удалить"
+    },
+    "status": {
+      "running": "выполняется",
+      "ok": "ок",
+      "error": "ошибка",
+      "never": "не запускалась"
+    },
+    "presets": {
+      "everyMinute": "Каждую минуту",
+      "every5Min": "Каждые 5 мин",
+      "every15Min": "Каждые 15 мин",
+      "everyHour": "Каждый час",
+      "daily3am": "Ежедневно в 03:00",
+      "laravelScheduler": "Планировщик Laravel"
+    },
+    "flash": {
+      "updated": "Задача cron обновлена",
+      "created": "Задача cron создана",
+      "deleted": "Задача cron удалена",
+      "runningNow": "Запуск «{{name}}»…"
+    },
+    "deleteConfirm": {
+      "title": "Удалить эту задачу cron?"
+    },
+    "deleteLabel": "Удалить",
+    "errors": {
+      "generic": "ошибка: {{message}}"
+    },
+    "modal": {
+      "newTitle": "Новая задача cron",
+      "editTitle": "Редактирование задачи cron",
+      "nameLabel": "Название",
+      "namePlaceholder": "Запуск планировщика Laravel",
+      "scheduleLabel": "Расписание",
+      "scheduleHint": "выражение cron из 5 полей, либо @every 1m / @hourly / @daily",
+      "commandLabel": "Команда",
+      "commandHint": "выполняется в cmd.exe, версии PHP и Node.js проекта добавляются в начало PATH",
+      "projectLabel": "Проект",
+      "projectHint": "пусто = глобальный cron, выполняется в рабочей директории приложения",
+      "globalOption": "— Глобальный —",
+      "workingDirLabel": "Переопределение рабочей директории",
+      "workingDirHint": "необязательно — по умолчанию корень проекта",
+      "enabledLabel": "Включено (сразу регистрируется в планировщике)",
+      "backgroundModeLabel": "Запускать при закрытом LaraEnv",
+      "backgroundModeHint": "Регистрирует задачу в Планировщике заданий Windows, чтобы она срабатывала каждую минуту даже при закрытом приложении. Исполнитель проверяет расписание каждую минуту — команда выполняется только в подходящие минуты."
+    },
+    "logModal": {
+      "summary": "последний запуск: {{lastRun}} · статус: {{status}}",
+      "noOutput": "(нет вывода)"
+    }
+  },
+  "downloads": {
+    "page": {
+      "title": "Библиотеки / Утилиты",
+      "reloadButton": "обновить",
+      "searchPlaceholder": "Поиск версий, утилит, заметок…",
+      "filterLabel": "Фильтр",
+      "filterAll": "все",
+      "noMatch": "По вашему запросу ничего не найдено."
+    },
+    "groups": {
+      "server": "Сервер",
+      "database": "База данных",
+      "mail": "Почта",
+      "language": "Язык",
+      "extras": "Дополнительно"
+    },
+    "card": {
+      "notInstalled": "не установлено",
+      "running": "работает",
+      "stopped": "остановлено",
+      "showOnDashboard": "Показывать на панели",
+      "installFirstTooltip": "сначала установите версию",
+      "hideFromDashboardTooltip": "скрыть с панели",
+      "showOnDashboardTooltip": "показывать на панели"
+    },
+    "source": {
+      "betaTooltip": "Нестабильный релиз — ознакомьтесь с примечаниями ниже перед установкой",
+      "betaBadge": "бета",
+      "installedBadge": "установлено",
+      "openPageTooltip": "открыть официальный сайт в браузере",
+      "downloadButton": "скачать",
+      "pickZipTooltip": "выбрать скачанный zip-архив",
+      "installFromFileButton": "установить из файла…",
+      "reinstallButton": "переустановить",
+      "installButton": "установить",
+      "extractingFiles": "распаковка файлов…"
+    },
+    "phase": {
+      "download": "скачивание",
+      "extract": "распаковка"
+    },
+    "flash": {
+      "installed": "{{name}} {{version}} установлено",
+      "dashboardVisibility": "Отображение {{name}} на панели: {{state}}",
+      "enabledState": "включено",
+      "hiddenState": "скрыто"
+    },
+    "errors": {
+      "generic": "ошибка: {{message}}"
+    }
+  },
+  "updates": {
+    "page": {
+      "title": "Обновления",
+      "currentVersionLabel": "Текущая версия",
+      "checkButton": "Проверить обновления"
+    },
+    "upToDate": {
+      "title": "У вас установлена последняя версия",
+      "message": "v{{version}} — самый свежий релиз."
+    },
+    "flash": {
+      "updateAvailable": "Доступно обновление: v{{version}}",
+      "checkFailed": "Ошибка проверки обновлений: {{error}}",
+      "downloadFailed": "Ошибка скачивания: {{error}}",
+      "installFailed": "Ошибка установки: {{error}}"
+    },
+    "available": {
+      "title": "Доступна v{{version}}",
+      "released": "Выпущена {{date}}",
+      "verifyingIntegrity": "проверка целостности…",
+      "downloadButton": "Скачать обновление",
+      "restartButton": "Перезапустить и установить",
+      "kindPortable": "Портативная версия — заменяет LaraEnv.exe в этой папке. Ничего не устанавливается в систему.",
+      "kindInstalled": "Установленная версия — запускает инсталлятор для обновления на месте.",
+      "preserveNotePrefix": "Ваши проекты, версии PHP, данные MySQL и конфигурации в ",
+      "preserveNoteSuffix": " сохраняются во время обновления.",
+      "preserveNotePortable": "Ваши проекты, версии PHP, данные MySQL и конфигурации находятся рядом с исполняемым файлом и не затрагиваются обновлением."
+    },
+    "phase": {
+      "download": "скачивание",
+      "verify": "проверка"
+    }
+  },
+  "notifications": {
+    "bellTooltip": "уведомления",
+    "title": "Уведомления",
+    "unreadCount": {
+      "one": "{{count}} непрочитанное",
+      "few": "{{count}} непрочитанных",
+      "many": "{{count}} непрочитанных",
+      "other": "{{count}} непрочитанных"
+    },
+    "allCaughtUp": "Вы всё прочитали",
+    "markAllRead": "Отметить все как прочитанные",
+    "emptyMessage": "Ошибки агентов и предупреждения об использовании ресурсов появятся здесь.",
+    "preferencesHeader": "Уведомлять меня",
+    "preferences": {
+      "errors": "Ошибки",
+      "usage": "Лимиты использования",
+      "completion": "Завершение",
+      "needsInput": "Требуется ввод"
+    },
+    "windowsUnavailableNote": "Уведомления Windows временно недоступны во время доработки десктопной сборки.",
+    "errors": {
+      "sessionGone": "Эта сессия агента больше не существует."
+    }
+  },
+  "terminal": {
+    "pickTerminalTypeTooltip": "выбрать тип терминала",
+    "openTerminalHeader": "Открыть терминал",
+    "noTerminalAvailable": "терминал недоступен",
+    "defaultSuffix": " (по умолчанию)",
+    "serviceLogs": {
+      "title": "Журналы служб",
+      "noServicesYet": "Службы ещё не запущены.",
+      "selectService": "Выберите службу.",
+      "noOutputYet": "Вывод пока не зафиксирован…"
+    },
+    "devServerLogs": {
+      "titlePrefix": "Сервер разработки — ",
+      "worktreeSuffix": " · worktree",
+      "noOutputYet": "Вывода пока нет…"
+    },
+    "pane": {
+      "dragTooltip": "перетащите для перемещения / разделения этой панели",
+      "closeTooltip": "закрыть панель",
+      "connectionFailed": "Не удалось подключиться",
+      "unknownError": "неизвестная ошибка",
+      "paneLabelPrefix": "Панель:"
+    },
+    "sshTimeline": {
+      "connecting": "Подключение…",
+      "inProgress": "в процессе…",
+      "stages": {
+        "dial": "Подключение (TCP)",
+        "handshake": "SSH-рукопожатие и аутентификация",
+        "session": "Открытие сессии",
+        "pty": "Выделение PTY",
+        "shell": "Запуск оболочки"
+      }
+    },
+    "group": {
+      "tabTooltip": "перетащите для изменения порядка / перемещения / открепления · двойной клик для переименования",
+      "closeTabTooltip": "закрыть вкладку",
+      "newTabTooltip": "новая вкладка",
+      "sftpTooltip": "передача файлов SFTP",
+      "runtimeTooltip": "выбрать версию PHP / Node для этого терминала",
+      "autoBadge": "авто",
+      "autoOption": "Авто",
+      "splitRightTooltip": "разделить по вертикали",
+      "splitDownTooltip": "разделить по горизонтали",
+      "attachTooltip": "прикрепить обратно в LaraEnv",
+      "detachTooltip": "открыть в отдельном окне",
+      "restoreTooltip": "восстановить",
+      "maximizeTooltip": "развернуть",
+      "closeGroupTooltip": "закрыть группу",
+      "setDefaultTooltip": "назначить терминалом по умолчанию",
+      "notInstalledHeader": "Не установлено",
+      "installViaDownloads": "— установите через Библиотеки/Утилиты",
+      "phpVersionHeader": "Версия PHP",
+      "nodeVersionHeader": "Версия Node",
+      "activeSuffix": " (активно)",
+      "restartNote": "Выбор версии перезапустит этот терминал.",
+      "mainBadge": "ОСНОВНОЙ",
+      "previewBadge": "ПРЕДПРОСМОТР",
+      "noRouteBadge": "НЕТ МАРШРУТА"
+    },
+    "workspace": {
+      "agentNotInWorkspace": "Терминал этого активного агента отсутствует в текущем рабочем пространстве.",
+      "detachFailed": "Не удалось открыть отдельное окно: {{error}}",
+      "routingReady": "Маршрутизация {{project}} готова: {{routed}}",
+      "primaryDomain": "основной домен",
+      "routingFailed": "{{agent}} запущен, но маршрутизация домена не удалась: {{error}}",
+      "agentHistoryUnavailable": "История {{agent}} больше недоступна. Запустите новую сессию во вкладке «Агенты».",
+      "noTerminalOpen": "Нет открытых терминалов.",
+      "openNewTerminalTooltip": "открыть новый терминал",
+      "newTerminalButton": "Новый терминал",
+      "projectFallback": "проект",
+      "agentFallback": "агент",
+      "sshConnectingLabel": "ssh · {{host}} (подключение…)",
+      "agentStartingLabel": "{{project}} · {{agent}} (запуск…)",
+      "projectStartingLabel": "{{project}} (запуск…)",
+      "shellStartingLabel": "{{shell}} (запуск…)",
+      "failedLabel": "{{base}} (ошибка)",
+      "agentNoTerminalError": "{{agent}} не вернул терминал",
+      "agentSessionMetadataMissing": "Метаданные сессии агента отсутствуют.",
+      "agentNoTerminalGeneric": "Агент не вернул терминал."
+    },
+    "app": {
+      "portsInUseTooltip": "используемые порты",
+      "serviceLogsTooltip": "журналы служб",
+      "hideSessionNavigatorTooltip": "Скрыть навигатор сессий",
+      "showSessionNavigatorTooltip": "Показать навигатор сессий",
+      "detachedWindowBadge": "Отдельное окно",
+      "hideAgentsTooltip": "Скрыть агентов",
+      "showAgentsTooltip": "Показать агентов",
+      "agentsLabel": "Агенты",
+      "terminalLabel": "Терминал",
+      "sessionsStayOpenNote": "сессии остаются открытыми как вкладки",
+      "flash": {
+        "enableAgentSessionsFailed": "Не удалось включить сессии агентов: {{error}}",
+        "agentSessionsEnabled": "Сессии агентов включены",
+        "enableAgentSessionsFirst": "Сначала включите сессии агентов в Настройки → Экспериментальные"
+      }
+    }
+  },
+  "commandCenter": {
+    "pages": {
+      "dashboard": "Панель управления",
+      "projects": "Проекты",
+      "terminal": "Терминал",
+      "ssh": "SSH",
+      "cron": "Cron",
+      "deployments": "Деплой",
+      "downloads": "Библиотеки/Утилиты",
+      "settings": "Настройки"
+    },
+    "groups": {
+      "navigation": "Навигация",
+      "services": "Службы",
+      "agentSessions": "Сессии агентов",
+      "run": "Запуск",
+      "custom": "Пользовательские"
+    },
+    "builtins": {
+      "goTo": "Перейти: {{page}}",
+      "startAllServices": "Запустить все службы",
+      "stopAllServices": "Остановить все службы",
+      "reloadWebStack": "Перезагрузить веб-стек",
+      "startService": "Запустить {{service}}",
+      "stopService": "Остановить {{service}}",
+      "reloadService": "Перезагрузить {{service}}",
+      "openTerminal": "Открыть терминал · {{name}}",
+      "openFolder": "Открыть папку · {{name}}",
+      "openInEditor": "Открыть в редакторе · {{name}}",
+      "openInBrowser": "Открыть в браузере · {{name}}",
+      "focusVerb": "Фокус",
+      "resumeVerb": "Возобновить",
+      "restartVerb": "Перезапустить",
+      "sessionEntry": "{{verb}} {{title}} · {{project}}",
+      "newProject": {
+        "laravel": "Новый проект Laravel",
+        "wordpress": "Новый сайт WordPress",
+        "git": "Клонировать из Git",
+        "blank": "Новый пустой проект",
+        "vite": "Новый проект Vite",
+        "next": "Новый проект Next.js",
+        "nuxt": "Новый проект Nuxt",
+        "astro": "Новый проект Astro"
+      }
+    },
+    "flash": {
+      "startingAllServices": "Запуск всех служб…",
+      "stoppingAllServices": "Остановка всех служб…",
+      "reloadingStack": "Перезагрузка стека…",
+      "startingService": "Запуск {{service}}…",
+      "stoppingService": "Остановка {{service}}…",
+      "reloadingService": "Перезагрузка {{service}}…"
+    },
+    "palette": {
+      "searchPlaceholder": "Поиск или команда, например: {{examples}}",
+      "noCommandsFound": "Команды не найдены",
+      "hints": {
+        "navigate": "Перейти",
+        "complete": "Автодополнение",
+        "run": "Выполнить"
+      }
+    },
+    "launcher": {
+      "connectSsh": "Подключиться по SSH · {{host}}",
+      "sshHostHint": "SSH-хост",
+      "startAgentHint": "Запустить агента · текущий checkout",
+      "agentForProject": "Агент для {{project}}",
+      "runCommand": "Выполнить: {{command}}",
+      "inProject": "в {{project}}",
+      "loadingArtisan": "Загрузка команд artisan…",
+      "artisanHint": "artisan",
+      "loadingNpmScripts": "Загрузка npm-скриптов…",
+      "npmScriptHint": "npm-скрипт"
+    },
+    "errors": {
+      "generic": "Ошибка: {{message}}"
+    }
+  },
+  "errors": {
+    "services": {
+      "unknownService": "неизвестная служба: {{name}}",
+      "depFailed": "зависимость {{dep}}",
+      "exclusiveConflict": "{{label}} уже работает, а одновременно может обслуживать только один веб-сервер — сначала остановите его",
+      "notRegistered": "служба не зарегистрирована: {{name}}",
+      "binaryNotFound": "бинарный файл не найден в {{path}} — сначала установите службу",
+      "processFailed": "{{bin}}: {{message}}",
+      "openProcessTokenFailed": "OpenProcessToken",
+      "createAdminsSidFailed": "CreateWellKnownSid(Administrators)",
+      "createPowerUsersSidFailed": "CreateWellKnownSid(PowerUsers)",
+      "createRestrictedTokenFailed": "CreateRestrictedToken",
+      "getTokenDefaultDaclFailed": "GetTokenInformation(TokenDefaultDacl)",
+      "setTokenDefaultDaclFailed": "SetTokenInformation(TokenDefaultDacl)",
+      "getTokenUserFailed": "GetTokenUser",
+      "aclFromEntriesFailed": "ACLFromEntries"
+    },
+    "vhost": {
+      "rootCAFailed": "корневой CA",
+      "installRootCertFailed": "установка корневого сертификата",
+      "checkLocalCATrustFailed": "проверка доверия локальному CA",
+      "readHostsFailed": "чтение файла hosts",
+      "openHostsFailed": "открытие hosts (требуются права администратора?)",
+      "httpBlockNotFound": "не удалось найти блок http { в {{path}}",
+      "noBraceAfterHttp": "повреждённый nginx.conf: нет { после http",
+      "unmatchedHttpBrace": "повреждённый nginx.conf: несогласованная { в блоке http",
+      "blockNotFound": "не удалось найти блок {{block}} {",
+      "noBraceAfterBlock": "повреждённый nginx.conf: нет { после {{block}}"
+    },
+    "ssh": {
+      "hostMissingAddress": "у хоста «{{host}}» не указан адрес",
+      "hostMissingUser": "у хоста «{{host}}» не указан пользователь",
+      "connectFailed": "не удалось связаться с {{addr}} — проверьте IP/порт и брандмауэр ({{error}})",
+      "keyNameRequired": "укажите имя ключа",
+      "keyAlreadyExists": "ключ уже существует: {{path}}",
+      "marshalPrivateKeyFailed": "маршалинг приватного ключа",
+      "unsupportedKeyKind": "неподдерживаемый тип ключа: {{kind}}",
+      "privateKeyContentRequired": "требуется содержимое приватного ключа",
+      "invalidPrivateKey": "недействительный приватный ключ (зашифрованные ключи пока не поддерживаются)",
+      "keyNameConflict": "ключ с именем «{{name}}» уже существует в {{dir}}",
+      "pathRequired": "укажите путь",
+      "keyFileTooLarge": "файл слишком велик для ключа ({{sizeMB}} МБ)",
+      "sourcePathRequired": "укажите исходный путь",
+      "readSourceFailed": "чтение источника",
+      "invalidImportedKey": "файл не является пригодным приватным ключом SSH (зашифрованные ключи пока не поддерживаются)",
+      "clientNotFound": "клиент SSH не найден — установите OpenSSH Client для Windows (Параметры -> Приложения -> Дополнительные компоненты)",
+      "proxyJumpNoLookup": "ProxyJump «{{name}}» задан, но поиск хоста не настроен — невозможно определить jump-хост",
+      "proxyJumpHostNotFound": "хост ProxyJump «{{name}}» не найден среди сохранённых хостов",
+      "dialJumpHostFailed": "подключение к jump-хосту «{{name}}»",
+      "openChannelFailed": "открытие канала через {{via}} к {{addr}}",
+      "jumpHostMissingUser": "у jump-хоста «{{host}}» не указан пользователь",
+      "proxyCommandStdinFailed": "stdin proxy command",
+      "proxyCommandStdoutFailed": "stdout proxy command",
+      "startProxyCommandFailed": "запуск proxy command",
+      "openSessionFailed": "открытие сессии",
+      "requestPtyFailed": "запрос PTY",
+      "stdinPipeFailed": "канал stdin",
+      "stdoutPipeFailed": "канал stdout",
+      "stderrPipeFailed": "канал stderr",
+      "startShellFailed": "запуск оболочки",
+      "authFailed": "ошибка аутентификации на {{addr}}: {{hint}}\n\n(сырые данные: {{error}})",
+      "noSupportedAuthMethods": "сервер {{addr}} не предложил поддерживаемых методов аутентификации (вероятно, 2FA / интерактивная клавиатура) — установите PubkeyAuthentication yes и добавьте ключ, или используйте хост с паролем\n\n(сырые данные: {{error}})",
+      "handshakeTimeout": "тайм-аут SSH-рукопожатия на {{addr}} — сервер доступен, но отвечает очень медленно\n\n(сырые данные: {{error}})",
+      "handshakeFailed": "SSH-рукопожатие {{addr}}",
+      "unknownAuthMode": "неизвестный режим аутентификации: «{{mode}}»",
+      "keyAuthNoFileChosen": "выбрана аутентификация по ключу, но файл ключа не выбран",
+      "readKeyFailed": "чтение ключа {{path}}",
+      "parseKeyFailed": "разбор ключа {{path}}",
+      "passwordAuthEmpty": "выбрана аутентификация по паролю, но пароль пуст",
+      "authModeNoCredentials": "в режиме аутентификации «{{mode}}» нет пригодных учётных данных",
+      "noLiveConnection": "нет активного SSH-подключения для терминала «{{termID}}»",
+      "openSftpSubsystemFailed": "открытие подсистемы SFTP",
+      "transferCancelled": "отменено",
+      "pathIsDirectory": "путь является директорией",
+      "fileTooLarge": "file too large: {{size}} байт (лимит {{limit}})",
+      "binaryFile": "binary file: {{path}}",
+      "cleanupOutsideTempDir": "отказ от очистки пути вне временной директории: {{path}}",
+      "pathNotUnder": "путь «{{full}}» не находится внутри «{{base}}»"
+    },
+    "agents": {
+      "unsupportedAgent": "неподдерживаемый агент «{{agent}}»",
+      "resumeSessionIdRequired": "для возобновления требуется id сессии провайдера",
+      "agentUnavailable": "агент «{{agent}}» недоступен",
+      "projectPathRequired": "укажите путь к проекту",
+      "additionalDirectoriesUnsupported": "{{label}} не поддерживает дополнительные директории сессии",
+      "additionalDirectoryNotAbsolute": "дополнительная директория должна быть абсолютным путём к папке: «{{directory}}»",
+      "additionalDirectoryUnavailable": "дополнительная директория «{{directory}}» недоступна",
+      "additionalDirectoryNotFolder": "дополнительная директория «{{directory}}» не является папкой",
+      "executablePathUnsafeForHooks": "путь к исполняемому файлу LaraEnv не может использоваться хуками провайдеров",
+      "notJSONObject": "{{file}} не является объектом JSON",
+      "hooksShapeUnexpected": "{{file}}: «hooks» имеет неожиданную структуру; файл оставлен без изменений",
+      "pluginFileNotManaged": "существующий файл плагина не управляется LaraEnv",
+      "executablePathUnsafeForLifecycleHooks": "путь к исполняемому файлу LaraEnv не может использоваться хуками жизненного цикла провайдеров",
+      "sessionStillRunning": "сессия агента «{{title}}» всё ещё выполняется",
+      "resolveWorkspaceFailed": "определение рабочего пространства для {{project}}",
+      "launchFailed": "запуск {{agent}} для {{project}}",
+      "sessionNotFound": "сессия агента «{{id}}» не найдена",
+      "sessionAlreadyRunning": "сессия агента «{{id}}» уже запущена в терминале {{terminal}}",
+      "resumeSessionFailed": "возобновление сессии {{agent}}",
+      "resumeUpdateMetadataFailed": "(также не удалось обновить метаданные сессии: {{storeError}})",
+      "configureLifecycleSignalsFailed": "настройка сигналов жизненного цикла {{agent}}",
+      "resumeForProjectFailed": "возобновление {{agent}} для {{project}}",
+      "providerSessionMissing": "provider conversation is unavailable: у {{agent}} нет сохранённого идентификатора сессии для {{cwd}}",
+      "providerSessionNotFound": "provider conversation is unavailable: {{agent}} не может найти сессию {{session}} в {{cwd}}",
+      "stopBeforeArchiving": "остановите сессию агента перед отправкой в архив",
+      "stopBeforeResettingMetadata": "остановите каждую активную сессию агента перед сбросом метаданных",
+      "removeWorktreeBeforeReset": "удалите управляемое worktree для «{{title}}» перед сбросом метаданных",
+      "inspectWorktreeFailed": "проверка worktree для «{{title}}»",
+      "agentUnavailableWithReason": "агент {{agent}} недоступен: {{reason}}",
+      "unknownAgent": "неизвестный агент «{{agent}}»",
+      "discoveryNotSupported": "обнаружение сессий провайдера не поддерживается",
+      "decodeCodexSessionMetadataFailed": "декодирование метаданных сессии Codex",
+      "codexExecutableUnavailable": "исполняемый файл Codex недоступен",
+      "openCodeSessionMetadataCommandFailed": "сбой команды метаданных сессии OpenCode",
+      "openCodeSessionMetadataTooLarge": "ответ с метаданными сессии OpenCode слишком велик",
+      "decodeOpenCodeSessionMetadataFailed": "декодирование метаданных сессии OpenCode",
+      "readKimiSessionMetadataFailed": "чтение метаданных сессии Kimi",
+      "invalidSignalEnvelope": "недействительный конверт сигнала агента",
+      "decodeSessionsFailed": "декодирование сессий агента (также не удалось сохранить повреждённый файл: {{renameError}})",
+      "unsupportedSessionSchema": "неподдерживаемая схема сессий агентов {{version}}",
+      "sessionIdRequired": "требуется id сессии агента",
+      "sessionTitleRequired": "требуется название сессии агента",
+      "archiveSessionMetadataFailed": "архивирование метаданных сессии агента",
+      "claudeConfigDirUnavailable": "директория конфигурации Claude Code недоступна",
+      "decodeClaudeUsageFailed": "декодирование лимитов подписки Claude",
+      "initializeCodexUsageFailed": "инициализация чтения использования Codex",
+      "codexRpcStderr": "stderr app-сервера Codex: {{stderr}}",
+      "codexRpcError": "RPC {{code}}: {{message}}",
+      "codexAppServerClosed": "app-сервер Codex закрылся до отправки ответа",
+      "decodeCodexRateLimitsFailed": "декодирование лимитов частоты запросов Codex"
+    },
+    "cloud": {
+      "openSessionFailed": "[{{step}}] открытие сессии",
+      "stdoutPipeFailed": "[{{step}}] канал stdout",
+      "stderrPipeFailed": "[{{step}}] канал stderr",
+      "stepStartFailed": "[{{step}}] запуск",
+      "stepFailed": "шаг «{{step}}» завершился с ошибкой: {{error}}\n{{tail}}",
+      "bindAddressFailed": "привязка к {{address}}",
+      "openBrowserFailed": "открытие браузера",
+      "paypalTimeout": "тайм-аут PayPal — ответ не получен",
+      "billingTimeout": "тайм-аут оплаты — ответ от Stripe не получен",
+      "unexpectedServerResponse": "неожиданный ответ сервера: {{response}}",
+      "notLoggedIn": "вход не выполнен",
+      "kdfSaltInvalid": "соль KDF",
+      "kdfSaltTooShort": "соль KDF слишком короткая: {{bytes}} байт",
+      "keyMustBe32Bytes": "ключ должен быть длиной 32 байта (получено {{got}})",
+      "ciphertextTooShort": "зашифрованный текст слишком короткий",
+      "bindLoopbackFailed": "привязка к loopback",
+      "noTokenInCallback": "в обратном вызове отсутствует токен",
+      "tokenVerifyFailed": "проверка токена",
+      "oauthTimeout": "тайм-аут OAuth — браузер был закрыт до входа?",
+      "presetLookupUnavailable": "пресет «{{preset}}»: поиск пресетов недоступен",
+      "deployPresetNotFound": "пресет деплоя «{{preset}}» не найден — возможно, он был удалён",
+      "kdfSaltMissing": "сервер не вернул kdf_salt",
+      "syncKeyMissing": "нет ключа синхронизации — войдите с паролем для включения синхронизации",
+      "encryptFailed": "шифрование",
+      "newKeyMustBe32Bytes": "новый ключ должен быть длиной 32 байта (получено {{got}})",
+      "reencryptResourceFailed": "повторное шифрование {{kind}}/{{externalId}}",
+      "rekeyResourceFailed": "смена ключа {{kind}}/{{externalId}}",
+      "rekeyNothingDecrypted": "не удалось расшифровать ни один из {{count}} элементов сервера текущим ключом — запустите смену ключа на устройстве, которое всё ещё может синхронизироваться"
+    },
+    "projectroutes": {
+      "previewHostnameDomainMismatch": "имя хоста предпросмотра «{{host}}» не соответствует предыдущему домену проекта",
+      "canonicalRouteMissing": "канонический маршрут отсутствует",
+      "previewRequiresWorktree": "маршруты предпросмотра должны указывать на зарегистрированное worktree",
+      "hostnameAlreadyUsed": "имя хоста «{{hostname}}» уже используется проектом «{{project}}»",
+      "worktreeRoutingRequiresWorktree": "маршрутизация worktree требует зарегистрированного целевого worktree",
+      "proxyPortUpdateRequiresWorktree": "обновление порта прокси требует зарегистрированного целевого worktree",
+      "noRouteForWorktree": "нет маршрутов, указывающих на это worktree",
+      "routeCleanupRequiresWorktree": "очистка маршрута требует зарегистрированного целевого worktree",
+      "canonicalRouteCannotBeRemoved": "канонический маршрут нельзя удалить; вместо этого восстановите его в основной checkout",
+      "routeNotFound": "маршрут проекта «{{id}}» не найден",
+      "applyRoutesFailed": "применение маршрутов (также не удалось восстановить состояние маршрутов: {{rollbackError}})",
+      "routeBelongsToAnotherProject": "маршрут принадлежит другому проекту",
+      "duplicateHostname": "дублирующееся имя хоста «{{host}}»",
+      "canonicalHostnameMismatch": "каноническое имя хоста должно быть «{{expected}}»",
+      "canonicalRouteCountInvalid": "проект должен иметь ровно один канонический маршрут, получено {{count}}",
+      "invalidPreviewHostname": "недействительное имя хоста предпросмотра «{{hostname}}»",
+      "previewHostnameMissingLabel": "имя хоста предпросмотра должно содержать метку перед доменом проекта",
+      "invalidHostnameLabel": "недействительная метка имени хоста «{{label}}»",
+      "previewHostnameSuffixMismatch": "имя хоста предпросмотра должно заканчиваться на «{{suffix}}»",
+      "previewLabelReserved": "метка предпросмотра «{{label}}» зарезервирована",
+      "proxyPortOutOfRange": "порт прокси должен быть от 1 до 65535",
+      "dedicatedWorktreePortRequired": "этому прокси-проекту требуется выделенный порт сервера разработки worktree",
+      "worktreeProxyPortConflict": "порт прокси worktree {{port}} уже назначен основному checkout",
+      "decodeRoutesFailed": "декодирование маршрутов проекта",
+      "unsupportedRouteSchema": "неподдерживаемая схема маршрутов проекта {{version}}",
+      "migrateRoutesFailed": "миграция маршрутов проекта",
+      "preserveCorruptFailed": "также не удалось сохранить повреждённый файл: {{renameError}}",
+      "routeIdRequired": "требуется id маршрута проекта"
+    },
+    "gitworkspace": {
+      "projectFolderFailed": "папка проекта",
+      "branchWorktreeRequiresRepo": "для режимов ветки и worktree требуется Git-репозиторий",
+      "mainCheckoutDirty": "в основном checkout есть незафиксированные изменения; зафиксируйте или спрячьте их перед переключением веток",
+      "unknownWorkspaceMode": "неизвестный режим рабочего пространства «{{mode}}»",
+      "notAGitRepository": "проект не является Git-репозиторием",
+      "mainCheckoutCannotBeRemoved": "основной checkout проекта нельзя удалить как worktree",
+      "worktreeNotRegistered": "worktree не зарегистрировано для этого проекта",
+      "removeWorktreeFailed": "удаление worktree",
+      "baseRefRequiredForBranch": "при создании ветки требуется указать базовую ветку (base ref)",
+      "localBranchAlreadyExists": "локальная ветка «{{branch}}» уже существует",
+      "createSwitchBranchFailed": "создание и переключение на ветку «{{branch}}»",
+      "localBranchNotFound": "локальная ветка «{{branch}}» не существует",
+      "switchBranchFailed": "переключение на ветку «{{branch}}»",
+      "invalidWorktreeName": "имя worktree должно содержать 1-64 символа (буквы, цифры, точки, дефисы или подчёркивания)",
+      "registeredWorktreeMissing": "зарегистрированное worktree отсутствует",
+      "worktreeBranchMismatch": "worktree «{{name}}» зарегистрировано для ветки «{{registered}}», а не «{{requested}}»",
+      "worktreeDestinationUnregistered": "директория назначения worktree существует, но не зарегистрирована для этого репозитория",
+      "baseRefRequiredForWorktreeBranch": "при создании ветки worktree требуется указать базовую ветку (base ref)",
+      "createWorktreeFailed": "создание worktree «{{name}}»",
+      "branchRequired": "требуется указать ветку",
+      "invalidBranch": "недействительная ветка «{{branch}}»",
+      "baseRefNotACommit": "базовая ссылка «{{ref}}» не указывает на коммит",
+      "gitCommandTimedOut": "время ожидания команды git {{command}} истекло",
+      "worktreeDestinationEscapesRoot": "директория назначения worktree «{{destination}}» выходит за пределы корня «{{root}}»"
+    },
+    "projects": {
+      "readComposerJsonFailed": "чтение composer.json",
+      "parseComposerJsonFailed": "разбор composer.json",
+      "parseScriptsFailed": "разбор скриптов",
+      "unexpectedDevScriptShape": "неожиданная структура скрипта `dev`",
+      "writeComposerJsonFailed": "запись composer.json",
+      "invalidProjectName": "недопустимое имя (используйте строчные латинские буквы, цифры, _ и -): «{{name}}»",
+      "folderAlreadyExists": "папка уже существует: {{path}}",
+      "gitUrlRequired": "требуется URL Git",
+      "unknownProjectKind": "неизвестный тип проекта: {{kind}}",
+      "packageManagerNotFound": "менеджер пакетов {{manager}} не найден — установите его (или выберите другой менеджер)",
+      "phpVersionNotInstalled": "PHP {{version}} не установлен — сначала установите его в Библиотеки/Утилиты",
+      "noPhpAvailable": "нет доступных версий PHP — сначала установите версию PHP в Библиотеки/Утилиты",
+      "downloadComposerPharFailed": "скачивание composer.phar",
+      "gitNotFound": "git не найден в PATH — установите с https://git-scm.com",
+      "downloadFailed": "скачивание {{url}}: HTTP {{status}}",
+      "unsafeZipPath": "небезопасный путь в zip-архиве: {{name}}",
+      "mysqlExeNotFound": "mysql.exe не найден в {{path}} — установлен ли MySQL?",
+      "dropdbExeNotFound": "dropdb.exe не найден в {{path}} — установлен ли PostgreSQL?",
+      "createdbExeNotFound": "createdb.exe не найден в {{path}} — установлен ли PostgreSQL?",
+      "envFileMissing": "нет файла .env или .env.example"
+    },
+    "installer": {
+      "notAValidZip": "выбранный файл не является корректным zip-архивом",
+      "cachedFileNotValidZip": "файл в {{path}} не является корректным zip-архивом — скачайте его снова с официальной страницы",
+      "manualSourceMissing": "ручной источник: скачайте его с официальной страницы и сохраните в {{path}}",
+      "httpStatus": "HTTP {{status}}",
+      "serverReturnedHtml": "сервер вернул HTML (вероятно, защита от хотлинкинга): {{contentType}}",
+      "downloadFailed": "не удалось скачать {{kind}} {{version}}: {{reason}}",
+      "downloadedFileNotValidZip": "скачанный файл не является корректным zip-архивом — источник может блокировать прямые скачивания",
+      "notAZip": "не является zip-архивом (magic={{magic}})",
+      "unsafePathInArchive": "небезопасный путь в архиве: {{name}}",
+      "extensionNotBundled": "расширение «{{name}}» не входит в комплект PHP {{version}} — вероятно, это расширение PECL (xdebug, redis, imagick, …), которое пока не поддерживается инсталлятором",
+      "noPeclBuildPinned": "сборка PECL для Windows не зафиксирована для «{{name}}» на PHP {{series}} — создайте issue или обновите internal/installer/pecl.go",
+      "peclZipMissingDll": "zip-архив PECL не содержит php_{{name}}.dll",
+      "downloadReasonUnknown": "неизвестная ошибка",
+      "downloadReasonDnsFailed": "не удалось разрешить адрес {{host}} — проверьте подключение и повторите попытку",
+      "downloadReasonTimeout": "время ожидания скачивания истекло — проверьте подключение и повторите попытку",
+      "downloadReasonNetworkFailed": "не удалось связаться с сервером загрузки — проверьте подключение и повторите попытку ({{error}})"
+    },
+    "cron": {
+      "nameRequired": "укажите название",
+      "scheduleRequired": "укажите расписание",
+      "commandRequired": "укажите команду",
+      "invalidSchedule": "недействительное расписание",
+      "jobNotFound": "задача не найдена: {{id}}",
+      "registerTaskFailed": "регистрация задачи в Планировщике заданий",
+      "scheduleFailed": "расписание",
+      "executionTimedOut": "время ожидания истекло после 5 мин",
+      "jobIdRequired": "для --cron-run требуется id задачи",
+      "parseScheduleFailed": "разбор расписания",
+      "readConfigFailed": "чтение конфигурации",
+      "parseConfigFailed": "разбор конфигурации",
+      "jobNotFoundInConfig": "задача {{id}} не найдена в {{path}}",
+      "backgroundTaskArgsRequired": "EnsureBackgroundTask: требуются jobID и exePath",
+      "registerSchtasksFailed": "schtasks /Create {{task}} ({{output}})"
+    },
+    "devserver": {
+      "instanceIdRequired": "требуется id экземпляра сервера разработки",
+      "alreadyRunning": "сервер разработки уже запущен для {{instanceId}}",
+      "noDevOrStartScript": "нет скрипта `dev` или `start` в package.json",
+      "taskkillFailed": "taskkill: {{output}}",
+      "readPackageJsonFailed": "чтение package.json",
+      "parsePackageJsonFailed": "разбор package.json"
+    },
+    "queueworker": {
+      "unterminatedQuote": "незакрытая кавычка в аргументах",
+      "alreadyRunning": "обработчик очередей уже запущен для {{project}}",
+      "phpUnavailable": "исполняемый файл php недоступен для {{project}}",
+      "artisanNotFound": "artisan не найден в {{path}}",
+      "taskkillFailed": "taskkill: {{output}}"
+    },
+    "php": {
+      "downloadCacertFailed": "скачивание cacert.pem",
+      "httpStatus": "HTTP {{status}}",
+      "versionNotFound": "версия php не найдена",
+      "removeOldLinkFailed": "удаление старой ссылки",
+      "createDirectoryLinkFailed": "создание ссылки на директорию {{link}} -> {{target}}: {{error}}: {{output}}"
+    },
+    "config": {
+      "sshHostNameRequired": "требуется имя SSH-хоста",
+      "deployPresetIdRequired": "требуется id пресета деплоя",
+      "builtinPresetImmutable": "встроенные пресеты нельзя изменять — дублируйте их",
+      "builtinPresetNotDeletable": "встроенные пресеты нельзя удалять"
+    },
+    "nodejs": {
+      "versionNotFound": "версия node не найдена",
+      "removeOldLinkFailed": "удаление старой ссылки",
+      "createDirectoryLinkFailed": "создание ссылки на директорию {{link}} -> {{target}}: {{error}}: {{output}}"
+    },
+    "netports": {
+      "getExtendedTcpTableSizeFailed": "размер GetExtendedTcpTable: {{code}}",
+      "getExtendedTcpTableFailed": "GetExtendedTcpTable: {{code}}",
+      "taskkillFailed": "taskkill {{pid}}: {{output}}"
+    },
+    "terminal": {
+      "notAvailable": "терминал недоступен: {{kind}}",
+      "unsupported": "неподдерживаемый терминал: {{kind}}"
+    },
+    "hotkey": {
+      "unknownKey": "неизвестная клавиша «{{key}}»",
+      "noKey": "горячая клавиша «{{hotkey}}» не имеет назначенной клавиши"
+    },
+    "editor": {
+      "noCustomCommand": "пользовательская команда редактора не настроена",
+      "notAvailable": "редактор недоступен: {{kind}}"
+    },
+    "updater": {
+      "reachServerFailed": "не удалось связаться с сервером обновлений",
+      "noPublishedRelease": "опубликованных релизов пока не найдено",
+      "rateLimited": "превышен лимит запросов к серверу обновлений; попробуйте позже",
+      "githubApiError": "github api {{status}}: {{body}}",
+      "invalidGithubResponse": "недействительный ответ github",
+      "releaseIsDraft": "последний релиз всё ещё является черновиком",
+      "sha256FetchFailed": "получение sha256: HTTP {{status}}",
+      "emptySha256File": "пустой файл sha256",
+      "invalidSha256Length": "недопустимая длина sha256: {{length}}",
+      "noExeAsset": "у релиза {{version}} нет ассета .exe — портативную установку нельзя обновить инсталлятором",
+      "noChecksumForExe": "в релизе {{version}} нет контрольной суммы для {{exeName}}; отказ от замены работающего файла без проверки",
+      "noMsiAsset": "у релиза {{version}} нет прикреплённого ассета .msi",
+      "noReleaseToDownload": "нет релиза для скачивания",
+      "checksumMismatch": "несовпадение контрольной суммы (ожидалось {{expected}}, получено {{got}})",
+      "httpErrorDownloading": "HTTP {{status}} при скачивании {{name}}",
+      "updateNotFound": "обновление не найдено в {{path}}",
+      "locateExecutableFailed": "не удалось найти запущенный исполняемый файл для замены",
+      "installerOverPortable": "отказ от запуска инсталлятора поверх портативной копии в {{dir}} — это создало бы вторую установку с пустым корнем по умолчанию; скачайте портативный ZIP со страницы релизов и замените LaraEnv.exe вручную",
+      "portableUpdateWindowsOnly": "самообновление портативной версии реализовано только для Windows",
+      "applyWindowsOnly": "самообновление поддерживается только на Windows",
+      "writePortableScriptFailed": "запись скрипта портативного обновления",
+      "writeUpdateScriptFailed": "запись скрипта обновления",
+      "launchUpdateScriptFailed": "запуск скрипта обновления"
+    },
+    "vcruntime": {
+      "redistNotInstalled": "{{binary}} can't launch: Microsoft Visual C++ Redistributable not installed — download and install it from {{url}}, then retry"
+    },
+    "notifications": {
+      "unsupportedSchema": "неподдерживаемая схема уведомлений {{version}}",
+      "decodeFailed": "декодирование уведомлений (также не удалось сохранить повреждённый файл: {{renameError}})"
+    },
+    "app": {
+      "agentUsingMainCheckout": "другой агент использует основной checkout; остановите его перед переключением веток",
+      "projectNotFound": "проект «{{name}}» не найден",
+      "noCatalogEntryForPhp": "нет записи в каталоге для PHP {{version}}",
+      "phpNotInstalled": "PHP {{version}} не установлен",
+      "projectRoutesFailed": "не удалось загрузить маршруты проекта",
+      "sslCertFailed": "не удалось создать сертификат SSL",
+      "vhostFailed": "не удалось записать конфигурацию vhost {{name}}",
+      "hostsEntryFailed": "не удалось обновить запись в файле hosts",
+      "removeProjectRouteStateFailed": "не удалось удалить состояние маршрутов проекта",
+      "sourceNotFound": "источник не найден: {{kind}} {{version}}",
+      "unknownWebServer": "неизвестный веб-сервер: {{server}}",
+      "nameRequired": "укажите имя",
+      "invalidTld": "недействительный TLD",
+      "migrateRoutesFailed": "миграция маршрутов для {{name}}",
+      "deleteFolderFailed": "удаление папки {{target}}",
+      "projectFolderNotFound": "папка проекта не найдена",
+      "noEditorAvailable": "нет доступных редакторов",
+      "hostRequired": "укажите хост",
+      "sshHostNotFound": "SSH-хост не найден: {{host}}",
+      "noTerminalAvailable": "нет доступных терминалов",
+      "terminalNotInstalled": "терминал не установлен: {{kind}}",
+      "stopLiveAgentSessionsFirst": "остановите каждую активную сессию агента перед отключением сессий агентов",
+      "stopWorktreeDevServersFirst": "остановите каждый сервер разработки worktree перед отключением сессий агентов",
+      "agentSessionsDisabled": "сессии агентов отключены; включите их в Настройки → Экспериментальные",
+      "terminalKindNotEmbeddable": "тип терминала не поддерживает встраивание: {{kind}}",
+      "ptyNotFound": "PTY {{id}} не найден",
+      "noSshConnectionForTerminal": "нет подключения SSH для терминала «{{termId}}»",
+      "sftpNotOpenForTerminal": "SFTP не открыт для терминала «{{termId}}»",
+      "launchEditorAfterDownloadFailed": "скачано в {{local}}, но не удалось запустить редактор",
+      "emptyPath": "пустой путь",
+      "sshHostNotFoundLocally": "SSH-хост «{{host}}» не найден локально",
+      "saveConfigFailed": "не удалось сохранить конфигурацию деплоя",
+      "sshDialFailed": "не удалось подключиться по SSH",
+      "openSessionFailed": "не удалось открыть сессию SSH",
+      "sshHostNotFoundCannotDestroy": "SSH-хост «{{host}}» не найден локально — невозможно удалить удалённое состояние",
+      "sshHostNotFoundSyncOrRecreate": "SSH-хост «{{host}}» не найден локально — синхронизируйте ваши хосты или пересоздайте его",
+      "presetNameRequired": "укажите название пресета",
+      "builtinPresetReadOnly": "встроенные пресеты доступны только для чтения — дублируйте их для настройки",
+      "builtinPresetNotDeletable": "встроенные пресеты нельзя удалять",
+      "deploymentNoSavedConfig": "у деплоя нет сохранённой конфигурации — сначала выполните Применить",
+      "noDeployScriptConfigured": "скрипт деплоя не настроен — выберите пресет (или скрипт сборки) в конфигурации деплоя",
+      "notLoggedInSignInFirst": "вход не выполнен — сначала войдите",
+      "notLoggedIn": "вход не выполнен",
+      "syncRequiresProPlan": "для синхронизации требуется план Pro",
+      "noSyncKeySignInAgain": "нет ключа синхронизации — войдите снова с паролем",
+      "syncDisabled": "синхронизация отключена — сначала включите её",
+      "unknownLanguage": "неизвестный язык «{{code}}»",
+      "windowNotReady": "окно приложения не готово",
+      "codexPayloadMissing": "отсутствует полезная нагрузка уведомления Codex",
+      "decodeCodexNotificationType": "декодирование типа уведомления Codex",
+      "unknownAgentEventSource": "неизвестный источник событий агента",
+      "decodeBoundedPayloadMissing": "отсутствует полезная нагрузка уведомления провайдера",
+      "decodeBoundedTypeFailed": "декодирование типа уведомления провайдера",
+      "openCodeArgsMissing": "отсутствуют аргументы хука OpenCode",
+      "unknownAgentHookProvider": "неизвестный провайдер хука агента"
+    },
+    "routes": {
+      "agentSessionNotFound": "сессия агента «{{sessionId}}» не найдена",
+      "agentSessionNotWorktree": "сессия агента не использует worktree",
+      "worktreeServedDirectly": "это worktree обслуживается напрямую и не требует прокси сервера разработки",
+      "dedicatedProxyPortRequired": "требуется выделенный порт прокси для worktree",
+      "updateWorktreeRouteFailed": "не удалось обновить маршрут worktree после выбора порта",
+      "worktreeCannotBeRemoved": "worktree не может быть удалено: {{blockers}}",
+      "projectNotFound": "проект «{{name}}» не найден",
+      "routeTargetFailed": "не удалось разрешить цель маршрута",
+      "projectNotGitRepository": "проект не является Git-репозиторием",
+      "routeTargetNotRegisteredWorktree": "цель маршрута не является зарегистрированным worktree для этого проекта",
+      "snapshotHostsFileFailed": "не удалось создать снимок файла hosts",
+      "rollbackErrors": "ошибки отката: {{rollbackErrors}}",
+      "writeRouteVhostFailed": "не удалось записать конфигурацию vhost для маршрута",
+      "removeOldRouteVhostFailed": "не удалось удалить конфигурацию старого vhost маршрута",
+      "removeHostsEntryFailed": "не удалось удалить запись из файла hosts",
+      "addHostsEntryFailed": "не удалось добавить запись в файл hosts",
+      "routeTargetPathFailed": "не удалось разрешить путь назначения маршрута «{{path}}»",
+      "routeCertificateFailed": "не удалось создать сертификат для {{hostname}}",
+      "nginxConfigTestFailed": "проверка конфигурации nginx не удалась",
+      "apacheConfigTestFailed": "проверка конфигурации apache не удалась",
+      "caddyConfigTestFailed": "проверка конфигурации caddy не удалась",
+      "configTestCommandFailed": "инструмент проверки сообщил: {{output}}",
+      "restartServiceFailed": "не удалось перезапустить {{name}}",
+      "routeTargetOutsideManagedDir": "цель маршрута находится вне управляемой LaraEnv директории worktree"
+    }
+  }
+}

@@ -230,6 +230,15 @@
     "appearance": {
       "language": "Idioma",
       "languageHint": "Aplica na hora, inclusive nas janelas de terminal abertas.",
+      "needsNativeReviewBadge": "(precisa de revisão nativa)",
+      "needsNativeReviewNotice": "Esta tradução foi gerada por máquina e ainda não foi revisada por um falante nativo. Se você fala este idioma, as correções são bem-vindas: https://github.com/thayronarrais/laraenv/tree/main/langs",
+      "overrideActive": "Usando traduções locais de {{path}}",
+      "overrideRejected": {
+        "one": "{{count}} tradução local foi ignorada porque precisa conter um texto específico e não contém: {{keys}}",
+        "many": "{{count}} traduções locais foram ignoradas porque precisam conter um texto específico e não contêm: {{keys}}",
+        "other": "{{count}} traduções locais foram ignoradas porque precisam conter um texto específico e não contêm: {{keys}}"
+      },
+      "overrideUnreadable": "{{file}} não pôde ser lido e foi ignorado: {{reason}}",
       "themeHint": "Escolha um modelo de cores. As mudanças são aplicadas na hora e salvas para o próximo lançamento.",
       "themes": {
         "nebula": "Roxo & menta, padrão",
