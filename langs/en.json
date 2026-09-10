@@ -201,7 +201,7 @@
     "windowControls": {
       "minimize": "minimize",
       "maximize": "maximize",
-      "close": "close"
+      "close": "dismiss"
     },
     "typeBadge": {
       "plain": "Plain"
