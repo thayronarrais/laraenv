@@ -234,11 +234,58 @@ A curated catalog of every runtime and service the app supports — install with
 
 ## Translations
 
-The interface text lives in [`langs/`](langs/) as plain JSON, open for anyone
-to add a language to. Fork, copy `en.json` to `<code>.json`, translate the
-values, open a pull request — CI checks your file and tells you what's
-missing. See [`langs/README.md`](langs/README.md) for the how-to and the
-rules it enforces.
+The interface ships in four languages. Pick one in **Settings → Appearance**;
+it applies immediately, including terminal windows you have already detached.
+
+| Language | Code | |
+|---|---|---|
+| English | `en` | |
+| Português (Brasil) | `pt-BR` | |
+| Русский | `ru` | needs native review |
+| 简体中文 | `zh-CN` | needs native review |
+
+Russian and Simplified Chinese were written **without a native speaker**. They
+are structurally sound — key coverage, placeholders and plural forms are all
+checked — but nobody who speaks either language has read them for tone. The app
+says so in the language selector, and the marking exists to be removed by
+whoever reviews one.
+
+### Edit the text yourself, without waiting for a release
+
+Every string lives in [`langs/`](langs/) as plain JSON, and the app reads a
+`langs/` folder in its install root on top of what it ships with.
+
+```
+C:\laraenv\langs\pt-BR.json          installed copy
+<extracted folder>\langs\pt-BR.json  portable copy
+```
+
+Edit a file, restart the app, see it. Three things make this practical:
+
+- **Partial files work.** Override three strings and the rest falls back to
+  what shipped. You do not need a complete catalogue to change one button.
+- **A language nobody has contributed appears just by existing.** Drop in
+  `de.json` with a `$meta` block and German is in the selector.
+- **Mistakes are survivable.** A file that cannot be read, or is named
+  something that is not a language code, is skipped — the app tells you which
+  and why in Settings, and starts normally.
+
+Use it to fix a word that bothers you, to try a wording before proposing it, or
+to run LaraEnv in a language that does not exist yet.
+
+### Contributing a translation
+
+Fork, copy `en.json` to `<code>.json`, translate the values, open a pull
+request. CI checks your file and tells you what is missing — including the
+plural forms your language actually needs, which it reads from CLDR rather than
+a hand-written list.
+
+Reviewing an existing translation counts, and is a smaller job than starting
+one. If you speak Russian or Chinese, correcting what is there — and removing
+the review flag in the same pull request — would be very welcome.
+
+[`langs/README.md`](langs/README.md) has the full guide and the rules CI
+enforces. No install step is needed to check your own work.
 
 ## Status
 
