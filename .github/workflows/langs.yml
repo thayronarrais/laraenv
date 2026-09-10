@@ -1,0 +1,60 @@
+name: translations
+
+on:
+  pull_request:
+    paths: ["langs/**"]
+  push:
+    branches: [main]
+    paths: ["langs/**"]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check catalogues against en.json
+        run: node tools/langs/check.mjs langs
+
+      # en.json is generated from the private application source and mirrored
+      # here. A PR editing it would be overwritten at the next release, so it
+      # is better to say so now than to let the work be lost later.
+      #
+      # actions/checkout@v4 does a shallow, single-commit fetch on pull_request
+      # events (just the merge ref) — origin/<base_ref> does not exist locally,
+      # so a plain `git diff origin/${{ github.base_ref }}...HEAD` would fail
+      # with "unknown revision" and, being inside `if ... | grep`, that failure
+      # is swallowed by the pipe (grep sees empty input and just says "no
+      # match") rather than tripping the check. Fetch the PR's base commit by
+      # SHA first, then diff against it directly with two-dot syntax, which
+      # only needs the two trees and not any shared history.
+      - name: Refuse edits to en.json
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch --no-tags --depth=1 origin "${{ github.event.pull_request.base.sha }}"
+          if git diff --name-only "${{ github.event.pull_request.base.sha }}" HEAD | grep -qx 'langs/en.json'; then
+            echo "::error file=langs/en.json::en.json is generated from the app source and mirrored here."
+            echo "::error::To change English text, open an issue. To add a translation, edit or create langs/<code>.json."
+            exit 1
+          fi
+
+      # langs/.do-not-translate.json records which catalogue keys the
+      # application matches on literally at runtime, and the exact substring
+      # each one needs — it's what makes tools/langs/check.mjs's substring
+      # enforcement possible at all. Like en.json, it's generated from the
+      # application source and mirrored here, not authored by translators.
+      # Unlike en.json, editing it doesn't just get overwritten later — it
+      # can silently *disable* the check that would otherwise catch a broken
+      # translation in the same PR, so it gets its own refusal and its own
+      # message rather than being folded into the en.json one above.
+      - name: Refuse edits to the do-not-translate manifest
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch --no-tags --depth=1 origin "${{ github.event.pull_request.base.sha }}"
+          if git diff --name-only "${{ github.event.pull_request.base.sha }}" HEAD | grep -qx 'langs/.do-not-translate.json'; then
+            echo "::error file=langs/.do-not-translate.json::this file records strings the application matches at runtime and is maintained with the source, not edited here."
+            echo "::error::Removing or changing an entry does not remove the runtime dependency — it only removes the check that would have caught a broken translation. If a required fragment does not fit your language, open an issue and ask."
+            exit 1
+          fi

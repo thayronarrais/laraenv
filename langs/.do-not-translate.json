@@ -1,0 +1,25 @@
+{
+  "_comment": "Keys whose value must CONTAIN the listed substring(s), byte-for-byte, in every locale — not be identical to English. The app's own frontend code detects a specific failure by testing the exact substring below (see each site cited), so translating that fragment silently breaks the feature; everything else in the value is free to translate normally. check.mjs enforces this: a locale whose value for one of these keys is missing a required substring fails, naming the key and the missing text. Substrings were copied verbatim from the frontend call sites, not retyped from memory:",
+  "protected": {
+    "errors.ssh.fileTooLarge": {
+      "substrings": ["file too large"],
+      "reason": "frontend/src/components/SFTPFileEditorModal.tsx does `msg.includes(\"file too large\")` to offer the \"open with system editor\" fallback for an oversized remote file."
+    },
+    "errors.ssh.binaryFile": {
+      "substrings": ["binary file"],
+      "reason": "frontend/src/components/SFTPFileEditorModal.tsx does `msg.includes(\"binary file\")` to detect a binary remote file and skip the text editor."
+    },
+    "errors.agents.providerSessionMissing": {
+      "substrings": ["provider conversation is unavailable"],
+      "reason": "frontend/src/components/terminal/agentRestore.ts does `.toLowerCase().includes(\"provider conversation is unavailable\")` to detect an unresumable agent session and offer the restore-from-scratch fallback."
+    },
+    "errors.agents.providerSessionNotFound": {
+      "substrings": ["provider conversation is unavailable"],
+      "reason": "Same detection as errors.agents.providerSessionMissing above — frontend/src/components/terminal/agentRestore.ts matches on this exact phrase regardless of which of the two keys produced the error."
+    },
+    "errors.vcruntime.redistNotInstalled": {
+      "substrings": ["Visual C++ Redistributable"],
+      "reason": "frontend/src/components/VcRedistModal.tsx's REDIST_PROBE constant is matched via `msg.includes(REDIST_PROBE)` in NewProjectModal.tsx and Dashboard.tsx to offer the install-redistributable prompt. Dashboard.tsx also runs `e.message.match(/^([^:]+\\.exe)/)` to recover the binary name from the front of the message — a translation must not add text (or a colon) before the \"{{binary}}\" placeholder's rendered value."
+    }
+  }
+}

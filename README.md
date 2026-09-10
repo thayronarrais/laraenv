@@ -232,6 +232,14 @@ A curated catalog of every runtime and service the app supports — install with
 
 ---
 
+## Translations
+
+The interface text lives in [`langs/`](langs/) as plain JSON, open for anyone
+to add a language to. Fork, copy `en.json` to `<code>.json`, translate the
+values, open a pull request — CI checks your file and tells you what's
+missing. See [`langs/README.md`](langs/README.md) for the how-to and the
+rules it enforces.
+
 ## Status
 
 Used daily by the author. Bugs, feature requests, and screenshots are welcome on the [issue tracker](https://github.com/thayronarrais/laraenv/issues).

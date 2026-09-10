@@ -1,0 +1,2599 @@
+{
+  "$meta": {
+    "code": "pt-BR",
+    "name": "Portuguese (Brazil)",
+    "nativeName": "Português (Brasil)"
+  },
+  "backend": {
+    "tray": {
+      "tooltip": "LaraEnv — gerenciador de ambiente local",
+      "showWindow": "Mostrar janela",
+      "services": "Serviços",
+      "projects": "Projetos",
+      "startAll": "Iniciar tudo",
+      "stopAll": "Parar tudo",
+      "quit": "Sair do LaraEnv",
+      "untagged": "Sem tag",
+      "statusRunning": "em execução",
+      "statusStopped": "parado"
+    },
+    "notifications": {
+      "sessionNeedsInput": "{{title}} aguarda sua entrada",
+      "sessionDone": "{{title}} concluído",
+      "sessionError": "{{title}} parou com um erro",
+      "usageReachedTitle": "Uso de {{provider}} atingiu {{percent}}%",
+      "usageMessage": "{{label}} está em {{percent}}% de uso.",
+      "localCAUntrustedTitle": "O certificado HTTPS local ainda não é confiável",
+      "localCAUntrustedMessage": "Esta máquina ainda não confia na autoridade certificadora local do LaraEnv, então os navegadores vão avisar sobre este site HTTPS. Confie nela em Configurações → Serviços → HTTPS local.",
+      "historyMalformed": "O histórico de notificações estava corrompido e foi reiniciado."
+    },
+    "updater": {
+      "verifyingIntegrity": "verificando integridade…",
+      "hashFailed": "falha no hash: {{error}}"
+    },
+    "app": {
+      "relocationTitle": "O LaraEnv foi movido para uma nova pasta",
+      "relocationMessage": "Movido de {{previousRoot}}. {{moved}} caminho(s) armazenado(s) atualizado(s), {{inis}} configuração(ões) de PHP redirecionada(s). Projetos, vhosts e certificados serão reconstruídos nesta inicialização.",
+      "reclaimedPorts": "Porta(s) órfã(s) recuperada(s): {{ports}}",
+      "rekeyedItems": "{{count}} item(ns) com chave trocada",
+      "rekeySkipped": ", {{count}} ignorado(s) por não poderem ser descriptografados",
+      "cloudSyncSummary": "enviado(s) {{pushed}} host(s) + {{pushedCrons}} cron(s) + {{pushedPresets}} preset(s), recebido(s) {{pulled}} host(s) + {{pulledCrons}} cron(s) + {{pulledPresets}} preset(s)",
+      "pickZipTitle": "Escolha o zip de {{kind}} {{version}}",
+      "pickPrivateKeyTitle": "Escolha a chave privada para importar para {{host}}",
+      "pickPrivateKeyFileTitle": "Escolha um arquivo de chave privada",
+      "sshKeyFilterLabel": "Chaves privadas SSH (*, id_*, *.pem)",
+      "allFilesFilterLabel": "Todos os arquivos (*.*)",
+      "addFolderToAgentSessionTitle": "Adicionar pasta à sessão do agente",
+      "deployConnecting": "--- Conectando a {{user}}@{{address}}:{{port}} ---",
+      "deployPlan": "--- Plano: {{count}} etapa(s) ---",
+      "deployDetectionComplete": "--- Detecção concluída: {{osFamily}} {{osVersion}}, {{count}} binário(s) encontrado(s) ---",
+      "vhostSweepFailed": "varredura de vhost do {{label}}: {{error}}",
+      "projectVhostError": "{{name}}: {{error}}",
+      "repairProjectRoutesFailed": "reparar rotas de projeto: {{error}}",
+      "remoteWipedServerDeleteFailed": "o remoto foi apagado mas a exclusão no servidor falhou: {{error}}",
+      "storeNoticePreservedAt": "{{message}} Preservado em {{path}}",
+      "sshConnectionOk": "conexão ok",
+      "projectNotice": "{{name}}: {{message}}"
+    },
+    "cloud": {
+      "apiErrorWithMessage": "servidor: {{message}} (HTTP {{status}})",
+      "apiErrorStatus": "servidor HTTP {{status}}",
+      "undecryptableSkipped": "{{count}} item(ns) no servidor foram criptografados com uma senha diferente e foram ignorados — troque a chave de sincronização a partir do dispositivo que ainda funciona (Configurações → Conta)",
+      "stepHeader": "=== [{{idx}}/{{total}}] {{title}} ===",
+      "nonZeroExitIgnored": "(saída não-zero ignorada: {{error}})",
+      "presetVarBuiltinIgnored": "a variável \"{{name}}\" é embutida — valor personalizado ignorado",
+      "presetLaravelProductionDescription": "Modo de manutenção, instalações condicionais de composer/npm, migrate --force, optimize, reinício da fila.",
+      "presetLaravelDevelopmentDescription": "Fluxo mais leve: dependências de dev, migrate, optimize:clear — sem modo de manutenção ou reinício da fila.",
+      "presetStaticNodeDescription": "Pull + npm ci/build apenas quando os arquivos de pacote mudarem; repositórios estáticos simples apenas fazem pull."
+    },
+    "services": {
+      "firstRunInitializing": "primeira execução: inicializando o diretório de dados, isso leva alguns segundos…",
+      "initializationFailed": "falha na inicialização: {{error}}",
+      "startFailed": "falha ao iniciar: {{error}}",
+      "exitedNoMessage": "o processo saiu após {{uptime}} sem mensagem",
+      "restartLoopGivingUp": "{{name}} falhou {{streak}} vezes seguidas, desistindo da reinicialização automática: {{detail}}",
+      "restartAfterCrash": "o processo travou após {{uptime}}, reiniciando em {{delay}} ({{detail}})",
+      "restartFailed": "falha ao reiniciar {{name}}: {{error}}"
+    },
+    "projectroutes": {
+      "canonicalRestored": "O domínio principal foi restaurado para o checkout principal porque o worktree está ausente.",
+      "routeStateMalformed": "O estado das rotas do projeto estava corrompido e foi reiniciado.",
+      "previewRemoved": "O preview {{hostname}} foi removido porque o worktree está ausente."
+    },
+    "agents": {
+      "sharedCheckoutWarning": "{{title}} já está em execução neste checkout. Os dois agentes podem editar os mesmos arquivos.",
+      "cliNotFound": "CLI não encontrada no PATH ou em um local de instalação suportado",
+      "versionProbeTimedOut": "tempo esgotado ao verificar a versão",
+      "versionUnavailable": "versão indisponível: {{error}}",
+      "sessionHistoryMalformed": "O histórico de sessões de agente estava corrompido e foi reiniciado.",
+      "hookConfigFolderNotFound": "pasta de configuração de {{label}} não encontrada",
+      "kimiUsageUnsupported": "O Kimi só expõe a cota dentro da sua tela interativa /usage.",
+      "openCodeUsageUnsupported": "O OpenCode reporta totais de tokens e custo, não limites de assinatura.",
+      "usageNotSupportedFor": "Limites de uso não são suportados para {{provider}}.",
+      "claudeSignInRequired": "Entre no Claude Code para ler os limites de assinatura.",
+      "claudeCredentialsUnavailable": "As credenciais de assinatura do Claude Code estão indisponíveis.",
+      "claudeCannotPrepareRequest": "Não foi possível preparar a requisição de uso do Claude.",
+      "claudeCouldNotReachLimits": "Não foi possível acessar os limites de assinatura do Claude.",
+      "claudeMustRenewLogin": "O Claude Code precisa renovar o login antes que os limites de assinatura possam ser lidos.",
+      "claudeRateLimited": "A atualização de uso do Claude está com limite de requisições; aguardando para tentar novamente.",
+      "claudeTemporarilyUnavailable": "O uso do Claude está temporariamente indisponível (HTTP {{status}}).",
+      "claudeCouldNotReadLimits": "Não foi possível ler os limites de assinatura do Claude.",
+      "claudeUnreadableResponse": "O Claude retornou uma resposta de uso de assinatura ilegível.",
+      "claudeNoLimitWindows": "O Claude não retornou janelas de limite de assinatura.",
+      "codexNoChatGptRateLimitWindows": "O Codex não retornou janelas de limite de taxa do ChatGPT.",
+      "codexNoRateLimitWindows": "O Codex não retornou janelas de limite de taxa.",
+      "windowLabelFiveHour": "5 horas",
+      "windowLabelWeekly": "Semanal",
+      "windowLabelSonnetWeekly": "Sonnet semanal",
+      "windowLabelOpusWeekly": "Opus semanal",
+      "windowLabelFableWeekly": "Fable semanal",
+      "windowLabelModelWeekly": "{{model}} semanal",
+      "windowLabelMonthly": "Mensal",
+      "windowLabelLimit": "Limite",
+      "windowLabelMinutes": "{{minutes}} min"
+    },
+    "routes": {
+      "worktreeServerStoppedRouteFailed": "O servidor do worktree foi parado porque sua rota não conseguiu acompanhar a porta em uso: {{error}}",
+      "blockerWorktreeMissing": "a pasta do worktree está ausente",
+      "blockerWorktreeDirty": "o worktree tem alterações não confirmadas",
+      "blockerDevServerRunning": "o dev server de preview está em execução",
+      "blockerOwnsDomainRoutes": "o worktree ainda possui rotas de domínio",
+      "blockerAgentSessionRunning": "a sessão de agente ainda está em execução: {{title}}"
+    },
+    "projects": {
+      "runningCommand": "executando {{command}}",
+      "installingDependencies": "instalando dependências ({{pm}} install)…",
+      "installFailedWarn": "AVISO: falha na instalação: {{error}}",
+      "creatingBlankProject": "criando projeto em branco em {{target}}",
+      "done": "concluído.",
+      "composerPharDownloading": "composer.phar não encontrado — baixando de getcomposer.org…",
+      "composerPharSaved": "composer.phar salvo em {{path}}",
+      "gitCloneCommand": "git clone {{url}} {{target}}",
+      "downloadingWordpress": "baixando a versão mais recente do WordPress…",
+      "extracting": "extraindo…",
+      "cacheHit": "encontrado em cache: {{path}}",
+      "creatingMysqlDb": "criando o banco de dados MySQL `{{name}}`…",
+      "warnGeneric": "AVISO: {{error}}",
+      "creatingPostgresDb": "criando o banco de dados PostgreSQL `{{name}}`…",
+      "noDatabaseInStack": "nenhum banco de dados na stack ativa — pulando a criação do banco",
+      "envPatchFailedWarn": "AVISO: não foi possível corrigir o .env: {{error}}",
+      "envUpdated": ".env atualizado com as configurações do banco de dados",
+      "noDatabaseSkipMigrate": "nenhum banco de dados criado — pulando as migrações",
+      "noPhpForMigrations": "AVISO: nenhum PHP disponível para rodar as migrações — pulando (execute `php artisan migrate --seed` manualmente)",
+      "runningMigrate": "executando php artisan migrate --seed --force…",
+      "migrateFailedWarn": "AVISO: falha em migrate --seed: {{error}}",
+      "skippingFrontendBuildNoNode": "pulando o build do frontend: Node.js não está instalado (instale um em Downloads para habilitar)",
+      "runningNpmInstall": "executando npm install ({{npm}})…",
+      "npmInstallFailedWarn": "AVISO: falha no npm install: {{error}}",
+      "runningNpmBuild": "executando npm run build…",
+      "npmBuildFailedWarn": "AVISO: falha no npm run build: {{error}}"
+    },
+    "installer": {
+      "copyingFile": "copiando arquivo…",
+      "extracting": "extraindo…",
+      "cacheHit": "encontrado em cache",
+      "installing": "instalando…",
+      "extractingDll": "extraindo {{name}}.dll…",
+      "extXdebugDescription": "Depurador de código, profiler e substituto para var_dump.",
+      "extRedisDescription": "Extensão cliente para Redis (parsing de respostas objeto/array em C).",
+      "extMongodbDescription": "Driver para MongoDB. Combine com mongodb/mongodb no Composer.",
+      "extApcuDescription": "Cache em memória do lado da aplicação. Substituto direto para casos de uso do APC sem opcode.",
+      "extImagickDescription": "Bindings do ImageMagick. Traz suas próprias DLLs do ImageMagick no zip.",
+      "extMemcachedDescription": "Cliente para Memcached. Requer libmemcached (incluído no zip).",
+      "notes": {
+        "nginxStable": "Build estável para Windows.",
+        "nginxMainline": "Build mainline para Windows.",
+        "caddySingleBinary": "Binário único. Configurado por um Caddyfile, editável por projeto.",
+        "mailpitPorts": "SMTP na :1025, interface web em http://localhost:8025.",
+        "postgresManualDownload": "Baixe 'PostgreSQL Binaries' Windows x86-64. Após instalar, rode `bin\\initdb -D ..\\data -U postgres`.",
+        "postgresPreviousStable": "Versão estável anterior.",
+        "postgresLtsPatches2028": "LTS — patches de segurança até 2028.",
+        "postgresPatchesUntil2027": "Patches até 2027.",
+        "pgvectorPg18": "Busca por similaridade vetorial para o PostgreSQL 18. Após instalar, rode `CREATE EXTENSION vector;` em cada banco.",
+        "pgvectorGeneric": "Busca por similaridade vetorial para o PostgreSQL {{pg}}.",
+        "apacheLoungeBlocked": "O Apache Lounge bloqueia download direto. Clique em 'Abrir página', baixe o zip e salve em C:\\laraenv\\cache\\apache-{{version}}.zip",
+        "mysqlCurrentLts": "Innovation/LTS atual. Após instalar, rode `bin\\mysqld --initialize-insecure`.",
+        "mysql84Lts": "Série LTS 8.4. Após instalar, rode `bin\\mysqld --initialize-insecure`.",
+        "mysqlInitInsecure": "Após instalar, rode `bin\\mysqld --initialize-insecure`.",
+        "phpBetaWarning": "BETA — não use em produção. Nenhuma extensão PECL (Xdebug, Redis, …) foi compilada para o 8.6 ainda — nenhuma aparecerá aqui até o upstream lançá-las.",
+        "phpSecurityFixOnlyEol2025": "Apenas correções de segurança — EOL em dezembro de 2025.",
+        "phpEndOfLifeNoPatches": "Fim de vida — sem patches de segurança.",
+        "eolRequiresRedist": "EOL. Requer o redistribuível {{redist}}.",
+        "pythonEmbeddable": "Build embeddable (sem pip nativo — instale via get-pip.py).",
+        "nodejsLatestLts": "Última LTS. Inclui npm e npx.",
+        "nodejsJodLts": "LTS (Jod) — manutenção até abril de 2027.",
+        "nodejsEolLegacy": "EOL — apenas para projetos legados.",
+        "redisWindowsPort": "Build para Windows mantido pela comunidade (tporadowski). Padrão: porta 6379.",
+        "composerLatestStable": "Composer 2 (última estável). Requer uma versão de PHP ativa.",
+        "composer22Lts": "Composer 2.2 LTS — para projetos presos ao PHP 5.3 / 7.0+.",
+        "cmderFull": "Terminal completo com abas (~85MB, inclui msys-git). Após instalar, aparece como opção em Projects → terminal.",
+        "cmderMini": "Cmder mini (~6MB, sem msys-git). Use se você já tem o Git for Windows instalado."
+      }
+    },
+    "gitworkspace": {
+      "notAGitRepository": "O projeto não é um repositório Git"
+    },
+    "editor": {
+      "customLabel": "Personalizado…"
+    }
+  },
+  "common": {
+    "windowControls": {
+      "minimize": "minimizar",
+      "maximize": "maximizar",
+      "close": "fechar"
+    },
+    "typeBadge": {
+      "plain": "PHP puro"
+    },
+    "errorBoundary": {
+      "title": "Algo deu errado",
+      "description": "A interface encontrou um erro inesperado. Recarregar geralmente resolve — se continuar acontecendo, relate os detalhes abaixo.",
+      "reload": "Recarregar interface"
+    },
+    "ok": "OK",
+    "confirm": "Confirmar",
+    "cancel": "Cancelar",
+    "save": "Salvar",
+    "close": "Fechar",
+    "closeTooltip": "fechar"
+  },
+  "settings": {
+    "tabs": {
+      "account": "Conta",
+      "appearance": "Aparência",
+      "services": "Serviços",
+      "commandcenter": "Central de Comandos",
+      "experimental": "Experimental",
+      "updates": "Atualizações"
+    },
+    "appearance": {
+      "language": "Idioma",
+      "languageHint": "Aplica na hora, inclusive nas janelas de terminal abertas.",
+      "themeHint": "Escolha um modelo de cores. As mudanças são aplicadas na hora e salvas para o próximo lançamento.",
+      "themes": {
+        "nebula": "Roxo & menta, padrão",
+        "aurora": "Esmeralda & ciano gelo",
+        "sunset": "Laranja & âmbar",
+        "crimson": "Vermelho & rosa blush",
+        "oceanic": "Azul profundo & céu",
+        "midnight": "Escuro puro, detalhes grafite"
+      },
+      "themeAppliedFlash": "Tema aplicado",
+      "terminalCardTitle": "Terminal",
+      "terminalHint": "Escolha como copiar e colar no terminal.",
+      "terminalModeSavedFlash": "Modo do terminal salvo",
+      "terminalMode": {
+        "keyboardTitle": "Teclado",
+        "mouseTitle": "Mouse",
+        "mouseDesc": "Clique com o botão direito copia a seleção ou cola"
+      }
+    },
+    "common": {
+      "saveFailed": "Falha ao salvar: {{message}}",
+      "savingLabel": "Salvando…"
+    },
+    "services": {
+      "nginx": {
+        "intro1": "Diretivas globais no",
+        "intro2": ". Aumente o",
+        "intro3": "e os tempos limite abaixo se uploads lentos retornarem",
+        "bucketSizeError": "O tamanho do bucket deve ser uma potência de 2 (32, 64, 128, 256, 512, 1024)",
+        "maxSizeError": "O tamanho máximo deve ser maior ou igual ao tamanho do bucket",
+        "savedFlash": "Ajustes do Nginx salvos — o Nginx em execução foi recarregado",
+        "clientMaxBodyHint": "Tamanho máximo de upload. Padrão 512. Mantenha >= post_max_size do PHP.",
+        "clientBodyTimeoutHint": "Tempo máximo entre blocos do corpo da requisição. Padrão 300.",
+        "fastcgiReadTimeoutHint": "Tempo de espera pela resposta do PHP-FPM. Padrão 300. Aumente para importações/exportações lentas.",
+        "proxyReadTimeoutHint": "Tempo de espera para servidores de desenvolvimento em proxy reverso (Vite/Next/etc). Padrão 300.",
+        "keepaliveTimeoutHint": "Keep-alive ocioso. Padrão 75.",
+        "workerConnectionsHint": "Conexões simultâneas por worker. Padrão 1024.",
+        "bucketSizeHint": "Potência de 2. Padrão 128. Aumente se o Nginx falhar com 'could not build server_names_hash'.",
+        "maxSizeHint": "Padrão 1024. Aumente se você tiver centenas de vhosts.",
+        "saveButton": "Salvar Nginx"
+      },
+      "php": {
+        "intro1": "Limites de upload/execução gravados no",
+        "intro2": "de cada versão, além do número de processos",
+        "intro3": "por versão. Mais workers evitam que um upload grande trave o site inteiro (o php-cgi atende uma requisição por vez). Salvo imediatamente, e os pools do PHP-FPM são recarregados.",
+        "workersLabel": "Workers (pool php-cgi)",
+        "workersRangeError": "Workers devem estar entre 1 e 16",
+        "postMaxWarning": "post_max_size deve ser >= upload_max_filesize",
+        "clientMaxBodyTip": "Dica: aumente o client_max_body_size do Nginx para >= post_max_size, ou os uploads serão rejeitados antes de chegar ao PHP",
+        "savedFlash": "Ajustes do PHP salvos — php.ini atualizado e os pools do PHP-FPM recarregados",
+        "uploadMaxHint": "Tamanho máximo de um único arquivo enviado. Padrão 512.",
+        "postMaxHint": "Corpo POST total máximo. Deve ser >= upload_max_filesize. Padrão 512.",
+        "memoryLimitHint": "Memória máxima por requisição. Padrão 512.",
+        "workersHint": "Processos php-cgi simultâneos por versão. 1–16. Padrão 4.",
+        "maxExecutionTimeHint": "Tempo máximo de execução do script. Padrão 300. Aumente para importações lentas.",
+        "maxInputTimeHint": "Tempo máximo para processar a entrada da requisição (incl. uploads). Padrão 300.",
+        "saveButton": "Salvar PHP"
+      },
+      "apache": {
+        "intro1": "Diretivas globais no",
+        "intro2": ". Aplicado da mesma forma que o Nginx — aplicado imediatamente, com o Apache em execução recarregado.",
+        "savedFlash": "Ajustes do Apache salvos — o Apache em execução foi recarregado",
+        "timeoutHint": "Tempo limite total da requisição. Padrão 300.",
+        "keepAliveTimeoutHint": "Keep-alive ocioso. Padrão 5.",
+        "limitRequestBodyHint": "Corpo máximo da requisição. 0 = ilimitado. Padrão 100.",
+        "proxyTimeoutHint": "Tempo de espera para backends via proxy (mod_proxy / mod_proxy_fcgi). Padrão 300.",
+        "saveButton": "Salvar Apache"
+      },
+      "localHttps": {
+        "cardTitle": "HTTPS local",
+        "certIntro": "O LaraEnv assina certificados HTTPS para sites locais (como",
+        "certMiddle": ") com uma autoridade certificadora raiz que ele gera nesta máquina. O botão",
+        "trustHighlight": "Confiar",
+        "certOutro": "abaixo instala essa autoridade certificadora raiz no Windows para que esta máquina confie nos certificados HTTPS emitidos pelo LaraEnv para sites locais — isso não afeta nenhum outro computador.",
+        "pillCheckError": "Não foi possível verificar",
+        "pillTrusted": "Confiável",
+        "pillNotTrusted": "Não confiável",
+        "checkErrorDetail": "Não foi possível verificar o status de confiança: {{error}}",
+        "trustButton": "Confiar na AC local",
+        "trustingLabel": "Confiando…",
+        "loadingLabel": "Carregando…",
+        "loadErrorDetail": "Não foi possível ler a AC local: {{error}}",
+        "noneYet": "Ainda não há uma AC local — ela é criada na primeira vez que um projeto ativa o HTTPS.",
+        "trustedFlash": "Autoridade certificadora local agora é confiável",
+        "trustFailedFlash": "Falha ao confiar: {{message}}"
+      }
+    },
+    "commandcenter": {
+      "actions": {
+        "terminal": "Executar comando no terminal",
+        "openTerminal": "Abrir terminal",
+        "service": "Ação de serviço",
+        "navigate": "Navegar para página"
+      },
+      "serviceOps": {
+        "start": "Iniciar serviço",
+        "stop": "Parar serviço",
+        "reload": "Recarregar serviço",
+        "startAll": "Iniciar todos os serviços",
+        "stopAll": "Parar todos os serviços",
+        "reloadStack": "Recarregar stack web"
+      },
+      "summary": {
+        "terminal": "Executar \"{{command}}\"",
+        "terminalWithProject": "Executar \"{{command}}\" · {{project}}",
+        "openTerminal": "Abrir terminal",
+        "openTerminalWithProject": "Abrir terminal · {{project}}",
+        "serviceWithTarget": "{{op}}: {{service}}",
+        "navigate": "Ir para {{page}}"
+      },
+      "hotkeyCapture": {
+        "listening": "Pressione as teclas… (Esc cancela)",
+        "notSet": "Não definido"
+      },
+      "palette": {
+        "cardTitle": "Paleta de Comandos",
+        "description": "Pressione a tecla da paleta em qualquer lugar para abrir a paleta de comandos. Comandos internos (navegação, serviços, projetos) aparecem automaticamente junto com seus comandos personalizados.",
+        "paletteHotkeyLabel": "Atalho da paleta",
+        "globalHotkeyLabel": "Atalho global",
+        "disableButton": "desativar",
+        "globalHotkeyHintPart1": "O atalho global abre a paleta em todo o sistema — mesmo quando o LaraEnv está minimizado ou oculto na bandeja (ele precisa continuar em execução na bandeja). Alguns",
+        "globalHotkeyHintPart2": "combos são reservados pelo Windows e podem não funcionar; se não funcionar, tente um",
+        "globalHotkeyHintPart3": "combo.",
+        "terminalHotkeysPart1": "As abas do terminal também respondem a",
+        "terminalHotkeysPart2": "(nova aba) e",
+        "terminalHotkeysPart3": "(fechar aba)."
+      },
+      "custom": {
+        "cardTitle": "Comandos Personalizados",
+        "description": "Seus comandos aparecem na paleta e podem ser vinculados a um atalho.",
+        "addButton": "Adicionar comando",
+        "empty": "Nenhum comando personalizado ainda.",
+        "untitled": "(sem título)",
+        "editTooltip": "editar",
+        "deleteTooltip": "excluir"
+      },
+      "editor": {
+        "editTitle": "Editar · {{label}}",
+        "newTitle": "Novo comando",
+        "shellLabel": "Shell",
+        "shellDefaultOption": "Padrão",
+        "projectLabel": "Projeto (opcional)",
+        "projectNoneOption": "Nenhum",
+        "labelLabel": "Rótulo",
+        "labelPlaceholder": "ex.: Executar migrations",
+        "actionLabel": "Ação",
+        "commandLabel": "Comando",
+        "operationLabel": "Operação",
+        "serviceLabel": "Serviço",
+        "serviceSelectOption": "Selecionar…",
+        "pageLabel": "Página",
+        "hotkeyLabel": "Atalho (opcional)",
+        "saveButton": "Salvar comando",
+        "cancelButton": "Cancelar"
+      },
+      "errors": {
+        "labelRequired": "O comando precisa de um rótulo"
+      },
+      "saveSuccessFlash": "Comando salvo",
+      "removeSuccessFlash": "Comando removido"
+    },
+    "experimental": {
+      "agentSessions": {
+        "cardTitle": "Sessões de agentes",
+        "title": "Agentes de código focados no projeto",
+        "description": "Execute Claude Code, Codex, Kimi e OpenCode dentro de projetos existentes. O checkout atual é o padrão; a troca de branch e as worktrees isoladas são sempre escolhas explícitas.",
+        "enabledFlash": "Sessões de agentes ativadas",
+        "disabledFlash": "Sessões de agentes desativadas"
+      },
+      "terminalAgents": {
+        "cardTitle": "Agentes nos terminais do LaraEnv",
+        "title": "Rastrear agentes iniciados manualmente",
+        "description": "Ativado por padrão junto com Sessões de agentes. Digitar claude, codex, kimi ou opencode dentro de um terminal do LaraEnv adiciona a sessão a Agentes com estado ao vivo e retomada. O LaraEnv mantém um pequeno hook de ciclo de vida na configuração global de cada provedor; o hook não faz nada fora dos terminais do LaraEnv. Desative para remover os hooks.",
+        "hookInstalled": "hook instalado",
+        "hookNotInstalled": "não instalado",
+        "enabledFlash": "Rastreamento de agentes no terminal ativado",
+        "disabledFlash": "Rastreamento de agentes no terminal desativado"
+      },
+      "localMetadata": {
+        "cardTitle": "Metadados locais",
+        "title": "Redefinir metadados de agentes do LaraEnv",
+        "description": "Limpa os cartões de sessão e IDs de restauração do LaraEnv. O arquivo de metadados anterior é arquivado com um carimbo de data/hora. Conversas com provedores, credenciais, repositórios, rotas e worktrees não são excluídos.",
+        "resettingLabel": "Redefinindo…",
+        "resetButton": "Redefinir metadados",
+        "confirmTitle": "Redefinir as sessões de agentes do LaraEnv?",
+        "confirmMessage": "Conversas e credenciais dos provedores nunca são excluídas. As worktrees gerenciadas precisam ser removidas antes.",
+        "confirmLabel": "Redefinir",
+        "resetFlashWithPath": "Metadados de agentes redefinidos. Arquivo anterior arquivado em {{path}}",
+        "resetFlash": "Metadados de agentes redefinidos"
+      }
+    },
+    "phpExtensions": {
+      "header": {
+        "extensionsLabel": "Extensões",
+        "summary": "{{enabled}} ativadas · {{total}} no total",
+        "backToExtensions": "voltar para extensões",
+        "viewIni": "ver php.ini"
+      },
+      "ini": {
+        "revertButton": "reverter",
+        "saveButton": "Salvar e reiniciar o FPM"
+      },
+      "search": {
+        "placeholder": "filtrar extensões…"
+      },
+      "pecl": {
+        "summary": "Extensões PECL ({{installed}}/{{total}} instaladas)",
+        "installedBadge": "instalada",
+        "reinstallTooltip": "reinstalar (baixa o zip novamente)",
+        "installTooltip": "baixar e ativar",
+        "reinstallButton": "reinstalar",
+        "installButton": "instalar",
+        "phaseDownload": "baixando",
+        "phaseExtract": "extraindo"
+      },
+      "download": {
+        "downloading": "baixando o zip do PHP em windows.php.net ({{percent}}%)",
+        "extracting": "extraindo…",
+        "progressDetail": "{{done}} / {{total}} MB · {{speed}}"
+      },
+      "errors": {
+        "generic": "erro: {{error}}",
+        "itemMessage": "{{name}}: {{message}}",
+        "dismissTooltip": "descartar erro"
+      },
+      "list": {
+        "empty": "Nenhuma extensão corresponde.",
+        "downloadDllTooltip": "Baixar DLL ausente de windows.php.net (somente extensões inclusas)",
+        "fetchingLabel": "buscando",
+        "noDllLabel": "sem dll"
+      },
+      "iniChooser": {
+        "title": "Como você quer editar o php.ini?",
+        "builtinTitle": "Editor integrado (VSCode)",
+        "builtinDesc": "Monaco · busca, realce de sintaxe · Salvar e reiniciar o FPM",
+        "systemTitle": "Editor do sistema",
+        "systemDesc": "Abre com o aplicativo padrão do sistema · salve no aplicativo externo e depois reinicie o FPM manualmente",
+        "cancelButton": "cancelar"
+      },
+      "flash": {
+        "peclInstalled": "{{version}} instalada — FPM reiniciado",
+        "installFailed": "falha na instalação",
+        "enabledWord": "ativada",
+        "disabledWord": "desativada",
+        "extensionToggled": "{{name}} {{state}} — FPM reiniciado",
+        "dllInstalled": "{{name}}.dll instalada — FPM reiniciado",
+        "openedInSystemEditor": "{{path}} aberto no editor do sistema",
+        "iniSaved": "php.ini salvo — FPM reiniciado"
+      }
+    },
+    "vcRedist": {
+      "title": "Visual C++ Redistributable necessário",
+      "binaryReason": "não consegue iniciar neste sistema porque o Microsoft Visual C++ Redistributable não está instalado.",
+      "genericReason": "Um binário necessário para o LaraEnv não consegue iniciar porque o Microsoft Visual C++ Redistributable não está instalado neste sistema.",
+      "installNote": "É uma instalação única da Microsoft (~14 MB) da qual PHP, MySQL, Apache e ferramentas semelhantes dependem. Instale-a, reinicie o LaraEnv e tente novamente.",
+      "copyTooltip": "copiar URL",
+      "copiedLabel": "copiado",
+      "copyLabel": "copiar",
+      "dismissButton": "Dispensar",
+      "openPageButton": "Abrir página de download"
+    }
+  },
+  "sidebar": {
+    "nav": {
+      "dashboard": "Painel",
+      "projects": "Projetos",
+      "terminal": "Terminal",
+      "cron": "Cron",
+      "deployments": "Implantações",
+      "downloads": "Bibliotecas",
+      "settings": "Configurações"
+    },
+    "account": {
+      "viewPlan": "Ver plano",
+      "pro": "Pro",
+      "free": "Grátis"
+    },
+    "footer": {
+      "supportTooltip": "Apoie o projeto",
+      "donate": "Doar",
+      "githubTooltip": "LaraEnv no GitHub — dê uma estrela, relate problemas, contribua",
+      "github": "LaraEnv no GitHub",
+      "madeWithLove": "Feito com amor",
+      "hateForAds": "e ódio a anúncios"
+    }
+  },
+  "dashboard": {
+    "services": {
+      "title": "Serviços",
+      "emptyPrefix": "Nada configurado ainda. Clique em",
+      "setupAndStart": "Configurar e iniciar",
+      "emptySuffix": "para baixar o conjunto recomendado (PHP, nginx, MySQL, Mailpit, Node.js) e iniciar tudo de uma vez.",
+      "startAll": "Iniciar tudo",
+      "stopAll": "Parar tudo",
+      "starting": "Iniciando…",
+      "stopping": "Parando…",
+      "stoppedAll": "todos os serviços foram parados",
+      "startedAll": "todos os serviços foram iniciados"
+    },
+    "serviceTooltips": {
+      "webServer": "Servidor web · http://localhost",
+      "mysql": "host: localhost · porta: 3306 · usuário: root · senha: (vazia)",
+      "postgres": "host: localhost · porta: 5432 · usuário: postgres · senha: (vazia)",
+      "mailpit": "SMTP :1025 · UI http://localhost:8025",
+      "redis": "host: localhost · porta: 6379"
+    },
+    "hero": {
+      "tagline": "ambiente local, simplificado",
+      "quoteFallbackText": "Primeiro, resolva o problema. Depois, escreva o código.",
+      "quoteFallbackAuthor": "John Johnson"
+    },
+    "system": {
+      "title": "Sistema"
+    },
+    "runtimes": {
+      "title": "Runtimes",
+      "noneInstalled": "nenhum — instale em Downloads",
+      "reloadPhpTooltip": "recarregar versões do PHP",
+      "reloadNodeTooltip": "recarregar versões do Node",
+      "phpActive": "PHP {{version}} ativo — novos terminais usarão esta versão",
+      "nodeActive": "Node {{version}} ativo — novos terminais usarão esta versão"
+    },
+    "errors": {
+      "generic": "erro: {{message}}"
+    },
+    "serviceCard": {
+      "pleaseWait": "aguarde…"
+    },
+    "status": {
+      "running": "em execução",
+      "stopped": "parado",
+      "starting": "iniciando…",
+      "stopping": "parando…",
+      "unknown": "…"
+    },
+    "metrics": {
+      "loading": "carregando…",
+      "cpu": "CPU",
+      "memory": "Memória",
+      "gpu": "GPU",
+      "disk": "Disco",
+      "gpuUnavailable": "n/d"
+    },
+    "phpFpm": {
+      "empty": "Nenhuma versão do PHP instalada.",
+      "extensionsTooltip": "extensões & php.ini",
+      "stopTooltip": "parar",
+      "startTooltip": "iniciar"
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "reload": {
+      "title": "Recarregar nginx/apache/php-fpm e atualizar as listas",
+      "label": "recarregar"
+    },
+    "newProjectButton": "Novo projeto",
+    "tld": {
+      "dropdownTitle": "mudar o TLD de todos os projetos",
+      "custom": "Personalizado…",
+      "promptTitle": "TLD personalizado",
+      "promptLabel": "TLD (sem o ponto inicial)"
+    },
+    "filters": {
+      "label": "Filtro",
+      "all": {
+        "one": "todos ({{count}})",
+        "many": "todos ({{count}})",
+        "other": "todos ({{count}})"
+      },
+      "untagged": {
+        "one": "sem tag ({{count}})",
+        "many": "sem tag ({{count}})",
+        "other": "sem tag ({{count}})"
+      },
+      "tagged": {
+        "one": "{{tag}} ({{count}})",
+        "many": "{{tag}} ({{count}})",
+        "other": "{{tag}} ({{count}})"
+      }
+    },
+    "list": {
+      "configuredSites": "Sites configurados",
+      "searchPlaceholder": "filtrar…",
+      "searchTooltip": "filtrar projetos",
+      "emptyPrefix": "Ainda não há projetos. Clique em",
+      "emptySuffix": "ou solte uma pasta em",
+      "noMatch": "Nenhum projeto corresponde ao filtro atual."
+    },
+    "common": {
+      "current": "(atual)",
+      "defaultLabel": "padrão",
+      "workingLabel": "processando…",
+      "removeTagTooltip": "remover tag",
+      "tagsPlaceholder": "staging, prod, client-x…",
+      "deleteLabel": "Excluir",
+      "startLabel": "Iniciar",
+      "terminalFallback": "Terminal",
+      "editorFallback": "Editor",
+      "customFallback": "Personalizado"
+    },
+    "errors": {
+      "generic": "erro: {{message}}"
+    },
+    "flash": {
+      "reloaded": "recarregado",
+      "sslEnabled": "{{name}} → HTTPS ativado",
+      "sslDisabled": "{{name}} → HTTPS desativado",
+      "phpVersionSet": "{{project}} → PHP {{version}}",
+      "nodeVersionSet": "{{project}} → Node {{version}}",
+      "devServerStopped": "{{name}} → servidor de desenvolvimento parado",
+      "devServerStarting": "{{name}} → iniciando servidor de desenvolvimento…",
+      "queueWorkerStopped": "{{name}} → worker da fila parado",
+      "queueWorkerStarting": "{{name}} → iniciando worker da fila…",
+      "queueWorkerRestarting": "{{name}} → reiniciando worker da fila…",
+      "devCommandUpdated": "{{name}} → comando de desenvolvimento atualizado",
+      "devCommandReset": "{{name}} → comando de desenvolvimento redefinido para o padrão",
+      "noPortDetected": "nenhuma porta detectada ainda para {{name}}",
+      "proxyWired": "{{name}} → proxy reverso para localhost:{{port}}",
+      "proxyDisabled": "{{name}} → proxy desativado",
+      "projectAdded": "projeto adicionado: {{name}}",
+      "projectRemoved": "projeto removido: {{name}}",
+      "phpInstalled": "PHP {{version}} instalado",
+      "kindInstalled": "{{kind}} {{version}} instalado",
+      "defaultTerminal": "terminal padrão: {{kind}}",
+      "defaultEditor": "editor padrão: {{kind}}"
+    },
+    "sslCertDialog": {
+      "title": "HTTPS precisa de um certificado confiável",
+      "checkFailedReason": "O LaraEnv não conseguiu verificar se a autoridade certificadora é confiável.",
+      "message": "Até que esta máquina confie na autoridade certificadora com a qual o LaraEnv assina os certificados locais, o navegador vai avisar em toda requisição HTTPS. Você pode configurar isso em Configurações, em Serviços.",
+      "confirmLabel": "Abrir Configurações",
+      "cancelLabel": "Mais tarde"
+    },
+    "trustCaDialog": {
+      "title": "Confiar na autoridade certificadora local?",
+      "introBeforeHost": "O LaraEnv assina certificados HTTPS locais, incluindo o de",
+      "afterHost": ", com uma autoridade certificadora raiz que ele gera nesta máquina — e o Windows ainda não confia nela, por isso o navegador vai avisar. Confiar instala essa autoridade certificadora raiz no Windows para que esta máquina confie nos certificados que o LaraEnv emite para sites locais; isso não afeta nenhum outro computador. Esta cópia roda a partir de uma pasta em vez de instalada, então ela nunca muda a máquina sem perguntar — uma cópia instalada faz isso automaticamente.",
+      "confirmLabel": "Confiar na AC local",
+      "cancelLabel": "Agora não",
+      "trustedFlash": "Autoridade certificadora local confiável — {{host}} agora é totalmente HTTPS",
+      "trustFailedFlash": "Falha ao confiar: {{message}}"
+    },
+    "row": {
+      "dotNoServer": "nenhum servidor web está em execução — inicie um pelo Painel",
+      "dotRunning": "site acessível · servidor de desenvolvimento em execução",
+      "dotReachable": "site acessível",
+      "packageManagerTooltip": "gerenciador de pacotes detectado: {{manager}}",
+      "proxyBadgeTitle": "proxy reverso → localhost:{{port}}",
+      "proxyBadge": "proxy:{{port}}",
+      "tagFilterTooltip": "filtrar pela tag \"{{tag}}\"",
+      "addTagLabel": "tag",
+      "editTagsLabel": "editar",
+      "editTagsTooltip": "editar tags",
+      "sslBadgeOn": "SSL",
+      "sslBadgeOff": "sem SSL",
+      "groupRuntime": "Runtime",
+      "groupAgents": "Agentes",
+      "groupOpen": "Abrir",
+      "groupDev": "Dev",
+      "groupManage": "Gerenciar",
+      "folder": "Pasta",
+      "browser": "Navegador",
+      "logs": "Logs",
+      "proxyOnLabel": "Proxy ativo",
+      "wireProxyLabel": "Conectar proxy",
+      "proxyActiveTitle": "proxy reverso ativo → localhost:{{port}}. Clique para desativar.",
+      "proxyActiveStoppedTitle": "proxy reverso ativo → localhost:{{port}} (servidor de desenvolvimento parado). Clique para desativar.",
+      "wireProxyTitle": "conectar {{host}} → localhost:{{port}}",
+      "sslButtonOn": "SSL ativo",
+      "sslButtonOff": "SSL inativo",
+      "sslButtonOnTooltip": "desativar HTTPS",
+      "sslButtonOffTooltip": "ativar HTTPS (autoassinado)",
+      "config": "Config",
+      "history": "Histórico"
+    },
+    "terminalDropdown": {
+      "title": "abrir terminal na pasta do projeto com a versão de PHP do projeto",
+      "header": "Abrir terminal",
+      "none": "nenhum terminal disponível",
+      "notInstalledHeader": "Não instalado",
+      "installHint": "— instalar em Bibliotecas/Ferramentas",
+      "setDefaultTooltip": "definir como terminal padrão"
+    },
+    "editorDropdown": {
+      "title": "selecionar o editor de código para este projeto",
+      "header": "Abrir no editor",
+      "none": "nenhum editor detectado",
+      "notDetectedHeader": "Não detectado",
+      "customHeader": "Comando personalizado",
+      "customPlaceholder": "ex.: antigravity",
+      "openButton": "Abrir",
+      "openButtonTooltip": "abrir com este comando",
+      "setDefaultTooltip": "definir como editor padrão",
+      "setDefaultCustomTooltip": "definir como padrão"
+    },
+    "nodeDropdown": {
+      "title": "definir a versão do Node para este projeto",
+      "noneInstalledTitle": "nenhuma versão do Node instalada — instale uma em Bibliotecas/Ferramentas",
+      "noneInstalledBody": "nenhum Node instalado — instale em Bibliotecas/Ferramentas"
+    },
+    "phpDropdown": {
+      "title": "definir a versão do PHP para este projeto"
+    },
+    "queueWorker": {
+      "onLabel": "Fila ativa",
+      "offLabel": "Fila",
+      "runningTitle": "worker da fila pid {{pid}} — clique para parar",
+      "startTitle": "iniciar php artisan queue:work",
+      "moreTooltip": "mais ações da fila",
+      "restart": "Reiniciar",
+      "startWithParams": "Iniciar com parâmetros…",
+      "startWithParamsDisabledTooltip": "pare o worker antes para iniciar com parâmetros diferentes"
+    },
+    "devServer": {
+      "stopLabel": "Parar",
+      "runningTitle": "em execução — clique para parar",
+      "runningWithPortTitle": "em execução em :{{port}} — clique para parar",
+      "startWithCmdTitle": "iniciar: {{cmd}}",
+      "startDefaultTitle": "iniciar servidor de desenvolvimento (npm run dev)",
+      "customCmdDotTitle": "comando personalizado",
+      "optionsTooltip": "opções do comando de desenvolvimento",
+      "configureButton": "Configurar comando…",
+      "configureDisabledTooltip": "pare o servidor de desenvolvimento antes para mudar o comando"
+    },
+    "queueParams": {
+      "title": "Iniciar worker da fila — {{project}}",
+      "commandLabel": "Comando",
+      "argsLabel": "Argumentos extras",
+      "hint": "Salvo por projeto — reabre com o último valor da próxima vez."
+    },
+    "devCommandModal": {
+      "title": "Comando de desenvolvimento — {{project}}",
+      "commandLabel": "Comando",
+      "windowsWarningA": "No Windows,",
+      "windowsWarningB": "falha porque o script de desenvolvimento do Laravel roda",
+      "windowsWarningC": ", que precisa da extensão",
+      "windowsWarningD": "(não disponível no Windows).",
+      "patchingLabel": "Corrigindo…",
+      "makeSafeButton": "Tornar o composer run dev seguro no Windows",
+      "makeSafeTooltip": "editar o composer.json para remover o processo pail do script de desenvolvimento",
+      "windowsNotePrefix": "Edita o script de desenvolvimento do",
+      "windowsNoteSuffix": "do seu projeto para remover o processo Pail. Reversível — é o seu arquivo.",
+      "hintA": "Deixe em branco para usar o padrão",
+      "hintB": ". Use o token",
+      "hintC": "onde a porta do servidor de desenvolvimento deve entrar — ele é substituído pela porta livre que o LaraEnv reserva. Sem ele, a ferramenta escolhe sua própria porta (ainda detectada nos logs para o proxy).",
+      "hintD": "Exemplos:",
+      "resetButton": "Redefinir para o padrão",
+      "resetTooltip": "reverter para npm run dev"
+    },
+    "newModal": {
+      "title": "Novo projeto",
+      "types": {
+        "blankLabel": "Vazio",
+        "blankDesc": "Pasta vazia + página de boas-vindas",
+        "gitLabel": "Clonar do Git",
+        "wordpressDesc": "Última versão do WP em wordpress.org",
+        "viteDesc": "criar vite (react/vue/svelte/…)",
+        "nextDesc": "create-next-app (React + SSR)",
+        "nuxtDesc": "criar nuxt (Vue + SSR)",
+        "astroDesc": "criar astro (baseado em conteúdo)"
+      },
+      "nameLabel": "Nome",
+      "tagsLabel": "Tags",
+      "tagsOptional": "(opcional)",
+      "gitUrlLabel": "URL do Git",
+      "laravelVersionLabel": "Versão do Laravel",
+      "phpVersionLabel": "Versão do PHP",
+      "phpMinHint": "requer PHP ≥{{min}}",
+      "activeSuffix": " (ativa)",
+      "noPhpAvailable": "Nenhum PHP instalado ≥{{min}} — instale um em Bibliotecas/Ferramentas.",
+      "packageManagerLabel": "Gerenciador de pacotes",
+      "viteTemplateLabel": "Template do Vite",
+      "createButton": "Criar",
+      "nameRequired": "o nome é obrigatório",
+      "gitUrlRequired": "a URL do Git é obrigatória",
+      "installPhpRequired": "instale PHP ≥{{min}} para o Laravel {{version}}",
+      "creatingLog": "criando projeto {{kind}} \"{{name}}\"…"
+    },
+    "deleteDialog": {
+      "title": "Remover {{name}}",
+      "prompt": "O que você quer fazer com",
+      "vhostOnlyTitle": "Remover apenas o vhost",
+      "vhostOnlyDescPrefix": "Remove a config do nginx e a entrada no hosts. A pasta",
+      "vhostOnlyDescSuffix": "permanece no disco.",
+      "fullDeleteTitle": "Excluir o projeto completamente",
+      "fullDeleteDescPrefix": "Remove o vhost e exclui permanentemente a pasta",
+      "fullDeleteDescSuffix": ". Não pode ser desfeito.",
+      "dropDbLabel": "Também descartar o banco de dados do projeto (aplica-se à exclusão completa)",
+      "confirmTitle": "Excluir {{name}} permanentemente?",
+      "confirmMessage": "{{path}} será excluída. Isso não pode ser desfeito.",
+      "confirmMessageWithDb": "{{path}} e seu banco de dados serão excluídos. Isso não pode ser desfeito.",
+      "vhostRemovedFlash": "vhost e entrada no hosts removidos (pasta mantida)",
+      "deletedFlash": "{{name}} excluído (pasta + vhost)",
+      "deletedFlashWithDb": "{{name}} excluído (pasta + vhost + banco de dados)"
+    },
+    "tagsModal": {
+      "title": "Tags · {{name}}",
+      "matchingTags": "Tags correspondentes",
+      "existingTags": "Tags existentes",
+      "keyboardHint": "Setas para escolher, Tab ou Enter para adicionar",
+      "suggestionsAriaLabel": "Sugestões de tags",
+      "savedFlash": "tags salvas: {{name}}"
+    },
+    "vhostModal": {
+      "title": "vhost · {{name}}",
+      "warning": "As edições manuais permanecem até você clicar em Redefinir, ou até você mudar a versão de PHP / o TLD do projeto (eles regeneram a partir do modelo).",
+      "notGenerated": "Não gerado para {{server}} — esse servidor provavelmente não está instalado para este projeto.",
+      "resetButton": "Redefinir para o modelo",
+      "resetTooltip": "regenerar a partir do modelo",
+      "resetConfirmTitle": "Regenerar a partir do modelo?",
+      "resetConfirmMessage": "As edições manuais deste vhost serão descartadas.",
+      "resetConfirmLabel": "Regenerar",
+      "resetFlash": "vhost redefinido para o modelo",
+      "discardConfirmTitle": "Descartar alterações não salvas?",
+      "discardConfirmLabel": "Descartar",
+      "saveButton": "Salvar e recarregar",
+      "savedFlash": "vhost salvo e {{server}} recarregado"
+    },
+    "portsModal": {
+      "title": "Portas em uso",
+      "searchPlaceholder": "Filtrar por proprietário, processo, porta ou tipo…",
+      "clearTooltip": "limpar",
+      "portColumn": "Porta",
+      "processColumn": "Processo",
+      "pidColumn": "PID",
+      "actionsColumn": "Ações",
+      "empty": "Nenhuma porta do LaraEnv está em uso no momento.",
+      "noMatch": "Nenhuma porta corresponde a “{{query}}”.",
+      "portCount": {
+        "one": "{{count}} porta",
+        "many": "{{count}} portas",
+        "other": "{{count}} portas"
+      },
+      "kill": "Encerrar",
+      "killing": "Encerrando…",
+      "killTooltip": "encerrar o processo que está usando esta porta",
+      "footer": "Mostra as portas TCP usadas pelos servidores de desenvolvimento e serviços do LaraEnv, agrupadas por proprietário. \"{{killWord}}\" libera uma porta travada.",
+      "badgeDev": "DEV",
+      "badgeService": "SERVIÇO",
+      "badgeOrphan": "ÓRFÃ"
+    },
+    "bootstrap": {
+      "titleConfirm": "Configurar o conjunto recomendado",
+      "titleInstalling": "Instalando o conjunto recomendado…",
+      "titleStarting": "Iniciando serviços…",
+      "titleDone": "Conjunto pronto",
+      "titleError": "Falha na configuração",
+      "descAllInstalled": "Tudo já está instalado. Clique em Iniciar para subir os serviços.",
+      "descNeedsInstall": "Eles serão baixados e instalados em paralelo, depois iniciados automaticamente.",
+      "prereleaseBadge": "beta",
+      "prereleaseTooltip": "Não é uma versão estável — veja as notas abaixo antes de instalar",
+      "alreadyInstalled": "já instalado",
+      "queued": "na fila",
+      "downloadingPercent": "baixando {{percent}}%",
+      "extracting": "extraindo…",
+      "doneLabel": "instalado",
+      "installAndStartButton": "Instalar e iniciar",
+      "startServices": "Iniciar serviços",
+      "readyFlash": "conjunto recomendado pronto",
+      "errorFlash": "erro na configuração: {{message}}"
+    }
+  },
+  "deployments": {
+    "deletedFlash": "Implantação excluída",
+    "title": "Implantações",
+    "loading": "Carregando…",
+    "reloadButton": "recarregar",
+    "sshHostLabel": "Host SSH",
+    "deleteLabel": "Excluir",
+    "destroyButton": "Destruir",
+    "builtInSuffix": "(padrão)",
+    "waitingForOutput": "(aguardando saída)",
+    "errors": {
+      "generic": "erro: {{message}}"
+    },
+    "steps": {
+      "aptUpdate": "apt update",
+      "addSuryRepo": "Adicionar repositório PHP do sury.org (para versões modernas do PHP)",
+      "installMissingPackages": "Instalar pacotes ausentes: {{packages}}",
+      "verifyPhpInstalled": "Verificar se o php{{version}} está instalado",
+      "createDeployDir": "Criar diretório de deploy {{path}}",
+      "cloneRepo": "Clonar repositório",
+      "bootstrapMysqlDb": "Inicializar banco de dados MySQL + usuário para {{name}}",
+      "ensureEnvExists": "Garantir que o .env existe",
+      "runBuildScript": "Executar script de build",
+      "runDeployPipeline": "Executar pipeline de deploy",
+      "setLaravelPermissions": "Definir permissões de runtime do Laravel (storage, bootstrap/cache)",
+      "writePhpFpmPool": "Gravar pool do PHP-FPM para {{name}}",
+      "disableDefaultPhpFpmPool": "Desabilitar o pool padrão www do PHP-FPM",
+      "systemdDropinFpm": "Drop-in do systemd Restart=always para {{unit}}",
+      "systemdDropinNginx": "Drop-in do systemd Restart=always para o nginx",
+      "reloadSystemdRestartFpm": "Recarregar systemd e reiniciar php{{version}}-fpm",
+      "enableApacheModules": "Habilitar módulos do apache (rewrite, php{{version}})",
+      "writeApacheVhost": "Gravar vhost do apache para {{domain}}",
+      "reloadApache": "Recarregar apache",
+      "writeNginxVhost": "Gravar vhost do nginx para {{domain}}",
+      "reloadNginx": "Recarregar nginx",
+      "installCertbot": "Instalar certbot",
+      "obtainCertificate": "Obter certificado Let's Encrypt para {{domain}}",
+      "installAutopullScript": "Instalar script de auto-pull",
+      "scheduleAutopull": "Agendar auto-pull ({{schedule}})",
+      "removeAutopullCron": "Remover entrada de cron do auto-pull",
+      "removeAutopullScript": "Remover script de auto-pull",
+      "disableRemoveApacheVhost": "Desabilitar e remover vhost do apache",
+      "removeNginxVhost": "Remover vhost do nginx",
+      "removePhpFpmPoolConfig": "Remover configuração do pool PHP-FPM + slow log",
+      "reloadPhpFpm": "Recarregar PHP-FPM",
+      "revokeCertificate": "Revogar certificado Let's Encrypt para {{domain}}",
+      "dropMysqlDb": "Remover banco de dados MySQL {{dbName}} + usuário {{dbUser}}",
+      "wipeDeployDir": "Apagar diretório de deploy {{path}}",
+      "deployProject": "Implantar {{name}}"
+    },
+    "status": {
+      "never": "nunca",
+      "ok": "ok",
+      "error": "erro",
+      "running": "em execução"
+    },
+    "proFeature": {
+      "title": "Recurso Pro",
+      "description": "O Mini-Forge auto-provisiona um servidor remoto (detecta SO + pilha instalada, instala pacotes faltantes, configura vhosts, registra crons, conecta scripts de auto-deploy) — tudo a partir dos hosts SSH que você já tem aqui.",
+      "upgradeBefore": "Abra",
+      "upgradePath": "Configurações → Conta",
+      "upgradeAfter": "para fazer upgrade."
+    },
+    "presetsButton": {
+      "tooltip": "Gerenciar predefinições de script de deploy",
+      "label": "Predefinições de script"
+    },
+    "newButton": {
+      "needHostTooltip": "Adicione um host SSH primeiro",
+      "tooltip": "Criar uma nova implantação",
+      "label": "Nova implantação"
+    },
+    "empty": {
+      "needHost": "Adicione um host SSH na página SSH primeiro — implantações têm como alvo um host existente.",
+      "noDeployments": "Nenhuma implantação ainda. Clique em \"Nova implantação\" para provisionar seu primeiro destino remoto."
+    },
+    "card": {
+      "osLabel": "SO",
+      "osNotDetected": "ainda não detectado",
+      "projectLabel": "Projeto",
+      "projectNotSet": "não definido",
+      "lastRunLabel": "Última execução",
+      "detectTooltip": "Conecta via SSH ao host e sonda seu SO + software instalado",
+      "detectButton": "Detectar",
+      "applyNeedDetectTooltip": "Execute Detectar primeiro",
+      "applyTooltip": "Configurar e executar o Aplicar",
+      "applyButton": "Aplicar",
+      "deployTooltip": "Executa agora o pipeline de deploy: pull + builds condicionais. Não mexe em pacotes, vhost nem SSL.",
+      "deployButton": "Deploy",
+      "activityTooltip": "Ver histórico de pulls do auto-deploy",
+      "activityButton": "Atividade",
+      "destroyTooltip": "Apaga tudo do remoto: diretório, vhost, BD, cron, SSL",
+      "deleteTooltip": "Excluir registro da implantação",
+      "deleteAppliedTooltip": "Esquecer este registro de implantação (NÃO afeta o servidor remoto — use Destruir para isso)"
+    },
+    "deleteConfirm": {
+      "title": "Excluir implantação \"{{name}}\"?",
+      "message": "O histórico de execuções também será removido."
+    },
+    "newModal": {
+      "nameLabel": "Nome",
+      "hostHint": "Detecção e Aplicar vão conectar via SSH a este host usando as credenciais salvas na página SSH.",
+      "nameRequired": "O nome é obrigatório",
+      "pickHostRequired": "Escolha um host SSH",
+      "createdFlash": "Implantação criada",
+      "createButton": "Criar"
+    },
+    "detectModal": {
+      "inProgress": "Detectando…",
+      "failed": "Detecção falhou",
+      "complete": "Detecção concluída"
+    },
+    "applyModal": {
+      "heading": "Aplicar — {{name}}",
+      "projectTypeLabel": "Tipo de projeto",
+      "projectKind": {
+        "laravel": "Laravel",
+        "static": "Estático (HTML/CSS/JS)",
+        "custom": "Personalizado"
+      },
+      "domainLabel": "Domínio",
+      "domainHintEffective": "Efetivo: {{domain}}",
+      "domainHintExample": "ex.: example.com",
+      "environmentLabel": "Ambiente",
+      "env": {
+        "production": "produção",
+        "development": "desenvolvimento",
+        "staging": "homologação"
+      },
+      "gitSourceHeader": "Origem Git",
+      "gitUrlLabel": "URL do repositório (HTTPS)",
+      "gitUrlHint": "Repositórios públicos: cole como está. Privados: cole a URL simples + preencha o PAT abaixo — nós os combinamos automaticamente.",
+      "gitPatLabel": "PAT do GitHub — apenas para repositórios privados",
+      "gitPatHint": "Gere em https://github.com/settings/tokens (Classic, escopo: repo). Deixe vazio para público. Combinado à URL automaticamente — nunca gravado em disco nesta máquina.",
+      "branchLabel": "Branch",
+      "webServerLabel": "Servidor web",
+      "phpNoneOption": "nenhum (pular PHP)",
+      "databaseLabel": "Banco de dados",
+      "databaseNoneOption": "nenhum",
+      "pipelineHeader": "Pipeline de deploy",
+      "previewScriptTooltip": "Veja o script exato que vai rodar, com as variáveis substituídas",
+      "previewScriptButton": "Pré-visualizar script",
+      "presetLabel": "Predefinição",
+      "presetHint": "Roda depois do clone (Aplicar), no botão Deploy e no cron de auto-deploy. As predefinições nativas pulam composer/npm quando os lock files não mudaram.",
+      "legacyOption": "Script de build em texto livre (legado)",
+      "buildScriptLabel": "Script de build",
+      "buildScriptHint": "Roda a partir da raiz do projeto depois do git pull. Bash multilinha. Sem substituição de variáveis.",
+      "presetVarHint": "{{token}}",
+      "presetVarHintWithDefault": "{{token}} — padrão: {{default}}",
+      "customScriptHeader": "Script personalizado para esta implantação",
+      "resetToPresetTooltip": "Descarta a personalização e volta ao script da predefinição",
+      "resetToPresetButton": "Restaurar predefinição",
+      "overrideHint": "Ainda usa {{token}} — são substituídas em tempo de execução. A predefinição em si não é alterada.",
+      "customizeScriptTooltip": "Edita uma cópia privada do script da predefinição, só para esta implantação",
+      "customizeScriptButton": "Personalizar script para esta implantação",
+      "httpsHeader": "HTTPS e auto-deploy",
+      "enableSslLabel": "Ativar HTTPS via Let's Encrypt",
+      "enableSslHint": "Instala o certbot e obtém um certificado real para {{domain}}. O domínio já precisa apontar para o IP deste servidor.",
+      "domainFallback": "o domínio",
+      "letsEncryptEmailLabel": "E-mail para notificações do Let's Encrypt",
+      "autoDeployLabel": "Auto-deploy ao dar push no git",
+      "autoDeployHintBefore": "Adiciona uma linha no crontab do remoto que faz pull + rebuild periodicamente. Registra o log em",
+      "autoDeployHintAfter": ".",
+      "cronLabel": "Frequência do pull (cron)",
+      "cronHint": "5 campos. Padrão: a cada 5 minutos.",
+      "footerA": "O Aplicar vai conectar via SSH a",
+      "footerB": ", rodar",
+      "footerC": "para instalações no sistema (exige sudo sem senha), clonar o repositório em",
+      "footerD": ", configurar o vhost do nginx e recarregar o nginx. O log combinado será criptografado com sua chave de sincronização antes de ser enviado.",
+      "runApplyButton": "Executar Aplicar",
+      "domainRequired": "O domínio é obrigatório",
+      "letsEncryptEmailRequired": "O e-mail é obrigatório para o Let's Encrypt",
+      "autoDeployGitUrlRequired": "Auto-deploy precisa de uma URL git",
+      "pickPresetRequired": "Escolha uma predefinição de deploy (ou mude para o script em texto livre)"
+    },
+    "runLog": {
+      "applying": "Aplicando — {{name}} @ {{host}}",
+      "deploying": "Executando deploy — {{name}} @ {{host}}",
+      "destroying": "Destruindo — {{name}} @ {{host}}",
+      "applyFailed": "Aplicar falhou — {{name}}",
+      "deployFailed": "Deploy falhou — {{name}}",
+      "destroyFailed": "Destruição falhou — {{name}}",
+      "destroyed": "Destruído — {{name}}",
+      "deployed": "Deploy concluído",
+      "deployedTo": "Deploy concluído em {{domain}}",
+      "busyTooltip": "em execução…",
+      "failedSeeLog": "falhou — veja o log abaixo",
+      "done": "concluído",
+      "preparing": "preparando…",
+      "buildingPlan": "Montando o plano…"
+    },
+    "destroyModal": {
+      "title": "Destruir {{name}}?",
+      "introBefore": "Isso vai conectar via SSH a",
+      "introAfter": "e remover irreversivelmente:",
+      "itemVhost": "vhost do nginx {{name}}.conf (+ recarregar)",
+      "itemMysql": "banco de dados MySQL + usuário ({{name}})",
+      "itemCron": "linha do crontab para {{name}}",
+      "itemSsl": "certificado Let's Encrypt para {{domain}}",
+      "domainFallback": "domínio",
+      "recordDeletedNote": "O registro da implantação também é excluído. O host SSH permanece.",
+      "typeToConfirmBefore": "Digite",
+      "typeToConfirmAfter": "para confirmar"
+    },
+    "activityModal": {
+      "title": "Atividade — {{name}}",
+      "loadingLabel": "Lendo o log de auto-pull…",
+      "emptyTitle": "Ainda não há atividade de auto-pull.",
+      "emptyDetailBefore": "O cron registra aqui cada",
+      "emptyDetailAfter": "bem-sucedido. Se você acabou de ativar o auto-deploy, espere um intervalo do cron e tente de novo.",
+      "openOnGithubTooltip": "Abrir {{before}}...{{after}} no GitHub",
+      "footer": {
+        "one": "Mostrando o último {{count}} pull. Entradas mais antigas são substituídas quando o log é truncado.",
+        "many": "Mostrando os últimos {{count}} de pulls. Entradas mais antigas são substituídas quando o log é truncado.",
+        "other": "Mostrando os últimos {{count}} pulls. Entradas mais antigas são substituídas quando o log é truncado."
+      }
+    },
+    "presetsModal": {
+      "title": "Predefinições de script de deploy",
+      "backButtonTooltip": "Voltar à lista",
+      "editTitle": "Editar — {{name}}",
+      "newPresetLabel": "Nova predefinição",
+      "introBefore": "Predefinições são pipelines bash com",
+      "introAfter": "— escolha uma por implantação, preencha as variáveis e pré-visualize o script final antes de rodar. As nativas são somente leitura: duplique-as para adaptar a um cliente.",
+      "loadingLabel": "carregando…",
+      "builtInBadge": "nativa",
+      "viewButton": "Ver",
+      "editButton": "Editar",
+      "duplicateTooltip": "Criar uma cópia editável",
+      "duplicateButton": "Duplicar",
+      "deleteTooltip": "Excluir predefinição",
+      "deletedFlash": "Predefinição excluída",
+      "deleteConfirm": {
+        "title": "Excluir predefinição \"{{name}}\"?",
+        "message": "Implantações que a usam vão precisar de uma nova predefinição."
+      },
+      "nameRequired": "O nome da predefinição é obrigatório",
+      "invalidVarKey": "Chave de variável inválida \"{{key}}\" — use letras minúsculas, dígitos e _",
+      "reservedVarKey": "\"{{key}}\" é uma variável nativa — escolha outro nome",
+      "savedFlash": "Predefinição salva",
+      "builtinTokens": {
+        "name": "nome da implantação (sanitizado)",
+        "domain": "domínio efetivo (com prefixo de ambiente aplicado)",
+        "rawDomain": "domínio sem o prefixo de ambiente",
+        "branch": "branch do git",
+        "phpVersion": "ex.: 8.3",
+        "gitUrl": "URL do repositório"
+      },
+      "editor": {
+        "nameLabel": "Nome",
+        "descriptionLabel": "Descrição",
+        "descriptionPlaceholder": "O que este pipeline faz",
+        "builtinVarsHeader": "Variáveis nativas",
+        "customVarsHeader": "Variáveis personalizadas",
+        "customVarsDescBefore": "Declaradas aqui, valoradas por implantação. Use como",
+        "customVarsDescAfter": "no script.",
+        "noneLabel": "nenhuma",
+        "keyPlaceholder": "chave",
+        "labelPlaceholder": "Rótulo (opcional)",
+        "defaultValuePlaceholder": "Valor padrão",
+        "addVariableButton": "Adicionar variável",
+        "duplicateToCustomizeButton": "Duplicar para personalizar",
+        "savePresetButton": "Salvar predefinição"
+      }
+    },
+    "previewModal": {
+      "titleDeploy": "Pré-visualização do script de deploy",
+      "titleApply": "Pipeline de deploy renderizado",
+      "legacyBadge": "script de build legado",
+      "subtitle": "Este é o script exato que roda no servidor — variáveis já substituídas.",
+      "unresolvedVars": "Variáveis não resolvidas (deixadas como estão): {{tokens}} — defina-as nas variáveis de predefinição da implantação.",
+      "renderingLabel": "renderizando…"
+    }
+  },
+  "account": {
+    "accountCardTitle": "Conta",
+    "syncCardTitle": "Sincronização",
+    "planCardTitle": "Plano",
+    "logoutButton": "Sair",
+    "syncRequiresProFlash": "A sincronização requer o Pro",
+    "passphraseTooShortFlash": "A frase secreta deve ter pelo menos 8 caracteres",
+    "passphraseMismatchFlash": "As frases secretas não coincidem",
+    "passphraseSetFlash": "Frase secreta de sincronização definida. Chave de criptografia derivada.",
+    "rekeyPasswordRequiredFlash": "Informe a senha da sua conta",
+    "checkingSubscriptionFlash": "Verificando status da assinatura…",
+    "fillAllFieldsFlash": "Preencha todos os campos",
+    "accountCreatedFlash": "Conta criada",
+    "loggedInFlash": "Login realizado",
+    "loggedOutFlash": "Sessão encerrada",
+    "signedInWithGithubFlash": "Login feito com o GitHub",
+    "serverReachableFlash": "Servidor acessível",
+    "errors": {
+      "generic": "erro: {{message}}",
+      "unreachable": "inacessível: {{message}}"
+    },
+    "tierNames": {
+      "free": "Grátis",
+      "pro": "Pro"
+    },
+    "sync": {
+      "enabledLabel": "Ativada",
+      "disabledLabel": "Desativada",
+      "noKeyBadge": "sem chave",
+      "upsellPro": "Faça upgrade para o Pro para sincronizar hosts SSH, tarefas cron e preferências entre máquinas, com criptografia de ponta a ponta.",
+      "setPassphrasePrompt": "Defina uma frase secreta de sincronização para derivar sua chave de criptografia (independente do seu login do GitHub).",
+      "hostsWatching": {
+        "one": "Monitorando {{count}} host SSH. Alterações locais são enviadas automaticamente.",
+        "many": "Monitorando {{count}} de hosts SSH. Alterações locais são enviadas automaticamente.",
+        "other": "Monitorando {{count}} hosts SSH. Alterações locais são enviadas automaticamente."
+      },
+      "toggleOnPrompt": "Ative para começar a sincronizar.",
+      "rekeyTooltip": "Regerar chave dos dados de sincronização (corrige divergência de frase secreta entre dispositivos)",
+      "syncNowTooltip": "Sincronizar agora",
+      "setPassphraseTooltip": "Clique para definir uma frase secreta de sincronização",
+      "encryptionEnabledLabel": "Criptografado de ponta a ponta",
+      "encryptionMissingLabel": "Chave de criptografia não definida",
+      "kdfKeyLabel": "chave {{kdf}}",
+      "encryptedDetail1": "Cada item é criptografado neste dispositivo antes do envio. O servidor armazena apenas o texto cifrado.",
+      "encryptedDetail2": "A chave é derivada localmente a partir da sua senha ou frase secreta de sincronização e nunca é enviada.",
+      "encryptedDetail3": "O texto cifrado é autenticado: um item adulterado ou uma frase secreta diferente falha ao descriptografar em vez de retornar dados incorretos.",
+      "noKeyDetail": "Defina uma frase secreta de sincronização para derivar sua chave neste dispositivo. Nada é enviado até lá.",
+      "passphraseModal": {
+        "title": "Escolha uma frase secreta de sincronização.",
+        "body": "Ela é usada apenas neste dispositivo para derivar sua chave de criptografia AES-256. O servidor nunca a vê.",
+        "warning": "Se você esquecê-la, seus dados sincronizados ficam irrecuperáveis.",
+        "passphrasePlaceholder": "Frase secreta de sincronização (mín. 8 caracteres)",
+        "confirmPlaceholder": "Confirmar frase secreta",
+        "submitButton": "Definir frase secreta e ativar sincronização"
+      },
+      "rekeyModal": {
+        "title": "Regerar chave dos dados de sincronização.",
+        "intro": "Recriptografa tudo no servidor com sua",
+        "accountPassword": "senha de conta",
+        "middle": " atual e, em seguida, adota essa chave aqui. Execute isso no dispositivo que",
+        "canStillSync": "ainda consegue sincronizar",
+        "afterwards": "— depois disso, seus outros dispositivos (conectados com a mesma senha) vão descriptografar tudo. Use isto se um dispositivo mostrar a mensagem",
+        "differentPassphrase": "frase secreta diferente",
+        "warningSuffix": ".",
+        "passwordPlaceholder": "Senha da conta",
+        "submitButton": "Regerar agora"
+      }
+    },
+    "plan": {
+      "proTitle": "LaraEnv Pro",
+      "proSubtitle": "Sincronização + deploy remoto habilitados",
+      "freeSubtitle": "Faça upgrade para o Pro por $3/mês para desbloquear sincronização e deploy remoto",
+      "manageSubscriptionButton": "Gerenciar assinatura",
+      "payWithStripeButton": "Pagar com Stripe",
+      "payWithStripeTooltip": "Pagar com cartão de crédito via Stripe",
+      "payWithPaypalButton": "Pagar com PayPal",
+      "payWithPaypalTooltip": "Pagar com PayPal",
+      "table": {
+        "featureHeader": "Recurso",
+        "currentBadge": "Atual"
+      },
+      "features": {
+        "projects": "Projetos",
+        "sshHosts": "Hosts SSH",
+        "cronJobs": "Tarefas Cron",
+        "localTerminal": "Terminal local",
+        "crossDeviceSync": "Sincronização entre dispositivos",
+        "remoteDeploy": "Deploy remoto",
+        "priorityUpdates": "Atualizações prioritárias"
+      }
+    },
+    "signIn": {
+      "signInLabel": "Entrar",
+      "createAccountLabel": "Criar conta",
+      "continueWithGithubButton": "Continuar com o GitHub",
+      "orDivider": "ou",
+      "nameLabel": "Nome",
+      "namePlaceholder": "Seu nome",
+      "emailLabel": "E-mail",
+      "passwordLabel": "Senha",
+      "passwordHint": "Pelo menos 8 caracteres. Usada para derivar sua chave de criptografia — se você a esquecer, os dados sincronizados não poderão ser recuperados."
+    }
+  },
+  "agents": {
+    "status": {
+      "starting": "Iniciando",
+      "working": "Em execução",
+      "needsInput": "Aguardando entrada",
+      "done": "Concluído",
+      "idle": "Ocioso",
+      "stopped": "Parado",
+      "error": "Erro"
+    },
+    "launchModeLabel": {
+      "current": "atual",
+      "branch": "branch",
+      "worktree": "worktree"
+    },
+    "usage": {
+      "usedLabel": "usado",
+      "remainingLabel": "restante",
+      "leftLabel": "restante",
+      "unknownLabel": "desconhecido",
+      "resetUnknown": "reinício desconhecido",
+      "resetsAt": "reinicia {{when}}",
+      "availableLabel": "disponível"
+    },
+    "filters": {
+      "searchPlaceholder": "Buscar título, projeto, provedor ou saída…",
+      "allProviders": "Todos os provedores",
+      "allStates": "Todos os estados",
+      "archivedLabel": "Arquivado"
+    },
+    "onboarding": {
+      "badge": "Sessões centradas no projeto",
+      "title": "Comece a trabalhar onde o projeto já está.",
+      "description": "Escolha um projeto e um agente de codificação. O LaraEnv usa o checkout atual, a menos que você selecione explicitamente uma branch ou um worktree isolado.",
+      "steps": {
+        "project": "Projeto",
+        "agent": "Agente",
+        "workingCopy": "Cópia de trabalho"
+      },
+      "projectPlaceholder": "Escolha um projeto",
+      "workingCopyValue": "Atual · Branch · Worktree",
+      "readyLabel": "pronto",
+      "notFoundLabel": "não encontrado",
+      "startButton": "Iniciar sessão do agente",
+      "addProjectButton": "Adicione um projeto primeiro"
+    },
+    "contextFolders": {
+      "heading": "Pastas da sessão",
+      "folderCount": {
+        "one": "{{count}} pasta",
+        "many": "{{count}} de pastas",
+        "other": "{{count}} pastas"
+      },
+      "newWorktreeLabel": "novo worktree",
+      "mainLabel": "principal",
+      "removeFolderAria": "Remover pasta {{directory}}",
+      "pathPlaceholder": "Cole o caminho completo da pasta",
+      "pathInputAria": "Caminho da pasta adicional",
+      "addFolderAria": "Adicionar caminho da pasta",
+      "addFolderTooltip": "Adicionar pasta",
+      "browseButton": "Procurar",
+      "hint": "O agente pode ler e editar essas pastas. Elas permanecem com esta sessão quando você a retomar.",
+      "worktreeHint": "As pastas adicionais usam seus locais originais, compartilhados com outras sessões.",
+      "unsupportedHasFolders": "{{provider}} não é compatível com pastas adicionais. Remova-as ou escolha Claude Code, Codex ou Kimi Code.",
+      "unsupportedNoFolders": "{{provider}} não é compatível com pastas adicionais. Escolha Claude Code, Codex ou Kimi Code para adicionar mais.",
+      "errorInvalidPath": "Digite o caminho completo da pasta ou escolha Procurar.",
+      "errorDuplicate": "Esta pasta já está no contexto da sessão.",
+      "errorBrowseFailed": "Não foi possível escolher uma pasta: {{message}}"
+    },
+    "sessionCard": {
+      "noPreviewFallback": "Ainda sem pré-visualização da saída",
+      "terminalBadge": "Terminal",
+      "terminalBadgeTooltip": "Iniciado manualmente em um terminal do LaraEnv",
+      "openButton": "Abrir",
+      "resumeButton": "Retomar",
+      "newSessionButton": "Nova sessão",
+      "renameButton": "Renomear",
+      "archiveButton": "Arquivar",
+      "stopButton": "Parar",
+      "stopTooltipAdopted": "Parar fecha esta aba do terminal",
+      "stopTooltipDefault": "Parar este agente",
+      "worktreeRuntimeLabel": "Execução do worktree",
+      "runningBadge": "EXECUTANDO :{{port}}",
+      "dirtyBadge": "MODIFICADO",
+      "logsButton": "Logs",
+      "stopServerButton": "Parar servidor",
+      "startServerButton": "Iniciar servidor :{{port}}",
+      "disconnectUrlsButton": "Desconectar URLs",
+      "removeWorktreeButton": "Remover worktree",
+      "removeWorktreeDefaultTooltip": "Remover este worktree limpo e não utilizado"
+    },
+    "usageBar": {
+      "limitsLabel": "Limites",
+      "staleTooltip": "Última leitura disponível; aguardando atualização",
+      "refreshTooltip": "atualizar limites de uso",
+      "sessionWindowPrefix": "5h",
+      "weeklyWindowPrefix": "sem"
+    },
+    "usagePopover": {
+      "title": "Limites de uso dos agentes",
+      "subtitle": "Apenas cota informada pelo provedor; sem percentuais estimados.",
+      "emptyMessage": "Ainda não há limites de assinatura disponíveis.",
+      "staleNotice": "Última leitura disponível. {{message}}",
+      "unavailableFallback": "Uso indisponível"
+    },
+    "domainRouting": {
+      "heading": "Roteamento de domínio",
+      "hint": "Opcional. Aplicado somente depois que o worktree estiver pronto.",
+      "primaryOwner": "Proprietário principal: {{owner}}",
+      "mainCheckoutLabel": "checkout principal",
+      "restoreButton": "Restaurar domínio principal para o checkout principal",
+      "routingChangeHeading": "Alteração de roteamento",
+      "fromLabel": "De: {{path}}",
+      "toLabel": "Para: {{path}}",
+      "confirmRestoreButton": "Confirmar restauração",
+      "leaveUnchangedOption": "Manter o domínio principal inalterado",
+      "serveFromWorktreeOption": "Servir o domínio principal a partir deste worktree",
+      "serveFromWorktreeHint": "Move {{host}}; pode ser restaurado depois.",
+      "previewOption": "Criar uma URL de pré-visualização alternativa",
+      "previewHint": "Mantém a URL principal disponível e adiciona um hostname para este worktree.",
+      "previewHostnameLabel": "Hostname de pré-visualização",
+      "devServerPortLabel": "Porta do servidor de desenvolvimento do worktree",
+      "portHint": "O checkout principal já usa a porta {{port}}; este worktree precisa de uma porta de execução diferente."
+    },
+    "gitLocation": {
+      "current": {
+        "label": "Checkout atual",
+        "detail": "Usa a branch já aberta. Nenhuma alteração no Git."
+      },
+      "branch": {
+        "label": "Trocar o checkout principal",
+        "detail": "Altera a branch de todo o projeto."
+      },
+      "worktree": {
+        "label": "Worktree isolado",
+        "detail": "Cria ou reaproveita um checkout separado."
+      },
+      "selectedBadge": "selecionado"
+    },
+    "routeBadge": {
+      "primaryTooltip": "Domínio principal do projeto",
+      "alternativeTooltip": "Pré-visualização alternativa do worktree",
+      "mainLabel": "PRINCIPAL",
+      "previewLabel": "PRÉVIA"
+    },
+    "launcher": {
+      "triggerTooltip": "iniciar um agente de codificação de IA em {{project}}",
+      "defaultButtonLabel": "Agentes",
+      "header": "Iniciar um agente",
+      "searchProjectSrLabel": "Buscar projeto",
+      "searchAria": "Buscar projeto para nova sessão do agente",
+      "searchPlaceholder": "Buscar projetos · selecionado {{project}}",
+      "noProjectsFound": "Nenhum projeto encontrado",
+      "detachedLabel": "detached",
+      "dirtyLabel": "modificado",
+      "cliUnavailable": "CLI indisponível",
+      "notDetected": "não detectado",
+      "workingCopyHeading": "Cópia de trabalho",
+      "branchLabel": "Branch",
+      "createBranchLabel": "Criar esta branch",
+      "baseRefLabel": "Ref base",
+      "worktreeNameLabel": "Nome do worktree",
+      "dirtyWarning": "O checkout principal está com alterações pendentes. Faça commit ou stash antes de trocar.",
+      "gitUnavailableReason": "As informações do Git não estão disponíveis",
+      "checkoutStillAvailableSuffix": ". O checkout atual continua disponível.",
+      "sharedCheckoutNotice": "Checkout compartilhado com {{titles}}. Os dois agentes podem editar os mesmos arquivos. Feche este menu para cancelar.",
+      "continueSharedButton": "Continuar com o checkout compartilhado",
+      "startAgentButton": "Iniciar {{agent}}",
+      "genericAgentFallback": "agente",
+      "restoredFlash": "{{host}} restaurado para o checkout principal",
+      "restoreFailedFlash": "Não foi possível restaurar {{host}}: {{message}}",
+      "thisAgentFallback": "Este agente"
+    },
+    "page": {
+      "header": {
+        "title": "Agentes",
+        "offBadge": "desativado",
+        "newButtonLabel": "Novo",
+        "refreshTooltip": "atualizar sessões",
+        "sessionViewAria": "Visualização de sessões",
+        "searchPlaceholder": "Buscar sessões...",
+        "allProjectsOption": "Todos os projetos",
+        "projectFilterSrLabel": "Filtrar sessões por projeto",
+        "scopeLabels": {
+          "active": "Ativas",
+          "recent": "Recentes",
+          "archived": "Arquivadas"
+        }
+      },
+      "disabled": {
+        "heading": "Ativar sessões de agentes",
+        "description": "Organize agentes de codificação por projeto e mantenha várias conversas abertas ao lado deste navegador.",
+        "enablingButton": "Ativando…",
+        "enableButton": "Ativar agentes",
+        "footer": "Nada muda no Git até que você escolha explicitamente uma branch ou worktree."
+      },
+      "empty": {
+        "filtered": "Nenhuma sessão corresponde a estes filtros",
+        "active": "Nenhuma sessão ativa",
+        "recent": "Nenhuma sessão recente",
+        "archived": "Nenhuma sessão arquivada",
+        "activeHint": "Inicie um agente ou abra sessões recentes que podem ser retomadas.",
+        "newSessionButton": "Nova sessão",
+        "viewRecentButton": "Ver recentes"
+      },
+      "locationWorktreeBadge": "worktree",
+      "locationSelectedBranch": "Branch selecionada",
+      "locationCurrentCheckout": "Checkout atual",
+      "sessionAgeNow": "agora",
+      "projectGroup": {
+        "newSessionButtonLabel": "Nova sessão"
+      },
+      "actionsMenu": {
+        "triggerAria": "Ações para {{title}}",
+        "foldersHeading": "Pastas da sessão",
+        "openSession": "Abrir sessão",
+        "resumeSession": "Retomar sessão",
+        "newSessionHere": "Nova sessão aqui",
+        "rename": "Renomear",
+        "markAsRead": "Marcar como lida",
+        "stop": "Parar",
+        "worktreeHeader": "Worktree",
+        "stopServer": "Parar servidor :{{port}}",
+        "startServer": "Iniciar servidor :{{port}}",
+        "serverLogs": "Logs do servidor",
+        "disconnectUrls": "Desconectar URLs",
+        "removeWorktree": "Remover worktree",
+        "archive": "Arquivar"
+      },
+      "renameDialog": {
+        "title": "Renomear sessão",
+        "label": "Nome da sessão"
+      },
+      "flash": {
+        "sessionRenamed": "Sessão renomeada",
+        "agentStopped": "Agente parado",
+        "sessionArchived": "Sessão arquivada",
+        "markedAsRead": "Marcada como lida",
+        "worktreeServerStarted": "Servidor do worktree iniciado",
+        "worktreeServerStopped": "Servidor do worktree parado",
+        "worktreeUrlsDisconnected": "URLs do worktree desconectadas",
+        "worktreeRemoved": "Worktree removido e sessões arquivadas"
+      },
+      "errors": {
+        "loadSessions": "Não foi possível carregar as sessões dos agentes: {{message}}",
+        "actionFailed": "Falha na ação do agente: {{message}}",
+        "worktreeActionFailed": "Falha na ação do worktree: {{message}}"
+      },
+      "detachRoutesDialog": {
+        "title": "Desconectar URLs do worktree?",
+        "message": "{{hostnames}} será desconectado e o domínio principal será restaurado quando necessário.",
+        "fallbackSubject": "Este worktree",
+        "confirmLabel": "Desconectar"
+      },
+      "removeWorktreeDialog": {
+        "title": "Remover worktree?",
+        "message": "O worktree limpo em {{path}} será removido. Isso não pode ser desfeito.",
+        "confirmLabel": "Remover"
+      },
+      "autoSwitch": {
+        "tooltipBase": "Trocar automaticamente para agentes aguardando entrada",
+        "tooltip": "Trocar automaticamente para agentes aguardando entrada, {{count}} aguardando"
+      },
+      "footer": "Projeto → cópia de trabalho → sessão"
+    }
+  },
+  "ssh": {
+    "page": {
+      "reloadButton": "recarregar",
+      "newHostButton": "Novo host",
+      "searchAria": "Buscar hosts SSH",
+      "searchPlaceholder": "Buscar hosts por nome, usuário ou IP...",
+      "clearSearchAria": "Limpar busca",
+      "filterByTagAria": "Filtrar hosts por tag",
+      "hostViewAria": "Visualização de hosts",
+      "gridViewAria": "Visualização em grade",
+      "listViewAria": "Visualização em lista",
+      "filters": {
+        "all": "Todos",
+        "untagged": "Sem tag"
+      },
+      "empty": {
+        "loading": "Carregando hosts…",
+        "noHostsFound": "Nenhum host encontrado",
+        "welcomeTitle": "Seus servidores, a uma conexão de distância",
+        "tryAnother": "Tente outro nome, usuário, IP ou tag.",
+        "addFirstHost": "Adicione seu primeiro host SSH para começar.",
+        "clearFiltersButton": "Limpar filtros",
+        "addHostButton": "Adicionar host"
+      },
+      "sections": {
+        "matchingTitle": "Hosts correspondentes",
+        "matchingSubtitle": {
+          "one": "{{count}} host encontrado",
+          "many": "{{count}} de hosts encontrados",
+          "other": "{{count}} hosts encontrados"
+        },
+        "recentTitle": "Recentes",
+        "recentSubtitle": "Seus hosts abertos recentemente",
+        "productionTitle": "Produção",
+        "productionSubtitle": "Servidores de produção — cuidado ao usar",
+        "otherTitle": "Outros hosts",
+        "otherSubtitle": "Servidores e ambientes adicionais"
+      },
+      "tip": {
+        "title": "Dica rápida",
+        "body": "Use chaves SSH para uma conexão mais rápida e segura. Configure uma chave ao adicionar ou editar um host.",
+        "dismissAria": "Dispensar dica"
+      }
+    },
+    "hostCard": {
+      "noRecentConnection": "Nenhuma conexão recente",
+      "lastOpened": "Aberto: {{when}}",
+      "authPassword": "Senha",
+      "authKeyPassword": "Chave / senha",
+      "authSshKey": "Chave SSH",
+      "filterByTag": "Filtrar por {{tag}}",
+      "actionsAria": "Ações para {{name}}",
+      "editHost": "Editar host",
+      "deleteHost": "Excluir host",
+      "sshPortTooltip": "Porta SSH",
+      "connectAria": "Conectar a {{name}}",
+      "connect": "Conectar",
+      "viaLabel": "via {{target}}"
+    },
+    "deleteConfirm": {
+      "title": "Excluir o host \"{{name}}\"?",
+      "message": "Os arquivos de chave em C:\\laraenv\\ssh\\{{name}}\\ serão mantidos."
+    },
+    "deleteLabel": "Excluir",
+    "flash": {
+      "hostRemoved": "host removido: {{name}}",
+      "hostAdded": "host adicionado: {{name}}",
+      "hostSaved": "host salvo: {{name}}"
+    },
+    "errors": {
+      "generic": "erro: {{message}}",
+      "loadHosts": "Não foi possível carregar os hosts SSH: {{error}}",
+      "hostNameRequired": "defina um nome de host primeiro"
+    },
+    "hostModal": {
+      "newTitle": "Novo host SSH",
+      "editTitle": "Editar host · {{name}}",
+      "nameLabel": "Nome",
+      "tagsLabel": "Tags",
+      "removeTagTooltip": "remover tag",
+      "addressLabel": "Endereço",
+      "portLabel": "Porta",
+      "userLabel": "Usuário",
+      "authMethodLabel": "Método de autenticação",
+      "authKey": "Chave",
+      "authPassword": "Senha",
+      "authBoth": "Ambos",
+      "bothHint": "Tenta a chave primeiro; recorre à senha se o servidor a rejeitar.",
+      "passwordLabel": "Senha",
+      "passwordPlaceholder": "(armazenada em texto puro no config.json)",
+      "showPasswordTooltip": "mostrar senha",
+      "hidePasswordTooltip": "ocultar senha",
+      "keyFileLabel": "Arquivo de chave",
+      "noneOption": "— nenhum —",
+      "setNameFirstTooltip": "defina um nome primeiro",
+      "generateTooltip": "gerar um novo par de chaves",
+      "generateButton": "gerar",
+      "importTooltip": "colar / soltar / escolher uma chave existente",
+      "importButton": "importar",
+      "setNameHint": "defina um nome de host primeiro — as chaves ficam em C:\\laraenv\\ssh\\<name>\\",
+      "publicKeyLabel": "Chave pública (cole no ~/.ssh/authorized_keys remoto)",
+      "advancedToggle": "Avançado — Proxy / Jump host",
+      "viaSummary": "· via {{target}}",
+      "proxyJumpLabel": "Proxy Jump (host salvo)",
+      "noneDirectOption": "— nenhum (direto) —",
+      "proxyJumpAria": "Host do Proxy Jump",
+      "proxyJumpHintPrefix": "Passa por outro host salvo (equivalente a ",
+      "proxyJumpHintSuffix": "). As credenciais do host de salto são reaproveitadas — não é necessário informá-las novamente.",
+      "proxyCommandLabel": "Proxy Command (avançado)",
+      "proxyCommandHintPrefix": "Executa um comando cujo stdio se torna a conexão. ",
+      "proxyCommandHintMiddle": " / ",
+      "proxyCommandHintSuffix": " expandem para host/porta. Quando definido, tem precedência sobre o Proxy Jump.",
+      "testTooltip": "conectar + autenticar sem salvar",
+      "testButton": "Testar conexão",
+      "addHostButton": "Adicionar host",
+      "errors": {
+        "addressRequired": "endereço é obrigatório",
+        "userRequired": "usuário é obrigatório",
+        "passwordRequired": "senha é obrigatória",
+        "pickKeyFile": "escolha um arquivo de chave",
+        "provideCredential": "informe uma chave, uma senha, ou ambos",
+        "nameRequired": "nome é obrigatório",
+        "duplicateHost": "o host \"{{name}}\" já existe ({{user}}@{{address}}:{{port}}) — escolha outro nome ou edite esse host"
+      },
+      "flash": {
+        "keyGenerated": "chave gerada para {{name}}",
+        "keyImported": "chave importada: {{name}}"
+      }
+    },
+    "importKeyModal": {
+      "title": "Importar chave SSH",
+      "hostPrefix": "host: ",
+      "noneFallback": "(nenhum)",
+      "storedAt": "· armazenada em C:\\laraenv\\ssh\\{{host}}\\",
+      "filenameLabel": "Nome do arquivo",
+      "privateKeyLabel": "Chave privada",
+      "publicKeyLabel": "Chave pública",
+      "publicKeyPlaceholder": "ssh-ed25519 AAAA... (opcional — derivada da chave privada se deixado em branco)",
+      "dragDropText": "Arraste e solte um arquivo de chave privada (ou .pub) aqui",
+      "importFromFileButton": "Importar de um arquivo de chave",
+      "saveKeyButton": "Salvar chave",
+      "errors": {
+        "readFile": "erro ao ler o arquivo: {{message}}",
+        "filenameRequired": "o nome do arquivo é obrigatório",
+        "privateKeyRequired": "a chave privada é obrigatória"
+      }
+    },
+    "keyGenModal": {
+      "title": "Gerar chave SSH",
+      "kinds": {
+        "ed25519": {
+          "desc": "Moderna, rápida, chaves curtas (recomendado)"
+        },
+        "rsa4096": {
+          "desc": "Ampla compatibilidade com servidores mais antigos"
+        },
+        "ecdsa256": {
+          "desc": "Alternativa moderna ao ED25519"
+        }
+      },
+      "filenameLabel": "Nome do arquivo",
+      "commentLabel": "Comentário",
+      "writeHintPrefix": "O par de chaves será gravado em ",
+      "writeHintSuffix": ".",
+      "generateButton": "Gerar",
+      "resultIntroPrefix": "Par de chaves gravado em ",
+      "resultIntroMiddle": ". Copie a chave pública e adicione-a ao arquivo remoto ",
+      "resultIntroSuffix": ":",
+      "copyTooltip": "copiar para a área de transferência",
+      "useThisKeyButton": "Usar esta chave",
+      "errors": {
+        "filenameRequired": "o nome do arquivo da chave é obrigatório",
+        "copyFailed": "falha ao copiar"
+      }
+    },
+    "sftp": {
+      "opening": "abrindo SFTP…",
+      "localTitle": "Local",
+      "remoteTitle": "Remoto",
+      "parentDirTooltip": "Diretório pai",
+      "refreshTooltip": "Atualizar",
+      "newFolderTooltip": "Nova pasta",
+      "renameTooltip": "Renomear",
+      "editFileLabel": "Editar arquivo",
+      "editButton": "Editar",
+      "deleteTooltip": "Excluir",
+      "emptyPane": "vazio",
+      "uploadTooltip": "Enviar selecionados → remoto",
+      "downloadTooltip": "Baixar selecionados ← remoto",
+      "cancelAction": "cancelar",
+      "autoSaveLabel": "Salvamento automático",
+      "openSystemEditorButton": "Abrir com o editor do sistema",
+      "mkdir": {
+        "remoteTitle": "Nova pasta remota",
+        "localTitle": "Nova pasta local",
+        "folderNameLabel": "Nome da pasta"
+      },
+      "removeConfirm": {
+        "title": {
+          "one": "Excluir {{count}} item no remoto?",
+          "many": "Excluir {{count}} de itens no remoto?",
+          "other": "Excluir {{count}} itens no remoto?"
+        },
+        "message": "Isso não pode ser desfeito."
+      },
+      "renamePrompt": {
+        "title": "Renomear",
+        "label": "Novo nome"
+      },
+      "errors": {
+        "local": "local: {{message}}",
+        "remote": "remoto: {{message}}"
+      },
+      "contextMenu": {
+        "openBuiltIn": "Abrir no editor integrado"
+      },
+      "editChooser": {
+        "title": "Como você quer editar?",
+        "builtInLabel": "Editor integrado (VSCode)",
+        "builtInDesc": "Monaco · busca, destaque de sintaxe, salvamento automático",
+        "systemLabel": "Editor do sistema",
+        "systemDesc": "Abre com o app padrão do sistema · botão Reenviar / salvamento automático quando o arquivo é alterado"
+      },
+      "transfers": {
+        "heading": "Transferências",
+        "uploadLabel": "↑ envio",
+        "downloadLabel": "↓ download",
+        "dismissTooltip": "dispensar"
+      },
+      "editor": {
+        "editingPrefix": "Editando ",
+        "unsavedBadge": "não salvo",
+        "tooLarge": "Este arquivo é grande demais para o editor integrado.",
+        "binaryFile": "Este arquivo parece binário e não pode ser editado como texto.",
+        "loading": "carregando…",
+        "savingStatus": "salvando…",
+        "savedAt": "salvo · {{time}}",
+        "autoSaveOnStatus": "salvamento automático ativado",
+        "ctrlSHint": "Ctrl+S para salvar",
+        "resetButton": "Redefinir",
+        "discardLabel": "Descartar",
+        "resetConfirm": {
+          "title": "Descartar alterações locais e recarregar?"
+        },
+        "closeConfirm": {
+          "title": "Descartar alterações não salvas?"
+        }
+      },
+      "external": {
+        "discardTooltip": "Descartar (remove o arquivo temporário)",
+        "uploadingStatus": "enviando…",
+        "watchingStatus": "observando…",
+        "editAndClickHint": "edite e clique em Reenviar",
+        "reuploadButton": "Reenviar"
+      }
+    }
+  },
+  "cron": {
+    "page": {
+      "title": "Cron"
+    },
+    "reloadButton": "recarregar",
+    "newCronButton": "Novo cron",
+    "filter": {
+      "all": "Todos",
+      "globalOnly": "Somente global"
+    },
+    "table": {
+      "on": "Ativo",
+      "name": "Nome",
+      "schedule": "Agendamento",
+      "project": "Projeto",
+      "lastRun": "Última execução",
+      "status": "Status",
+      "actions": "Ações"
+    },
+    "empty": {
+      "noCronsYet": "Nenhum cron ainda — clique em \"Novo cron\".",
+      "noMatch": "Nenhum cron corresponde a este filtro."
+    },
+    "actions": {
+      "runNow": "Executar agora",
+      "viewOutput": "Ver última saída",
+      "edit": "Editar",
+      "delete": "Excluir"
+    },
+    "status": {
+      "running": "em execução",
+      "ok": "ok",
+      "error": "erro",
+      "never": "nunca executado"
+    },
+    "presets": {
+      "everyMinute": "A cada minuto",
+      "every5Min": "A cada 5 min",
+      "every15Min": "A cada 15 min",
+      "everyHour": "A cada hora",
+      "daily3am": "Diariamente às 03:00",
+      "laravelScheduler": "Agendador do Laravel"
+    },
+    "flash": {
+      "updated": "Cron atualizado",
+      "created": "Cron criado",
+      "deleted": "Cron excluído",
+      "runningNow": "Executando \"{{name}}\"…"
+    },
+    "deleteConfirm": {
+      "title": "Excluir este cron?"
+    },
+    "deleteLabel": "Excluir",
+    "errors": {
+      "generic": "erro: {{message}}"
+    },
+    "modal": {
+      "newTitle": "Novo cron",
+      "editTitle": "Editar cron",
+      "nameLabel": "Nome",
+      "namePlaceholder": "Executar o agendador do Laravel",
+      "scheduleLabel": "Agendamento",
+      "scheduleHint": "expressão cron — 5 campos, ou @every 1m / @hourly / @daily",
+      "commandLabel": "Comando",
+      "commandHint": "executa no cmd.exe com o PHP e o Node.js do projeto adicionados ao início do PATH",
+      "projectLabel": "Projeto",
+      "projectHint": "vazio = cron global, executa no diretório de trabalho do app",
+      "globalOption": "— Global —",
+      "workingDirLabel": "Substituir diretório de trabalho",
+      "workingDirHint": "opcional — usa a raiz do projeto por padrão",
+      "enabledLabel": "Habilitado (registra no agendador imediatamente)",
+      "backgroundModeLabel": "Executar mesmo com o LaraEnv fechado",
+      "backgroundModeHint": "Registra a tarefa no Agendador de Tarefas do Windows para que ela dispare a cada minuto mesmo com o app fechado. O executor reavalia o agendamento a cada ciclo — somente os minutos correspondentes realmente executam o comando."
+    },
+    "logModal": {
+      "summary": "última execução: {{lastRun}} · status: {{status}}",
+      "noOutput": "(sem saída)"
+    }
+  },
+  "downloads": {
+    "page": {
+      "title": "Bibliotecas / Ferramentas",
+      "reloadButton": "recarregar",
+      "searchPlaceholder": "Buscar versões, ferramentas, notas…",
+      "filterLabel": "Filtro",
+      "filterAll": "todos",
+      "noMatch": "Nenhuma ferramenta corresponde à sua busca."
+    },
+    "groups": {
+      "server": "Servidor",
+      "database": "Banco de dados",
+      "mail": "E-mail",
+      "language": "Linguagem",
+      "extras": "Extras"
+    },
+    "card": {
+      "notInstalled": "não instalado",
+      "running": "em execução",
+      "stopped": "parado",
+      "showOnDashboard": "Mostrar no painel",
+      "installFirstTooltip": "instale uma versão primeiro",
+      "hideFromDashboardTooltip": "ocultar do painel",
+      "showOnDashboardTooltip": "mostrar no painel"
+    },
+    "source": {
+      "betaTooltip": "Não é uma versão estável — veja as notas abaixo antes de instalar",
+      "betaBadge": "beta",
+      "installedBadge": "instalado",
+      "openPageTooltip": "abrir página oficial no navegador",
+      "downloadButton": "baixar",
+      "pickZipTooltip": "selecionar o zip baixado",
+      "installFromFileButton": "instalar a partir de arquivo…",
+      "reinstallButton": "reinstalar",
+      "installButton": "instalar",
+      "extractingFiles": "extraindo arquivos…"
+    },
+    "phase": {
+      "download": "download",
+      "extract": "extração"
+    },
+    "flash": {
+      "installed": "{{name}} {{version}} instalado",
+      "dashboardVisibility": "{{name}} {{state}} no painel",
+      "enabledState": "habilitado",
+      "hiddenState": "oculto"
+    },
+    "errors": {
+      "generic": "erro: {{message}}"
+    }
+  },
+  "updates": {
+    "page": {
+      "title": "Atualizações",
+      "currentVersionLabel": "Versão atual",
+      "checkButton": "Verificar atualizações"
+    },
+    "upToDate": {
+      "title": "Você está atualizado",
+      "message": "v{{version}} é a versão mais recente."
+    },
+    "flash": {
+      "updateAvailable": "Atualização disponível: v{{version}}",
+      "checkFailed": "Falha ao verificar atualização: {{error}}",
+      "downloadFailed": "Falha no download: {{error}}",
+      "installFailed": "Falha na instalação: {{error}}"
+    },
+    "available": {
+      "title": "v{{version}} disponível",
+      "released": "Lançado em {{date}}",
+      "verifyingIntegrity": "verificando integridade…",
+      "downloadButton": "Baixar atualização",
+      "restartButton": "Reiniciar e instalar",
+      "kindPortable": "Cópia portátil — isso substitui o LaraEnv.exe nesta pasta. Nada é instalado no sistema.",
+      "kindInstalled": "Cópia instalada — isso executa o instalador para atualizá-la no mesmo local.",
+      "preserveNotePrefix": "Seus projetos, versões do PHP, dados do MySQL e configurações em ",
+      "preserveNoteSuffix": " são preservados durante a atualização.",
+      "preserveNotePortable": "Seus projetos, versões do PHP, dados do MySQL e configurações ficam ao lado do executável e não são afetados pela atualização."
+    },
+    "phase": {
+      "download": "download",
+      "verify": "verificação"
+    }
+  },
+  "notifications": {
+    "bellTooltip": "notificações",
+    "title": "Notificações",
+    "unreadCount": {
+      "one": "{{count}} não lida",
+      "many": "{{count}} de não lidas",
+      "other": "{{count}} não lidas"
+    },
+    "allCaughtUp": "Você está em dia",
+    "markAllRead": "Marcar todas como lidas",
+    "emptyMessage": "Erros de agentes e avisos de uso aparecerão aqui.",
+    "preferencesHeader": "Notificar sobre",
+    "preferences": {
+      "errors": "Erros",
+      "usage": "Uso",
+      "completion": "Concluído",
+      "needsInput": "Precisa de entrada"
+    },
+    "windowsUnavailableNote": "As notificações do Windows estão temporariamente indisponíveis enquanto o build para desktop está sendo reforçado.",
+    "errors": {
+      "sessionGone": "Essa sessão de agente não existe mais."
+    }
+  },
+  "terminal": {
+    "pickTerminalTypeTooltip": "escolher tipo de terminal",
+    "openTerminalHeader": "Abrir terminal",
+    "noTerminalAvailable": "nenhum terminal disponível",
+    "defaultSuffix": " (padrão)",
+    "serviceLogs": {
+      "title": "Logs de serviço",
+      "noServicesYet": "Nenhum serviço iniciado ainda.",
+      "selectService": "Selecione um serviço.",
+      "noOutputYet": "Nenhuma saída capturada ainda…"
+    },
+    "devServerLogs": {
+      "titlePrefix": "Servidor de desenvolvimento — ",
+      "worktreeSuffix": " · worktree",
+      "noOutputYet": "Nenhuma saída ainda…"
+    },
+    "pane": {
+      "dragTooltip": "arraste para mover / dividir este painel",
+      "closeTooltip": "fechar painel",
+      "connectionFailed": "Falha na conexão",
+      "unknownError": "erro desconhecido",
+      "paneLabelPrefix": "Painel:"
+    },
+    "sshTimeline": {
+      "connecting": "Conectando…",
+      "inProgress": "em andamento…",
+      "stages": {
+        "dial": "Conectando (TCP)",
+        "handshake": "Handshake SSH e autenticação",
+        "session": "Abrindo sessão",
+        "pty": "Alocando PTY",
+        "shell": "Iniciando shell"
+      }
+    },
+    "group": {
+      "tabTooltip": "arraste para reordenar / mover / destacar · duplo clique para renomear",
+      "closeTabTooltip": "fechar aba",
+      "newTabTooltip": "nova aba",
+      "sftpTooltip": "Transferência de arquivos SFTP",
+      "runtimeTooltip": "definir versão do PHP / Node para este terminal",
+      "autoBadge": "automático",
+      "autoOption": "Automático",
+      "splitRightTooltip": "dividir à direita",
+      "splitDownTooltip": "dividir abaixo",
+      "attachTooltip": "reanexar ao LaraEnv",
+      "detachTooltip": "destacar em uma janela separada",
+      "restoreTooltip": "restaurar",
+      "maximizeTooltip": "maximizar",
+      "closeGroupTooltip": "fechar grupo",
+      "setDefaultTooltip": "definir como terminal padrão",
+      "notInstalledHeader": "Não instalado",
+      "installViaDownloads": "— instale via Downloads",
+      "phpVersionHeader": "Versão do PHP",
+      "nodeVersionHeader": "Versão do Node",
+      "activeSuffix": " (ativo)",
+      "restartNote": "Escolher uma versão reinicia este terminal.",
+      "mainBadge": "PRINCIPAL",
+      "previewBadge": "PRÉVIA",
+      "noRouteBadge": "SEM ROTA"
+    },
+    "workspace": {
+      "agentNotInWorkspace": "Este terminal de agente ativo não está presente no workspace atual.",
+      "detachFailed": "Não foi possível abrir a janela destacada: {{error}}",
+      "routingReady": "Roteamento de {{project}} pronto: {{routed}}",
+      "primaryDomain": "domínio principal",
+      "routingFailed": "{{agent}} iniciado, mas o roteamento de domínio falhou: {{error}}",
+      "agentHistoryUnavailable": "O histórico de {{agent}} não está mais disponível. Inicie uma nova sessão em Agents.",
+      "noTerminalOpen": "Nenhum terminal aberto.",
+      "openNewTerminalTooltip": "abrir um novo terminal",
+      "newTerminalButton": "Novo terminal",
+      "projectFallback": "projeto",
+      "agentFallback": "agente",
+      "sshConnectingLabel": "ssh · {{host}} (conectando…)",
+      "agentStartingLabel": "{{project}} · {{agent}} (iniciando…)",
+      "projectStartingLabel": "{{project}} (iniciando…)",
+      "shellStartingLabel": "{{shell}} (iniciando…)",
+      "failedLabel": "{{base}} (falhou)",
+      "agentNoTerminalError": "{{agent}} não retornou um terminal",
+      "agentSessionMetadataMissing": "Faltam metadados da sessão do agente.",
+      "agentNoTerminalGeneric": "O agente não retornou um terminal."
+    },
+    "app": {
+      "portsInUseTooltip": "portas em uso",
+      "serviceLogsTooltip": "logs de serviço",
+      "hideSessionNavigatorTooltip": "Ocultar navegador de sessões",
+      "showSessionNavigatorTooltip": "Mostrar navegador de sessões",
+      "detachedWindowBadge": "Janela destacada",
+      "hideAgentsTooltip": "Ocultar agentes",
+      "showAgentsTooltip": "Mostrar agentes",
+      "agentsLabel": "Agentes",
+      "terminalLabel": "Terminal",
+      "sessionsStayOpenNote": "as sessões permanecem abertas como abas",
+      "flash": {
+        "enableAgentSessionsFailed": "Não foi possível habilitar as Sessões de agente: {{error}}",
+        "agentSessionsEnabled": "Sessões de agente habilitadas",
+        "enableAgentSessionsFirst": "Habilite as Sessões de agente em Configurações → Experimental primeiro"
+      }
+    }
+  },
+  "commandCenter": {
+    "pages": {
+      "dashboard": "Painel",
+      "projects": "Projetos",
+      "terminal": "Terminal",
+      "ssh": "SSH",
+      "cron": "Cron",
+      "deployments": "Implantações",
+      "downloads": "Bibliotecas",
+      "settings": "Configurações"
+    },
+    "groups": {
+      "navigation": "Navegação",
+      "services": "Serviços",
+      "agentSessions": "Sessões de agente",
+      "run": "Executar",
+      "custom": "Personalizados"
+    },
+    "builtins": {
+      "goTo": "Ir para {{page}}",
+      "startAllServices": "Iniciar todos os serviços",
+      "stopAllServices": "Parar todos os serviços",
+      "reloadWebStack": "Recarregar stack web",
+      "startService": "Iniciar {{service}}",
+      "stopService": "Parar {{service}}",
+      "reloadService": "Recarregar {{service}}",
+      "openTerminal": "Abrir terminal · {{name}}",
+      "openFolder": "Abrir pasta · {{name}}",
+      "openInEditor": "Abrir no editor · {{name}}",
+      "openInBrowser": "Abrir no navegador · {{name}}",
+      "focusVerb": "Focar",
+      "resumeVerb": "Retomar",
+      "restartVerb": "Reiniciar",
+      "sessionEntry": "{{verb}} {{title}} · {{project}}",
+      "newProject": {
+        "laravel": "Novo projeto Laravel",
+        "wordpress": "Novo site WordPress",
+        "git": "Clonar do Git",
+        "blank": "Novo projeto em branco",
+        "vite": "Novo projeto Vite",
+        "next": "Novo projeto Next.js",
+        "nuxt": "Novo projeto Nuxt",
+        "astro": "Novo projeto Astro"
+      }
+    },
+    "flash": {
+      "startingAllServices": "Iniciando todos os serviços…",
+      "stoppingAllServices": "Parando todos os serviços…",
+      "reloadingStack": "Recarregando stack…",
+      "startingService": "Iniciando {{service}}…",
+      "stoppingService": "Parando {{service}}…",
+      "reloadingService": "Recarregando {{service}}…"
+    },
+    "palette": {
+      "searchPlaceholder": "Buscar, ou executar ex.: {{examples}}",
+      "noCommandsFound": "Nenhum comando encontrado",
+      "hints": {
+        "navigate": "Navegar",
+        "complete": "Completar",
+        "run": "Executar"
+      }
+    },
+    "launcher": {
+      "connectSsh": "Conectar via SSH · {{host}}",
+      "sshHostHint": "host SSH",
+      "startAgentHint": "Iniciar agente · checkout atual",
+      "agentForProject": "Agente para {{project}}",
+      "runCommand": "Executar: {{command}}",
+      "inProject": "em {{project}}",
+      "loadingArtisan": "Carregando comandos do artisan…",
+      "artisanHint": "artisan",
+      "loadingNpmScripts": "Carregando scripts do npm…",
+      "npmScriptHint": "script npm"
+    },
+    "errors": {
+      "generic": "Falha: {{message}}"
+    }
+  },
+  "errors": {
+    "services": {
+      "unknownService": "serviço desconhecido: {{name}}",
+      "depFailed": "dependência {{dep}}",
+      "exclusiveConflict": "{{label}} já está em execução e apenas um servidor web pode atender por vez — pare-o primeiro",
+      "notRegistered": "serviço não registrado: {{name}}",
+      "binaryNotFound": "binário não encontrado em {{path}} — instale o serviço primeiro",
+      "processFailed": "{{bin}}: {{message}}",
+      "openProcessTokenFailed": "OpenProcessToken",
+      "createAdminsSidFailed": "CreateWellKnownSid(Administrators)",
+      "createPowerUsersSidFailed": "CreateWellKnownSid(PowerUsers)",
+      "createRestrictedTokenFailed": "CreateRestrictedToken",
+      "getTokenDefaultDaclFailed": "GetTokenInformation(TokenDefaultDacl)",
+      "setTokenDefaultDaclFailed": "SetTokenInformation(TokenDefaultDacl)",
+      "getTokenUserFailed": "GetTokenUser",
+      "aclFromEntriesFailed": "ACLFromEntries"
+    },
+    "vhost": {
+      "rootCAFailed": "CA raiz",
+      "installRootCertFailed": "instalar certificado raiz",
+      "checkLocalCATrustFailed": "verificar confiança na CA local",
+      "readHostsFailed": "ler hosts",
+      "openHostsFailed": "abrir hosts (precisa de admin?)",
+      "httpBlockNotFound": "não foi possível encontrar o bloco http { em {{path}}",
+      "noBraceAfterHttp": "nginx.conf malformado: falta { após http",
+      "unmatchedHttpBrace": "nginx.conf malformado: { sem par no bloco http",
+      "blockNotFound": "não foi possível encontrar o bloco {{block}} {",
+      "noBraceAfterBlock": "nginx.conf malformado: falta { após {{block}}"
+    },
+    "ssh": {
+      "hostMissingAddress": "o host \"{{host}}\" não tem endereço",
+      "hostMissingUser": "o host \"{{host}}\" não tem usuário",
+      "connectFailed": "não foi possível alcançar {{addr}} — verifique IP/porta e firewall ({{error}})",
+      "keyNameRequired": "o nome da chave é obrigatório",
+      "keyAlreadyExists": "a chave já existe: {{path}}",
+      "marshalPrivateKeyFailed": "serializar chave privada",
+      "unsupportedKeyKind": "tipo de chave não suportado: {{kind}}",
+      "privateKeyContentRequired": "o conteúdo da chave privada é obrigatório",
+      "invalidPrivateKey": "chave privada inválida (chaves criptografadas ainda não são suportadas)",
+      "keyNameConflict": "já existe uma chave chamada \"{{name}}\" em {{dir}}",
+      "pathRequired": "o caminho é obrigatório",
+      "keyFileTooLarge": "o arquivo é grande demais para ser uma chave ({{sizeMB}} MB)",
+      "sourcePathRequired": "o caminho de origem é obrigatório",
+      "readSourceFailed": "ler origem",
+      "invalidImportedKey": "o arquivo não é uma chave privada SSH utilizável (chaves criptografadas ainda não são suportadas)",
+      "clientNotFound": "cliente ssh não encontrado — instale o Windows OpenSSH Client (Configurações -> Aplicativos -> Recursos opcionais)",
+      "proxyJumpNoLookup": "ProxyJump \"{{name}}\" definido, mas nenhuma busca de host conectada — não foi possível resolver o host de salto",
+      "proxyJumpHostNotFound": "host de ProxyJump \"{{name}}\" não encontrado nos hosts salvos",
+      "dialJumpHostFailed": "conectar ao host de salto \"{{name}}\"",
+      "openChannelFailed": "abrir canal através de {{via}} até {{addr}}",
+      "jumpHostMissingUser": "o host de salto \"{{host}}\" não tem usuário",
+      "proxyCommandStdinFailed": "stdin do comando de proxy",
+      "proxyCommandStdoutFailed": "stdout do comando de proxy",
+      "startProxyCommandFailed": "iniciar comando de proxy",
+      "openSessionFailed": "abrir sessão",
+      "requestPtyFailed": "solicitar pty",
+      "stdinPipeFailed": "pipe de stdin",
+      "stdoutPipeFailed": "pipe de stdout",
+      "stderrPipeFailed": "pipe de stderr",
+      "startShellFailed": "iniciar shell",
+      "authFailed": "falha na autenticação em {{addr}}: {{hint}}\n\n(bruto: {{error}})",
+      "noSupportedAuthMethods": "o servidor em {{addr}} não ofereceu nenhum método de autenticação suportado (provavelmente 2FA / desafios keyboard-interactive) — defina PubkeyAuthentication yes e adicione uma chave, ou use um host que aceite senha simples\n\n(bruto: {{error}})",
+      "handshakeTimeout": "o handshake ssh expirou em {{addr}} — o servidor está acessível mas muito lento para responder\n\n(bruto: {{error}})",
+      "handshakeFailed": "handshake ssh {{addr}}",
+      "unknownAuthMode": "modo de autenticação desconhecido: \"{{mode}}\"",
+      "keyAuthNoFileChosen": "autenticação por chave selecionada, mas nenhum arquivo de chave foi escolhido",
+      "readKeyFailed": "ler chave {{path}}",
+      "parseKeyFailed": "processar chave {{path}}",
+      "passwordAuthEmpty": "autenticação por senha selecionada, mas a senha está vazia",
+      "authModeNoCredentials": "o modo de autenticação \"{{mode}}\" não tem credenciais utilizáveis",
+      "noLiveConnection": "nenhuma conexão SSH ativa para o terminal \"{{termID}}\"",
+      "openSftpSubsystemFailed": "abrir subsistema sftp",
+      "transferCancelled": "cancelado",
+      "pathIsDirectory": "o caminho é um diretório",
+      "fileTooLarge": "file too large: o arquivo tem {{size}} bytes, mas o limite é {{limit}}",
+      "binaryFile": "binary file: {{path}} parece um arquivo binário e não pode ser editado como texto",
+      "cleanupOutsideTempDir": "recusando limpar caminho fora do diretório temporário: {{path}}",
+      "pathNotUnder": "o caminho \"{{full}}\" não está dentro de \"{{base}}\""
+    },
+    "agents": {
+      "unsupportedAgent": "agente não suportado: \"{{agent}}\"",
+      "resumeSessionIdRequired": "o id de sessão do provedor é obrigatório para retomar",
+      "agentUnavailable": "o agente \"{{agent}}\" está indisponível",
+      "projectPathRequired": "o caminho do projeto é obrigatório",
+      "additionalDirectoriesUnsupported": "{{label}} não suporta diretórios de sessão adicionais",
+      "additionalDirectoryNotAbsolute": "o diretório adicional precisa ser um caminho de pasta absoluto: \"{{directory}}\"",
+      "additionalDirectoryUnavailable": "o diretório adicional \"{{directory}}\" está indisponível",
+      "additionalDirectoryNotFolder": "o diretório adicional \"{{directory}}\" não é uma pasta",
+      "executablePathUnsafeForHooks": "o caminho do executável do LaraEnv não pode ser usado por hooks do provedor",
+      "notJSONObject": "{{file}} não é um objeto JSON",
+      "hooksShapeUnexpected": "{{file}}: \"hooks\" tem um formato inesperado; o arquivo foi mantido sem alteração",
+      "pluginFileNotManaged": "o arquivo de plugin existente não é gerenciado pelo LaraEnv",
+      "executablePathUnsafeForLifecycleHooks": "o caminho do executável do LaraEnv não pode ser usado por hooks de ciclo de vida do provedor",
+      "sessionStillRunning": "a sessão de agente \"{{title}}\" ainda está em execução",
+      "resolveWorkspaceFailed": "resolver espaço de trabalho para {{project}}",
+      "launchFailed": "iniciar {{agent}} para {{project}}",
+      "sessionNotFound": "sessão de agente \"{{id}}\" não encontrada",
+      "sessionAlreadyRunning": "a sessão de agente \"{{id}}\" já está em execução no terminal {{terminal}}",
+      "resumeSessionFailed": "retomar sessão {{agent}}",
+      "resumeUpdateMetadataFailed": "(também falhou ao atualizar os metadados da sessão: {{storeError}})",
+      "configureLifecycleSignalsFailed": "configurar sinais de ciclo de vida de {{agent}}",
+      "resumeForProjectFailed": "retomar {{agent}} para {{project}}",
+      "providerSessionMissing": "provider conversation is unavailable: {{agent}} não tem um ID de sessão salvo para {{cwd}}",
+      "providerSessionNotFound": "provider conversation is unavailable: {{agent}} não conseguiu encontrar a sessão {{session}} em {{cwd}}",
+      "stopBeforeArchiving": "pare a sessão do agente antes de arquivá-la",
+      "stopBeforeResettingMetadata": "pare todas as sessões de agente ativas antes de redefinir os metadados",
+      "removeWorktreeBeforeReset": "remova o worktree gerenciado de \"{{title}}\" antes de redefinir os metadados",
+      "inspectWorktreeFailed": "inspecionar worktree de \"{{title}}\"",
+      "agentUnavailableWithReason": "agente {{agent}} indisponível: {{reason}}",
+      "unknownAgent": "agente desconhecido: \"{{agent}}\"",
+      "discoveryNotSupported": "a descoberta de sessão do provedor não é suportada",
+      "decodeCodexSessionMetadataFailed": "decodificar metadados de sessão do Codex",
+      "codexExecutableUnavailable": "o executável do Codex está indisponível",
+      "openCodeSessionMetadataCommandFailed": "o comando de metadados de sessão do OpenCode falhou",
+      "openCodeSessionMetadataTooLarge": "a resposta de metadados de sessão do OpenCode é grande demais",
+      "decodeOpenCodeSessionMetadataFailed": "decodificar metadados de sessão do OpenCode",
+      "readKimiSessionMetadataFailed": "ler metadados de sessão do Kimi",
+      "invalidSignalEnvelope": "envelope de sinal de agente inválido",
+      "decodeSessionsFailed": "decodificar sessões de agente (também falhou ao preservar o arquivo corrompido: {{renameError}})",
+      "unsupportedSessionSchema": "esquema de sessão de agente não suportado: {{version}}",
+      "sessionIdRequired": "o id da sessão de agente é obrigatório",
+      "sessionTitleRequired": "o título da sessão de agente é obrigatório",
+      "archiveSessionMetadataFailed": "arquivar metadados da sessão do agente",
+      "claudeConfigDirUnavailable": "o diretório de configuração do Claude Code está indisponível",
+      "decodeClaudeUsageFailed": "decodificar limites de assinatura do Claude",
+      "initializeCodexUsageFailed": "inicializar leitor de uso do Codex",
+      "codexRpcStderr": "stderr do app-server do Codex: {{stderr}}",
+      "codexRpcError": "RPC {{code}}: {{message}}",
+      "codexAppServerClosed": "o app-server do Codex foi encerrado antes de responder",
+      "decodeCodexRateLimitsFailed": "decodificar limites de taxa do Codex"
+    },
+    "cloud": {
+      "openSessionFailed": "[{{step}}] abrir sessão",
+      "stdoutPipeFailed": "[{{step}}] pipe de stdout",
+      "stderrPipeFailed": "[{{step}}] pipe de stderr",
+      "stepStartFailed": "[{{step}}] iniciar",
+      "stepFailed": "etapa \"{{step}}\" falhou: {{error}}\n{{tail}}",
+      "bindAddressFailed": "vincular {{address}}",
+      "openBrowserFailed": "abrir navegador",
+      "paypalTimeout": "tempo esgotado do PayPal — sem retorno",
+      "billingTimeout": "tempo esgotado da cobrança — sem retorno do Stripe",
+      "unexpectedServerResponse": "servidor inesperado: {{response}}",
+      "notLoggedIn": "não autenticado",
+      "kdfSaltInvalid": "salt do kdf",
+      "kdfSaltTooShort": "salt do kdf muito curto: {{bytes}} bytes",
+      "keyMustBe32Bytes": "a chave deve ter 32 bytes (recebido {{got}})",
+      "ciphertextTooShort": "texto cifrado muito curto",
+      "bindLoopbackFailed": "vincular loopback",
+      "noTokenInCallback": "nenhum token no callback",
+      "tokenVerifyFailed": "verificar token",
+      "oauthTimeout": "tempo esgotado do oauth — fechou o navegador antes de entrar?",
+      "presetLookupUnavailable": "predefinição \"{{preset}}\": nenhuma busca de predefinição disponível",
+      "deployPresetNotFound": "predefinição de deploy \"{{preset}}\" não encontrada — pode ter sido excluída",
+      "kdfSaltMissing": "o servidor não retornou um kdf_salt",
+      "syncKeyMissing": "nenhuma chave de sincronização — entre com a senha para habilitar a sincronização",
+      "encryptFailed": "criptografar",
+      "newKeyMustBe32Bytes": "a nova chave deve ter 32 bytes (recebido {{got}})",
+      "reencryptResourceFailed": "recriptografar {{kind}}/{{externalId}}",
+      "rekeyResourceFailed": "trocar chave de {{kind}}/{{externalId}}",
+      "rekeyNothingDecrypted": "não foi possível descriptografar nenhum dos {{count}} item(ns) do servidor com a chave atual — execute a troca de chave no dispositivo que ainda consegue sincronizar"
+    },
+    "projectroutes": {
+      "previewHostnameDomainMismatch": "o hostname de preview \"{{host}}\" não corresponde ao domínio anterior do projeto",
+      "canonicalRouteMissing": "a rota canônica está ausente",
+      "previewRequiresWorktree": "rotas de preview devem apontar para um worktree registrado",
+      "hostnameAlreadyUsed": "o hostname \"{{hostname}}\" já está em uso pelo projeto \"{{project}}\"",
+      "worktreeRoutingRequiresWorktree": "o roteamento de worktree requer um worktree registrado",
+      "proxyPortUpdateRequiresWorktree": "atualizações de porta de proxy requerem um worktree registrado",
+      "noRouteForWorktree": "nenhuma rota aponta para este worktree",
+      "routeCleanupRequiresWorktree": "a limpeza de rotas requer um worktree registrado",
+      "canonicalRouteCannotBeRemoved": "a rota canônica não pode ser removida; restaure-a para o checkout principal",
+      "routeNotFound": "rota de projeto \"{{id}}\" não encontrada",
+      "applyRoutesFailed": "aplicar rotas (também falhou ao restaurar o estado das rotas: {{rollbackError}})",
+      "routeBelongsToAnotherProject": "a rota pertence a outro projeto",
+      "duplicateHostname": "hostname duplicado \"{{host}}\"",
+      "canonicalHostnameMismatch": "o hostname canônico deve ser \"{{expected}}\"",
+      "canonicalRouteCountInvalid": "o projeto deve ter exatamente uma rota canônica, obteve {{count}}",
+      "invalidPreviewHostname": "hostname de preview inválido \"{{hostname}}\"",
+      "previewHostnameMissingLabel": "o hostname de preview deve incluir um rótulo antes do domínio do projeto",
+      "invalidHostnameLabel": "rótulo de hostname inválido \"{{label}}\"",
+      "previewHostnameSuffixMismatch": "o hostname de preview deve terminar com \"{{suffix}}\"",
+      "previewLabelReserved": "o rótulo de preview \"{{label}}\" é reservado",
+      "proxyPortOutOfRange": "a porta de proxy deve estar entre 1 e 65535",
+      "dedicatedWorktreePortRequired": "este projeto de proxy requer uma porta dedicada de dev-server para o worktree",
+      "worktreeProxyPortConflict": "a porta de proxy do worktree {{port}} já está atribuída ao checkout principal",
+      "decodeRoutesFailed": "decodificar rotas de projeto",
+      "unsupportedRouteSchema": "esquema de rota de projeto não suportado: {{version}}",
+      "migrateRoutesFailed": "migrar rotas de projeto",
+      "preserveCorruptFailed": "também falhou ao preservar o arquivo corrompido: {{renameError}}",
+      "routeIdRequired": "o id da rota de projeto é obrigatório"
+    },
+    "gitworkspace": {
+      "projectFolderFailed": "pasta do projeto",
+      "branchWorktreeRequiresRepo": "os modos de branch e worktree exigem um repositório Git",
+      "mainCheckoutDirty": "o checkout principal tem alterações não confirmadas; faça commit ou stash antes de trocar de branch",
+      "unknownWorkspaceMode": "modo de workspace desconhecido \"{{mode}}\"",
+      "notAGitRepository": "o projeto não é um repositório Git",
+      "mainCheckoutCannotBeRemoved": "o checkout principal do projeto não pode ser removido como worktree",
+      "worktreeNotRegistered": "o worktree não está registrado para este projeto",
+      "removeWorktreeFailed": "remover worktree",
+      "baseRefRequiredForBranch": "a ref base é obrigatória ao criar um branch",
+      "localBranchAlreadyExists": "o branch local \"{{branch}}\" já existe",
+      "createSwitchBranchFailed": "criar e trocar para o branch \"{{branch}}\"",
+      "localBranchNotFound": "o branch local \"{{branch}}\" não existe",
+      "switchBranchFailed": "trocar para o branch \"{{branch}}\"",
+      "invalidWorktreeName": "o nome do worktree deve usar 1-64 letras, números, pontos, traços ou sublinhados",
+      "registeredWorktreeMissing": "o worktree registrado está ausente",
+      "worktreeBranchMismatch": "o worktree \"{{name}}\" está registrado para o branch \"{{registered}}\", não \"{{requested}}\"",
+      "worktreeDestinationUnregistered": "o destino do worktree existe mas não está registrado para este repositório",
+      "baseRefRequiredForWorktreeBranch": "a ref base é obrigatória ao criar um branch de worktree",
+      "createWorktreeFailed": "criar worktree \"{{name}}\"",
+      "branchRequired": "o branch é obrigatório",
+      "invalidBranch": "branch inválido \"{{branch}}\"",
+      "baseRefNotACommit": "a ref base \"{{ref}}\" não resolve para um commit",
+      "gitCommandTimedOut": "o comando git {{command}} expirou",
+      "worktreeDestinationEscapesRoot": "o destino do worktree \"{{destination}}\" escapa da raiz gerenciada \"{{root}}\""
+    },
+    "projects": {
+      "readComposerJsonFailed": "ler o composer.json",
+      "parseComposerJsonFailed": "analisar o composer.json",
+      "parseScriptsFailed": "analisar os scripts",
+      "unexpectedDevScriptShape": "formato inesperado do script `dev`",
+      "writeComposerJsonFailed": "gravar o composer.json",
+      "invalidProjectName": "nome inválido (use letras minúsculas, dígitos, _ e -): \"{{name}}\"",
+      "folderAlreadyExists": "a pasta já existe: {{path}}",
+      "gitUrlRequired": "a URL do git é obrigatória",
+      "unknownProjectKind": "tipo de projeto desconhecido: {{kind}}",
+      "packageManagerNotFound": "{{manager}} não encontrado — instale-o (ou escolha outro gerenciador de pacotes)",
+      "phpVersionNotInstalled": "o PHP {{version}} não está instalado — instale-o em Downloads primeiro",
+      "noPhpAvailable": "nenhum PHP disponível — instale uma versão do PHP em Downloads primeiro",
+      "downloadComposerPharFailed": "baixar composer.phar",
+      "gitNotFound": "git não encontrado no PATH — instale a partir de https://git-scm.com",
+      "downloadFailed": "baixar {{url}}: HTTP {{status}}",
+      "unsafeZipPath": "caminho inseguro no zip: {{name}}",
+      "mysqlExeNotFound": "mysql.exe não encontrado em {{path}} — o MySQL está instalado?",
+      "dropdbExeNotFound": "dropdb.exe não encontrado em {{path}} — o PostgreSQL está instalado?",
+      "createdbExeNotFound": "createdb.exe não encontrado em {{path}} — o PostgreSQL está instalado?",
+      "envFileMissing": "nenhum .env ou .env.example"
+    },
+    "installer": {
+      "notAValidZip": "o arquivo selecionado não é um zip válido",
+      "cachedFileNotValidZip": "o arquivo em {{path}} não é um zip válido — baixe-o novamente da página oficial",
+      "manualSourceMissing": "fonte manual: baixe da página oficial e salve em {{path}}",
+      "httpStatus": "HTTP {{status}}",
+      "serverReturnedHtml": "o servidor retornou HTML (provavelmente bloqueio de hotlink): {{contentType}}",
+      "downloadFailed": "não foi possível baixar {{kind}} {{version}}: {{reason}}",
+      "downloadedFileNotValidZip": "o arquivo baixado não é um zip válido — a origem pode estar bloqueando downloads diretos",
+      "notAZip": "não é um zip (magic={{magic}})",
+      "unsafePathInArchive": "caminho inseguro no arquivo: {{name}}",
+      "extensionNotBundled": "a extensão \"{{name}}\" não está incluída no PHP {{version}} — provavelmente é uma extensão PECL (xdebug, redis, imagick, …) que ainda não é suportada por este instalador",
+      "noPeclBuildPinned": "nenhum build PECL para Windows definido para \"{{name}}\" no PHP {{series}} — abra uma issue ou atualize internal/installer/pecl.go",
+      "peclZipMissingDll": "o zip do PECL não continha php_{{name}}.dll",
+      "downloadReasonUnknown": "erro desconhecido",
+      "downloadReasonDnsFailed": "não foi possível resolver {{host}} — verifique a conexão e tente novamente",
+      "downloadReasonTimeout": "o download expirou — verifique a conexão e tente novamente",
+      "downloadReasonNetworkFailed": "não foi possível alcançar o servidor de download — verifique a conexão e tente novamente ({{error}})"
+    },
+    "cron": {
+      "nameRequired": "o nome é obrigatório",
+      "scheduleRequired": "o agendamento é obrigatório",
+      "commandRequired": "o comando é obrigatório",
+      "invalidSchedule": "agendamento inválido",
+      "jobNotFound": "tarefa não encontrada: {{id}}",
+      "registerTaskFailed": "registrar tarefa no Agendador de Tarefas",
+      "scheduleFailed": "agendar",
+      "executionTimedOut": "tempo esgotado após 5m",
+      "jobIdRequired": "--cron-run precisa do id da tarefa",
+      "parseScheduleFailed": "analisar o agendamento",
+      "readConfigFailed": "ler a configuração",
+      "parseConfigFailed": "analisar a configuração",
+      "jobNotFoundInConfig": "tarefa {{id}} não encontrada em {{path}}",
+      "backgroundTaskArgsRequired": "EnsureBackgroundTask: jobID e exePath são obrigatórios",
+      "registerSchtasksFailed": "schtasks /Create {{task}} ({{output}})"
+    },
+    "devserver": {
+      "instanceIdRequired": "o id da instância do dev server é obrigatório",
+      "alreadyRunning": "o dev server já está em execução para {{instanceId}}",
+      "noDevOrStartScript": "nenhum script `dev` ou `start` no package.json",
+      "taskkillFailed": "taskkill: {{output}}",
+      "readPackageJsonFailed": "ler o package.json",
+      "parsePackageJsonFailed": "analisar o package.json"
+    },
+    "queueworker": {
+      "unterminatedQuote": "aspas não fechadas nos argumentos",
+      "alreadyRunning": "o worker de filas já está em execução para {{project}}",
+      "phpUnavailable": "executável do PHP não disponível para {{project}}",
+      "artisanNotFound": "artisan não encontrado em {{path}}",
+      "taskkillFailed": "taskkill: {{output}}"
+    },
+    "php": {
+      "downloadCacertFailed": "baixar cacert.pem",
+      "httpStatus": "HTTP {{status}}",
+      "versionNotFound": "versão do PHP não encontrada",
+      "removeOldLinkFailed": "remover o link antigo",
+      "createDirectoryLinkFailed": "criar link de diretório {{link}} -> {{target}}: {{error}}: {{output}}"
+    },
+    "config": {
+      "sshHostNameRequired": "o nome do host SSH é obrigatório",
+      "deployPresetIdRequired": "o id do preset de deploy é obrigatório",
+      "builtinPresetImmutable": "presets internos não podem ser modificados — duplique-o em vez disso",
+      "builtinPresetNotDeletable": "presets internos não podem ser excluídos"
+    },
+    "nodejs": {
+      "versionNotFound": "versão do Node não encontrada",
+      "removeOldLinkFailed": "remover o link antigo",
+      "createDirectoryLinkFailed": "criar link de diretório {{link}} -> {{target}}: {{error}}: {{output}}"
+    },
+    "netports": {
+      "getExtendedTcpTableSizeFailed": "GetExtendedTcpTable size: {{code}}",
+      "getExtendedTcpTableFailed": "GetExtendedTcpTable: {{code}}",
+      "taskkillFailed": "taskkill {{pid}}: {{output}}"
+    },
+    "terminal": {
+      "notAvailable": "terminal não disponível: {{kind}}",
+      "unsupported": "terminal não suportado: {{kind}}"
+    },
+    "hotkey": {
+      "unknownKey": "tecla desconhecida \"{{key}}\"",
+      "noKey": "o atalho \"{{hotkey}}\" não tem tecla"
+    },
+    "editor": {
+      "noCustomCommand": "nenhum comando de editor personalizado configurado",
+      "notAvailable": "editor não disponível: {{kind}}"
+    },
+    "updater": {
+      "reachServerFailed": "não foi possível acessar o servidor de atualização",
+      "noPublishedRelease": "nenhuma versão publicada encontrada ainda",
+      "rateLimited": "servidor de atualização com limite de requisições — tente novamente mais tarde",
+      "githubApiError": "github api {{status}}: {{body}}",
+      "invalidGithubResponse": "resposta inválida do github",
+      "releaseIsDraft": "a versão mais recente ainda é um rascunho",
+      "sha256FetchFailed": "busca do sha256 retornou HTTP {{status}}",
+      "emptySha256File": "arquivo sha256 vazio",
+      "invalidSha256Length": "tamanho de sha256 inválido: {{length}}",
+      "noExeAsset": "a versão {{version}} não tem um arquivo .exe — uma instalação portátil não pode ser atualizada pelo instalador",
+      "noChecksumForExe": "a versão {{version}} não traz checksum para {{exeName}}; recusando substituir o executável em execução sem verificação",
+      "noMsiAsset": "a versão {{version}} não tem um arquivo .msi anexado",
+      "noReleaseToDownload": "nenhuma versão para baixar",
+      "checksumMismatch": "checksum não confere (esperado {{expected}}, obtido {{got}})",
+      "httpErrorDownloading": "HTTP {{status}} ao baixar {{name}}",
+      "updateNotFound": "atualização não encontrada em {{path}}",
+      "locateExecutableFailed": "não foi possível localizar o executável em execução para substituição",
+      "installerOverPortable": "recusando executar o instalador sobre a cópia portátil em {{dir}} — isso deixaria uma segunda instalação apontando para uma raiz padrão vazia; baixe o ZIP portátil na página de release e substitua o LaraEnv.exe manualmente",
+      "portableUpdateWindowsOnly": "a autoatualização portátil só está implementada no Windows",
+      "applyWindowsOnly": "a autoatualização só é suportada no Windows",
+      "writePortableScriptFailed": "gravar o script de atualização portátil",
+      "writeUpdateScriptFailed": "gravar o script de atualização",
+      "launchUpdateScriptFailed": "iniciar o script de atualização"
+    },
+    "vcruntime": {
+      "redistNotInstalled": "{{binary}} não conseguiu iniciar: Microsoft Visual C++ Redistributable não está instalado — baixe e instale em {{url}}, depois tente novamente"
+    },
+    "notifications": {
+      "unsupportedSchema": "esquema de notificação não suportado: {{version}}",
+      "decodeFailed": "decodificar notificações (também falhou ao preservar o arquivo corrompido: {{renameError}})"
+    },
+    "app": {
+      "agentUsingMainCheckout": "outro agente está usando o checkout principal; pare-o antes de trocar de branch",
+      "projectNotFound": "projeto \"{{name}}\" não encontrado",
+      "noCatalogEntryForPhp": "nenhuma entrada no catálogo para o PHP {{version}}",
+      "phpNotInstalled": "PHP {{version}} não está instalado",
+      "projectRoutesFailed": "não foi possível carregar as rotas do projeto",
+      "sslCertFailed": "não foi possível criar o certificado SSL",
+      "vhostFailed": "não foi possível gravar a configuração de vhost de {{name}}",
+      "hostsEntryFailed": "não foi possível atualizar a entrada no arquivo hosts",
+      "removeProjectRouteStateFailed": "não foi possível remover o estado das rotas do projeto",
+      "sourceNotFound": "fonte não encontrada: {{kind}} {{version}}",
+      "unknownWebServer": "servidor web desconhecido: {{server}}",
+      "nameRequired": "o nome é obrigatório",
+      "invalidTld": "TLD inválido",
+      "migrateRoutesFailed": "migrar rotas de {{name}}",
+      "deleteFolderFailed": "excluir a pasta {{target}}",
+      "projectFolderNotFound": "pasta do projeto não encontrada",
+      "noEditorAvailable": "nenhum editor disponível",
+      "hostRequired": "o host é obrigatório",
+      "sshHostNotFound": "host ssh não encontrado: {{host}}",
+      "noTerminalAvailable": "nenhum terminal disponível",
+      "terminalNotInstalled": "terminal não instalado: {{kind}}",
+      "stopLiveAgentSessionsFirst": "pare todas as sessões de agente ativas antes de desabilitar as sessões de agente",
+      "stopWorktreeDevServersFirst": "pare todos os dev servers de worktree antes de desabilitar as sessões de agente",
+      "agentSessionsDisabled": "as sessões de agente estão desabilitadas; habilite-as em Configurações → Experimental",
+      "terminalKindNotEmbeddable": "tipo de terminal não incorporável: {{kind}}",
+      "ptyNotFound": "pty {{id}} não encontrado",
+      "noSshConnectionForTerminal": "nenhuma conexão SSH para o terminal \"{{termId}}\"",
+      "sftpNotOpenForTerminal": "sftp não está aberto para o terminal \"{{termId}}\"",
+      "launchEditorAfterDownloadFailed": "baixado para {{local}} mas falhou ao abrir o editor",
+      "emptyPath": "caminho vazio",
+      "sshHostNotFoundLocally": "host ssh \"{{host}}\" não encontrado localmente",
+      "saveConfigFailed": "não foi possível salvar a configuração do deployment",
+      "sshDialFailed": "não foi possível conectar via SSH",
+      "openSessionFailed": "não foi possível abrir uma sessão SSH",
+      "sshHostNotFoundCannotDestroy": "host ssh \"{{host}}\" não encontrado localmente — não é possível destruir o estado remoto",
+      "sshHostNotFoundSyncOrRecreate": "host ssh \"{{host}}\" não encontrado localmente — sincronize seus hosts ou recrie-o",
+      "presetNameRequired": "o nome do preset é obrigatório",
+      "builtinPresetReadOnly": "presets internos são somente leitura — duplique-o para personalizar",
+      "builtinPresetNotDeletable": "presets internos não podem ser excluídos",
+      "deploymentNoSavedConfig": "o deployment não tem configuração salva — execute Aplicar primeiro",
+      "noDeployScriptConfigured": "nenhum script de deploy configurado — escolha um preset (ou script personalizado) na configuração do deployment",
+      "notLoggedInSignInFirst": "não autenticado — entre na sua conta primeiro",
+      "notLoggedIn": "não autenticado",
+      "syncRequiresProPlan": "a sincronização requer o plano Pro",
+      "noSyncKeySignInAgain": "nenhuma chave de sincronização — entre novamente com sua senha",
+      "syncDisabled": "a sincronização está desabilitada — ative-a primeiro",
+      "unknownLanguage": "idioma desconhecido \"{{code}}\"",
+      "windowNotReady": "a janela da aplicação ainda não está pronta",
+      "codexPayloadMissing": "o payload de notificação do Codex está ausente",
+      "decodeCodexNotificationType": "decodificar o tipo de notificação do Codex",
+      "unknownAgentEventSource": "origem de evento de agente desconhecida",
+      "decodeBoundedPayloadMissing": "o payload de notificação do provedor está ausente",
+      "decodeBoundedTypeFailed": "decodificar o tipo de notificação do provedor",
+      "openCodeArgsMissing": "argumentos do hook do OpenCode estão ausentes",
+      "unknownAgentHookProvider": "provedor de hook de agente desconhecido"
+    },
+    "routes": {
+      "agentSessionNotFound": "sessão de agente \"{{sessionId}}\" não encontrada",
+      "agentSessionNotWorktree": "a sessão de agente não usa um worktree",
+      "worktreeServedDirectly": "este worktree é servido diretamente e não precisa de um dev server de proxy",
+      "dedicatedProxyPortRequired": "é necessária uma porta de proxy dedicada para o worktree",
+      "updateWorktreeRouteFailed": "não foi possível atualizar a rota do worktree após selecionar uma porta",
+      "worktreeCannotBeRemoved": "o worktree não pode ser removido: {{blockers}}",
+      "projectNotFound": "projeto \"{{name}}\" não encontrado",
+      "routeTargetFailed": "não foi possível resolver o destino da rota",
+      "projectNotGitRepository": "o projeto não é um repositório Git",
+      "routeTargetNotRegisteredWorktree": "o destino da rota não é um worktree registrado para este projeto",
+      "snapshotHostsFileFailed": "não foi possível capturar um snapshot do arquivo hosts",
+      "rollbackErrors": "erros de rollback: {{rollbackErrors}}",
+      "writeRouteVhostFailed": "não foi possível gravar a configuração de vhost da rota",
+      "removeOldRouteVhostFailed": "não foi possível remover a configuração de vhost antiga da rota",
+      "removeHostsEntryFailed": "não foi possível remover a entrada no arquivo hosts",
+      "addHostsEntryFailed": "não foi possível adicionar a entrada no arquivo hosts",
+      "routeTargetPathFailed": "não foi possível resolver o destino da rota \"{{path}}\"",
+      "routeCertificateFailed": "não foi possível criar o certificado para {{hostname}}",
+      "nginxConfigTestFailed": "o teste de configuração do nginx falhou",
+      "apacheConfigTestFailed": "o teste de configuração do apache falhou",
+      "caddyConfigTestFailed": "o teste de configuração do caddy falhou",
+      "configTestCommandFailed": "a ferramenta de validação retornou: {{output}}",
+      "restartServiceFailed": "não foi possível reiniciar {{name}}",
+      "routeTargetOutsideManagedDir": "o destino da rota está fora do diretório de worktrees gerenciado pelo LaraEnv"
+    }
+  }
+}

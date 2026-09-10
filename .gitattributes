@@ -1,0 +1,5 @@
+# Translation catalogues are diffed and edited by contributors on every OS;
+# a mixed-line-ending file (one CRLF, one LF) makes every line in a PR look
+# changed even when only one string was. Pin them to LF so git normalizes on
+# checkin regardless of the editor or platform that produced the edit.
+langs/*.json text eol=lf
