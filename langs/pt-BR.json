@@ -201,7 +201,7 @@
     "windowControls": {
       "minimize": "minimizar",
       "maximize": "maximizar",
-      "close": "fechar"
+      "close": "encerrar"
     },
     "typeBadge": {
       "plain": "PHP puro"
