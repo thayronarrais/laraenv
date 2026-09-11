@@ -2,8 +2,7 @@
   "$meta": {
     "code": "ru",
     "name": "Russian",
-    "nativeName": "Русский",
-    "needsNativeReview": true
+    "nativeName": "Русский"
   },
   "backend": {
     "tray": {
@@ -143,7 +142,7 @@
       "noPhpForMigrations": "ПРЕДУПРЕЖДЕНИЕ: нет доступного PHP для выполнения миграций — пропуск (выполните `php artisan migrate --seed` вручную)",
       "runningMigrate": "выполнение php artisan migrate --seed --force…",
       "migrateFailedWarn": "ПРЕДУПРЕЖДЕНИЕ: ошибка migrate --seed: {{error}}",
-      "skippingFrontendBuildNoNode": "пропуск сборки фронтенда: Node.js не установлен (установите через Библиотеки/Утилиты)",
+      "skippingFrontendBuildNoNode": "пропуск сборки фронтенда: Node.js не установлен (установите через Инструменты)",
       "runningNpmInstall": "выполнение npm install ({{npm}})…",
       "npmInstallFailedWarn": "ПРЕДУПРЕЖДЕНИЕ: ошибка npm install: {{error}}",
       "runningNpmBuild": "выполнение npm run build…",
@@ -505,12 +504,12 @@
   },
   "sidebar": {
     "nav": {
-      "dashboard": "Панель управления",
+      "dashboard": "Дашборд",
       "projects": "Проекты",
       "terminal": "Терминал",
       "cron": "Cron",
       "deployments": "Деплой",
-      "downloads": "Библиотеки/Утилиты",
+      "downloads": "Инструменты",
       "settings": "Настройки"
     },
     "account": {
@@ -548,8 +547,8 @@
       "redis": "хост: localhost · порт: 6379"
     },
     "hero": {
-      "tagline": "локальная разработка, проще простого",
-      "quoteFallbackText": "Сначала решите задачу. Затем напишите код.",
+      "tagline": "локальная разработка — это просто",
+      "quoteFallbackText": "Сначала решите задачу. Потом пишите код.",
       "quoteFallbackAuthor": "Джон Джонсон"
     },
     "system": {
@@ -557,7 +556,7 @@
     },
     "runtimes": {
       "title": "Среды выполнения",
-      "noneInstalled": "не установлены — установите через Библиотеки/Утилиты",
+      "noneInstalled": "не установлены — установите через Инструменты",
       "reloadPhpTooltip": "обновить версии PHP",
       "reloadNodeTooltip": "обновить версии Node",
       "phpActive": "Активна версия PHP {{version}} — новые терминалы будут использовать эту версию",
@@ -725,7 +724,7 @@
       "header": "Открыть терминал",
       "none": "терминал недоступен",
       "notInstalledHeader": "Не установлено",
-      "installHint": "— установите через Библиотеки/Утилиты",
+      "installHint": "— установите через Инструменты",
       "setDefaultTooltip": "назначить терминалом по умолчанию"
     },
     "editorDropdown": {
@@ -742,8 +741,8 @@
     },
     "nodeDropdown": {
       "title": "выбрать версию Node для этого проекта",
-      "noneInstalledTitle": "версии Node не установлены — установите в Библиотеки/Утилиты",
-      "noneInstalledBody": "Node не установлен — установите в Библиотеки/Утилиты"
+      "noneInstalledTitle": "версии Node не установлены — установите в Инструменты",
+      "noneInstalledBody": "Node не установлен — установите в Инструменты"
     },
     "phpDropdown": {
       "title": "выбрать версию PHP для этого проекта"
@@ -814,7 +813,7 @@
       "phpVersionLabel": "Версия PHP",
       "phpMinHint": "требуется PHP ≥{{min}}",
       "activeSuffix": " (активно)",
-      "noPhpAvailable": "Нет установленного PHP ≥{{min}} — установите в Библиотеки/Утилиты.",
+      "noPhpAvailable": "Нет установленного PHP ≥{{min}} — установите в Инструменты.",
       "packageManagerLabel": "Менеджер пакетов",
       "viteTemplateLabel": "Шаблон Vite",
       "createButton": "Создать",
@@ -947,7 +946,7 @@
       "obtainCertificate": "Получение сертификата Let's Encrypt для {{domain}}",
       "installAutopullScript": "Установка скрипта авто-pull",
       "scheduleAutopull": "Планирование авто-pull ({{schedule}})",
-      "removeAutopullCron": "Удаление задачи cron для авто-pull",
+      "removeAutopullCron": "Удаление задачи планировщика для авто-pull",
       "removeAutopullScript": "Удаление скрипта авто-pull",
       "disableRemoveApacheVhost": "Отключение и удаление vhost apache",
       "removeNginxVhost": "Удаление vhost nginx",
@@ -1818,7 +1817,7 @@
       "title": "Cron"
     },
     "reloadButton": "обновить",
-    "newCronButton": "Новая задача cron",
+    "newCronButton": "Новая задача",
     "filter": {
       "all": "Все",
       "globalOnly": "Только глобальные"
@@ -1833,7 +1832,7 @@
       "actions": "Действия"
     },
     "empty": {
-      "noCronsYet": "Задач cron пока нет — нажмите «Новая задача cron».",
+      "noCronsYet": "Задач cron пока нет — нажмите «Новая задача».",
       "noMatch": "Нет задач cron, соответствующих этому фильтру."
     },
     "actions": {
@@ -1857,21 +1856,21 @@
       "laravelScheduler": "Планировщик Laravel"
     },
     "flash": {
-      "updated": "Задача cron обновлена",
-      "created": "Задача cron создана",
-      "deleted": "Задача cron удалена",
+      "updated": "Задача обновлена",
+      "created": "Задача создана",
+      "deleted": "Задача удалена",
       "runningNow": "Запуск «{{name}}»…"
     },
     "deleteConfirm": {
-      "title": "Удалить эту задачу cron?"
+      "title": "Удалить эту задачу?"
     },
     "deleteLabel": "Удалить",
     "errors": {
       "generic": "ошибка: {{message}}"
     },
     "modal": {
-      "newTitle": "Новая задача cron",
-      "editTitle": "Редактирование задачи cron",
+      "newTitle": "Новая задача",
+      "editTitle": "Редактирование задачи",
       "nameLabel": "Название",
       "namePlaceholder": "Запуск планировщика Laravel",
       "scheduleLabel": "Расписание",
@@ -2051,7 +2050,7 @@
       "closeGroupTooltip": "закрыть группу",
       "setDefaultTooltip": "назначить терминалом по умолчанию",
       "notInstalledHeader": "Не установлено",
-      "installViaDownloads": "— установите через Библиотеки/Утилиты",
+      "installViaDownloads": "— установите через Инструменты",
       "phpVersionHeader": "Версия PHP",
       "nodeVersionHeader": "Версия Node",
       "activeSuffix": " (активно)",
@@ -2107,7 +2106,7 @@
       "ssh": "SSH",
       "cron": "Cron",
       "deployments": "Деплой",
-      "downloads": "Библиотеки/Утилиты",
+      "downloads": "Инструменты",
       "settings": "Настройки"
     },
     "groups": {
@@ -2405,8 +2404,8 @@
       "gitUrlRequired": "требуется URL Git",
       "unknownProjectKind": "неизвестный тип проекта: {{kind}}",
       "packageManagerNotFound": "менеджер пакетов {{manager}} не найден — установите его (или выберите другой менеджер)",
-      "phpVersionNotInstalled": "PHP {{version}} не установлен — сначала установите его в Библиотеки/Утилиты",
-      "noPhpAvailable": "нет доступных версий PHP — сначала установите версию PHP в Библиотеки/Утилиты",
+      "phpVersionNotInstalled": "PHP {{version}} не установлен — сначала установите его в Инструменты",
+      "noPhpAvailable": "нет доступных версий PHP — сначала установите версию PHP в Инструменты",
       "downloadComposerPharFailed": "скачивание composer.phar",
       "gitNotFound": "git не найден в PATH — установите с https://git-scm.com",
       "downloadFailed": "скачивание {{url}}: HTTP {{status}}",
