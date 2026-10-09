@@ -5,6 +5,9 @@
     "nativeName": "English"
   },
   "backend": {
+    "sourceControl": {
+      "busyShutdown": "Wait for the source control operation to finish before quitting or installing an update."
+    },
     "tray": {
       "tooltip": "LaraEnv — local dev manager",
       "showWindow": "Show Window",
@@ -249,7 +252,7 @@
       },
       "themeAppliedFlash": "Theme applied",
       "terminalCardTitle": "Terminal",
-      "terminalHint": "Choose how to copy and paste in the terminal.",
+      "terminalHint": "Ctrl+Shift+C / Ctrl+Shift+V always work. Mouse mode also enables right-click copy and paste.",
       "terminalModeSavedFlash": "Terminal mode saved",
       "terminalMode": {
         "keyboardTitle": "Keyboard",
@@ -400,6 +403,38 @@
       "removeSuccessFlash": "Command removed"
     },
     "experimental": {
+      "mcp": {
+        "cardTitle": "Connect assistants to LaraEnv",
+        "description": "Let your assistants manage projects and services, run commands, and consult local logs through MCP.",
+        "enableLabel": "Enable local MCP",
+        "keepOpen": "Keep LaraEnv open to use MCP.",
+        "checking": "Checking…",
+        "disabled": "Disabled",
+        "ready": "Ready",
+        "unavailable": "Unavailable",
+        "unavailableHint": "Local MCP is enabled, but access is unavailable. Try enabling it again.",
+        "loadFailed": "Could not check MCP status. Try again.",
+        "retry": "Retry",
+        "changeFailed": "Could not change local MCP access. Try again.",
+        "enabledFlash": "Local MCP enabled",
+        "disabledFlash": "Local MCP disabled",
+        "clientsHint": "Enable MCP, then register the clients you use.",
+        "registered": "Registered",
+        "notRegistered": "Not registered",
+        "registrationError": "Could not check registration",
+        "registerClient": "Register {{client}}",
+        "updateClient": "Update registration for {{client}}",
+        "registerButton": "Register",
+        "updateButton": "Update registration",
+        "registering": "Registering…",
+        "registeredFlash": "{{client}} registered",
+        "registerFailed": "Could not register {{client}}. Check its configuration and try again.",
+        "restartHint": "Reopen {{client}} to apply the registration.",
+        "activityTitle": "Recent MCP activity",
+        "activityEmpty": "No MCP activity yet.",
+        "activitySuccess": "Completed",
+        "activityFailed": "Failed"
+      },
       "agentSessions": {
         "cardTitle": "Agent sessions",
         "title": "Project-first coding agents",
@@ -500,7 +535,26 @@
       "openPageButton": "Open download page"
     }
   },
+  "workspace": {
+    "navigation": {
+      "editor": "Editor",
+      "showEditor": "Show editor",
+      "hideEditor": "Hide editor",
+      "title": "Workspace navigation",
+      "agents": "Agents",
+      "files": "Files",
+      "git": "Git",
+      "openFiles": "Open workspace files",
+      "show": "Show navigator",
+      "hide": "Hide navigator",
+      "resize": "Resize navigator",
+      "sshFiles": "Open Files from the SSH terminal to browse with SFTP."
+    }
+  },
   "sidebar": {
+    "collapse": "Collapse navigation",
+    "expand": "Expand navigation",
+    "updateAvailable": "Update available",
     "nav": {
       "dashboard": "Dashboard",
       "projects": "Projects",
@@ -919,6 +973,10 @@
       "cloneRepo": "Clone repo",
       "bootstrapMysqlDb": "Bootstrap MySQL DB + user for {{name}}",
       "ensureEnvExists": "Ensure .env exists",
+      "bootstrapPostgresDb": "Bootstrap PostgreSQL DB + user for {{name}}",
+      "configureDatabaseAccess": "Configure database access",
+      "dropManagedPostgresDb": "Drop managed PostgreSQL database and user",
+      "revokePreviousDatabaseAccess": "Revoke previous {{database}} database access",
       "runBuildScript": "Run build script",
       "runDeployPipeline": "Run deploy pipeline",
       "setLaravelPermissions": "Set Laravel runtime permissions (storage, bootstrap/cache)",
@@ -1010,6 +1068,12 @@
       "complete": "Detection complete"
     },
     "applyModal": {
+      "databaseRemoteAccessLabel": "Allow remote database access",
+      "databaseRemoteAccessHint": "Off by default. Apply again to enable or revoke access for this deployment.",
+      "databaseAllowedIpsLabel": "Allowed IP addresses",
+      "databaseAllowedIpsPlaceholder": "203.0.113.42, 2001:db8::2",
+      "databaseAllowedIpsHint": "Individual IPv4 or IPv6 addresses, separated by commas or lines. Requires active UFW and a dedicated project database user.",
+      "databaseAllowedIpsRequired": "Enter at least one allowed IP address.",
       "heading": "Apply — {{name}}",
       "projectTypeLabel": "Project type",
       "projectKind": {
@@ -1089,6 +1153,7 @@
       "buildingPlan": "Building plan…"
     },
     "destroyModal": {
+      "itemManagedPostgres": "PostgreSQL databases and users created by LaraEnv for this deployment (if any)",
       "title": "Destroy {{name}}?",
       "introBefore": "This will SSH into",
       "introAfter": "and irreversibly remove:",
@@ -1978,6 +2043,11 @@
     }
   },
   "terminal": {
+    "clipboard": {
+      "copyFailed": "Could not copy. Your selection was kept; try again.",
+      "pasteFailed": "Could not read the clipboard. Try pasting again.",
+      "inputFailed": "Could not send input to this terminal. Check the session or connection."
+    },
     "pickTerminalTypeTooltip": "pick terminal type",
     "openTerminalHeader": "Open terminal",
     "noTerminalAvailable": "no terminal available",
@@ -2039,6 +2109,8 @@
     },
     "workspace": {
       "agentNotInWorkspace": "This live agent terminal is not present in the current workspace.",
+      "terminalNotInWorkspace": "This terminal is no longer open in this window.",
+      "paneNumber": "Pane {{number}}",
       "detachFailed": "Could not open detached window: {{error}}",
       "routingReady": "{{project}} routing ready: {{routed}}",
       "primaryDomain": "primary domain",
@@ -2064,11 +2136,8 @@
       "hideSessionNavigatorTooltip": "Hide session navigator",
       "showSessionNavigatorTooltip": "Show session navigator",
       "detachedWindowBadge": "Detached window",
-      "hideAgentsTooltip": "Hide agents",
-      "showAgentsTooltip": "Show agents",
       "agentsLabel": "Agents",
       "terminalLabel": "Terminal",
-      "sessionsStayOpenNote": "sessions stay open as tabs",
       "flash": {
         "enableAgentSessionsFailed": "Could not enable Agent sessions: {{error}}",
         "agentSessionsEnabled": "Agent sessions enabled",
@@ -2090,7 +2159,7 @@
     "groups": {
       "navigation": "Navigation",
       "services": "Services",
-      "agentSessions": "Agent sessions",
+      "openTerminals": "Open terminals",
       "run": "Run",
       "custom": "Custom"
     },
@@ -2106,10 +2175,7 @@
       "openFolder": "Open folder · {{name}}",
       "openInEditor": "Open in editor · {{name}}",
       "openInBrowser": "Open in browser · {{name}}",
-      "focusVerb": "Focus",
-      "resumeVerb": "Resume",
-      "restartVerb": "Restart",
-      "sessionEntry": "{{verb}} {{title}} · {{project}}",
+      "currentTerminal": "Current",
       "newProject": {
         "laravel": "New Laravel project",
         "wordpress": "New WordPress site",
@@ -2130,10 +2196,11 @@
       "reloadingService": "Reloading {{service}}…"
     },
     "palette": {
-      "searchPlaceholder": "Search, or run e.g. {{examples}}",
+      "searchPlaceholder": "Search terminals or commands, e.g. {{examples}}",
       "noCommandsFound": "No commands found",
       "hints": {
         "navigate": "Navigate",
+        "switch": "Switch",
         "complete": "Complete",
         "run": "Run"
       }
@@ -2287,6 +2354,10 @@
     },
     "cloud": {
       "openSessionFailed": "[{{step}}] open session",
+      "databaseRequiredForRemoteAccess": "Select MySQL or PostgreSQL before enabling remote database access.",
+      "databaseProtectedAccount": "Choose a deployment name that does not use a protected MySQL account.",
+      "databaseAllowedIpsRequired": "Enter at least one allowed IP address.",
+      "databaseAllowedIpInvalid": "Invalid allowed IP address: {{ip}}. Enter an individual IPv4 or IPv6 address.",
       "stdoutPipeFailed": "[{{step}}] stdout pipe",
       "stderrPipeFailed": "[{{step}}] stderr pipe",
       "stepStartFailed": "[{{step}}] start",
@@ -2511,6 +2582,7 @@
       "decodeFailed": "decode notifications (also failed to preserve corrupt file: {{renameError}})"
     },
     "app": {
+      "projectPaused": "Resume the paused project before starting its workers.",
       "agentUsingMainCheckout": "another agent is using the main checkout; stop it before switching branches",
       "projectNotFound": "project \"{{name}}\" not found",
       "noCatalogEntryForPhp": "no catalog entry for PHP {{version}}",
@@ -2593,5 +2665,83 @@
       "restartServiceFailed": "could not restart {{name}}",
       "routeTargetOutsideManagedDir": "route target is outside LaraEnv's managed worktree directory"
     }
+  },
+  "git": {
+    "stageFolder": "Stage files in folder",
+    "unstageFolder": "Unstage files in folder",
+    "status": {
+      "untracked": "Untracked file",
+      "changed": "Changed file"
+    },
+    "title": "Source control",
+    "refresh": "Refresh",
+    "loading": "Loading…",
+    "failed": "Git operation failed",
+    "unavailable": "Git is unavailable for this workspace.",
+    "detached": "Detached HEAD",
+    "noUpstream": "No upstream configured",
+    "ahead": "Ahead",
+    "behind": "Behind",
+    "search": "Search changed paths",
+    "clean": "Working tree is clean.",
+    "index": "Staged changes",
+    "worktree": "Working tree changes",
+    "stageSelected": "Stage selected",
+    "unstageSelected": "Unstage selected",
+    "review": "Review changes",
+    "openFile": "Open file",
+    "stageFile": "Stage file",
+    "unstageFile": "Unstage file",
+    "wholeIndex": "Commit includes every staged change in this checkout’s index, regardless of selection or search.",
+    "message": "Commit message",
+    "commit": "Commit",
+    "conflicts": "Resolve conflicts before committing.",
+    "remote": "Remote",
+    "chooseRemote": "Choose a remote",
+    "remoteBranch": "Remote branch",
+    "setUpstream": "Set as upstream",
+    "push": "Push",
+    "outputTruncated": "Output was truncated.",
+    "operationHistory": "Operation history",
+    "cancel": "Cancel",
+    "closeReview": "Close review",
+    "dirtyTitle": "Unsaved changes before staging",
+    "dirtyDescription": "Choose whether to save the affected documents or stage their current disk versions.",
+    "select": {
+      "index": "Select staged file",
+      "worktree": "Select working tree file"
+    },
+    "choice": {
+      "save-and-stage": "Save and stage",
+      "stage-disk": "Stage disk version",
+      "cancel": "Cancel"
+    },
+    "summary": {
+      "binary": "Binary file: text comparison unavailable. Whole-file staging is available from Source control.",
+      "too_large": "File exceeds the text comparison limit. Whole-file staging is available from Source control.",
+      "gitlink": "Submodule reference: text comparison unavailable.",
+      "unsupported": "Unsupported text format: comparison unavailable."
+    },
+    "operation": {
+      "stage": "Stage",
+      "unstage": "Unstage",
+      "commit": "Commit",
+      "push": "Push"
+    },
+    "state": {
+      "running": "Running",
+      "cancelling": "Cancelling",
+      "succeeded": "Completed",
+      "failed": "Failed",
+      "cancelled": "Cancelled",
+      "uncertain": "Remote outcome uncertain"
+    }
+  },
+  "documents": {
+    "projectCatalogFailed": "Could not load projects. Try again.",
+    "title": "Files", "files": "Files", "selectProject": "Select a project", "relativePath": "Relative path", "open": "Open", "loading": "Loading…", "retry": "Retry", "loadMore": "Load more", "closeTab": "Close tab", "preview": "Preview", "source": "Source", "save": "Save", "compare": "Compare changes", "showComparison": "Show comparison", "hideComparison": "Hide comparison", "reload": "Reload", "saveMerged": "Save merged text", "mixedEol": "Mixed line endings: open in an external editor to edit safely.", "unavailable": "This file or workspace is unavailable.", "openExternal": "Open in external editor", "imageFailed": "Local image could not be loaded.",
+    "openRemoteImage": "Open remote image", "dismiss": "Dismiss",
+    "problem": { "invalid_path": "Invalid path", "unavailable": "Workspace unavailable", "too_large": "File is too large", "unsupported_format": "Unsupported file format", "permission_denied": "Permission denied", "conflict": "File changed on disk", "io_error": "Could not access file" },
+    "close": { "title": "Unsaved documents", "description": "Choose what to do with your unsaved changes.", "save": "Save", "saveAll": "Save all", "discard": "Discard", "cancel": "Cancel" }
   }
 }

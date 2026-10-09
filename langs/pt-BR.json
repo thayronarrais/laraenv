@@ -5,6 +5,9 @@
     "nativeName": "Português (Brasil)"
   },
   "backend": {
+    "sourceControl": {
+      "busyShutdown": "Aguarde a operação de controle de versão terminar antes de sair ou instalar uma atualização."
+    },
     "tray": {
       "tooltip": "LaraEnv — gerenciador de ambiente local",
       "showWindow": "Mostrar janela",
@@ -250,7 +253,7 @@
       },
       "themeAppliedFlash": "Tema aplicado",
       "terminalCardTitle": "Terminal",
-      "terminalHint": "Escolha como copiar e colar no terminal.",
+      "terminalHint": "Ctrl+Shift+C / Ctrl+Shift+V funcionam sempre. O modo mouse também permite copiar e colar com o botão direito.",
       "terminalModeSavedFlash": "Modo do terminal salvo",
       "terminalMode": {
         "keyboardTitle": "Teclado",
@@ -401,6 +404,38 @@
       "removeSuccessFlash": "Comando removido"
     },
     "experimental": {
+      "mcp": {
+        "cardTitle": "Conectar assistentes ao LaraEnv",
+        "description": "Permita que seus assistentes gerenciem projetos e serviços, executem comandos e consultem logs locais pelo MCP.",
+        "enableLabel": "Habilitar MCP local",
+        "keepOpen": "Mantenha o LaraEnv aberto para usar o MCP.",
+        "checking": "Verificando…",
+        "disabled": "Desativado",
+        "ready": "Pronto",
+        "unavailable": "Indisponível",
+        "unavailableHint": "O MCP local está habilitado, mas o acesso está indisponível. Tente habilitá-lo novamente.",
+        "loadFailed": "Não foi possível verificar o estado do MCP. Tente novamente.",
+        "retry": "Tentar novamente",
+        "changeFailed": "Não foi possível alterar o acesso ao MCP local. Tente novamente.",
+        "enabledFlash": "MCP local habilitado",
+        "disabledFlash": "MCP local desativado",
+        "clientsHint": "Habilite o MCP e registre os clientes que você usa.",
+        "registered": "Registrado",
+        "notRegistered": "Não registrado",
+        "registrationError": "Não foi possível verificar o registro",
+        "registerClient": "Registrar {{client}}",
+        "updateClient": "Atualizar registro de {{client}}",
+        "registerButton": "Registrar",
+        "updateButton": "Atualizar registro",
+        "registering": "Registrando…",
+        "registeredFlash": "{{client}} registrado",
+        "registerFailed": "Não foi possível registrar {{client}}. Confira a configuração e tente novamente.",
+        "restartHint": "Reabra {{client}} para aplicar o registro.",
+        "activityTitle": "Atividade recente do MCP",
+        "activityEmpty": "Nenhuma atividade do MCP ainda.",
+        "activitySuccess": "Concluído",
+        "activityFailed": "Falhou"
+      },
       "agentSessions": {
         "cardTitle": "Sessões de agentes",
         "title": "Agentes de código focados no projeto",
@@ -501,7 +536,26 @@
       "openPageButton": "Abrir página de download"
     }
   },
+  "workspace": {
+    "navigation": {
+      "editor": "Editor",
+      "showEditor": "Mostrar editor",
+      "hideEditor": "Ocultar editor",
+      "title": "Navegação do workspace",
+      "agents": "Agentes",
+      "files": "Arquivos",
+      "git": "Git",
+      "openFiles": "Abrir arquivos do ambiente",
+      "show": "Mostrar navegador",
+      "hide": "Ocultar navegador",
+      "resize": "Redimensionar navegador",
+      "sshFiles": "Abra Arquivos no terminal SSH para navegar com SFTP."
+    }
+  },
   "sidebar": {
+    "collapse": "Recolher navegação",
+    "expand": "Expandir navegação",
+    "updateAvailable": "Atualização disponível",
     "nav": {
       "dashboard": "Painel",
       "projects": "Projetos",
@@ -924,6 +978,10 @@
       "cloneRepo": "Clonar repositório",
       "bootstrapMysqlDb": "Inicializar banco de dados MySQL + usuário para {{name}}",
       "ensureEnvExists": "Garantir que o .env existe",
+      "bootstrapPostgresDb": "Criar base de dados PostgreSQL e usuário para {{name}}",
+      "configureDatabaseAccess": "Configurar acesso à base de dados",
+      "dropManagedPostgresDb": "Remover base de dados e usuário PostgreSQL criados pelo LaraEnv",
+      "revokePreviousDatabaseAccess": "Revogar acesso anterior à base de dados {{database}}",
       "runBuildScript": "Executar script de build",
       "runDeployPipeline": "Executar pipeline de deploy",
       "setLaravelPermissions": "Definir permissões de runtime do Laravel (storage, bootstrap/cache)",
@@ -1015,6 +1073,12 @@
       "complete": "Detecção concluída"
     },
     "applyModal": {
+      "databaseRemoteAccessLabel": "Permitir acesso remoto à base de dados",
+      "databaseRemoteAccessHint": "Desligado por padrão. Aplique novamente para ativar ou revogar o acesso deste deploy.",
+      "databaseAllowedIpsLabel": "IPs autorizados",
+      "databaseAllowedIpsPlaceholder": "203.0.113.42, 2001:db8::2",
+      "databaseAllowedIpsHint": "Endereços IPv4 ou IPv6 individuais, separados por vírgulas ou linhas. Requer UFW ativo e um usuário dedicado à base de dados do projeto.",
+      "databaseAllowedIpsRequired": "Informe pelo menos um IP autorizado.",
       "heading": "Aplicar — {{name}}",
       "projectTypeLabel": "Tipo de projeto",
       "projectKind": {
@@ -1094,6 +1158,7 @@
       "buildingPlan": "Montando o plano…"
     },
     "destroyModal": {
+      "itemManagedPostgres": "Bases de dados e usuários PostgreSQL criados pelo LaraEnv para este deploy (se houver)",
       "title": "Destruir {{name}}?",
       "introBefore": "Isso vai conectar via SSH a",
       "introAfter": "e remover irreversivelmente:",
@@ -1989,6 +2054,11 @@
     }
   },
   "terminal": {
+    "clipboard": {
+      "copyFailed": "Não foi possível copiar. Sua seleção foi mantida; tente novamente.",
+      "pasteFailed": "Não foi possível ler a área de transferência. Tente colar novamente.",
+      "inputFailed": "Não foi possível enviar a entrada para este terminal. Verifique a sessão ou a conexão."
+    },
     "pickTerminalTypeTooltip": "escolher tipo de terminal",
     "openTerminalHeader": "Abrir terminal",
     "noTerminalAvailable": "nenhum terminal disponível",
@@ -2050,6 +2120,8 @@
     },
     "workspace": {
       "agentNotInWorkspace": "Este terminal de agente ativo não está presente no workspace atual.",
+      "terminalNotInWorkspace": "Este terminal não está mais aberto nesta janela.",
+      "paneNumber": "Painel {{number}}",
       "detachFailed": "Não foi possível abrir a janela destacada: {{error}}",
       "routingReady": "Roteamento de {{project}} pronto: {{routed}}",
       "primaryDomain": "domínio principal",
@@ -2075,11 +2147,8 @@
       "hideSessionNavigatorTooltip": "Ocultar navegador de sessões",
       "showSessionNavigatorTooltip": "Mostrar navegador de sessões",
       "detachedWindowBadge": "Janela destacada",
-      "hideAgentsTooltip": "Ocultar agentes",
-      "showAgentsTooltip": "Mostrar agentes",
       "agentsLabel": "Agentes",
       "terminalLabel": "Terminal",
-      "sessionsStayOpenNote": "as sessões permanecem abertas como abas",
       "flash": {
         "enableAgentSessionsFailed": "Não foi possível habilitar as Sessões de agente: {{error}}",
         "agentSessionsEnabled": "Sessões de agente habilitadas",
@@ -2101,7 +2170,7 @@
     "groups": {
       "navigation": "Navegação",
       "services": "Serviços",
-      "agentSessions": "Sessões de agente",
+      "openTerminals": "Terminais abertos",
       "run": "Executar",
       "custom": "Personalizados"
     },
@@ -2117,10 +2186,7 @@
       "openFolder": "Abrir pasta · {{name}}",
       "openInEditor": "Abrir no editor · {{name}}",
       "openInBrowser": "Abrir no navegador · {{name}}",
-      "focusVerb": "Focar",
-      "resumeVerb": "Retomar",
-      "restartVerb": "Reiniciar",
-      "sessionEntry": "{{verb}} {{title}} · {{project}}",
+      "currentTerminal": "Atual",
       "newProject": {
         "laravel": "Novo projeto Laravel",
         "wordpress": "Novo site WordPress",
@@ -2141,10 +2207,11 @@
       "reloadingService": "Recarregando {{service}}…"
     },
     "palette": {
-      "searchPlaceholder": "Buscar, ou executar ex.: {{examples}}",
+      "searchPlaceholder": "Buscar terminais ou comandos, ex.: {{examples}}",
       "noCommandsFound": "Nenhum comando encontrado",
       "hints": {
         "navigate": "Navegar",
+        "switch": "Alternar",
         "complete": "Completar",
         "run": "Executar"
       }
@@ -2298,6 +2365,10 @@
     },
     "cloud": {
       "openSessionFailed": "[{{step}}] abrir sessão",
+      "databaseRequiredForRemoteAccess": "Selecione MySQL ou PostgreSQL antes de ativar o acesso remoto à base de dados.",
+      "databaseProtectedAccount": "Escolha um nome de deploy que não utilize uma conta protegida do MySQL.",
+      "databaseAllowedIpsRequired": "Informe pelo menos um IP autorizado.",
+      "databaseAllowedIpInvalid": "IP autorizado inválido: {{ip}}. Informe um endereço IPv4 ou IPv6 individual.",
       "stdoutPipeFailed": "[{{step}}] pipe de stdout",
       "stderrPipeFailed": "[{{step}}] pipe de stderr",
       "stepStartFailed": "[{{step}}] iniciar",
@@ -2522,6 +2593,7 @@
       "decodeFailed": "decodificar notificações (também falhou ao preservar o arquivo corrompido: {{renameError}})"
     },
     "app": {
+      "projectPaused": "Retome o projeto pausado antes de iniciar suas tarefas.",
       "agentUsingMainCheckout": "outro agente está usando o checkout principal; pare-o antes de trocar de branch",
       "projectNotFound": "projeto \"{{name}}\" não encontrado",
       "noCatalogEntryForPhp": "nenhuma entrada no catálogo para o PHP {{version}}",
@@ -2604,5 +2676,83 @@
       "restartServiceFailed": "não foi possível reiniciar {{name}}",
       "routeTargetOutsideManagedDir": "o destino da rota está fora do diretório de worktrees gerenciado pelo LaraEnv"
     }
+  },
+  "git": {
+    "stageFolder": "Preparar arquivos da pasta",
+    "unstageFolder": "Retirar arquivos da pasta",
+    "status": {
+      "untracked": "Arquivo não rastreado",
+      "changed": "Arquivo alterado"
+    },
+    "title": "Controle de versão",
+    "refresh": "Atualizar",
+    "loading": "Carregando…",
+    "failed": "A operação Git falhou",
+    "unavailable": "Git indisponível neste espaço de trabalho.",
+    "detached": "HEAD separado",
+    "noUpstream": "Nenhum upstream configurado",
+    "ahead": "À frente",
+    "behind": "Atrás",
+    "search": "Buscar caminhos alterados",
+    "clean": "A árvore de trabalho está limpa.",
+    "index": "Alterações preparadas",
+    "worktree": "Alterações na árvore de trabalho",
+    "stageSelected": "Preparar selecionados",
+    "unstageSelected": "Retirar selecionados",
+    "review": "Revisar alterações",
+    "openFile": "Abrir arquivo",
+    "stageFile": "Preparar arquivo",
+    "unstageFile": "Retirar arquivo",
+    "wholeIndex": "O commit inclui todas as alterações preparadas no índice deste checkout, independentemente da seleção ou busca.",
+    "message": "Mensagem do commit",
+    "commit": "Commit",
+    "conflicts": "Resolva os conflitos antes de fazer commit.",
+    "remote": "Remoto",
+    "chooseRemote": "Escolha um remoto",
+    "remoteBranch": "Branch remota",
+    "setUpstream": "Definir como upstream",
+    "push": "Enviar",
+    "outputTruncated": "A saída foi truncada.",
+    "operationHistory": "Histórico de operações",
+    "cancel": "Cancelar",
+    "closeReview": "Fechar revisão",
+    "dirtyTitle": "Alterações não salvas antes de preparar",
+    "dirtyDescription": "Escolha entre salvar os documentos afetados ou preparar suas versões atuais no disco.",
+    "select": {
+      "index": "Selecionar arquivo preparado",
+      "worktree": "Selecionar arquivo da árvore de trabalho"
+    },
+    "choice": {
+      "save-and-stage": "Salvar e preparar",
+      "stage-disk": "Preparar versão do disco",
+      "cancel": "Cancelar"
+    },
+    "summary": {
+      "binary": "Arquivo binário: comparação de texto indisponível. É possível preparar o arquivo inteiro no Controle de versão.",
+      "too_large": "O arquivo excede o limite da comparação. É possível preparar o arquivo inteiro no Controle de versão.",
+      "gitlink": "Referência de submódulo: comparação de texto indisponível.",
+      "unsupported": "Formato de texto não suportado: comparação indisponível."
+    },
+    "operation": {
+      "stage": "Preparar",
+      "unstage": "Retirar do índice",
+      "commit": "Commit",
+      "push": "Enviar"
+    },
+    "state": {
+      "running": "Em andamento",
+      "cancelling": "Cancelando",
+      "succeeded": "Concluído",
+      "failed": "Falhou",
+      "cancelled": "Cancelado",
+      "uncertain": "Resultado remoto incerto"
+    }
+  },
+  "documents": {
+    "projectCatalogFailed": "Não foi possível carregar os projetos. Tente novamente.",
+    "title": "Arquivos", "files": "Arquivos", "selectProject": "Selecione um projeto", "relativePath": "Caminho relativo", "open": "Abrir", "loading": "Carregando…", "retry": "Tentar novamente", "loadMore": "Carregar mais", "closeTab": "Fechar aba", "preview": "Prévia", "source": "Código-fonte", "save": "Salvar", "compare": "Comparar alterações", "showComparison": "Mostrar comparação", "hideComparison": "Ocultar comparação", "reload": "Recarregar", "saveMerged": "Salvar texto mesclado", "mixedEol": "Finais de linha mistos: abra em um editor externo para editar com segurança.", "unavailable": "Este arquivo ou workspace está indisponível.", "openExternal": "Abrir no editor externo", "imageFailed": "Não foi possível carregar a imagem local.",
+    "openRemoteImage": "Abrir imagem remota", "dismiss": "Dispensar",
+    "problem": { "invalid_path": "Caminho inválido", "unavailable": "Workspace indisponível", "too_large": "Arquivo grande demais", "unsupported_format": "Formato de arquivo incompatível", "permission_denied": "Permissão negada", "conflict": "Arquivo alterado no disco", "io_error": "Não foi possível acessar o arquivo" },
+    "close": { "title": "Documentos não salvos", "description": "Escolha o que fazer com as alterações não salvas.", "save": "Salvar", "saveAll": "Salvar tudo", "discard": "Descartar", "cancel": "Cancelar" }
   }
 }

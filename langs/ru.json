@@ -5,6 +5,9 @@
     "nativeName": "Русский"
   },
   "backend": {
+    "sourceControl": {
+      "busyShutdown": "Дождитесь завершения операции контроля версий перед выходом или установкой обновления."
+    },
     "tray": {
       "tooltip": "LaraEnv — менеджер локальной среды разработки",
       "showWindow": "Показать окно",
@@ -243,7 +246,7 @@
       },
       "themeAppliedFlash": "Тема применена",
       "terminalCardTitle": "Терминал",
-      "terminalHint": "Выберите способ копирования и вставки в терминале.",
+      "terminalHint": "Ctrl+Shift+C / Ctrl+Shift+V работают в обоих режимах. Режим мыши также включает копирование и вставку правой кнопкой.",
       "terminalModeSavedFlash": "Режим терминала сохранён",
       "terminalMode": {
         "keyboardTitle": "Клавиатура",
@@ -402,6 +405,38 @@
       "removeSuccessFlash": "Команда удалена"
     },
     "experimental": {
+      "mcp": {
+        "cardTitle": "Подключение ассистентов к LaraEnv",
+        "description": "Разрешите ассистентам управлять проектами и службами, выполнять команды и просматривать локальные журналы через MCP.",
+        "enableLabel": "Включить локальный MCP",
+        "keepOpen": "Для работы MCP оставьте LaraEnv открытым.",
+        "checking": "Проверка…",
+        "disabled": "Отключён",
+        "ready": "Готов",
+        "unavailable": "Недоступен",
+        "unavailableHint": "Локальный MCP включён, но доступ недоступен. Попробуйте включить его снова.",
+        "loadFailed": "Не удалось проверить состояние MCP. Попробуйте снова.",
+        "retry": "Повторить",
+        "changeFailed": "Не удалось изменить доступ к локальному MCP. Попробуйте снова.",
+        "enabledFlash": "Локальный MCP включён",
+        "disabledFlash": "Локальный MCP отключён",
+        "clientsHint": "Включите MCP и зарегистрируйте нужные клиенты.",
+        "registered": "Зарегистрирован",
+        "notRegistered": "Не зарегистрирован",
+        "registrationError": "Не удалось проверить регистрацию",
+        "registerClient": "Зарегистрировать {{client}}",
+        "updateClient": "Обновить регистрацию {{client}}",
+        "registerButton": "Зарегистрировать",
+        "updateButton": "Обновить регистрацию",
+        "registering": "Регистрация…",
+        "registeredFlash": "{{client}} зарегистрирован",
+        "registerFailed": "Не удалось зарегистрировать {{client}}. Проверьте конфигурацию и попробуйте снова.",
+        "restartHint": "Перезапустите {{client}}, чтобы применить регистрацию.",
+        "activityTitle": "Последние действия MCP",
+        "activityEmpty": "Действий MCP пока нет.",
+        "activitySuccess": "Завершено",
+        "activityFailed": "Ошибка"
+      },
       "agentSessions": {
         "cardTitle": "Сессии агентов",
         "title": "ИИ-агенты кодинга с упором на проект",
@@ -502,7 +537,26 @@
       "openPageButton": "Открыть страницу загрузки"
     }
   },
+  "workspace": {
+    "navigation": {
+      "editor": "Редактор",
+      "showEditor": "Показать редактор",
+      "hideEditor": "Скрыть редактор",
+      "title": "Навигация рабочего пространства",
+      "agents": "Агенты",
+      "files": "Файлы",
+      "git": "Git",
+      "openFiles": "Открыть файлы рабочей области",
+      "show": "Показать навигацию",
+      "hide": "Скрыть навигатор",
+      "resize": "Изменить ширину навигатора",
+      "sshFiles": "Откройте Файлы в терминале SSH для просмотра через SFTP."
+    }
+  },
   "sidebar": {
+    "collapse": "Свернуть навигацию",
+    "expand": "Развернуть навигацию",
+    "updateAvailable": "Доступно обновление",
     "nav": {
       "dashboard": "Дашборд",
       "projects": "Проекты",
@@ -929,6 +983,10 @@
       "cloneRepo": "Клонирование репозитория",
       "bootstrapMysqlDb": "Начальная настройка БД MySQL + пользователя для {{name}}",
       "ensureEnvExists": "Проверка наличия .env",
+      "bootstrapPostgresDb": "Создание базы PostgreSQL и пользователя для {{name}}",
+      "configureDatabaseAccess": "Настройка доступа к базе данных",
+      "dropManagedPostgresDb": "Удаление базы PostgreSQL и пользователя, созданных LaraEnv",
+      "revokePreviousDatabaseAccess": "Отзыв прежнего доступа к базе данных {{database}}",
       "runBuildScript": "Выполнение скрипта сборки",
       "runDeployPipeline": "Выполнение пайплайна деплоя",
       "setLaravelPermissions": "Установка прав среды Laravel (storage, bootstrap/cache)",
@@ -1020,6 +1078,12 @@
       "complete": "Определение завершено"
     },
     "applyModal": {
+      "databaseRemoteAccessLabel": "Разрешить удалённый доступ к базе данных",
+      "databaseRemoteAccessHint": "По умолчанию выключено. Повторное применение включает или отзывает доступ этого развёртывания.",
+      "databaseAllowedIpsLabel": "Разрешённые IP-адреса",
+      "databaseAllowedIpsPlaceholder": "203.0.113.42, 2001:db8::2",
+      "databaseAllowedIpsHint": "Отдельные адреса IPv4 или IPv6 через запятую или с новой строки. Требуется активный UFW и отдельный пользователь базы данных проекта.",
+      "databaseAllowedIpsRequired": "Укажите хотя бы один разрешённый IP-адрес.",
       "heading": "Применение — {{name}}",
       "projectTypeLabel": "Тип проекта",
       "projectKind": {
@@ -1099,6 +1163,7 @@
       "buildingPlan": "Построение плана…"
     },
     "destroyModal": {
+      "itemManagedPostgres": "Базы PostgreSQL и пользователи, созданные LaraEnv для этого развёртывания (если есть)",
       "title": "Уничтожить {{name}}?",
       "introBefore": "Это действие подключится по SSH к",
       "introAfter": "и безвозвратно удалит:",
@@ -2000,6 +2065,11 @@
     }
   },
   "terminal": {
+    "clipboard": {
+      "copyFailed": "Не удалось скопировать. Выделение сохранено; попробуйте ещё раз.",
+      "pasteFailed": "Не удалось прочитать буфер обмена. Попробуйте вставить ещё раз.",
+      "inputFailed": "Не удалось отправить ввод в этот терминал. Проверьте сеанс или соединение."
+    },
     "pickTerminalTypeTooltip": "выбрать тип терминала",
     "openTerminalHeader": "Открыть терминал",
     "noTerminalAvailable": "терминал недоступен",
@@ -2061,6 +2131,8 @@
     },
     "workspace": {
       "agentNotInWorkspace": "Терминал этого активного агента отсутствует в текущем рабочем пространстве.",
+      "terminalNotInWorkspace": "Этот терминал больше не открыт в этом окне.",
+      "paneNumber": "Панель {{number}}",
       "detachFailed": "Не удалось открыть отдельное окно: {{error}}",
       "routingReady": "Маршрутизация {{project}} готова: {{routed}}",
       "primaryDomain": "основной домен",
@@ -2086,11 +2158,8 @@
       "hideSessionNavigatorTooltip": "Скрыть навигатор сессий",
       "showSessionNavigatorTooltip": "Показать навигатор сессий",
       "detachedWindowBadge": "Отдельное окно",
-      "hideAgentsTooltip": "Скрыть агентов",
-      "showAgentsTooltip": "Показать агентов",
       "agentsLabel": "Агенты",
       "terminalLabel": "Терминал",
-      "sessionsStayOpenNote": "сессии остаются открытыми как вкладки",
       "flash": {
         "enableAgentSessionsFailed": "Не удалось включить сессии агентов: {{error}}",
         "agentSessionsEnabled": "Сессии агентов включены",
@@ -2112,7 +2181,7 @@
     "groups": {
       "navigation": "Навигация",
       "services": "Службы",
-      "agentSessions": "Сессии агентов",
+      "openTerminals": "Открытые терминалы",
       "run": "Запуск",
       "custom": "Пользовательские"
     },
@@ -2128,10 +2197,7 @@
       "openFolder": "Открыть папку · {{name}}",
       "openInEditor": "Открыть в редакторе · {{name}}",
       "openInBrowser": "Открыть в браузере · {{name}}",
-      "focusVerb": "Фокус",
-      "resumeVerb": "Возобновить",
-      "restartVerb": "Перезапустить",
-      "sessionEntry": "{{verb}} {{title}} · {{project}}",
+      "currentTerminal": "Текущий",
       "newProject": {
         "laravel": "Новый проект Laravel",
         "wordpress": "Новый сайт WordPress",
@@ -2152,10 +2218,11 @@
       "reloadingService": "Перезагрузка {{service}}…"
     },
     "palette": {
-      "searchPlaceholder": "Поиск или команда, например: {{examples}}",
+      "searchPlaceholder": "Поиск терминалов или команд, например: {{examples}}",
       "noCommandsFound": "Команды не найдены",
       "hints": {
         "navigate": "Перейти",
+        "switch": "Переключить",
         "complete": "Автодополнение",
         "run": "Выполнить"
       }
@@ -2309,6 +2376,10 @@
     },
     "cloud": {
       "openSessionFailed": "[{{step}}] открытие сессии",
+      "databaseRequiredForRemoteAccess": "Выберите MySQL или PostgreSQL перед включением удалённого доступа.",
+      "databaseProtectedAccount": "Выберите имя развёртывания, которое не использует защищённую учётную запись MySQL.",
+      "databaseAllowedIpsRequired": "Укажите хотя бы один разрешённый IP-адрес.",
+      "databaseAllowedIpInvalid": "Недопустимый IP-адрес: {{ip}}. Укажите отдельный адрес IPv4 или IPv6.",
       "stdoutPipeFailed": "[{{step}}] канал stdout",
       "stderrPipeFailed": "[{{step}}] канал stderr",
       "stepStartFailed": "[{{step}}] запуск",
@@ -2533,6 +2604,7 @@
       "decodeFailed": "декодирование уведомлений (также не удалось сохранить повреждённый файл: {{renameError}})"
     },
     "app": {
+      "projectPaused": "Возобновите приостановленный проект перед запуском его задач.",
       "agentUsingMainCheckout": "другой агент использует основной checkout; остановите его перед переключением веток",
       "projectNotFound": "проект «{{name}}» не найден",
       "noCatalogEntryForPhp": "нет записи в каталоге для PHP {{version}}",
@@ -2615,5 +2687,83 @@
       "restartServiceFailed": "не удалось перезапустить {{name}}",
       "routeTargetOutsideManagedDir": "цель маршрута находится вне управляемой LaraEnv директории worktree"
     }
+  },
+  "git": {
+    "stageFolder": "Индексировать файлы папки",
+    "unstageFolder": "Убрать файлы папки из индекса",
+    "status": {
+      "untracked": "Неотслеживаемый файл",
+      "changed": "Изменённый файл"
+    },
+    "title": "Контроль версий",
+    "refresh": "Обновить",
+    "loading": "Загрузка…",
+    "failed": "Операция Git завершилась ошибкой",
+    "unavailable": "Git недоступен для этой рабочей области.",
+    "detached": "Отсоединённый HEAD",
+    "noUpstream": "Upstream не настроен",
+    "ahead": "Впереди",
+    "behind": "Позади",
+    "search": "Поиск изменённых путей",
+    "clean": "Рабочее дерево чистое.",
+    "index": "Подготовленные изменения",
+    "worktree": "Изменения рабочего дерева",
+    "stageSelected": "Подготовить выбранные",
+    "unstageSelected": "Убрать выбранные из индекса",
+    "review": "Просмотреть изменения",
+    "openFile": "Открыть файл",
+    "stageFile": "Подготовить файл",
+    "unstageFile": "Убрать файл из индекса",
+    "wholeIndex": "Коммит включает все подготовленные изменения в индексе этой рабочей копии независимо от выбора и поиска.",
+    "message": "Сообщение коммита",
+    "commit": "Создать коммит",
+    "conflicts": "Разрешите конфликты перед коммитом.",
+    "remote": "Удалённый репозиторий",
+    "chooseRemote": "Выберите удалённый репозиторий",
+    "remoteBranch": "Удалённая ветка",
+    "setUpstream": "Назначить upstream",
+    "push": "Отправить",
+    "outputTruncated": "Вывод обрезан.",
+    "operationHistory": "История операций",
+    "cancel": "Отмена",
+    "closeReview": "Закрыть просмотр",
+    "dirtyTitle": "Несохранённые изменения перед подготовкой",
+    "dirtyDescription": "Сохраните затронутые документы или подготовьте их текущие версии на диске.",
+    "select": {
+      "index": "Выбрать подготовленный файл",
+      "worktree": "Выбрать файл рабочего дерева"
+    },
+    "choice": {
+      "save-and-stage": "Сохранить и подготовить",
+      "stage-disk": "Подготовить версию с диска",
+      "cancel": "Отмена"
+    },
+    "summary": {
+      "binary": "Двоичный файл: сравнение текста недоступно. Подготовить весь файл можно в разделе контроля версий.",
+      "too_large": "Файл превышает предел сравнения текста. Подготовить весь файл можно в разделе контроля версий.",
+      "gitlink": "Ссылка на подмодуль: сравнение текста недоступно.",
+      "unsupported": "Неподдерживаемый текстовый формат: сравнение недоступно."
+    },
+    "operation": {
+      "stage": "Подготовка",
+      "unstage": "Удаление из индекса",
+      "commit": "Коммит",
+      "push": "Отправка"
+    },
+    "state": {
+      "running": "Выполняется",
+      "cancelling": "Отмена выполняется",
+      "succeeded": "Завершено",
+      "failed": "Ошибка",
+      "cancelled": "Отменено",
+      "uncertain": "Результат на сервере неизвестен"
+    }
+  },
+  "documents": {
+    "projectCatalogFailed": "Не удалось загрузить проекты. Повторите попытку.",
+    "title": "Файлы", "files": "Файлы", "selectProject": "Выберите проект", "relativePath": "Относительный путь", "open": "Открыть", "loading": "Загрузка…", "retry": "Повторить", "loadMore": "Загрузить ещё", "closeTab": "Закрыть вкладку", "preview": "Предпросмотр", "source": "Исходный текст", "save": "Сохранить", "compare": "Сравнить изменения", "showComparison": "Показать сравнение", "hideComparison": "Скрыть сравнение", "reload": "Перезагрузить", "saveMerged": "Сохранить объединённый текст", "mixedEol": "Смешанные окончания строк: для безопасного редактирования откройте во внешнем редакторе.", "unavailable": "Файл или рабочая область недоступны.", "openExternal": "Открыть во внешнем редакторе", "imageFailed": "Не удалось загрузить локальное изображение.",
+    "openRemoteImage": "Открыть удалённое изображение", "dismiss": "Закрыть",
+    "problem": { "invalid_path": "Недопустимый путь", "unavailable": "Рабочая область недоступна", "too_large": "Файл слишком большой", "unsupported_format": "Неподдерживаемый формат файла", "permission_denied": "Доступ запрещён", "conflict": "Файл изменён на диске", "io_error": "Не удалось открыть файл" },
+    "close": { "title": "Несохранённые документы", "description": "Выберите, что сделать с несохранёнными изменениями.", "save": "Сохранить", "saveAll": "Сохранить всё", "discard": "Отменить", "cancel": "Отмена" }
   }
 }

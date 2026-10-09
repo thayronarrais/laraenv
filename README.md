@@ -33,7 +33,9 @@
 
 ## Why LaraEnv?
 
-- **No Docker. No WSL. No Electron.** Native Windows binary (~13 MB) running on WebView2.
+- **Native Windows app** running on WebView2.
+- **One workspace for shells, agents, files and Git** — browse files, preview Markdown, edit text, review diffs, stage changes, commit and push.
+- **Optional local MCP** — register Claude Code, Codex or Cursor from Settings and let assistants work with your local environment.
 - **Multi-runtime out of the box** — PHP 5.6 → 8.5 side-by-side (8.6 available as a beta), multiple Node versions, Python 3.13.
 - **Real services, not containers** — Nginx, Apache, Caddy, MySQL, PostgreSQL, Redis, Mailpit. Installed and started by the app.
 - **Pro tier** — zero-knowledge cloud sync of your SSH keys / cron jobs and one-click VPS deploys.
@@ -41,6 +43,8 @@
 ---
 
 ## Download
+
+**Latest release: [v0.5.4](https://github.com/thayronarrais/laraenv/releases/tag/v0.5.4).** Read the [release notes](docs/releases/0.5.4.md).
 
 Two editions, same application.
 
@@ -62,6 +66,16 @@ All versions are on the [Releases page](https://github.com/thayronarrais/laraenv
 ---
 
 ## Features
+
+### New in v0.5.4
+
+- **Agents / Files / Git:** one sidebar with tabs. Collapse the main navigation or hide the navigator and editor to recover space while terminals keep running.
+- **Files and Markdown:** folders before files, a text editor, Markdown source/preview, supported image previews and protection for unsaved or externally changed documents.
+- **Git:** collapsible changed folders, staged and working-tree diffs, stage/unstage, commit and a separate push action. Commit includes the selected checkout's entire staged index.
+- **MCP:** optional local access for project, runtime, service, worker, command, log, database and diagnostic operations. Disabled by default.
+- **Deployment databases:** optional remote MySQL/PostgreSQL access restricted to individual source IP addresses, configured during Apply and off by default.
+
+Guides: [Workspace](docs/workspace.md) · [MCP setup](docs/mcp.md) · [Deployment database access](docs/deployment-database-access.md).
 
 | | |
 |---|---|

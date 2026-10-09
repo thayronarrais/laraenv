@@ -6,6 +6,9 @@
     "needsNativeReview": true
   },
   "backend": {
+    "sourceControl": {
+      "busyShutdown": "请等待版本控制操作完成后再退出或安装更新。"
+    },
     "tray": {
       "tooltip": "LaraEnv — 本地开发环境管理工具",
       "showWindow": "显示窗口",
@@ -244,7 +247,7 @@
       },
       "themeAppliedFlash": "主题已应用",
       "terminalCardTitle": "终端",
-      "terminalHint": "选择在终端中复制和粘贴的方式。",
+      "terminalHint": "Ctrl+Shift+C / Ctrl+Shift+V 在两种模式下均可使用。鼠标模式还支持右键复制和粘贴。",
       "terminalModeSavedFlash": "终端模式已保存",
       "terminalMode": {
         "keyboardTitle": "键盘",
@@ -400,6 +403,38 @@
       "removeSuccessFlash": "命令已删除"
     },
     "experimental": {
+      "mcp": {
+        "cardTitle": "将助手连接到 LaraEnv",
+        "description": "允许助手通过 MCP 管理项目和服务、执行命令及查看本地日志。",
+        "enableLabel": "启用本地 MCP",
+        "keepOpen": "使用 MCP 时请保持 LaraEnv 打开。",
+        "checking": "正在检查…",
+        "disabled": "已禁用",
+        "ready": "就绪",
+        "unavailable": "不可用",
+        "unavailableHint": "本地 MCP 已启用，但当前无法访问。请尝试重新启用。",
+        "loadFailed": "无法检查 MCP 状态，请重试。",
+        "retry": "重试",
+        "changeFailed": "无法更改本地 MCP 访问状态，请重试。",
+        "enabledFlash": "本地 MCP 已启用",
+        "disabledFlash": "本地 MCP 已禁用",
+        "clientsHint": "启用 MCP 后，注册您使用的客户端。",
+        "registered": "已注册",
+        "notRegistered": "未注册",
+        "registrationError": "无法检查注册状态",
+        "registerClient": "注册 {{client}}",
+        "updateClient": "更新 {{client}} 的注册",
+        "registerButton": "注册",
+        "updateButton": "更新注册",
+        "registering": "正在注册…",
+        "registeredFlash": "{{client}} 已注册",
+        "registerFailed": "无法注册 {{client}}，请检查配置后重试。",
+        "restartHint": "重新打开 {{client}} 以应用注册。",
+        "activityTitle": "最近的 MCP 活动",
+        "activityEmpty": "暂无 MCP 活动。",
+        "activitySuccess": "已完成",
+        "activityFailed": "失败"
+      },
       "agentSessions": {
         "cardTitle": "智能体会话",
         "title": "项目优先的 AI 编程智能体",
@@ -500,7 +535,26 @@
       "openPageButton": "打开下载页面"
     }
   },
+  "workspace": {
+    "navigation": {
+      "editor": "编辑器",
+      "showEditor": "显示编辑器",
+      "hideEditor": "隐藏编辑器",
+      "title": "工作区导航",
+      "agents": "智能体",
+      "files": "文件",
+      "git": "Git",
+      "openFiles": "打开工作区文件",
+      "show": "显示导航栏",
+      "hide": "隐藏导航器",
+      "resize": "调整导航器宽度",
+      "sshFiles": "从 SSH 终端打开文件以使用 SFTP 浏览。"
+    }
+  },
   "sidebar": {
+    "collapse": "折叠导航",
+    "expand": "展开导航",
+    "updateAvailable": "有可用更新",
     "nav": {
       "dashboard": "仪表盘",
       "projects": "项目",
@@ -915,6 +969,10 @@
       "cloneRepo": "克隆代码仓库",
       "bootstrapMysqlDb": "为 {{name}} 初始化 MySQL 数据库和用户",
       "ensureEnvExists": "确保 .env 文件存在",
+      "bootstrapPostgresDb": "为 {{name}} 创建 PostgreSQL 数据库和用户",
+      "configureDatabaseAccess": "配置数据库访问",
+      "dropManagedPostgresDb": "删除 LaraEnv 创建的 PostgreSQL 数据库和用户",
+      "revokePreviousDatabaseAccess": "撤销之前的 {{database}} 数据库访问权限",
       "runBuildScript": "运行构建脚本",
       "runDeployPipeline": "运行部署流水线",
       "setLaravelPermissions": "设置 Laravel 运行时权限 (storage, bootstrap/cache)",
@@ -1006,6 +1064,12 @@
       "complete": "检测完成"
     },
     "applyModal": {
+      "databaseRemoteAccessLabel": "允许远程访问数据库",
+      "databaseRemoteAccessHint": "默认关闭。重新应用配置以启用或撤销此部署的访问权限。",
+      "databaseAllowedIpsLabel": "允许的 IP 地址",
+      "databaseAllowedIpsPlaceholder": "203.0.113.42, 2001:db8::2",
+      "databaseAllowedIpsHint": "单个 IPv4 或 IPv6 地址，以逗号或换行分隔。需要启用 UFW 并使用专用的项目数据库用户。",
+      "databaseAllowedIpsRequired": "请至少输入一个允许的 IP 地址。",
       "heading": "应用配置 — {{name}}",
       "projectTypeLabel": "项目类型",
       "projectKind": {
@@ -1085,6 +1149,7 @@
       "buildingPlan": "正在构建方案…"
     },
     "destroyModal": {
+      "itemManagedPostgres": "LaraEnv 为此部署创建的 PostgreSQL 数据库和用户（如有）",
       "title": "完全销毁 {{name}}？",
       "introBefore": "此操作将通过 SSH 登录到",
       "introAfter": "并不可逆地移除:",
@@ -1968,6 +2033,11 @@
     }
   },
   "terminal": {
+    "clipboard": {
+      "copyFailed": "无法复制。已保留选中的文本，请重试。",
+      "pasteFailed": "无法读取剪贴板，请重新粘贴。",
+      "inputFailed": "无法向此终端发送输入，请检查会话或连接。"
+    },
     "pickTerminalTypeTooltip": "选择终端类型",
     "openTerminalHeader": "打开终端",
     "noTerminalAvailable": "无可用终端",
@@ -2029,6 +2099,8 @@
     },
     "workspace": {
       "agentNotInWorkspace": "此活动的智能体终端不在当前工作区中。",
+      "terminalNotInWorkspace": "此终端已不再在此窗口中打开。",
+      "paneNumber": "窗格 {{number}}",
       "detachFailed": "无法打开独立窗口: {{error}}",
       "routingReady": "{{project}} 路由已就绪: {{routed}}",
       "primaryDomain": "主域名",
@@ -2054,11 +2126,8 @@
       "hideSessionNavigatorTooltip": "隐藏会话导航器",
       "showSessionNavigatorTooltip": "显示会话导航器",
       "detachedWindowBadge": "独立窗口",
-      "hideAgentsTooltip": "隐藏智能体",
-      "showAgentsTooltip": "显示智能体",
       "agentsLabel": "智能体",
       "terminalLabel": "终端",
-      "sessionsStayOpenNote": "会话保持为标签页打开",
       "flash": {
         "enableAgentSessionsFailed": "无法启用智能体会话: {{error}}",
         "agentSessionsEnabled": "智能体会话已启用",
@@ -2080,7 +2149,7 @@
     "groups": {
       "navigation": "导航",
       "services": "服务",
-      "agentSessions": "智能体会话",
+      "openTerminals": "已打开的终端",
       "run": "运行",
       "custom": "自定义"
     },
@@ -2096,10 +2165,7 @@
       "openFolder": "打开文件夹 · {{name}}",
       "openInEditor": "在编辑器中打开 · {{name}}",
       "openInBrowser": "在浏览器中打开 · {{name}}",
-      "focusVerb": "聚焦",
-      "resumeVerb": "恢复",
-      "restartVerb": "重启",
-      "sessionEntry": "{{verb}} {{title}} · {{project}}",
+      "currentTerminal": "当前",
       "newProject": {
         "laravel": "新建 Laravel 项目",
         "wordpress": "新建 WordPress 站点",
@@ -2120,10 +2186,11 @@
       "reloadingService": "正在重载 {{service}}…"
     },
     "palette": {
-      "searchPlaceholder": "搜索命令，或输入例如 {{examples}}",
+      "searchPlaceholder": "搜索终端或命令，例如 {{examples}}",
       "noCommandsFound": "未找到命令",
       "hints": {
         "navigate": "导航",
+        "switch": "切换",
         "complete": "补全",
         "run": "运行"
       }
@@ -2277,6 +2344,10 @@
     },
     "cloud": {
       "openSessionFailed": "[{{step}}] 打开会话失败",
+      "databaseRequiredForRemoteAccess": "启用远程数据库访问前，请选择 MySQL 或 PostgreSQL。",
+      "databaseProtectedAccount": "请选择不会使用受保护 MySQL 账户的部署名称。",
+      "databaseAllowedIpsRequired": "请至少输入一个允许的 IP 地址。",
+      "databaseAllowedIpInvalid": "无效的 IP 地址：{{ip}}。请输入单个 IPv4 或 IPv6 地址。",
       "stdoutPipeFailed": "[{{step}}] 标准输出管道失败",
       "stderrPipeFailed": "[{{step}}] 标准错误管道失败",
       "stepStartFailed": "[{{step}}] 启动失败",
@@ -2501,6 +2572,7 @@
       "decodeFailed": "解码通知失败（尝试备份损坏文件也失败: {{renameError}}）"
     },
     "app": {
+      "projectPaused": "启动任务前，请先恢复已暂停的项目。",
       "agentUsingMainCheckout": "另一个智能体正在使用主检出分支；切换分支前请停止它",
       "projectNotFound": "未找到项目 \"{{name}}\"",
       "noCatalogEntryForPhp": "目录中没有 PHP {{version}} 的条目",
@@ -2583,5 +2655,83 @@
       "restartServiceFailed": "无法重启 {{name}}",
       "routeTargetOutsideManagedDir": "路由目标位于 LaraEnv 托管工作树目录之外"
     }
+  },
+  "git": {
+    "stageFolder": "暂存文件夹中的文件",
+    "unstageFolder": "取消暂存文件夹中的文件",
+    "status": {
+      "untracked": "未跟踪的文件",
+      "changed": "已更改的文件"
+    },
+    "title": "源代码管理",
+    "refresh": "刷新",
+    "loading": "加载中…",
+    "failed": "Git 操作失败",
+    "unavailable": "此工作区无法使用 Git。",
+    "detached": "游离 HEAD",
+    "noUpstream": "未配置上游",
+    "ahead": "领先",
+    "behind": "落后",
+    "search": "搜索已更改的路径",
+    "clean": "工作区干净。",
+    "index": "已暂存的更改",
+    "worktree": "工作区更改",
+    "stageSelected": "暂存所选文件",
+    "unstageSelected": "取消暂存所选文件",
+    "review": "查看更改",
+    "openFile": "打开文件",
+    "stageFile": "暂存文件",
+    "unstageFile": "取消暂存文件",
+    "wholeIndex": "提交包含此检出目录索引中的所有已暂存更改，不受选择或搜索影响。",
+    "message": "提交信息",
+    "commit": "提交",
+    "conflicts": "请先解决冲突再提交。",
+    "remote": "远程仓库",
+    "chooseRemote": "选择远程仓库",
+    "remoteBranch": "远程分支",
+    "setUpstream": "设为上游",
+    "push": "推送",
+    "outputTruncated": "输出已截断。",
+    "operationHistory": "操作历史",
+    "cancel": "取消",
+    "closeReview": "关闭审阅",
+    "dirtyTitle": "暂存前有未保存的更改",
+    "dirtyDescription": "请选择保存受影响的文档，或暂存其当前磁盘版本。",
+    "select": {
+      "index": "选择已暂存文件",
+      "worktree": "选择工作区文件"
+    },
+    "choice": {
+      "save-and-stage": "保存并暂存",
+      "stage-disk": "暂存磁盘版本",
+      "cancel": "取消"
+    },
+    "summary": {
+      "binary": "二进制文件：无法比较文本。可在源代码管理中暂存整个文件。",
+      "too_large": "文件超出文本比较大小限制。可在源代码管理中暂存整个文件。",
+      "gitlink": "子模块引用：无法比较文本。",
+      "unsupported": "不支持此文本格式：无法比较。"
+    },
+    "operation": {
+      "stage": "暂存",
+      "unstage": "取消暂存",
+      "commit": "提交",
+      "push": "推送"
+    },
+    "state": {
+      "running": "运行中",
+      "cancelling": "正在取消",
+      "succeeded": "已完成",
+      "failed": "失败",
+      "cancelled": "已取消",
+      "uncertain": "远程结果不确定"
+    }
+  },
+  "documents": {
+    "projectCatalogFailed": "无法加载项目，请重试。",
+    "title": "文件", "files": "文件", "selectProject": "选择项目", "relativePath": "相对路径", "open": "打开", "loading": "正在加载…", "retry": "重试", "loadMore": "加载更多", "closeTab": "关闭标签页", "preview": "预览", "source": "源码", "save": "保存", "compare": "比较更改", "showComparison": "显示比较", "hideComparison": "隐藏比较", "reload": "重新加载", "saveMerged": "保存合并后的文本", "mixedEol": "文件包含混合换行符，请使用外部编辑器安全编辑。", "unavailable": "文件或工作区不可用。", "openExternal": "在外部编辑器中打开", "imageFailed": "无法加载本地图像。",
+    "openRemoteImage": "打开远程图片", "dismiss": "关闭",
+    "problem": { "invalid_path": "路径无效", "unavailable": "工作区不可用", "too_large": "文件过大", "unsupported_format": "不支持的文件格式", "permission_denied": "权限不足", "conflict": "磁盘上的文件已更改", "io_error": "无法访问文件" },
+    "close": { "title": "未保存的文档", "description": "请选择如何处理未保存的更改。", "save": "保存", "saveAll": "全部保存", "discard": "放弃", "cancel": "取消" }
   }
 }
