@@ -41,11 +41,13 @@ Project pause stops the project's dev server/queue and removes its web serving c
 
 Commands run in the selected project's directory with its PHP/Node runtime at the beginning of PATH. Artisan and Composer invoke the selected PHP; npm invokes the selected Node directly, without constructing a shell command. Inspection commands can run without confirmation. Other commands and scripts, including indirect destructive work, require `confirm: true`. Starting/restarting project dev servers or queue workers, and enabling/running saved cron commands, also requires confirmation. Workers reuse the arguments saved in LaraEnv project settings. Arbitrary shell command strings, executable names and arguments that redirect the selected project scope are rejected.
 
+The effective runtimes include [automatic project requirement detection](project-runtime-detection.md), after manual overrides. In automatic mode, a declared requirement without a compatible verified installation stops a new command instead of silently substituting the global runtime. Project details and MCP diagnostics expose the effective selection, requirement and source. Existing workers keep their runtime until restarted.
+
 Command output streams as MCP progress notifications when the client requests progress, and is also returned with an exit code, duration and truncation indicator. Clients decide how to display these notifications. Returned output is capped at 256 KiB. Cancellation/timeouts terminate the command's Windows process tree. Calls default to 60 seconds, up to 300 seconds; request timing additionally limits its loopback request to 15 seconds and reads at most 64 KiB.
 
 Database operations use LaraEnv's local engines and bundled client utilities (MySQL on 127.0.0.1:3306; PostgreSQL on 127.0.0.1:5432). Start the engine first. Database names must be ASCII identifiers of at most 63 characters; system databases cannot be dropped. Snapshots are SQL dumps under LaraEnv's `state/mcp-snapshots`, limited to 512 MiB, and failed partial files are removed. No restore operation is exposed.
 
-Doctor reports findings without changing configuration. Request timing connects only to loopback for a catalog project, validates HTTPS certificates and never follows redirects. The activity list records every tool call's action, target, time, outcome and duration; it excludes command arguments, output, error content and credentials.
+The MCP Doctor reports findings without changing configuration. The separate [Site Doctor interface](site-doctor.md) on Projects offers its supported individual repairs. Request timing connects only to loopback for a catalog project, validates HTTPS certificates and never follows redirects. The activity list records every tool call's action, target, time, outcome and duration; it excludes command arguments, output, error content and credentials.
 
 ## Example prompts
 

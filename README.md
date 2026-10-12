@@ -15,7 +15,7 @@
   <a href="https://github.com/thayronarrais/laraenv/releases"><img src="https://img.shields.io/github/downloads/thayronarrais/laraenv/total?style=flat-square&color=22d3ee" alt="Downloads"/></a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-0078d6?style=flat-square" alt="Platform"/>
   <img src="https://img.shields.io/badge/built%20with-Wails%20%2B%20Go%20%2B%20React-34d399?style=flat-square" alt="Stack"/>
-  <img src="https://img.shields.io/badge/license-source--available-f59e0b?style=flat-square" alt="License"/>
+  <img src="https://img.shields.io/badge/repository-releases%20%2B%20docs-f59e0b?style=flat-square" alt="Repository contains releases and documentation"/>
 </p>
 
 <p align="center">
@@ -26,7 +26,7 @@
 </p>
 
 <p align="center">
-  <img src="./docs/dashboard.jpg" alt="LaraEnv Dashboard" width="100%" />
+  <img src="./docs/screenshots/dashboard.png" alt="LaraEnv Dashboard" width="100%" />
 </p>
 
 ---
@@ -37,6 +37,9 @@
 - **One workspace for shells, agents, files and Git** — browse files, preview Markdown, edit text, review diffs, stage changes, commit and push.
 - **Optional local MCP** — register Claude Code, Codex or Cursor from Settings and let assistants work with your local environment.
 - **Multi-runtime out of the box** — PHP 5.6 → 8.5 side-by-side (8.6 available as a beta), multiple Node versions, Python 3.13.
+- **Project requirements detected automatically** — choose compatible PHP/Node installations from version files and manifests, or keep a manual override.
+- **Projects organized by client tags** — compact rows, visible search, pagination, a separate details panel and customizable row shortcuts.
+- **Site Doctor** — review setup across many projects, separate actionable findings from optional suggestions, and run individual repairs with output.
 - **Real services, not containers** — Nginx, Apache, Caddy, MySQL, PostgreSQL, Redis, Mailpit. Installed and started by the app.
 - **Pro tier** — zero-knowledge cloud sync of your SSH keys / cron jobs and one-click VPS deploys.
 
@@ -44,7 +47,7 @@
 
 ## Download
 
-**Latest release: [v0.5.4](https://github.com/thayronarrais/laraenv/releases/tag/v0.5.4).** Read the [release notes](docs/releases/0.5.4.md).
+**Latest release: [v0.5.5](https://github.com/thayronarrais/laraenv/releases/tag/v0.5.5).** Read the [release notes](docs/releases/0.5.5.md).
 
 Two editions, same application.
 
@@ -63,24 +66,27 @@ A portable copy also leaves the machine's certificate store alone. Local HTTPS n
 
 All versions are on the [Releases page](https://github.com/thayronarrais/laraenv/releases). The in-app updater checks for new releases automatically and verifies them with SHA-256 before installing.
 
+The **0.5.5** release upgrades public **0.5.4** normally. If you installed a local test MSI numbered **0.5.6–0.5.18**, uninstall that test application before installing 0.5.5: Windows Installer blocks an in-place downgrade. Preserve `C:\laraenv`, your portable folder and project/database data. Those higher test numbers were development builds rather than public releases. Close LaraEnv before installing.
+
 ---
 
 ## Features
 
-### New in v0.5.4
+### New in v0.5.5
 
-- **Agents / Files / Git:** one sidebar with tabs. Collapse the main navigation or hide the navigator and editor to recover space while terminals keep running.
-- **Files and Markdown:** folders before files, a text editor, Markdown source/preview, supported image previews and protection for unsaved or externally changed documents.
-- **Git:** collapsible changed folders, staged and working-tree diffs, stage/unstage, commit and a separate push action. Commit includes the selected checkout's entire staged index.
-- **MCP:** optional local access for project, runtime, service, worker, command, log, database and diagnostic operations. Disabled by default.
-- **Deployment databases:** optional remote MySQL/PostgreSQL access restricted to individual source IP addresses, configured during Apply and off by default.
+- **Projects:** compact list, search by name/path/tag, client-tag counts, pages of 10/20/50 and one selected project's details panel. Colors follow the selected theme.
+- **Your row shortcuts:** choose and order editor, browser, terminal or folder, hide either slot and save the preference on this device.
+- **Automatic PHP and Node:** detect version files and manifest requirements, show the version and its source, and link missing compatible runtimes to Downloads. Manual choices remain available.
+- **Site Doctor:** inspect one or all projects, filter by health, review findings and run individual repairs. Laravel storage links are optional; inconclusive checks remain unverified.
 
-Guides: [Workspace](docs/workspace.md) · [MCP setup](docs/mcp.md) · [Deployment database access](docs/deployment-database-access.md).
+Guides: [Projects](docs/projects-workspace.md) · [Runtime detection](docs/project-runtime-detection.md) · [Site Doctor](docs/site-doctor.md).
+
+The workspace with **Agents / Files / Git**, Markdown and image previews, stage/unstage/commit/push, optional local MCP and deployment database access shipped in [0.5.4](docs/releases/0.5.4.md). See [Workspace](docs/workspace.md), [MCP setup](docs/mcp.md) and [Deployment database access](docs/deployment-database-access.md).
 
 | | |
 |---|---|
 | ⌨️ **Command Center** | Spotlight-style command palette. Press **Ctrl+K** in-app — or a configurable **global hotkey** that summons it even when LaraEnv is hidden to the tray. Navigate pages, start/stop services, open projects, scaffold new ones, and type-to-run `php artisan` / `npm` in any project. Save your own commands with custom hotkeys. |
-| 🚀 **Multi-runtime** | PHP 5.6 → 8.5 + multiple Node versions + Python 3.13 in parallel. Per-project overrides. Each PHP version gets its own FPM on a dedicated port (9074 for 7.4, 9085 for 8.5, etc). PHP 8.6 is offered as a **beta**, marked as such: it has no stable release yet, and no PECL extensions are published for it. On a machine with an older Visual C++ runtime it will ask for a newer one, naming the right download. |
+| 🚀 **Multi-runtime** | PHP 5.6 → 8.5 + multiple Node versions + Python 3.13 in parallel. Detect PHP/Node requirements automatically or use per-project overrides. Each PHP version gets a shared FPM pool on its own port (9074 for 7.4, 9085 for 8.5, etc). PHP 8.6 is offered as a **beta** and has no stable release or PECL builds in the catalog. |
 | 🧩 **PHP extensions** | Install Xdebug, Redis, MongoDB, APCu, Imagick or Memcached into any PHP version from the gear beside its FPM entry — the right build for that version, no hunting for DLLs. Swoole is not offered: it needs `epoll`/`kqueue` and has no native Windows build, so on Windows the route is WSL. |
 | 🌐 **Web servers** | **Nginx, Apache and Caddy**, with config auto-generated per project for whichever ones you install — switching between them needs no regeneration. Only one serves at a time; starting a second tells you which is already holding port 80 instead of failing at the socket. Per-project SSL is signed by a local CA the browser trusts, and all three share the same certificates. |
 | ⚙️ **Web server tuning UI** | Edit `client_max_body_size`, `fastcgi_read_timeout`, `proxy_read_timeout`, `worker_connections`, hash sizes — and Apache `Timeout`, `KeepAliveTimeout`, `LimitRequestBody`, `ProxyTimeout`. Saves rewrite the live config and reload the running service. Fixes 504-on-slow-uploads in dev. |
@@ -93,7 +99,8 @@ Guides: [Workspace](docs/workspace.md) · [MCP setup](docs/mcp.md) · [Deploymen
 | ⏰ **Cron** | 5/6-field expressions plus descriptors (`@hourly`, `@daily`). Per-job project context (PATH + cwd). Output captured into the UI. **Opt-in: run jobs even when LaraEnv is closed** via Windows Task Scheduler. |
 | 📊 **System monitor** | Live CPU, Memory, GPU gauges with sparklines, plus a system-drive **Disk** progress bar. Sampled every 1.5 s. |
 | 📁 **Projects** | Auto-detects type (Laravel / WordPress / plain), JS framework (React / Vue / Next / Nuxt / Astro), and package manager (npm / yarn / pnpm / bun). Templates: blank, Laravel, WordPress, Git clone, Vite, Next, Nuxt, Astro. |
-| 🏷️ **Tags + filtering** | Free-form labels per project, comma-separated input, filter chips on the Projects page. Same model for SSH hosts. |
+| 🏷️ **Tags + filtering** | Free-form labels per project, a searchable client-tag filter with counts, and project search/pagination. SSH hosts also support tags. |
+| 🩺 **Site Doctor** | Inspect project setup and runtime requirements, filter an all-project overview by health, and run available repairs individually. Optional suggestions and skipped checks are shown separately. |
 | 🔧 **Vhost editor** | Inline edit of the generated `nginx.conf` / Apache vhost with syntax highlighting. Reset-to-template in one click. |
 | 🔁 **Reverse proxy** | Per-project proxy port for Vite / Next / Nuxt dev servers. WebSocket headers included so HMR works through the proxy. |
 | ☁️ **Cloud sync (Pro)** | Zero-knowledge AES-256-GCM with Argon2id-derived keys — your SSH hosts, keys, cron jobs, and themes sync across machines without the server ever seeing the plaintext. |
@@ -110,7 +117,7 @@ Guides: [Workspace](docs/workspace.md) · [MCP setup](docs/mcp.md) · [Deploymen
 Live status of every service, the runtimes you have installed, the PHP-FPM ports in use, and a real-time system monitor (CPU / Memory / GPU + Disk). Start everything with **Start all** or pick services individually.
 
 <p align="center">
-  <img src="./docs/dashboard.jpg" alt="Dashboard" width="100%" />
+  <img src="./docs/screenshots/dashboard.png" alt="Dashboard" width="100%" />
 </p>
 
 ### Command Center
@@ -163,10 +170,12 @@ myapp npm run dev
 
 ### Projects
 
-Auto-detection identifies what kind of project lives in each `www\` subfolder. Each card shows the URL, PHP version, SSL toggle, terminal kind, vhost config, and free-form tags. The TLD is configurable globally.
+The compact list shows project name, path, runtime summary, stack and tags. Search, client-tag filtering and pagination keep large collections manageable. Choose your row shortcuts and select a project to open quick launch, runtime choices, Dev/queue controls and project tools in its details panel. The TLD remains configurable globally.
+
+PHP pools are shared by version and the web server is shared across sites. Dev and queue controls operate the selected project's processes. Run Doctor to inspect configuration health; a shared running server does not prove each application works. Read the [Projects guide](docs/projects-workspace.md).
 
 <p align="center">
-  <img src="./docs/projects.jpg" alt="Projects" width="100%" />
+  <img src="./docs/screenshots/projects-workspace.png" alt="Projects list with client-tag filtering, runtime summaries and a selected project's details panel" width="100%" />
 </p>
 
 ### Terminal
@@ -174,7 +183,7 @@ Auto-detection identifies what kind of project lives in each `www\` subfolder. E
 A real ConPTY terminal — not a fake one. Multi-tab, with split panes (`split →` horizontal, `split ↓` vertical). Each pane is a real session with persistent layout per tab. PowerShell, CMD, Git Bash, Cmder. **Tear any tab off into its own floating, always-on-top window** and dock it back when you're done — the layout is remembered between launches. Shells spawn with the live Windows PATH and honour each project's PHP/Node version.
 
 <p align="center">
-  <img src="./docs/terminal.jpg" alt="Terminal" width="100%" />
+  <img src="./docs/screenshots/workspace.png" alt="Terminal workspace with Agents, Files and Git beside project-aware terminal tabs" width="100%" />
 </p>
 
 ### SSH
@@ -182,7 +191,7 @@ A real ConPTY terminal — not a fake one. Multi-tab, with split panes (`split �
 Manage hosts, generate or import keys, test connections (TCP + handshake + version probe). Connect with one click — the session opens in the Terminal page. Filter by tag. Supports **ProxyJump** through any saved host (no credential re-entry) and an advanced **ProxyCommand** field for tools like `cloudflared access ssh`.
 
 <p align="center">
-  <img src="./docs/ssh.jpg" alt="SSH" width="100%" />
+  <img src="./docs/screenshots/ssh-manager.png" alt="SSH" width="100%" />
 </p>
 
 ### Cron
@@ -194,7 +203,7 @@ Per-project schedules with output capture. Toggle **"Run when LaraEnv is closed"
 Pick a saved SSH host, choose project type, web server (Apache or Nginx), database (MySQL or PostgreSQL), PHP version, optional Let's Encrypt HTTPS, and a build script — with **reusable script presets and variables** so common deploy recipes are one selection away. Hit **Deploy now** to push on demand, or let auto-deploy run a remote crontab that polls `git pull` at your chosen interval. Re-applying config is `.env`-safe and **preserves `storage/`** across runs. An activity log of every apply / pull is kept per deployment.
 
 <p align="center">
-  <img src="./docs/deployments.jpg" alt="Deployments — Apply config" width="100%" />
+  <img src="./docs/screenshots/deployments.png" alt="Deployments — Apply config" width="100%" />
 </p>
 
 ### Libs / Tools
@@ -211,7 +220,7 @@ A curated catalog of every runtime and service the app supports — install with
 - **Updates** — manual check, download, and install the latest MSI.
 
 <p align="center">
-  <img src="./docs/themes.jpg" alt="Settings — Appearance" width="100%" />
+  <img src="./docs/screenshots/appearance.png" alt="Settings — Appearance" width="100%" />
 </p>
 
 ---
@@ -307,7 +316,7 @@ Used daily by the author. Bugs, feature requests, and screenshots are welcome on
 
 ## License
 
-Source-available. Releases are free to use; the desktop client is open. The cloud server (sync + deploy backend) is private.
+Desktop releases are free to use. This public repository contains binary releases, user documentation, translation catalogues and the issue tracker. Desktop source is maintained in the separate private builder repository; the cloud server source is also private. This repository does not provide the desktop or server source tree.
 
 ---
 
