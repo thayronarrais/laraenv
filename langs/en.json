@@ -687,6 +687,8 @@
       "details": "Project details",
       "quickLaunch": "Quick launch",
       "development": "Development",
+      "configureDev": "Configure command",
+      "queueHeading": "Queue worker",
       "projectTools": "Project tools",
       "projectInformation": "Project information",
       "path": "Path",
@@ -707,6 +709,21 @@
       "paused": "Paused",
       "selectHint": "Select a project to view runtime settings and tools.",
       "filterByTag": "Filter by tag {{tag}}"
+    },
+    "commands": {
+      "title": "Project scripts",
+      "loading": "Loading scripts…",
+      "empty": "No scripts are defined in package.json.",
+      "loadError": "Could not load project scripts.",
+      "retry": "Try again",
+      "script": "Script",
+      "run": "Run in terminal",
+      "runScript": "Run {{command}} in terminal",
+      "customLabel": "Custom command",
+      "customPlaceholder": "e.g. npm run build",
+      "customRun": "Run command",
+      "hint": "Commands run in a project terminal using its PHP and Node versions. Stop continuous commands with Ctrl+C.",
+      "refresh": "Refresh scripts"
     },
     "reload": {
       "title": "Reload nginx/apache/php-fpm and refresh lists",
@@ -1753,6 +1770,7 @@
         "newSessionButtonLabel": "New session"
       },
       "actionsMenu": {
+        "viewMap": "View map",
         "triggerAria": "Actions for {{title}}",
         "foldersHeading": "Session folders",
         "openSession": "Open session",
@@ -1804,6 +1822,91 @@
         "tooltip": "Auto-switch to agents waiting for input, {{count}} waiting"
       },
       "footer": "Project → working copy → session"
+    },
+    "map": {
+      "title": "Agent map",
+      "close": "Close agent map",
+      "selectSession": "Select an agent session",
+      "loading": "Loading agent activity…",
+      "unavailable": "Agent activity is unavailable.",
+      "agents": {
+        "one": "{{count}} agent",
+        "other": "{{count}} agents"
+      },
+      "atLeastAgents": {
+        "one": "At least {{count}} agent",
+        "other": "At least {{count}} agents"
+      },
+      "activitySummary": "{{working}} working · {{waiting}} waiting · {{unknown}} unknown",
+      "tree": "Agents",
+      "details": "Selected agent or task details",
+      "noAgents": "No agents observed.",
+      "tasksUnavailable": "Background task inventory is unavailable.",
+      "tasksEmpty": "No background tasks observed.",
+      "taskCount": {
+        "one": "{{count}} background task",
+        "other": "{{count}} background tasks"
+      },
+      "coverageAvailable": "Counts cover observed agents in this run.",
+      "coveragePartial": "Coverage is incomplete. Unobserved activity may be missing.",
+      "stale": "Showing the last observed activity; it may be out of date.",
+      "observedSince": "Observed since {{when}}",
+      "memoryOnly": "Activity is kept in memory and is cleared when the app restarts.",
+      "kind": "Kind",
+      "principal": "Principal agent",
+      "child": "Child agent",
+      "backgroundTask": "Background task",
+      "agentType": "Agent type",
+      "project": "Project",
+      "projectPath": "Project path",
+      "worktreePath": "Worktree path",
+      "model": "Model",
+      "configuredModel": "{{name}} (configured)",
+      "modelUnavailable": "Model unavailable",
+      "duration": "Duration",
+      "durationUnavailable": "Duration unavailable",
+      "seconds": {
+        "one": "{{count}} second",
+        "other": "{{count}} seconds"
+      },
+      "started": "Started",
+      "ended": "Ended",
+      "lastObserved": "Last observed",
+      "unknownMetric": "Unavailable",
+      "tokens": "Tokens",
+      "tokensUnavailable": "Tokens unavailable",
+      "inputTokens": "Input tokens",
+      "outputTokens": "Output tokens",
+      "totalTokens": "Total tokens",
+      "refresh": "Refresh activity",
+      "refreshing": "Refreshing…",
+      "openTerminal": "Open terminal",
+      "states": {
+        "starting": "Starting",
+        "working": "Working",
+        "needsInput": "Needs input",
+        "replyFinished": "Reply finished",
+        "idle": "Idle",
+        "stopped": "Stopped",
+        "interrupted": "Interrupted",
+        "error": "Error",
+        "unknown": "Unknown"
+      },
+      "messages": {
+        "noProviderSession": "Waiting for a provider session to be identified.",
+        "hooksUnobserved": "No live hook activity has been observed. Agent states may be unknown.",
+        "hooksDisabled": "Activity hooks are disabled. Agent states may be unknown.",
+        "hookTrustRequired": "Trust is required before activity hooks can be observed.",
+        "unsupportedProvider": "Child observation is unavailable for this provider.",
+        "unsupportedProtocol": "This provider protocol does not support activity observation.",
+        "observationEnded": "Observation ended. Child outcomes are unknown.",
+        "refreshFailed": "Activity could not be refreshed. Try again.",
+        "ownerUnavailable": "The activity observer is unavailable.",
+        "ownerConflict": "Another activity observer owns this run. Try again.",
+        "truncated": "Some observations were removed by the retention limit. Counts are minimums."
+      },
+      "backgroundTasks": "Background tasks",
+      "firstObserved": "First observed"
     }
   },
   "ssh": {

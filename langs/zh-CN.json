@@ -686,6 +686,8 @@
       "details": "项目详情",
       "quickLaunch": "快速启动",
       "development": "开发",
+      "configureDev": "配置命令",
+      "queueHeading": "队列处理进程",
       "projectTools": "项目工具",
       "projectInformation": "项目信息",
       "path": "路径",
@@ -706,6 +708,21 @@
       "paused": "已暂停",
       "selectHint": "选择一个项目以查看运行环境设置和工具。",
       "filterByTag": "按标签{{tag}}筛选"
+    },
+    "commands": {
+      "title": "项目脚本",
+      "loading": "正在加载脚本…",
+      "empty": "package.json 中未定义脚本。",
+      "loadError": "无法加载项目脚本。",
+      "retry": "重试",
+      "script": "脚本",
+      "run": "在终端中运行",
+      "runScript": "在终端中运行 {{command}}",
+      "customLabel": "自定义命令",
+      "customPlaceholder": "例如 npm run build",
+      "customRun": "运行命令",
+      "hint": "命令在项目终端中运行，并使用项目的 PHP 和 Node 版本。按 Ctrl+C 停止持续运行的命令。",
+      "refresh": "刷新脚本"
     },
     "reload": {
       "title": "重载 nginx/apache/php-fpm 并刷新列表",
@@ -1744,6 +1761,7 @@
         "newSessionButtonLabel": "新建会话"
       },
       "actionsMenu": {
+        "viewMap": "查看地图",
         "triggerAria": "{{title}} 的操作菜单",
         "foldersHeading": "会话文件夹",
         "openSession": "打开会话",
@@ -1795,6 +1813,87 @@
         "tooltip": "自动切换到正在等待输入的智能体，当前有 {{count}} 个等待中"
       },
       "footer": "项目 → 工作副本 → 会话"
+    },
+    "map": {
+      "title": "智能体地图",
+      "close": "关闭智能体地图",
+      "selectSession": "选择智能体会话",
+      "loading": "正在加载智能体活动…",
+      "unavailable": "智能体活动不可用。",
+      "agents": {
+        "other": "{{count}} 个智能体"
+      },
+      "atLeastAgents": {
+        "other": "至少 {{count}} 个智能体"
+      },
+      "activitySummary": "{{working}} 个工作中 · {{waiting}} 个等待中 · {{unknown}} 个状态未知",
+      "tree": "智能体",
+      "details": "所选智能体或任务的详情",
+      "noAgents": "尚未观察到智能体。",
+      "tasksUnavailable": "后台任务清单不可用。",
+      "tasksEmpty": "尚未观察到后台任务。",
+      "taskCount": {
+        "other": "{{count}} 个后台任务"
+      },
+      "coverageAvailable": "计数涵盖本次运行中已观察到的智能体。",
+      "coveragePartial": "覆盖范围不完整，可能缺少尚未观察到的活动。",
+      "stale": "显示最后观察到的活动，信息可能已过时。",
+      "observedSince": "自 {{when}} 开始观察",
+      "memoryOnly": "活动仅保存在内存中，应用重启后会清除。",
+      "kind": "类别",
+      "principal": "主智能体",
+      "child": "子智能体",
+      "backgroundTask": "后台任务",
+      "agentType": "智能体类型",
+      "project": "项目",
+      "projectPath": "项目路径",
+      "worktreePath": "工作树路径",
+      "model": "模型",
+      "configuredModel": "{{name}}（已配置）",
+      "modelUnavailable": "模型不可用",
+      "duration": "持续时间",
+      "durationUnavailable": "持续时间不可用",
+      "seconds": {
+        "other": "{{count}} 秒"
+      },
+      "started": "开始时间",
+      "ended": "结束时间",
+      "lastObserved": "最后观察时间",
+      "unknownMetric": "不可用",
+      "tokens": "令牌",
+      "tokensUnavailable": "令牌数据不可用",
+      "inputTokens": "输入令牌",
+      "outputTokens": "输出令牌",
+      "totalTokens": "令牌总数",
+      "refresh": "刷新活动",
+      "refreshing": "正在刷新…",
+      "openTerminal": "打开终端",
+      "states": {
+        "starting": "正在启动",
+        "working": "工作中",
+        "needsInput": "等待输入",
+        "replyFinished": "回复已完成",
+        "idle": "空闲",
+        "stopped": "已停止",
+        "interrupted": "已中断",
+        "error": "错误",
+        "unknown": "未知"
+      },
+      "messages": {
+        "noProviderSession": "正在等待识别提供商会话。",
+        "hooksUnobserved": "尚未观察到实时钩子活动，智能体状态可能未知。",
+        "hooksDisabled": "活动钩子已禁用，智能体状态可能未知。",
+        "hookTrustRequired": "需要信任活动钩子后才能观察其活动。",
+        "unsupportedProvider": "此提供商不支持观察子智能体。",
+        "unsupportedProtocol": "此提供商协议不支持活动观察。",
+        "observationEnded": "观察已结束，子智能体的结果未知。",
+        "refreshFailed": "无法刷新活动，请重试。",
+        "ownerUnavailable": "活动观察者不可用。",
+        "ownerConflict": "本次运行由另一个活动观察者负责，请重试。",
+        "truncated": "部分观察记录因保留限制已被移除，计数仅表示下限。"
+      },
+      "backgroundTasks": "后台任务",
+      "firstObserved": "首次观察时间"
     }
   },
   "ssh": {

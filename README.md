@@ -39,6 +39,8 @@
 - **Multi-runtime out of the box** — PHP 5.6 → 8.5 side-by-side (8.6 available as a beta), multiple Node versions, Python 3.13.
 - **Project requirements detected automatically** — choose compatible PHP/Node installations from version files and manifests, or keep a manual override.
 - **Projects organized by client tags** — compact rows, visible search, pagination, a separate details panel and customizable row shortcuts.
+- **Project scripts and commands** — run the scripts in `package.json` or enter a custom command from the details panel, with output in a project-aware terminal.
+- **Optional Agent map** — inspect observed agents and background tasks for a selected session, with shared activity in the main and detached workspaces.
 - **Site Doctor** — review setup across many projects, separate actionable findings from optional suggestions, and run individual repairs with output.
 - **Real services, not containers** — Nginx, Apache, Caddy, MySQL, PostgreSQL, Redis, Mailpit. Installed and started by the app.
 - **Pro tier** — zero-knowledge cloud sync of your SSH keys / cron jobs and one-click VPS deploys.
@@ -47,7 +49,7 @@
 
 ## Download
 
-**Latest release: [v0.5.5](https://github.com/thayronarrais/laraenv/releases/tag/v0.5.5).** Read the [release notes](docs/releases/0.5.5.md).
+**Latest release: [v0.5.6](https://github.com/thayronarrais/laraenv/releases/tag/v0.5.6).** Read the [release notes](docs/releases/0.5.6.md).
 
 Two editions, same application.
 
@@ -66,13 +68,24 @@ A portable copy also leaves the machine's certificate store alone. Local HTTPS n
 
 All versions are on the [Releases page](https://github.com/thayronarrais/laraenv/releases). The in-app updater checks for new releases automatically and verifies them with SHA-256 before installing.
 
-The **0.5.5** release upgrades public **0.5.4** normally. If you installed a local test MSI numbered **0.5.6–0.5.18**, uninstall that test application before installing 0.5.5: Windows Installer blocks an in-place downgrade. Preserve `C:\laraenv`, your portable folder and project/database data. Those higher test numbers were development builds rather than public releases. Close LaraEnv before installing.
+The **0.5.6** release upgrades public **0.5.5** normally. If you installed a local test MSI numbered **0.5.7–0.5.20**, uninstall that test application before installing 0.5.6: Windows Installer blocks an in-place downgrade. Preserve `C:\laraenv`, your portable folder and project/database data. Those higher test numbers were development builds rather than public releases. Close LaraEnv before installing.
 
 ---
 
 ## Features
 
-### New in v0.5.5
+### New in v0.5.6
+
+- **Scripts in the project panel:** choose from the scripts declared in `package.json`, including `dev`, `watch`, `build` and custom names when present. Refresh the list after editing the manifest.
+- **Custom commands:** run another command in a new integrated terminal with the project's shell, PHP, Node and package manager. Task output stays visible; use Ctrl+C to stop a continuous script.
+- **Development controls restored:** projects with `package.json` can use the managed Dev server even without a recognized framework. Laravel queue controls remain visible independently of Node scripts.
+- **Agent map:** open observed descendants and background tasks from the activity counter or a session's **View map** action. Main and detached workspaces share the same activity snapshot.
+
+Scripts and custom commands do not change the saved Dev command. A task such as `build` receives no automatic server arguments such as `--port`.
+
+Agent sessions are optional under **Settings → Experimental**. Claude Code and Codex coverage depends on the available protocol and trusted hooks; Kimi and OpenCode report child observation as unavailable. Activity stays in memory for the current run, and missing model, duration or token data remains unavailable.
+
+### Introduced in v0.5.5
 
 - **Projects:** compact list, search by name/path/tag, client-tag counts, pages of 10/20/50 and one selected project's details panel. Colors follow the selected theme.
 - **Your row shortcuts:** choose and order editor, browser, terminal or folder, hide either slot and save the preference on this device.
@@ -98,7 +111,7 @@ The workspace with **Agents / Files / Git**, Markdown and image previews, stage/
 | 🔐 **SSH manager** | ED25519 / RSA-4096 / ECDSA-P256 key generation, key import, host registry with tags, **ProxyJump** + ProxyCommand, latency + version probe, in-app interactive shell. |
 | ⏰ **Cron** | 5/6-field expressions plus descriptors (`@hourly`, `@daily`). Per-job project context (PATH + cwd). Output captured into the UI. **Opt-in: run jobs even when LaraEnv is closed** via Windows Task Scheduler. |
 | 📊 **System monitor** | Live CPU, Memory, GPU gauges with sparklines, plus a system-drive **Disk** progress bar. Sampled every 1.5 s. |
-| 📁 **Projects** | Auto-detects type (Laravel / WordPress / plain), JS framework (React / Vue / Next / Nuxt / Astro), and package manager (npm / yarn / pnpm / bun). Templates: blank, Laravel, WordPress, Git clone, Vite, Next, Nuxt, Astro. |
+| 📁 **Projects** | Auto-detects type (Laravel / WordPress / plain), JS framework (React / Vue / Next / Nuxt / Astro), and package manager (npm / yarn / pnpm / bun). Run declared scripts and custom commands from the selected project's panel. Templates: blank, Laravel, WordPress, Git clone, Vite, Next, Nuxt, Astro. |
 | 🏷️ **Tags + filtering** | Free-form labels per project, a searchable client-tag filter with counts, and project search/pagination. SSH hosts also support tags. |
 | 🩺 **Site Doctor** | Inspect project setup and runtime requirements, filter an all-project overview by health, and run available repairs individually. Optional suggestions and skipped checks are shown separately. |
 | 🔧 **Vhost editor** | Inline edit of the generated `nginx.conf` / Apache vhost with syntax highlighting. Reset-to-template in one click. |
@@ -170,12 +183,18 @@ myapp npm run dev
 
 ### Projects
 
-The compact list shows project name, path, runtime summary, stack and tags. Search, client-tag filtering and pagination keep large collections manageable. Choose your row shortcuts and select a project to open quick launch, runtime choices, Dev/queue controls and project tools in its details panel. The TLD remains configurable globally.
+The compact list shows project name, path, runtime summary, stack and tags. Search, client-tag filtering and pagination keep large collections manageable. Choose your row shortcuts and select a project to open quick launch, runtime choices, Dev/queue controls, package scripts, custom commands and project tools in its details panel. The TLD remains configurable globally.
 
 PHP pools are shared by version and the web server is shared across sites. Dev and queue controls operate the selected project's processes. Run Doctor to inspect configuration health; a shared running server does not prove each application works. Read the [Projects guide](docs/projects-workspace.md).
 
 <p align="center">
   <img src="./docs/screenshots/projects-workspace.png" alt="Projects list with client-tag filtering, runtime summaries and a selected project's details panel" width="100%" />
+</p>
+
+The **Project scripts** selector reads `package.json` and runs the chosen script with npm, pnpm, Yarn or Bun as resolved for that project. A custom command can also run in the project directory. Both open a new integrated terminal using the saved shell and runtimes. Managed Dev controls have their own command and logs; Laravel projects also have queue-worker controls and arguments.
+
+<p align="center">
+  <img src="./docs/screenshots/project-commands.png" alt="Project panel with development controls, declared package scripts and a custom command field" width="100%" />
 </p>
 
 ### Terminal

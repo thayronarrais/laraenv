@@ -689,6 +689,8 @@
       "details": "Detalhes do projeto",
       "quickLaunch": "Acesso rápido",
       "development": "Desenvolvimento",
+      "configureDev": "Configurar comando",
+      "queueHeading": "Worker de fila",
       "projectTools": "Ferramentas do projeto",
       "projectInformation": "Informações do projeto",
       "path": "Caminho",
@@ -709,6 +711,21 @@
       "paused": "Pausado",
       "selectHint": "Selecione um projeto para ver as configurações de runtime e as ferramentas.",
       "filterByTag": "Filtrar pela tag {{tag}}"
+    },
+    "commands": {
+      "title": "Scripts do projeto",
+      "loading": "Carregando scripts…",
+      "empty": "Nenhum script definido no package.json.",
+      "loadError": "Não foi possível carregar os scripts do projeto.",
+      "retry": "Tentar novamente",
+      "script": "Script",
+      "run": "Executar no terminal",
+      "runScript": "Executar {{command}} no terminal",
+      "customLabel": "Comando personalizado",
+      "customPlaceholder": "ex.: npm run build",
+      "customRun": "Executar comando",
+      "hint": "Os comandos são executados em um terminal do projeto com suas versões de PHP e Node. Pare comandos contínuos com Ctrl+C.",
+      "refresh": "Atualizar scripts"
     },
     "reload": {
       "title": "Recarregar nginx/apache/php-fpm e atualizar as listas",
@@ -1763,6 +1780,7 @@
         "newSessionButtonLabel": "Nova sessão"
       },
       "actionsMenu": {
+        "viewMap": "Ver mapa",
         "triggerAria": "Ações para {{title}}",
         "foldersHeading": "Pastas da sessão",
         "openSession": "Abrir sessão",
@@ -1814,6 +1832,95 @@
         "tooltip": "Trocar automaticamente para agentes aguardando entrada, {{count}} aguardando"
       },
       "footer": "Projeto → cópia de trabalho → sessão"
+    },
+    "map": {
+      "title": "Mapa de agentes",
+      "close": "Fechar mapa de agentes",
+      "selectSession": "Selecionar uma sessão de agente",
+      "loading": "Carregando atividade dos agentes…",
+      "unavailable": "A atividade dos agentes está indisponível.",
+      "agents": {
+        "one": "{{count}} agente",
+        "other": "{{count}} agentes",
+        "many": "{{count}} agentes"
+      },
+      "atLeastAgents": {
+        "one": "Pelo menos {{count}} agente",
+        "other": "Pelo menos {{count}} agentes",
+        "many": "Pelo menos {{count}} agentes"
+      },
+      "activitySummary": "{{working}} trabalhando · {{waiting}} aguardando · {{unknown}} desconhecidos",
+      "tree": "Agentes",
+      "details": "Detalhes do agente ou tarefa selecionado",
+      "noAgents": "Nenhum agente observado.",
+      "tasksUnavailable": "O inventário de tarefas em segundo plano está indisponível.",
+      "tasksEmpty": "Nenhuma tarefa em segundo plano observada.",
+      "taskCount": {
+        "one": "{{count}} tarefa em segundo plano",
+        "other": "{{count}} tarefas em segundo plano",
+        "many": "{{count}} tarefas em segundo plano"
+      },
+      "coverageAvailable": "As contagens incluem os agentes observados nesta execução.",
+      "coveragePartial": "A cobertura está incompleta. Atividades não observadas podem estar ausentes.",
+      "stale": "Exibindo a última atividade observada; ela pode estar desatualizada.",
+      "observedSince": "Observado desde {{when}}",
+      "memoryOnly": "A atividade fica na memória e é apagada ao reiniciar o aplicativo.",
+      "kind": "Tipo",
+      "principal": "Agente principal",
+      "child": "Agente filho",
+      "backgroundTask": "Tarefa em segundo plano",
+      "agentType": "Tipo de agente",
+      "project": "Projeto",
+      "projectPath": "Caminho do projeto",
+      "worktreePath": "Caminho do worktree",
+      "model": "Modelo",
+      "configuredModel": "{{name}} (configurado)",
+      "modelUnavailable": "Modelo indisponível",
+      "duration": "Duração",
+      "durationUnavailable": "Duração indisponível",
+      "seconds": {
+        "one": "{{count}} segundo",
+        "other": "{{count}} segundos",
+        "many": "{{count}} segundos"
+      },
+      "started": "Início",
+      "ended": "Término",
+      "lastObserved": "Última observação",
+      "unknownMetric": "Indisponível",
+      "tokens": "Tokens",
+      "tokensUnavailable": "Tokens indisponíveis",
+      "inputTokens": "Tokens de entrada",
+      "outputTokens": "Tokens de saída",
+      "totalTokens": "Total de tokens",
+      "refresh": "Atualizar atividade",
+      "refreshing": "Atualizando…",
+      "openTerminal": "Abrir terminal",
+      "states": {
+        "starting": "Iniciando",
+        "working": "Trabalhando",
+        "needsInput": "Aguardando entrada",
+        "replyFinished": "Resposta concluída",
+        "idle": "Ocioso",
+        "stopped": "Parado",
+        "interrupted": "Interrompido",
+        "error": "Erro",
+        "unknown": "Desconhecido"
+      },
+      "messages": {
+        "noProviderSession": "Aguardando a identificação de uma sessão do provedor.",
+        "hooksUnobserved": "Nenhuma atividade de hooks foi observada. Os estados dos agentes podem ser desconhecidos.",
+        "hooksDisabled": "Os hooks de atividade estão desativados. Os estados dos agentes podem ser desconhecidos.",
+        "hookTrustRequired": "É necessário confiar nos hooks antes de observar sua atividade.",
+        "unsupportedProvider": "A observação de filhos está indisponível para este provedor.",
+        "unsupportedProtocol": "O protocolo deste provedor não permite observar atividades.",
+        "observationEnded": "A observação terminou. Os resultados dos filhos são desconhecidos.",
+        "refreshFailed": "Não foi possível atualizar a atividade. Tente novamente.",
+        "ownerUnavailable": "O observador de atividade está indisponível.",
+        "ownerConflict": "Outro observador de atividade é responsável por esta execução. Tente novamente.",
+        "truncated": "Algumas observações foram removidas pelo limite de retenção. As contagens são mínimas."
+      },
+      "backgroundTasks": "Tarefas em segundo plano",
+      "firstObserved": "Primeira observação"
     }
   },
   "ssh": {
