@@ -41,6 +41,7 @@
       "rekeyedItems": "перешифровано элементов: {{count}}",
       "rekeySkipped": ", пропущено элементов, которые не удалось расшифровать: {{count}}",
       "cloudSyncSummary": "отправлено хостов: {{pushed}} + crons: {{pushedCrons}} + пресетов: {{pushedPresets}}, получено хостов: {{pulled}} + crons: {{pulledCrons}} + пресетов: {{pulledPresets}}",
+      "syncSSHPasswordsUnavailable": "Хосты SSH пропущены из-за недоступных сохраненных паролей: {{count}}. Введите пароли повторно в этой учетной записи Windows или восстановите их из зашифрованной синхронизации.",
       "pickZipTitle": "Выберите zip-архив для {{kind}} {{version}}",
       "pickPrivateKeyTitle": "Выберите приватный ключ для импорта для {{host}}",
       "pickPrivateKeyFileTitle": "Выберите файл приватного ключа",
@@ -780,6 +781,13 @@
       "defaultTerminal": "терминал по умолчанию: {{kind}}",
       "defaultEditor": "редактор по умолчанию: {{kind}}"
     },
+    "https": {
+      "enable": "Включить HTTPS",
+      "disable": "Отключить HTTPS",
+      "enabling": "Включение HTTPS…",
+      "disabling": "Отключение HTTPS…",
+      "untrusted": "HTTPS включён. Добавьте локальный ЦС в доверенные, чтобы избежать предупреждений браузера."
+    },
     "sslCertDialog": {
       "title": "Для HTTPS требуется доверенный сертификат",
       "checkFailedReason": "LaraEnv не удалось проверить, является ли центр сертификации доверенным.",
@@ -808,8 +816,6 @@
       "proxyActiveTitle": "обратный прокси активен → localhost:{{port}}. Нажмите, чтобы отключить.",
       "proxyActiveStoppedTitle": "обратный прокси активен → localhost:{{port}} (сервер разработки остановлен). Нажмите, чтобы отключить.",
       "wireProxyTitle": "связать {{host}} → localhost:{{port}}",
-      "sslButtonOn": "SSL вкл",
-      "sslButtonOff": "SSL выкл",
       "sslButtonOnTooltip": "отключить HTTPS",
       "sslButtonOffTooltip": "включить HTTPS (самоподписанный)",
       "config": "Конфиг",
@@ -2027,7 +2033,8 @@
       "authBoth": "И то, и другое",
       "bothHint": "Сначала пробует ключ, переключается на пароль, если сервер его отклоняет.",
       "passwordLabel": "Пароль",
-      "passwordPlaceholder": "(хранится в открытом виде в config.json)",
+      "passwordPlaceholder": "Введите пароль учетной записи SSH",
+      "passwordUnavailable": "Введите сохраненный пароль SSH повторно: его невозможно открыть с этой учетной записью Windows на этом компьютере.",
       "showPasswordTooltip": "показать пароль",
       "hidePasswordTooltip": "скрыть пароль",
       "keyFileLabel": "Файл ключа",

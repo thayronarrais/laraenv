@@ -41,6 +41,7 @@
       "rekeyedItems": "{{count}} item(ns) com chave trocada",
       "rekeySkipped": ", {{count}} ignorado(s) por não poderem ser descriptografados",
       "cloudSyncSummary": "enviado(s) {{pushed}} host(s) + {{pushedCrons}} cron(s) + {{pushedPresets}} preset(s), recebido(s) {{pulled}} host(s) + {{pulledCrons}} cron(s) + {{pulledPresets}} preset(s)",
+      "syncSSHPasswordsUnavailable": "Hosts SSH não enviados porque as senhas salvas estão indisponíveis: {{count}}. Digite as senhas novamente nesta conta Windows ou restaure-as pela sincronização criptografada.",
       "pickZipTitle": "Escolha o zip de {{kind}} {{version}}",
       "pickPrivateKeyTitle": "Escolha a chave privada para importar para {{host}}",
       "pickPrivateKeyFileTitle": "Escolha um arquivo de chave privada",
@@ -778,6 +779,13 @@
       "defaultTerminal": "terminal padrão: {{kind}}",
       "defaultEditor": "editor padrão: {{kind}}"
     },
+    "https": {
+      "enable": "Ativar HTTPS",
+      "disable": "Desativar HTTPS",
+      "enabling": "Ativando HTTPS…",
+      "disabling": "Desativando HTTPS…",
+      "untrusted": "HTTPS ativado. Confie na CA local para evitar avisos do navegador."
+    },
     "sslCertDialog": {
       "title": "HTTPS precisa de um certificado confiável",
       "checkFailedReason": "O LaraEnv não conseguiu verificar se a autoridade certificadora é confiável.",
@@ -806,8 +814,6 @@
       "proxyActiveTitle": "proxy reverso ativo → localhost:{{port}}. Clique para desativar.",
       "proxyActiveStoppedTitle": "proxy reverso ativo → localhost:{{port}} (servidor de desenvolvimento parado). Clique para desativar.",
       "wireProxyTitle": "conectar {{host}} → localhost:{{port}}",
-      "sslButtonOn": "SSL ativo",
-      "sslButtonOff": "SSL inativo",
       "sslButtonOnTooltip": "desativar HTTPS",
       "sslButtonOffTooltip": "ativar HTTPS (autoassinado)",
       "config": "Config",
@@ -2012,7 +2018,8 @@
       "authBoth": "Ambos",
       "bothHint": "Tenta a chave primeiro; recorre à senha se o servidor a rejeitar.",
       "passwordLabel": "Senha",
-      "passwordPlaceholder": "(armazenada em texto puro no config.json)",
+      "passwordPlaceholder": "Digite a senha da conta SSH",
+      "passwordUnavailable": "Digite novamente a senha SSH salva: ela não pode ser aberta com esta conta Windows nesta máquina.",
       "showPasswordTooltip": "mostrar senha",
       "hidePasswordTooltip": "ocultar senha",
       "keyFileLabel": "Arquivo de chave",

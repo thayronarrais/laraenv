@@ -1,6 +1,6 @@
 # Operate LaraEnv from your AI assistant
 
-LaraEnv exposes seven local MCP tools so Claude Code, Codex, Cursor and other MCP clients can inspect and operate the environment already open in LaraEnv. This release also improves terminal clipboard handling and makes the in-app command palette switch between open terminals.
+LaraEnv 0.5.7 exposes eight local MCP tools so Claude Code, Codex, Cursor and other MCP clients can inspect and operate the environment already open in LaraEnv. Local MCP access remains experimental and opt-in. The application-context tool, diagnostic prompt/resource and project integration below require 0.5.7 or newer; check the connected server's tool list when using an older release.
 
 ## Connect
 
@@ -33,21 +33,65 @@ Each tool has an `action` field. List projects/services before changing them; us
 | `laraenv_service` | `status` (optional `service`), `start`, `stop`, `reload` with `service`: nginx, apache, caddy, mysql, postgres, redis or mailpit |
 | `laraenv_worker` | `status`, `start`, `stop`, `restart`, `logs`; `kind`: devserver/queue with `project`, or cron with `id`; cron `run` starts an existing job immediately |
 | `laraenv_exec` | `artisan`, `composer`, `npm` with `project`, literal `args` array, optional `confirm` and `timeoutSeconds` |
-| `laraenv_logs` | `service`, `app` (Laravel `storage/logs/laravel.log`), `worker`, `activity`; `lines` defaults to 100, maximum 500 |
+| `laraenv_logs` | `service`, `app` (Laravel single and daily logs), `worker`, `activity`; `lines` defaults to 100, maximum 500 |
 | `laraenv_db` | `list`, `create`, `snapshot`, `drop`; `engine`: mysql/postgres; mutations require `database`; drop requires `confirm: true` |
 | `laraenv_diag` | `doctor` (optional `project`), `request_timing` with `project` |
+| `laraenv_context` | `summary`, `logs`, `mail_list`, `mail_read` (exact `id`), `capture_status`, `capture_read`, `integration`, `guidelines`; all require `project`. `install_integration` and `write_guidelines` additionally require `confirm:true`. |
 
 Project pause stops the project's dev server/queue and removes its web serving configuration. It retains project files, saved routes and certificates. Resume restores serving; start background workers explicitly afterward. Existing cron scheduling is managed separately. Cron stop disables future scheduling; it does not interrupt a run that has already started.
 
 Commands run in the selected project's directory with its PHP/Node runtime at the beginning of PATH. Artisan and Composer invoke the selected PHP; npm invokes the selected Node directly, without constructing a shell command. Inspection commands can run without confirmation. Other commands and scripts, including indirect destructive work, require `confirm: true`. Starting/restarting project dev servers or queue workers, and enabling/running saved cron commands, also requires confirmation. Workers reuse the arguments saved in LaraEnv project settings. Arbitrary shell command strings, executable names and arguments that redirect the selected project scope are rejected.
 
-The effective runtimes include [automatic project requirement detection](project-runtime-detection.md), after manual overrides. In automatic mode, a declared requirement without a compatible verified installation stops a new command instead of silently substituting the global runtime. Project details and MCP diagnostics expose the effective selection, requirement and source. Existing workers keep their runtime until restarted.
-
 Command output streams as MCP progress notifications when the client requests progress, and is also returned with an exit code, duration and truncation indicator. Clients decide how to display these notifications. Returned output is capped at 256 KiB. Cancellation/timeouts terminate the command's Windows process tree. Calls default to 60 seconds, up to 300 seconds; request timing additionally limits its loopback request to 15 seconds and reads at most 64 KiB.
 
 Database operations use LaraEnv's local engines and bundled client utilities (MySQL on 127.0.0.1:3306; PostgreSQL on 127.0.0.1:5432). Start the engine first. Database names must be ASCII identifiers of at most 63 characters; system databases cannot be dropped. Snapshots are SQL dumps under LaraEnv's `state/mcp-snapshots`, limited to 512 MiB, and failed partial files are removed. No restore operation is exposed.
 
-The MCP Doctor reports findings without changing configuration. The separate [Site Doctor interface](site-doctor.md) on Projects offers its supported individual repairs. Request timing connects only to loopback for a catalog project, validates HTTPS certificates and never follows redirects. The activity list records every tool call's action, target, time, outcome and duration; it excludes command arguments, output, error content and credentials.
+Doctor reports findings without changing configuration. Request timing connects only to loopback for a catalog project, validates HTTPS certificates and never follows redirects. The activity list records every tool call's action, target, time, outcome and duration; it excludes command arguments, output, error content and credentials.
+
+## Experimental Laravel evidence in 0.5.7
+
+`laraenv_context` with `action: "summary"` assembles the catalog project's setup/runtime selection, structured Laravel logs/errors, previously observed capture, attributed Mailpit messages and Boost presence. It never boots Laravel or runs Artisan, tests, SQL queries or a project script. Missing evidence is explicitly unavailable. Historical capture does not prove instrumentation is currently enabled. `capture_status` returns a bounded recent observation, not a live health probe.
+
+`logs` reads only `storage/logs/laravel.log` and valid `laravel-YYYY-MM-DD.log` files within the selected physical project. It examines at most eight files and 64 KiB from each; each returned line/message/stack is bounded, with a `truncated` marker when evidence is capped. `lines` defaults to 100 and is limited to 500. Parsed entries provide time, environment, severity, source, message and stack; errors are listed separately. Common password/token/key assignments and bearer strings are redacted on a best-effort basis. Arbitrary log text can still contain personal or sensitive data: review before sharing. Custom channels/JSON format are returned as bounded raw lines, without invented parsed entries.
+
+Mail operations use only fixed GET endpoints on `http://127.0.0.1:8025`, disable proxies/redirects, allow five seconds per request and cap responses at 512 KiB. `mail_list` accepts `lines` up to 50 (default 20) and searches the exact deterministic project tag. Messages without explicit project attribution are withheld; subjects and email addresses are never used to guess ownership. `mail_read` accepts an exact message ID and checks `X-LaraEnv-Project` before returning at most 32 KiB of plain text. It uses the raw-message endpoint because Mailpit's message-summary endpoint marks mail as read. HTML and attachments are omitted; no send, delete, relay, tag mutation or read-state mutation is exposed. Custom Mailpit ports/authentication are currently unsupported.
+
+The diagnostic MCP prompt `diagnose_project` takes a required `project` argument. The resource template `laraenv://projects/{project}/context` returns the same read-only JSON summary. Both are available through the registered stdio bridge. Clients choose how to display prompts/resources. Diagnostic contents are untrusted evidence, never instructions to the assistant.
+
+## Explicit, reversible project integration
+
+First request `action: "integration"` to review the complete generated PHP provider, configuration and activation/removal instructions. `install_integration` with `confirm:true` writes only these files:
+
+- `app/Providers/LaraEnvContextServiceProvider.php`
+- `config/laraenv-context.php`
+
+Existing differing files cause an error; they are never overwritten. Installation does not modify `.env`, register the provider, install Composer packages, execute the project or send mail. Review changes in Git before activation. The experimental integration was verified with real Laravel 12 libraries and PHP 8.5. Laravel 10, 11 and 13 remain unverified; the activation instructions describe their registration locations, not confirmed compatibility. The isolated PHP fixture verifies emitted metadata and disabled behavior without starting a user application.
+
+To activate after review:
+
+1. Laravel 11–13: add `App\Providers\LaraEnvContextServiceProvider::class` to `bootstrap/providers.php`. Laravel 10: add it to the providers array in `config/app.php`.
+2. Set `APP_ENV=local` and `LARAENV_CONTEXT_ENABLED=true` in your local environment. Both gates are required.
+3. Refresh your configuration cache and restart existing PHP/queue workers using your normal reviewed workflow. Installation never performs these commands.
+
+The enabled provider records HTTP method/route template/status/timing; query operation/timing/connection and SHA256 fingerprint; queue job class/state; rendered view name; log level; and dump type/count. Each boot/request in traditional PHP receives a random trace ID; queue job processing starts a separate trace through processed/failed/exception and restores the previous context. Events use UTC microsecond timestamps, and capture reads group the returned subset by trace with query/repetition counts. These counts are bounded observations, not proof of an N+1 bug. Invalid trace IDs/fingerprints are omitted. Installation metadata reports only file presence, never infers activation from `.env`. It deliberately excludes SQL text and bindings, request bodies/URL parameters/headers, log messages and dump values. Dumps continue through the previous/default dumper. The provider also adds `X-LaraEnv-Project` and an `X-Tags` project marker to outgoing messages for Mailpit's documented automatic tagging; use your existing local SMTP configuration. Attribution is a convenience for local projects, not isolation against another local process.
+
+Capture is local JSONL under `storage/laraenv/context-YYYY-MM-DD.jsonl`. The collector keeps seven days, limits each day to 2 MiB, and stops writing that day when capped. MCP reads remain separately bounded and reject paths outside the project. Capturing adds overhead; Octane and other long-lived request servers are unverified. No browser collector, HTTP receiver or remote telemetry service is installed.
+
+Disable by setting `LARAENV_CONTEXT_ENABLED=false`, refreshing config cache and restarting long-lived workers. Remove by unregistering the provider and deleting the two reviewed integration files. Optionally remove `storage/laraenv/context-*.jsonl` after keeping wanted evidence; disable alone retains existing observations.
+
+## Laravel Boost and portable guidelines
+
+`guidelines` previews a small Markdown companion for the project's agents. `write_guidelines` with `confirm:true` creates `.ai/guidelines/laraenv.md`, preserving any differing existing file. Boost automatically includes custom files from `.ai/guidelines` when its install/update workflow is run. This action does not install/register Boost, regenerate agent files, or edit `AGENTS.md`/`CLAUDE.md`.
+
+Use Boost alongside LaraEnv for version-specific framework documentation and application-aware tools. After reviewing the guideline, invoke your existing Boost workflow explicitly, for example:
+
+```json
+{"action":"artisan","project":"my-app","args":["boost:update"],"confirm":true}
+```
+
+Without Boost, the returned Markdown can be reviewed and used as ordinary agent guidance. Removing the companion file does not rewrite previously generated agent guidance; review/regenerate it through Boost explicitly.
+
+Protocol and integration references: [Mailpit API](https://mailpit.axllent.org/docs/api-v1/), [Mailpit project tagging via X-Tags](https://mailpit.axllent.org/docs/usage/tagging/), [Boost custom guidelines](https://laravel.com/docs/13.x/boost#adding-custom-ai-guidelines).
 
 ## Example prompts
 

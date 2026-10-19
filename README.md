@@ -49,7 +49,7 @@
 
 ## Download
 
-**Latest release: [v0.5.6](https://github.com/thayronarrais/laraenv/releases/tag/v0.5.6).** Read the [release notes](docs/releases/0.5.6.md).
+**Latest release: [v0.5.7](https://github.com/thayronarrais/laraenv/releases/tag/v0.5.7).** Read the [release notes](docs/releases/0.5.7.md).
 
 Two editions, same application.
 
@@ -68,13 +68,22 @@ A portable copy also leaves the machine's certificate store alone. Local HTTPS n
 
 All versions are on the [Releases page](https://github.com/thayronarrais/laraenv/releases). The in-app updater checks for new releases automatically and verifies them with SHA-256 before installing.
 
-The **0.5.6** release upgrades public **0.5.5** normally. If you installed a local test MSI numbered **0.5.7–0.5.20**, uninstall that test application before installing 0.5.6: Windows Installer blocks an in-place downgrade. Preserve `C:\laraenv`, your portable folder and project/database data. Those higher test numbers were development builds rather than public releases. Close LaraEnv before installing.
+The **0.5.7** release upgrades public **0.5.6** normally. If you installed a local test MSI numbered **0.5.7 or higher**, uninstall that test application before installing public 0.5.7 to avoid conflicts with the test MSI version. Preserve `C:\laraenv`, your portable folder and project/database data. Those test builds were not public releases. Close LaraEnv before installing.
 
 ---
 
 ## Features
 
-### New in v0.5.6
+### New in v0.5.7
+
+- **SSH trust and saved passwords:** integrated connections share host-key verification, while Windows DPAPI protects saved SSH passwords and preserves recovery information when a portable environment moves to another account.
+- **Local HTTPS across runtimes:** PHP and new Node project processes can use the public local CA while preserving custom trust settings. Existing CA material is retained.
+- **Optional Laravel evidence through MCP:** bounded daily/single logs, read-only project-attributed Mailpit messages, and a diagnostic prompt/resource. The metadata collector is experimental, requires explicit installation and local activation, and has been validated with Laravel 12; other framework versions and Octane remain unverified.
+- **Windows startup and workspace fixes:** WebView2 recovery, terminal shells created on first use, HTTPS controls, and more room for the project workspace.
+
+Guides: [SSH trust and passwords](docs/ssh-trust-and-passwords.md) · [HTTPS across runtimes](docs/https-runtime-trust.md) · [MCP and Laravel evidence](docs/mcp.md).
+
+### Introduced in v0.5.6
 
 - **Scripts in the project panel:** choose from the scripts declared in `package.json`, including `dev`, `watch`, `build` and custom names when present. Refresh the list after editing the manifest.
 - **Custom commands:** run another command in a new integrated terminal with the project's shell, PHP, Node and package manager. Task output stays visible; use Ctrl+C to stop a continuous script.

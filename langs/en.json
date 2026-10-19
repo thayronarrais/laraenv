@@ -41,6 +41,7 @@
       "rekeyedItems": "re-keyed {{count}} item(s)",
       "rekeySkipped": ", skipped {{count}} that couldn't be decrypted",
       "cloudSyncSummary": "pushed {{pushed}} hosts + {{pushedCrons}} crons + {{pushedPresets}} presets, pulled {{pulled}} hosts + {{pulledCrons}} crons + {{pulledPresets}} presets",
+      "syncSSHPasswordsUnavailable": "SSH hosts skipped because their saved passwords are unavailable: {{count}}. Re-enter the passwords on this Windows account or restore them from encrypted sync.",
       "pickZipTitle": "Pick the zip for {{kind}} {{version}}",
       "pickPrivateKeyTitle": "Pick the private key to import for {{host}}",
       "pickPrivateKeyFileTitle": "Pick a private key file",
@@ -776,6 +777,13 @@
       "defaultTerminal": "default terminal: {{kind}}",
       "defaultEditor": "default editor: {{kind}}"
     },
+    "https": {
+      "enable": "Enable HTTPS",
+      "disable": "Disable HTTPS",
+      "enabling": "Enabling HTTPS…",
+      "disabling": "Disabling HTTPS…",
+      "untrusted": "HTTPS is enabled. Trust the local CA to prevent browser warnings."
+    },
     "sslCertDialog": {
       "title": "HTTPS needs a trusted certificate",
       "checkFailedReason": "LaraEnv could not check whether the certificate authority is trusted.",
@@ -804,8 +812,6 @@
       "proxyActiveTitle": "reverse-proxy active → localhost:{{port}}. Click to disable.",
       "proxyActiveStoppedTitle": "reverse-proxy active → localhost:{{port}} (dev server stopped). Click to disable.",
       "wireProxyTitle": "wire {{host}} → localhost:{{port}}",
-      "sslButtonOn": "SSL on",
-      "sslButtonOff": "SSL off",
       "sslButtonOnTooltip": "disable HTTPS",
       "sslButtonOffTooltip": "enable HTTPS (self-signed)",
       "config": "Config",
@@ -1997,7 +2003,8 @@
       "authBoth": "Both",
       "bothHint": "Tries the key first, falls back to password if the server rejects it.",
       "passwordLabel": "Password",
-      "passwordPlaceholder": "(stored in plaintext in config.json)",
+      "passwordPlaceholder": "Enter the SSH account password",
+      "passwordUnavailable": "Re-enter the saved SSH password: it cannot be opened with this Windows account on this machine.",
       "showPasswordTooltip": "show password",
       "hidePasswordTooltip": "hide password",
       "keyFileLabel": "Key file",
