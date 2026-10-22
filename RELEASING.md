@@ -32,22 +32,24 @@ retry uses a new `-OutputDir`; previous artifacts remain available for compariso
 ## 2. Build
 
 ```powershell
-# From the project root, after the first source build in docs/development.md
+# From the repository root, after the first source build in docs/development.md
 node tools/licenses/generate.mjs --check
 node tools/licenses/installer-rtf.mjs --check
-pwsh build\windows\installer\build-release.ps1 -Version 0.4.30
+pwsh desktop\build\windows\installer\build-release.ps1 -Version 0.4.30
 ```
 
 The script runs the Wails build from this checkout's module graph using
 `go run -mod=readonly github.com/wailsapp/wails/v2/cmd/wails` (pass `-SkipBuild` to reuse the existing
 executable) and injects the version through ldflags into
 `internal/version.Version`, which is what the in-app updater compares against
-the latest GitHub release. The helper passes `-webview2 browser`, matching the
+the latest GitHub release. It runs Wails from `desktop/`, while the module,
+license tools and authoritative notices remain at the repository root.
+The helper passes `-webview2 browser`, matching the
 notice inventory's `desktop,wv2runtime.browser,production` build tags. Automatic
-module synchronization is disabled so the tool security floors remain pinned. WebView2
+module tidying and synchronization are disabled with `-m -nosyncgomod` so the tool security floors remain pinned. WebView2
 is a separate platform prerequisite. New builds use a unique executable name in
-`build\bin\` and do not run `wails -clean`. `-SkipBuild` reuses
-`build\bin\LaraEnv.exe`; verify that binary's provenance and version yourself.
+`desktop\build\bin\` and do not run `wails -clean`. `-SkipBuild` reuses
+`desktop\build\bin\LaraEnv.exe`; verify that binary's provenance and version yourself.
 
 The notice generator and installer RTF checks are mandatory at the start of
 release preparation. If dependency locks or license inputs change, regenerate
@@ -63,9 +65,9 @@ it does not install or update global tools. Both extension references are
 version-pinned when compiling the MSI. The cached extension DLL hashes must
 match the official-package hashes recorded in the notice policy.
 
-Everything this release publishes lands in `build\release\0.4.30\` by
+Everything this release publishes lands in `desktop\build\release\0.4.30\` by
 default, and the directory must be empty or nonexistent. A separate attempt
-can use `-OutputDir build\release\0.4.30-review-2`. Each directory contains:
+can use `-OutputDir desktop\build\release\0.4.30-review-2`. Each directory contains:
 
 - `LaraEnv-0.4.30.msi` + `.sha256` — the installed edition
 - `LaraEnv-0.4.30-portable-win64.zip` + `.sha256` — the portable edition: the
@@ -89,14 +91,14 @@ notices, or install the current complete package to refresh those files.
 
 Intermediate packaging assets live in a unique temporary directory outside
 the release output. Its path is printed and retained for inspection. Installer
-BMPs and the ICO are generated there from the owned `build/appicon.png` and
-`frontend/logo_laraenv.png`; legacy installer artwork is not reused. Previous
+BMPs and the ICO are generated there from the owned `desktop/build/appicon.png` and
+`desktop/frontend/logo_laraenv.png`; legacy installer artwork is not reused. Previous
 release directories are never recursively cleaned or overwritten.
 
 For a packaging fixture, supply a known executable and an isolated empty path:
 
 ```powershell
-pwsh build\windows\installer\build-release.ps1 -Version 0.4.30 `
+pwsh desktop\build\windows\installer\build-release.ps1 -Version 0.4.30 `
   -SourceExe C:\fixtures\LaraEnv.exe -OutputDir build\verification\packaging-fixture
 ```
 
@@ -110,10 +112,10 @@ version-specific release directory, which must already exist. To compile
 separately, pass `-DARG_OUTPUT_FILE=<new-file-path>` to `makensis`; existing
 output files are refused. `-DARG_INSTALLER_ICON=<generated-ico>` can reuse the
 owned icon printed in the MSI helper's staging directory. The default icon is
-the one Wails generates from `build/appicon.png`. NSIS does not embed or run
+the one Wails generates from `desktop/build/appicon.png`. NSIS does not embed or run
 the Microsoft WebView2 bootstrapper; provision WebView2 separately, as for MSI.
 
-Future pgvector ZIPs built by `build/windows/pgvector/build-pgvector.ps1`
+Future pgvector ZIPs built by `desktop/build/windows/pgvector/build-pgvector.ps1`
 include the upstream `LICENSE` at `share/doc/pgvector/LICENSE` and refuse to
 package when it is missing. They use unique temporary work trees and require
 an empty/nonexistent output directory (default `dist/<version>-pg<major>` next
@@ -134,7 +136,7 @@ The version has to be right in two places, and they come from different
 mechanisms — the MSI property from WiX, the binary string from ldflags:
 
 ```powershell
-$msi  = "build\release\0.4.30\LaraEnv-0.4.30.msi"
+$msi  = "desktop\build\release\0.4.30\LaraEnv-0.4.30.msi"
 $inst = New-Object -ComObject WindowsInstaller.Installer
 $db   = $inst.GetType().InvokeMember("OpenDatabase","InvokeMethod",$null,$inst,@($msi,0))
 $v    = $db.GetType().InvokeMember("OpenView","InvokeMethod",$null,$db,
@@ -145,7 +147,7 @@ $r.GetType().InvokeMember("StringData","GetProperty",$null,$r,@(1))
 ```
 
 ```bash
-rg -a -c "0\.4\.30" build/release/0.4.30/LaraEnv.exe   # non-zero: ldflags took effect
+rg -a -c "0\.4\.30" desktop/build/release/0.4.30/LaraEnv.exe   # non-zero: ldflags took effect
 ```
 
 Also inspect the MSI file table and portable ZIP entries for all license
@@ -160,7 +162,7 @@ before deciding to publish.
 ## 3. Publish
 
 ```bash
-gh release create v0.4.30 build/release/0.4.30/* \
+gh release create v0.4.30 desktop/build/release/0.4.30/* \
   --repo thayronarrais/laraenv \
   --title "LaraEnv 0.4.30 — short summary" \
   --notes-file notes.md \

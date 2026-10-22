@@ -34,7 +34,11 @@ function rejectLinks(path) {
   }
 }
 function disposition(path, policy) {
-  if (path.split('/').some(part => /^(\.git|\.aws|\.codex|\.agents|\.claude|\.superpowers|\.vite|node_modules|laravel-server|backend)$/i.test(part)) || /^(out|output|prototypes)\//i.test(path) || /^build\/(bin|cache|archive|verification|source|release)\//i.test(path) || /(^|\/)\.env(?:\.|$)|\.local\.json$/i.test(path)) return 'Private, generated or operational material';
+  const privateDirectory = path.split('/').some(part => /^(\.git|\.aws|\.codex|\.agents|\.claude|\.superpowers|\.vite|node_modules|laravel-server|backend)$/i.test(part));
+  const generatedFrontend = /^(?:desktop\/)?frontend\/(?:dist|wailsjs|public\/(?:vs|legal))(?:\/|$)/i.test(path);
+  const generatedBuild = /^(?:desktop\/)?build\/(?:bin|tmp|cache|logs|archive|verification|source|release)(?:\/|$)/i.test(path);
+  const generatedWindowsBuild = /^(?:desktop\/)?build\/windows\/(?:installer\/tmp(?:\/|$)|installer\/\.build-[^/]*\.log$|pgvector\/dist(?:\/|$))/i.test(path);
+  if (privateDirectory || generatedFrontend || generatedBuild || generatedWindowsBuild || /^(out|output|prototypes)\//i.test(path) || /(^|\/)\.env(?:\.|$)|\.local\.json$/i.test(path)) return 'Private, generated or operational material';
   const exclusion = policy.exclude.files.find(row => row.path === path) || policy.exclude.prefixes.find(row => path.startsWith(row.path));
   if (exclusion) return exclusion.reason;
   if (policy.include.files.includes(path) || policy.include.prefixes.some(prefix => path.startsWith(prefix)) || (!path.includes('/') && policy.include.rootExtensions.includes(extname(path)))) return null;

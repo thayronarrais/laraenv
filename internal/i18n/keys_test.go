@@ -40,7 +40,7 @@ var literalRe = regexp.MustCompile(`["` + "`" + `]([A-Za-z0-9_]+(?:\.[A-Za-z0-9_
 
 func catalogueKeys(t *testing.T) map[string]bool {
 	t.Helper()
-	raw, err := os.ReadFile(filepath.Join("..", "..", "langs", "en.json"))
+	raw, err := os.ReadFile(filepath.Join("..", "..", "desktop", "langs", "en.json"))
 	if err != nil {
 		t.Fatalf("read en.json: %v", err)
 	}
@@ -205,7 +205,7 @@ func extractTokens(s string) map[string]bool {
 // category, since any category can render depending on count.
 func catalogueValueTokens(t *testing.T) map[string]map[string]bool {
 	t.Helper()
-	raw, err := os.ReadFile(filepath.Join("..", "..", "langs", "en.json"))
+	raw, err := os.ReadFile(filepath.Join("..", "..", "desktop", "langs", "en.json"))
 	if err != nil {
 		t.Fatalf("read en.json: %v", err)
 	}

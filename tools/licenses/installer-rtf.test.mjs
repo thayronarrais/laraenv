@@ -1,5 +1,8 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { readFileSync, mkdtempSync, mkdirSync, writeFileSync, copyFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { spawnSync } from "node:child_process";
 import test from "node:test";
 import { renderInstallerLicense } from "./installer-rtf.mjs";
 
@@ -19,4 +22,23 @@ test("installer rendering preserves the full license including the Appendix", ()
 test("license text cannot inject RTF control words and Unicode is retained", () => {
   const rtf = renderInstallerLicense("{vendor} \\test café 😀\n");
   assert.ok(rtf.includes("\\{vendor\\} \\\\test caf\\u233? \\u-10179?\\u-8704?\\par"));
+});
+
+test("installer CLI checks the nested desktop RTF against the repository license", () => {
+  const root = mkdtempSync(join(tmpdir(), "laraenv-rtf-layout-"));
+  mkdirSync(join(root, "tools/licenses"), { recursive: true });
+  mkdirSync(join(root, "desktop/build/windows/installer"), { recursive: true });
+  writeFileSync(join(root, "package.json"), '{"type":"module"}');
+  const license = "Apache License\nAPPENDIX: complete fixture\nCopyright Example\n";
+  writeFileSync(join(root, "LICENSE"), license);
+  const target = join(root, "desktop/build/windows/installer/LaraEnv-License.rtf");
+  writeFileSync(target, renderInstallerLicense(license));
+  const script = join(root, "tools/licenses/installer-rtf.mjs");
+  copyFileSync(new URL("./installer-rtf.mjs", import.meta.url), script);
+  const checked = spawnSync(process.execPath, [script, "--check"], { encoding: "utf8" });
+  assert.equal(checked.status, 0, checked.stderr);
+  writeFileSync(target, "stale fixture");
+  const stale = spawnSync(process.execPath, [script, "--check"], { encoding: "utf8" });
+  assert.notEqual(stale.status, 0);
+  assert.match(stale.stderr, /Installer license is stale/);
 });

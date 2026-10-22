@@ -9,7 +9,7 @@ import { runScenario } from "../capture.mjs";
 import { getScenario } from "../mock/scenarios.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const DIST = path.resolve(here, "../../../frontend/dist");
+const DIST = path.resolve(here, "../../../desktop/frontend/dist");
 
 let browser, server, outDir;
 

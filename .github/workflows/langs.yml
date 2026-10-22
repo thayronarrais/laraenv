@@ -2,10 +2,10 @@ name: translations
 
 on:
   pull_request:
-    paths: ["langs/**", "tools/langs/**", ".github/workflows/langs.yml"]
+    paths: ["desktop/langs/**", "tools/langs/**", ".github/workflows/langs.yml"]
   push:
     branches: [main]
-    paths: ["langs/**", "tools/langs/**", ".github/workflows/langs.yml"]
+    paths: ["desktop/langs/**", "tools/langs/**", ".github/workflows/langs.yml"]
   workflow_dispatch:
 
 permissions:
@@ -24,4 +24,4 @@ jobs:
           node-version: "24.22.1"
           package-manager-cache: false
       - name: Check catalogues against en.json
-        run: node tools/langs/check.mjs langs
+        run: node tools/langs/check.mjs desktop/langs

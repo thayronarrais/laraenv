@@ -2,8 +2,9 @@
 <!--
   WiX 5.0.2 source for the LaraEnv installer (v4 authoring namespace).
 
-  Use build\windows\installer\build-release.ps1 to check notices, generate
-  owned artwork in isolated staging, and supply ProjectRoot/InstallerAssets.
+  Use desktop\build\windows\installer\build-release.ps1 to check notices,
+  generate owned artwork in isolated staging, and supply RepoRoot,
+  DesktopRoot and InstallerAssets.
 -->
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
      xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
@@ -29,7 +30,7 @@
          only a UAC prompt and no progress UI — users think it didn't install). -->
     <ui:WixUI Id="WixUI_Minimal" />
     <UIRef Id="WixUI_ErrorProgressText" />
-    <WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectRoot)\build\windows\installer\LaraEnv-License.rtf" />
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.DesktopRoot)\build\windows\installer\LaraEnv-License.rtf" />
     <WixVariable Id="WixUIBannerBmp"  Value="$(var.InstallerAssets)\WixBanner.bmp" />
     <WixVariable Id="WixUIDialogBmp"  Value="$(var.InstallerAssets)\WixDialog.bmp" />
 
@@ -74,19 +75,19 @@
     </Component>
 
     <Component Id="DesktopLicense" Directory="INSTALLFOLDER" Guid="*">
-      <File Id="DesktopLicenseFile" Source="$(var.ProjectRoot)\LICENSE" KeyPath="yes" />
+      <File Id="DesktopLicenseFile" Source="$(var.RepoRoot)\LICENSE" KeyPath="yes" />
     </Component>
     <Component Id="DesktopNotice" Directory="INSTALLFOLDER" Guid="*">
-      <File Id="DesktopNoticeFile" Source="$(var.ProjectRoot)\NOTICE" KeyPath="yes" />
+      <File Id="DesktopNoticeFile" Source="$(var.RepoRoot)\NOTICE" KeyPath="yes" />
     </Component>
     <Component Id="ThirdPartyNotices" Directory="INSTALLFOLDER" Guid="*">
-      <File Id="ThirdPartyNoticesFile" Source="$(var.ProjectRoot)\THIRD_PARTY_NOTICES.txt" KeyPath="yes" />
+      <File Id="ThirdPartyNoticesFile" Source="$(var.RepoRoot)\THIRD_PARTY_NOTICES.txt" KeyPath="yes" />
     </Component>
     <Component Id="DependencyLicenseAggregate" Directory="ThirdPartyFolder" Guid="*">
-      <File Id="DependencyLicenseAggregateFile" Source="$(var.ProjectRoot)\third_party\dependencies.json" KeyPath="yes" />
+      <File Id="DependencyLicenseAggregateFile" Source="$(var.RepoRoot)\third_party\dependencies.json" KeyPath="yes" />
     </Component>
     <Component Id="WixCorrespondingSource" Directory="ThirdPartySourcesFolder" Guid="*">
-      <File Id="WixCorrespondingSourceFile" Source="$(var.ProjectRoot)\third_party\sources\wix-5.0.2-source.zip" KeyPath="yes" />
+      <File Id="WixCorrespondingSourceFile" Source="$(var.RepoRoot)\third_party\sources\wix-5.0.2-source.zip" KeyPath="yes" />
     </Component>
 
     <Component Id="StartMenuShortcut" Directory="ApplicationProgramsFolder" Guid="*">

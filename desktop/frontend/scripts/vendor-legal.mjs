@@ -2,7 +2,7 @@ import { existsSync, lstatSync, mkdirSync, readFileSync, readdirSync, writeFileS
 import { join, resolve, parse } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const DEFAULT_ROOT = fileURLToPath(new URL("../../", import.meta.url));
+const DEFAULT_ROOT = fileURLToPath(new URL("../../../", import.meta.url));
 const FILES = [
   ["LICENSE", "LICENSE.txt"],
   ["NOTICE", "NOTICE.txt"],
@@ -28,7 +28,7 @@ function rejectLinks(path) {
 // The aggregate includes full upstream texts, making the embedded UI sufficient
 // even when the updater distributes only the executable.
 export function vendorLegal({ repoRoot = DEFAULT_ROOT, check = false } = {}) {
-  const dest = join(repoRoot, "frontend/public/legal");
+  const dest = join(repoRoot, "desktop/frontend/public/legal");
   rejectLinks(dest);
   const sources = FILES.map(([source, target]) => {
     const path = join(repoRoot, source);
@@ -54,6 +54,6 @@ export function vendorLegal({ repoRoot = DEFAULT_ROOT, check = false } = {}) {
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const args = process.argv.slice(2);
-  if (args.some(arg => arg !== "--check")) throw new Error("Usage: node frontend/scripts/vendor-legal.mjs [--check]");
+  if (args.some(arg => arg !== "--check")) throw new Error("Usage: node desktop/frontend/scripts/vendor-legal.mjs [--check]");
   vendorLegal({ check: args.includes("--check") });
 }

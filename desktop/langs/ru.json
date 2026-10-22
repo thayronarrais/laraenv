@@ -234,7 +234,7 @@
       "language": "Язык",
       "languageHint": "Применяется немедленно, включая открытые окна терминала.",
       "needsNativeReviewBadge": "(требует проверки носителем)",
-      "needsNativeReviewNotice": "Этот перевод создан машиной и пока не проверен носителем языка. Если вы говорите на этом языке, ваши правки приветствуются: https://github.com/thayronarrais/laraenv/tree/main/langs",
+      "needsNativeReviewNotice": "Этот перевод создан машиной и пока не проверен носителем языка. Если вы говорите на этом языке, ваши правки приветствуются: https://github.com/thayronarrais/laraenv/tree/main/desktop/langs",
       "themeHint": "Выберите цветовую схему. Изменения применяются мгновенно и сохраняются для следующего запуска.",
       "themes": {
         "nebula": "По умолчанию: фиолетовый и мята",

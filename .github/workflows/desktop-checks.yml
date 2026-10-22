@@ -64,7 +64,7 @@ jobs:
           # Warm expanded graph metadata before the later offline notice check.
           go list -mod=readonly -m -json all | Out-Null
           go mod verify
-          npm ci --prefix frontend --ignore-scripts --no-audit --no-fund
+          npm ci --prefix desktop/frontend --ignore-scripts --no-audit --no-fund
           npm ci --prefix tools/screenshots --ignore-scripts --no-audit --no-fund
           # Build the CLI from this repository's pinned module graph.
           go build -mod=readonly -o "$env:CI_TOOLS/wails.exe" github.com/wailsapp/wails/v2/cmd/wails
@@ -107,12 +107,13 @@ jobs:
           # Reuse the locked npm ci tree. The wrapper restores wails.json exactly
           # and still builds bindings, Monaco/legal assets, tsc/Vite and Go.
           node tools/ci/build-desktop.mjs "$env:CI_TOOLS/wails.exe"
+          if (-not (Test-Path -LiteralPath desktop/frontend/wailsjs/go/main/App.js)) { throw 'Expected unchanged main.App bindings' }
 
       - name: Test frontend and lint hooks
         run: |
           $PSNativeCommandUseErrorActionPreference = $true
-          npm --prefix frontend test
-          npm --prefix frontend run lint
+          npm --prefix desktop/frontend test
+          npm --prefix desktop/frontend run lint
 
       - name: Check offline notices and installer license
         env:
@@ -120,7 +121,7 @@ jobs:
           GOSUMDB: 'off'
         run: |
           $PSNativeCommandUseErrorActionPreference = $true
-          node --test tools/licenses/*.test.mjs frontend/scripts/vendor-legal.node-test.mjs tools/ci/*.test.mjs tools/source-snapshot/*.test.mjs
+          node --test tools/licenses/*.test.mjs desktop/frontend/scripts/vendor-legal.node-test.mjs tools/ci/*.test.mjs tools/source-snapshot/*.test.mjs
           # Required evidence and committed bytes remain exact; only installed
           # optional npm build-tool evidence may vary with the Windows image.
           node tools/ci/check-notices.mjs
@@ -154,8 +155,8 @@ jobs:
 
       - name: Verify dependency and notice inputs stayed unchanged
         run: >-
-          git diff --exit-code -- go.mod go.sum wails.json
-          frontend/package.json frontend/package-lock.json
+          git diff --exit-code -- go.mod go.sum desktop/wails.json
+          desktop/frontend/package.json desktop/frontend/package-lock.json
           tools/screenshots/package.json tools/screenshots/package-lock.json
           LICENSE NOTICE THIRD_PARTY_NOTICES.txt third_party tools/licenses
-          build/windows/installer/LaraEnv-License.rtf
+          desktop/build/windows/installer/LaraEnv-License.rtf

@@ -11,7 +11,7 @@ const proof = process.env.WORKSPACE_PROOF ? path.resolve(process.env.WORKSPACE_P
 let server, browser;
 beforeAll(async () => {
   await mkdir(proof, { recursive: true });
-  server = await startServer(path.resolve(here, '../../../frontend/dist'));
+  server = await startServer(path.resolve(here, '../../../desktop/frontend/dist'));
   browser = await chromium.launch({ headless: true, ...(process.env.WORKSPACE_CHROMIUM ? { executablePath: process.env.WORKSPACE_CHROMIUM } : {}) });
 }, 30_000);
 afterAll(async () => { await browser?.close(); await server?.close(); });

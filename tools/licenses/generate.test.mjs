@@ -7,7 +7,7 @@ import { assemble, validateSpdx, syncOutputs, collectNotices, identifyLicense } 
 
 const license = 'MIT License\nCopyright Example\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the Software), to deal\nin the Software without restriction.\nTHE SOFTWARE IS PROVIDED AS IS.\n';
 function temp() { return mkdtempSync(join(tmpdir(), 'laraenv-licenses-')); }
-function fixture() { return { inputs: [{ path: 'frontend/package-lock.json', sha256: 'abc' }], components: [{ id: 'pkg:npm/demo@1.0.0', ecosystem: 'npm', name: 'demo', version: '1.0.0', scopes: ['desktop-frontend'], declaredLicense: 'MIT', evidenceStatus: 'collected', required: true, evidence: [{ sourcePath: 'LICENSE', bytes: Buffer.from(license) }] }] }; }
+function fixture() { return { inputs: [{ path: 'desktop/frontend/package-lock.json', sha256: 'abc' }], components: [{ id: 'pkg:npm/demo@1.0.0', ecosystem: 'npm', name: 'demo', version: '1.0.0', scopes: ['desktop-frontend'], declaredLicense: 'MIT', evidenceStatus: 'collected', required: true, evidence: [{ sourcePath: 'LICENSE', bytes: Buffer.from(license) }] }] }; }
 
 test('unknown or malformed SPDX declarations fail instead of becoming cleared', () => {
   assert.equal(validateSpdx('(MIT OR Apache-2.0) AND BSD-3-Clause'), true);

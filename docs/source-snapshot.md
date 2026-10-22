@@ -6,6 +6,8 @@ The canonical community source repository is [LaraEnv](https://github.com/thayro
 
 The policy intentionally excludes private Git history, local configuration, dependency/build caches, downloaded runtimes, old internal audits/plans, historical release drafts and unused concept assets. New tracked paths outside its reviewed rules stop export until classified. Generated bindings, frontend assets and installed dependency trees are rebuilt following [development.md](development.md).
 
+The Wails application is grouped under `desktop/`; the root Go module, shared `internal/` and `cmd/` packages, docs, tooling and legal inventory remain separate. The policy applies generated/private exclusions inside the nested project as well as at the root. The repository's current layout is listed in [README.md](../README.md#repository-layout).
+
 From a maintainer checkout with the intended changes reviewed and staged:
 
 ```powershell

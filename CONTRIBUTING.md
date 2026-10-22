@@ -22,7 +22,7 @@ Keep a pull request small enough to review. Describe the concrete behavior befor
 
 Use the committed Go and npm dependency graphs. Do not replace the project-pinned Wails CLI with a separately resolved installation, remove tool-only Go requirements, or refresh lockfiles as an incidental part of an unrelated change. Explain intentional dependency updates and regenerate the affected notices using the [license tooling guide](tools/licenses/README.md).
 
-Wails bindings under `frontend/wailsjs`, frontend build output, vendored frontend assets, dependency caches and compiled binaries are generated locally. Do not add them to a source change. Reviewed license outputs, including `THIRD_PARTY_NOTICES.txt` and `third_party/dependencies.json`, are tracked and must be updated when their inputs change.
+The application and its tests live in `desktop/`, with shared packages in `internal/` and commands in `cmd/`. Wails bindings under `desktop/frontend/wailsjs`, frontend build output, vendored frontend assets, dependency caches and compiled binaries are generated locally. Do not add them to a source change. Reviewed license outputs, including `THIRD_PARTY_NOTICES.txt` and `third_party/dependencies.json`, are tracked and must be updated when their inputs change.
 
 ## Before opening a pull request
 

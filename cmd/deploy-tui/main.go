@@ -12,9 +12,8 @@
 //
 // NOTE on i18n: this is a separate binary from the desktop app (its own
 // main(), no LoadCatalogues/SetGlobal call) and cannot embed the shared
-// langs/ catalogue — go:embed can't reach "../../langs" from this package,
-// and moving langs/ under an internal package would break the public-repo
-// mirror path the translation system relies on. Errors here are deliberately
+// desktop/langs/ catalogue — go:embed cannot reach another package directory.
+// The desktop embeds those catalogues from its own project. Errors here are deliberately
 // plain fmt.Errorf with English text, not i18n.Errorf: without a loaded
 // catalogue, an *i18n.Error renders as its bare key path (e.g.
 // "errors.deploytui.passwordRequired") instead of prose, which is worse

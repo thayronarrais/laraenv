@@ -235,7 +235,7 @@
       "language": "语言",
       "languageHint": "立即生效，包括已打开的终端窗口。",
       "needsNativeReviewBadge": "（需要母语审核）",
-      "needsNativeReviewNotice": "此翻译由机器生成，尚未经过母语使用者审核。如果您使用这种语言，欢迎在此处提交更正：https://github.com/thayronarrais/laraenv/tree/main/langs",
+      "needsNativeReviewNotice": "此翻译由机器生成，尚未经过母语使用者审核。如果您使用这种语言，欢迎在此处提交更正：https://github.com/thayronarrais/laraenv/tree/main/desktop/langs",
       "themeHint": "选择配色方案。更改会立即应用并保存用于下次启动。",
       "themes": {
         "nebula": "默认: 紫色与薄荷绿",

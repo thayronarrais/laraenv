@@ -117,7 +117,7 @@ func TestIsPortableFollowsTheMarkerNotTheRoot(t *testing.T) {
 // portableMarker without renaming that file and every portable build silently
 // stops being portable.
 func TestPackagedMarkerMatchesTheConstant(t *testing.T) {
-	packaged := filepath.Join("..", "..", "build", "windows", "portable", portableMarker)
+	packaged := filepath.Join("..", "..", "desktop", "build", "windows", "portable", portableMarker)
 
 	if _, err := os.Stat(packaged); err != nil {
 		t.Fatalf("the portable payload has no %s next to it: %v", portableMarker, err)

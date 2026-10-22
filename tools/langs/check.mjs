@@ -1,5 +1,5 @@
 // Validates the translation catalogues against en.json. Runs in two places:
-// GitHub Actions in the public repo on any PR touching langs/**, and here as a
+// GitHub Actions in the public repo on any PR touching desktop/langs/**, and here as a
 // Vitest case, so en.json is never published already divergent.
 //
 // No dependencies, by design — a translator's PR should not need an install
@@ -265,9 +265,9 @@ export function readDir(dir) {
   return files;
 }
 
-// CLI. `node tools/langs/check.mjs langs`
+// CLI. `node tools/langs/check.mjs desktop/langs`
 if (process.argv[1] && process.argv[1].endsWith("check.mjs")) {
-  const dir = process.argv[2] ?? "langs";
+  const dir = process.argv[2] ?? "desktop/langs";
   const files = readDir(dir);
   const { errors, warnings } = check(files, readDoNotTranslate(dir));
   for (const w of warnings) console.warn(`warning: ${w}`);

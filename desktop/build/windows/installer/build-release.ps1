@@ -14,11 +14,12 @@ param(
 
 $ErrorActionPreference = "Stop"
 $scriptDir = $PSScriptRoot
-$projectRoot = [System.IO.Path]::GetFullPath((Join-Path $scriptDir "..\..\.."))
-$binDir = Join-Path $projectRoot "build\bin"
-$portableSrc = Join-Path $projectRoot "build\windows\portable"
+$desktopRoot = [System.IO.Path]::GetFullPath((Join-Path $scriptDir "..\..\.."))
+$repoRoot = [System.IO.Path]::GetFullPath((Join-Path $desktopRoot ".."))
+$binDir = Join-Path $desktopRoot "build\bin"
+$portableSrc = Join-Path $desktopRoot "build\windows\portable"
 $wxsPath = Join-Path $scriptDir "laraenv.wxs"
-if (-not $OutputDir) { $OutputDir = Join-Path $projectRoot "build\release\$Version" }
+if (-not $OutputDir) { $OutputDir = Join-Path $desktopRoot "build\release\$Version" }
 $releaseDir = [System.IO.Path]::GetFullPath($OutputDir)
 
 function Assert-EmptyOutputDirectory {
@@ -53,7 +54,7 @@ Assert-EmptyOutputDirectory -Path $releaseDir
 if (-not (Get-Command node -ErrorAction SilentlyContinue)) { throw "Node >=24 is required for release notice checks." }
 
 # Check the authoritative notices before any build, translation sync or staging.
-Push-Location $projectRoot
+Push-Location $repoRoot
 try {
     & node tools/licenses/generate.mjs --check
     if ($LASTEXITCODE -ne 0) { throw "Dependency notices are missing or stale. Run node tools/licenses/generate.mjs and review the result." }
@@ -66,7 +67,7 @@ $licensePayload = @(
     "third_party\sources\wix-5.0.2-source.zip"
 )
 foreach ($relative in $licensePayload) {
-    if (-not (Test-Path -LiteralPath (Join-Path $projectRoot $relative) -PathType Leaf)) {
+    if (-not (Test-Path -LiteralPath (Join-Path $repoRoot $relative) -PathType Leaf)) {
         throw "Missing required release license payload: $relative"
     }
 }
@@ -88,7 +89,7 @@ foreach ($extension in @("WixToolset.UI.wixext", "WixToolset.Util.wixext")) {
 
 # Match the actual compiled resources to the audited official packages, not
 # only the version labels reported by the extension cache.
-$noticePolicy = Get-Content -LiteralPath (Join-Path $projectRoot "tools\licenses\policy.json") -Raw | ConvertFrom-Json
+$noticePolicy = Get-Content -LiteralPath (Join-Path $repoRoot "tools\licenses\policy.json") -Raw | ConvertFrom-Json
 foreach ($package in $noticePolicy.installer.packages) {
     $extensionDll = Join-Path $env:USERPROFILE ".wix\extensions\$($package.name)\$($noticePolicy.installer.version)\wixext5\$($package.name).dll"
     if (-not (Test-Path -LiteralPath $extensionDll -PathType Leaf) -or
@@ -104,7 +105,7 @@ if ($SourceExe) {
 } elseif ($SkipBuild) {
     $exePath = Join-Path $binDir "LaraEnv.exe"
 } else {
-    # A unique Wails output name preserves any previous build\bin\LaraEnv.exe.
+    # A unique Wails output name preserves any previous desktop\build\bin\LaraEnv.exe.
     $buildName = "LaraEnv-$Version-$([guid]::NewGuid().ToString('N')).exe"
     $exePath = Join-Path $binDir $buildName
     if (Test-Path -LiteralPath $exePath) { throw "Build output already exists: $exePath" }
@@ -114,30 +115,30 @@ if ($SkipBuild -and -not (Test-Path -LiteralPath $exePath -PathType Leaf)) {
 }
 
 if (-not $SkipLangSync) {
-    Push-Location $projectRoot
+    Push-Location $repoRoot
     try {
         & node tools/langs/pull.mjs
         if ($LASTEXITCODE -ne 0) { throw "translation pull failed" }
-        & node tools/langs/check.mjs langs
+        & node tools/langs/check.mjs desktop/langs
         if ($LASTEXITCODE -ne 0) { throw "translation catalogues failed validation" }
     } finally { Pop-Location }
 }
 if (-not $SkipBuild) {
-    Push-Location $projectRoot
+    Push-Location $desktopRoot
     try {
         # Build/run the CLI against this checkout's fixed tool graph rather
         # than an older standalone global Wails installation.
-        & go run -mod=readonly github.com/wailsapp/wails/v2/cmd/wails build -nosyncgomod -platform windows/amd64 -webview2 browser -o $buildName -ldflags "-X lara4ever/internal/version.Version=$Version"
+        & go run -mod=readonly github.com/wailsapp/wails/v2/cmd/wails build -m -nosyncgomod -platform windows/amd64 -webview2 browser -o $buildName -ldflags "-X lara4ever/internal/version.Version=$Version"
         if ($LASTEXITCODE -ne 0) { throw "wails build failed" }
     } finally { Pop-Location }
 }
 if (-not (Test-Path -LiteralPath $exePath -PathType Leaf)) { throw "Built executable not found: $exePath" }
 
 function New-InstallerAssets {
-    param([Parameter(Mandatory)][string]$ProjectRoot, [Parameter(Mandatory)][string]$Destination)
+    param([Parameter(Mandatory)][string]$DesktopRoot, [Parameter(Mandatory)][string]$Destination)
     Add-Type -AssemblyName System.Drawing
-    $logo = [System.Drawing.Image]::FromFile((Join-Path $ProjectRoot "frontend\logo_laraenv.png"))
-    $icon = [System.Drawing.Image]::FromFile((Join-Path $ProjectRoot "build\appicon.png"))
+    $logo = [System.Drawing.Image]::FromFile((Join-Path $DesktopRoot "frontend\logo_laraenv.png"))
+    $icon = [System.Drawing.Image]::FromFile((Join-Path $DesktopRoot "build\appicon.png"))
     try {
         foreach ($spec in @(
             @{ Name = "WixDialog.bmp"; Width = 493; Height = 312; Image = $logo; Padding = 36 },
@@ -186,12 +187,12 @@ if ($stageRoot.Equals($releaseDir, [System.StringComparison]::OrdinalIgnoreCase)
 }
 New-Item -ItemType Directory -Path $stageRoot | Out-Null
 Write-Host "Isolated staging (retained for inspection): $stageRoot"
-New-InstallerAssets -ProjectRoot $projectRoot -Destination $stageRoot
+New-InstallerAssets -DesktopRoot $desktopRoot -Destination $stageRoot
 $stagedMsi = Join-Path $stageRoot "LaraEnv-$Version.msi"
 & wix build -arch x64 -pdbtype none `
     -ext WixToolset.UI.wixext/5.0.2 -ext WixToolset.Util.wixext/5.0.2 `
     -d "ProductVersion=$Version" -d "SourceExe=$exePath" `
-    -d "ProjectRoot=$projectRoot" -d "InstallerAssets=$stageRoot" `
+    -d "RepoRoot=$repoRoot" -d "DesktopRoot=$desktopRoot" -d "InstallerAssets=$stageRoot" `
     -o $stagedMsi $wxsPath
 if ($LASTEXITCODE -ne 0) { throw "wix build failed; staging is retained at $stageRoot" }
 
@@ -204,7 +205,7 @@ foreach ($file in @(".laraenv-portable", "README.txt")) {
     Copy-NewFile -Source (Join-Path $portableSrc $file) -Destination (Join-Path $portableDir $file)
 }
 foreach ($relative in $licensePayload) {
-    Copy-NewFile -Source (Join-Path $projectRoot $relative) -Destination (Join-Path $portableDir $relative)
+    Copy-NewFile -Source (Join-Path $repoRoot $relative) -Destination (Join-Path $portableDir $relative)
 }
 $stagedZip = Join-Path $stageRoot "LaraEnv-$Version-portable-win64.zip"
 Compress-Archive -LiteralPath $portableDir -DestinationPath $stagedZip

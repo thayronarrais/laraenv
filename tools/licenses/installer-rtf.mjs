@@ -22,7 +22,7 @@ export function renderInstallerLicense(license) {
 }
 
 export function generateInstallerLicense({ check = false } = {}) {
-  const target = new URL("../../build/windows/installer/LaraEnv-License.rtf", import.meta.url);
+  const target = new URL("../../desktop/build/windows/installer/LaraEnv-License.rtf", import.meta.url);
   const expected = renderInstallerLicense(readFileSync(new URL("../../LICENSE", import.meta.url), "utf8"));
   if (check) {
     if (readFileSync(target, "utf8").replace(/\r\n/g, "\n") !== expected) {

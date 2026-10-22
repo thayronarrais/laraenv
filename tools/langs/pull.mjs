@@ -2,7 +2,7 @@
 // public main. en.json and the runtime-fragment manifest are deliberately
 // excluded so a pull does not overwrite locally authored source changes.
 //
-// This must never block a release: the public repo may not have langs/ yet
+// This must never block a release: the public repo may not have desktop/langs/ yet
 // (404), GitHub may be unreachable, a request may be rate-limited, or a 200
 // may carry a non-JSON body (captive portal, proxy interstitial, GitHub
 // error page). Any of those produce a warning and exit 0, leaving the
@@ -17,7 +17,7 @@
 // the end naturally avoids that and still yields exit code 0.
 import { writeFileSync } from "node:fs";
 
-const API = "https://api.github.com/repos/thayronarrais/laraenv/contents/langs?ref=main";
+const API = "https://api.github.com/repos/thayronarrais/laraenv/contents/desktop/langs?ref=main";
 
 async function main() {
   let res;
@@ -32,7 +32,7 @@ async function main() {
     return;
   }
   if (!res.ok) {
-    console.warn(`warning: could not list langs/ (${res.status} ${res.statusText})`);
+    console.warn(`warning: could not list desktop/langs/ (${res.status} ${res.statusText})`);
     console.warn("using the committed copies; the release is not blocked by this.");
     return;
   }
@@ -44,7 +44,7 @@ async function main() {
     // A 200 with a non-JSON body — a captive portal, a proxy interstitial,
     // a GitHub error page — is exactly the "bad hotel wifi" case this script
     // must survive. Warn and fall back to the committed copies.
-    console.warn(`warning: could not parse the langs/ listing, not valid JSON — ${e.message}`);
+    console.warn(`warning: could not parse the desktop/langs/ listing, not valid JSON — ${e.message}`);
     console.warn("using the committed copies; the release is not blocked by this.");
     return;
   }
@@ -72,7 +72,7 @@ async function main() {
       console.warn(`warning: ${entry.name} from public main is not valid JSON, skipping — ${e.message}`);
       continue;
     }
-    writeFileSync(`langs/${entry.name}`, body);
+    writeFileSync(`desktop/langs/${entry.name}`, body);
     pulled++;
   }
   console.log(`pulled ${pulled} translation file(s) from the public repo.`);

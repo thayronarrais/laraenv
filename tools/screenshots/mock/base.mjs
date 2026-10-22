@@ -3,7 +3,7 @@
 // so it can close over nothing from this module.
 import { installAgentActivityMock } from "./agentActivity.mjs";
 
-const THEME_STORAGE_KEY = "l4e:theme"; // frontend/src/theme.ts:49
+const THEME_STORAGE_KEY = "l4e:theme"; // desktop/frontend/src/theme.ts:49
 
 export function buildInitScript({ state, theme = "midnight" }) {
   return `(() => {

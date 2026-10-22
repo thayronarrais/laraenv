@@ -1,5 +1,6 @@
 # Translation catalogues use LF across contributor platforms.
 langs/*.json text eol=lf
+desktop/langs/*.json text eol=lf
 
 # Embedded deployment scripts execute on Unix even when built on Windows.
 *.sh text eol=lf
@@ -22,8 +23,8 @@ langs/*.json text eol=lf
 /NOTICE text eol=lf
 /go.mod text eol=lf
 /go.sum text eol=lf
-/frontend/package.json text eol=lf
-/frontend/package-lock.json text eol=lf
+/desktop/frontend/package.json text eol=lf
+/desktop/frontend/package-lock.json text eol=lf
 /tools/screenshots/package.json text eol=lf
 /tools/screenshots/package-lock.json text eol=lf
 /internal/installer/catalog.go text eol=lf
@@ -39,4 +40,4 @@ langs/*.json text eol=lf
 /tools/source-snapshot/*.json text eol=lf
 /tools/ci/*.mjs text eol=lf
 /.github/workflows/*.yml text eol=lf
-/build/windows/installer/LaraEnv-License.rtf text eol=lf
+/desktop/build/windows/installer/LaraEnv-License.rtf text eol=lf

@@ -30,6 +30,9 @@ async function importedSnapshot(t) {
   const f = fixture(t), { exportSnapshot } = await api();
   const policy = JSON.parse(readFileSync(new URL('./policy.json', import.meta.url)));
   git(f.root, 'rm', '--cached', '--', 'internal-only.md');
+  mkdirSync(join(f.root, 'desktop/frontend'), { recursive: true });
+  git(f.root, 'mv', '--', 'main.go', 'desktop/main.go');
+  git(f.root, 'mv', '--', 'frontend/source.ts', 'desktop/frontend/source.ts');
   f.put('.gitignore', readFileSync(new URL('../../.gitignore', import.meta.url)));
   f.put('tools/source-snapshot/policy.json', JSON.stringify(policy, null, 2) + '\n');
   const first = exportSnapshot({ repoRoot: f.root, outputDir: f.output, policy });
@@ -39,6 +42,53 @@ async function importedSnapshot(t) {
   git(imported, 'add', '--all');
   return { ...f, policy, first, imported };
 }
+
+test('production policy exports nested desktop inputs and retains legacy translation and media paths', async t => {
+  const f = await importedSnapshot(t), { exportSnapshot } = await api();
+  f.put('desktop/wails.json', '{"name":"LaraEnv"}\n');
+  f.put('desktop/build/windows/installer/project.wxs', '<Wix />\n');
+  f.put('desktop/langs/en.json', '{"hello":"Hello"}\n');
+  f.put('langs/README.md', 'Actual catalogues: ../desktop/langs/\n');
+  f.put('docs/icon.png', Buffer.from([0x89,0x50,0x4e,0x47]));
+  f.put('.gitattributes', 'LICENSE -text\n');
+  f.put('LICENSE', 'Exact original legal bytes\r\n');
+  const output = join(f.root, 'candidate-layout');
+  const result = exportSnapshot({ repoRoot: f.root, outputDir: output, policy: f.policy });
+  for (const path of ['desktop/main.go','desktop/frontend/source.ts','desktop/wails.json','desktop/build/windows/installer/project.wxs','desktop/langs/en.json','langs/README.md','docs/icon.png','LICENSE']) assert.ok(result.files.some(file => file.path === path), path);
+  assert.equal(readFileSync(join(output, 'source/LICENSE'), 'utf8'), 'Exact original legal bytes\r\n');
+  assert.deepEqual(readFileSync(join(output, 'source/docs/icon.png')), Buffer.from([0x89,0x50,0x4e,0x47]));
+
+  for (const [index, path] of ['frontend/unreviewed.ts','langs/unreviewed.json','desktop/unreviewed.go'].entries()) {
+    f.put(path, 'Unreviewed source must not inherit the moved allowlist\n');
+    const refused = join(f.root, `candidate-stale-${index}`);
+    assert.throws(() => exportSnapshot({ repoRoot: f.root, outputDir: refused, policy: f.policy }), /Unclassified tracked path:/);
+    assert.equal(existsSync(refused), false);
+    git(f.root, 'rm', '--cached', '--', path);
+  }
+});
+
+test('generated and private inputs stay excluded at root and nested desktop even under broad includes', async t => {
+  const f = fixture(t), { exportSnapshot } = await api();
+  f.policy.include.prefixes.push('desktop/','build/');
+  f.put('desktop/main.go', 'package main\n');
+  const forbidden = [];
+  for (const base of ['', 'desktop/']) {
+    for (const path of ['frontend/dist/app.js','frontend/wailsjs/go/main/App.js','frontend/public/vs/editor.js','frontend/public/legal/NOTICE','frontend/.vite/cache.js']) forbidden.push(base + path);
+    for (const directory of ['bin','tmp','cache','logs','archive','verification','release','source']) forbidden.push(`${base}build/${directory}/generated.txt`);
+    for (const path of ['build/windows/installer/tmp/generated.wixobj','build/windows/installer/.build-fixture.log','build/windows/pgvector/dist/vector.dll']) forbidden.push(base + path);
+  }
+  forbidden.push('desktop/backend/private.php','desktop/laravel-server/private.php','desktop/.aws/credentials','desktop/.codex/settings.json','desktop/.agents/private.md','desktop/.claude/private.md','desktop/.superpowers/private.md','desktop/.env.local','desktop/config.local.json','desktop/frontend/node_modules/example/package.json');
+  for (const path of forbidden) f.put(path, 'Generated or private fixture bytes\n');
+  const packagingSources = ['build/windows/installer/laraenv.wxs','build/windows/installer/build-release.ps1','build/windows/pgvector/build-pgvector.ps1'];
+  for (const base of ['', 'desktop/']) for (const path of packagingSources) f.put(base + path, 'Reviewed packaging source\n');
+  const result = exportSnapshot({ repoRoot: f.root, outputDir: f.output, policy: f.policy });
+  for (const path of forbidden) {
+    assert.equal(existsSync(join(f.output, 'source', path)), false, path);
+    assert.ok(result.excluded.some(file => file.path === path), path);
+  }
+  for (const base of ['', 'desktop/']) for (const path of packagingSources) assert.equal(readFileSync(join(f.output, 'source', base + path), 'utf8'), 'Reviewed packaging source\n');
+  assert.equal(result.files.length, 11);
+});
 
 test('production policy re-exports an imported snapshot without tracking its generated manifest', async t => {
   const f = await importedSnapshot(t), { exportSnapshot, verifySnapshot } = await api();

@@ -17,7 +17,7 @@ function fixture(t) {
 test("legal assets preserve exact bytes and check detects stale contents without writing", t => {
   const repoRoot = fixture(t);
   vendorLegal({ repoRoot });
-  const dest = join(repoRoot, "frontend/public/legal/LICENSE.txt");
+  const dest = join(repoRoot, "desktop/frontend/public/legal/LICENSE.txt");
   assert.equal(readFileSync(dest, "utf8"), readFileSync(join(repoRoot, "LICENSE"), "utf8"));
   vendorLegal({ repoRoot, check: true });
   writeFileSync(dest, "stale");
@@ -29,13 +29,13 @@ test("missing evidence fails before creating a partial legal bundle", t => {
   const repoRoot = fixture(t);
   rmSync(join(repoRoot, "THIRD_PARTY_NOTICES.txt"));
   assert.throws(() => vendorLegal({ repoRoot }), /THIRD_PARTY_NOTICES/);
-  assert.throws(() => readFileSync(join(repoRoot, "frontend/public/legal/LICENSE.txt")), /ENOENT/);
+  assert.throws(() => readFileSync(join(repoRoot, "desktop/frontend/public/legal/LICENSE.txt")), /ENOENT/);
 });
 
 test("unexpected output files are rejected rather than recursively removed", t => {
   const repoRoot = fixture(t);
   vendorLegal({ repoRoot });
-  const extra = join(repoRoot, "frontend/public/legal/operator.txt");
+  const extra = join(repoRoot, "desktop/frontend/public/legal/operator.txt");
   writeFileSync(extra, "preserve");
   assert.throws(() => vendorLegal({ repoRoot }), /Unexpected/);
   assert.equal(readFileSync(extra, "utf8"), "preserve");
@@ -44,7 +44,7 @@ test("unexpected output files are rejected rather than recursively removed", t =
 test("dangling output links cannot redirect legal writes", t => {
   const repoRoot = fixture(t);
   vendorLegal({ repoRoot });
-  const destination = join(repoRoot, "frontend/public/legal/LICENSE.txt");
+  const destination = join(repoRoot, "desktop/frontend/public/legal/LICENSE.txt");
   const outside = join(repoRoot, "must-not-be-created.txt");
   rmSync(destination);
   symlinkSync(outside, destination, "file");

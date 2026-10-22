@@ -27,8 +27,8 @@ node tools/licenses/generate.mjs
 node tools/licenses/generate.mjs --check
 node tools/licenses/installer-rtf.mjs
 node tools/licenses/installer-rtf.mjs --check
-node frontend/scripts/vendor-legal.mjs
-node frontend/scripts/vendor-legal.mjs --check
+node desktop/frontend/scripts/vendor-legal.mjs
+node desktop/frontend/scripts/vendor-legal.mjs --check
 ```
 
 Review changed inputs and original notices when a version, resource or policy changes. Do not treat automatic text classification as a legal compatibility opinion. The checks reject stale outputs and missing required evidence. The frontend hooks copy reviewed notices into local assets, and Settings loads their plain text only when opened. The release helper checks the sources before packaging; MSI and portable packages carry legal files, while the standalone executable embeds the same notices.

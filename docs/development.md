@@ -1,6 +1,6 @@
 # Desktop development
 
-Run commands from the project root in PowerShell unless stated otherwise. The desktop is a Windows application; some packages and tests are platform-specific. The separately maintained cloud backend is not needed to build the desktop or develop local features.
+Run commands from the repository root in PowerShell unless stated otherwise. The single Go module, shared `internal/` packages and `cmd/` commands stay at the root; the Wails project is in `desktop/`. The desktop is a Windows application; some packages and tests are platform-specific. The separately maintained cloud backend is not needed to build the desktop or develop local features.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ node --version
 npm --version
 go mod download
 go list -mod=readonly -m -json all | Out-Null
-npm ci --prefix frontend --ignore-scripts
+npm ci --prefix desktop/frontend --ignore-scripts
 npm ci --prefix tools/screenshots --ignore-scripts
 New-Item -ItemType Directory -Force build/bin | Out-Null
 go build -mod=readonly -o build/bin/wails.exe github.com/wailsapp/wails/v2/cmd/wails
@@ -41,15 +41,15 @@ Notice checks need the installed dependencies, cached Go sources and generated e
 
 ## First build and generated files
 
-A source checkout does not include `frontend/dist`, `frontend/wailsjs`, `frontend/public/vs` or `frontend/public/legal`. Wails creates the embed placeholder, generates Go-to-JavaScript bindings, then builds the frontend. Run a Wails build before attempting a standalone frontend build or the full Go suite:
+A source checkout does not include `desktop/frontend/dist`, `desktop/frontend/wailsjs`, `desktop/frontend/public/vs` or `desktop/frontend/public/legal`. Wails creates the embed placeholder, generates Go-to-JavaScript bindings, then builds the frontend. Run a Wails build before attempting a standalone frontend build or the full Go suite:
 
 ```powershell
 node tools/ci/build-desktop.mjs .\build\bin\wails.exe
 node tools/ci/check-notices.mjs
-node frontend/scripts/vendor-legal.mjs --check
+node desktop/frontend/scripts/vendor-legal.mjs --check
 ```
 
-The output is `build/bin/LaraEnv.exe`. This command builds the application; it does not install or launch it. After the locked `npm ci` provisioning above, the helper temporarily disables Wails' redundant frontend installation and restores `wails.json` byte-for-byte even if the build fails. Bindings and the complete frontend/Go build still run. Frontend hooks copy Monaco and the reviewed legal texts into local assets so the editors and notices do not require a CDN at runtime.
+The output is `desktop/build/bin/LaraEnv.exe`. This command builds the application; it does not install or launch it. After the locked `npm ci` provisioning above, the helper temporarily disables Wails' redundant frontend installation and restores `desktop/wails.json` byte-for-byte even if the build fails. It runs Wails from `desktop/`, resolving a repository-relative CLI path before changing the working directory. Bindings and the complete frontend/Go build still run. Frontend hooks copy Monaco and the reviewed legal texts into local assets so the editors and notices do not require a CDN at runtime.
 
 Use both `-m` and `-nosyncgomod` to skip module tidying and Wails module synchronization, preserving the project graph. Production builds must use `-webview2 browser`, matching the dependency inventory's build tags and the separate WebView2 prerequisite. Do not change that strategy without reviewing the resulting distribution and license inputs.
 
@@ -58,7 +58,10 @@ The executable alone is not a portable package. Portable mode needs its marker a
 ## Development mode
 
 ```powershell
-.\build\bin\wails.exe dev -m -nosyncgomod
+cd desktop
+..\build\bin\wails.exe dev -m -nosyncgomod
+# After leaving development mode:
+cd ..
 ```
 
 This starts Vite and the desktop with hot reload. Running the GUI uses the application's normal local environment and may request elevation for system integration. Use a test Windows profile or isolated environment when exercising actions that change hosts, certificates, services, databases, scheduled tasks or files.
@@ -71,13 +74,13 @@ After the first Wails build, run the appropriate checks for a change:
 
 ```powershell
 go test -mod=readonly ./...
-npm --prefix frontend test
-npm --prefix frontend run lint
-npm --prefix frontend run build
+npm --prefix desktop/frontend test
+npm --prefix desktop/frontend run lint
+npm --prefix desktop/frontend run build
 node --test tools/licenses/*.test.mjs tools/ci/*.test.mjs tools/source-snapshot/*.test.mjs
 node tools/ci/check-notices.mjs
 node tools/licenses/installer-rtf.mjs --check
-node frontend/scripts/vendor-legal.mjs --check
+node desktop/frontend/scripts/vendor-legal.mjs --check
 ```
 
 Use focused tests while iterating, then run the broader affected suite before submitting. Go tests can depend on Windows features, Git and filesystem permissions. The license tooling has a directory-junction fixture that requires permission to create junctions. Report an environment-related failure with the exact output instead of treating a skipped or blocked check as passing. The frontend lint focuses on React hook correctness; it is not a general security audit.
@@ -96,16 +99,16 @@ Investigate a mismatch before regenerating notices. A platform difference in opt
 
 | Path | Purpose |
 | --- | --- |
-| `main.go`, `app*.go` | Wails lifecycle and desktop methods exposed to the frontend |
+| `desktop/main.go`, `desktop/app*.go` | Wails lifecycle and desktop methods exposed to the frontend, with Go tests alongside |
 | `internal/` | Local configuration, projects, services, installers, terminals, SSH, deployment and integration packages |
-| `frontend/src/` | React UI and frontend tests |
-| `frontend/wailsjs/` | Generated Wails bindings and runtime bridge |
-| `langs/` | Translation catalogs |
+| `desktop/frontend/src/` | React UI and frontend tests |
+| `desktop/frontend/wailsjs/` | Generated Wails bindings and runtime bridge |
+| `desktop/langs/` | Translation catalogs; root `langs/README.md` retains the older contribution link |
 | `cmd/deploy-tui/` | Standalone SSH deployment client |
-| `build/windows/` | Windows metadata and packaging sources |
+| `desktop/build/windows/` | Windows metadata and packaging sources |
 | `tools/licenses/`, `third_party/` | Notice generation, preserved texts and dependency inventory |
 
-Public methods on `App` are exposed through generated bindings under `frontend/wailsjs/go/main/`. Changes to exposed signatures need a Wails regeneration/build before frontend type checking. Backend events use Wails runtime events; keep producer and consumer names and payloads aligned.
+Public methods on `App` are exposed through generated bindings under `desktop/frontend/wailsjs/go/main/`. The package remains `main`; moving the Wails project does not rename its frontend bridge. Changes to exposed signatures need a Wails regeneration/build before frontend type checking. Backend events use Wails runtime events; keep producer and consumer names and payloads aligned.
 
 ## Release limits
 

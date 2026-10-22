@@ -1,9 +1,10 @@
 Unicode true
 
-!define LARAENV_PROJECT_ROOT "${__FILEDIR__}\..\..\.."
+!define LARAENV_DESKTOP_ROOT "${__FILEDIR__}\..\..\.."
+!define LARAENV_REPO_ROOT "${LARAENV_DESKTOP_ROOT}\.."
 # Compile-time checks fail before creating an installer from stale notices.
-!system 'node "${LARAENV_PROJECT_ROOT}\tools\licenses\generate.mjs" --check' = 0
-!system 'node "${LARAENV_PROJECT_ROOT}\tools\licenses\installer-rtf.mjs" --check' = 0
+!system 'node "${LARAENV_REPO_ROOT}\tools\licenses\generate.mjs" --check' = 0
+!system 'node "${LARAENV_REPO_ROOT}\tools\licenses\installer-rtf.mjs" --check' = 0
 
 ####
 ## Please note: Template replacements don't work in this file. They are provided with default defines like
@@ -56,7 +57,7 @@ ManifestDPIAware true
 !include "MUI.nsh"
 
 !ifndef ARG_INSTALLER_ICON
-    # Wails generates this icon from the owned build/appicon.png source.
+    # Wails generates this icon from desktop/build/appicon.png.
     !define ARG_INSTALLER_ICON "..\icon.ico"
 !endif
 !define MUI_ICON "${ARG_INSTALLER_ICON}"
@@ -66,7 +67,7 @@ ManifestDPIAware true
 !define MUI_ABORTWARNING # This will warn the user if they exit from the installer.
 
 !insertmacro MUI_PAGE_WELCOME # Welcome to the installer page.
-!insertmacro MUI_PAGE_LICENSE "${LARAENV_PROJECT_ROOT}\LICENSE"
+!insertmacro MUI_PAGE_LICENSE "${LARAENV_REPO_ROOT}\LICENSE"
 !insertmacro MUI_PAGE_DIRECTORY # In which folder install page.
 !insertmacro MUI_PAGE_INSTFILES # Installing page.
 !insertmacro MUI_PAGE_FINISH # Finished installation page.
@@ -82,7 +83,7 @@ ManifestDPIAware true
 Name "${INFO_PRODUCTNAME}"
 !ifndef ARG_OUTPUT_FILE
     # Create this version directory first, or supply a new explicit output path.
-    !define ARG_OUTPUT_FILE "${LARAENV_PROJECT_ROOT}\build\release\${INFO_PRODUCTVERSION}\${INFO_PROJECTNAME}-${ARCH}-installer.exe"
+    !define ARG_OUTPUT_FILE "${LARAENV_DESKTOP_ROOT}\build\release\${INFO_PRODUCTVERSION}\${INFO_PROJECTNAME}-${ARCH}-installer.exe"
 !endif
 !if /FileExists "${ARG_OUTPUT_FILE}"
     !error "Installer output already exists; select a new ARG_OUTPUT_FILE. Existing artifacts are preserved."
@@ -105,13 +106,13 @@ Section
 
     !insertmacro wails.files
 
-    File "${LARAENV_PROJECT_ROOT}\LICENSE"
-    File "${LARAENV_PROJECT_ROOT}\NOTICE"
-    File "${LARAENV_PROJECT_ROOT}\THIRD_PARTY_NOTICES.txt"
+    File "${LARAENV_REPO_ROOT}\LICENSE"
+    File "${LARAENV_REPO_ROOT}\NOTICE"
+    File "${LARAENV_REPO_ROOT}\THIRD_PARTY_NOTICES.txt"
     SetOutPath "$INSTDIR\third_party"
-    File "${LARAENV_PROJECT_ROOT}\third_party\dependencies.json"
+    File "${LARAENV_REPO_ROOT}\third_party\dependencies.json"
     SetOutPath "$INSTDIR\third_party\sources"
-    File "${LARAENV_PROJECT_ROOT}\third_party\sources\wix-5.0.2-source.zip"
+    File "${LARAENV_REPO_ROOT}\third_party\sources\wix-5.0.2-source.zip"
     SetOutPath $INSTDIR
 
     CreateShortcut "$SMPROGRAMS\${INFO_PRODUCTNAME}.lnk" "$INSTDIR\${PRODUCT_EXECUTABLE}"

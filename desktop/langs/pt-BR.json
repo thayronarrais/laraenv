@@ -234,7 +234,7 @@
       "language": "Idioma",
       "languageHint": "Aplica na hora, inclusive nas janelas de terminal abertas.",
       "needsNativeReviewBadge": "(precisa de revisão nativa)",
-      "needsNativeReviewNotice": "Esta tradução foi gerada por máquina e ainda não foi revisada por um falante nativo. Se você fala este idioma, as correções são bem-vindas: https://github.com/thayronarrais/laraenv/tree/main/langs",
+      "needsNativeReviewNotice": "Esta tradução foi gerada por máquina e ainda não foi revisada por um falante nativo. Se você fala este idioma, as correções são bem-vindas: https://github.com/thayronarrais/laraenv/tree/main/desktop/langs",
       "overrideActive": "Usando traduções locais de {{path}}",
       "overrideRejected": {
         "one": "{{count}} tradução local foi ignorada porque precisa conter um texto específico e não contém: {{keys}}",

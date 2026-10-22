@@ -1,62 +1,119 @@
-# LaraEnv
+<p align="center">
+  <img src="docs/icon.png" alt="LaraEnv" width="140" />
+</p>
 
-LaraEnv is a Windows desktop development environment for PHP/Laravel, Node.js and Python, with local services and a workspace for terminals, files, Git and optional coding agents.
+<h1 align="center">LaraEnv</h1>
 
-It is built with Go, Wails v2, React and Tailwind. The original desktop source is licensed under [Apache-2.0](LICENSE). Third-party components keep their own licenses; see [NOTICE](NOTICE), [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt) and the [licensing guide](docs/licensing.md).
+<p align="center">
+  <strong>Your local development workspace for Windows.</strong><br />
+  Build PHP/Laravel, Node.js and Python projects with your stack, terminals, files and Git in one place.<br />
+  Open source, with local features available without a LaraEnv account or subscription.
+</p>
 
-The desktop works with local data without a LaraEnv account or subscription. The optional cloud integration starts disabled, including for existing profiles that have not opted in. This source tree includes the cloud client; the separately maintained hosted backend remains private and is not needed to build or use local desktop features.
+<p align="center">
+  <a href="https://github.com/thayronarrais/laraenv/releases"><strong>Download for Windows</strong></a> ·
+  <a href="docs/development.md">Build from source</a> ·
+  <a href="https://laraenv.com">Website</a> ·
+  <a href="https://github.com/thayronarrais/laraenv/issues">Issues</a>
+</p>
 
-Desktop source, contributions and [binary releases](https://github.com/thayronarrais/laraenv/releases) share this [LaraEnv repository](https://github.com/thayronarrais/laraenv). Published packages can predate the changes in this source tree; consult each release's notes for its behavior and validation.
+<p align="center">
+  <img src="docs/screenshots/dashboard.png" alt="LaraEnv dashboard with local services and runtime controls" width="100%" />
+</p>
 
-## Features
+Screenshots show earlier versions and may include former Pro labels. Local features in the current source are available without a plan. See [historical screenshots](docs/historical-media.md) for context.
 
-- Manage web servers, databases, Mailpit and Redis from one dashboard.
-- Install and select multiple PHP, Node.js and Python versions. Detect project requirements and apply per-project PHP/Node overrides.
-- Create projects, manage virtual hosts and local HTTPS, run package scripts and Laravel workers, and inspect configuration with Site Doctor.
-- Use a multi-tab terminal with PowerShell, CMD, Git Bash or Cmder; browse and edit files, preview Markdown, and review Git changes alongside it.
-- Manage SSH hosts and keys, and run deployments over SSH using local configuration and history.
-- Enable experimental coding-agent sessions and local MCP access explicitly in Settings.
+## Why LaraEnv?
 
-Installed runtimes and local features can operate without the LaraEnv API. Initial dependency provisioning, runtime downloads, updates, remote Git, SSH, certificate issuance and external providers still need their respective networks and credentials. Downloaded runtimes are separate products with their own licenses.
+- **One workspace for your day.** Start services, find a project, open a terminal, edit files and review Git changes together.
+- **The runtime your project needs.** Keep PHP and Node.js versions side by side, detect project requirements and choose overrides when needed.
+- **A home for Laravel.** Create projects, configure virtual hosts and local HTTPS, run package scripts, manage queue workers and schedule tasks.
+- **SSH and deployments within reach.** Organize hosts and keys, connect from the terminal and apply reusable deployment recipes with local configuration and history.
+- **Coding agents when you choose.** Enable optional agent sessions and local MCP tools for supported assistants.
+- **Your environment, your code.** Use local features independently of LaraEnv Cloud, inspect the source and contribute under Apache-2.0.
 
-## Run a published package
+Built for Windows with Go, Wails and React, LaraEnv brings your development tools into a native desktop application.
 
-The desktop targets **Windows 10/11 x64** and requires a separately installed **Microsoft WebView2 Runtime with Chromium 111 or newer**. The standard build uses the installed runtime and does not bundle Microsoft's bootstrapper. The GUI requests administrator access for system integration such as editing the Windows hosts file.
+## A workspace that stays with your project
 
-Use the [GitHub releases page](https://github.com/thayronarrais/laraenv/releases) and read the notes for the selected release:
+### Projects, runtimes and services
 
-- **MSI:** install the versioned `LaraEnv-<version>.msi` package.
-- **Portable:** extract `LaraEnv-<version>-portable-win64.zip` and keep its `.laraenv-portable` marker beside `LaraEnv.exe`.
+Browse projects by name, path or client tag. Open a project's details to choose PHP and Node.js, start its development processes, run scripts and inspect its setup with Site Doctor. Manage Nginx, Apache, Caddy, MySQL, PostgreSQL, Redis and Mailpit from the same environment.
 
-The bare `LaraEnv.exe` release asset is an updater payload; the executable alone does not select portable mode. Packages have SHA-256 sidecars. Installed environments normally use `C:\laraenv`; portable environments use the extracted folder. Keep portable copies in a separate directory from an installed environment.
+<p align="center">
+  <img src="docs/screenshots/projects-workspace.png" alt="Project workspace with search, runtime choices and a selected project's tools" width="100%" />
+</p>
 
-## Build from source
+### Terminals, files and Git
 
-Clone the desktop repository:
+Use PowerShell, CMD, Git Bash or Cmder in terminal tabs and split panes. Detach a terminal into its own window, browse files, edit text, preview Markdown and images, and stage, commit or push changes alongside your work.
+
+<p align="center">
+  <img src="docs/screenshots/workspace.png" alt="Terminal workspace with Agents, Files and Git" width="100%" />
+</p>
+
+### Useful tools, close at hand
+
+| Tool | What it helps you do |
+| --- | --- |
+| **Command Center** | Find actions, open projects and run commands with the palette or a configured global hotkey. |
+| **Local HTTPS** | Manage local certificates and use HTTPS across supported project runtimes. |
+| **Site Doctor** | Inspect project configuration and review individual repairs with visible output. |
+| **SSH and deployments** | Manage hosts and keys, connect through saved hosts and apply deployment presets. |
+| **Cron and workers** | Run project schedules and Laravel queue processes; eligible tasks can use Windows Task Scheduler. |
+| **Optional agents and MCP** | Connect supported coding assistants to explicitly enabled local tools. |
+| **Appearance and languages** | Choose a theme and use English, Portuguese, Russian or Simplified Chinese. |
+
+Explore the [workspace](docs/workspace.md), [projects](docs/projects-workspace.md), [runtime detection](docs/project-runtime-detection.md), [SSH](docs/ssh-trust-and-passwords.md) and [MCP](docs/mcp.md) guides.
+
+## Get started
+
+Choose a package from [Releases](https://github.com/thayronarrais/laraenv/releases):
+
+| Package | How to use it |
+| --- | --- |
+| **MSI installer** | Install the versioned `LaraEnv-<version>.msi`. Installed environments normally keep their data in `C:\laraenv`. |
+| **Portable ZIP** | Extract `LaraEnv-<version>-portable-win64.zip` and keep `.laraenv-portable` beside `LaraEnv.exe`. Data stays in the extracted environment. |
+
+The current source removes local account and plan gates. Existing binary releases can predate that change; read the selected release's notes before installing.
+
+1. Install or extract the selected package in its own directory.
+2. Open **Libs / Tools** and install the runtimes and services your project needs.
+3. Start the services, then open or create a project from **Projects**.
+4. Open the project in your browser, editor or integrated terminal and start building.
+
+**Requirements:** Windows 10/11 x64 and a separately installed Microsoft WebView2 Runtime with Chromium 111 or newer. System integration, such as editing the Windows hosts file, needs administrator access. Keep portable copies separate from an installed environment.
+
+Installed runtimes and local features can work without the LaraEnv API. Initial downloads, updates, remote Git, SSH and external providers need their respective networks and credentials. The optional cloud integration starts disabled; the hosted service is maintained separately. Read about [offline use and optional cloud](docs/desktop-offline.md).
+
+The bare `LaraEnv.exe` release asset is an updater payload. Use the full MSI or portable package for installation, and check its SHA-256 sidecar.
+
+## Open source and contributions
+
+The desktop source is available here under [Apache-2.0](LICENSE). The cloud backend remains separately maintained and is not needed to build or use local desktop features.
 
 ```powershell
 git clone https://github.com/thayronarrais/laraenv.git
 cd laraenv
 ```
 
-Use **Go 1.26.10**, **Node.js 24 or newer** with npm, and **Wails v2.12.0 from this checkout's Go module graph**. Build and development instructions, including the clean-checkout bootstrap and tests, are in the [development guide](docs/development.md).
+For a clean build, use Go 1.26.10, Node.js 24 or newer and the project's Wails 2.12.0 dependency graph. The [development guide](docs/development.md) covers setup, builds and tests; [RELEASING.md](RELEASING.md) covers packaging and release validation.
 
-The module and npm lockfiles are part of the build inputs. Preserve the project graph when building Wails, use both `-m` and `-nosyncgomod`, and use `-webview2 browser` for production builds. First-time provisioning requires network access; the notice checks themselves use cached dependencies and do not download missing inputs.
+Read [CONTRIBUTING.md](CONTRIBUTING.md) to contribute code, report a reproducible bug or improve the docs. Translation catalogues and their guide live in [`desktop/langs/`](desktop/langs/); Russian and Simplified Chinese welcome native review. Report vulnerabilities privately through [SECURITY.md](SECURITY.md).
 
-MSI packaging additionally needs .NET SDK 8, WiX CLI 5.0.2 and its matching UI/Util extensions. See [RELEASING.md](RELEASING.md) for packaging and release validation. A successful compile or package inspection does not replace clean-machine installation and upgrade testing.
+## Repository layout
 
-## Guides
+| Directory | Contents |
+| --- | --- |
+| [`desktop/`](desktop/) | Wails application, Go tests, React frontend, translations and Windows packaging sources |
+| [`internal/`](internal/) | Shared local services and integration packages |
+| [`cmd/`](cmd/) | Standalone commands, including the SSH deployment TUI |
+| [`docs/`](docs/) | Usage and development guides, release notes and screenshots |
+| [`tools/`](tools/) | Build, translation, screenshot and license tooling |
+| [`third_party/`](third_party/) | Dependency inventory, exact license texts and corresponding sources |
 
-- [Projects workspace](docs/projects-workspace.md), [runtime detection](docs/project-runtime-detection.md) and [Site Doctor](docs/site-doctor.md)
-- [Terminal, files and Git workspace](docs/workspace.md)
-- [Offline desktop and optional cloud](docs/desktop-offline.md)
-- [Local MCP access](docs/mcp.md)
-- [Standalone SSH deployment TUI](cmd/deploy-tui/README.md)
-- [License and dependency policy](docs/licensing.md)
-- [Source snapshot creation and verification](docs/source-snapshot.md)
+The single Go module stays at the repository root. Build helpers run the Wails project from `desktop/`.
 
-## Contribute and report issues
+## License
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md) for development and pull-request guidance. Use [GitHub issues](https://github.com/thayronarrais/laraenv/issues) for reproducible bugs and feature proposals, with sensitive data removed.
-
-Report security vulnerabilities privately using [SECURITY.md](SECURITY.md).
+Original LaraEnv desktop code is licensed under Apache-2.0. Third-party components retain their own licenses; see [NOTICE](NOTICE), [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt) and the [licensing guide](docs/licensing.md). Separately downloaded runtimes have their own terms.

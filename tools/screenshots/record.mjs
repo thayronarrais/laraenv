@@ -189,7 +189,7 @@ function parseArgs(argv) {
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   const outDir = args.out ? path.resolve(args.out) : path.join(here, "out");
-  const dist = path.resolve(here, "../../frontend/dist");
+  const dist = path.resolve(here, "../../desktop/frontend/dist");
 
   let chosen = CLIPS;
   if (args.only) {

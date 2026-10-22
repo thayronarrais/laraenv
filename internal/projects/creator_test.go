@@ -115,7 +115,7 @@ func TestCreatorDependencyInstallWithoutProjectResolverUsesGlobalNode(t *testing
 }
 
 func TestCreatorNextTemplateDefersDependencyInstall(t *testing.T) {
-	set, err := i18n.Load(os.DirFS(filepath.Join("..", "..", "langs")), ".")
+	set, err := i18n.Load(os.DirFS(filepath.Join("..", "..", "desktop", "langs")), ".")
 	if err != nil {
 		t.Fatal(err)
 	}

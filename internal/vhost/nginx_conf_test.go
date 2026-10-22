@@ -16,7 +16,7 @@ import (
 // would produce — the same fallback a package hits before LoadCatalogues
 // runs in production, but not what a test asserting on error text wants.
 func TestMain(m *testing.M) {
-	set, err := i18n.Load(os.DirFS(filepath.Join("..", "..", "langs")), ".")
+	set, err := i18n.Load(os.DirFS(filepath.Join("..", "..", "desktop", "langs")), ".")
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "load langs:", err)
 		os.Exit(1)

@@ -12,7 +12,7 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const images = path.resolve(here, "../../../build/verification/agent-map");
 let browser, server;
 beforeAll(async () => {
-  server = await startServer(path.resolve(here, "../../../frontend/dist"));
+  server = await startServer(path.resolve(here, "../../../desktop/frontend/dist"));
   browser = await chromium.launch({ headless: true, ...(process.env.WORKSPACE_CHROMIUM ? { executablePath: process.env.WORKSPACE_CHROMIUM } : {}) });
   await mkdir(images, { recursive: true });
 }, 30_000);

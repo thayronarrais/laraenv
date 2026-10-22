@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 // @ts-ignore — plain ESM, no types
-import { check } from "../../../../tools/langs/check.mjs";
+import { check } from "../../../../../tools/langs/check.mjs";
 
 const en = {
   $meta: { code: "en", name: "English", nativeName: "English" },

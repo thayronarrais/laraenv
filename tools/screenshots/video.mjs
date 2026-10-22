@@ -10,7 +10,7 @@ import { CAPTURES, TOURS, getTour, totalFrames, validateTour } from "./tours.mjs
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const STAGE_URL = pathToFileURL(path.join(here, "frame", "stage.html")).href;
-const ICON_PATH = path.resolve(here, "../../build/appicon.png");
+const ICON_PATH = path.resolve(here, "../../desktop/build/appicon.png");
 
 // Captures every screen a tour needs, once each, and measures the boxes the
 // storyboard refers to in the very frame that was captured.
@@ -110,7 +110,7 @@ function parseArgs(argv) {
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   const outDir = args.out ? path.resolve(args.out) : path.join(here, "out");
-  const dist = path.resolve(here, "../../frontend/dist");
+  const dist = path.resolve(here, "../../desktop/frontend/dist");
 
   let chosen = TOURS;
   if (args.only) {

@@ -11,7 +11,7 @@ import { BASE_STATE, mergeState } from "../mock/state.mjs";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 let browser, server;
 beforeAll(async () => {
-  server = await startServer(path.join(root, "frontend/dist"));
+  server = await startServer(path.join(root, "desktop/frontend/dist"));
   browser = await chromium.launch({ headless: true });
 }, 30_000);
 afterAll(async () => { await browser?.close(); await server?.close(); }, 30_000);

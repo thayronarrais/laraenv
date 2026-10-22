@@ -4,7 +4,7 @@
 // Review the destination diff before committing; this helper overwrites only
 // the three explicitly listed files, not translated catalogues.
 //
-// langs/README.md is maintained with the source and is deliberately not copied.
+// desktop/langs/README.md is maintained with the source and is deliberately not copied.
 import { copyFileSync, existsSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 
@@ -13,15 +13,15 @@ if (!target) {
   console.error("usage: node tools/langs/push-en.mjs <path-to-laraenv-checkout>");
   process.exit(1);
 }
-if (!existsSync(join(target, "langs"))) {
-  console.error(`no langs/ directory in ${target}`);
+if (!existsSync(join(target, "desktop", "langs"))) {
+  console.error(`no desktop/langs/ directory in ${target}`);
   process.exit(1);
 }
 mkdirSync(join(target, "tools", "langs"), { recursive: true });
 
 const files = [
-  ["langs", "en.json"],
-  ["langs", ".do-not-translate.json"],
+  ["desktop/langs", "en.json"],
+  ["desktop/langs", ".do-not-translate.json"],
   ["tools/langs", "check.mjs"],
 ];
 for (const [dir, name] of files) {

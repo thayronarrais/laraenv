@@ -102,7 +102,7 @@ export async function captureRaw({ browser, baseUrl, scenario }) {
 
     // animations:"disabled" finishes in-flight CSS transitions and animations
     // before the shot. The metric bars use Tailwind's transition-all
-    // (frontend/src/components/SystemMetrics.tsx:102), which is not gated on
+    // (desktop/frontend/src/components/SystemMetrics.tsx:102), which is not gated on
     // prefers-reduced-motion, so without this the bar widths depend on how
     // busy the machine was — the capture stops being byte-reproducible.
     return await page.screenshot({ type: "png", animations: "disabled" });
@@ -137,7 +137,7 @@ async function main() {
   const here = path.dirname(fileURLToPath(import.meta.url));
   const args = parseArgs(process.argv.slice(2));
   const outDir = args.out ? path.resolve(args.out) : path.join(here, "out");
-  const dist = path.resolve(here, "../../frontend/dist");
+  const dist = path.resolve(here, "../../desktop/frontend/dist");
 
   let chosen = [...SCENARIOS, ...DOC_SCENARIOS];
   if (args.only) {

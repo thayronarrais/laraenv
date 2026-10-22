@@ -70,7 +70,7 @@ export const CLIPS = [
       { hold: 1000 },
       // Tab completes the project token. It has to be the exact name: the
       // launcher resolves the project by equality, not fuzzily
-      // (frontend/src/commandCenter/launcher.ts:68), so "acme" alone would
+      // (desktop/frontend/src/commandCenter/launcher.ts:68), so "acme" alone would
       // never reach the artisan/npm suggestions.
       { press: "Tab", hold: 800 },
       // Ask for artisan — these suggestions belong to this project, because

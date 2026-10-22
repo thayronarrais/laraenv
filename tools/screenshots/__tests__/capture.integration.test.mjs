@@ -8,13 +8,13 @@ import { captureRaw, VIEWPORT } from "../capture.mjs";
 import { DOC_SCENARIOS, getScenario } from "../mock/scenarios.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const DIST = path.resolve(here, "../../../frontend/dist");
+const DIST = path.resolve(here, "../../../desktop/frontend/dist");
 
 let browser, server;
 
 beforeAll(async () => {
   if (!existsSync(path.join(DIST, "index.html"))) {
-    throw new Error(`frontend/dist not built — run "npm run build" in frontend/ first`);
+    throw new Error(`desktop/frontend/dist not built — run "npm run build" in desktop/frontend/ first`);
   }
   browser = await chromium.launch({ channel: "chrome" });
   server = await startServer(DIST);

@@ -13,8 +13,72 @@
       "THIRD_PARTY_NOTICES.txt",
       "go.mod",
       "go.sum",
-      "wails.json",
-      "build/appicon.png",
+      "desktop/agent_activity.go",
+      "desktop/agent_activity_lifecycle_test.go",
+      "desktop/agent_activity_test.go",
+      "desktop/agent_context.go",
+      "desktop/agent_events.go",
+      "desktop/agent_events_test.go",
+      "desktop/agent_hooks.go",
+      "desktop/agent_hooks_test.go",
+      "desktop/app.go",
+      "desktop/app_agent_activity.go",
+      "desktop/app_agent_activity_test.go",
+      "desktop/app_cloud_optional.go",
+      "desktop/app_cloud_sync_status.go",
+      "desktop/app_deployments.go",
+      "desktop/app_deployments_test.go",
+      "desktop/app_doctor.go",
+      "desktop/app_doctor_fixes.go",
+      "desktop/app_doctor_test.go",
+      "desktop/app_document_shutdown.go",
+      "desktop/app_document_shutdown_test.go",
+      "desktop/app_document_workspace.go",
+      "desktop/app_document_workspace_test.go",
+      "desktop/app_localtls.go",
+      "desktop/app_localtls_test.go",
+      "desktop/app_project_commands.go",
+      "desktop/app_project_commands_test.go",
+      "desktop/app_routes.go",
+      "desktop/app_runtime.go",
+      "desktop/app_runtime_cron.go",
+      "desktop/app_runtime_test.go",
+      "desktop/app_source_control.go",
+      "desktop/app_source_control_test.go",
+      "desktop/app_ssh_sync_test.go",
+      "desktop/app_ssl.go",
+      "desktop/app_ssl_acl.go",
+      "desktop/app_ssl_acl_other.go",
+      "desktop/app_ssl_acl_windows.go",
+      "desktop/app_ssl_acl_windows_test.go",
+      "desktop/app_ssl_test.go",
+      "desktop/app_test.go",
+      "desktop/app_workspace_files.go",
+      "desktop/app_workspace_files_test.go",
+      "desktop/app_workspace_pty.go",
+      "desktop/app_workspace_pty_test.go",
+      "desktop/ca_prompt_test.go",
+      "desktop/elevation_other.go",
+      "desktop/elevation_windows.go",
+      "desktop/main.go",
+      "desktop/mcp_backend.go",
+      "desktop/mcp_backend_test.go",
+      "desktop/mcp_context.go",
+      "desktop/mcp_context_test.go",
+      "desktop/mcp_database.go",
+      "desktop/mcp_database_test.go",
+      "desktop/mcp_diagnostics.go",
+      "desktop/mcp_diagnostics_test.go",
+      "desktop/mcp_exec.go",
+      "desktop/mcp_exec_test.go",
+      "desktop/mcp_pause_test.go",
+      "desktop/mcp_settings.go",
+      "desktop/monaco_embed_test.go",
+      "desktop/terminal_clipboard.go",
+      "desktop/vhost_editor_test.go",
+      "desktop/winshow.go",
+      "desktop/wails.json",
+      "desktop/build/appicon.png",
       "docs/deployment-database-access.md",
       "docs/desktop-offline.md",
       "docs/https-runtime-trust.md",
@@ -73,15 +137,16 @@
       "docs/screenshots/workspace.png",
       "docs/ssh.jpg",
       "docs/terminal.jpg",
-      "docs/themes.jpg"
+      "docs/themes.jpg",
+      "langs/README.md"
     ],
     "prefixes": [
       ".github/workflows/",
       "cmd/",
       "internal/",
-      "frontend/",
-      "langs/",
-      "build/windows/",
+      "desktop/frontend/",
+      "desktop/langs/",
+      "desktop/build/windows/",
       "third_party/",
       "tools/licenses/",
       "tools/langs/",
@@ -355,6 +420,18 @@
       {
         "path": "release-notes.md",
         "reason": "Historical draft; versioned public release notes are retained"
+      },
+      {
+        "path": "desktop/frontend/package.json.md5",
+        "reason": "Stale generated checksum/cache; not a source build input"
+      },
+      {
+        "path": "desktop/frontend/public/packs/studio/room.jpeg",
+        "reason": "Unused concept asset outside the desktop source scope"
+      },
+      {
+        "path": "desktop/frontend/public/packs/studio/room2.jpeg",
+        "reason": "Unused concept asset outside the desktop source scope"
       }
     ],
     "prefixes": [
@@ -373,6 +450,110 @@
       {
         "path": "tools/benchmarks/",
         "reason": "Internal benchmark and sandbox comparison tooling outside desktop build closure"
+      },
+      {
+        "path": "frontend/dist/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "frontend/wailsjs/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "frontend/public/vs/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "frontend/public/legal/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "frontend/.vite/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "build/bin/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "build/tmp/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "build/cache/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "build/logs/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "build/archive/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "build/verification/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "build/release/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "build/source/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "desktop/frontend/dist/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "desktop/frontend/wailsjs/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "desktop/frontend/public/vs/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "desktop/frontend/public/legal/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "desktop/frontend/.vite/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "desktop/build/bin/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "desktop/build/tmp/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "desktop/build/cache/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "desktop/build/logs/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "desktop/build/archive/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "desktop/build/verification/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "desktop/build/release/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
+      },
+      {
+        "path": "desktop/build/source/",
+        "reason": "Generated desktop build, binding, editor, legal-copy or local verification output; not a reviewed source input"
       }
     ]
   }

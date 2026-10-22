@@ -59,7 +59,7 @@ export function collectNpm(root, project) {
     validateSpdx(entry.license);
     const dir = join(root, project, location); const installed = existsSync(join(dir, 'package.json')) ? json(join(dir, 'package.json')) : null;
     if (installed && installed.version !== entry.version) throw new Error(`Installed/lock version mismatch: ${project}/${location}: ${installed.version} != ${entry.version}`);
-    const required = project === 'frontend' && !entry.dev;
+    const required = project === 'desktop/frontend' && !entry.dev;
     if (required && !installed) throw new Error(`Required npm source missing: ${project}/${location}`);
     const name = installed?.name || location.split('node_modules/').pop();
     const evidence = installed ? collectNotices(dir) : [];

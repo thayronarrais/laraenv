@@ -31,7 +31,7 @@
     ],
     "unicode": {"license": "Unicode-3.0", "notices": ["unicode-LICENSE.txt"], "url": "https://www.unicode.org/license.txt", "note": "Supplemental Unicode data attribution for symfony/string 16.0.0 width tables and polyfill-mbstring/polyfill-intl-normalizer Unicode-derived tables. Exact older polyfill Unicode data versions are not established; preserve supplied package notices as well. Unicode policy is supplemental, not a claim that compiler-stripped headers were recovered."}
   },
-  "codicons": {"version": "monaco-editor-0.52.0", "license": "CC-BY-4.0", "path": "frontend/node_modules/monaco-editor/min/vs/base/browser/ui/codicons/codicon/codicon.ttf", "notices": ["codicons-LICENSE.txt"], "url": "https://github.com/microsoft/vscode-codicons", "note": "Codicons font by Microsoft; unmodified font distributed in Monaco AMD assets. Preserve CC-BY-4.0 attribution separately from Monaco's MIT wrapper."},
+  "codicons": {"version": "monaco-editor-0.52.0", "license": "CC-BY-4.0", "path": "desktop/frontend/node_modules/monaco-editor/min/vs/base/browser/ui/codicons/codicon/codicon.ttf", "notices": ["codicons-LICENSE.txt"], "url": "https://github.com/microsoft/vscode-codicons", "note": "Codicons font by Microsoft; unmodified font distributed in Monaco AMD assets. Preserve CC-BY-4.0 attribution separately from Monaco's MIT wrapper."},
   "noticeSources": {
     "codicons-LICENSE.txt": {"url": "https://raw.githubusercontent.com/microsoft/vscode-codicons/main/LICENSE", "sha256": "af5e030844efddbc7ab00dcfea8b019703753d4d9f5172d727c533a492aec665"},
     "mozilla-MPL-2.0.txt": {"url": "https://www.mozilla.org/MPL/2.0/", "sha256": "60222c28c1a7f6a92c7df98e5c5f4459e624e6e285e0b9b94467af5f6ab3343d"},

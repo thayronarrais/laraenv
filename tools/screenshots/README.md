@@ -24,13 +24,13 @@ they do not run Git commands or write project files.
 The SSH scenario also writes `ssh-manager.png`, an unframed in-app capture for
 README and documentation pages. `baner4.png` remains the framed marketing image.
 
-`frontend/dist` must be built first (`npm run build` in `frontend/`) — the
+`desktop/frontend/dist` must be built first (`npm run build` in `desktop/frontend/`) — the
 harness captures the built bundle, not the dev server.
 
 ## How it works
 
 Every Wails binding is a `window.go.main.App.<Name>()` wrapper, so the backend
-is replaced entirely from JavaScript. `frontend/dist` is served read-only and
+is replaced entirely from JavaScript. `desktop/frontend/dist` is served read-only and
 never modified; the fake backend is injected with Playwright's
 `addInitScript`, which runs before any page script.
 
@@ -52,7 +52,7 @@ Readiness strings match the DOM, not the rendered pixels. The dashboard
 tagline, for example, is uppercased by CSS, so the scenario waits on the
 lowercase source text.
 
-Return shapes for bindings are generated in `frontend/wailsjs/go/models.ts`.
+Return shapes for bindings are generated in `desktop/frontend/wailsjs/go/models.ts`.
 A field name that does not match renders an empty row rather than failing, so
 read the model rather than guessing.
 
@@ -107,7 +107,7 @@ Two things make the pane paint under headless Chrome:
 - `webgl: false` in the scenario state. The app renders xterm through
   `xterm-addon-webgl`, whose context never paints headlessly. The init script
   refuses WebGL contexts, the addon throws, and `Terminal.tsx` falls back to
-  xterm's DOM renderer (`frontend/src/components/Terminal.tsx`, the
+  xterm's DOM renderer (`desktop/frontend/src/components/Terminal.tsx`, the
   `WebglAddon` try/catch). DOM rows are text nodes, so the readiness string
   can be a line of the transcript.
 - A synthetic `window` resize before writing. The pane opens while hidden and
@@ -132,8 +132,8 @@ empty activity responses so unrelated captures do not depend on this feature.
 ```powershell
 $env:NODE_OPTIONS = '--no-experimental-webstorage'
 $env:WORKSPACE_CHROMIUM = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
-npm.cmd --prefix frontend run build
-npm.cmd --prefix tools/screenshots test -- __tests__/agentMap.integration.test.mjs --maxWorkers=2 --minWorkers=1
+npm.cmd --prefix desktop/frontend run build
+npm.cmd --prefix tools/screenshots test -- __tests__/agentMap.integration.test.mjs --maxWorkers=2
 node tools/screenshots/capture.mjs --only=agent-map --out=build/verification/agent-map
 ```
 

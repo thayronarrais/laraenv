@@ -11,7 +11,7 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 let browser;
 let server;
 beforeAll(async () => {
-  server = await startServer(path.resolve(here, "../../../frontend/dist"));
+  server = await startServer(path.resolve(here, "../../../desktop/frontend/dist"));
   browser = await chromium.launch({ headless: true });
 }, 30_000);
 

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { mkdtempSync, mkdirSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { collectNpm, collectGo, collectComposer, collectInstaller, jsonStream } from './collect.mjs';
@@ -8,18 +8,28 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 const mit = 'Permission is hereby granted, free of charge to any person obtaining a copy. THE SOFTWARE IS PROVIDED AS IS.';
 function fixture() {
-  const root = mkdtempSync(join(tmpdir(), 'laraenv-collector-')); mkdirSync(join(root, 'frontend/node_modules/demo'), { recursive: true });
-  writeFileSync(join(root, 'frontend/package.json'), JSON.stringify({ dependencies: { demo: '^1.0.0' } }));
-  writeFileSync(join(root, 'frontend/package-lock.json'), JSON.stringify({ packages: { '': { dependencies: { demo: '^1.0.0' } }, 'node_modules/demo': { version: '1.0.0', license: 'MIT' }, 'node_modules/other-platform': { version: '2', license: 'MIT', dev: true, optional: true } } }));
-  writeFileSync(join(root, 'frontend/node_modules/demo/package.json'), JSON.stringify({ name: 'demo', version: '1.0.0' })); writeFileSync(join(root, 'frontend/node_modules/demo/LICENSE'), mit);
+  const root = mkdtempSync(join(tmpdir(), 'laraenv-collector-')); mkdirSync(join(root, 'desktop/frontend/node_modules/demo'), { recursive: true });
+  writeFileSync(join(root, 'desktop/frontend/package.json'), JSON.stringify({ dependencies: { demo: '^1.0.0' } }));
+  writeFileSync(join(root, 'desktop/frontend/package-lock.json'), JSON.stringify({ packages: { '': { dependencies: { demo: '^1.0.0' } }, 'node_modules/demo': { version: '1.0.0', license: 'MIT' }, 'node_modules/other-platform': { version: '2', license: 'MIT', dev: true, optional: true } } }));
+  writeFileSync(join(root, 'desktop/frontend/node_modules/demo/package.json'), JSON.stringify({ name: 'demo', version: '1.0.0' })); writeFileSync(join(root, 'desktop/frontend/node_modules/demo/LICENSE'), mit);
   return root;
 }
 test('installed npm package must match lock and root manifest must match lock', () => {
-  const root = fixture(); const result = collectNpm(root, 'frontend'); assert.equal(result.length, 2); assert.equal(result[1].evidenceStatus, 'metadata-only');
-  writeFileSync(join(root, 'frontend/node_modules/demo/package.json'), JSON.stringify({ name: 'demo', version: '1.0.1' }));
-  assert.throws(() => collectNpm(root, 'frontend'), /installed.*lock/i);
-  const other = fixture(); writeFileSync(join(other, 'frontend/package.json'), JSON.stringify({ dependencies: { demo: '^2.0.0' } }));
-  assert.throws(() => collectNpm(other, 'frontend'), /manifest.*lock/i);
+  const root = fixture(); const result = collectNpm(root, 'desktop/frontend'); assert.equal(result.length, 2); assert.equal(result[1].evidenceStatus, 'metadata-only');
+  writeFileSync(join(root, 'desktop/frontend/node_modules/demo/package.json'), JSON.stringify({ name: 'demo', version: '1.0.1' }));
+  assert.throws(() => collectNpm(root, 'desktop/frontend'), /installed.*lock/i);
+  const other = fixture(); writeFileSync(join(other, 'desktop/frontend/package.json'), JSON.stringify({ dependencies: { demo: '^2.0.0' } }));
+  assert.throws(() => collectNpm(other, 'desktop/frontend'), /manifest.*lock/i);
+});
+test('nested desktop frontend keeps runtime licenses required and rejects missing runtime sources', () => {
+  const root = fixture(), result = collectNpm(root, 'desktop/frontend');
+  assert.equal(result[0].required, true);
+  assert.deepEqual(result[0].scopes, ['desktop-frontend-conservative']);
+  assert.equal(result[0].source.lockPath, 'desktop/frontend/package-lock.json');
+  assert.equal(result[1].required, false);
+  assert.deepEqual(result[1].scopes, ['build-metadata-only']);
+  rmSync(join(root, 'desktop/frontend/node_modules/demo/package.json'));
+  assert.throws(() => collectNpm(root, 'desktop/frontend'), /Required npm source missing/);
 });
 test('required Go modules include explicit requirements and selected packages, with expanded test modules retained metadata-only', () => {
   const root = fixture(); const cache = join(root, 'module'); mkdirSync(cache); writeFileSync(join(cache, 'LICENSE'), mit);

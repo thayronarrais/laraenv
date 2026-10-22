@@ -59,7 +59,7 @@ export function mergeState(base, patch) {
   return { ...structuredClone(base), ...structuredClone(patch) };
 }
 
-// SystemMetrics keeps the last 32 samples (frontend/src/components/SystemMetrics.tsx:22)
+// SystemMetrics keeps the last 32 samples (desktop/frontend/src/components/SystemMetrics.tsx:22)
 // and draws them as a sparkline. One sample renders a flat line, so the harness
 // replays a fixed series ending on the declared sample — fixed, because the
 // output has to be byte-identical between runs.

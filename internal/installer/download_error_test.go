@@ -20,7 +20,7 @@ import (
 // again", "timed out"). See internal/agents/manager_test.go and
 // internal/services/manager_test.go for the same pattern.
 func TestMain(m *testing.M) {
-	set, err := i18n.Load(os.DirFS(filepath.Join("..", "..", "langs")), ".")
+	set, err := i18n.Load(os.DirFS(filepath.Join("..", "..", "desktop", "langs")), ".")
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "load langs:", err)
 		os.Exit(1)

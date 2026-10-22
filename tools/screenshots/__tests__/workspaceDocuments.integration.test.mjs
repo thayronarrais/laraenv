@@ -78,7 +78,7 @@ const appScript = (state) => buildInitScript({ state }) + `
   window.go.main.App = new Proxy({}, { get: (_, name) => actions[name] || baseApp[name] });
 `;
 let browser, server;
-beforeAll(async () => { server = await startServer(path.resolve(here, "../../../frontend/dist")); browser = await chromium.launch({ headless: true, ...(process.env.WORKSPACE_CHROMIUM ? { executablePath: process.env.WORKSPACE_CHROMIUM } : {}) }); await mkdir(images, { recursive: true }); }, 30_000);
+beforeAll(async () => { server = await startServer(path.resolve(here, "../../../desktop/frontend/dist")); browser = await chromium.launch({ headless: true, ...(process.env.WORKSPACE_CHROMIUM ? { executablePath: process.env.WORKSPACE_CHROMIUM } : {}) }); await mkdir(images, { recursive: true }); }, 30_000);
 afterAll(async () => { await browser?.close(); await server?.close(); });
 
 async function openPage(documents = layout(), viewport = { width: 1366, height: 768 }, delayLoader = false, statePatch = {}) {

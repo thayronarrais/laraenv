@@ -6,13 +6,13 @@ import { AGENT_MAP_STATE, AGENT_MAP_SNAPSHOT } from "./agentActivity.mjs";
 //
 // Readiness strings must match the DOM, not the rendered pixels: the hero
 // tagline below is uppercased by CSS, so the string here is the lowercase
-// source text (frontend/src/pages/Dashboard.tsx:280).
+// source text (desktop/frontend/src/pages/Dashboard.tsx:280).
 //
 // Every value is fictional. The banners these produce are published on a
 // public, indexed page, and the ones they replace were leaking real client
 // names, local paths and server addresses.
 
-// Shapes come from frontend/wailsjs/go/models.ts — a field name that does not
+// Shapes come from desktop/frontend/wailsjs/go/models.ts — a field name that does not
 // match renders an empty row rather than throwing, so they are copied, not
 // guessed.
 const PROJECTS = [
@@ -155,7 +155,7 @@ const DEPLOYMENTS = [
 ];
 
 // Agent workspace for the terminal banner. Session shapes follow
-// AgentSessionView (frontend/src/components/agents/AgentSessionCard.tsx);
+// AgentSessionView (desktop/frontend/src/components/agents/AgentSessionCard.tsx);
 // usage follows AgentUsageView (AgentUsagePopover.tsx). Times are relative so
 // the navigator reads "now" / "12m" instead of a stale date.
 const minutesAgo = (m) => new Date(Date.now() - m * 60_000).toISOString();
@@ -191,7 +191,7 @@ const AGENT_USAGE = [
   { provider: "opencode", status: "unsupported", message: "OpenCode quota unavailable", readAt: minutesAgo(0), stale: false, windows: null },
 ];
 
-// Persisted layout (frontend/src/components/terminal/serialize.ts, version 2):
+// Persisted layout (desktop/frontend/src/components/terminal/serialize.ts, version 2):
 // one maximized group with two agent tabs and a project shell. Labels for agent
 // leaves are recomputed on restore; the shell label is kept as written.
 const agentLeaf = (projectName, agentId, laraSessionId) => ({

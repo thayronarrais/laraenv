@@ -13,21 +13,23 @@ function fixture(t, { installed = true, installCommand = 'npm ci' } = {}) {
     assert.ok(root.startsWith(join(parent, 'laraenv-build-desktop-')));
     rmSync(root, { recursive: true, force: true });
   });
-  mkdirSync(join(root, 'frontend'));
-  if (installed) mkdirSync(join(root, 'frontend/node_modules'));
+  writeFileSync(join(root, 'go.mod'), 'module fixture\n\ngo 1.26.0\n');
+  const desktopRoot = join(root, 'desktop');
+  mkdirSync(join(desktopRoot, 'frontend'), { recursive: true });
+  if (installed) mkdirSync(join(desktopRoot, 'frontend/node_modules'));
   const original = Buffer.from(`{\r\n\t"frontend:install": ${JSON.stringify(installCommand)},\r\n\t"frontend:build": "npm run build",\r\n\t"name": "LaraEnv fixture"\r\n}\r\n`);
-  const configPath = join(root, 'wails.json');
+  const configPath = join(desktopRoot, 'wails.json');
   writeFileSync(configPath, original);
-  return { root, configPath, original };
+  return { root, desktopRoot, configPath, original };
 }
 
-test('builds the frontend once with provisioned dependencies and restores exact config bytes', t => {
-  const { root, configPath, original } = fixture(t);
+test('builds the nested desktop with a repository-relative CLI and restores exact config bytes', t => {
+  const { root, desktopRoot, configPath, original } = fixture(t);
   let buildCalls = 0;
-  buildDesktop('C:/fixture tools/wails.exe', { root, run(binary, args, options) {
-    assert.equal(binary, 'C:/fixture tools/wails.exe');
+  buildDesktop('build/fixture tools/wails.exe', { root, run(binary, args, options) {
+    assert.equal(binary, join(root, 'build/fixture tools/wails.exe'));
     assert.deepEqual(args, ['build', '-m', '-nosyncgomod', '-platform', 'windows/amd64', '-webview2', 'browser']);
-    assert.equal(options.cwd, root);
+    assert.equal(options.cwd, desktopRoot);
     assert.equal(options.stdio, 'inherit');
     assert.equal(options.windowsHide, true);
     assert.ok(!options.shell && options.env === undefined, 'inherit caller Go/npm environment without a shell');
