@@ -11,6 +11,10 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/thayronarrais/laraenv/releases"><img src="https://img.shields.io/github/downloads/thayronarrais/laraenv/total?style=flat-square&amp;color=22d3ee" alt="Total downloads on GitHub" /></a>
+</p>
+
+<p align="center">
   <a href="https://github.com/thayronarrais/laraenv/releases"><strong>Download for Windows</strong></a> ·
   <a href="docs/development.md">Build from source</a> ·
   <a href="https://laraenv.com">Website</a> ·

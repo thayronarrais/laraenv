@@ -52,8 +52,12 @@ func appActivityFixture(t *testing.T, root string, reader *appActivityReader) (*
 	if err != nil {
 		t.Fatal(err)
 	}
-	cfg.SetAgentSessionsEnabled(true)
-	cfg.SetAgentHooksDisabled(true)
+	if err := cfg.SetAgentSessionsEnabled(true); err != nil {
+		t.Fatalf("enable fixture agent sessions: %v", err)
+	}
+	if err := cfg.SetAgentHooksDisabled(true); err != nil {
+		t.Fatalf("disable fixture agent hooks: %v", err)
+	}
 	terminals := pkgpty.NewRegistry()
 	store, err := pkgagents.NewSessionStore(filepath.Join(t.TempDir(), "sessions.json"), nil)
 	if err != nil {
@@ -70,12 +74,21 @@ func appActivityFixture(t *testing.T, root string, reader *appActivityReader) (*
 }
 func appActivityRun(t *testing.T, a *App, store *pkgagents.SessionStore) pkgagents.ActivityRun {
 	t.Helper()
+	if a.agentActivity.server == nil || a.agentActivity.coordinator == nil {
+		t.Fatal("fixture activity owner did not start")
+	}
 	a.activityTerminalChanged("term-1", true)
+	if live, err := a.agentActivity.registry.ResolveTerminal(a.agentActivity.identity.ID, "term-1"); err != nil || !live {
+		t.Fatalf("fixture terminal was not registered: live=%t err=%v", live, err)
+	}
 	run := pkgagents.ActivityRun{OwnerID: a.agentActivity.identity.ID, RunID: "run", StartedAt: time.Now().UTC(), Session: pkgagents.AgentSession{ID: "session", AgentID: pkgagents.AgentCodex, TerminalID: "term-1", ProviderSessionID: "root", State: pkgagents.SessionWorking}}
 	if err := store.Upsert(run.Session); err != nil {
 		t.Fatal(err)
 	}
 	a.agentActivity.coordinator.BeginRun(run)
+	if binding, active, err := a.agentActivity.registry.ResolveActiveBinding(run.Session.ID); err != nil || !active || binding.OwnerID != run.OwnerID || binding.RunID != run.RunID || binding.TerminalID != run.Session.TerminalID {
+		t.Fatalf("fixture run was not bound: active=%t ownerMatches=%t runMatches=%t terminalMatches=%t err=%v", active, binding.OwnerID == run.OwnerID, binding.RunID == run.RunID, binding.TerminalID == run.Session.TerminalID, err)
+	}
 	return run
 }
 func TestAgentActivityMainDetachedRouting(t *testing.T) {
