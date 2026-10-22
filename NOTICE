@@ -1,0 +1,13 @@
+LaraEnv desktop
+Copyright 2026 Thayron Arrais
+
+The original LaraEnv desktop source is licensed under the Apache License,
+Version 2.0. See LICENSE for its terms.
+
+Third-party components retain their respective licenses and copyright notices.
+See THIRD_PARTY_NOTICES.txt and third_party/dependencies.json for the inventory,
+license texts and distribution scope. These notices do not relicense those
+components or grant rights to third-party trademarks.
+
+The separately maintained LaraEnv cloud backend (laravel-server), billing
+infrastructure and service credentials are outside this desktop distribution.

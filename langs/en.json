@@ -224,7 +224,6 @@
   },
   "settings": {
     "tabs": {
-      "account": "Account",
       "appearance": "Appearance",
       "services": "Services",
       "commandcenter": "Command Center",
@@ -565,11 +564,7 @@
       "downloads": "Libs/Tools",
       "settings": "Settings"
     },
-    "account": {
-      "viewPlan": "View plan",
-      "pro": "Pro",
-      "free": "Free"
-    },
+    "account": {},
     "footer": {
       "supportTooltip": "Support the project",
       "donate": "Donate",
@@ -1239,11 +1234,7 @@
       "running": "running"
     },
     "proFeature": {
-      "title": "Pro feature",
-      "description": "Mini-Forge auto-provisions a remote server (detect OS + installed stack, install missing packages, configure vhosts, register crons, wire up auto-deploy scripts) — all driven from the SSH hosts you already have here.",
-      "upgradeBefore": "Open",
-      "upgradePath": "Settings → Account",
-      "upgradeAfter": "to upgrade."
+      "description": "Mini-Forge auto-provisions a remote server (detect OS + installed stack, install missing packages, configure vhosts, register crons, wire up auto-deploy scripts) — all driven from the SSH hosts you already have here."
     },
     "presetsButton": {
       "tooltip": "Manage deploy script presets",
@@ -1465,7 +1456,6 @@
   "account": {
     "accountCardTitle": "Account",
     "syncCardTitle": "Sync",
-    "planCardTitle": "Plan",
     "logoutButton": "Logout",
     "syncRequiresProFlash": "Sync requires Pro",
     "passphraseTooShortFlash": "Passphrase must be at least 8 characters",
@@ -1543,12 +1533,7 @@
         "currentBadge": "Current"
       },
       "features": {
-        "projects": "Projects",
-        "sshHosts": "SSH Hosts",
-        "cronJobs": "Cron Jobs",
-        "localTerminal": "Local Terminal",
         "crossDeviceSync": "Cross-device Sync",
-        "remoteDeploy": "Remote Deploy",
         "priorityUpdates": "Priority Updates"
       }
     },
@@ -2704,7 +2689,8 @@
       "newKeyMustBe32Bytes": "new key must be 32 bytes (got {{got}})",
       "reencryptResourceFailed": "re-encrypt {{kind}}/{{externalId}}",
       "rekeyResourceFailed": "rekey {{kind}}/{{externalId}}",
-      "rekeyNothingDecrypted": "could not decrypt any of the {{count}} server item(s) with the current key — run re-key on the device that can still sync"
+      "rekeyNothingDecrypted": "could not decrypt any of the {{count}} server item(s) with the current key — run re-key on the device that can still sync",
+      "disabled": "The optional cloud integration is disabled."
     },
     "projectroutes": {
       "previewHostnameDomainMismatch": "preview hostname \"{{host}}\" does not match the previous project domain",
@@ -2984,6 +2970,24 @@
       "configTestCommandFailed": "the validation tool reported: {{output}}",
       "restartServiceFailed": "could not restart {{name}}",
       "routeTargetOutsideManagedDir": "route target is outside LaraEnv's managed worktree directory"
+    },
+    "offlineDeployments": {
+      "storageUnavailable": "Local deployment storage unavailable: {{error}}",
+      "passwordUnavailable": "Saved SSH password is unavailable for this Windows account",
+      "executorUnavailable": "Deployment SSH executor unavailable",
+      "nameRequired": "Deployment name is required",
+      "unknownOperation": "Unknown deployment operation",
+      "remoteSuccessHistoryFailed": "The remote operation completed; local history could not be saved: {{error}}. Commands were not retried.",
+      "remoteFailureHistoryFailed": "The remote operation failed: {{remoteError}}; local history could not be saved: {{error}}. Commands were not retried.",
+      "remoteDeletedRegistrationFailed": "The remote operation completed; local registration could not be deleted: {{error}}",
+      "emptyDetection": "Empty detection response",
+      "detectionConfigFailed": "Detection completed; local configuration could not be saved: {{error}}",
+      "detectionHistoryFailed": "Detection completed; local history could not be saved: {{error}}",
+      "mappingRequired": "Explicit local SSH host mapping required for {{host}}",
+      "invalidImport": "Invalid deployment import: {{error}}",
+      "accountRequired": "Cloud account identity unavailable; sign in before importing",
+      "profileChanged": "Cloud profile changed during import; no local records were imported",
+      "busy": "Another deployment operation is already running"
     }
   },
   "git": {
@@ -3099,5 +3103,59 @@
       "discard": "Discard",
       "cancel": "Cancel"
     }
+  },
+  "cloudOptIn": {
+    "title": "Cloud (optional)",
+    "description": "Projects, services, terminals, SSH, cron and local deployments work without an account. Enable the hosted integration when you want its cloud services. Disabling preserves your saved cloud profile.",
+    "enabled": "Cloud integration enabled",
+    "disabled": "Cloud integration disabled",
+    "enable": "Enable cloud",
+    "disable": "Disable cloud",
+    "general": "General",
+    "subscription": "Optional cloud subscription",
+    "subscriptionHint": "Plans apply only to hosted cloud services. All local desktop features remain available without a subscription.",
+    "hostedDeployments": "Hosted deployment service"
+  },
+  "offlineDeployments": {
+    "local": "Local",
+    "cloud": "Cloud (optional)",
+    "localDescription": "Destinations, configuration and recent runs are stored on this computer. No account is required; remote operations use SSH.",
+    "cloudDescription": "Hosted destinations use your optional cloud account. Import a destination to keep a protected local copy.",
+    "cloudSignIn": "Sign in from Cloud settings to view hosted destinations. Local destinations remain available.",
+    "importJson": "Import JSON",
+    "importCloud": "Import locally",
+    "importTitle": "Import local destinations",
+    "importHint": "Review the destinations and choose a local SSH host for each source host. Importing saves metadata and configuration without running remote commands.",
+    "importFile": "Versioned JSON file",
+    "importContent": "Import JSON content",
+    "previewImport": "Preview import",
+    "hostMappingHint": "Choose each local SSH host explicitly, even when its name matches the source.",
+    "chooseHost": "Choose a local SSH host",
+    "confirmImport": "Import destinations",
+    "importing": "Importing…",
+    "importSummary": "Imported: {inserted}. Already imported: {skipped}. Conflicts preserved: {conflicts}.",
+    "invalidImport": "Use a version 1 deployment bundle with a source and at least one destination with a string ID, name and SSH host.",
+    "importTooLarge": "The import file must be 16 MiB or smaller.",
+    "importedFrom": "Imported from {source} · source ID {id}",
+    "history": "Recent runs",
+    "historyLimits": "Up to 100 recent runs per destination and 4 MiB per log are retained on this computer.",
+    "noRuns": "No local runs have been recorded.",
+    "readLog": "Read log",
+    "gitPatHint": "Optional for private repositories. Saved in this computer's protected configuration; leave the Git URL free of credentials.",
+    "logTruncated": "This log was truncated at the local size limit.",
+    "runInterrupted": "This run was interrupted. Check the remote state before retrying.",
+    "secretsUnavailable": "Protected configuration cannot be opened by this Windows profile. Existing data is preserved; recover it using the original profile before running this destination.",
+    "destroyRecordNote": "Destroy removes managed resources on the SSH host. Removing a local destination from this list is a separate action. Review the run result before retrying."
+  },
+  "licenses": {
+    "title": "Licenses and acknowledgements",
+    "description": "Read the desktop license and third-party copyright notices.",
+    "open": "View licenses",
+    "close": "Close",
+    "retry": "Try again",
+    "error": "The bundled license files could not be read. Please try again.",
+    "loading": "Loading licenses…",
+    "desktopTitle": "LaraEnv license",
+    "thirdPartyTitle": "Third-party notices"
   }
 }

@@ -2,7 +2,8 @@
 
 The LaraEnv interface reads its text from the JSON files in this directory.
 They live here in the open. Anyone can add a language: fork, edit, open a
-pull request. The build downloads these files and puts them in the app.
+pull request. The desktop source includes the committed catalogues; a normal
+build does not need to download translations from a separate repository.
 
 ## Adding a language
 
@@ -141,16 +142,20 @@ better with the cut in a different place.
 - Check that each piece still reads well next to whatever sits between it
   and the next piece (an icon, a value, a `<span>`) in the actual app.
 
-## Do not edit `en.json`
+## English text and runtime fragments
 
-English text comes from the application source code. It is copied here at
-every release. If you change `en.json`, your change will be overwritten and
-lost. If some English text is wrong or unclear, open an issue instead. That
-fixes it at the source.
+The desktop source now lives in this repository together with `en.json`.
+English corrections can be proposed in a pull request. Coordinate added,
+removed or renamed keys with the application code and the other catalogues.
+
+`langs/.do-not-translate.json` records literal fragments matched by runtime
+code. Change it only together with the corresponding source behavior and
+tests; removing a fragment from the manifest does not remove that dependency
+from the application. Translation-only changes must preserve those fragments.
 
 ## Checking your work locally
 
-You need Node 18 or newer. No install step, no dependencies:
+Use Node 24 or newer, matching the source build. No install step or dependencies:
 
 ```bash
 node tools/langs/check.mjs langs

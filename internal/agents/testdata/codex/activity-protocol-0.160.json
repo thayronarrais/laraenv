@@ -1,0 +1,32 @@
+{
+  "synthetic": true,
+  "protocolVersion": "0.160.0",
+  "sources": [
+    "https://github.com/openai/codex/blob/rust-v0.160.0/codex-rs/app-server-protocol/src/protocol/v2/thread.rs",
+    "https://github.com/openai/codex/blob/rust-v0.160.0/codex-rs/app-server-protocol/schema/typescript/v2/Thread.ts",
+    "https://github.com/openai/codex/blob/rust-v0.160.0/codex-rs/app-server-protocol/schema/typescript/v2/SessionSource.ts",
+    "https://github.com/openai/codex/blob/rust-v0.160.0/codex-rs/app-server-protocol/schema/typescript/SubAgentSource.ts",
+    "https://github.com/openai/codex/blob/rust-v0.160.0/codex-rs/app-server/src/request_processors/initialize_processor.rs",
+    "https://github.com/openai/codex/blob/rust-v0.160.0/codex-rs/login/src/auth/default_client.rs"
+  ],
+  "initialize": {
+    "clientInfo": {"name": "laraenv_activity", "title": "LaraEnv Activity", "version": "1"},
+    "capabilities": {"experimentalApi": true}
+  },
+  "initializeResult": {
+    "userAgent": "laraenv_activity/0.160.0 (Windows 11.0.0; x86_64) synthetic/1.0.0",
+    "codexHome": "C:/synthetic-codex-home",
+    "platformFamily": "windows",
+    "platformOs": "windows"
+  },
+  "threadListParams": {
+    "parentThreadId": "root",
+    "sourceKinds": ["subAgentThreadSpawn"],
+    "useStateDbOnly": true,
+    "limit": 500,
+    "sortKey": "updated_at",
+    "sortDirection": "desc"
+  },
+  "experimentalFilters": ["parentThreadId", "ancestorThreadId"],
+  "notes": "Experimental fields are present in the pinned Rust protocol source and deliberately omitted from the stable generated TypeScript schema. Metadata only; no provider queries, transcripts, prompts, runtime state, execution intervals or token counts."
+}

@@ -1,0 +1,13 @@
+{
+  "$meta": { "code": "ru", "name": "Russian", "nativeName": "Русский" },
+  "projects": {
+    "title": "Проекты",
+    "created": "Проект {{name}} создан",
+    "count": {
+      "one": "{{count}} проект",
+      "few": "{{count}} проекта",
+      "many": "{{count}} проектов",
+      "other": "{{count}} проекта"
+    }
+  }
+}

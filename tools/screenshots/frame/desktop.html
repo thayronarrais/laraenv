@@ -1,0 +1,54 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; }
+  body {
+    position: relative;
+    background:
+      radial-gradient(48% 42% at 16% 12%, rgba(150, 92, 255, 0.42), transparent 72%),
+      radial-gradient(52% 44% at 86% 84%, rgba(120, 70, 235, 0.36), transparent 72%),
+      linear-gradient(160deg, #1a0c33 0%, #0b0a22 55%, #05030f 100%);
+  }
+  /* A hint of desktop clutter behind the bar, so the shot reads as "this
+     appears over whatever you were doing" rather than as a loose component. */
+  .win {
+    position: absolute;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.7);
+  }
+  .win::before {
+    content: "";
+    position: absolute; left: 0; right: 0; top: 0; height: 22px;
+    border-radius: 10px 10px 0 0;
+    background: rgba(255, 255, 255, 0.05);
+  }
+  .taskbar {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 38px;
+    background: rgba(10, 8, 24, 0.82);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex; align-items: center; gap: 10px; padding: 0 14px;
+  }
+  .pin { width: 20px; height: 20px; border-radius: 5px; background: rgba(255,255,255,0.10); }
+  .pin.on { background: rgba(31, 107, 255, 0.55); }
+  .tray { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+  .tray .dot { width: 12px; height: 12px; border-radius: 3px; background: rgba(255,255,255,0.16); }
+  /* The bar itself: the recorded frame, centred Spotlight-style. */
+  #bar {
+    position: absolute; left: 50%; top: 42%;
+    transform: translate(-50%, -50%);
+    display: block;
+    border-radius: 14px;
+    box-shadow:
+      0 30px 70px -18px rgba(0, 0, 0, 0.85),
+      0 0 0 1px rgba(255, 255, 255, 0.10);
+  }
+</style>
+<div class="win" style="left:6%;  top:12%; width:34%; height:46%"></div>
+<div class="win" style="left:46%; top:26%; width:44%; height:52%"></div>
+<div class="taskbar">
+  <div class="pin"></div><div class="pin"></div><div class="pin on"></div><div class="pin"></div>
+  <div class="tray"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+</div>
+<img id="bar" alt="">

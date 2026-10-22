@@ -1,0 +1,42 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; height: 100%; }
+  body {
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(48% 42% at 14% 10%, rgba(150, 92, 255, 0.62), transparent 72%),
+      radial-gradient(40% 34% at 30% 4%, rgba(214, 96, 220, 0.34), transparent 70%),
+      radial-gradient(52% 44% at 88% 88%, rgba(120, 70, 235, 0.50), transparent 72%),
+      radial-gradient(34% 30% at 70% 100%, rgba(31, 107, 255, 0.34), transparent 70%),
+      linear-gradient(160deg, #1a0c33 0%, #0b0a22 55%, #05030f 100%);
+  }
+  /* Starfield: several tiled layers of dots at different sizes and opacities,
+     drawn with gradients so the frame needs no image asset. */
+  .stars {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      radial-gradient(1.6px 1.6px at 12% 22%, #fff 50%, transparent 52%),
+      radial-gradient(1.2px 1.2px at 78% 12%, #fff 50%, transparent 52%),
+      radial-gradient(1.8px 1.8px at 35% 78%, #fff 50%, transparent 52%),
+      radial-gradient(1.1px 1.1px at 92% 62%, #fff 50%, transparent 52%),
+      radial-gradient(1.4px 1.4px at 58% 40%, #fff 50%, transparent 52%),
+      radial-gradient(1.0px 1.0px at 5% 68%, #fff 50%, transparent 52%);
+    background-repeat: repeat;
+    background-size: 340px 300px, 260px 240px, 420px 380px, 300px 280px, 380px 340px, 220px 200px;
+    opacity: 0.9;
+  }
+  img {
+    position: relative;
+    display: block;
+    border-radius: 14px;
+    /* Kept shallower than the 38px vertical margin so the falloff finishes
+       inside the canvas instead of being clipped at the edge. */
+    box-shadow:
+      0 18px 44px -14px rgba(0, 0, 0, 0.8),
+      0 0 0 1px rgba(255, 255, 255, 0.08);
+  }
+</style>
+<div class="stars"></div>
+<img id="shot" alt="">

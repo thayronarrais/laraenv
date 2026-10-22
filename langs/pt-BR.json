@@ -224,7 +224,6 @@
   },
   "settings": {
     "tabs": {
-      "account": "Conta",
       "appearance": "Aparência",
       "services": "Serviços",
       "commandcenter": "Central de Comandos",
@@ -566,11 +565,7 @@
       "downloads": "Bibliotecas",
       "settings": "Configurações"
     },
-    "account": {
-      "viewPlan": "Ver plano",
-      "pro": "Pro",
-      "free": "Grátis"
-    },
+    "account": {},
     "footer": {
       "supportTooltip": "Apoie o projeto",
       "donate": "Doar",
@@ -1246,11 +1241,7 @@
       "running": "em execução"
     },
     "proFeature": {
-      "title": "Recurso Pro",
-      "description": "O Mini-Forge auto-provisiona um servidor remoto (detecta SO + pilha instalada, instala pacotes faltantes, configura vhosts, registra crons, conecta scripts de auto-deploy) — tudo a partir dos hosts SSH que você já tem aqui.",
-      "upgradeBefore": "Abra",
-      "upgradePath": "Configurações → Conta",
-      "upgradeAfter": "para fazer upgrade."
+      "description": "O Mini-Forge auto-provisiona um servidor remoto (detecta SO + pilha instalada, instala pacotes faltantes, configura vhosts, registra crons, conecta scripts de auto-deploy) — tudo a partir dos hosts SSH que você já tem aqui."
     },
     "presetsButton": {
       "tooltip": "Gerenciar predefinições de script de deploy",
@@ -1473,7 +1464,6 @@
   "account": {
     "accountCardTitle": "Conta",
     "syncCardTitle": "Sincronização",
-    "planCardTitle": "Plano",
     "logoutButton": "Sair",
     "syncRequiresProFlash": "A sincronização requer o Pro",
     "passphraseTooShortFlash": "A frase secreta deve ter pelo menos 8 caracteres",
@@ -1552,12 +1542,7 @@
         "currentBadge": "Atual"
       },
       "features": {
-        "projects": "Projetos",
-        "sshHosts": "Hosts SSH",
-        "cronJobs": "Tarefas Cron",
-        "localTerminal": "Terminal local",
         "crossDeviceSync": "Sincronização entre dispositivos",
-        "remoteDeploy": "Deploy remoto",
         "priorityUpdates": "Atualizações prioritárias"
       }
     },
@@ -2721,7 +2706,8 @@
       "newKeyMustBe32Bytes": "a nova chave deve ter 32 bytes (recebido {{got}})",
       "reencryptResourceFailed": "recriptografar {{kind}}/{{externalId}}",
       "rekeyResourceFailed": "trocar chave de {{kind}}/{{externalId}}",
-      "rekeyNothingDecrypted": "não foi possível descriptografar nenhum dos {{count}} item(ns) do servidor com a chave atual — execute a troca de chave no dispositivo que ainda consegue sincronizar"
+      "rekeyNothingDecrypted": "não foi possível descriptografar nenhum dos {{count}} item(ns) do servidor com a chave atual — execute a troca de chave no dispositivo que ainda consegue sincronizar",
+      "disabled": "A integração opcional com a nuvem está desativada."
     },
     "projectroutes": {
       "previewHostnameDomainMismatch": "o hostname de preview \"{{host}}\" não corresponde ao domínio anterior do projeto",
@@ -3001,6 +2987,24 @@
       "configTestCommandFailed": "a ferramenta de validação retornou: {{output}}",
       "restartServiceFailed": "não foi possível reiniciar {{name}}",
       "routeTargetOutsideManagedDir": "o destino da rota está fora do diretório de worktrees gerenciado pelo LaraEnv"
+    },
+    "offlineDeployments": {
+      "storageUnavailable": "Armazenamento local de deploys indisponível: {{error}}",
+      "passwordUnavailable": "A senha SSH salva está indisponível para esta conta do Windows",
+      "executorUnavailable": "Executor SSH de deploy indisponível",
+      "nameRequired": "O nome do deploy é obrigatório",
+      "unknownOperation": "Operação de deploy desconhecida",
+      "remoteSuccessHistoryFailed": "A operação remota foi concluída; não foi possível salvar o histórico local: {{error}}. Os comandos não foram repetidos.",
+      "remoteFailureHistoryFailed": "A operação remota falhou: {{remoteError}}; não foi possível salvar o histórico local: {{error}}. Os comandos não foram repetidos.",
+      "remoteDeletedRegistrationFailed": "A operação remota foi concluída; não foi possível excluir o cadastro local: {{error}}",
+      "emptyDetection": "Resposta de detecção vazia",
+      "detectionConfigFailed": "A detecção foi concluída; não foi possível salvar a configuração local: {{error}}",
+      "detectionHistoryFailed": "A detecção foi concluída; não foi possível salvar o histórico local: {{error}}",
+      "mappingRequired": "É necessário mapear explicitamente {{host}} para um host SSH local",
+      "invalidImport": "Importação de deploy inválida: {{error}}",
+      "accountRequired": "Identidade da conta de nuvem indisponível; entre na conta antes de importar",
+      "profileChanged": "O perfil de nuvem mudou durante a importação; nenhum registro local foi importado",
+      "busy": "Outra operação de deploy já está em execução"
     }
   },
   "git": {
@@ -3116,5 +3120,59 @@
       "discard": "Descartar",
       "cancel": "Cancelar"
     }
+  },
+  "cloudOptIn": {
+    "title": "Nuvem (opcional)",
+    "description": "Projetos, serviços, terminais, SSH, cron e deploys locais funcionam sem conta. Ative a integração quando quiser usar os serviços hospedados na nuvem. Desativar preserva o perfil de nuvem salvo.",
+    "enabled": "Integração com a nuvem ativada",
+    "disabled": "Integração com a nuvem desativada",
+    "enable": "Ativar nuvem",
+    "disable": "Desativar nuvem",
+    "general": "Geral",
+    "subscription": "Assinatura opcional da nuvem",
+    "subscriptionHint": "Os planos se aplicam somente aos serviços hospedados na nuvem. Todos os recursos locais do desktop continuam disponíveis sem assinatura.",
+    "hostedDeployments": "Serviço de deploy hospedado"
+  },
+  "offlineDeployments": {
+    "local": "Local",
+    "cloud": "Nuvem (opcional)",
+    "localDescription": "Destinos, configurações e execuções recentes ficam neste computador. Nenhuma conta é necessária; operações remotas usam SSH.",
+    "cloudDescription": "Destinos hospedados usam sua conta opcional da nuvem. Importe um destino para manter uma cópia local protegida.",
+    "cloudSignIn": "Entre na conta em Nuvem nas configurações para ver destinos hospedados. Os destinos locais continuam disponíveis.",
+    "importJson": "Importar JSON",
+    "importCloud": "Importar para local",
+    "importTitle": "Importar destinos locais",
+    "importHint": "Revise os destinos e escolha um host SSH local para cada host de origem. A importação salva metadados e configurações sem executar comandos remotos.",
+    "importFile": "Arquivo JSON versionado",
+    "importContent": "Conteúdo JSON da importação",
+    "previewImport": "Prévia da importação",
+    "hostMappingHint": "Escolha cada host SSH local explicitamente, mesmo quando seu nome for igual ao da origem.",
+    "chooseHost": "Escolha um host SSH local",
+    "confirmImport": "Importar destinos",
+    "importing": "Importando…",
+    "importSummary": "Importados: {inserted}. Já importados: {skipped}. Conflitos preservados: {conflicts}.",
+    "invalidImport": "Use um pacote de destinos na versão 1 com origem e pelo menos um destino com ID de texto, nome e host SSH.",
+    "importTooLarge": "O arquivo de importação deve ter no máximo 16 MiB.",
+    "importedFrom": "Importado de {source} · ID de origem {id}",
+    "history": "Execuções recentes",
+    "historyLimits": "Até 100 execuções recentes por destino e 4 MiB por log são mantidos neste computador.",
+    "noRuns": "Nenhuma execução local foi registrada.",
+    "readLog": "Ler log",
+    "gitPatHint": "Opcional para repositórios privados. Salvo na configuração protegida deste computador; mantenha a URL Git sem credenciais.",
+    "logTruncated": "Este log foi truncado no limite de tamanho local.",
+    "runInterrupted": "Esta execução foi interrompida. Verifique o estado remoto antes de tentar novamente.",
+    "secretsUnavailable": "Este perfil do Windows não consegue abrir a configuração protegida. Os dados existentes foram preservados; recupere-os com o perfil original antes de executar este destino.",
+    "destroyRecordNote": "Destruir remove recursos gerenciados no host SSH. Remover um destino local desta lista é uma ação separada. Revise o resultado da execução antes de tentar novamente."
+  },
+  "licenses": {
+    "title": "Licenças e créditos",
+    "description": "Consulte a licença do desktop e os avisos de direitos autorais de terceiros.",
+    "open": "Ver licenças",
+    "close": "Fechar",
+    "retry": "Tentar novamente",
+    "error": "Não foi possível ler os arquivos de licença incluídos. Tente novamente.",
+    "loading": "Carregando licenças…",
+    "desktopTitle": "Licença do LaraEnv",
+    "thirdPartyTitle": "Avisos de terceiros"
   }
 }

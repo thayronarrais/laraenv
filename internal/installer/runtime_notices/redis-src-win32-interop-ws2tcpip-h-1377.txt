@@ -1,0 +1,17 @@
+/*
+**  WS2TCPIP.H - WinSock2 Extension for TCP/IP protocols
+**
+**  This file contains TCP/IP specific information for use
+**  by WinSock2 compatible applications.
+**
+**  Copyright (c) Microsoft Corporation. All rights reserved.
+**
+**  To provide the backward compatibility, all the TCP/IP
+**  specific definitions that were included in the WINSOCK.H
+**  file are now included in WINSOCK2.H file. WS2TCPIP.H
+**  file includes only the definitions introduced in the
+**  "WinSock 2 Protocol-Specific Annex" document.
+**
+**  Rev 0.3 Nov 13, 1995
+**      Rev 0.4 Dec 15, 1996
+*/

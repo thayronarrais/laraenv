@@ -1,0 +1,268 @@
+@import "tailwindcss" source(none);
+@config "../tailwind.config.js";
+
+/* These existing opacity modifiers were inert with v3's raw variable colors.
+   Keep that appearance during the dependency migration; enabling them is a
+   separate UI change now that v4 can resolve them with color-mix(). */
+@source not inline("bg-accent/{10,15,20,25,30,35,40,55,70,80,[0.07]}");
+@source not inline("bg-accent2/{10,12,15,[0.04],[0.055],[0.06],[0.07],[0.08],[0.10],[0.11]}");
+@source not inline("bg-midnight/80 border-accent/{40,50,60} border-accent2/{20,25,30,35,40,50,70,80}");
+@source not inline("hover:bg-accent/{25,30,35,40,50,60,70,85} hover:bg-accent2/{20,[0.16]}");
+@source not inline("focus:bg-accent/60 focus-visible:bg-accent/50 disabled:hover:bg-accent/30");
+@source not inline("focus:border-accent/60 focus-within:border-accent/{45,50} focus-within:border-accent2/{40,45}");
+@source not inline("ring-accent/60 focus:ring-accent/60 focus-visible:ring-accent2/60 text-accent2/{80,85}");
+@source not inline("h-4.5 w-4.5 leading-3.5");
+
+/* Keep the established v3 defaults while the build uses Tailwind v4. */
+@theme {
+  --default-ring-width: 3px;
+  --default-ring-color: rgb(59 130 246 / 0.5);
+}
+
+@layer base {
+  *, ::before, ::after, ::backdrop, ::file-selector-button {
+    border-color: #e5e7eb;
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: #9ca3af;
+    opacity: 1;
+  }
+
+  button, [role="button"] { cursor: pointer; }
+  :disabled { cursor: default; }
+  dialog { margin: auto; }
+}
+
+/* Existing screens use these v3 spellings and the sRGB gradient behavior. */
+@custom-variant hover (&:hover);
+@utility flex-shrink-0 { flex-shrink: 0; }
+@utility bg-gradient-to-r {
+  --tw-gradient-position: to right;
+  background-image: linear-gradient(var(--tw-gradient-stops));
+}
+
+@layer utilities {
+  .outline-none, .focus\:outline-none:focus, .focus-visible\:outline-none:focus-visible {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+
+  /* Keep spacing on visible following siblings, as the existing forms expect. */
+  :where(:is(.space-y-0\.5, .space-y-1, .space-y-1\.5, .space-y-2, .space-y-3, .space-y-4, .space-y-6) > :not(:last-child)) {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+  .space-y-0\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.125rem; margin-bottom: 0; }
+  .space-y-1 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.25rem; margin-bottom: 0; }
+  .space-y-1\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.375rem; margin-bottom: 0; }
+  .space-y-2 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.5rem; margin-bottom: 0; }
+  .space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.75rem; margin-bottom: 0; }
+  .space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 1rem; margin-bottom: 0; }
+  .space-y-6 > :not([hidden]) ~ :not([hidden]) { margin-top: 1.5rem; margin-bottom: 0; }
+}
+
+/* Default theme: Nebula (preserves the original look) */
+:root {
+  --c-accent: #7c5cff;
+  --c-accent2: #5cffd1;
+  --c-bg-1: #1a0b2e;
+  --c-bg-2: #0b1026;
+  --c-bg-3: #050816;
+  --c-glow-1: rgba(124, 92, 255, 0.25);
+  --c-glow-2: rgba(92, 255, 209, 0.10);
+  --c-text: #e4e6ff;
+  --radius-panel: 8px;
+  --radius-control: 4px;
+}
+
+[data-theme="aurora"] {
+  --c-accent: #10d995;
+  --c-accent2: #5ce1ff;
+  --c-bg-1: #06281f;
+  --c-bg-2: #051a1f;
+  --c-bg-3: #02100f;
+  --c-glow-1: rgba(16, 217, 149, 0.25);
+  --c-glow-2: rgba(92, 225, 255, 0.12);
+  --c-text: #e4fff5;
+}
+
+[data-theme="sunset"] {
+  --c-accent: #ff8a3d;
+  --c-accent2: #ffd166;
+  --c-bg-1: #2e0f0b;
+  --c-bg-2: #1f0a0d;
+  --c-bg-3: #100506;
+  --c-glow-1: rgba(255, 138, 61, 0.22);
+  --c-glow-2: rgba(255, 209, 102, 0.10);
+  --c-text: #ffeede;
+}
+
+[data-theme="crimson"] {
+  --c-accent: #ff4d6d;
+  --c-accent2: #ff8fab;
+  --c-bg-1: #2a0612;
+  --c-bg-2: #1a040b;
+  --c-bg-3: #0c0205;
+  --c-glow-1: rgba(255, 77, 109, 0.24);
+  --c-glow-2: rgba(255, 143, 171, 0.10);
+  --c-text: #ffe2e8;
+}
+
+[data-theme="oceanic"] {
+  --c-accent: #4d8eff;
+  --c-accent2: #7fdcff;
+  --c-bg-1: #0b1c3a;
+  --c-bg-2: #061226;
+  --c-bg-3: #020713;
+  --c-glow-1: rgba(77, 142, 255, 0.24);
+  --c-glow-2: rgba(127, 220, 255, 0.10);
+  --c-text: #dfeeff;
+}
+
+[data-theme="midnight"] {
+  --c-accent: #9ca3af;
+  --c-accent2: #e5e7eb;
+  --c-bg-1: #0a0a0a;
+  --c-bg-2: #050505;
+  --c-bg-3: #000000;
+  --c-glow-1: rgba(156, 163, 175, 0.10);
+  --c-glow-2: rgba(229, 231, 235, 0.04);
+  --c-text: #e5e7eb;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+/* Force dark mode for native browser controls (select dropdowns, date
+   pickers, scrollbars, etc.) so they don't pop in white on top of the
+   glassmorphism UI. */
+:root {
+  color-scheme: dark;
+}
+
+/* WebView2 ignores color-scheme when the host Windows is in light mode —
+   dropdown popups still render with white background and faint gray text,
+   making options nearly invisible. Force the colors on the option element
+   itself so the popup is readable regardless of OS theme. */
+select { color-scheme: dark; }
+select option {
+  background-color: #13102a;
+  color: var(--c-text);
+}
+
+body {
+  background:
+    radial-gradient(1200px 800px at 0% 0%, var(--c-glow-1) 0%, transparent 60%),
+    radial-gradient(900px 700px at 100% 0%, var(--c-glow-2) 0%, transparent 55%),
+    linear-gradient(180deg, var(--c-bg-1) 0%, var(--c-bg-2) 60%, var(--c-bg-3) 100%);
+  color: var(--c-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow: hidden;
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/[0.04] backdrop-blur-md border border-white/10
+           shadow-[0_8px_32px_0_rgba(0,0,0,0.45)] rounded-lg;
+  }
+  .glass-strong {
+    @apply bg-white/[0.07] backdrop-blur-xl border border-white/15
+           shadow-[0_8px_32px_0_rgba(0,0,0,0.55)] rounded-lg;
+  }
+  .glass-hover {
+    @apply hover:bg-white/[0.08] transition-colors duration-200;
+  }
+  .dot {
+    @apply w-2 h-2 rounded-full inline-block;
+  }
+
+  /* Brand wordmark: "Env" carries the logo's blue -> teal gradient, "Lara"
+     stays in the regular text colour, exactly like logo_laraenv.png. */
+  .brand-env {
+    @apply bg-gradient-to-r from-[#1f6bff] via-[#0f9df0] to-[#18ddc6]
+           bg-clip-text text-transparent;
+  }
+
+  /* Modal styles — opaque enough to clearly hide the dashboard underneath */
+  .modal-backdrop {
+    @apply fixed inset-0 z-50 flex items-center justify-center
+           bg-[#05030f]/85 backdrop-blur-lg;
+  }
+  .modal-card {
+    @apply bg-[#13102a] border border-white/15 rounded-lg
+           shadow-[0_20px_60px_-10px_rgba(0,0,0,0.85)];
+  }
+  .input {
+    @apply bg-white/5 border border-white/10 rounded px-3 py-1.5 text-sm
+           focus:outline-hidden focus:border-accent disabled:opacity-50;
+  }
+}
+
+/* scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* Compact workspace chrome and source control: visible actions, independent change scroll. */
+.workspace-frame, .primary-navigation { border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius-panel); box-shadow: none; }
+.primary-navigation { overflow: hidden; }
+.primary-navigation .navigation-toggle { width: 32px; height: 32px; }
+.workspace-icon-button { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; flex-shrink: 0; border: 1px solid rgba(255,255,255,.12); border-radius: 4px; color: #c0c6d1; background: rgba(255,255,255,.035); }
+.git-operation-summary { display: flex; align-items: center; gap: 6px; width: 100%; min-height: 30px; padding: 6px 8px; border-top: 1px solid rgba(255,255,255,.1); font-size: 12px; text-align: left; }
+.git-operation-summary:hover { background: rgba(255,255,255,.05); }
+.git-operation-summary:focus-visible { outline: 2px solid var(--c-accent); outline-offset: -2px; }
+.git-operation-summary svg { width: 14px; height: 14px; flex-shrink: 0; color: #86efac; }
+.git-operation-summary span { flex: 1; }
+.git-operation-summary small { color: #9ca3af; }
+.workspace-icon-button:hover:not(:disabled), .git-action:hover:not(:disabled) { color: white; background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.25); }
+.workspace-icon-button:focus-visible, .git-panel button:focus-visible, .git-input:focus-visible { outline: 2px solid #60a5fa; outline-offset: -2px; }
+.workspace-icon-button svg { width: 16px; height: 16px; }
+.workspace-icon-button:disabled, .git-panel button:disabled { opacity: .38; cursor: default; }
+.git-panel { display: flex; flex-direction: column; height: 100%; min-height: 0; min-width: 0; overflow: auto; background: #12141b; color: #e5e7eb; font-size: 12px; }
+.git-panel-heading { display: flex; flex-shrink: 0; align-items: center; justify-content: space-between; padding: 8px; border-bottom: 1px solid rgba(255,255,255,.1); }
+.git-panel-heading h2 { display: flex; align-items: center; gap: 7px; font-weight: 600; }
+.git-panel-heading h2 svg, .git-branch svg { width: 15px; height: 15px; color: #9ca3af; }
+.git-checkout { padding: 8px 10px; color: #9ca3af; flex-shrink: 0; }
+.git-checkout p { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.git-checkout-name { color: #e5e7eb; font-weight: 600; }
+.git-branch { display: flex; align-items: center; gap: 5px; color: #c4cad3; margin-top: 3px; }
+.git-search { display: flex; align-items: center; padding: 0 8px 8px; gap: 5px; flex-shrink: 0; }
+.git-search svg { width: 14px; height: 14px; color: #9ca3af; }
+.git-input { width: 100%; min-width: 0; border: 1px solid rgba(255,255,255,.15); border-radius: 4px; background: #191c25; color: #e5e7eb; padding: 5px 7px; margin-top: 4px; }
+.git-input::placeholder { color: #9ca3af; }
+.git-search .git-input { margin-top: 0; }
+.git-form { padding: 8px; border-top: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 7px; flex-shrink: 0; }
+.git-form p { color: #9ca3af; }
+.git-form textarea { display: block; resize: vertical; min-height: 44px; max-height: 140px; }
+.git-commit, .git-push { display: flex; width: 100%; min-height: 30px; justify-content: center; align-items: center; gap: 6px; border-radius: 4px; font-weight: 600; }
+.git-commit { background: #2563eb; border: 1px solid #3b82f6; color: white; }
+.git-commit:hover:not(:disabled) { background: #1d4ed8; }
+.git-push { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.2); }
+.git-push:hover:not(:disabled) { background: rgba(255,255,255,.12); }
+.git-commit svg, .git-push svg { width: 15px; height: 15px; }
+.git-changes-scroll { flex: 1 0 168px; min-height: 168px; max-height: max(168px, calc(100vh - 510px)); overflow-y: auto; overflow-x: hidden; scrollbar-gutter: stable; }
+.git-change-section { border-top: 1px solid rgba(255,255,255,.1); }
+.git-section-heading, .git-tree-row { display: flex; align-items: center; gap: 4px; min-width: 0; min-height: 28px; padding-right: 6px; }
+.git-section-heading { padding: 3px 6px 3px 5px; background: rgba(255,255,255,.025); }
+.git-section-toggle, .git-folder-toggle { display: flex; flex: 1; align-items: center; gap: 4px; min-width: 0; height: 28px; text-align: left; }
+.git-section-toggle { font-weight: 600; }
+.git-section-toggle span, .git-folder-toggle span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.git-section-toggle svg, .git-folder-toggle svg, .git-file-icon { width: 14px; height: 14px; flex-shrink: 0; color: #9ca3af; }
+.git-folder-toggle small, .git-section-toggle small { color: #9ca3af; padding: 0 3px; }
+.git-tree-list { list-style: none; margin: 0; padding: 0; }
+.git-tree-row:hover { background: rgba(255,255,255,.045); }
+.git-tree-row input { flex-shrink: 0; width: 12px; height: 12px; accent-color: #2563eb; }
+.git-file-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; height: 28px; }
+.git-action { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; width: 26px; height: 24px; border-radius: 4px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.045); color: #cbd5e1; }
+.git-action svg { width: 14px; height: 14px; }
+.git-stage-action { color: #86efac; background: rgba(16,185,129,.08); border-color: rgba(16,185,129,.26); }
+.git-status { min-width: 16px; text-align: center; border-radius: 3px; font-size: 10px; font-weight: 600; line-height: 18px; }
+.git-status-modified { color: #6ee7b7; background: rgba(16,185,129,.1); }
+.git-status-blocked { color: #fbbf24; background: rgba(245,158,11,.1); }
+
+.git-panel .git-folder-toggle:disabled, .git-panel .git-section-toggle:disabled { opacity: 1; }

@@ -1,0 +1,54 @@
+# Desktop license and dependency policy
+
+The original LaraEnv desktop code uses [Apache-2.0](../LICENSE), with the existing copyright of Thayron Arrais. The desktop includes the optional cloud client; the separately maintained `laravel-server`, billing infrastructure and service credentials are outside this distribution. Local features do not depend on an account or plan.
+
+On **2026-10-21**, the owner confirmed the right to redistribute the project's own logos, icons, screenshots and images. This is a recorded owner attestation, not a claim of exclusive authorship or permission to sublicense other companies' marks. Modern LaraEnv elephant/terminal artwork remains in the source. The standalone vendor images, composites and concept mockups identified in the earlier local audit remain archived and excluded. Provider and service names continue to identify the corresponding integrations, alongside generic icons.
+
+The canonical repository also preserves 28 historical documentation images from its previously public tree at their exact paths and hashes, so existing image links keep working. They illustrate older demo interfaces; depicted account/Pro states do not describe current local feature access. These captures have a separate [historical-media record](historical-media.md), including the project-rights/third-party-logo boundary. Their preservation does not certify vendor permission, grant trademark rights or add them to the desktop's current app/installer branding.
+
+Apache-2.0 permits source and binary redistribution subject to its conditions, including preservation of applicable license and attribution notices. Its trademark clause does not grant general use of the licensor's marks. The standard wording and complete Appendix are preserved in LICENSE; the installer dialog is generated from that same file. See the [Apache license](https://www.apache.org/licenses/LICENSE-2.0) and [Apache licensing FAQ](https://www.apache.org/foundation/license-faq.html).
+
+## Third-party components
+
+[THIRD_PARTY_NOTICES.txt](../THIRD_PARTY_NOTICES.txt) includes the component index and complete collected license/NOTICE texts. [third_party/dependencies.json](../third_party/dependencies.json) records exact versions, scope, inputs and evidence hashes; `third_party/licenses/` preserves individual upstream bytes. These components retain their own licenses. The inventory distinguishes desktop selections, conservative source requirements, build/development dependencies and metadata-only entries; an entry without collected evidence is not silently cleared.
+
+Important nested resources include Monaco MIT and its ThirdPartyNotices, the Codicons font under CC-BY-4.0, JetBrains Mono under OFL-1.1, Lucide's ISC/Feather attribution, and the embedded Composer PHAR. Composer package metadata alone does not cover its Mozilla CA store (MPL-2.0) and Unicode-derived resources. Those resources and source locations are recorded separately. No PHAR, embedded helper or old TUI executable was executed to establish provenance.
+
+The embedded Composer 2.8.5 PHAR matches its [official checksum](https://getcomposer.org/download/2.8.5/composer.phar.sha256sum). Its static archive records and CRCs were checked. This verifies the inspected bytes against the publisher's checksum, without claiming a reproducible Composer build or independently validated signature. The old Linux TUI binary was removed from the source candidate and preserved locally; build future TUI artifacts from the reviewed source with accompanying notices.
+
+The MSI contains WiX UI/Util custom-action code, separately licensed under MS-RL. Packages and matching source are pinned to WiX 5.0.2, commit `aa65968c419420d32e3e1b647aea0082f5ca5b78`. Its license is included in the aggregate, and complete corresponding source accompanies MSI/portable packages at `third_party/sources/wix-5.0.2-source.zip`. This preserves the [versioned WiX license](https://github.com/wixtoolset/wix/blob/aa65968c419420d32e3e1b647aea0082f5ca5b78/LICENSE.TXT) for its files; the desktop's original source remains Apache-2.0.
+
+## Regenerating notices
+
+Install the locked frontend and screenshots dependencies, download Go module sources and select Go 1.26.10 before regenerating. See [the tooling guide](../tools/licenses/README.md) for platform/cache requirements and `--go-bin` when the selected toolchain differs from system Go.
+
+```powershell
+node tools/licenses/generate.mjs
+node tools/licenses/generate.mjs --check
+node tools/licenses/installer-rtf.mjs
+node tools/licenses/installer-rtf.mjs --check
+node frontend/scripts/vendor-legal.mjs
+node frontend/scripts/vendor-legal.mjs --check
+```
+
+Review changed inputs and original notices when a version, resource or policy changes. Do not treat automatic text classification as a legal compatibility opinion. The checks reject stale outputs and missing required evidence. The frontend hooks copy reviewed notices into local assets, and Settings loads their plain text only when opened. The release helper checks the sources before packaging; MSI and portable packages carry legal files, while the standalone executable embeds the same notices.
+
+## Scope of the open-source claim
+
+Open source describes the desktop source and the rights granted for its included components. Windows and Microsoft WebView2 are separate platform prerequisites, under their own terms. Optional downloads, external agents, hosted services and network operations retain their own requirements; making the desktop open does not relicense those products.
+
+The runtime catalog downloads software separately from the desktop. The [runtime review](opensource-audit/2026-10-21/runtime-licenses.md) and hash-bound `tools/licenses/runtime-policy.json` cover all 40 catalog sources, 41 PECL builds and two Microsoft prerequisite boundaries. Descriptive license metadata does not grant binary redistribution clearance. Exact archives, companion libraries and applicable corresponding-source obligations still require verification before mirroring or bundling.
+
+PECL installation now preserves supplied legal documents and nested paths under `licenses/pecl/<extension>/<archive-sha256>/files/`, with a deterministic manifest. Unsafe paths, duplicate aliases and oversized notices are rejected before writing DLLs; differing existing notice files are preserved. The manifest records missing upstream material instead of inventing a license. Version-bound source notices for pgvector 0.8.6 and Redis Windows 5.0.14.1 are embedded and retained separately under `licenses/laraenv/`. They supplement known archive omissions and do not certify every companion binary. The Redis fork's main terms are BSD-3-Clause, separately from newer Redis releases.
+
+On 2026-10-21, the four public pgvector ZIPs and matching SHA256 sidecars were replaced in the [existing release](https://github.com/thayronarrais/laraenv/releases/tag/pgvector-0.8.6). Anonymous downloads and an independent review confirmed the complete upstream license in every ZIP and all 172 original member payloads unchanged. The policy retains the original hashes as superseded evidence and records the four corrected hashes, URLs and eight asset identities. This closes the published notice omission, without claiming reproducible DLL builds or ABI testing.
+
+Seven exact-source MongoDB notices, one exact-SDK memcached notice and 69 Imagick source/SDK texts supplement only the three reviewed PECL archive hashes. They are retained with source URLs/hashes and a separate manifest under `licenses/pecl/<extension>/<archive-sha256>/supplemental/`. The original archive manifest remains byte-identical on existing installations. Composite notices retain descriptive terms; they are not mislabeled as a single permissive SPDX license. Other PHP-series builds are not silently covered.
+
+Redis Windows 5.0.14.1 additionally retains 100 complete source/canonical texts under `licenses/laraenv/redis/5.0.14.1/supplemental/<bundle-id>/`, selected by the exact archive SHA-256 from the same opened file used for extraction. Five existing notices and their manifest remain unchanged. The composite terms include dlfcn-win32 LGPL-2.1-or-later, SipHash CC0, Lua modules and Windows contributions; core BSD-3-Clause alone does not describe the complete work. Its full identified source, projects and recipes provide a prepared section 6(a) route, which must be effectively delivered if the project redistributes that binary. Recipients retain LGPL rights to modify the library for their own use and reverse engineer to debug those modifications; no desktop term restricts those rights. See the [Redis review](opensource-audit/2026-10-21/redis-license-closure.md).
+
+For Imagick 3.7.0/PHP 8.3, all 166 companion DLLs match the official SDK. The 69 preserved texts include its complete NOTICE and referenced license texts, with version/source evidence and explicit candidate-source limits. FLIF includes its encoder and therefore has LGPL-3.0-or-later obligations; other companions include LGPL/static libraries and dual-license alternatives. Retaining an optional delegate license or an unselected alternative does not prove it is linked or require selecting GPL. The [Imagick terms](opensource-audit/2026-10-21/imagick-license-closure.md) and [source/relink review](opensource-audit/2026-10-21/imagick-source-route.md) identify concrete remaining patched-source/relinking, X11/Xext and Adobe-attribution gaps before project binary mirroring. LGPL modification/debugging rights are preserved independently of the desktop's Apache license.
+
+The exact PHP 8.4.25 and 8.6.0beta3 ZIPs were recovered from official archive URLs, with supplied licenses, redist notices and SBOMs preserved; the two catalog URLs were corrected without changing versions. The [catalog follow-up](opensource-audit/2026-10-21/runtime-catalog-followup.md) and [companion follow-up](opensource-audit/2026-10-21/runtime-companions-followup.md) record the earlier evidence. Effective Redis source delivery, the remaining Imagick gaps above, MySQL/Cmder corresponding-source routes, Microsoft grants and user-selected manual archives remain conditions before new project mirroring/bundling. Those products currently download directly from their suppliers or are supplied manually; they are not added to the desktop release by this work. The backend stays private. The [current report](opensource-audit/2026-10-21/README.md) also records the separate remaining OpenPGP module advisory.
+
+Desktop source candidates use the reviewed [snapshot export](source-snapshot.md), retaining the selected source and legal resources while excluding private history and local audit evidence. The desktop-art attestation does not clear unrelated archived media in the old private history. Exporting a candidate does not publish a release, rewrite history or change repository visibility.

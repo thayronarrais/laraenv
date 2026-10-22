@@ -1,0 +1,1 @@
+{"data":[{"id":"child-a","parentThreadId":"root","source":{"subAgent":{"thread_spawn":{"parent_thread_id":"root","depth":1,"agent_path":"/root/synthetic","agent_nickname":"Synthetic worker","agent_role":"researcher"}}},"agentNickname":"Synthetic worker","agentRole":"researcher","model":"synthetic-model","cwd":"/elsewhere/a","status":{"type":"notLoaded"}}],"nextCursor":"page-two"}

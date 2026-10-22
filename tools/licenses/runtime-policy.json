@@ -1,0 +1,4021 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-21",
+  "scope": {
+    "mode": "optional-downloads-and-platform-prerequisites",
+    "automaticBundlingClearance": false,
+    "desktopBundledComposerPolicy": "tools/licenses/policy.json#/composer",
+    "backend": "excluded-private",
+    "noPayloadExecution": true,
+    "noPublishingOrMirroring": false,
+    "publicationScope": "Only the four existing project-hosted pgvector 0.8.6 ZIPs and matching sidecars were replaced after explicit owner authorization. Other runtime binaries remain direct vendor downloads; no general mirroring clearance.",
+    "directVendorDownloadBoundary": "Except the four reviewed project-hosted pgvector ZIPs, runtime payloads are downloaded from the supplier on the user computer or supplied manually; they are not bundled in the desktop release. Future project redistribution needs its own exact binary/source review."
+  },
+  "inputs": [
+    {
+      "path": "internal/installer/catalog.go",
+      "sha256": "02f20acd8be67c89de6b9bf94526d7c73c07d23220d868ec2b6320e07c05a7e2",
+      "normalization": "CRLF-to-LF; no other byte changes"
+    },
+    {
+      "path": "internal/installer/pecl.go",
+      "sha256": "c2821e0b4f4509279c191a5971bf7eeafcf29cdad0df58647411378c7e3c3cb3",
+      "normalization": "CRLF-to-LF; no other byte changes"
+    },
+    {
+      "path": "internal/vcruntime/vcruntime.go",
+      "sha256": "62e9521e07ee5b4e31c1289a9579d4643f415be85f5f396c64e82681d5bad4a9",
+      "normalization": "CRLF-to-LF; no other byte changes"
+    },
+    {
+      "path": "internal/webviewruntime/runtime_windows.go",
+      "sha256": "5d3e459fb8e945364cdd0cf6851e01b8c57e36cf4d2ae79e9c20aa41ed65c614",
+      "normalization": "CRLF-to-LF; no other byte changes"
+    },
+    {
+      "path": "internal/webviewruntime/signature_windows.go",
+      "sha256": "1d7fea63b854fe271b183170a29c6345b6da4d78829482bc199f60da60c06e9e",
+      "normalization": "CRLF-to-LF; no other byte changes"
+    }
+  ],
+  "catalogCoverage": {
+    "sourceCount": 40,
+    "kindCount": 13,
+    "sources": [
+      {
+        "kind": "nginx",
+        "version": "1.30.0",
+        "url": "https://nginx.org/download/nginx-1.30.0.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "nginx",
+        "version": "1.29.8",
+        "url": "https://nginx.org/download/nginx-1.29.8.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "caddy",
+        "version": "2.11.4",
+        "url": "https://github.com/caddyserver/caddy/releases/download/v2.11.4/caddy_2.11.4_windows_amd64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "mailpit",
+        "version": "1.29.7",
+        "url": "https://github.com/axllent/mailpit/releases/download/v1.29.7/mailpit-windows-amd64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "mailpit",
+        "version": "1.29.6",
+        "url": "https://github.com/axllent/mailpit/releases/download/v1.29.6/mailpit-windows-amd64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "postgres",
+        "version": "18.3",
+        "url": "https://www.enterprisedb.com/download-postgresql-binaries",
+        "manual": true,
+        "direct": false
+      },
+      {
+        "kind": "postgres",
+        "version": "17.9",
+        "url": "https://www.enterprisedb.com/download-postgresql-binaries",
+        "manual": true,
+        "direct": false
+      },
+      {
+        "kind": "postgres",
+        "version": "16.13",
+        "url": "https://www.enterprisedb.com/download-postgresql-binaries",
+        "manual": true,
+        "direct": false
+      },
+      {
+        "kind": "postgres",
+        "version": "15.17",
+        "url": "https://www.enterprisedb.com/download-postgresql-binaries",
+        "manual": true,
+        "direct": false
+      },
+      {
+        "kind": "pgvector",
+        "version": "0.8.6-pg18",
+        "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg18-win-x64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "pgvector",
+        "version": "0.8.6-pg17",
+        "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg17-win-x64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "pgvector",
+        "version": "0.8.6-pg16",
+        "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg16-win-x64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "pgvector",
+        "version": "0.8.6-pg15",
+        "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg15-win-x64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "apache",
+        "version": "2.4.62",
+        "url": "https://www.apachelounge.com/download/VS17/binaries/httpd-2.4.62-240904-win64-VS17.zip",
+        "manual": true,
+        "direct": false
+      },
+      {
+        "kind": "mysql",
+        "version": "9.7.0",
+        "url": "https://dev.mysql.com/get/Downloads/MySQL-9.7/mysql-9.7.0-winx64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "mysql",
+        "version": "8.4.9",
+        "url": "https://dev.mysql.com/get/Downloads/MySQL-8.4/mysql-8.4.9-winx64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "mysql",
+        "version": "8.0.46",
+        "url": "https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.46-winx64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "php",
+        "version": "8.6.0beta3",
+        "url": "https://windows.php.net/downloads/qa/archives/php-8.6.0beta3-nts-Win32-vs18-x64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "php",
+        "version": "8.5.10",
+        "url": "https://windows.php.net/downloads/releases/php-8.5.10-nts-Win32-vs17-x64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "php",
+        "version": "8.4.25",
+        "url": "https://windows.php.net/downloads/releases/archives/php-8.4.25-nts-Win32-vs17-x64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "php",
+        "version": "8.3.33",
+        "url": "https://windows.php.net/downloads/releases/php-8.3.33-nts-Win32-vs16-x64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "php",
+        "version": "8.2.33",
+        "url": "https://windows.php.net/downloads/releases/php-8.2.33-nts-Win32-vs16-x64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "php",
+        "version": "8.1.34",
+        "url": "https://windows.php.net/downloads/releases/php-8.1.34-nts-Win32-vs16-x64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "php",
+        "version": "8.0.30",
+        "url": "https://windows.php.net/downloads/releases/archives/php-8.0.30-nts-Win32-vs16-x64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "php",
+        "version": "7.4.33",
+        "url": "https://windows.php.net/downloads/releases/archives/php-7.4.33-nts-Win32-vc15-x64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "php",
+        "version": "7.3.33",
+        "url": "https://windows.php.net/downloads/releases/archives/php-7.3.33-nts-Win32-VC15-x64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "php",
+        "version": "7.2.34",
+        "url": "https://windows.php.net/downloads/releases/archives/php-7.2.34-nts-Win32-VC15-x64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "php",
+        "version": "7.1.33",
+        "url": "https://windows.php.net/downloads/releases/archives/php-7.1.33-nts-Win32-VC14-x64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "php",
+        "version": "7.0.33",
+        "url": "https://windows.php.net/downloads/releases/archives/php-7.0.33-nts-Win32-VC14-x64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "php",
+        "version": "5.6.40",
+        "url": "https://windows.php.net/downloads/releases/archives/php-5.6.40-nts-Win32-VC11-x64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "python",
+        "version": "3.13.1",
+        "url": "https://www.python.org/ftp/python/3.13.1/python-3.13.1-embed-amd64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "python",
+        "version": "3.12.7",
+        "url": "https://www.python.org/ftp/python/3.12.7/python-3.12.7-embed-amd64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "nodejs",
+        "version": "24.15.0",
+        "url": "https://nodejs.org/dist/v24.15.0/node-v24.15.0-win-x64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "nodejs",
+        "version": "22.22.2",
+        "url": "https://nodejs.org/dist/v22.22.2/node-v22.22.2-win-x64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "nodejs",
+        "version": "20.20.2",
+        "url": "https://nodejs.org/dist/v20.20.2/node-v20.20.2-win-x64.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "redis",
+        "version": "5.0.14.1",
+        "url": "https://github.com/tporadowski/redis/releases/download/v5.0.14.1/Redis-x64-5.0.14.1.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "composer",
+        "version": "2.8.5",
+        "url": "https://getcomposer.org/download/2.8.5/composer.phar",
+        "manual": false,
+        "direct": true
+      },
+      {
+        "kind": "composer",
+        "version": "2.2.25",
+        "url": "https://getcomposer.org/download/2.2.25/composer.phar",
+        "manual": false,
+        "direct": true
+      },
+      {
+        "kind": "cmder",
+        "version": "1.3.25",
+        "url": "https://github.com/cmderdev/cmder/releases/download/v1.3.25/cmder.zip",
+        "manual": false,
+        "direct": false
+      },
+      {
+        "kind": "cmder",
+        "version": "1.3.25-mini",
+        "url": "https://github.com/cmderdev/cmder/releases/download/v1.3.25/cmder_mini.zip",
+        "manual": false,
+        "direct": false
+      }
+    ]
+  },
+  "peclCoverage": {
+    "extensionCount": 6,
+    "buildCount": 41,
+    "builds": [
+      {
+        "extension": "xdebug",
+        "phpSeries": "8.5",
+        "version": "3.5.3",
+        "url": "https://windows.php.net/downloads/pecl/releases/xdebug/3.5.3/php_xdebug-3.5.3-8.5-nts-vs17-x64.zip"
+      },
+      {
+        "extension": "xdebug",
+        "phpSeries": "8.4",
+        "version": "3.4.0",
+        "url": "https://windows.php.net/downloads/pecl/releases/xdebug/3.4.0/php_xdebug-3.4.0-8.4-nts-vs17-x64.zip"
+      },
+      {
+        "extension": "xdebug",
+        "phpSeries": "8.3",
+        "version": "3.4.0",
+        "url": "https://windows.php.net/downloads/pecl/releases/xdebug/3.4.0/php_xdebug-3.4.0-8.3-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "xdebug",
+        "phpSeries": "8.2",
+        "version": "3.4.0",
+        "url": "https://windows.php.net/downloads/pecl/releases/xdebug/3.4.0/php_xdebug-3.4.0-8.2-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "xdebug",
+        "phpSeries": "8.1",
+        "version": "3.3.2",
+        "url": "https://windows.php.net/downloads/pecl/releases/xdebug/3.3.2/php_xdebug-3.3.2-8.1-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "xdebug",
+        "phpSeries": "8.0",
+        "version": "3.1.6",
+        "url": "https://windows.php.net/downloads/pecl/releases/xdebug/3.1.6/php_xdebug-3.1.6-8.0-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "xdebug",
+        "phpSeries": "7.4",
+        "version": "3.1.6",
+        "url": "https://windows.php.net/downloads/pecl/releases/xdebug/3.1.6/php_xdebug-3.1.6-7.4-nts-vc15-x64.zip"
+      },
+      {
+        "extension": "redis",
+        "phpSeries": "8.5",
+        "version": "6.3.0",
+        "url": "https://windows.php.net/downloads/pecl/releases/redis/6.3.0/php_redis-6.3.0-8.5-nts-vs17-x64.zip"
+      },
+      {
+        "extension": "redis",
+        "phpSeries": "8.4",
+        "version": "6.1.0",
+        "url": "https://windows.php.net/downloads/pecl/releases/redis/6.1.0/php_redis-6.1.0-8.4-nts-vs17-x64.zip"
+      },
+      {
+        "extension": "redis",
+        "phpSeries": "8.3",
+        "version": "6.1.0",
+        "url": "https://windows.php.net/downloads/pecl/releases/redis/6.1.0/php_redis-6.1.0-8.3-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "redis",
+        "phpSeries": "8.2",
+        "version": "6.1.0",
+        "url": "https://windows.php.net/downloads/pecl/releases/redis/6.1.0/php_redis-6.1.0-8.2-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "redis",
+        "phpSeries": "8.1",
+        "version": "6.1.0",
+        "url": "https://windows.php.net/downloads/pecl/releases/redis/6.1.0/php_redis-6.1.0-8.1-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "redis",
+        "phpSeries": "8.0",
+        "version": "5.3.7",
+        "url": "https://windows.php.net/downloads/pecl/releases/redis/5.3.7/php_redis-5.3.7-8.0-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "redis",
+        "phpSeries": "7.4",
+        "version": "5.3.7",
+        "url": "https://windows.php.net/downloads/pecl/releases/redis/5.3.7/php_redis-5.3.7-7.4-nts-vc15-x64.zip"
+      },
+      {
+        "extension": "mongodb",
+        "phpSeries": "8.5",
+        "version": "2.5.2",
+        "url": "https://windows.php.net/downloads/pecl/releases/mongodb/2.5.2/php_mongodb-2.5.2-8.5-nts-vs17-x64.zip"
+      },
+      {
+        "extension": "mongodb",
+        "phpSeries": "8.4",
+        "version": "1.20.1",
+        "url": "https://windows.php.net/downloads/pecl/releases/mongodb/1.20.1/php_mongodb-1.20.1-8.4-nts-vs17-x64.zip"
+      },
+      {
+        "extension": "mongodb",
+        "phpSeries": "8.3",
+        "version": "1.20.1",
+        "url": "https://windows.php.net/downloads/pecl/releases/mongodb/1.20.1/php_mongodb-1.20.1-8.3-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "mongodb",
+        "phpSeries": "8.2",
+        "version": "1.20.1",
+        "url": "https://windows.php.net/downloads/pecl/releases/mongodb/1.20.1/php_mongodb-1.20.1-8.2-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "mongodb",
+        "phpSeries": "8.1",
+        "version": "1.20.1",
+        "url": "https://windows.php.net/downloads/pecl/releases/mongodb/1.20.1/php_mongodb-1.20.1-8.1-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "mongodb",
+        "phpSeries": "8.0",
+        "version": "1.16.2",
+        "url": "https://windows.php.net/downloads/pecl/releases/mongodb/1.16.2/php_mongodb-1.16.2-8.0-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "mongodb",
+        "phpSeries": "7.4",
+        "version": "1.16.2",
+        "url": "https://windows.php.net/downloads/pecl/releases/mongodb/1.16.2/php_mongodb-1.16.2-7.4-nts-vc15-x64.zip"
+      },
+      {
+        "extension": "apcu",
+        "phpSeries": "8.5",
+        "version": "5.1.28",
+        "url": "https://windows.php.net/downloads/pecl/releases/apcu/5.1.28/php_apcu-5.1.28-8.5-nts-vs17-x64.zip"
+      },
+      {
+        "extension": "apcu",
+        "phpSeries": "8.4",
+        "version": "5.1.24",
+        "url": "https://windows.php.net/downloads/pecl/releases/apcu/5.1.24/php_apcu-5.1.24-8.4-nts-vs17-x64.zip"
+      },
+      {
+        "extension": "apcu",
+        "phpSeries": "8.3",
+        "version": "5.1.24",
+        "url": "https://windows.php.net/downloads/pecl/releases/apcu/5.1.24/php_apcu-5.1.24-8.3-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "apcu",
+        "phpSeries": "8.2",
+        "version": "5.1.23",
+        "url": "https://windows.php.net/downloads/pecl/releases/apcu/5.1.23/php_apcu-5.1.23-8.2-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "apcu",
+        "phpSeries": "8.1",
+        "version": "5.1.23",
+        "url": "https://windows.php.net/downloads/pecl/releases/apcu/5.1.23/php_apcu-5.1.23-8.1-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "apcu",
+        "phpSeries": "8.0",
+        "version": "5.1.22",
+        "url": "https://windows.php.net/downloads/pecl/releases/apcu/5.1.22/php_apcu-5.1.22-8.0-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "apcu",
+        "phpSeries": "7.4",
+        "version": "5.1.22",
+        "url": "https://windows.php.net/downloads/pecl/releases/apcu/5.1.22/php_apcu-5.1.22-7.4-nts-vc15-x64.zip"
+      },
+      {
+        "extension": "imagick",
+        "phpSeries": "8.5",
+        "version": "3.8.1",
+        "url": "https://windows.php.net/downloads/pecl/releases/imagick/3.8.1/php_imagick-3.8.1-8.5-nts-vs17-x64.zip"
+      },
+      {
+        "extension": "imagick",
+        "phpSeries": "8.4",
+        "version": "3.7.0",
+        "url": "https://windows.php.net/downloads/pecl/releases/imagick/3.7.0/php_imagick-3.7.0-8.4-nts-vs17-x64.zip"
+      },
+      {
+        "extension": "imagick",
+        "phpSeries": "8.3",
+        "version": "3.7.0",
+        "url": "https://windows.php.net/downloads/pecl/releases/imagick/3.7.0/php_imagick-3.7.0-8.3-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "imagick",
+        "phpSeries": "8.2",
+        "version": "3.7.0",
+        "url": "https://windows.php.net/downloads/pecl/releases/imagick/3.7.0/php_imagick-3.7.0-8.2-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "imagick",
+        "phpSeries": "8.1",
+        "version": "3.7.0",
+        "url": "https://windows.php.net/downloads/pecl/releases/imagick/3.7.0/php_imagick-3.7.0-8.1-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "imagick",
+        "phpSeries": "8.0",
+        "version": "3.7.0",
+        "url": "https://windows.php.net/downloads/pecl/releases/imagick/3.7.0/php_imagick-3.7.0-8.0-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "imagick",
+        "phpSeries": "7.4",
+        "version": "3.7.0",
+        "url": "https://windows.php.net/downloads/pecl/releases/imagick/3.7.0/php_imagick-3.7.0-7.4-nts-vc15-x64.zip"
+      },
+      {
+        "extension": "memcached",
+        "phpSeries": "8.5",
+        "version": "3.4.0",
+        "url": "https://windows.php.net/downloads/pecl/releases/memcached/3.4.0/php_memcached-3.4.0-8.5-nts-vs17-x64.zip"
+      },
+      {
+        "extension": "memcached",
+        "phpSeries": "8.3",
+        "version": "3.3.0",
+        "url": "https://windows.php.net/downloads/pecl/releases/memcached/3.3.0/php_memcached-3.3.0-8.3-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "memcached",
+        "phpSeries": "8.2",
+        "version": "3.3.0",
+        "url": "https://windows.php.net/downloads/pecl/releases/memcached/3.3.0/php_memcached-3.3.0-8.2-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "memcached",
+        "phpSeries": "8.1",
+        "version": "3.2.0",
+        "url": "https://windows.php.net/downloads/pecl/releases/memcached/3.2.0/php_memcached-3.2.0-8.1-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "memcached",
+        "phpSeries": "8.0",
+        "version": "3.2.0",
+        "url": "https://windows.php.net/downloads/pecl/releases/memcached/3.2.0/php_memcached-3.2.0-8.0-nts-vs16-x64.zip"
+      },
+      {
+        "extension": "memcached",
+        "phpSeries": "7.4",
+        "version": "3.2.0",
+        "url": "https://windows.php.net/downloads/pecl/releases/memcached/3.2.0/php_memcached-3.2.0-7.4-nts-vc15-x64.zip"
+      }
+    ]
+  },
+  "retention": {
+    "expectedCapability": "Preserve supplied archive legal files byte-for-byte, nested relative paths, and hash-bound archive provenance; supplement missing exact-version core notices separately.",
+    "verificationStatus": "unit-fixtures-passed; pgvector-public-notice-omission-repaired-and-redownloaded; companion-and-future-redistribution-conditions-retained",
+    "archiveHashMeaning": "Identifies the bytes inspected; not publisher authentication or legal clearance.",
+    "originalEvidenceRoot": "build/verification/runtime-licenses-dependencies-20261021/runtimes",
+    "peclSupplementalScope": "Exact ZIP SHA256 and extension only; supplied archive notices are preserved independently. Eight source/SDK texts supplement identified MongoDB and memcached omissions; no inference for other PHP series or full binary clearance."
+  },
+  "supplementalNotices": [
+    {
+      "path": "internal/installer/licenses/pgvector-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/pgvector/pgvector/v0.8.6/LICENSE",
+      "sha256": "6bba9ebeb73e27477463b05e5ef1bf303bccbddb3db9bbc95905d351604d6a87",
+      "bytes": 1104,
+      "license": "PostgreSQL",
+      "runtimeScope": {
+        "kind": "pgvector",
+        "versions": [
+          "0.8.6-pg15",
+          "0.8.6-pg16",
+          "0.8.6-pg17",
+          "0.8.6-pg18"
+        ]
+      }
+    },
+    {
+      "path": "internal/installer/licenses/redis-license.txt",
+      "url": "https://raw.githubusercontent.com/tporadowski/redis/v5.0.14.1/license.txt",
+      "sha256": "83c2b0e936dbb2da90b25fd2cb41d2f53d8d13ef05772d636f526767c3f61afb",
+      "bytes": 1589,
+      "license": "BSD-3-Clause",
+      "runtimeScope": {
+        "kind": "redis",
+        "versions": [
+          "5.0.14.1"
+        ]
+      }
+    },
+    {
+      "path": "internal/installer/licenses/redis-COPYING.txt",
+      "url": "https://raw.githubusercontent.com/tporadowski/redis/v5.0.14.1/COPYING",
+      "sha256": "cbf420a3672475a6e2765e3c0984c1f81efe0212afb94a3c998ee63bfd661063",
+      "bytes": 1487,
+      "license": "BSD-3-Clause",
+      "runtimeScope": {
+        "kind": "redis",
+        "versions": [
+          "5.0.14.1"
+        ]
+      }
+    },
+    {
+      "path": "internal/installer/licenses/redis-jemalloc-COPYING.txt",
+      "url": "https://raw.githubusercontent.com/tporadowski/redis/v5.0.14.1/deps/jemalloc-5.2.1/COPYING",
+      "sha256": "94aa2caa98c25d942f58b956c71dba6a99ff98fc3a31cbc669fe2a4cd0268b53",
+      "bytes": 1709,
+      "license": "BSD-2-Clause",
+      "runtimeScope": {
+        "kind": "redis",
+        "versions": [
+          "5.0.14.1"
+        ]
+      }
+    },
+    {
+      "path": "internal/installer/licenses/redis-lua-COPYRIGHT.txt",
+      "url": "https://raw.githubusercontent.com/tporadowski/redis/v5.0.14.1/deps/lua/COPYRIGHT",
+      "sha256": "ee5e3e82af1e1b543c4f216e399d7c8cfee797711913f349e385101c4ae60a79",
+      "bytes": 1528,
+      "license": "MIT",
+      "runtimeScope": {
+        "kind": "redis",
+        "versions": [
+          "5.0.14.1"
+        ]
+      }
+    },
+    {
+      "path": "internal/installer/licenses/redis-hiredis-COPYING.txt",
+      "url": "https://raw.githubusercontent.com/tporadowski/redis/v5.0.14.1/deps/hiredis/COPYING",
+      "sha256": "dca05ce8fc87a8261783b4aed0deef8becc9350b6aa770bc714d0c1833b896eb",
+      "bytes": 1588,
+      "license": "BSD-3-Clause",
+      "runtimeScope": {
+        "kind": "redis",
+        "versions": [
+          "5.0.14.1"
+        ]
+      }
+    }
+  ],
+  "components": [
+    {
+      "id": "nginx",
+      "kind": "nginx",
+      "versions": [
+        "1.30.0",
+        "1.29.8"
+      ],
+      "distribution": "upstream-download",
+      "softwareLicense": "BSD-2-Clause",
+      "softwareLicenseSources": [
+        "https://nginx.org/LICENSE",
+        "https://nginx.org/en/docs/faq/license_copyright.html"
+      ],
+      "binaryTerms": [
+        "The official Windows ZIP supplies docs/LICENSE; preserve its copyright and disclaimer.",
+        "Any linked libraries retain their own conditions; a core BSD license does not relicense them."
+      ],
+      "requiredActions": [
+        "Preserve exact supplied copyright, license, disclaimer, NOTICE, third-party and dependency notices with the installed or redistributed files.",
+        "Before bundling or mirroring, identify the exact build and every included/static or companion dependency; a project-level license is not a complete binary license inventory."
+      ],
+      "evidenceStatus": "exact-archive-reviewed",
+      "archiveEvidence": [
+        {
+          "id": "nginx-1.30.0",
+          "url": "https://nginx.org/download/nginx-1.30.0.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "70f52d646e86d88fdbd03cd968afdd08f9de819ecbefc06e6135cfbb7eabe2f9",
+          "bytes": 2768936,
+          "entryCount": 45,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/nginx-1.30.0.json",
+          "evidenceManifestSha256": "bacdb12717130e0e1c580e0a68e016fee4dd0e8877aabbb97cdd28d4698b520b",
+          "legalEntryCount": 3,
+          "legalEntries": [
+            {
+              "path": "nginx-1.30.0/docs/LICENSE",
+              "sha256": "08845fe39e06b51dad7685c28140ab49577a86e947523e16b536a46caf89ad5c",
+              "bytes": 1319
+            },
+            {
+              "path": "nginx-1.30.0/docs/README.md",
+              "sha256": "c20b11d05d64038c63fe78ed177b692ac48d686344be464f326bb48e7d2c224b",
+              "bytes": 14571
+            },
+            {
+              "path": "nginx-1.30.0/contrib/README",
+              "sha256": "0f4908c9fc73ea40c264da0ab23041c9926ddfa3c8c639f734900a4c203491a5",
+              "bytes": 543
+            }
+          ]
+        },
+        {
+          "id": "nginx-1.29.8",
+          "url": "https://nginx.org/download/nginx-1.29.8.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "9ed580804bb83dce0197fcb29f2372411c7369d8b9866f137135ccd547ad22de",
+          "bytes": 2768163,
+          "entryCount": 45,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/nginx-1.29.8.json",
+          "evidenceManifestSha256": "d81746f36e39761a46b5c7b9d83e01fdde1f4c1f0148eb808b13d2d2c2ca82b6",
+          "legalEntryCount": 3,
+          "legalEntries": [
+            {
+              "path": "nginx-1.29.8/docs/LICENSE",
+              "sha256": "08845fe39e06b51dad7685c28140ab49577a86e947523e16b536a46caf89ad5c",
+              "bytes": 1319
+            },
+            {
+              "path": "nginx-1.29.8/docs/README.md",
+              "sha256": "c20b11d05d64038c63fe78ed177b692ac48d686344be464f326bb48e7d2c224b",
+              "bytes": 14571
+            },
+            {
+              "path": "nginx-1.29.8/contrib/README",
+              "sha256": "0f4908c9fc73ea40c264da0ab23041c9926ddfa3c8c639f734900a4c203491a5",
+              "bytes": 543
+            }
+          ]
+        }
+      ],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "Both pinned Windows ZIPs were inspected as data; no executable was run.",
+        "2026-10-21 follow-up: docs/opensource-audit/2026-10-21/runtime-catalog-followup.md records the current direct-vendor/manual download boundary and version-specific evidence; future project redistribution remains separately conditioned."
+      ],
+      "sources": [
+        {
+          "kind": "nginx",
+          "version": "1.30.0",
+          "url": "https://nginx.org/download/nginx-1.30.0.zip",
+          "manual": false,
+          "direct": false
+        },
+        {
+          "kind": "nginx",
+          "version": "1.29.8",
+          "url": "https://nginx.org/download/nginx-1.29.8.zip",
+          "manual": false,
+          "direct": false
+        }
+      ]
+    },
+    {
+      "id": "apache-lounge",
+      "kind": "apache",
+      "versions": [
+        "2.4.62"
+      ],
+      "distribution": "manual-third-party-download",
+      "softwareLicense": "Apache-2.0",
+      "softwareLicenseSources": [
+        "https://raw.githubusercontent.com/apache/httpd/2.4.62/LICENSE",
+        "https://raw.githubusercontent.com/apache/httpd/2.4.62/NOTICE",
+        "https://www.apachelounge.com/download/"
+      ],
+      "binaryTerms": [
+        "The catalog uses an Apache Lounge Windows build, not an ASF-provided Windows binary. Its OpenSSL/APR/PCRE/zlib and any other bundled components need their own matching notices.",
+        "The manual download page now advertises 2.4.69 VS18, not the pinned 2.4.62 VS17 build; no current-page binary is substituted as evidence."
+      ],
+      "requiredActions": [
+        "Preserve exact supplied copyright, license, disclaimer, NOTICE, third-party and dependency notices with the installed or redistributed files.",
+        "Retain Apache LICENSE and applicable NOTICE; mark modifications if redistributed.",
+        "Before bundling or mirroring, identify the exact build and every included/static or companion dependency; a project-level license is not a complete binary license inventory."
+      ],
+      "evidenceStatus": "upstream-license-only",
+      "archiveEvidence": [],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "Pinned ZIP was not fetched because the source is a manual, hotlink-protected download; exact binary terms remain unverified.",
+        "2026-10-21 follow-up: docs/opensource-audit/2026-10-21/runtime-catalog-followup.md records the current direct-vendor/manual download boundary and version-specific evidence; future project redistribution remains separately conditioned."
+      ],
+      "sources": [
+        {
+          "kind": "apache",
+          "version": "2.4.62",
+          "url": "https://www.apachelounge.com/download/VS17/binaries/httpd-2.4.62-240904-win64-VS17.zip",
+          "manual": true,
+          "direct": false
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "id": "apache-2.4.62-LICENSE",
+          "url": "https://raw.githubusercontent.com/apache/httpd/2.4.62/LICENSE",
+          "status": "retrieved",
+          "sha256": "47b8c2b6c3309282a99d4a3001575c790fead690cc14734628c4667d2bbffc43",
+          "bytes": 25479,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/apache-2.4.62-LICENSE.txt"
+        },
+        {
+          "id": "apache-2.4.62-NOTICE",
+          "url": "https://raw.githubusercontent.com/apache/httpd/2.4.62/NOTICE",
+          "status": "retrieved",
+          "sha256": "644bcf4754da1f46836b867db3bbbaab4991d4f9320ff5b4398bd6dbdf69420a",
+          "bytes": 721,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/apache-2.4.62-NOTICE.txt"
+        }
+      ]
+    },
+    {
+      "id": "caddy",
+      "kind": "caddy",
+      "versions": [
+        "2.11.4"
+      ],
+      "distribution": "upstream-download",
+      "softwareLicense": "Apache-2.0",
+      "softwareLicenseSources": [
+        "https://raw.githubusercontent.com/caddyserver/caddy/v2.11.4/LICENSE"
+      ],
+      "binaryTerms": [
+        "Exact official ZIP contains LICENSE and README.md, so it is not a binary-only archive without a project license.",
+        "The inspection did not establish complete compiled-module notices; archive root LICENSE is not clearance for every dependency."
+      ],
+      "requiredActions": [
+        "Preserve exact supplied copyright, license, disclaimer, NOTICE, third-party and dependency notices with the installed or redistributed files.",
+        "Preserve applicable source NOTICE if present and mark changes; inventory compiled Go modules before mirroring."
+      ],
+      "evidenceStatus": "exact-archive-reviewed",
+      "archiveEvidence": [
+        {
+          "id": "caddy-2.11.4",
+          "url": "https://github.com/caddyserver/caddy/releases/download/v2.11.4/caddy_2.11.4_windows_amd64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "1708333f79e274c7697285afe6d592ab39314e0b131e9ec6bea08ad27df62ebf",
+          "bytes": 17559418,
+          "entryCount": 3,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/caddy-2.11.4.json",
+          "evidenceManifestSha256": "4d2a9e86707d88ddbd4a593d597075a60fa1dd08303e4667056a0e1b60427c95",
+          "legalEntryCount": 2,
+          "legalEntries": [
+            {
+              "path": "LICENSE",
+              "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+              "bytes": 11358
+            },
+            {
+              "path": "README.md",
+              "sha256": "683b36b940bb617a0209ca443c8027566204911997fbaf9e433d87d9235b753f",
+              "bytes": 12724
+            }
+          ]
+        }
+      ],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "No Caddy binary, plugin or command was executed.",
+        "2026-10-21 follow-up: docs/opensource-audit/2026-10-21/runtime-catalog-followup.md records the current direct-vendor/manual download boundary and version-specific evidence; future project redistribution remains separately conditioned.",
+        "Official Windows SBOM binds caddy.exe SHA256 5cb9ab71e5756ce72840b8234177a2f40c8b4ab47a806b8e841e2b784e9df62b to 149 listed components, but only one has license metadata. Not complete module notice clearance."
+      ],
+      "sources": [
+        {
+          "kind": "caddy",
+          "version": "2.11.4",
+          "url": "https://github.com/caddyserver/caddy/releases/download/v2.11.4/caddy_2.11.4_windows_amd64.zip",
+          "manual": false,
+          "direct": false
+        }
+      ]
+    },
+    {
+      "id": "mailpit",
+      "kind": "mailpit",
+      "versions": [
+        "1.29.7",
+        "1.29.6"
+      ],
+      "distribution": "upstream-download",
+      "softwareLicense": "MIT",
+      "softwareLicenseSources": [
+        "https://github.com/axllent/mailpit/blob/v1.29.7/LICENSE",
+        "https://github.com/axllent/mailpit/blob/v1.29.6/LICENSE"
+      ],
+      "binaryTerms": [
+        "Each inspected official ZIP contains LICENSE and README.md.",
+        "MIT copyright and permission text must accompany copies; compiled/embedded dependencies retain separate terms."
+      ],
+      "requiredActions": [
+        "Preserve exact supplied copyright, license, disclaimer, NOTICE, third-party and dependency notices with the installed or redistributed files.",
+        "Inventory exact compiled Go and embedded frontend dependencies before mirroring."
+      ],
+      "evidenceStatus": "exact-archive-reviewed",
+      "archiveEvidence": [
+        {
+          "id": "mailpit-1.29.7",
+          "url": "https://github.com/axllent/mailpit/releases/download/v1.29.7/mailpit-windows-amd64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "ad84a4b552bc667faa744e512884af0a3be655863371c1565e25a8f943e5d09f",
+          "bytes": 11105104,
+          "entryCount": 3,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/mailpit-1.29.7.json",
+          "evidenceManifestSha256": "71ec4493629253db9bc64c1271bd977dca0b47b95f977d121a0247c15193736c",
+          "legalEntryCount": 2,
+          "legalEntries": [
+            {
+              "path": "LICENSE",
+              "sha256": "9dade1b3ace5dd6c36ca58eef466ae7dd9afe52bfb978deffa44645f6f0a2aa9",
+              "bytes": 1085
+            },
+            {
+              "path": "README.md",
+              "sha256": "09c3a4bfe3b6bef960083a39ac353518b680921ca6930ca30ea10d93b0fdcdf5",
+              "bytes": 7473
+            }
+          ]
+        },
+        {
+          "id": "mailpit-1.29.6",
+          "url": "https://github.com/axllent/mailpit/releases/download/v1.29.6/mailpit-windows-amd64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "f12366e1effde05fe5e43410944770524174ff3a314aa7a1a1ac0ae4ed412304",
+          "bytes": 11101728,
+          "entryCount": 3,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/mailpit-1.29.6.json",
+          "evidenceManifestSha256": "dd9b3ae328769f4e6cac0159ef5318c1e43e8476949f5dfa05e34d6b59eb193c",
+          "legalEntryCount": 2,
+          "legalEntries": [
+            {
+              "path": "LICENSE",
+              "sha256": "9dade1b3ace5dd6c36ca58eef466ae7dd9afe52bfb978deffa44645f6f0a2aa9",
+              "bytes": 1085
+            },
+            {
+              "path": "README.md",
+              "sha256": "09c3a4bfe3b6bef960083a39ac353518b680921ca6930ca30ea10d93b0fdcdf5",
+              "bytes": 7473
+            }
+          ]
+        }
+      ],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "The copyright text is retained as supplied, including the upstream Now() string; no year is invented.",
+        "2026-10-21 follow-up: docs/opensource-audit/2026-10-21/runtime-catalog-followup.md records the current direct-vendor/manual download boundary and version-specific evidence; future project redistribution remains separately conditioned."
+      ],
+      "sources": [
+        {
+          "kind": "mailpit",
+          "version": "1.29.7",
+          "url": "https://github.com/axllent/mailpit/releases/download/v1.29.7/mailpit-windows-amd64.zip",
+          "manual": false,
+          "direct": false
+        },
+        {
+          "kind": "mailpit",
+          "version": "1.29.6",
+          "url": "https://github.com/axllent/mailpit/releases/download/v1.29.6/mailpit-windows-amd64.zip",
+          "manual": false,
+          "direct": false
+        }
+      ]
+    },
+    {
+      "id": "mysql-community",
+      "kind": "mysql",
+      "versions": [
+        "9.7.0",
+        "8.4.9",
+        "8.0.46"
+      ],
+      "distribution": "upstream-download",
+      "softwareLicense": "GPL-2.0-only WITH LicenseRef-MySQL-Additional-Permissions",
+      "softwareLicenseSources": [
+        "https://raw.githubusercontent.com/mysql/mysql-server/mysql-9.7.0/LICENSE",
+        "https://raw.githubusercontent.com/mysql/mysql-server/mysql-8.4.9/LICENSE",
+        "https://raw.githubusercontent.com/mysql/mysql-server/mysql-8.0.46/LICENSE"
+      ],
+      "binaryTerms": [
+        "Oracle exact-tag manuals identify GPLv2 plus additional permission for separately licensed software including OpenSSL. The Universal FOSS Exception applies to the client library as described, not to every combined product.",
+        "OpenSSL 3.0 is separately Apache-2.0 in these manuals; other libraries and any Microsoft runtime remain separate."
+      ],
+      "requiredActions": [
+        "Preserve exact supplied copyright, license, disclaimer, NOTICE, third-party and dependency notices with the installed or redistributed files.",
+        "If conveying MySQL binaries, meet GPLv2 section 3 with corresponding exact source/build scripts or another valid GPLv2 route; a generic upstream homepage is insufficient.",
+        "Retain the exact Oracle additional linking permission, client Universal FOSS Exception where applicable, and all companion terms.",
+        "Verify Windows binary package contents before any mirror/bundle."
+      ],
+      "evidenceStatus": "upstream-license-only",
+      "archiveEvidence": [],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "No large MySQL binary ZIP was downloaded. Source license identity is established separately from unreviewed binary-archive contents.",
+        "Separate on-demand installation does not by itself relicense the desktop under GPL; any combined redistribution needs its own analysis.",
+        "2026-10-21 follow-up: docs/opensource-audit/2026-10-21/runtime-catalog-followup.md records the current direct-vendor/manual download boundary and version-specific evidence; future project redistribution remains separately conditioned."
+      ],
+      "sources": [
+        {
+          "kind": "mysql",
+          "version": "9.7.0",
+          "url": "https://dev.mysql.com/get/Downloads/MySQL-9.7/mysql-9.7.0-winx64.zip",
+          "manual": false,
+          "direct": false
+        },
+        {
+          "kind": "mysql",
+          "version": "8.4.9",
+          "url": "https://dev.mysql.com/get/Downloads/MySQL-8.4/mysql-8.4.9-winx64.zip",
+          "manual": false,
+          "direct": false
+        },
+        {
+          "kind": "mysql",
+          "version": "8.0.46",
+          "url": "https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.46-winx64.zip",
+          "manual": false,
+          "direct": false
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "id": "mysql-9.7.0-LICENSE",
+          "url": "https://raw.githubusercontent.com/mysql/mysql-server/mysql-9.7.0/LICENSE",
+          "status": "retrieved",
+          "sha256": "59a0cd0987542467b5467a28af7033e791b6ed649061b0a527d4e6db72e46ad8",
+          "bytes": 261541,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/mysql-9.7.0-LICENSE.txt"
+        },
+        {
+          "id": "mysql-8.4.9-LICENSE",
+          "url": "https://raw.githubusercontent.com/mysql/mysql-server/mysql-8.4.9/LICENSE",
+          "status": "retrieved",
+          "sha256": "b971ab677d232904fc158f196e8b9dbc0cf3fee4501ba08285260a37841be25a",
+          "bytes": 259903,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/mysql-8.4.9-LICENSE.txt"
+        },
+        {
+          "id": "mysql-8.0.46-LICENSE",
+          "url": "https://raw.githubusercontent.com/mysql/mysql-server/mysql-8.0.46/LICENSE",
+          "status": "retrieved",
+          "sha256": "5f2c74db593738abc15dc9c4a5a56737f93aca31a6a89ca82b638dd544510e18",
+          "bytes": 259907,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/mysql-8.0.46-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "id": "postgresql-edb",
+      "kind": "postgres",
+      "versions": [
+        "18.3",
+        "17.9",
+        "16.13",
+        "15.17"
+      ],
+      "distribution": "manual-third-party-download",
+      "softwareLicense": "PostgreSQL",
+      "softwareLicenseSources": [
+        "https://www.postgresql.org/about/licence/",
+        "https://www.enterprisedb.com/download-postgresql-binaries"
+      ],
+      "binaryTerms": [
+        "The PostgreSQL core license requires its copyright, permission and disclaimer paragraphs in copies.",
+        "EnterpriseDB packages can include separate libraries/components; the PostgreSQL core license does not grant blanket rights for every archive member."
+      ],
+      "requiredActions": [
+        "Preserve exact supplied copyright, license, disclaimer, NOTICE, third-party and dependency notices with the installed or redistributed files.",
+        "Review the exact user-selected EnterpriseDB ZIP and all bundled dependency/license directories before bundling or mirroring."
+      ],
+      "evidenceStatus": "upstream-license-only",
+      "archiveEvidence": [],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "Manual catalog URL is a moving page, not a content-addressed ZIP. Reviewed page lists 18.6/17.11/16.15/15.19, while catalog pins 18.3/17.9/16.13/15.17.",
+        "No large EDB archive was downloaded, no unrelated commercial EDB EULA is assumed to govern all community PostgreSQL files.",
+        "2026-10-21 follow-up: docs/opensource-audit/2026-10-21/runtime-catalog-followup.md records the current direct-vendor/manual download boundary and version-specific evidence; future project redistribution remains separately conditioned."
+      ],
+      "sources": [
+        {
+          "kind": "postgres",
+          "version": "18.3",
+          "url": "https://www.enterprisedb.com/download-postgresql-binaries",
+          "manual": true,
+          "direct": false
+        },
+        {
+          "kind": "postgres",
+          "version": "17.9",
+          "url": "https://www.enterprisedb.com/download-postgresql-binaries",
+          "manual": true,
+          "direct": false
+        },
+        {
+          "kind": "postgres",
+          "version": "16.13",
+          "url": "https://www.enterprisedb.com/download-postgresql-binaries",
+          "manual": true,
+          "direct": false
+        },
+        {
+          "kind": "postgres",
+          "version": "15.17",
+          "url": "https://www.enterprisedb.com/download-postgresql-binaries",
+          "manual": true,
+          "direct": false
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "id": "postgresql-license",
+          "url": "https://www.postgresql.org/about/licence/",
+          "status": "retrieved",
+          "sha256": "f2837dd142502f804006e456cb65a52fb9d5be7ddf9df4f09e47147505cf8ec6",
+          "bytes": 8067,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/postgresql-license.txt"
+        },
+        {
+          "id": "postgresql-binary-download-page",
+          "url": "https://www.enterprisedb.com/download-postgresql-binaries",
+          "status": "retrieved",
+          "sha256": "71ac9746c3241a5c50a9fd146e260080b93054411740885511988fa7c5c31412",
+          "bytes": 73842,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/postgresql-binary-download-page.txt"
+        }
+      ]
+    },
+    {
+      "id": "pgvector-project-assets",
+      "kind": "pgvector",
+      "versions": [
+        "0.8.6-pg18",
+        "0.8.6-pg17",
+        "0.8.6-pg16",
+        "0.8.6-pg15"
+      ],
+      "distribution": "project-hosted-binary",
+      "softwareLicense": "PostgreSQL",
+      "softwareLicenseSources": [
+        "https://raw.githubusercontent.com/pgvector/pgvector/v0.8.6/LICENSE"
+      ],
+      "binaryTerms": [
+        "The four exact current published ZIPs contain the complete upstream v0.8.6 LICENSE at share/doc/pgvector/LICENSE. All 43 original members per archive remain byte-for-byte unchanged.",
+        "Original archive hashes and omission evidence are preserved as superseded historical records. Corrected ZIPs and checksums were independently downloaded anonymously and matched against GitHub API digests."
+      ],
+      "requiredActions": [
+        "Preserve the exact upstream copyright, permission and disclaimers in future copies, including the complete packaged LICENSE.",
+        "Retain source/build provenance for future builds and separately review any added non-system companion binaries."
+      ],
+      "evidenceStatus": "exact-archive-reviewed",
+      "archiveEvidence": [
+        {
+          "id": "pgvector-0.8.6-pg18",
+          "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg18-win-x64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "2ccd5521e2850ab49fcdb3c6610e011c7b7d67bb8cc3a521dd6603353e0c4f7e",
+          "bytes": 158850,
+          "entryCount": 43,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/pgvector-0.8.6-pg18.json",
+          "evidenceManifestSha256": "e4669beeeb36507da631eec7d59c104b203e1e6380d69e3ca5b7a40208e8f96c",
+          "legalEntryCount": 0,
+          "legalEntries": [],
+          "current": false,
+          "supersededByPublication": "pgvector-0.8.6-license-repair-20261021"
+        },
+        {
+          "id": "pgvector-0.8.6-pg17",
+          "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg17-win-x64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "ff18a856d0e047609822bf228161595328548b65df5806970661864a594021ac",
+          "bytes": 159056,
+          "entryCount": 43,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/pgvector-0.8.6-pg17.json",
+          "evidenceManifestSha256": "d2a6e8b8a64a4ef3559c881ee54ee034a966899486673a69d13072285122666a",
+          "legalEntryCount": 0,
+          "legalEntries": [],
+          "current": false,
+          "supersededByPublication": "pgvector-0.8.6-license-repair-20261021"
+        },
+        {
+          "id": "pgvector-0.8.6-pg16",
+          "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg16-win-x64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "d3d09bca2941b90bfd3a41937074ea79f1abedbe9bc3dc551eeede6ed177d4b3",
+          "bytes": 158942,
+          "entryCount": 43,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/pgvector-0.8.6-pg16.json",
+          "evidenceManifestSha256": "f6d8d719e6e8dd4389597ff35d08bad513d9097d040ee79a1cac203b5f21c93c",
+          "legalEntryCount": 0,
+          "legalEntries": [],
+          "current": false,
+          "supersededByPublication": "pgvector-0.8.6-license-repair-20261021"
+        },
+        {
+          "id": "pgvector-0.8.6-pg15",
+          "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg15-win-x64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "50cda184ea71b5401fc48e962bbf9876dda52d56ab9a5466010d69a38f04102b",
+          "bytes": 158932,
+          "entryCount": 43,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/pgvector-0.8.6-pg15.json",
+          "evidenceManifestSha256": "6c3b1db13f521298fcd1c6a047f46187316649f55380dcb2ac1dd0879f360aee",
+          "legalEntryCount": 0,
+          "legalEntries": [],
+          "current": false,
+          "supersededByPublication": "pgvector-0.8.6-license-repair-20261021"
+        },
+        {
+          "id": "0.8.6-pg18-license-repair-20261021",
+          "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg18-win-x64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "f1a3f2adabcdd9c5cb99a338cd2cce94f471c14af0d4d6a80bb0bf25c8591fba",
+          "bytes": 159619,
+          "entryCount": 44,
+          "current": true,
+          "publicationReview": "pgvector-0.8.6-license-repair-20261021",
+          "evidenceManifest": "build/verification/runtime-publication-20261021/public-verification.json",
+          "evidenceManifestSha256": "8adf711157cef06f32a252afba71e45a5180ca11169eddc8f630728bab137099",
+          "legalEntryCount": 1,
+          "legalEntries": [
+            {
+              "path": "share/doc/pgvector/LICENSE",
+              "sha256": "6bba9ebeb73e27477463b05e5ef1bf303bccbddb3db9bbc95905d351604d6a87",
+              "bytes": 1104
+            }
+          ]
+        },
+        {
+          "id": "0.8.6-pg17-license-repair-20261021",
+          "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg17-win-x64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "28e08226af4417c3a77da1df6f72a4314ea98c832db069a0cd3d9e1c8d11b99b",
+          "bytes": 159825,
+          "entryCount": 44,
+          "current": true,
+          "publicationReview": "pgvector-0.8.6-license-repair-20261021",
+          "evidenceManifest": "build/verification/runtime-publication-20261021/public-verification.json",
+          "evidenceManifestSha256": "8adf711157cef06f32a252afba71e45a5180ca11169eddc8f630728bab137099",
+          "legalEntryCount": 1,
+          "legalEntries": [
+            {
+              "path": "share/doc/pgvector/LICENSE",
+              "sha256": "6bba9ebeb73e27477463b05e5ef1bf303bccbddb3db9bbc95905d351604d6a87",
+              "bytes": 1104
+            }
+          ]
+        },
+        {
+          "id": "0.8.6-pg16-license-repair-20261021",
+          "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg16-win-x64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "3ba886dcda520a1998d13db6afcfb503e892df1b3da68943526fea1c1e64bb34",
+          "bytes": 159711,
+          "entryCount": 44,
+          "current": true,
+          "publicationReview": "pgvector-0.8.6-license-repair-20261021",
+          "evidenceManifest": "build/verification/runtime-publication-20261021/public-verification.json",
+          "evidenceManifestSha256": "8adf711157cef06f32a252afba71e45a5180ca11169eddc8f630728bab137099",
+          "legalEntryCount": 1,
+          "legalEntries": [
+            {
+              "path": "share/doc/pgvector/LICENSE",
+              "sha256": "6bba9ebeb73e27477463b05e5ef1bf303bccbddb3db9bbc95905d351604d6a87",
+              "bytes": 1104
+            }
+          ]
+        },
+        {
+          "id": "0.8.6-pg15-license-repair-20261021",
+          "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg15-win-x64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "690933153c14d49e570db4773fba94517361e878b70f89c43bde554a6a05d0b1",
+          "bytes": 159701,
+          "entryCount": 44,
+          "current": true,
+          "publicationReview": "pgvector-0.8.6-license-repair-20261021",
+          "evidenceManifest": "build/verification/runtime-publication-20261021/public-verification.json",
+          "evidenceManifestSha256": "8adf711157cef06f32a252afba71e45a5180ca11169eddc8f630728bab137099",
+          "legalEntryCount": 1,
+          "legalEntries": [
+            {
+              "path": "share/doc/pgvector/LICENSE",
+              "sha256": "6bba9ebeb73e27477463b05e5ef1bf303bccbddb3db9bbc95905d351604d6a87",
+              "bytes": 1104
+            }
+          ]
+        }
+      ],
+      "redistributionStatus": "notice-obligations-verified-for-published-exact-archives",
+      "notes": [
+        "Publication pgvector-0.8.6-license-repair-20261021 closes the public notice omission; matching checksum sidecars and existing URLs were verified.",
+        "The license-only repack did not rebuild DLLs or establish reproducible source-to-binary provenance or ABI compatibility."
+      ],
+      "sources": [
+        {
+          "kind": "pgvector",
+          "version": "0.8.6-pg18",
+          "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg18-win-x64.zip",
+          "manual": false,
+          "direct": false
+        },
+        {
+          "kind": "pgvector",
+          "version": "0.8.6-pg17",
+          "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg17-win-x64.zip",
+          "manual": false,
+          "direct": false
+        },
+        {
+          "kind": "pgvector",
+          "version": "0.8.6-pg16",
+          "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg16-win-x64.zip",
+          "manual": false,
+          "direct": false
+        },
+        {
+          "kind": "pgvector",
+          "version": "0.8.6-pg15",
+          "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg15-win-x64.zip",
+          "manual": false,
+          "direct": false
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "id": "pgvector-v0.8.6-LICENSE",
+          "url": "https://raw.githubusercontent.com/pgvector/pgvector/v0.8.6/LICENSE",
+          "status": "retrieved",
+          "sha256": "6bba9ebeb73e27477463b05e5ef1bf303bccbddb3db9bbc95905d351604d6a87",
+          "bytes": 1104,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/pgvector-v0.8.6-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "id": "php-through-8.5",
+      "kind": "php",
+      "versions": [
+        "8.5.10",
+        "8.4.25",
+        "8.3.33",
+        "8.2.33",
+        "8.1.34",
+        "8.0.30",
+        "7.4.33",
+        "7.3.33",
+        "7.2.34",
+        "7.1.33",
+        "7.0.33",
+        "5.6.40"
+      ],
+      "distribution": "upstream-download",
+      "softwareLicense": "PHP-3.01",
+      "softwareLicenseSources": [
+        "https://raw.githubusercontent.com/php/php-src/php-8.4.25/LICENSE",
+        "https://www.php.net/license/"
+      ],
+      "binaryTerms": [
+        "Representative 8.0.30 and 5.6.40 archives contain license.txt and readme-redist-bins.txt. The latter is a separate dependency notice compilation, not redundant README prose.",
+        "A current PHP license webpage permits a later-version election for earlier PHP covered code, but this audit retains the exact supplied terms and makes no blanket election for every third-party component."
+      ],
+      "requiredActions": [
+        "Preserve exact supplied copyright, license, disclaimer, NOTICE, third-party and dependency notices with the installed or redistributed files.",
+        "Retain each Windows archive license.txt and readme-redist-bins.txt, and satisfy the supplied extension/library notices, including any source/relinking requirements where relevant.",
+        "Preserve the PHP acknowledgment and name restrictions under the supplied PHP-3.01 terms unless an explicit, recorded permitted later-version election is made."
+      ],
+      "evidenceStatus": "representative-archive-reviewed",
+      "archiveEvidence": [
+        {
+          "id": "php-8.0.30",
+          "url": "https://windows.php.net/downloads/releases/archives/php-8.0.30-nts-Win32-vs16-x64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "dfb70498ffa2c617f2f655a155564697e3c9cca41709938fd1a5997d1d5b0785",
+          "bytes": 26766957,
+          "entryCount": 80,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/php-8.0.30.json",
+          "evidenceManifestSha256": "a75a33b98be317d9ff2f4464cbebe16c99b0a9c161df4871686a4bcaffe6b3ce",
+          "legalEntryCount": 3,
+          "legalEntries": [
+            {
+              "path": "license.txt",
+              "sha256": "63b32af3c59108743cb955928c536b7d7ccb7434d3dca88818fa3dae28368ecd",
+              "bytes": 3272
+            },
+            {
+              "path": "readme-redist-bins.txt",
+              "sha256": "d37671a65c789bd668db3c4b25aab0561dd7a4b869677f96ead346ed4dc047ce",
+              "bytes": 29167
+            },
+            {
+              "path": "README.md",
+              "sha256": "a7b3b4e3a11f5882b1a1e3ee8f1b5ff6f4a4b4881dc0f296e2eb180b6dee2153",
+              "bytes": 5081
+            }
+          ]
+        },
+        {
+          "id": "php-5.6.40",
+          "url": "https://windows.php.net/downloads/releases/archives/php-5.6.40-nts-Win32-VC11-x64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "3d7668280fa4b16f70705539ba1e4ea17eef344c81e82881cbeca26fb7f181f1",
+          "bytes": 23032238,
+          "entryCount": 79,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/php-5.6.40.json",
+          "evidenceManifestSha256": "31a922b06621e5aa4db55d9b4f70c45a8cea3a9413003841184614feb9097262",
+          "legalEntryCount": 2,
+          "legalEntries": [
+            {
+              "path": "license.txt",
+              "sha256": "dbe6ce1639fd937cd9687bcc006664b275f55cfebd59c6d40392db10b22f582e",
+              "bytes": 3286
+            },
+            {
+              "path": "readme-redist-bins.txt",
+              "sha256": "4d1473fe537495266a577abe812b05aae91362bcbd82d432cad3cb41668b0463",
+              "bytes": 21360
+            }
+          ]
+        },
+        {
+          "id": "php-8.4.25",
+          "url": "https://windows.php.net/downloads/releases/php-8.4.25-nts-Win32-vs17-x64.zip",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found",
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/php-8.4.25.json",
+          "evidenceManifestSha256": "b37c3d9d26f2f30e4d20080aa4dac573c7627ae4d58e4e35bc3ab1c30b2fe748",
+          "legalEntryCount": 0,
+          "legalEntries": []
+        },
+        {
+          "id": "php-8.4.25-archive",
+          "url": "https://windows.php.net/downloads/releases/archives/php-8.4.25-nts-Win32-vs17-x64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "43a8f67ed2e5223fafb21293c85976361808855405278cef2cf3037c3ae2529c",
+          "bytes": 35081597,
+          "entryCount": 85,
+          "evidenceManifest": "build/verification/runtime-publication-20261021/catalog/php-8.4.25-archive-inspection.json",
+          "evidenceManifestSha256": "1e5c36d80b068761417294bfb26e3c7cc83c5e1378ea7c8918fa1331efe7cfba",
+          "legalEntryCount": 3,
+          "legalEntries": [
+            {
+              "path": "license.txt",
+              "sha256": "098bdc5b9808fc16bef4b7154e876ac08ca249549727cde3b3f3f3b431e27cca",
+              "bytes": 3272
+            },
+            {
+              "path": "README.md",
+              "sha256": "cce8d193f06662986ef167d7a743e6542a8b72c5c3cd3023a2f2710720500dee",
+              "bytes": 4978
+            },
+            {
+              "path": "readme-redist-bins.txt",
+              "sha256": "f70217cd39292c9ae01cc91f08fc6e7946159d653df046cb462f21895c8d68f3",
+              "bytes": 747271
+            }
+          ]
+        }
+      ],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "The original non-archive URL returned 404. The same exact patch was retrieved and inspected at the official archives URL on 2026-10-21; original failure evidence is retained.",
+        "Exact 8.4.25 Windows archive supplies full redist notices and upstream SBOM (100 CycloneDX components/101 SPDX packages); vendor licenseConcluded fields are supplier assertions, not independent file-level coverage."
+      ],
+      "sources": [
+        {
+          "kind": "php",
+          "version": "8.5.10",
+          "url": "https://windows.php.net/downloads/releases/php-8.5.10-nts-Win32-vs17-x64.zip",
+          "manual": false,
+          "direct": false
+        },
+        {
+          "kind": "php",
+          "version": "8.4.25",
+          "url": "https://windows.php.net/downloads/releases/archives/php-8.4.25-nts-Win32-vs17-x64.zip",
+          "manual": false,
+          "direct": false
+        },
+        {
+          "kind": "php",
+          "version": "8.3.33",
+          "url": "https://windows.php.net/downloads/releases/php-8.3.33-nts-Win32-vs16-x64.zip",
+          "manual": false,
+          "direct": false
+        },
+        {
+          "kind": "php",
+          "version": "8.2.33",
+          "url": "https://windows.php.net/downloads/releases/php-8.2.33-nts-Win32-vs16-x64.zip",
+          "manual": false,
+          "direct": false
+        },
+        {
+          "kind": "php",
+          "version": "8.1.34",
+          "url": "https://windows.php.net/downloads/releases/php-8.1.34-nts-Win32-vs16-x64.zip",
+          "manual": false,
+          "direct": false
+        },
+        {
+          "kind": "php",
+          "version": "8.0.30",
+          "url": "https://windows.php.net/downloads/releases/archives/php-8.0.30-nts-Win32-vs16-x64.zip",
+          "manual": false,
+          "direct": false
+        },
+        {
+          "kind": "php",
+          "version": "7.4.33",
+          "url": "https://windows.php.net/downloads/releases/archives/php-7.4.33-nts-Win32-vc15-x64.zip",
+          "manual": false,
+          "direct": false
+        },
+        {
+          "kind": "php",
+          "version": "7.3.33",
+          "url": "https://windows.php.net/downloads/releases/archives/php-7.3.33-nts-Win32-VC15-x64.zip",
+          "manual": false,
+          "direct": false
+        },
+        {
+          "kind": "php",
+          "version": "7.2.34",
+          "url": "https://windows.php.net/downloads/releases/archives/php-7.2.34-nts-Win32-VC15-x64.zip",
+          "manual": false,
+          "direct": false
+        },
+        {
+          "kind": "php",
+          "version": "7.1.33",
+          "url": "https://windows.php.net/downloads/releases/archives/php-7.1.33-nts-Win32-VC14-x64.zip",
+          "manual": false,
+          "direct": false
+        },
+        {
+          "kind": "php",
+          "version": "7.0.33",
+          "url": "https://windows.php.net/downloads/releases/archives/php-7.0.33-nts-Win32-VC14-x64.zip",
+          "manual": false,
+          "direct": false
+        },
+        {
+          "kind": "php",
+          "version": "5.6.40",
+          "url": "https://windows.php.net/downloads/releases/archives/php-5.6.40-nts-Win32-VC11-x64.zip",
+          "manual": false,
+          "direct": false
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "id": "php-8.4.25-LICENSE",
+          "url": "https://raw.githubusercontent.com/php/php-src/php-8.4.25/LICENSE",
+          "status": "retrieved",
+          "sha256": "b42e4df5e50e6ecda1047d503d6d91d71032d09ed1027ba1ef29eed26f890c5a",
+          "bytes": 3204,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/php-8.4.25-LICENSE.txt"
+        },
+        {
+          "id": "php-license-current",
+          "url": "https://www.php.net/license/",
+          "status": "retrieved",
+          "sha256": "b0aa49aff527e832a0a370802a85bc07f61069d0bb70619fd8aa010130ef2d33",
+          "bytes": 29511,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/php-license-current.txt"
+        }
+      ]
+    },
+    {
+      "id": "php-8.6-beta",
+      "kind": "php",
+      "versions": [
+        "8.6.0beta3"
+      ],
+      "distribution": "upstream-download",
+      "softwareLicense": "BSD-3-Clause",
+      "softwareLicenseSources": [
+        "https://raw.githubusercontent.com/php/php-src/php-8.6.0beta3/LICENSE",
+        "https://www.php.net/license/"
+      ],
+      "binaryTerms": [
+        "Exact php-8.6.0beta3 source LICENSE is BSD-3-Clause (PHP License v4), with PHP Group and Zend copyrights.",
+        "This does not change the supplied terms of PECL extensions or all third-party PHP components."
+      ],
+      "requiredActions": [
+        "Preserve exact supplied copyright, license, disclaimer, NOTICE, third-party and dependency notices with the installed or redistributed files.",
+        "Preserve the reviewed exact Windows prerelease ZIP legal texts and bundled SBOM; complete companion/source obligations before project redistribution."
+      ],
+      "evidenceStatus": "exact-archive-reviewed",
+      "archiveEvidence": [
+        {
+          "id": "php-8.6.0beta3",
+          "url": "https://windows.php.net/downloads/qa/php-8.6.0beta3-nts-Win32-vs18-x64.zip",
+          "status": "unavailable",
+          "error": "HTTP Error 404: Not Found",
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/php-8.6.0beta3.json",
+          "evidenceManifestSha256": "5271eea00ca0e81f942617d590dd6bf40e9bbbeb5e917868a91d9b878570e875",
+          "legalEntryCount": 0,
+          "legalEntries": []
+        },
+        {
+          "id": "php-8.6-beta3-archive",
+          "url": "https://windows.php.net/downloads/qa/archives/php-8.6.0beta3-nts-Win32-vs18-x64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "1a27dfa37a2155334858a1e4bf0e29b5b1c1209af0708d96f994177b5ba64775",
+          "bytes": 40194808,
+          "entryCount": 84,
+          "evidenceManifest": "build/verification/runtime-publication-20261021/catalog/php-8.6-beta3-archive-inspection.json",
+          "evidenceManifestSha256": "d4aff0a60afa57f80b046321c2ecd61a0d3ad5ede2a1052bada8630b3e5bee66",
+          "legalEntryCount": 3,
+          "legalEntries": [
+            {
+              "path": "license.txt",
+              "sha256": "15c880f6d18c2d6f3650c3e61a18939a00e4641d5360da5507c4afe96064c628",
+              "bytes": 1627
+            },
+            {
+              "path": "README.md",
+              "sha256": "061d1991043b5b477504261487c85cc55d1a79fa9f32e10748f28e7d9fe22954",
+              "bytes": 5592
+            },
+            {
+              "path": "readme-redist-bins.txt",
+              "sha256": "eafe9df223f517339b32f02f3d845feb94162127f73f7f977cdaf880bbeb8e6f",
+              "bytes": 822655
+            }
+          ]
+        }
+      ],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "The original non-archive URL returned 404. The same exact patch was retrieved and inspected at the official archives URL on 2026-10-21; original failure evidence is retained.",
+        "Exact archived Windows ZIP supplies BSD-3-Clause license.txt, complete redist notices and upstream SBOM (107 CycloneDX components/109 SPDX packages). Preserve LGPL and other companion conditions separately."
+      ],
+      "sources": [
+        {
+          "kind": "php",
+          "version": "8.6.0beta3",
+          "url": "https://windows.php.net/downloads/qa/archives/php-8.6.0beta3-nts-Win32-vs18-x64.zip",
+          "manual": false,
+          "direct": false
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "id": "php-8.6.0beta3-LICENSE",
+          "url": "https://raw.githubusercontent.com/php/php-src/php-8.6.0beta3/LICENSE",
+          "status": "retrieved",
+          "sha256": "76000691f0de039d3080fe8226131f5c4bb29e8996c1de96b94823fad0499fbd",
+          "bytes": 1600,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/php-8.6.0beta3-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "id": "python-windows-embed",
+      "kind": "python",
+      "versions": [
+        "3.13.1",
+        "3.12.7"
+      ],
+      "distribution": "upstream-download",
+      "softwareLicense": "PSF-2.0 AND historical Python licenses AND bundled-component terms",
+      "softwareLicenseSources": [
+        "https://docs.python.org/release/3.13.1/license.html",
+        "https://docs.python.org/release/3.12.7/license.html"
+      ],
+      "binaryTerms": [
+        "Both pinned Windows embeddable ZIPs contain a composite LICENSE.txt with historical Python terms, dependency notices and Microsoft Distributable Code conditions.",
+        "The Windows binary package is not accurately described by PSF-2.0 alone. Included DLLs/libraries retain their separate terms."
+      ],
+      "requiredActions": [
+        "Preserve exact supplied copyright, license, disclaimer, NOTICE, third-party and dependency notices with the installed or redistributed files.",
+        "Preserve the entire LICENSE.txt rather than replacing it with only the PSF license.",
+        "For redistribution including Microsoft Distributable Code, meet the Windows binary redistribution conditions supplied in LICENSE.txt; preserve dependency notices and review exact included files."
+      ],
+      "evidenceStatus": "exact-archive-reviewed",
+      "archiveEvidence": [
+        {
+          "id": "python-3.13.1",
+          "url": "https://www.python.org/ftp/python/3.13.1/python-3.13.1-embed-amd64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "7b7923ff0183a8b8fca90f6047184b419b108cb437f75fc1c002f9d2f8bcec16",
+          "bytes": 10847803,
+          "entryCount": 34,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/python-3.13.1.json",
+          "evidenceManifestSha256": "484e75d840f870a2d321d0bbcc74e22176208e1d23e8526ef17e7b6f8420b1a4",
+          "legalEntryCount": 1,
+          "legalEntries": [
+            {
+              "path": "LICENSE.txt",
+              "sha256": "62bec384df47b0328307db41455ff6ea2559e5546b394ac69148561b21703120",
+              "bytes": 33861
+            }
+          ]
+        },
+        {
+          "id": "python-3.12.7",
+          "url": "https://www.python.org/ftp/python/3.12.7/python-3.12.7-embed-amd64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "0d57bb6cb078b74d23dbfe91f77d6780d45bed328911609f1f7ee2ba1606bf44",
+          "bytes": 11062583,
+          "entryCount": 35,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/python-3.12.7.json",
+          "evidenceManifestSha256": "fb6fe6a69629846e7837cefc1b603575bc4764fc3d024f9096107ff68be10e85",
+          "legalEntryCount": 1,
+          "legalEntries": [
+            {
+              "path": "LICENSE.txt",
+              "sha256": "e502c6b880ff58d614901495a9009c136539cd0b1e2a2abb8fc00b934c203419",
+              "bytes": 36874
+            }
+          ]
+        }
+      ],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "Both exact archives were inspected as data. This proves supplied notice retention candidates, not proof every dependency notice is complete.",
+        "2026-10-21 follow-up: docs/opensource-audit/2026-10-21/runtime-catalog-followup.md records the current direct-vendor/manual download boundary and version-specific evidence; future project redistribution remains separately conditioned.",
+        "The reviewed embed ZIPs contain libcrypto-3.dll/libssl-3.dll while supplied composite LICENSE.txt lacks OpenSSL text; do not claim complete companion notice coverage before future project mirroring."
+      ],
+      "sources": [
+        {
+          "kind": "python",
+          "version": "3.13.1",
+          "url": "https://www.python.org/ftp/python/3.13.1/python-3.13.1-embed-amd64.zip",
+          "manual": false,
+          "direct": false
+        },
+        {
+          "kind": "python",
+          "version": "3.12.7",
+          "url": "https://www.python.org/ftp/python/3.12.7/python-3.12.7-embed-amd64.zip",
+          "manual": false,
+          "direct": false
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "id": "python-3.13.1-license-doc",
+          "url": "https://docs.python.org/release/3.13.1/license.html",
+          "status": "retrieved",
+          "sha256": "c6ecd27c4763ac6121b6c024e57ac32c513a39fd55bd9f58331e02becf231b10",
+          "bytes": 83676,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/python-3.13.1-license-doc.txt"
+        },
+        {
+          "id": "python-3.12.7-license-doc",
+          "url": "https://docs.python.org/release/3.12.7/license.html",
+          "status": "retrieved",
+          "sha256": "4fe517c18d9330c9737c0fb995b33371260f1adc07432ad50f905bfa5dfe4eda",
+          "bytes": 81865,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/python-3.12.7-license-doc.txt"
+        }
+      ]
+    },
+    {
+      "id": "nodejs-windows",
+      "kind": "nodejs",
+      "versions": [
+        "24.15.0",
+        "22.22.2",
+        "20.20.2"
+      ],
+      "distribution": "upstream-download",
+      "softwareLicense": "MIT AND bundled-component terms",
+      "softwareLicenseSources": [
+        "https://raw.githubusercontent.com/nodejs/node/v24.15.0/LICENSE",
+        "https://raw.githubusercontent.com/nodejs/node/v22.22.2/LICENSE",
+        "https://raw.githubusercontent.com/nodejs/node/v20.20.2/LICENSE"
+      ],
+      "binaryTerms": [
+        "All three exact official ZIPs contain root LICENSE and nested npm dependency license files.",
+        "Node root LICENSE includes many third-party terms (including V8, OpenSSL and others), so retaining only a short MIT paragraph would lose required material."
+      ],
+      "requiredActions": [
+        "Preserve exact supplied copyright, license, disclaimer, NOTICE, third-party and dependency notices with the installed or redistributed files.",
+        "Keep full root LICENSE, npm/corepack package license files and all other nested notices; inspect exact packaged dependencies before mirroring."
+      ],
+      "evidenceStatus": "exact-archive-reviewed",
+      "archiveEvidence": [
+        {
+          "id": "node-24.15.0",
+          "url": "https://nodejs.org/dist/v24.15.0/node-v24.15.0-win-x64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "cc5149eabd53779ce1e7bdc5401643622d0c7e6800ade18928a767e940bb0e62",
+          "bytes": 36465163,
+          "entryCount": 2248,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/node-24.15.0.json",
+          "evidenceManifestSha256": "5296d26272d861b051f192084b0b4aeb15a3f2fded1da6dbea5276ca8176a63b",
+          "legalEntryCount": 175,
+          "legalEntries": [
+            {
+              "path": "node-v24.15.0-win-x64/LICENSE",
+              "sha256": "8efdacdc1cfa3460aeb7fe98e3c54337b971d5da70e6eee292b73b981acb220c",
+              "bytes": 159872
+            },
+            {
+              "path": "node-v24.15.0-win-x64/README.md",
+              "sha256": "eb8138c642beb888306953b145f3034f0a066576f59b9adfba995a44d3196119",
+              "bytes": 43378
+            }
+          ]
+        },
+        {
+          "id": "node-22.22.2",
+          "url": "https://nodejs.org/dist/v22.22.2/node-v22.22.2-win-x64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "7c93e9d92bf68c07182b471aa187e35ee6cd08ef0f24ab060dfff605fcc1c57c",
+          "bytes": 35656052,
+          "entryCount": 2540,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/node-22.22.2.json",
+          "evidenceManifestSha256": "30da02ee58ad90ea6e92b845458918ab282e0be88241fe74e6cd0f59bf427473",
+          "legalEntryCount": 228,
+          "legalEntries": [
+            {
+              "path": "node-v22.22.2-win-x64/LICENSE",
+              "sha256": "8cc9bb466b19fc7e7cc99d03e9df1132021fda8b01eea2624c58bb372dbef576",
+              "bytes": 148217
+            },
+            {
+              "path": "node-v22.22.2-win-x64/README.md",
+              "sha256": "baaedfa89cfed60eb58dbc88059ee5b4d5e94e99f81722ab9b814c9d4a9c0573",
+              "bytes": 43240
+            }
+          ]
+        },
+        {
+          "id": "node-20.20.2",
+          "url": "https://nodejs.org/dist/v20.20.2/node-v20.20.2-win-x64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "dc3700fdd57a63eedb8fd7e3c7baaa32e6a740a1b904167ff4204bc68ed8bf77",
+          "bytes": 30283903,
+          "entryCount": 2459,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/node-20.20.2.json",
+          "evidenceManifestSha256": "2241aa2cbc8a1c854a548d199532f611be855c180847075a3199ef182a3c1a56",
+          "legalEntryCount": 231,
+          "legalEntries": [
+            {
+              "path": "node-v20.20.2-win-x64/LICENSE",
+              "sha256": "70c7a59521f41ccfe5bb0193677b77a44ed43ad4fe59203fa408afa538214949",
+              "bytes": 116359
+            },
+            {
+              "path": "node-v20.20.2-win-x64/README.md",
+              "sha256": "c009c59019d4c486af36439de87aa5fb027a8a1cb9550812d3c19a103c48974e",
+              "bytes": 41945
+            }
+          ]
+        }
+      ],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "No node.exe, npm, corepack or bundled command was executed.",
+        "2026-10-21 follow-up: docs/opensource-audit/2026-10-21/runtime-catalog-followup.md records the current direct-vendor/manual download boundary and version-specific evidence; future project redistribution remains separately conditioned."
+      ],
+      "sources": [
+        {
+          "kind": "nodejs",
+          "version": "24.15.0",
+          "url": "https://nodejs.org/dist/v24.15.0/node-v24.15.0-win-x64.zip",
+          "manual": false,
+          "direct": false
+        },
+        {
+          "kind": "nodejs",
+          "version": "22.22.2",
+          "url": "https://nodejs.org/dist/v22.22.2/node-v22.22.2-win-x64.zip",
+          "manual": false,
+          "direct": false
+        },
+        {
+          "kind": "nodejs",
+          "version": "20.20.2",
+          "url": "https://nodejs.org/dist/v20.20.2/node-v20.20.2-win-x64.zip",
+          "manual": false,
+          "direct": false
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "id": "node-v24.15.0-LICENSE",
+          "url": "https://raw.githubusercontent.com/nodejs/node/v24.15.0/LICENSE",
+          "status": "retrieved",
+          "sha256": "4573185d56580da2b890ba34a85a409257640f1c5632eade4300137266194d18",
+          "bytes": 156926,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/node-v24.15.0-LICENSE.txt"
+        },
+        {
+          "id": "node-v22.22.2-LICENSE",
+          "url": "https://raw.githubusercontent.com/nodejs/node/v22.22.2/LICENSE",
+          "status": "retrieved",
+          "sha256": "c738ae413cf561f174e34f6961f8ca458aae2369a73640dda6234c629b98bcc4",
+          "bytes": 145485,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/node-v22.22.2-LICENSE.txt"
+        },
+        {
+          "id": "node-v20.20.2-LICENSE",
+          "url": "https://raw.githubusercontent.com/nodejs/node/v20.20.2/LICENSE",
+          "status": "retrieved",
+          "sha256": "70c7a59521f41ccfe5bb0193677b77a44ed43ad4fe59203fa408afa538214949",
+          "bytes": 116359,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/node-v20.20.2-LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "id": "redis-windows-fork",
+      "kind": "redis",
+      "versions": [
+        "5.0.14.1"
+      ],
+      "distribution": "upstream-download",
+      "softwareLicense": "Composite: BSD-3-Clause, BSD-2-Clause, MIT, dlfcn-win32 LGPL-2.1-or-later, SipHash CC0-1.0 and scoped public-domain notices; liblzf BSD alternative",
+      "softwareLicenseSources": [
+        "https://raw.githubusercontent.com/tporadowski/redis/v5.0.14.1/license.txt",
+        "https://raw.githubusercontent.com/tporadowski/redis/v5.0.14.1/COPYING",
+        "https://raw.githubusercontent.com/tporadowski/redis/ec77f72dce220609b67adfed67f7a58946747b56/src/Win32_Interop/dlfcn.c",
+        "https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt",
+        "https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt"
+      ],
+      "binaryTerms": [
+        "The reviewed binary ZIP omits its fork/core COPYING/license.txt. Five original exact-tag notices and 100 additional exact source/canonical legal texts are now retained separately; no original manifest is changed.",
+        "Release|x64 selects eight Windows projects, including dlfcn-win32 LGPL-2.1-or-later, compiled Lua modules, modified jemalloc 5.2.1, hiredis, geohash and Win32_Interop. SipHash uses CC0. Conservative header coverage does not assert all conditional code is linked.",
+        "Redis uses dlfcn-win32 under LGPL 2.1 or later. Recipients may modify that library for their own use and reverse engineer to debug those modifications; no LaraEnv desktop term restricts those rights.",
+        "A future project-hosted Redis binary must accompany the library and work source/object material plus build/relink instructions under a permitted LGPL section 6 route. Complete usable work source can satisfy section 6(a); original object files or bit-identical rebuilding are not automatically required.",
+        "Exact source commit ec77f72dce220609b67adfed67f7a58946747b56, source ZIP c99c9182d8c0bd7a1bca0de92d05b7a4e0d4beef7461f6f1c07485e05649d95a (2742099 bytes), includes all identified projects/dependencies/resources. release.h is generated by the included script or documented manual creation. Static inspection found no concrete missing library/work source; no Redis build was run."
+      ],
+      "requiredActions": [
+        "Preserve exact original and supplemental notices, full LGPL 2.1 and CC0 texts, attribution/disclaimers and the selected liblzf BSD alternative.",
+        "Keep the composite description: this legacy fork core is BSD-3-Clause but the binary includes independent LGPL and other terms; modern Redis licensing does not set this pinned build.",
+        "Before project binary redistribution, deliver the exact corresponding library/work source and recipes effectively to recipients with LGPL section 6 rights and prominent notice. The local audit package is not itself delivery.",
+        "Retain current direct supplier download classification. Check concrete added Microsoft SDK/CRT files if a later redistribution introduces them; /MT alone is not a source/relinking prohibition."
+      ],
+      "evidenceStatus": "exact-archive-reviewed",
+      "archiveEvidence": [
+        {
+          "id": "redis-5.0.14.1",
+          "url": "https://github.com/tporadowski/redis/releases/download/v5.0.14.1/Redis-x64-5.0.14.1.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "018ea18a35876383cbb5f4cd0258adfc87747cf9d619bce1cf73a2e36f720ccf",
+          "bytes": 12617669,
+          "entryCount": 16,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/redis-5.0.14.1.json",
+          "evidenceManifestSha256": "1a9d05d72ec5d81fadaa470199783ece56920823d9c14bad58cdf2c2c4119940",
+          "legalEntryCount": 1,
+          "legalEntries": [
+            {
+              "path": "README.txt",
+              "sha256": "4a5c42714b366eb18d1b002e253a0dbfc5404e009d94c31a78f52f79e2fc8311",
+              "bytes": 991
+            }
+          ]
+        },
+        {
+          "id": "redis-5.0.14.1-source",
+          "url": "https://codeload.github.com/tporadowski/redis/zip/refs/tags/v5.0.14.1",
+          "status": "exact-archive-reviewed",
+          "sha256": "c99c9182d8c0bd7a1bca0de92d05b7a4e0d4beef7461f6f1c07485e05649d95a",
+          "bytes": 2742099,
+          "entryCount": 1006,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/redis-5.0.14.1-source.json",
+          "evidenceManifestSha256": "4fd0d01dcc7edadfefa44983e476867285926cbe76bbc4ba095b4000e3b31096",
+          "legalEntryCount": 20,
+          "legalEntries": [
+            {
+              "path": "redis-5.0.14.1/COPYING",
+              "sha256": "cbf420a3672475a6e2765e3c0984c1f81efe0212afb94a3c998ee63bfd661063",
+              "bytes": 1487
+            },
+            {
+              "path": "redis-5.0.14.1/README.md",
+              "sha256": "04b0a645a48657983778976c38cffb603a21cfa7b9322e8725bf6a82b0b3327b",
+              "bytes": 2638
+            },
+            {
+              "path": "redis-5.0.14.1/deps/README.md",
+              "sha256": "b17fb57d08eae011a6e9ee1a499a4b2f0cd53bccae02e4767f7b20b711b3850a",
+              "bytes": 5650
+            },
+            {
+              "path": "redis-5.0.14.1/deps/hiredis/COPYING",
+              "sha256": "dca05ce8fc87a8261783b4aed0deef8becc9350b6aa770bc714d0c1833b896eb",
+              "bytes": 1588
+            },
+            {
+              "path": "redis-5.0.14.1/deps/hiredis/README.md",
+              "sha256": "738d1cad17d46f1e52124c419ef8d774bc38716ddaf751726172728ec15f3dca",
+              "bytes": 17446
+            },
+            {
+              "path": "redis-5.0.14.1/deps/jemalloc-5.2.1/COPYING",
+              "sha256": "94aa2caa98c25d942f58b956c71dba6a99ff98fc3a31cbc669fe2a4cd0268b53",
+              "bytes": 1709
+            },
+            {
+              "path": "redis-5.0.14.1/deps/jemalloc-5.2.1/README",
+              "sha256": "3b91b024654892b709624be280047923c593901e663953eb6c85b3809f138b21",
+              "bytes": 1047
+            },
+            {
+              "path": "redis-5.0.14.1/deps/jemalloc-5.2.1/msvc/ReadMe.txt",
+              "sha256": "a9b1d3a925c4e3f3be14aef2a7fedd2eae05d14576349f0452aaa2d456533a89",
+              "bytes": 539
+            },
+            {
+              "path": "redis-5.0.14.1/deps/linenoise/README.markdown",
+              "sha256": "cd07b2ff513dffc2125ada9350188f7543089a28acaf8e00553d207687fbad65",
+              "bytes": 9715
+            },
+            {
+              "path": "redis-5.0.14.1/deps/lua/COPYRIGHT",
+              "sha256": "ee5e3e82af1e1b543c4f216e399d7c8cfee797711913f349e385101c4ae60a79",
+              "bytes": 1528
+            },
+            {
+              "path": "redis-5.0.14.1/deps/lua/README",
+              "sha256": "eaf56b5de891e11632aa36f302e03d27acd1614944904e2b7cf7955bb0474086",
+              "bytes": 1378
+            },
+            {
+              "path": "redis-5.0.14.1/deps/lua/doc/readme.html",
+              "sha256": "1fc570ba3cff0038533e22bf0f0141fdd7415fd2f56122e08194ecee02df588c",
+              "bytes": 834
+            },
+            {
+              "path": "redis-5.0.14.1/deps/lua/etc/README",
+              "sha256": "7139ab4d640f1cb33b4ea9b7479a7d8b7f516fbb17f27660118101449f553c11",
+              "bytes": 972
+            },
+            {
+              "path": "redis-5.0.14.1/deps/lua/test/README",
+              "sha256": "f864357bfe09de7f46c286694e53d9da6bc23774b9398a3078aa27a456f9cc5b",
+              "bytes": 1177
+            },
+            {
+              "path": "redis-5.0.14.1/license.txt",
+              "sha256": "83c2b0e936dbb2da90b25fd2cb41d2f53d8d13ef05772d636f526767c3f61afb",
+              "bytes": 1589
+            },
+            {
+              "path": "redis-5.0.14.1/msvs/msi/RedisMsi/License.rtf",
+              "sha256": "ef509ac5abea48ed14bbd987fd50779c2c943a0a3c2e9ba00536c7b632e0a8bd",
+              "bytes": 44338
+            },
+            {
+              "path": "redis-5.0.14.1/msvs/setups/documentation/README.txt",
+              "sha256": "345f44c1c3fdd5122715b1f2ff28af8e2cc3398b04a61de982063ebcd9740f4c",
+              "bytes": 972
+            },
+            {
+              "path": "redis-5.0.14.1/utils/create-cluster/README",
+              "sha256": "b0f79fd0cdfae92de9eaec9fbbd2c46715362ad99bc985b35814e1cfc371a22a",
+              "bytes": 1301
+            },
+            {
+              "path": "redis-5.0.14.1/utils/hashtable/README",
+              "sha256": "961cf96bab9e9c8c17c34f7b055343207fd6fe30e3912c8dd8b253e0e20a24cd",
+              "bytes": 397
+            },
+            {
+              "path": "redis-5.0.14.1/utils/lru/README",
+              "sha256": "0e3327b535170b10463b1ccd554330edc4598cc96554a3d84d4e852a890d7740",
+              "bytes": 524
+            }
+          ]
+        }
+      ],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "The exact source archive was inspected as data to establish fork/library notices; no source was compiled and no Redis executable was run.",
+        "Follow-up identifies additional compiled Lua module notices in lua_cjson.c, lua_struct.c, lua_cmsgpack.c and lua_bit.c at source commit ec77f72dce220609b67adfed67f7a58946747b56. Five retained source texts are supplemental, not the complete binary closure. See docs/opensource-audit/2026-10-21/runtime-companions-followup.md before project mirroring.",
+        "2026-10-21 closure: docs/opensource-audit/2026-10-21/redis-license-closure.md records the 100 texts, 194 exact source byte ranges and prepared section 6(a) route. Notices are archive-hash bound; no project Redis mirror was published."
+      ],
+      "sources": [
+        {
+          "kind": "redis",
+          "version": "5.0.14.1",
+          "url": "https://github.com/tporadowski/redis/releases/download/v5.0.14.1/Redis-x64-5.0.14.1.zip",
+          "manual": false,
+          "direct": false
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "id": "redis-v5.0.14.1-license",
+          "url": "https://raw.githubusercontent.com/tporadowski/redis/v5.0.14.1/license.txt",
+          "status": "retrieved",
+          "sha256": "83c2b0e936dbb2da90b25fd2cb41d2f53d8d13ef05772d636f526767c3f61afb",
+          "bytes": 1589,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/redis-v5.0.14.1-license.txt"
+        },
+        {
+          "id": "redis-v5.0.14.1-COPYING",
+          "url": "https://raw.githubusercontent.com/tporadowski/redis/v5.0.14.1/COPYING",
+          "status": "retrieved",
+          "sha256": "cbf420a3672475a6e2765e3c0984c1f81efe0212afb94a3c998ee63bfd661063",
+          "bytes": 1487,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/redis-v5.0.14.1-COPYING.txt"
+        },
+        {
+          "id": "redis-v5.0.14.1-jemalloc-COPYING",
+          "url": "https://raw.githubusercontent.com/tporadowski/redis/v5.0.14.1/deps/jemalloc-5.2.1/COPYING",
+          "status": "retrieved",
+          "sha256": "94aa2caa98c25d942f58b956c71dba6a99ff98fc3a31cbc669fe2a4cd0268b53",
+          "bytes": 1709,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/redis-v5.0.14.1-jemalloc-COPYING.txt"
+        },
+        {
+          "id": "redis-v5.0.14.1-lua-COPYRIGHT",
+          "url": "https://raw.githubusercontent.com/tporadowski/redis/v5.0.14.1/deps/lua/COPYRIGHT",
+          "status": "retrieved",
+          "sha256": "ee5e3e82af1e1b543c4f216e399d7c8cfee797711913f349e385101c4ae60a79",
+          "bytes": 1528,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/redis-v5.0.14.1-lua-COPYRIGHT.txt"
+        },
+        {
+          "id": "redis-v5.0.14.1-hiredis-COPYING",
+          "url": "https://raw.githubusercontent.com/tporadowski/redis/v5.0.14.1/deps/hiredis/COPYING",
+          "status": "retrieved",
+          "sha256": "dca05ce8fc87a8261783b4aed0deef8becc9350b6aa770bc714d0c1833b896eb",
+          "bytes": 1588,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/redis-v5.0.14.1-hiredis-COPYING.txt"
+        },
+        {
+          "id": "redis-v5.0.14.1-Win32-QFork",
+          "url": "https://raw.githubusercontent.com/tporadowski/redis/v5.0.14.1/src/Win32_Interop/Win32_QFork.cpp",
+          "status": "retrieved",
+          "sha256": "f444db2517f7ff908f99b2fa9dbdc28d48c17b9a1c05728b7311f4ee01624e4a",
+          "bytes": 46825,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/redis-v5.0.14.1-Win32-QFork.txt"
+        }
+      ]
+    },
+    {
+      "id": "composer-embedded-policy",
+      "kind": "composer",
+      "versions": [
+        "2.8.5"
+      ],
+      "distribution": "upstream-download",
+      "softwareLicense": "MIT AND dependency/resource terms",
+      "softwareLicenseSources": [
+        "https://getcomposer.org/download/2.8.5/composer.phar"
+      ],
+      "binaryTerms": [
+        "Desktop-embedded Composer 2.8.5 is already audited by a separate exact-hash policy; no duplicate clearance is made here."
+      ],
+      "requiredActions": [
+        "Use the existing Composer embedded policy and complete generated notices in tools/licenses/policy.json."
+      ],
+      "evidenceStatus": "existing-policy",
+      "archiveEvidence": [],
+      "redistributionStatus": "existing-policy",
+      "notes": [
+        "Optional catalog download is recorded for coverage; existing policy remains authoritative for the embedded copy."
+      ],
+      "sources": [
+        {
+          "kind": "composer",
+          "version": "2.8.5",
+          "url": "https://getcomposer.org/download/2.8.5/composer.phar",
+          "manual": false,
+          "direct": true
+        }
+      ]
+    },
+    {
+      "id": "composer-legacy-optional",
+      "kind": "composer",
+      "versions": [
+        "2.2.25"
+      ],
+      "distribution": "upstream-download",
+      "softwareLicense": "MIT AND dependency/resource terms",
+      "softwareLicenseSources": [
+        "https://github.com/composer/composer/blob/2.2.25/LICENSE"
+      ],
+      "binaryTerms": [
+        "Direct PHAR download from upstream, not a ZIP. Root Composer MIT license does not exhaust nested packages/resource terms."
+      ],
+      "requiredActions": [
+        "Preserve exact supplied copyright, license, disclaimer, NOTICE, third-party and dependency notices with the installed or redistributed files.",
+        "If distributing the optional 2.2.25 PHAR, inventory its exact embedded packages/resources; Composer 2.8.5 evidence does not cover it."
+      ],
+      "evidenceStatus": "upstream-license-only",
+      "archiveEvidence": [],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "No PHAR was executed or parsed in this runtime review."
+      ],
+      "sources": [
+        {
+          "kind": "composer",
+          "version": "2.2.25",
+          "url": "https://getcomposer.org/download/2.2.25/composer.phar",
+          "manual": false,
+          "direct": true
+        }
+      ]
+    },
+    {
+      "id": "cmder-full",
+      "kind": "cmder",
+      "versions": [
+        "1.3.25"
+      ],
+      "distribution": "upstream-download",
+      "softwareLicense": "MIT AND BSD-3-Clause AND GPL-3.0 AND Git-for-Windows component terms",
+      "softwareLicenseSources": [
+        "https://raw.githubusercontent.com/cmderdev/cmder/v1.3.25/LICENSE",
+        "https://raw.githubusercontent.com/cmderdev/cmder/v1.3.25/README.md",
+        "https://gitforwindows.org/faq"
+      ],
+      "binaryTerms": [
+        "Cmder wrapper is MIT; actual mini archive also contains ConEmu BSD-3-Clause, GPLv3 Clink and MIT clink-completions.",
+        "Full edition adds vendored Git-for-Windows and its Git/GNU and other third-party licenses; mini explicitly excludes vendored Git."
+      ],
+      "requiredActions": [
+        "Preserve exact supplied copyright, license, disclaimer, NOTICE, third-party and dependency notices with the installed or redistributed files.",
+        "Before conveying bundled Clink/Git/GNU binaries, provide their corresponding exact source under the applicable GPL route; preserving COPYING alone is insufficient.",
+        "Pin the vendored Clink/ConEmu/Git versions and their build/source mapping before any bundle or mirror."
+      ],
+      "evidenceStatus": "exact-archive-reviewed",
+      "archiveEvidence": [
+        {
+          "id": "cmder-full",
+          "url": "https://github.com/cmderdev/cmder/releases/download/v1.3.25/cmder.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "9fa50466e9ba270b91ca915c4865cdc55ffd431b44507eef999506117b0a4ec6",
+          "bytes": 165667993,
+          "entryCount": 7448,
+          "evidenceManifest": "build/verification/runtime-publication-20261021/catalog/cmder-full-inspection.json",
+          "evidenceManifestSha256": "49debfc61cdfed3a0bfa112fb89c5cea4f58a1ce4cbe59330a21a6da764405d6",
+          "legalEntryCount": 125,
+          "legalEntries": [
+            {
+              "path": "bin/Readme.md",
+              "sha256": "52bfad419624895fc121501ae2a4f6f49f41bd2d6ea0321e16a669b813aac7a9",
+              "bytes": 84
+            },
+            {
+              "path": "config/profile.d/README.md",
+              "sha256": "8165414f57251645f523d53b5f79de95a6a8c5a56704cc6e0a2e581fba487951",
+              "bytes": 135
+            },
+            {
+              "path": "config/Readme.md",
+              "sha256": "465f9b1d40fdd20de03ef9793ae2b3dc231c788283ea1ad8b4500750db1b1040",
+              "bytes": 887
+            },
+            {
+              "path": "LICENSE",
+              "sha256": "cfa119682af05183864bc783a4fa65836a98e4619660f901459314baeaec0af2",
+              "bytes": 1090
+            },
+            {
+              "path": "opt/Readme.md",
+              "sha256": "eaba190c8b3f7d4b325a5a0c9ecd80a2f1708aeaf6681132ea760603300edc10",
+              "bytes": 270
+            },
+            {
+              "path": "vendor/clink/.cmderver",
+              "sha256": "23d0bd42f8159cad74570cbf173c69371bcd05bcf9f2860047784978ae78806a",
+              "bytes": 8
+            },
+            {
+              "path": "vendor/clink/LICENSE",
+              "sha256": "5f631fae467c82b8cd28fd1ec425c816895a35f9d94e36bee0e0164570e8e0f6",
+              "bytes": 35823
+            },
+            {
+              "path": "vendor/clink-completions/.cmderver",
+              "sha256": "c35ebd022f13d8e8067aadb8f02aeb1de531daa6bdfb4c25994260aa0665220e",
+              "bytes": 7
+            },
+            {
+              "path": "vendor/clink-completions/LICENSE",
+              "sha256": "35789f64229d44da6bec35ab5b253157ec9811a57f7d694eb54bbd7d9fdf421b",
+              "bytes": 1083
+            },
+            {
+              "path": "vendor/clink-completions/README.md",
+              "sha256": "3ded1b48c3c0f56c4c957fe301cb0d1d3e092b1d41422b5eff73e09c098c6176",
+              "bytes": 3756
+            },
+            {
+              "path": "vendor/conemu-maximus5/.cmderver",
+              "sha256": "f7bbd8c7afd23f344fa82737104537a9d01490f4a7ede2b7c14af1f91bb41392",
+              "bytes": 10
+            },
+            {
+              "path": "vendor/conemu-maximus5/ConEmu/clink/Readme.txt",
+              "sha256": "9fbedb5bfcfe45ad7154713839d151409d9ccfc4d1111ff80fd3f1a2568120ad",
+              "bytes": 545
+            },
+            {
+              "path": "vendor/conemu-maximus5/ConEmu/License.txt",
+              "sha256": "85ff871f345e6341da96960b4a37c85c07a4d9c351f194bfc7b149c70240d9b3",
+              "bytes": 7303
+            },
+            {
+              "path": "vendor/conemu-maximus5/ConEmu/Scripts/readme.txt",
+              "sha256": "fa0c194bf1ee704802101fbd105176767d5656cced780b301ca14d84544ee070",
+              "bytes": 246
+            },
+            {
+              "path": "vendor/conemu-maximus5/ConEmu/wsl/README.md",
+              "sha256": "f0cb3bb608bc671c8e24a354414192375d68807ab5c7a5b87128c3b10a180dbe",
+              "bytes": 1085
+            },
+            {
+              "path": "vendor/conemu-maximus5/plugins/ConEmu/Readme.txt",
+              "sha256": "e215c342c73538742eadb2679432df54d09fb29fe0330cfeb18e131b0b239b75",
+              "bytes": 963
+            },
+            {
+              "path": "vendor/git-for-windows/.cmderver",
+              "sha256": "2614eec2ea20184a5f06bb8f4255c43339affaaf27b0361e36c2b95e92eb989f",
+              "bytes": 18
+            },
+            {
+              "path": "vendor/git-for-windows/etc/package-versions.txt",
+              "sha256": "b97043a6949bd0507df475a7e15538546ea68de14da406da3d78188c10946f5b",
+              "bytes": 3839
+            },
+            {
+              "path": "vendor/git-for-windows/LICENSE.txt",
+              "sha256": "5b2198d1645f767585e8a88ac0499b04472164c0d2da22e75ecf97ef443ab32e",
+              "bytes": 18765
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/doc/git-credential-manager/LICENSE",
+              "sha256": "b47f1a8a744ecdc7a3da35804f88552805d33f51a726b87a2105acdfae406b07",
+              "bytes": 1102
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/doc/git-credential-manager/NOTICE",
+              "sha256": "f573f5d21d5d8a054aad1ffcbe0165391a4d93a5aa3e23c3db0752759adfd50c",
+              "bytes": 2597
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/doc/git-credential-manager/README.md",
+              "sha256": "3ef327d0d5ab4f4d7dac997102dcb043c2dac35fe1b71d8083d44c02e69e58a4",
+              "bytes": 6797
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/lib/tk8.6/demos/license.terms",
+              "sha256": "2cde822b93ca16ae535c954b7dfe658b4ad10df2a193628d1b358f1765e8b198",
+              "bytes": 2267
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/lib/tk8.6/demos/README",
+              "sha256": "759d77d3a4bc6be4a310327fde118a554c039803cefeb51709db92cbf1722c7b",
+              "bytes": 2082
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/lib/tk8.6/images/README",
+              "sha256": "2695adff8e900c31b4d86414d22b8a49d6dd865ca3dd99678fa355cdc46093a8",
+              "bytes": 322
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/doc/expat/AUTHORS",
+              "sha256": "59f14371c6b75912cfebb46e6247ee5146766e803a0365b124e5d3011e7d0877",
+              "bytes": 142
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/doc/git-lfs/README.md",
+              "sha256": "a4a4383295e38e962b1da1a3aa0d02f151a3cdfacc7c117006e59fb129a1ae5d",
+              "bytes": 10190
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/doc/nghttp2/README.rst",
+              "sha256": "264402aca2e1af95e87eef076a6fb0c7b19bc756e35b1ce3b433ed55db6c6de9",
+              "bytes": 49571
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/doc/xz/api/COPYING.CC-BY-SA-4.0",
+              "sha256": "23ee78c8bae49cf08ea2f0c84945c66b987ebe4520881fb51b3dad4fb43d07c2",
+              "bytes": 20137
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/doc/xz/AUTHORS",
+              "sha256": "2e27c9c8d40f94d7787880bbeebc78e55483b99736951cc9f9e76abf565da0eb",
+              "bytes": 1953
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/doc/xz/COPYING",
+              "sha256": "0864e508475f20b43a2393957fdb5a966558099ffa8fed1e3e73fe2b3eebb145",
+              "bytes": 4650
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/doc/xz/COPYING.0BSD",
+              "sha256": "0b01625d853911cd0e2e088dcfb743261034a091bb379246cb25a14cc4c74bf1",
+              "bytes": 607
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/doc/xz/COPYING.GPLv2",
+              "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+              "bytes": 18092
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/doc/xz/README",
+              "sha256": "8d417835e024d06264151925bc84bd81d2e19c36b775753f7b113598c9cce5ae",
+              "bytes": 13383
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/brotli/LICENSE",
+              "sha256": "3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94",
+              "bytes": 1084
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/bzip2/LICENSE",
+              "sha256": "c6dbbf828498be844a89eaa3b84adbab3199e342eb5cb2ed2f0d4ba7ec0f38a3",
+              "bytes": 1896
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/c-ares/LICENSE.md",
+              "sha256": "80fff25340df53b0cf0c3cddbca9050b559b9cbed2ad71830327cfef54959aef",
+              "bytes": 1228
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/curl/LICENSE",
+              "sha256": "adb1fc06547fd136244179809f7b7c2d2ae6c4534f160aa513af9b6a12866a32",
+              "bytes": 1088
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/expat/COPYING",
+              "sha256": "122f2c27000472a201d337b9b31f7eb2b52d091b02857061a8880371612d9534",
+              "bytes": 1144
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/gcc-libs/COPYING.LIB",
+              "sha256": "a9bdde5616ecdd1e980b44f360600ee8783b1f99b8cc83a2beb163a0a390e861",
+              "bytes": 26527
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/gcc-libs/COPYING.RUNTIME",
+              "sha256": "9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74",
+              "bytes": 3324
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/gcc-libs/README",
+              "sha256": "33400d067fa3e2bd670a0868dcdb60c9486e8f559b675cf9ff1ff55d4e0d06ab",
+              "bytes": 236
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/gettext-runtime/COPYING",
+              "sha256": "7ef2cdfe58e0c0460657b6598b49af29d4e03c1e41cbaf0e1da1eb8ad74b95d0",
+              "bytes": 495
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/gettext-runtime/intl/COPYING.LIB",
+              "sha256": "3fe5361f24b7c49ba12911c08f5a33f9cb18871d95d9fb881f5b8a4793e04288",
+              "bytes": 26545
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/gettext-runtime/libasprintf/COPYING",
+              "sha256": "03133addae5b99a6148c538300e6d97074453089be1423b741bd081f18e2b298",
+              "bytes": 65
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/gettext-runtime/libasprintf/COPYING.LIB",
+              "sha256": "3fe5361f24b7c49ba12911c08f5a33f9cb18871d95d9fb881f5b8a4793e04288",
+              "bytes": 26545
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/libffi/LICENSE",
+              "sha256": "67894089811f93fca47a76f85e017da6f8582d4ba0905963c6e0f1ad6df7a195",
+              "bytes": 1132
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/libiconv/COPYING",
+              "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+              "bytes": 35147
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/libiconv/COPYING.LIB",
+              "sha256": "dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551",
+              "bytes": 26530
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/libiconv/libcharset/COPYING.LIB",
+              "sha256": "dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551",
+              "bytes": 26530
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/libiconv/README",
+              "sha256": "dd37af33149d9722d6edca08aeb1e18591dda95bb645d81a2f011a5d83088929",
+              "bytes": 5664
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/libpsl/COPYING",
+              "sha256": "322392e6001b2b3b0fca705dc9f11f26e12441188ecde50eb1d22909980b2925",
+              "bytes": 1060
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/libssh2/LICENSE",
+              "sha256": "fda5e2522c58ba1f31c9f2044747616457466f4aebec16ade4af86e3a16a8e02",
+              "bytes": 1959
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/libsystre/LICENSE",
+              "sha256": "3200024286eb0a33c22da3a31c470df07c7b8cfbead2b9528195d67d107264ec",
+              "bytes": 1445
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/libtasn1/COPYING",
+              "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+              "bytes": 35147
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/libtasn1/COPYING.LESSER",
+              "sha256": "dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551",
+              "bytes": 26530
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/libtre/LICENSE",
+              "sha256": "6a50ab50d856b30c965cf2dd899e577ec108c938242fd3a2e7a7a25eed996200",
+              "bytes": 1479
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/libunistring/LICENSE",
+              "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+              "bytes": 35147
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/libunistring/LICENSE.LIB",
+              "sha256": "a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c",
+              "bytes": 7639
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/libwinpthread/COPYING",
+              "sha256": "63263614cdd29f2f93cba85e992f041b31f9fc7b4033692f31269489a8a1b177",
+              "bytes": 2883
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/libzip/LICENSE",
+              "sha256": "01c022eca6d566e2e8792fd0f091a28653b2a608319922bcd4de91c49d1438e1",
+              "bytes": 1454
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/nghttp2/COPYING",
+              "sha256": "6b94f3abc1aabd0c72a7c7d92a77f79dda7c8a0cb3df839a97890b4116a2de2a",
+              "bytes": 1156
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/openssl/LICENSE",
+              "sha256": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a",
+              "bytes": 10175
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/pcre/COPYING",
+              "sha256": "17abe1dbb92b21ab173cf9757dd57b0b15cd8d863b2ccdef635fdbef03077fb0",
+              "bytes": 95
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/pcre/LICENCE",
+              "sha256": "51b3dea44f63338b84b9c97b3d793826a8397309068cf9379a423216ab8ea5b2",
+              "bytes": 3190
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/pcre2/COPYING",
+              "sha256": "99272c55f3dcfa07a8a7e15a5c1a33096e4727de74241d65fa049fccfdd59507",
+              "bytes": 97
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/pcre2/LICENCE",
+              "sha256": "030087e2e8dd7c1bdd26057d25d4ded8f45bbf01ad458d68665ad04b8b0fbedf",
+              "bytes": 3477
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/wineditline/LICENSE",
+              "sha256": "c896f633a129e88257808c46029602689ac180d96b2dd4b98bbb239550e1d449",
+              "bytes": 1588
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/xz/COPYING",
+              "sha256": "0864e508475f20b43a2393957fdb5a966558099ffa8fed1e3e73fe2b3eebb145",
+              "bytes": 4650
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/xz/COPYING.0BSD",
+              "sha256": "0b01625d853911cd0e2e088dcfb743261034a091bb379246cb25a14cc4c74bf1",
+              "bytes": 607
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/xz/COPYING.CC-BY-SA-4.0",
+              "sha256": "23ee78c8bae49cf08ea2f0c84945c66b987ebe4520881fb51b3dad4fb43d07c2",
+              "bytes": 20137
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/xz/COPYING.GPLv2",
+              "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+              "bytes": 18092
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/xz/COPYING.GPLv3",
+              "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+              "bytes": 35149
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/xz/COPYING.LGPLv2.1",
+              "sha256": "dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551",
+              "bytes": 26530
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/zlib/LICENSE",
+              "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243",
+              "bytes": 1002
+            },
+            {
+              "path": "vendor/git-for-windows/mingw64/share/licenses/zstd/LICENSE",
+              "sha256": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8",
+              "bytes": 1549
+            },
+            {
+              "path": "vendor/git-for-windows/README.portable",
+              "sha256": "e1c9e9fd819023d42a1d9c7ff61e8077fef7c906079fd6d472f158ba21ee3a7c",
+              "bytes": 3738
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/dos2unix/LICENSE",
+              "sha256": "03b60fa2cf28b2c6dd585a13b32377c1f87b8f016db44ce2ab6bc7eb306220e2",
+              "bytes": 1457
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/expat/COPYING",
+              "sha256": "122f2c27000472a201d337b9b31f7eb2b52d091b02857061a8880371612d9534",
+              "bytes": 1144
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/file/COPYING",
+              "sha256": "0bfa856a9930bddadbef95d1be1cf4e163c0be618e76ea3275caaf255283e274",
+              "bytes": 1649
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/libassuan/COPYING",
+              "sha256": "fc82ca8b6fdb18d4e3e85cfd8ab58d1bcd3f1b29abe782895abd91d64763f8e7",
+              "bytes": 35068
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/libedit/LICENSE",
+              "sha256": "9da6c9c74987a36c84302982799d17d2f748ba1c1c0c471425716173c1d07649",
+              "bytes": 1615
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/libffi/LICENSE",
+              "sha256": "67894089811f93fca47a76f85e017da6f8582d4ba0905963c6e0f1ad6df7a195",
+              "bytes": 1132
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/libksba/COPYING",
+              "sha256": "6197b98c6bf69838c624809c509d84333de1bc847155168c0e84527446a27076",
+              "bytes": 198
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/libnghttp2/COPYING",
+              "sha256": "6b94f3abc1aabd0c72a7c7d92a77f79dda7c8a0cb3df839a97890b4116a2de2a",
+              "bytes": 1156
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/libopenssl/LICENSE.txt",
+              "sha256": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a",
+              "bytes": 10175
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/libpsl/COPYING",
+              "sha256": "322392e6001b2b3b0fca705dc9f11f26e12441188ecde50eb1d22909980b2925",
+              "bytes": 1060
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/libsasl/COPYING",
+              "sha256": "9d6e5d1632140a6c135b251260953650d17d87cd1124f87aaf72192aa4580d4b",
+              "bytes": 1861
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/libsqlite/LICENSE",
+              "sha256": "0b76663a90e034f3d7f2af5bfada4cedec5ebc275361899eccc5c18e6f01ff1f",
+              "bytes": 1528
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/libssh2/LICENSE",
+              "sha256": "fda5e2522c58ba1f31c9f2044747616457466f4aebec16ade4af86e3a16a8e02",
+              "bytes": 1959
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/mintty/LICENSE",
+              "sha256": "2478c870fdc22376b010133fc155727ed8016d822098e486d24483d19ce97e82",
+              "bytes": 1828
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/mintty/LICENSE.Oxygen",
+              "sha256": "3eb788f81e3b40f6366318f08a3168ea714ecbd59d378b62532dbbb356160489",
+              "bytes": 2044
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/mintty/LICENSE.PuTTY",
+              "sha256": "867b1e03a9a1bd0131b5ab7cb0cc617750cbd9edec9dee1903e15b306bb8f94b",
+              "bytes": 1279
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/ncurses/license.txt",
+              "sha256": "0112090d7ec93c1ab2c44098513b36f0bf1d5930d7c14f4d60298435440eac9a",
+              "bytes": 2292
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/openssh/LICENCE",
+              "sha256": "05c30446ba738934b3f1efa965b454c122ca26cc4b268e5ae6843f58ccd1b16d",
+              "bytes": 18563
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/p11-kit/COPYING",
+              "sha256": "2e1ba993904df807a10c3eda1e5c272338edc35674b679773a8b3ad460731054",
+              "bytes": 1447
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/perl-Net-SSLeay/LICENSE",
+              "sha256": "c96a4eb3c381d9c83d24d55d19a4af870245d30064080457943a369e494d28d1",
+              "bytes": 12681
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/perl-TermReadKey/LICENSE",
+              "sha256": "7a53a057d4771ea25d1d1b40009382c06f043172d5248da8116d953d1040c4a5",
+              "bytes": 280
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/perl-Try-Tiny/LICENSE",
+              "sha256": "f1864ede834871a1207fcd19838b6bd5e1ff0a8704f5cc523fc397126041ed0b",
+              "bytes": 1182
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/unzip/LICENSE",
+              "sha256": "7469b81d5d29ac4fd670f7c86ba0cb9fa34f137a2d4d5198437d92ddf918984b",
+              "bytes": 3606
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/vim/license.txt",
+              "sha256": "8ac49d1282aa164225fc0f9f7aa53b4e675ec640d2992cf7c50669007131a3f0",
+              "bytes": 13052
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/licenses/zlib/LICENSE",
+              "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243",
+              "bytes": 1002
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/perl5/core_perl/Encode/README.e2x",
+              "sha256": "bdb8dadcab22f6c2ca4dd75319248cb93a06ead71daf00086bac01395d350d09",
+              "bytes": 553
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/vim/vim91/autoload/README.txt",
+              "sha256": "37ab54c6c5c4c530a855647cf2ac05c3b4c03bf16b21eec913b5ea1b95ce59f5",
+              "bytes": 773
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/vim/vim91/colors/README.txt",
+              "sha256": "4dd314264fbc1c37a84699c7dbcf86ddeccd6ea3d76bc3cb5a2b0bfb80822979",
+              "bytes": 4692
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/vim/vim91/compiler/README.txt",
+              "sha256": "43c7a45ddec205e22d7ccdb1425f13501186efac8f70420a317ead7eee49786d",
+              "bytes": 467
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/vim/vim91/ftplugin/README.txt",
+              "sha256": "dc6c6b8a23bca4e6f3a7a33a919314fcc4cdb207753dc1e844ce4c42f29a6785",
+              "bytes": 869
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/vim/vim91/indent/README.txt",
+              "sha256": "d6fc040082ec655d69f57744d163a6a188a9731873c3cbfc2d9dc37916d75350",
+              "bytes": 1784
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/vim/vim91/keymap/README.txt",
+              "sha256": "28d65d84e9679eb4808fbee00840110232ac6fe36496a6b74d928eb04f3ad4e4",
+              "bytes": 955
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/vim/vim91/lang/README.txt",
+              "sha256": "afad658eb08ffd8473301aaff867d6fa6268d7469eaed227e8b16cbb5078b98a",
+              "bytes": 1839
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/vim/vim91/macros/maze/README.txt",
+              "sha256": "6a1cd431baf3121c0ede2be71de7b1991af874aa2b4e46910631eabf58c8df42",
+              "bytes": 1862
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/vim/vim91/macros/README.txt",
+              "sha256": "67f5185c8a319314d1cfbb768b778be0a91a188ac0b85ff78779ace8279941e0",
+              "bytes": 1120
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/vim/vim91/macros/urm/README.txt",
+              "sha256": "7701f1798a882be3288511faa5920797882914ff297e1ac1135a80e566a7ad4a",
+              "bytes": 1580
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/vim/vim91/pack/dist/opt/editorconfig/LICENSE",
+              "sha256": "0e4e2e0aaa42ff79d0548070ee51d80773786be683da865cf9d23ba383a769ac",
+              "bytes": 1409
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/vim/vim91/pack/dist/opt/editorconfig/LICENSE.PSF",
+              "sha256": "dbf41d065936ca6f18c15a8eb84053e726622db7b3ed85e8b4ca1f6f86ec263f",
+              "bytes": 2646
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/vim/vim91/pack/dist/opt/editorconfig/README.md",
+              "sha256": "f4c809aaf7ec494cc99d75611fa7f2b8d8ccd62e572ed579d6e73930284411c9",
+              "bytes": 4915
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/vim/vim91/plugin/README.txt",
+              "sha256": "ad37e84b4ae98f276fcc1d1993f630138bba16f2411d576e0cb1e4b4f7c128a9",
+              "bytes": 976
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/vim/vim91/syntax/README.txt",
+              "sha256": "4c6ebb3c6f7f78b790842598324f614cd996e3ce19c0cdfe2b75b89f6c35a57e",
+              "bytes": 1585
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/vim/vim91/syntax/shared/README.txt",
+              "sha256": "b6c6a2f32b4fc58bc941cfa0a72a9b6c0d654734ce7d33446c28e6aab42e5925",
+              "bytes": 122
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/vim/vim91/tools/README.txt",
+              "sha256": "9e6448d04d119d45d17a374caad9e18a661e1d85bdae0d5eef4b979b71239869",
+              "bytes": 1141
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/vim/vim91/tutor/README.el.cp737.txt",
+              "sha256": "b86191dcf5a630cb1472cb25efda5c6c2eb030f2c9de2658a581b43e944c859b",
+              "bytes": 1079
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/vim/vim91/tutor/README.el.txt",
+              "sha256": "6b5f01cb92aa6878566f28404b80a97ca9f40e55d3d93f13483d61fc0f0702b6",
+              "bytes": 1079
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/vim/vim91/tutor/README.ru.utf-8.txt",
+              "sha256": "7b64996a84b2c79b6f24f821be82967b4ca5bf7cef7332b2debd616411ed739c",
+              "bytes": 3266
+            },
+            {
+              "path": "vendor/git-for-windows/usr/share/vim/vim91/tutor/README.txt",
+              "sha256": "780b1c3cea8273fc422347a35808b09d9e4d3d75984d572d34835c5744d6e0c1",
+              "bytes": 1539
+            },
+            {
+              "path": "vendor/Readme.md",
+              "sha256": "00b100bfbf1178b4bc7e5b12c24a25bee5c5976d4ea8d59dbd93f0305ce5d10d",
+              "bytes": 49
+            }
+          ]
+        }
+      ],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "Full binary archive was not downloaded; full-vs-mini distinction is established from the pinned upstream README.",
+        "Exact mini vendor/clink/clink.html identifies v1.6.14 and carries additional component credits; preserve this HTML too. GPL version3 is stated; no or-later election is inferred solely from a generic license text.",
+        "2026-10-21 follow-up: docs/opensource-audit/2026-10-21/runtime-catalog-followup.md records the current direct-vendor/manual download boundary and version-specific evidence; future project redistribution remains separately conditioned."
+      ],
+      "sources": [
+        {
+          "kind": "cmder",
+          "version": "1.3.25",
+          "url": "https://github.com/cmderdev/cmder/releases/download/v1.3.25/cmder.zip",
+          "manual": false,
+          "direct": false
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "id": "cmder-v1.3.25-LICENSE",
+          "url": "https://raw.githubusercontent.com/cmderdev/cmder/v1.3.25/LICENSE",
+          "status": "retrieved",
+          "sha256": "360df3f1491056c1b966a49d8657cae70ff1ad73999f7899851205fe7e109d59",
+          "bytes": 1069,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/cmder-v1.3.25-LICENSE.txt"
+        },
+        {
+          "id": "cmder-v1.3.25-README",
+          "url": "https://raw.githubusercontent.com/cmderdev/cmder/v1.3.25/README.md",
+          "status": "retrieved",
+          "sha256": "cab3ddaa035ba0bb3a9ba805806fb51d1481064b4eccbabb21c7a8c879922d0e",
+          "bytes": 26310,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/cmder-v1.3.25-README.txt"
+        }
+      ]
+    },
+    {
+      "id": "cmder-mini",
+      "kind": "cmder",
+      "versions": [
+        "1.3.25-mini"
+      ],
+      "distribution": "upstream-download",
+      "softwareLicense": "MIT AND BSD-3-Clause AND GPL-3.0",
+      "softwareLicenseSources": [
+        "https://raw.githubusercontent.com/cmderdev/cmder/v1.3.25/LICENSE",
+        "https://raw.githubusercontent.com/cmderdev/cmder/v1.3.25/README.md",
+        "https://gitforwindows.org/faq"
+      ],
+      "binaryTerms": [
+        "Cmder wrapper is MIT; actual mini archive also contains ConEmu BSD-3-Clause, GPLv3 Clink and MIT clink-completions.",
+        "Full edition adds vendored Git-for-Windows and its Git/GNU and other third-party licenses; mini explicitly excludes vendored Git."
+      ],
+      "requiredActions": [
+        "Preserve exact supplied copyright, license, disclaimer, NOTICE, third-party and dependency notices with the installed or redistributed files.",
+        "Before conveying bundled Clink/Git/GNU binaries, provide their corresponding exact source under the applicable GPL route; preserving COPYING alone is insufficient.",
+        "Pin the vendored Clink/ConEmu/Git versions and their build/source mapping before any bundle or mirror."
+      ],
+      "evidenceStatus": "representative-archive-reviewed",
+      "archiveEvidence": [
+        {
+          "id": "cmder-1.3.25-mini",
+          "url": "https://github.com/cmderdev/cmder/releases/download/v1.3.25/cmder_mini.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "c0611777a5bee9952cfb0439bd903efe49248de99823a3127563c55e7fa1a5d8",
+          "bytes": 12293846,
+          "entryCount": 367,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/cmder-1.3.25-mini.json",
+          "evidenceManifestSha256": "f81ff7ce0a1b21e697d03cb0aac49052841e08f25a3d94729b46629f18afc1e2",
+          "legalEntryCount": 14,
+          "legalEntries": [
+            {
+              "path": "bin/Readme.md",
+              "sha256": "52bfad419624895fc121501ae2a4f6f49f41bd2d6ea0321e16a669b813aac7a9",
+              "bytes": 84
+            },
+            {
+              "path": "config/profile.d/README.md",
+              "sha256": "8165414f57251645f523d53b5f79de95a6a8c5a56704cc6e0a2e581fba487951",
+              "bytes": 135
+            },
+            {
+              "path": "config/Readme.md",
+              "sha256": "465f9b1d40fdd20de03ef9793ae2b3dc231c788283ea1ad8b4500750db1b1040",
+              "bytes": 887
+            },
+            {
+              "path": "LICENSE",
+              "sha256": "cfa119682af05183864bc783a4fa65836a98e4619660f901459314baeaec0af2",
+              "bytes": 1090
+            },
+            {
+              "path": "opt/Readme.md",
+              "sha256": "eaba190c8b3f7d4b325a5a0c9ecd80a2f1708aeaf6681132ea760603300edc10",
+              "bytes": 270
+            },
+            {
+              "path": "vendor/clink/LICENSE",
+              "sha256": "5f631fae467c82b8cd28fd1ec425c816895a35f9d94e36bee0e0164570e8e0f6",
+              "bytes": 35823
+            },
+            {
+              "path": "vendor/clink-completions/LICENSE",
+              "sha256": "35789f64229d44da6bec35ab5b253157ec9811a57f7d694eb54bbd7d9fdf421b",
+              "bytes": 1083
+            },
+            {
+              "path": "vendor/clink-completions/README.md",
+              "sha256": "3ded1b48c3c0f56c4c957fe301cb0d1d3e092b1d41422b5eff73e09c098c6176",
+              "bytes": 3756
+            },
+            {
+              "path": "vendor/conemu-maximus5/ConEmu/clink/Readme.txt",
+              "sha256": "9fbedb5bfcfe45ad7154713839d151409d9ccfc4d1111ff80fd3f1a2568120ad",
+              "bytes": 545
+            },
+            {
+              "path": "vendor/conemu-maximus5/ConEmu/License.txt",
+              "sha256": "85ff871f345e6341da96960b4a37c85c07a4d9c351f194bfc7b149c70240d9b3",
+              "bytes": 7303
+            },
+            {
+              "path": "vendor/conemu-maximus5/ConEmu/Scripts/readme.txt",
+              "sha256": "fa0c194bf1ee704802101fbd105176767d5656cced780b301ca14d84544ee070",
+              "bytes": 246
+            },
+            {
+              "path": "vendor/conemu-maximus5/ConEmu/wsl/README.md",
+              "sha256": "f0cb3bb608bc671c8e24a354414192375d68807ab5c7a5b87128c3b10a180dbe",
+              "bytes": 1085
+            },
+            {
+              "path": "vendor/conemu-maximus5/plugins/ConEmu/Readme.txt",
+              "sha256": "e215c342c73538742eadb2679432df54d09fb29fe0330cfeb18e131b0b239b75",
+              "bytes": 963
+            },
+            {
+              "path": "vendor/Readme.md",
+              "sha256": "00b100bfbf1178b4bc7e5b12c24a25bee5c5976d4ea8d59dbd93f0305ce5d10d",
+              "bytes": 49
+            }
+          ]
+        }
+      ],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "Exact mini ZIP inspected; root MIT alone is not its complete license. Exact Clink binary/source correspondence still needs verification.",
+        "Exact mini vendor/clink/clink.html identifies v1.6.14 and carries additional component credits; preserve this HTML too. GPL version3 is stated; no or-later election is inferred solely from a generic license text.",
+        "2026-10-21 follow-up: docs/opensource-audit/2026-10-21/runtime-catalog-followup.md records the current direct-vendor/manual download boundary and version-specific evidence; future project redistribution remains separately conditioned."
+      ],
+      "sources": [
+        {
+          "kind": "cmder",
+          "version": "1.3.25-mini",
+          "url": "https://github.com/cmderdev/cmder/releases/download/v1.3.25/cmder_mini.zip",
+          "manual": false,
+          "direct": false
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "id": "cmder-v1.3.25-LICENSE",
+          "url": "https://raw.githubusercontent.com/cmderdev/cmder/v1.3.25/LICENSE",
+          "status": "retrieved",
+          "sha256": "360df3f1491056c1b966a49d8657cae70ff1ad73999f7899851205fe7e109d59",
+          "bytes": 1069,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/cmder-v1.3.25-LICENSE.txt"
+        },
+        {
+          "id": "cmder-v1.3.25-README",
+          "url": "https://raw.githubusercontent.com/cmderdev/cmder/v1.3.25/README.md",
+          "status": "retrieved",
+          "sha256": "cab3ddaa035ba0bb3a9ba805806fb51d1481064b4eccbabb21c7a8c879922d0e",
+          "bytes": 26310,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/cmder-v1.3.25-README.txt"
+        }
+      ]
+    },
+    {
+      "id": "pecl-xdebug",
+      "kind": "pecl-ext",
+      "versions": [
+        "3.5.3",
+        "3.4.0",
+        "3.3.2",
+        "3.1.6"
+      ],
+      "distribution": "upstream-download",
+      "softwareLicense": "LicenseRef-Xdebug-1.03",
+      "softwareLicenseSources": [
+        "https://raw.githubusercontent.com/xdebug/xdebug/3.5.3/LICENSE"
+      ],
+      "binaryTerms": [
+        "The extension license and any bundled/static or companion library terms are separate; no universal PECL license applies.",
+        "The Xdebug License 1.03 is a distinct PHP-derived license, not PHP-3.01. Retain its required Xdebug acknowledgment and name restrictions."
+      ],
+      "requiredActions": [
+        "Preserve exact supplied copyright, license, disclaimer, NOTICE, third-party and dependency notices with the installed or redistributed files.",
+        "Retain original archive legal entries with nested paths alongside the installed extension; copying DLLs alone discards them.",
+        "Before bundling or mirroring, identify the exact build and every included/static or companion dependency; a project-level license is not a complete binary license inventory."
+      ],
+      "evidenceStatus": "representative-archive-reviewed",
+      "archiveEvidence": [
+        {
+          "id": "pecl-xdebug-3.4.0-8.4",
+          "url": "https://windows.php.net/downloads/pecl/releases/xdebug/3.4.0/php_xdebug-3.4.0-8.4-nts-vs17-x64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "26eb6eaf8651a09a92cb726408ed0d25fe67278b614b287006cb3b7b2e664d86",
+          "bytes": 742922,
+          "entryCount": 10,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/pecl-xdebug-3.4.0-8.4.json",
+          "evidenceManifestSha256": "c932a2e6b158d0ab0c6268c6948bf8032efd0c6afb998f3aaf92075097df69db",
+          "legalEntryCount": 3,
+          "legalEntries": [
+            {
+              "path": "CREDITS",
+              "sha256": "4caf9b43a91ec70e761961f2bba9cd1a500816a40f831f5ed1564cbcdf05594d",
+              "bytes": 53
+            },
+            {
+              "path": "LICENSE",
+              "sha256": "bc2aee27f3f0806be39e329d284ddbbfb14602a49af261df305dd6122d988eb0",
+              "bytes": 3027
+            },
+            {
+              "path": "README.rst",
+              "sha256": "86c964c3f02da131fdeac7b84f429d5a488c2b15ee6b1657ac3f2c9a68617574",
+              "bytes": 6396
+            }
+          ]
+        }
+      ],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "Only the named representative Windows build was inspected. Other pinned extension/PHP-series builds remain uninspected; source LICENSE from the newest pinned extension tag was separately retrieved."
+      ],
+      "primaryEvidence": [
+        {
+          "id": "xdebug-3.5.3-LICENSE",
+          "url": "https://raw.githubusercontent.com/xdebug/xdebug/3.5.3/LICENSE",
+          "status": "retrieved",
+          "sha256": "bc2aee27f3f0806be39e329d284ddbbfb14602a49af261df305dd6122d988eb0",
+          "bytes": 3027,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/xdebug-3.5.3-LICENSE.txt"
+        }
+      ],
+      "builds": [
+        {
+          "extension": "xdebug",
+          "phpSeries": "8.5",
+          "version": "3.5.3",
+          "url": "https://windows.php.net/downloads/pecl/releases/xdebug/3.5.3/php_xdebug-3.5.3-8.5-nts-vs17-x64.zip"
+        },
+        {
+          "extension": "xdebug",
+          "phpSeries": "8.4",
+          "version": "3.4.0",
+          "url": "https://windows.php.net/downloads/pecl/releases/xdebug/3.4.0/php_xdebug-3.4.0-8.4-nts-vs17-x64.zip"
+        },
+        {
+          "extension": "xdebug",
+          "phpSeries": "8.3",
+          "version": "3.4.0",
+          "url": "https://windows.php.net/downloads/pecl/releases/xdebug/3.4.0/php_xdebug-3.4.0-8.3-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "xdebug",
+          "phpSeries": "8.2",
+          "version": "3.4.0",
+          "url": "https://windows.php.net/downloads/pecl/releases/xdebug/3.4.0/php_xdebug-3.4.0-8.2-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "xdebug",
+          "phpSeries": "8.1",
+          "version": "3.3.2",
+          "url": "https://windows.php.net/downloads/pecl/releases/xdebug/3.3.2/php_xdebug-3.3.2-8.1-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "xdebug",
+          "phpSeries": "8.0",
+          "version": "3.1.6",
+          "url": "https://windows.php.net/downloads/pecl/releases/xdebug/3.1.6/php_xdebug-3.1.6-8.0-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "xdebug",
+          "phpSeries": "7.4",
+          "version": "3.1.6",
+          "url": "https://windows.php.net/downloads/pecl/releases/xdebug/3.1.6/php_xdebug-3.1.6-7.4-nts-vc15-x64.zip"
+        }
+      ]
+    },
+    {
+      "id": "pecl-redis",
+      "kind": "pecl-ext",
+      "versions": [
+        "6.3.0",
+        "6.1.0",
+        "5.3.7"
+      ],
+      "distribution": "upstream-download",
+      "softwareLicense": "PHP-3.01",
+      "softwareLicenseSources": [
+        "https://raw.githubusercontent.com/phpredis/phpredis/6.3.0/LICENSE"
+      ],
+      "binaryTerms": [
+        "The extension license and any bundled/static or companion library terms are separate; no universal PECL license applies.",
+        "Representative ZIP includes nested liblzf/LICENSE (BSD-2-Clause). Compression/serialization libraries in each build require their own matching notices."
+      ],
+      "requiredActions": [
+        "Preserve exact supplied copyright, license, disclaimer, NOTICE, third-party and dependency notices with the installed or redistributed files.",
+        "Retain original archive legal entries with nested paths alongside the installed extension; copying DLLs alone discards them.",
+        "Before bundling or mirroring, identify the exact build and every included/static or companion dependency; a project-level license is not a complete binary license inventory."
+      ],
+      "evidenceStatus": "representative-archive-reviewed",
+      "archiveEvidence": [
+        {
+          "id": "pecl-redis-6.1.0-8.4",
+          "url": "https://windows.php.net/downloads/pecl/releases/redis/6.1.0/php_redis-6.1.0-8.4-nts-vs17-x64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "5a8c7d8ce9a653370dfa635102ee3723273c138a9677d507406ddf4f04aecfd6",
+          "bytes": 917681,
+          "entryCount": 11,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/pecl-redis-6.1.0-8.4.json",
+          "evidenceManifestSha256": "e4a390b8e6217f80cf30fd9a311e72ca9c8d71bd2fc99b928923ea6fa258fc2e",
+          "legalEntryCount": 5,
+          "legalEntries": [
+            {
+              "path": "CREDITS",
+              "sha256": "5bb9c8a8a2a18ad73cd5e318a1f2eb9d1863fd2698b71ac0bea2a528fa365206",
+              "bytes": 204
+            },
+            {
+              "path": "liblzf/LICENSE",
+              "sha256": "71f85db195892fcaf0e048fbba166270f736e5150d9c84cb98a346f13fcc2a52",
+              "bytes": 1437
+            },
+            {
+              "path": "liblzf/README",
+              "sha256": "b8b2a123c5f5df39ae0484d04ff1746d3b6d67b3fa20ec5842e070721f5e194b",
+              "bytes": 1247
+            },
+            {
+              "path": "LICENSE",
+              "sha256": "24e8e3a9529204ead9422fa17cf3ddd75d292a8763b87fdb20591964f2e6ebe0",
+              "bytes": 3218
+            },
+            {
+              "path": "README.md",
+              "sha256": "55ecda193af43eb4e5455dbf13b9e4fd7fa4edf0f326d26d6af3524bbc7410cc",
+              "bytes": 134192
+            }
+          ]
+        }
+      ],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "Only the named representative Windows build was inspected. Other pinned extension/PHP-series builds remain uninspected; source LICENSE from the newest pinned extension tag was separately retrieved."
+      ],
+      "primaryEvidence": [
+        {
+          "id": "phpredis-6.3.0-LICENSE",
+          "url": "https://raw.githubusercontent.com/phpredis/phpredis/6.3.0/LICENSE",
+          "status": "retrieved",
+          "sha256": "24e8e3a9529204ead9422fa17cf3ddd75d292a8763b87fdb20591964f2e6ebe0",
+          "bytes": 3218,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/phpredis-6.3.0-LICENSE.txt"
+        }
+      ],
+      "builds": [
+        {
+          "extension": "redis",
+          "phpSeries": "8.5",
+          "version": "6.3.0",
+          "url": "https://windows.php.net/downloads/pecl/releases/redis/6.3.0/php_redis-6.3.0-8.5-nts-vs17-x64.zip"
+        },
+        {
+          "extension": "redis",
+          "phpSeries": "8.4",
+          "version": "6.1.0",
+          "url": "https://windows.php.net/downloads/pecl/releases/redis/6.1.0/php_redis-6.1.0-8.4-nts-vs17-x64.zip"
+        },
+        {
+          "extension": "redis",
+          "phpSeries": "8.3",
+          "version": "6.1.0",
+          "url": "https://windows.php.net/downloads/pecl/releases/redis/6.1.0/php_redis-6.1.0-8.3-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "redis",
+          "phpSeries": "8.2",
+          "version": "6.1.0",
+          "url": "https://windows.php.net/downloads/pecl/releases/redis/6.1.0/php_redis-6.1.0-8.2-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "redis",
+          "phpSeries": "8.1",
+          "version": "6.1.0",
+          "url": "https://windows.php.net/downloads/pecl/releases/redis/6.1.0/php_redis-6.1.0-8.1-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "redis",
+          "phpSeries": "8.0",
+          "version": "5.3.7",
+          "url": "https://windows.php.net/downloads/pecl/releases/redis/5.3.7/php_redis-5.3.7-8.0-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "redis",
+          "phpSeries": "7.4",
+          "version": "5.3.7",
+          "url": "https://windows.php.net/downloads/pecl/releases/redis/5.3.7/php_redis-5.3.7-7.4-nts-vc15-x64.zip"
+        }
+      ]
+    },
+    {
+      "id": "pecl-mongodb",
+      "kind": "pecl-ext",
+      "versions": [
+        "2.5.2",
+        "1.20.1",
+        "1.16.2"
+      ],
+      "distribution": "upstream-download",
+      "softwareLicense": "Apache-2.0",
+      "softwareLicenseSources": [
+        "https://raw.githubusercontent.com/mongodb/mongo-php-driver/2.5.2/LICENSE"
+      ],
+      "binaryTerms": [
+        "The extension license and any bundled/static or companion library terms are separate; no universal PECL license applies.",
+        "Representative THIRD_PARTY_NOTICES refers to libbson/libmongoc nested notices absent from this binary ZIP; exact driver dependency notices remain incomplete for redistribution. MongoDB server licensing is not this PHP driver license."
+      ],
+      "requiredActions": [
+        "Preserve exact supplied copyright, license, disclaimer, NOTICE, third-party and dependency notices with the installed or redistributed files.",
+        "Retain original archive legal entries with nested paths alongside the installed extension; copying DLLs alone discards them.",
+        "Before bundling or mirroring, identify the exact build and every included/static or companion dependency; a project-level license is not a complete binary license inventory."
+      ],
+      "evidenceStatus": "representative-archive-reviewed",
+      "archiveEvidence": [
+        {
+          "id": "pecl-mongodb-1.20.1-8.4",
+          "url": "https://windows.php.net/downloads/pecl/releases/mongodb/1.20.1/php_mongodb-1.20.1-8.4-nts-vs17-x64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "763efd7317b1153729b39031433fab008ad1c42fd46890dfa0db9765494bc588",
+          "bytes": 4266848,
+          "entryCount": 7,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/pecl-mongodb-1.20.1-8.4.json",
+          "evidenceManifestSha256": "9233ce4e0b8a4fa5bbc69fddeb8e9871693eba5381932c598d61e9d254a8d438",
+          "legalEntryCount": 4,
+          "legalEntries": [
+            {
+              "path": "CREDITS",
+              "sha256": "8c73a7bdbd9e51d0e043185b53dafbbe6c002f87fb3c2478a5ef9a516304bfb8",
+              "bytes": 52
+            },
+            {
+              "path": "LICENSE",
+              "sha256": "8c6db340475136df3c1201d458fa5755698eace76e510471ecc9d857d6083dac",
+              "bytes": 11359
+            },
+            {
+              "path": "README.md",
+              "sha256": "70a73d15c4b8394f6656beaceb0595d4d1114f8719683e3bfe1ea1fa18c8bb9c",
+              "bytes": 4558
+            },
+            {
+              "path": "THIRD_PARTY_NOTICES",
+              "sha256": "a481d54906de73dd9df8572e3430c4c4a13c8edb5f049155383502d9ba7caa22",
+              "bytes": 3644
+            }
+          ]
+        }
+      ],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "Only the named representative Windows build was inspected. Other pinned extension/PHP-series builds remain uninspected; source LICENSE from the newest pinned extension tag was separately retrieved.",
+        "Exact ZIP 763efd7317b1153729b39031433fab008ad1c42fd46890dfa0db9765494bc588 (1.20.1, PHP 8.4) has 7 supplemental source/SDK notice files in internal/installer/pecl_notices/manifest.json. Their exact hashes and source URLs are preserved; other builds are not silently covered."
+      ],
+      "primaryEvidence": [
+        {
+          "id": "mongodb-2.5.2-LICENSE",
+          "url": "https://raw.githubusercontent.com/mongodb/mongo-php-driver/2.5.2/LICENSE",
+          "status": "retrieved",
+          "sha256": "8c6db340475136df3c1201d458fa5755698eace76e510471ecc9d857d6083dac",
+          "bytes": 11359,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/mongodb-2.5.2-LICENSE.txt"
+        }
+      ],
+      "builds": [
+        {
+          "extension": "mongodb",
+          "phpSeries": "8.5",
+          "version": "2.5.2",
+          "url": "https://windows.php.net/downloads/pecl/releases/mongodb/2.5.2/php_mongodb-2.5.2-8.5-nts-vs17-x64.zip"
+        },
+        {
+          "extension": "mongodb",
+          "phpSeries": "8.4",
+          "version": "1.20.1",
+          "url": "https://windows.php.net/downloads/pecl/releases/mongodb/1.20.1/php_mongodb-1.20.1-8.4-nts-vs17-x64.zip"
+        },
+        {
+          "extension": "mongodb",
+          "phpSeries": "8.3",
+          "version": "1.20.1",
+          "url": "https://windows.php.net/downloads/pecl/releases/mongodb/1.20.1/php_mongodb-1.20.1-8.3-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "mongodb",
+          "phpSeries": "8.2",
+          "version": "1.20.1",
+          "url": "https://windows.php.net/downloads/pecl/releases/mongodb/1.20.1/php_mongodb-1.20.1-8.2-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "mongodb",
+          "phpSeries": "8.1",
+          "version": "1.20.1",
+          "url": "https://windows.php.net/downloads/pecl/releases/mongodb/1.20.1/php_mongodb-1.20.1-8.1-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "mongodb",
+          "phpSeries": "8.0",
+          "version": "1.16.2",
+          "url": "https://windows.php.net/downloads/pecl/releases/mongodb/1.16.2/php_mongodb-1.16.2-8.0-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "mongodb",
+          "phpSeries": "7.4",
+          "version": "1.16.2",
+          "url": "https://windows.php.net/downloads/pecl/releases/mongodb/1.16.2/php_mongodb-1.16.2-7.4-nts-vc15-x64.zip"
+        }
+      ]
+    },
+    {
+      "id": "pecl-apcu",
+      "kind": "pecl-ext",
+      "versions": [
+        "5.1.28",
+        "5.1.24",
+        "5.1.23",
+        "5.1.22"
+      ],
+      "distribution": "upstream-download",
+      "softwareLicense": "PHP-3.01",
+      "softwareLicenseSources": [
+        "https://raw.githubusercontent.com/krakjoe/apcu/v5.1.28/LICENSE"
+      ],
+      "binaryTerms": [
+        "The extension license and any bundled/static or companion library terms are separate; no universal PECL license applies.",
+        "Representative ZIP contains LICENSE and NOTICE; keep both, including project contributor acknowledgments."
+      ],
+      "requiredActions": [
+        "Preserve exact supplied copyright, license, disclaimer, NOTICE, third-party and dependency notices with the installed or redistributed files.",
+        "Retain original archive legal entries with nested paths alongside the installed extension; copying DLLs alone discards them.",
+        "Before bundling or mirroring, identify the exact build and every included/static or companion dependency; a project-level license is not a complete binary license inventory."
+      ],
+      "evidenceStatus": "representative-archive-reviewed",
+      "archiveEvidence": [
+        {
+          "id": "pecl-apcu-5.1.24-8.4",
+          "url": "https://windows.php.net/downloads/pecl/releases/apcu/5.1.24/php_apcu-5.1.24-8.4-nts-vs17-x64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "30243c939d49e659e2b9b3f7ac5978335171159df81c09346fc8d3bda1067706",
+          "bytes": 223102,
+          "entryCount": 6,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/pecl-apcu-5.1.24-8.4.json",
+          "evidenceManifestSha256": "1be9636c3883746c8cbcea6a4b2e37800f966d88fcbd992b9c6ddf2163c322a0",
+          "legalEntryCount": 3,
+          "legalEntries": [
+            {
+              "path": "LICENSE",
+              "sha256": "ecc8b74820c32fb82ddee80446205408585d75d1632ac959fb3cdf8eaf3877b5",
+              "bytes": 3218
+            },
+            {
+              "path": "NOTICE",
+              "sha256": "0e3cdb0e0e3d5e3ff60f8143ce3f23581ec42bd6dc962f460d0fd1e6f56844ad",
+              "bytes": 1738
+            },
+            {
+              "path": "README.md",
+              "sha256": "6e0e6adb2629efec3c03c20035fcbf7ec98e7970ee68ed7376881d3812c807f8",
+              "bytes": 1571
+            }
+          ]
+        }
+      ],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "Only the named representative Windows build was inspected. Other pinned extension/PHP-series builds remain uninspected; source LICENSE from the newest pinned extension tag was separately retrieved."
+      ],
+      "primaryEvidence": [
+        {
+          "id": "apcu-5.1.28-LICENSE",
+          "url": "https://raw.githubusercontent.com/krakjoe/apcu/v5.1.28/LICENSE",
+          "status": "retrieved",
+          "sha256": "ecc8b74820c32fb82ddee80446205408585d75d1632ac959fb3cdf8eaf3877b5",
+          "bytes": 3218,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/apcu-5.1.28-LICENSE.txt"
+        }
+      ],
+      "builds": [
+        {
+          "extension": "apcu",
+          "phpSeries": "8.5",
+          "version": "5.1.28",
+          "url": "https://windows.php.net/downloads/pecl/releases/apcu/5.1.28/php_apcu-5.1.28-8.5-nts-vs17-x64.zip"
+        },
+        {
+          "extension": "apcu",
+          "phpSeries": "8.4",
+          "version": "5.1.24",
+          "url": "https://windows.php.net/downloads/pecl/releases/apcu/5.1.24/php_apcu-5.1.24-8.4-nts-vs17-x64.zip"
+        },
+        {
+          "extension": "apcu",
+          "phpSeries": "8.3",
+          "version": "5.1.24",
+          "url": "https://windows.php.net/downloads/pecl/releases/apcu/5.1.24/php_apcu-5.1.24-8.3-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "apcu",
+          "phpSeries": "8.2",
+          "version": "5.1.23",
+          "url": "https://windows.php.net/downloads/pecl/releases/apcu/5.1.23/php_apcu-5.1.23-8.2-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "apcu",
+          "phpSeries": "8.1",
+          "version": "5.1.23",
+          "url": "https://windows.php.net/downloads/pecl/releases/apcu/5.1.23/php_apcu-5.1.23-8.1-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "apcu",
+          "phpSeries": "8.0",
+          "version": "5.1.22",
+          "url": "https://windows.php.net/downloads/pecl/releases/apcu/5.1.22/php_apcu-5.1.22-8.0-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "apcu",
+          "phpSeries": "7.4",
+          "version": "5.1.22",
+          "url": "https://windows.php.net/downloads/pecl/releases/apcu/5.1.22/php_apcu-5.1.22-7.4-nts-vc15-x64.zip"
+        }
+      ]
+    },
+    {
+      "id": "pecl-imagick",
+      "kind": "pecl-ext",
+      "versions": [
+        "3.8.1",
+        "3.7.0"
+      ],
+      "distribution": "upstream-download",
+      "softwareLicense": "PHP-3.01 AND ImageMagick AND companion-library terms (including LGPL-2.1+, LGPL-3.0+, MPL/CDDL alternatives, FTL, permissive and scoped profile terms)",
+      "softwareLicenseSources": [
+        "https://raw.githubusercontent.com/Imagick/imagick/3.8.1/LICENSE",
+        "https://imagemagick.org/license/"
+      ],
+      "binaryTerms": [
+        "The extension license and any bundled/static or companion library terms are separate; no universal PECL license applies.",
+        "Representative ZIP contains LICENSE, LICENSE.ImageMagick and tests/OFL.txt, plus many CORE_RL_ companion DLLs (glib/librsvg/cairo/pango/libraw and others). Two root licenses do not establish all LGPL/GPL/permissive companion obligations. Exact library versions, notices, corresponding-source/relinking requirements and any delegate conditions need review before redistribution.",
+        "For exact Imagick 3.7.0/PHP 8.3 ZIP 4204071decbb06dce9f212a63ace0aa0c1b48fd344176b8274cd7d32ab674c71, all 166 companion DLLs match ImageMagick 7.1.0-18 SDK 3684a58b0896e2a55995029fa92cc13bd1ac778e03cdf8682c4369bbef86be9e. The extension itself is separate.",
+        "69 complete source/SDK notices are retained, including full SDK bin/NOTICE, LGPL/GPL/MPL/CDDL referenced texts and scoped static dependencies. SDK optional delegate terms do not prove optional executables were included.",
+        "FLIF exports encoder functions and its build configuration enables the encoder, so decoder-only Apache terms do not cover this DLL: LGPL-3.0-or-later applies. LibRaw offers LGPL-2.1 OR CDDL-1.0; Cairo offers LGPL-2.1 OR MPL-1.1; FreeType offers FTL OR GPL. Retaining alternatives does not force a GPL selection.",
+        "Eight static project families were identified: aom, brotli, croco, ffi, highway, libde265, pixman and raqm. Static LGPL libraries require a suitable recipient modification/relink route before project binary redistribution.",
+        "Historical recipes clone moving main branches without dependency pins. Exact SDK header matches and archived candidate sources are scoped corroboration; missing exact patched-source/relink evidence, X11/Xext prebuilt provenance and separate Adobe attribution prevent complete binary mirror clearance."
+      ],
+      "requiredActions": [
+        "Preserve exact supplied copyright, license, disclaimer, NOTICE, third-party and dependency notices with the installed or redistributed files.",
+        "Retain original archive legal entries with nested paths alongside the installed extension; copying DLLs alone discards them.",
+        "Before bundling or mirroring, identify the exact build and every included/static or companion dependency; a project-level license is not a complete binary license inventory.",
+        "Retain all four original archive legal files and 69 hash-bound supplemental texts for this exact build, with their source selection limits. Other PHP-series builds require their own exact review.",
+        "Keep library modification and reverse-engineering-for-debugging rights required by LGPL. No LaraEnv desktop term restricts those rights.",
+        "Before project bundling/mirroring, complete matching modified sources, build scripts and relinkable work material for applicable LGPL/static libraries; resolve the exact X11/Xext and LibRaw Adobe gaps. See imagick-source-route.md and imagick-license-closure.md."
+      ],
+      "evidenceStatus": "representative-archive-reviewed",
+      "archiveEvidence": [
+        {
+          "id": "pecl-imagick-3.7.0-8.3",
+          "url": "https://windows.php.net/downloads/pecl/releases/imagick/3.7.0/php_imagick-3.7.0-8.3-nts-vs16-x64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "4204071decbb06dce9f212a63ace0aa0c1b48fd344176b8274cd7d32ab674c71",
+          "bytes": 26009855,
+          "entryCount": 354,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/pecl-imagick-3.7.0-8.3.json",
+          "evidenceManifestSha256": "cce388eccede73822833240f1160dc64ec79d803e610f88d9206f6e0ed294486",
+          "legalEntryCount": 4,
+          "legalEntries": [
+            {
+              "path": "CREDITS",
+              "sha256": "86199f0282d33fbd7b80dacadf6f45e441eb29b403b162189aa9121cbfa1ccc3",
+              "bytes": 39
+            },
+            {
+              "path": "LICENSE",
+              "sha256": "b6e00df9cb3b91977c0d64a7c4db48cb6f5041f6eeda6583c236775f70a35b78",
+              "bytes": 3218
+            },
+            {
+              "path": "LICENSE.ImageMagick",
+              "sha256": "7a3cf016aa5dbc86a5525987bdfea414e3069c49b2e567917974b503214d999d",
+              "bytes": 12581
+            },
+            {
+              "path": "tests/OFL.txt",
+              "sha256": "b8739da5d3c5ba6b109328268095bf06509348498f4779ef7c8e71878d7c6539",
+              "bytes": 4527
+            }
+          ]
+        }
+      ],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "Only the named representative Windows build was inspected. Other pinned extension/PHP-series builds remain uninspected; source LICENSE from the newest pinned extension tag was separately retrieved.",
+        "2026-10-21 closure: docs/opensource-audit/2026-10-21/imagick-license-closure.md and imagick-source-route.md distinguish all 166 matched DLLs, 32 families, eight static families and 69 retained texts from unproven exact-source/relink coverage. Current downloads remain direct upstream; no SDK/binary mirror was added."
+      ],
+      "primaryEvidence": [
+        {
+          "id": "imagick-3.8.1-LICENSE",
+          "url": "https://raw.githubusercontent.com/Imagick/imagick/3.8.1/LICENSE",
+          "status": "retrieved",
+          "sha256": "b6e00df9cb3b91977c0d64a7c4db48cb6f5041f6eeda6583c236775f70a35b78",
+          "bytes": 3218,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/imagick-3.8.1-LICENSE.txt"
+        }
+      ],
+      "builds": [
+        {
+          "extension": "imagick",
+          "phpSeries": "8.5",
+          "version": "3.8.1",
+          "url": "https://windows.php.net/downloads/pecl/releases/imagick/3.8.1/php_imagick-3.8.1-8.5-nts-vs17-x64.zip"
+        },
+        {
+          "extension": "imagick",
+          "phpSeries": "8.4",
+          "version": "3.7.0",
+          "url": "https://windows.php.net/downloads/pecl/releases/imagick/3.7.0/php_imagick-3.7.0-8.4-nts-vs17-x64.zip"
+        },
+        {
+          "extension": "imagick",
+          "phpSeries": "8.3",
+          "version": "3.7.0",
+          "url": "https://windows.php.net/downloads/pecl/releases/imagick/3.7.0/php_imagick-3.7.0-8.3-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "imagick",
+          "phpSeries": "8.2",
+          "version": "3.7.0",
+          "url": "https://windows.php.net/downloads/pecl/releases/imagick/3.7.0/php_imagick-3.7.0-8.2-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "imagick",
+          "phpSeries": "8.1",
+          "version": "3.7.0",
+          "url": "https://windows.php.net/downloads/pecl/releases/imagick/3.7.0/php_imagick-3.7.0-8.1-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "imagick",
+          "phpSeries": "8.0",
+          "version": "3.7.0",
+          "url": "https://windows.php.net/downloads/pecl/releases/imagick/3.7.0/php_imagick-3.7.0-8.0-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "imagick",
+          "phpSeries": "7.4",
+          "version": "3.7.0",
+          "url": "https://windows.php.net/downloads/pecl/releases/imagick/3.7.0/php_imagick-3.7.0-7.4-nts-vc15-x64.zip"
+        }
+      ]
+    },
+    {
+      "id": "pecl-memcached",
+      "kind": "pecl-ext",
+      "versions": [
+        "3.4.0",
+        "3.3.0",
+        "3.2.0"
+      ],
+      "distribution": "upstream-download",
+      "softwareLicense": "PHP-3.01 AND companion-library terms",
+      "softwareLicenseSources": [
+        "https://raw.githubusercontent.com/php-memcached-dev/php-memcached/v3.4.0/LICENSE"
+      ],
+      "binaryTerms": [
+        "The extension license and any bundled/static or companion library terms are separate; no universal PECL license applies.",
+        "Representative ZIP includes fastlz/LICENSE (MIT) and libmemcached/libhashkit companion DLLs without their dedicated license text; identify exact companion build/version and terms before redistribution."
+      ],
+      "requiredActions": [
+        "Preserve exact supplied copyright, license, disclaimer, NOTICE, third-party and dependency notices with the installed or redistributed files.",
+        "Retain original archive legal entries with nested paths alongside the installed extension; copying DLLs alone discards them.",
+        "Before bundling or mirroring, identify the exact build and every included/static or companion dependency; a project-level license is not a complete binary license inventory."
+      ],
+      "evidenceStatus": "representative-archive-reviewed",
+      "archiveEvidence": [
+        {
+          "id": "pecl-memcached-3.3.0-8.3",
+          "url": "https://windows.php.net/downloads/pecl/releases/memcached/3.3.0/php_memcached-3.3.0-8.3-nts-vs16-x64.zip",
+          "status": "exact-archive-reviewed",
+          "sha256": "787f5311a6855002945c7dacc6295fda0ca6f77182fe7f16b4ef95780d16764b",
+          "bytes": 919034,
+          "entryCount": 18,
+          "evidenceManifest": "build/verification/runtime-licenses-dependencies-20261021/runtimes/archives/pecl-memcached-3.3.0-8.3.json",
+          "evidenceManifestSha256": "d7b812c78b5653bdaaca5502f17b208979067655caee0a2b70a2f69ed68c30fa",
+          "legalEntryCount": 4,
+          "legalEntries": [
+            {
+              "path": "CREDITS",
+              "sha256": "4323b3ec8457808be0ed946f5482bf5cfdd1754396590d344cc37bb864197703",
+              "bytes": 59
+            },
+            {
+              "path": "fastlz/LICENSE",
+              "sha256": "a453a7a272fbd24105b39959f76996d50dad80b22d1c310f6c67f74f62ae4054",
+              "bytes": 1226
+            },
+            {
+              "path": "LICENSE",
+              "sha256": "24e8e3a9529204ead9422fa17cf3ddd75d292a8763b87fdb20591964f2e6ebe0",
+              "bytes": 3218
+            },
+            {
+              "path": "README.markdown",
+              "sha256": "98d7ad1689ed3283e4db9287a148112ae67be50ccc6c0176722d812083cc5adc",
+              "bytes": 1960
+            }
+          ]
+        }
+      ],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "Only the named representative Windows build was inspected. Other pinned extension/PHP-series builds remain uninspected; source LICENSE from the newest pinned extension tag was separately retrieved.",
+        "Exact ZIP 787f5311a6855002945c7dacc6295fda0ca6f77182fe7f16b4ef95780d16764b (3.3.0, PHP 8.3) has 1 supplemental source/SDK notice files in internal/installer/pecl_notices/manifest.json. Their exact hashes and source URLs are preserved; other builds are not silently covered."
+      ],
+      "primaryEvidence": [
+        {
+          "id": "memcached-3.4.0-LICENSE",
+          "url": "https://raw.githubusercontent.com/php-memcached-dev/php-memcached/v3.4.0/LICENSE",
+          "status": "retrieved",
+          "sha256": "24e8e3a9529204ead9422fa17cf3ddd75d292a8763b87fdb20591964f2e6ebe0",
+          "bytes": 3218,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/memcached-3.4.0-LICENSE.txt"
+        }
+      ],
+      "builds": [
+        {
+          "extension": "memcached",
+          "phpSeries": "8.5",
+          "version": "3.4.0",
+          "url": "https://windows.php.net/downloads/pecl/releases/memcached/3.4.0/php_memcached-3.4.0-8.5-nts-vs17-x64.zip"
+        },
+        {
+          "extension": "memcached",
+          "phpSeries": "8.3",
+          "version": "3.3.0",
+          "url": "https://windows.php.net/downloads/pecl/releases/memcached/3.3.0/php_memcached-3.3.0-8.3-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "memcached",
+          "phpSeries": "8.2",
+          "version": "3.3.0",
+          "url": "https://windows.php.net/downloads/pecl/releases/memcached/3.3.0/php_memcached-3.3.0-8.2-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "memcached",
+          "phpSeries": "8.1",
+          "version": "3.2.0",
+          "url": "https://windows.php.net/downloads/pecl/releases/memcached/3.2.0/php_memcached-3.2.0-8.1-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "memcached",
+          "phpSeries": "8.0",
+          "version": "3.2.0",
+          "url": "https://windows.php.net/downloads/pecl/releases/memcached/3.2.0/php_memcached-3.2.0-8.0-nts-vs16-x64.zip"
+        },
+        {
+          "extension": "memcached",
+          "phpSeries": "7.4",
+          "version": "3.2.0",
+          "url": "https://windows.php.net/downloads/pecl/releases/memcached/3.2.0/php_memcached-3.2.0-7.4-nts-vc15-x64.zip"
+        }
+      ]
+    },
+    {
+      "id": "microsoft-visual-c-runtime",
+      "kind": "platform-prerequisite",
+      "versions": [
+        "evergreen-unpinned"
+      ],
+      "distribution": "prerequisite-link-only",
+      "softwareLicense": "LicenseRef-Microsoft-Visual-C++-Runtime",
+      "softwareLicenseSources": [
+        "https://aka.ms/vs/17/release/vc_redist.x64.exe",
+        "https://aka.ms/vs/18/release/vc_redist.x64.exe"
+      ],
+      "binaryTerms": [
+        "Source code only points users to Microsoft redistributable URLs; vcruntime does not download/extract/bundle/install VC runtimes.",
+        "Microsoft limits redistribution to licensed Visual Studio users subject to its license terms. Evergreen URLs are unpinned prerequisites, not audited artifacts."
+      ],
+      "requiredActions": [
+        "Retain separate proprietary prerequisite classification; review applicable Microsoft terms before bundling any redistributable or runtime binaries."
+      ],
+      "evidenceStatus": "upstream-license-only",
+      "archiveEvidence": [],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "2026-10-21 follow-up: docs/opensource-audit/2026-10-21/runtime-catalog-followup.md records the current direct-vendor/manual download boundary and version-specific evidence; future project redistribution remains separately conditioned."
+      ],
+      "primaryEvidence": [
+        {
+          "id": "microsoft-vc-redist-redistribution",
+          "url": "https://learn.microsoft.com/en-us/cpp/windows/redistributing-visual-cpp-files",
+          "status": "retrieved",
+          "sha256": "824f3741adc61475cb67a407c18b64b94e6a63688e73cc2e5d89c34a46b687cf",
+          "bytes": 60516,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/microsoft-vc-redist-redistribution.txt"
+        }
+      ]
+    },
+    {
+      "id": "microsoft-webview2-runtime",
+      "kind": "platform-prerequisite",
+      "versions": [
+        "evergreen-unpinned"
+      ],
+      "distribution": "bootstrapper-download",
+      "softwareLicense": "LicenseRef-Microsoft-WebView2-Runtime",
+      "softwareLicenseSources": [
+        "https://developer.microsoft.com/en-us/microsoft-edge/webview2/",
+        "https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution"
+      ],
+      "binaryTerms": [
+        "Desktop uses the browser bootstrap strategy and discovers an installed Microsoft-managed Runtime; recovery points to that installation rather than copying it.",
+        "Microsoft supports separate Evergreen deployment; any future fixed/offline-runtime redistribution requires the applicable Microsoft terms. Runtime binaries are not relicensed by the desktop source license."
+      ],
+      "requiredActions": [
+        "Retain separate proprietary prerequisite classification; review applicable Microsoft terms before bundling any redistributable or runtime binaries."
+      ],
+      "evidenceStatus": "upstream-license-only",
+      "archiveEvidence": [],
+      "redistributionStatus": "requires-review",
+      "notes": [
+        "2026-10-21 follow-up: docs/opensource-audit/2026-10-21/runtime-catalog-followup.md records the current direct-vendor/manual download boundary and version-specific evidence; future project redistribution remains separately conditioned."
+      ],
+      "primaryEvidence": [
+        {
+          "id": "microsoft-webview2-distribution",
+          "url": "https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution",
+          "status": "retrieved",
+          "sha256": "237a5f338725985aa1e54f2fa079486f56eb9b45d855fb356e5c063d17c385d0",
+          "bytes": 91524,
+          "evidencePath": "build/verification/runtime-licenses-dependencies-20261021/runtimes/primary/microsoft-webview2-distribution.txt"
+        }
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "id": "pgvector-published-license-omission",
+      "component": "pgvector-project-assets",
+      "severity": "high",
+      "reason": "Historical finding: the original four project-hosted ZIPs omitted the upstream notice. The already published assets were replaced on 2026-10-21 with exact-license repairs and verified public downloads.",
+      "requiredAction": "Closed for the four corrected hashes recorded in publications; retain complete upstream license and matching checksums in future copies.",
+      "status": "resolved-published",
+      "resolution": {
+        "summary": "Four public ZIPs and four matching sidecars verified after replacement; all 172 original members unchanged.",
+        "publicationId": "pgvector-0.8.6-license-repair-20261021",
+        "evidenceReference": "https://github.com/thayronarrais/laraenv/releases/tag/pgvector-0.8.6"
+      }
+    },
+    {
+      "id": "redis-binary-notice-omission",
+      "component": "redis-windows-fork",
+      "severity": "high",
+      "reason": "Historical ZIP omission plus newly confirmed composite terms: fork/core BSD-3-Clause, dlfcn-win32 LGPL-2.1-or-later, SipHash CC0 and compiled-module notices. The binary ZIP itself remains unchanged upstream.",
+      "requiredAction": "Local notice gap closed for the exact reviewed hash. Before project Redis binary redistribution, effectively deliver source/work/recipes and notices through a permitted LGPL section 6 route.",
+      "status": "resolved-exact-local-notices; source-delivery-before-project-redistribution",
+      "resolution": {
+        "summary": "Five original notices preserved plus 100 exact supplemental texts; complete identified Windows source/projects and section 6(a) route prepared. Original manifests and user data remain intact. No binary redistribution was performed.",
+        "evidenceReference": "docs/opensource-audit/2026-10-21/redis-license-closure.md"
+      }
+    },
+    {
+      "id": "pecl-companion-evidence-incomplete",
+      "component": "pecl-mongodb,pecl-imagick,pecl-memcached",
+      "severity": "high",
+      "reason": "Representative ZIPs carry notices but do not establish every companion/static library license and source obligation.",
+      "requiredAction": "Preserve all original legal material; establish exact companion versions, complete notices and any source/relinking obligations before redistributing.",
+      "status": "exact-notice-gaps-mitigated; imagick-source-relink-and-provenance-open",
+      "resolution": {
+        "summary": "Existing seven MongoDB and one memcached notices unchanged. Imagick adds 69 hash-bound texts for 166 matched SDK companions. Exact patched-source/relink route, X11/Xext and separate Adobe attribution still prevent project Imagick mirror clearance; current direct supplier downloads remain separate.",
+        "evidenceReference": "docs/opensource-audit/2026-10-21/imagick-source-route.md"
+      }
+    },
+    {
+      "id": "copyleft-redistribution-source-route",
+      "component": "mysql-community,cmder-full,cmder-mini",
+      "severity": "high",
+      "reason": "Binary redistribution can require matching corresponding source; core notice preservation is insufficient.",
+      "requiredAction": "Establish and package a compliant exact-source route before bundling or mirroring; keep current upstream downloads classified separately.",
+      "status": "conditional-before-project-redistribution",
+      "resolution": {
+        "summary": "Current supplier downloads are outside desktop binary redistribution. Exact Cmder component versions and initial Clink/Git source artifacts were recovered; a future mirror must deliver a complete matching source route.",
+        "evidenceReference": "docs/opensource-audit/2026-10-21/runtime-catalog-followup.md"
+      }
+    },
+    {
+      "id": "manual-moving-page-version-mismatch",
+      "component": "postgresql-edb,apache-lounge",
+      "severity": "medium",
+      "reason": "Manual moving pages currently advertise newer versions than the catalog; exact user-supplied archives have not been reviewed.",
+      "requiredAction": "Inspect the exact selected archive and companion terms; do not treat latest-page evidence as proof for catalog pins.",
+      "status": "conditional-on-selected-user-archive",
+      "resolution": {
+        "summary": "Retained for the exact user-selected Apache/EDB archive; moving landing pages and an HTML response are not ZIP evidence. No project-hosted manual runtime was added.",
+        "evidenceReference": "docs/opensource-audit/2026-10-21/runtime-catalog-followup.md"
+      }
+    },
+    {
+      "id": "php-catalog-archives-unavailable",
+      "component": "php-through-8.5,php-8.6-beta",
+      "severity": "medium",
+      "reason": "Historical non-archive URLs returned 404. Both exact PHP 8.4.25 and 8.6.0beta3 Windows ZIPs were retrieved from official archives, inspected without execution and recorded by hash; catalog URLs now use those archives.",
+      "requiredAction": "Closed for these two exact archive availability/license-evidence gaps. Keep complete legal texts/SBOM; this does not clear all PHP patches or companions for future project redistribution.",
+      "status": "resolved-exact-official-archives",
+      "resolution": {
+        "summary": "Same patches recovered; both ZIPs provide license.txt, README.md, readme-redist-bins.txt and upstream SBOM data.",
+        "evidenceReference": "docs/opensource-audit/2026-10-21/runtime-catalog-followup.md"
+      }
+    },
+    {
+      "id": "representative-is-not-exhaustive",
+      "component": "all-runtimes",
+      "severity": "medium",
+      "reason": "Archive notice presence does not prove complete compiled/companion dependency coverage or authenticity; several versions were not downloaded.",
+      "requiredAction": "Do a build-specific binary and source-provenance review before new bundling/mirroring. Review generated warnings as qualifications, not unknown-license waivers.",
+      "status": "retained-review-boundary",
+      "resolution": {
+        "summary": "Review boundary retained for future project bundling/mirroring. New PHP SBOMs and Node/Cmder/Caddy checksum matches add scoped evidence, without clearing all runtime companions.",
+        "evidenceReference": "docs/opensource-audit/2026-10-21/runtime-catalog-followup.md"
+      }
+    }
+  ],
+  "publications": [
+    {
+      "id": "pgvector-0.8.6-license-repair-20261021",
+      "repository": "thayronarrais/laraenv",
+      "releaseId": 371369603,
+      "tag": "pgvector-0.8.6",
+      "releaseUrl": "https://github.com/thayronarrais/laraenv/releases/tag/pgvector-0.8.6",
+      "verifiedAt": "2026-10-21T10:15:19.0068664Z",
+      "verificationMethod": "anonymous-public-download-and-api-digest",
+      "license": {
+        "path": "share/doc/pgvector/LICENSE",
+        "sha256": "6bba9ebeb73e27477463b05e5ef1bf303bccbddb3db9bbc95905d351604d6a87",
+        "bytes": 1104
+      },
+      "artifacts": [
+        {
+          "version": "0.8.6-pg18",
+          "name": "pgvector-0.8.6-pg18-win-x64.zip",
+          "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg18-win-x64.zip",
+          "sha256": "f1a3f2adabcdd9c5cb99a338cd2cce94f471c14af0d4d6a80bb0bf25c8591fba",
+          "bytes": 159619,
+          "assetId": 662100821,
+          "originalSha256": "2ccd5521e2850ab49fcdb3c6610e011c7b7d67bb8cc3a521dd6603353e0c4f7e",
+          "originalEntriesPreserved": 43,
+          "checksum": {
+            "name": "pgvector-0.8.6-pg18-win-x64.zip.sha256",
+            "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg18-win-x64.zip.sha256",
+            "sha256": "2fd7e061d1d741335318cb42253e03564186015c88c3c5631d7b046f6c208b74",
+            "bytes": 98,
+            "assetId": 662100827
+          }
+        },
+        {
+          "version": "0.8.6-pg17",
+          "name": "pgvector-0.8.6-pg17-win-x64.zip",
+          "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg17-win-x64.zip",
+          "sha256": "28e08226af4417c3a77da1df6f72a4314ea98c832db069a0cd3d9e1c8d11b99b",
+          "bytes": 159825,
+          "assetId": 662100825,
+          "originalSha256": "ff18a856d0e047609822bf228161595328548b65df5806970661864a594021ac",
+          "originalEntriesPreserved": 43,
+          "checksum": {
+            "name": "pgvector-0.8.6-pg17-win-x64.zip.sha256",
+            "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg17-win-x64.zip.sha256",
+            "sha256": "a93d6aaab96868fe45e04312de14dfb01f060f1652e9d9818a0315c1d933c7b7",
+            "bytes": 98,
+            "assetId": 662100826
+          }
+        },
+        {
+          "version": "0.8.6-pg16",
+          "name": "pgvector-0.8.6-pg16-win-x64.zip",
+          "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg16-win-x64.zip",
+          "sha256": "3ba886dcda520a1998d13db6afcfb503e892df1b3da68943526fea1c1e64bb34",
+          "bytes": 159711,
+          "assetId": 662100822,
+          "originalSha256": "d3d09bca2941b90bfd3a41937074ea79f1abedbe9bc3dc551eeede6ed177d4b3",
+          "originalEntriesPreserved": 43,
+          "checksum": {
+            "name": "pgvector-0.8.6-pg16-win-x64.zip.sha256",
+            "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg16-win-x64.zip.sha256",
+            "sha256": "0ac4344c28f04dcb42dc825a94c41b25cb547ebc2b8d6601aec0076a1c0be2e6",
+            "bytes": 98,
+            "assetId": 662100854
+          }
+        },
+        {
+          "version": "0.8.6-pg15",
+          "name": "pgvector-0.8.6-pg15-win-x64.zip",
+          "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg15-win-x64.zip",
+          "sha256": "690933153c14d49e570db4773fba94517361e878b70f89c43bde554a6a05d0b1",
+          "bytes": 159701,
+          "assetId": 662100858,
+          "originalSha256": "50cda184ea71b5401fc48e962bbf9876dda52d56ab9a5466010d69a38f04102b",
+          "originalEntriesPreserved": 43,
+          "checksum": {
+            "name": "pgvector-0.8.6-pg15-win-x64.zip.sha256",
+            "url": "https://github.com/thayronarrais/laraenv/releases/download/pgvector-0.8.6/pgvector-0.8.6-pg15-win-x64.zip.sha256",
+            "sha256": "509fb37df661a6738ce5b8f89e3b29c832ebbea609906d10207ee8054d4e63af",
+            "bytes": 98,
+            "assetId": 662100853
+          }
+        }
+      ],
+      "evidencePath": "build/verification/runtime-publication-20261021/public-verification.json",
+      "limits": [
+        "Original DLL/SQL/control bytes are preserved. No payload was executed.",
+        "This closes the published upstream notice omission, not source-to-binary reproducibility or ABI testing."
+      ]
+    }
+  ],
+  "peclNoticeRegistry": {
+    "path": "internal/installer/pecl_notices/manifest.json",
+    "sha256": "0afbfee9f3e15a191b3d8483e59844ad13a524e4d7fd7543d6782b72201c265e"
+  },
+  "catalogNoticeRegistry": {
+    "path": "internal/installer/runtime_notices/manifest.json",
+    "sha256": "baa45a08e57a6c8b458885ca5aa1945546d7096d47a0443707eb07965092dd68"
+  }
+}

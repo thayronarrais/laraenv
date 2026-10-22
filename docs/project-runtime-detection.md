@@ -32,8 +32,6 @@ Select a row on Projects to open its details panel. The PHP and Node selectors d
 
 PHP pools are shared by version, not created as a separate application instance for each project. The Projects header shows the shared web-server state; project Dev servers and queue workers have their own controls.
 
-![Project runtime selectors showing detected versions, sources and requirements](screenshots/project-runtimes.png)
-
 ## Site Doctor contract
 
 `Project.phpRuntime` and `Project.nodeRuntime` expose:

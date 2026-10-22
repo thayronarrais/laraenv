@@ -1,0 +1,379 @@
+{
+  "schemaVersion": 1,
+  "include": {
+    "files": [
+      ".gitattributes",
+      ".gitignore",
+      "README.md",
+      "CONTRIBUTING.md",
+      "SECURITY.md",
+      "RELEASING.md",
+      "LICENSE",
+      "NOTICE",
+      "THIRD_PARTY_NOTICES.txt",
+      "go.mod",
+      "go.sum",
+      "wails.json",
+      "build/appicon.png",
+      "docs/deployment-database-access.md",
+      "docs/desktop-offline.md",
+      "docs/https-runtime-trust.md",
+      "docs/images/ssh-manager.png",
+      "docs/licensing.md",
+      "docs/mcp.md",
+      "docs/opensource-audit/2026-10-21/README.md",
+      "docs/opensource-audit/2026-10-21/imagick-license-closure.md",
+      "docs/opensource-audit/2026-10-21/imagick-source-route.md",
+      "docs/opensource-audit/2026-10-21/redis-imagick-verification.md",
+      "docs/opensource-audit/2026-10-21/redis-license-closure.md",
+      "docs/opensource-audit/2026-10-21/runtime-catalog-followup.md",
+      "docs/opensource-audit/2026-10-21/runtime-companions-followup.md",
+      "docs/opensource-audit/2026-10-21/runtime-dependency-verification.md",
+      "docs/opensource-audit/2026-10-21/runtime-licenses.md",
+      "docs/opensource-audit/2026-10-21/runtime-publication-verification.md",
+      "docs/opensource-audit/2026-10-21/verification.md",
+      "docs/project-runtime-detection.md",
+      "docs/projects-workspace.md",
+      "docs/releases/0.5.4.md",
+      "docs/releases/0.5.5.md",
+      "docs/releases/0.5.6.md",
+      "docs/releases/0.5.7.md",
+      "docs/site-doctor.md",
+      "docs/source-control.md",
+      "docs/ssh-trust-and-passwords.md",
+      "docs/workspace-documents.md",
+      "docs/workspace.md",
+      "docs/development.md",
+      "docs/source-snapshot.md",
+      "docs/command-center.gif",
+      "docs/dashboard.jpg",
+      "docs/deployments.jpg",
+      "docs/historical-media.md",
+      "docs/icon.png",
+      "docs/projects.jpg",
+      "docs/screenshots/agent-map.png",
+      "docs/screenshots/agent-terminal.png",
+      "docs/screenshots/appearance.png",
+      "docs/screenshots/baner1.png",
+      "docs/screenshots/baner2.png",
+      "docs/screenshots/baner3.png",
+      "docs/screenshots/baner4.png",
+      "docs/screenshots/baner5.png",
+      "docs/screenshots/baner6.png",
+      "docs/screenshots/dashboard.png",
+      "docs/screenshots/deployments.png",
+      "docs/screenshots/project-actions.png",
+      "docs/screenshots/project-commands.png",
+      "docs/screenshots/project-runtimes.png",
+      "docs/screenshots/projects-workspace.png",
+      "docs/screenshots/site-doctor-overview.png",
+      "docs/screenshots/site-doctor.png",
+      "docs/screenshots/ssh-manager.png",
+      "docs/screenshots/workspace-files.png",
+      "docs/screenshots/workspace.png",
+      "docs/ssh.jpg",
+      "docs/terminal.jpg",
+      "docs/themes.jpg"
+    ],
+    "prefixes": [
+      ".github/workflows/",
+      "cmd/",
+      "internal/",
+      "frontend/",
+      "langs/",
+      "build/windows/",
+      "third_party/",
+      "tools/licenses/",
+      "tools/langs/",
+      "tools/screenshots/",
+      "tools/rootprobe/",
+      "tools/ci/",
+      "tools/source-snapshot/"
+    ],
+    "rootExtensions": [
+      ".go"
+    ]
+  },
+  "exclude": {
+    "files": [
+      {
+        "path": "SOURCE_SNAPSHOT_MANIFEST.json",
+        "reason": "Generated snapshot integrity artifact; regenerated from the selected payloads on every export"
+      },
+      {
+        "path": "docs/2026-10-19-laraenv-after-fixes.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/2026-10-19-windows-sandbox-comparison.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/competitive-validation-2026-10-19.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/desktop-offline-verification-2026-10-19.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/issue-audit-2026-10-08.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/opensource-audit/2026-10-19/README.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/opensource-audit/2026-10-19/dependency-summary.json",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/opensource-audit/2026-10-19/inventory.json",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/opensource-audit/2026-10-19/remediation.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/opensource-readiness-2026-10-19.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/publication-plan-0.5.4.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/publication-plan-0.5.5.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/publication-plan-0.5.6.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/publication-plan-0.5.7.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/releases/0.5.5-verification.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/releases/0.5.6-verification.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/releases/0.5.7-verification.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/2026-09-10-i18n-decision-log.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/2026-09-10-i18n-sandbox-checklist.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/concept_office.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/plans/2026-06-06-custom-dev-command.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/plans/2026-07-24-tabby-terminal-look.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/plans/2026-08-30-screenshot-harness.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/plans/2026-09-04-agent-sessions-usage.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/plans/2026-09-07-adopted-agent-sessions.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/plans/2026-09-08-agent-auto-switch.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/plans/2026-09-09-caddy-webserver.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/plans/2026-09-10-i18n-public-catalogue.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/plans/2026-10-08-workspace-documents.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/plans/2026-10-08-workspace-navigation-source-control.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/plans/2026-10-11-project-runtime-detection.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/plans/2026-10-11-site-doctor.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/plans/2026-10-12-projects-workspace.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/plans/2026-10-15-agent-map.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/plans/2026-10-19-competitive-improvements.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/plans/2026-10-19-desktop-offline.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/plans/2026-10-21-desktop-license-dependencies.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/plans/2026-10-21-redis-imagick-licenses.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/plans/2026-10-21-runtime-licenses-dependencies.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/plans/2026-10-21-runtime-publication.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/specs/2026-06-06-custom-dev-command-design.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/specs/2026-07-24-tabby-terminal-look-design.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/specs/2026-08-30-screenshot-harness-design.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/specs/2026-09-04-agent-provider-discovery.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/specs/2026-09-07-adopted-agent-sessions-design.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/specs/2026-09-08-agent-auto-switch-design.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/specs/2026-09-09-caddy-webserver-design.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/specs/2026-09-10-i18n-public-catalogue-design.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/specs/2026-09-10-laraenv-office-design.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/specs/2026-10-06-local-mcp-design.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/specs/2026-10-08-workspace-documents-design.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/specs/2026-10-08-workspace-navigation-source-control-design.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/specs/2026-10-11-project-runtime-detection-design.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/specs/2026-10-11-site-doctor-design.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/specs/2026-10-15-agent-map-design.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/specs/2026-10-19-competitive-improvements-design.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/superpowers/specs/2026-10-19-desktop-offline-design.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "docs/terminal-comfort-audit.md",
+        "reason": "Historical internal planning, inventory or verification report; public usage and current legal evidence are retained separately"
+      },
+      {
+        "path": "LaraEnv-0.1.2.msi.sha256",
+        "reason": "Stale generated checksum/cache; not a source build input"
+      },
+      {
+        "path": "frontend/package.json.md5",
+        "reason": "Stale generated checksum/cache; not a source build input"
+      },
+      {
+        "path": "frontend/public/packs/studio/room.jpeg",
+        "reason": "Unused concept asset outside the desktop source scope"
+      },
+      {
+        "path": "frontend/public/packs/studio/room2.jpeg",
+        "reason": "Unused concept asset outside the desktop source scope"
+      },
+      {
+        "path": "RELEASE-NOTES-DRAFT.md",
+        "reason": "Historical draft; versioned public release notes are retained"
+      },
+      {
+        "path": "release-notes.md",
+        "reason": "Historical draft; versioned public release notes are retained"
+      }
+    ],
+    "prefixes": [
+      {
+        "path": "docs/superpowers/",
+        "reason": "Internal agent plans and specifications"
+      },
+      {
+        "path": "docs/opensource-audit/2026-10-19/",
+        "reason": "Historical local audit containing operator paths"
+      },
+      {
+        "path": "docs/opensource-audit/2026-10-21/public-snapshot",
+        "reason": "Private source-candidate preparation record"
+      },
+      {
+        "path": "tools/benchmarks/",
+        "reason": "Internal benchmark and sandbox comparison tooling outside desktop build closure"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"hook_event_name":"SubagentStart","session_id":"root-1","agent_id":"child-1","agent_type":"worker","model":"synthetic-model","turn_id":"turn-1","prompt":"PRIVATE_SENTINEL","messages":["PRIVATE_SENTINEL"]}

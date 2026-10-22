@@ -107,6 +107,19 @@ export function check(files, doNotTranslate = {}) {
   for (const key of Object.keys(doNotTranslate)) {
     if (!src.strings.has(key)) {
       errors.push(`${MANIFEST_FILE}: protected key "${key}" does not exist in ${FALLBACK}.json`);
+      continue;
+    }
+    // English is editable with the public source and must retain runtime
+    // fragments too; the locale comparison below deliberately skips it.
+    const spec = doNotTranslate[key];
+    for (const substring of Array.isArray(spec?.substrings) ? spec.substrings : []) {
+      if (!src.strings.get(key).includes(substring)) {
+        errors.push(
+          `${FALLBACK}.json: ${key} is missing required text "${substring}" — ` +
+            `the application matches this exact fragment at runtime` +
+            (spec?.reason ? ` (${spec.reason})` : ""),
+        );
+      }
     }
   }
 

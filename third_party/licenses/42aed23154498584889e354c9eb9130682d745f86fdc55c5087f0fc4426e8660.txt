@@ -1,0 +1,13 @@
+/*
+
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+Module Name:
+
+winapifamily.h
+
+Abstract:
+
+Master include file for API family partitioning.
+
+*/

@@ -1,0 +1,161 @@
+name: Desktop checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: desktop-checks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  windows:
+    name: Windows desktop source build and tests
+    runs-on: windows-2025
+    timeout-minutes: 40
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      CI: 'true'
+      GOTOOLCHAIN: local
+      GOWORK: 'off'
+      GOFLAGS: -mod=readonly
+      CGO_ENABLED: '0'
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+      npm_config_audit: 'false'
+      npm_config_fund: 'false'
+
+    steps:
+      - name: Check out the source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          set-safe-directory: false
+          fetch-depth: 1
+
+      - name: Select Go 1.26.10
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: '1.26.10'
+          cache: false
+
+      - name: Select Node 24 LTS
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.22.1'
+          package-manager-cache: false
+
+      - name: Provision locked build dependencies
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $true
+          $env:LARAENV_ROOT = Join-Path $env:RUNNER_TEMP 'laraenv-community-ci/data'
+          $env:CI_TOOLS = Join-Path $env:RUNNER_TEMP 'laraenv-community-ci/tools'
+          "LARAENV_ROOT=$env:LARAENV_ROOT" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          "CI_TOOLS=$env:CI_TOOLS" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          New-Item -ItemType Directory -Path $env:LARAENV_ROOT, $env:CI_TOOLS -Force | Out-Null
+          if ((go env GOVERSION) -ne 'go1.26.10') { throw 'Unexpected Go toolchain' }
+          node -e "if(process.version !== 'v24.22.1') throw Error('Unexpected Node version')"
+          go mod download
+          # Warm expanded graph metadata before the later offline notice check.
+          go list -mod=readonly -m -json all | Out-Null
+          go mod verify
+          npm ci --prefix frontend --ignore-scripts --no-audit --no-fund
+          npm ci --prefix tools/screenshots --ignore-scripts --no-audit --no-fund
+          # Build the CLI from this repository's pinned module graph.
+          go build -mod=readonly -o "$env:CI_TOOLS/wails.exe" github.com/wailsapp/wails/v2/cmd/wails
+
+      - name: Verify pinned WiX source and package inputs
+        run: |
+          $policy = Get-Content -LiteralPath tools/licenses/policy.json -Raw | ConvertFrom-Json
+          if ($policy.installer.version -ne '5.0.2') { throw 'Review WiX provisioning before changing its version' }
+          $archive = $policy.installer.sourceArchive
+          if ((Get-FileHash -LiteralPath $archive.path -Algorithm SHA256).Hash.ToLowerInvariant() -ne $archive.sha256) { throw 'WiX source hash mismatch' }
+          $expected = @('WixToolset.UI.wixext', 'WixToolset.Util.wixext')
+          if ($policy.installer.packages.Count -ne $expected.Count) { throw 'Unexpected WiX package set' }
+          foreach ($name in $expected) {
+            $matches = @($policy.installer.packages | Where-Object { $_.name -ceq $name })
+            if ($matches.Count -ne 1) { throw "Missing or duplicate WiX package: $name" }
+            $package = $matches[0]
+            $id = $name.ToLowerInvariant()
+            $destination = Join-Path $env:CI_TOOLS "$id.5.0.2.nupkg"
+            # Read official NuGet bytes only; do not install or execute WiX.
+            Invoke-WebRequest -Uri "https://api.nuget.org/v3-flatcontainer/$id/5.0.2/$id.5.0.2.nupkg" -OutFile $destination
+            if ((Get-FileHash -LiteralPath $destination -Algorithm SHA256).Hash.ToLowerInvariant() -ne $package.sha256) { throw "WiX package hash mismatch: $name" }
+            $zip = [System.IO.Compression.ZipFile]::OpenRead($destination)
+            try {
+              $entry = $zip.GetEntry("wixext5/$name.dll")
+              if ($null -eq $entry) { throw "Missing WiX extension DLL: $name" }
+              $stream = $entry.Open()
+              try {
+                if ((Get-FileHash -InputStream $stream -Algorithm SHA256).Hash.ToLowerInvariant() -ne $package.dllSha256) { throw "WiX DLL hash mismatch: $name" }
+              } finally { $stream.Dispose() }
+            } finally { $zip.Dispose() }
+          }
+
+      - name: Bootstrap bindings, build frontend and compile Windows desktop
+        env:
+          GOPROXY: 'off'
+          GOSUMDB: 'off'
+          npm_config_offline: 'true'
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $true
+          # Reuse the locked npm ci tree. The wrapper restores wails.json exactly
+          # and still builds bindings, Monaco/legal assets, tsc/Vite and Go.
+          node tools/ci/build-desktop.mjs "$env:CI_TOOLS/wails.exe"
+
+      - name: Test frontend and lint hooks
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $true
+          npm --prefix frontend test
+          npm --prefix frontend run lint
+
+      - name: Check offline notices and installer license
+        env:
+          GOPROXY: 'off'
+          GOSUMDB: 'off'
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $true
+          node --test tools/licenses/*.test.mjs frontend/scripts/vendor-legal.node-test.mjs tools/ci/*.test.mjs tools/source-snapshot/*.test.mjs
+          # Required evidence and committed bytes remain exact; only installed
+          # optional npm build-tool evidence may vary with the Windows image.
+          node tools/ci/check-notices.mjs
+          node tools/licenses/installer-rtf.mjs --check
+
+      - name: Test Go packages with the complete embedded frontend
+        env:
+          GOPROXY: 'off'
+          GOSUMDB: 'off'
+        run: go test -mod=readonly ./...
+
+      - name: Compile the Windows and Linux deployment TUI
+        env:
+          GOPROXY: 'off'
+          GOSUMDB: 'off'
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $true
+          go build -mod=readonly -o "$env:CI_TOOLS/deploy-tui-windows-amd64.exe" ./cmd/deploy-tui
+          $env:GOOS = 'linux'
+          $env:GOARCH = 'amd64'
+          go build -mod=readonly -o "$env:CI_TOOLS/deploy-tui-linux-amd64" ./cmd/deploy-tui
+
+      - name: Test the browser-free screenshot harness
+        # Browser/recording integrations also need Chrome, Chromium and ffmpeg;
+        # this community job provisions none of those optional external tools.
+        run: >-
+          npm --prefix tools/screenshots test --
+          __tests__/base.test.mjs __tests__/clips.test.mjs
+          __tests__/scenarios.test.mjs __tests__/serve.test.mjs
+          __tests__/state.test.mjs __tests__/tours.test.mjs
+
+      - name: Verify dependency and notice inputs stayed unchanged
+        run: >-
+          git diff --exit-code -- go.mod go.sum wails.json
+          frontend/package.json frontend/package-lock.json
+          tools/screenshots/package.json tools/screenshots/package-lock.json
+          LICENSE NOTICE THIRD_PARTY_NOTICES.txt third_party tools/licenses
+          build/windows/installer/LaraEnv-License.rtf

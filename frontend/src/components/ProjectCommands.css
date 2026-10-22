@@ -1,0 +1,17 @@
+.project-commands-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
+.project-commands .project-commands-heading h3 { margin: 0; }
+.project-commands button { display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-height: 30px; padding: 5px 8px; border: 1px solid var(--projects-control-border); border-radius: 5px; background: var(--projects-surface-raised); color: var(--c-text); font-size: 11px; }
+.project-commands button:hover { background: var(--projects-surface-hover); }
+.project-commands button:disabled { opacity: .45; cursor: not-allowed; }
+.project-commands .project-commands-refresh { min-height: 24px; padding: 4px; border-color: transparent; background: transparent; color: var(--projects-muted); }
+.project-commands label { display: block; margin-bottom: 5px; color: var(--projects-muted); font-size: 11px; }
+.project-commands-controls { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 7px; }
+.project-commands select, .project-commands input { width: 100%; min-width: 0; min-height: 30px; padding: 5px 7px; border: 1px solid var(--projects-control-border); border-radius: 5px; background: var(--projects-surface-raised); color: var(--c-text); font-size: 11px; }
+.project-commands input::placeholder { color: var(--projects-subtle); }
+.project-commands select:focus-visible, .project-commands input:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
+.project-commands-preview { display: block; margin-top: 6px; color: var(--projects-secondary); font-size: 10px; line-height: 1.5; overflow-wrap: anywhere; white-space: pre-wrap; }
+.project-commands-custom { margin-top: 12px; }
+.project-commands-custom > button { margin-top: 7px; }
+.project-commands-message, .project-commands-error, .project-commands-hint { color: var(--projects-muted); font-size: 11px; line-height: 1.6; }
+.project-commands-error button { margin-top: 6px; }
+.project-commands-hint { margin-top: 10px; font-size: 10px; }

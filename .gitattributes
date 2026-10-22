@@ -1,5 +1,42 @@
-# Translation catalogues are diffed and edited by contributors on every OS;
-# a mixed-line-ending file (one CRLF, one LF) makes every line in a PR look
-# changed even when only one string was. Pin them to LF so git normalizes on
-# checkin regardless of the editor or platform that produced the edit.
+# Translation catalogues use LF across contributor platforms.
 langs/*.json text eol=lf
+
+# Embedded deployment scripts execute on Unix even when built on Windows.
+*.sh text eol=lf
+
+# Reproducible notice digests across Windows and Unix checkouts.
+# Exact upstream license/archive bytes must never undergo newline conversion.
+/third_party/licenses/** -text -whitespace
+/third_party/sources/** -text
+/tools/licenses/notices/** -text -whitespace
+/tools/licenses/sources/** -text
+/internal/installer/embedded/composer.phar -text
+/internal/installer/licenses/** -text -whitespace
+/internal/installer/pecl_notices/*.txt -text -whitespace
+/internal/installer/pecl_notices/*.json text eol=lf
+/internal/installer/runtime_notices/*.txt -text -whitespace
+/internal/installer/runtime_notices/*.json text eol=lf
+/THIRD_PARTY_NOTICES.txt text eol=lf -whitespace
+/third_party/dependencies.json text eol=lf
+/LICENSE text eol=lf
+/NOTICE text eol=lf
+/go.mod text eol=lf
+/go.sum text eol=lf
+/frontend/package.json text eol=lf
+/frontend/package-lock.json text eol=lf
+/tools/screenshots/package.json text eol=lf
+/tools/screenshots/package-lock.json text eol=lf
+/internal/installer/catalog.go text eol=lf
+/internal/installer/pecl.go text eol=lf
+/internal/installer/installer.go text eol=lf
+/internal/installer/*_legal.go text eol=lf
+/internal/vcruntime/vcruntime.go text eol=lf
+/internal/webviewruntime/runtime_windows.go text eol=lf
+/internal/webviewruntime/signature_windows.go text eol=lf
+/tools/licenses/*.mjs text eol=lf
+/tools/licenses/*.json text eol=lf
+/tools/source-snapshot/*.mjs text eol=lf
+/tools/source-snapshot/*.json text eol=lf
+/tools/ci/*.mjs text eol=lf
+/.github/workflows/*.yml text eol=lf
+/build/windows/installer/LaraEnv-License.rtf text eol=lf

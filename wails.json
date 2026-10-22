@@ -1,0 +1,21 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "LaraEnv",
+  "outputfilename": "LaraEnv",
+  "frontend:install": "npm ci",
+  "frontend:build": "npm run build",
+  "frontend:dev:watcher": "npm run dev",
+  "frontend:dev:serverUrl": "auto",
+  "wailsjsdir": "./frontend",
+  "author": {
+    "name": "thayron",
+    "email": "thayron.arrais@gmail.com"
+  },
+  "info": {
+    "companyName": "LaraEnv",
+    "productName": "LaraEnv",
+    "productVersion": "0.5.7",
+    "copyright": "Copyright 2026 Thayron Arrais",
+    "comments": "All-in-one local PHP development environment for Windows: PHP, Composer, web servers and databases from a single GUI."
+  }
+}

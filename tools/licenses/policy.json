@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "goTags": ["desktop", "production", "wv2runtime.browser"],
+  "installer": {
+    "version": "5.0.2",
+    "sourceCommit": "aa65968c419420d32e3e1b647aea0082f5ca5b78",
+    "license": "MS-RL",
+    "notices": ["wix-5.0.2-LICENSE.txt"],
+    "sourceArchive": {"path": "tools/licenses/sources/wix-5.0.2-source.zip", "sha256": "ac593bf21864d9ad4b44720a702dae3651a51d199cfd5aee080aaa1286ab72f1", "outputPath": "third_party/sources/wix-5.0.2-source.zip", "url": "https://codeload.github.com/wixtoolset/wix/zip/aa65968c419420d32e3e1b647aea0082f5ca5b78"},
+    "packages": [
+      {"name": "WixToolset.UI.wixext", "sha256": "5ef2c707614b9f70b6bbadd2d4abcb4124efee215e9b16bfbc80113079a604c7", "dllSha256": "5ce7f958b6a2b57bcb98c19615c5a3da46976a6e78a6af055fdef99e9e9e8f06", "msiBinary": "WixUiCa_X64"},
+      {"name": "WixToolset.Util.wixext", "sha256": "dda1cc1b4d3b2305b1246f167c6af6fcded5000be84b3bbff3dda4f442bf4740", "dllSha256": "c76cd00e8800cf785ff3cffd2ed3475915b487c7a3d441a266175cdc326912eb", "msiBinary": "Wix4UtilCA_X64"}
+    ]
+  },
+  "goOverrides": {
+    "github.com/mattn/go-localereader@v0.0.1": {
+      "license": "MIT",
+      "evidence": [{"path": "README.md", "sha256": "0c5c52517f13becd7a1e1234f1e8a5ba370f5a5078cee9ac058c2d534e267fcb"}],
+      "notices": ["go-localereader-NOTICE.txt"],
+      "rationale": "The exact v0.0.1 README declares MIT and identifies the author; preserve it and explicitly distinguish supplemental standard terms from an upstream LICENSE. No copyright year inferred."
+    }
+  },
+  "composer": {
+    "path": "internal/installer/embedded/composer.phar",
+    "version": "2.8.5",
+    "sha256": "9cef18212e222351aeb476b81de7b2a5383f775336474467bf5c7ccfe84ab0cc",
+    "sourceUrl": "https://getcomposer.org/download/2.8.5/composer.phar",
+    "resources": [
+      {"name": "Mozilla CA certificate bundle", "path": "vendor/composer/ca-bundle/res/cacert.pem", "sha256": "a3f328c21e39ddd1f2be1cea43ac0dec819eaa20a90425d7da901a11531b3aa5", "license": "MPL-2.0", "notices": ["mozilla-MPL-2.0.txt"], "url": "https://curl.se/docs/caextract.html#CA_cert_store_license", "correspondingSource": "https://github.com/composer/ca-bundle/blob/08c50d5ec4c6ced7d0271d2862dec8c1033283e6/res/cacert.pem", "note": "Exact PEM matches composer/ca-bundle commit 08c50d5ec4c6ced7d0271d2862dec8c1033283e6; Mozilla-derived CA store is separately MPL-2.0. No modifications to the PEM."},
+      {"name": "Symfony Console hiddeninput", "path": "vendor/symfony/console/Resources/bin/hiddeninput.exe", "sha256": "8fdff52a7430dba14fb97239c7fe414710991f16da269374e0936a1385f3a318", "license": "MIT", "package": "symfony/console", "url": "https://github.com/symfony/console/blob/c4ba980ca61a9eb18ee6bcc73f28e475852bb1ed/Resources/bin/hiddeninput.exe", "note": "Exact embedded binary matches the pinned package source; parsed and hashed, never executed."}
+    ],
+    "unicode": {"license": "Unicode-3.0", "notices": ["unicode-LICENSE.txt"], "url": "https://www.unicode.org/license.txt", "note": "Supplemental Unicode data attribution for symfony/string 16.0.0 width tables and polyfill-mbstring/polyfill-intl-normalizer Unicode-derived tables. Exact older polyfill Unicode data versions are not established; preserve supplied package notices as well. Unicode policy is supplemental, not a claim that compiler-stripped headers were recovered."}
+  },
+  "codicons": {"version": "monaco-editor-0.52.0", "license": "CC-BY-4.0", "path": "frontend/node_modules/monaco-editor/min/vs/base/browser/ui/codicons/codicon/codicon.ttf", "notices": ["codicons-LICENSE.txt"], "url": "https://github.com/microsoft/vscode-codicons", "note": "Codicons font by Microsoft; unmodified font distributed in Monaco AMD assets. Preserve CC-BY-4.0 attribution separately from Monaco's MIT wrapper."},
+  "noticeSources": {
+    "codicons-LICENSE.txt": {"url": "https://raw.githubusercontent.com/microsoft/vscode-codicons/main/LICENSE", "sha256": "af5e030844efddbc7ab00dcfea8b019703753d4d9f5172d727c533a492aec665"},
+    "mozilla-MPL-2.0.txt": {"url": "https://www.mozilla.org/MPL/2.0/", "sha256": "60222c28c1a7f6a92c7df98e5c5f4459e624e6e285e0b9b94467af5f6ab3343d"},
+    "unicode-LICENSE.txt": {"url": "https://www.unicode.org/license.txt", "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"},
+    "wix-5.0.2-LICENSE.txt": {"url": "https://raw.githubusercontent.com/wixtoolset/wix/aa65968c419420d32e3e1b647aea0082f5ca5b78/LICENSE.TXT", "sha256": "dfdf2048787635215a6baf3b9d461dee89a2904d246787258a44f072a98d4786"}
+  }
+}

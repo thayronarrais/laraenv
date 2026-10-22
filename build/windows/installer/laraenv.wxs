@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  WiX 5.0.2 source for the LaraEnv installer (v4 authoring namespace).
+
+  Use build\windows\installer\build-release.ps1 to check notices, generate
+  owned artwork in isolated staging, and supply ProjectRoot/InstallerAssets.
+-->
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
+
+  <Package
+      Name="LaraEnv"
+      Manufacturer="LaraEnv"
+      Version="$(var.ProductVersion)"
+      UpgradeCode="B6166219-3AB6-42D5-86D4-F497D446131C"
+      Scope="perMachine"
+      Compressed="yes"
+      InstallerVersion="500">
+
+    <SummaryInformation
+        Description="LaraEnv — Local PHP development environment for Windows"
+        Comments="Manage PHP, Composer, web servers and databases from a single GUI." />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of LaraEnv is already installed." />
+
+    <MediaTemplate EmbedCab="yes" />
+
+    <!-- Visible installer wizard (without this, the MSI runs silently with
+         only a UAC prompt and no progress UI — users think it didn't install). -->
+    <ui:WixUI Id="WixUI_Minimal" />
+    <UIRef Id="WixUI_ErrorProgressText" />
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectRoot)\build\windows\installer\LaraEnv-License.rtf" />
+    <WixVariable Id="WixUIBannerBmp"  Value="$(var.InstallerAssets)\WixBanner.bmp" />
+    <WixVariable Id="WixUIDialogBmp"  Value="$(var.InstallerAssets)\WixDialog.bmp" />
+
+    <!-- Icon for the Programs and Features / Apps & features entry. Without
+         ARPPRODUCTICON Windows renders the uninstall row with no icon at all. -->
+    <Icon Id="LaraEnvIcon.ico" SourceFile="$(var.InstallerAssets)\LaraEnv.ico" />
+    <Property Id="ARPPRODUCTICON" Value="LaraEnvIcon.ico" />
+
+    <!-- Install root: %ProgramFiles%\LaraEnv -->
+    <StandardDirectory Id="ProgramFiles64Folder">
+      <Directory Id="INSTALLFOLDER" Name="LaraEnv">
+        <Directory Id="ThirdPartyFolder" Name="third_party">
+          <Directory Id="ThirdPartySourcesFolder" Name="sources" />
+        </Directory>
+      </Directory>
+    </StandardDirectory>
+
+    <!-- Start Menu shortcut -->
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Directory Id="ApplicationProgramsFolder" Name="LaraEnv" />
+    </StandardDirectory>
+
+    <!-- Desktop shortcut -->
+    <StandardDirectory Id="DesktopFolder" />
+
+    <Feature Id="Main" Title="LaraEnv" Level="1">
+      <ComponentRef Id="MainExecutable" />
+      <ComponentRef Id="StartMenuShortcut" />
+      <ComponentRef Id="DesktopShortcut" />
+      <ComponentRef Id="DesktopLicense" />
+      <ComponentRef Id="DesktopNotice" />
+      <ComponentRef Id="ThirdPartyNotices" />
+      <ComponentRef Id="DependencyLicenseAggregate" />
+      <ComponentRef Id="WixCorrespondingSource" />
+    </Feature>
+
+    <Component Id="MainExecutable" Directory="INSTALLFOLDER" Guid="E8141038-B79C-4FCC-8FB6-31E57396884E">
+      <File Id="LaraEnvExe"
+            Name="LaraEnv.exe"
+            Source="$(var.SourceExe)"
+            KeyPath="yes" />
+    </Component>
+
+    <Component Id="DesktopLicense" Directory="INSTALLFOLDER" Guid="*">
+      <File Id="DesktopLicenseFile" Source="$(var.ProjectRoot)\LICENSE" KeyPath="yes" />
+    </Component>
+    <Component Id="DesktopNotice" Directory="INSTALLFOLDER" Guid="*">
+      <File Id="DesktopNoticeFile" Source="$(var.ProjectRoot)\NOTICE" KeyPath="yes" />
+    </Component>
+    <Component Id="ThirdPartyNotices" Directory="INSTALLFOLDER" Guid="*">
+      <File Id="ThirdPartyNoticesFile" Source="$(var.ProjectRoot)\THIRD_PARTY_NOTICES.txt" KeyPath="yes" />
+    </Component>
+    <Component Id="DependencyLicenseAggregate" Directory="ThirdPartyFolder" Guid="*">
+      <File Id="DependencyLicenseAggregateFile" Source="$(var.ProjectRoot)\third_party\dependencies.json" KeyPath="yes" />
+    </Component>
+    <Component Id="WixCorrespondingSource" Directory="ThirdPartySourcesFolder" Guid="*">
+      <File Id="WixCorrespondingSourceFile" Source="$(var.ProjectRoot)\third_party\sources\wix-5.0.2-source.zip" KeyPath="yes" />
+    </Component>
+
+    <Component Id="StartMenuShortcut" Directory="ApplicationProgramsFolder" Guid="*">
+      <Shortcut Id="StartMenuShortcut"
+                Name="LaraEnv"
+                Description="Local PHP development environment for Windows"
+                Target="[INSTALLFOLDER]LaraEnv.exe"
+                WorkingDirectory="INSTALLFOLDER" />
+      <RemoveFolder Id="RemoveStartMenuFolder" On="uninstall" />
+      <RegistryValue Root="HKCU"
+                     Key="Software\LaraEnv"
+                     Name="installed"
+                     Type="integer"
+                     Value="1"
+                     KeyPath="yes" />
+    </Component>
+
+    <Component Id="DesktopShortcut" Directory="DesktopFolder" Guid="*">
+      <Shortcut Id="DesktopShortcut"
+                Name="LaraEnv"
+                Description="Local PHP development environment for Windows"
+                Target="[INSTALLFOLDER]LaraEnv.exe"
+                WorkingDirectory="INSTALLFOLDER" />
+      <RegistryValue Root="HKCU"
+                     Key="Software\LaraEnv"
+                     Name="desktop"
+                     Type="integer"
+                     Value="1"
+                     KeyPath="yes" />
+    </Component>
+
+    <!-- Auto-launch the app after install. Required by the in-app updater so
+         the user lands back in LaraEnv once a self-update finishes. The
+         condition fires on both fresh installs and MajorUpgrades. -->
+    <Property Id="WixShellExecTarget" Value="[#LaraEnvExe]" />
+    <CustomAction Id="LaunchApp" BinaryRef="Wix4UtilCA_X64" DllEntry="WixShellExec" Impersonate="yes" />
+    <InstallExecuteSequence>
+      <Custom Action="LaunchApp" After="InstallFinalize" Condition="NOT REMOVE" />
+    </InstallExecuteSequence>
+
+  </Package>
+</Wix>

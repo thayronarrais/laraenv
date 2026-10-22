@@ -225,7 +225,6 @@
   },
   "settings": {
     "tabs": {
-      "account": "账户",
       "appearance": "外观",
       "services": "服务",
       "commandcenter": "命令中心",
@@ -565,11 +564,7 @@
       "downloads": "库/工具",
       "settings": "设置"
     },
-    "account": {
-      "viewPlan": "查看套餐",
-      "pro": "Pro",
-      "free": "免费版"
-    },
+    "account": {},
     "footer": {
       "supportTooltip": "支持此项目",
       "donate": "赞助",
@@ -1233,11 +1228,7 @@
       "running": "运行中"
     },
     "proFeature": {
-      "title": "Pro 功能",
-      "description": "Mini-Forge 自动化配置远程服务器（检测系统及安装的技术栈、安装缺失软件包、配置虚拟主机、注册 Cron、集成自动部署脚本） — 全流程直接基于您在此处配置的 SSH 主机完成。",
-      "upgradeBefore": "前往",
-      "upgradePath": "设置 → 账户",
-      "upgradeAfter": "进行升级。"
+      "description": "Mini-Forge 自动化配置远程服务器（检测系统及安装的技术栈、安装缺失软件包、配置虚拟主机、注册 Cron、集成自动部署脚本） — 全流程直接基于您在此处配置的 SSH 主机完成。"
     },
     "presetsButton": {
       "tooltip": "管理部署脚本预设",
@@ -1458,7 +1449,6 @@
   "account": {
     "accountCardTitle": "账户",
     "syncCardTitle": "同步",
-    "planCardTitle": "套餐",
     "logoutButton": "退出登录",
     "syncRequiresProFlash": "同步功能需要 Pro 套餐",
     "passphraseTooShortFlash": "同步密码至少需要 8 个字符",
@@ -1535,12 +1525,7 @@
         "currentBadge": "当前"
       },
       "features": {
-        "projects": "项目管理",
-        "sshHosts": "SSH 主机",
-        "cronJobs": "定时任务",
-        "localTerminal": "本地终端",
         "crossDeviceSync": "跨设备同步",
-        "remoteDeploy": "远程部署",
         "priorityUpdates": "优先更新"
       }
     },
@@ -2688,7 +2673,8 @@
       "newKeyMustBe32Bytes": "新密钥必须为 32 字节 (实为 {{got}})",
       "reencryptResourceFailed": "重新加密 {{kind}}/{{externalId}} 失败",
       "rekeyResourceFailed": "更新 {{kind}}/{{externalId}} 密钥失败",
-      "rekeyNothingDecrypted": "使用当前密钥无法解密服务器上的任何 {{count}} 项数据 — 请在仍能正常同步的设备上执行重新加密"
+      "rekeyNothingDecrypted": "使用当前密钥无法解密服务器上的任何 {{count}} 项数据 — 请在仍能正常同步的设备上执行重新加密",
+      "disabled": "可选云服务集成已停用。"
     },
     "projectroutes": {
       "previewHostnameDomainMismatch": "预览主机名 \"{{host}}\" 与先前项目域名不匹配",
@@ -2968,6 +2954,24 @@
       "configTestCommandFailed": "校验工具返回: {{output}}",
       "restartServiceFailed": "无法重启 {{name}}",
       "routeTargetOutsideManagedDir": "路由目标位于 LaraEnv 托管工作树目录之外"
+    },
+    "offlineDeployments": {
+      "storageUnavailable": "本地部署存储不可用：{{error}}",
+      "passwordUnavailable": "当前 Windows 账号无法访问已保存的 SSH 密码",
+      "executorUnavailable": "部署 SSH 执行器不可用",
+      "nameRequired": "必须填写部署名称",
+      "unknownOperation": "未知的部署操作",
+      "remoteSuccessHistoryFailed": "远程操作已完成，但无法保存本地历史记录：{{error}}。未重试命令。",
+      "remoteFailureHistoryFailed": "远程操作失败：{{remoteError}}；无法保存本地历史记录：{{error}}。未重试命令。",
+      "remoteDeletedRegistrationFailed": "远程操作已完成，但无法删除本地登记：{{error}}",
+      "emptyDetection": "检测响应为空",
+      "detectionConfigFailed": "检测已完成，但无法保存本地配置：{{error}}",
+      "detectionHistoryFailed": "检测已完成，但无法保存本地历史记录：{{error}}",
+      "mappingRequired": "必须为 {{host}} 明确指定本地 SSH 主机映射",
+      "invalidImport": "部署导入无效：{{error}}",
+      "accountRequired": "云账号身份不可用，请先登录再导入",
+      "profileChanged": "导入期间云配置已更改，未导入任何本地记录",
+      "busy": "另一个部署操作正在运行"
     }
   },
   "git": {
@@ -3083,5 +3087,59 @@
       "discard": "放弃",
       "cancel": "取消"
     }
+  },
+  "cloudOptIn": {
+    "title": "云服务（可选）",
+    "description": "项目、服务、终端、SSH、cron 和本地部署无需账号即可使用。需要使用托管云服务时再启用集成。停用后会保留已保存的云配置。",
+    "enabled": "云服务集成已启用",
+    "disabled": "云服务集成已停用",
+    "enable": "启用云服务",
+    "disable": "停用云服务",
+    "general": "常规",
+    "subscription": "可选云服务订阅",
+    "subscriptionHint": "套餐仅适用于托管云服务。所有桌面本地功能均无需订阅。",
+    "hostedDeployments": "托管部署服务"
+  },
+  "offlineDeployments": {
+    "local": "本地",
+    "cloud": "云服务（可选）",
+    "localDescription": "目标、配置和最近运行记录保存在此电脑上。无需账号；远程操作使用 SSH。",
+    "cloudDescription": "托管目标使用您的可选云账号。导入目标可保存受保护的本地副本。",
+    "cloudSignIn": "在云服务设置中登录以查看托管目标。本地目标仍可使用。",
+    "importJson": "导入 JSON",
+    "importCloud": "导入到本地",
+    "importTitle": "导入本地目标",
+    "importHint": "检查目标，并为每个来源主机选择本地 SSH 主机。导入仅保存元数据和配置，不执行远程命令。",
+    "importFile": "带版本信息的 JSON 文件",
+    "importContent": "导入 JSON 内容",
+    "previewImport": "预览导入",
+    "hostMappingHint": "请明确选择每个本地 SSH 主机，即使其名称与来源相同。",
+    "chooseHost": "选择本地 SSH 主机",
+    "confirmImport": "导入目标",
+    "importing": "正在导入…",
+    "importSummary": "已导入：{inserted}。已存在：{skipped}。已保留冲突：{conflicts}。",
+    "invalidImport": "请使用版本 1 的部署包，其中包含来源以及至少一个带有字符串 ID、名称和 SSH 主机的目标。",
+    "importTooLarge": "导入文件大小不能超过 16 MiB。",
+    "importedFrom": "导入来源：{source} · 来源 ID：{id}",
+    "history": "最近运行",
+    "historyLimits": "此电脑上每个目标最多保留 100 次最近运行，每个日志最多保留 4 MiB。",
+    "noRuns": "尚无本地运行记录。",
+    "readLog": "查看日志",
+    "gitPatHint": "私有仓库可选。保存在此电脑受保护的配置中；请勿在 Git URL 中包含凭据。",
+    "logTruncated": "此日志已按本地大小限制截断。",
+    "runInterrupted": "此运行已中断。重试前请检查远程状态。",
+    "secretsUnavailable": "此 Windows 配置文件无法打开受保护的配置。已有数据已保留；请使用原配置文件恢复后再运行此目标。",
+    "destroyRecordNote": "销毁会删除 SSH 主机上的受管理资源。从此列表删除本地目标是另一项操作。重试前请检查运行结果。"
+  },
+  "licenses": {
+    "title": "许可证与致谢",
+    "description": "查看桌面应用的许可证及第三方版权声明。",
+    "open": "查看许可证",
+    "close": "关闭",
+    "retry": "重试",
+    "error": "无法读取随应用提供的许可证文件，请重试。",
+    "loading": "正在加载许可证…",
+    "desktopTitle": "LaraEnv 许可证",
+    "thirdPartyTitle": "第三方声明"
   }
 }

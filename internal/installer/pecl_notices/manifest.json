@@ -1,0 +1,1238 @@
+{
+  "schemaVersion": 1,
+  "bundles": [
+    {
+      "id": "pecl-mongodb-1.20.1-8.4",
+      "extension": "mongodb",
+      "version": "1.20.1",
+      "phpSeries": "8.4",
+      "archiveUrl": "https://windows.php.net/downloads/pecl/releases/mongodb/1.20.1/php_mongodb-1.20.1-8.4-nts-vs17-x64.zip",
+      "archiveSha256": "763efd7317b1153729b39031433fab008ad1c42fd46890dfa0db9765494bc588",
+      "scope": "supplemental-notices-not-complete-binary-clearance",
+      "notices": [
+        {
+          "path": "mongodb-c-driver-1.28.1-COPYING.txt",
+          "bytes": 10174,
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "sourceUrl": "https://raw.githubusercontent.com/mongodb/mongo-c-driver/1.28.1/COPYING",
+          "licenseDescription": "Apache-2.0 core license, also byte-identical to the bundled kms-message COPYING"
+        },
+        {
+          "path": "mongodb-c-driver-1.28.1-THIRD_PARTY_NOTICES.txt",
+          "bytes": 8959,
+          "sha256": "2f397b6b524dadf7385fc0fac003fd713781cf84adb146fd85eecd8351defbe5",
+          "sourceUrl": "https://raw.githubusercontent.com/mongodb/mongo-c-driver/1.28.1/THIRD_PARTY_NOTICES",
+          "licenseDescription": "Complete composite upstream third-party notice collection; includes uthash, common-b64/IBM, CSS, zlib, MD5 and utf8proc terms"
+        },
+        {
+          "path": "mongodb-libbson-1.28.1-THIRD_PARTY_NOTICES.txt",
+          "bytes": 1275,
+          "sha256": "2dd83c6556d2306093c2d4fcb5bce6fde23d26195a6e8f695f96dbc7d8a2efea",
+          "sourceUrl": "https://raw.githubusercontent.com/mongodb/mongo-c-driver/1.28.1/src/libbson/THIRD_PARTY_NOTICES",
+          "licenseDescription": "MIT jsonsl notice supplied by libbson; preserve complete original text"
+        },
+        {
+          "path": "mongodb-libmongoc-1.28.1-THIRD_PARTY_NOTICES.txt",
+          "bytes": 1450,
+          "sha256": "17b2daac1485adea3a60d8a11ce780aa267dfc904d71e0fa5ab18e9165405f72",
+          "sourceUrl": "https://raw.githubusercontent.com/mongodb/mongo-c-driver/1.28.1/src/libmongoc/THIRD_PARTY_NOTICES",
+          "licenseDescription": "Curl notice for secure-channel source; supplied upstream collection, not a claim that all referenced backends are compiled into this DLL"
+        },
+        {
+          "path": "mongodb-kms-message-1.28.1-THIRD_PARTY_NOTICES.txt",
+          "bytes": 2237,
+          "sha256": "130021af7db9aaeda7cd68821f06ecd9cf1a4e89e9e1b6d77c0d0fbca1bd89a0",
+          "sourceUrl": "https://raw.githubusercontent.com/mongodb/mongo-c-driver/1.28.1/src/kms-message/THIRD_PARTY_NOTICES",
+          "licenseDescription": "ISC and IBM common-b64 notices; identical notice present in libmongocrypt 1.11.0 kms-message"
+        },
+        {
+          "path": "mongodb-utf8proc-2.8.0-LICENSE.txt",
+          "bytes": 5125,
+          "sha256": "3b510150d34f248a221bb88e1d811238d6c6c18b51231822c42974c39bb07256",
+          "sourceUrl": "https://raw.githubusercontent.com/mongodb/mongo-c-driver/1.28.1/src/utf8proc-2.8.0/LICENSE.md",
+          "licenseDescription": "Complete utf8proc MIT and Unicode data notice collection; preserve all sections"
+        },
+        {
+          "path": "mongodb-libmongocrypt-1.11.0-LICENSE.txt",
+          "bytes": 11356,
+          "sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+          "sourceUrl": "https://raw.githubusercontent.com/mongodb/libmongocrypt/1.11.0/LICENSE",
+          "licenseDescription": "Apache-2.0 libmongocrypt core license"
+        }
+      ]
+    },
+    {
+      "id": "pecl-memcached-3.3.0-8.3",
+      "extension": "memcached",
+      "version": "3.3.0",
+      "phpSeries": "8.3",
+      "archiveUrl": "https://windows.php.net/downloads/pecl/releases/memcached/3.3.0/php_memcached-3.3.0-8.3-nts-vs16-x64.zip",
+      "archiveSha256": "787f5311a6855002945c7dacc6295fda0ca6f77182fe7f16b4ef95780d16764b",
+      "scope": "supplemental-notices-not-complete-binary-clearance",
+      "notices": [
+        {
+          "path": "libmemcached-awesome-1.1.4-LICENSE.txt",
+          "bytes": 1653,
+          "sha256": "a2052b7c3f836f4c48fc2763e88ead4bc7ab62f8e23bf406fb0f3b22b982dd5b",
+          "sourceUrl": "https://windows.php.net/downloads/pecl/deps/libmemcached-1.1.4-vs16-x64.zip",
+          "licenseDescription": "BSD-3-Clause exact SDK text for the four byte-identical libmemcached-awesome companion DLLs"
+        }
+      ]
+    },
+    {
+      "id": "imagick-3.7.0-php-8.3-nts-vs16-x64",
+      "extension": "imagick",
+      "version": "3.7.0",
+      "phpSeries": "8.3",
+      "archiveUrl": "https://windows.php.net/downloads/pecl/releases/imagick/3.7.0/php_imagick-3.7.0-8.3-nts-vs16-x64.zip",
+      "archiveSha256": "4204071decbb06dce9f212a63ace0aa0c1b48fd344176b8274cd7d32ab674c71",
+      "scope": "supplemental-notices-not-complete-binary-clearance",
+      "notices": [
+        {
+          "path": "imagick-sdk-bin-NOTICE.txt",
+          "sha256": "20223c0bf2fa31beda1f640453360db73d6626c518a2a972053ff7356107983e",
+          "bytes": 57754,
+          "sourceUrl": "https://windows.php.net/downloads/pecl/deps/ImageMagick-7.1.0-18-vc15-x64.zip",
+          "licenseDescription": "Complete unmodified SDK bin/NOTICE, including optional delegate terms. Retention does not assert those optional EXEs are in this PECL ZIP.",
+          "sourceEvidence": {
+            "sourcePath": "bin/NOTICE",
+            "families": [
+              "sdk-notice"
+            ]
+          }
+        },
+        {
+          "path": "imagick-imagemagick-NOTICE.txt",
+          "sha256": "f23a0001567757e1fb7a2c588f511d277456233426582153a0567ba3cfba5c34",
+          "bytes": 12016,
+          "sourceUrl": "https://raw.githubusercontent.com/ImageMagick/ImageMagick/7.1.0-18/NOTICE",
+          "licenseDescription": "Complete ImageMagick 7.1.0-18 source NOTICE: ImageMagick, DuPont, OpenSSH, Xfig, ezXML, Magick++, Gsview, libsquish and other scoped attributions; separate from SDK bin/NOTICE.",
+          "sourceEvidence": {
+            "sourcePath": "NOTICE",
+            "sourceRef": "7.1.0-18",
+            "families": [
+              "imagemagick"
+            ]
+          }
+        },
+        {
+          "path": "imagick-bzip2-LICENSE.txt",
+          "sha256": "c6dbbf828498be844a89eaa3b84adbab3199e342eb5cb2ed2f0d4ba7ec0f38a3",
+          "bytes": 1896,
+          "sourceUrl": "https://raw.githubusercontent.com/libarchive/bzip2/bzip2-1.0.8/LICENSE",
+          "licenseDescription": "bzip2 1.0.8 license and Julian Seward copyright for CORE_RL_bzlib_.dll.",
+          "sourceEvidence": {
+            "sourcePath": "LICENSE",
+            "sourceRef": "bzip2-1.0.8",
+            "families": [
+              "bzip2"
+            ]
+          }
+        },
+        {
+          "path": "imagick-cairo-COPYING.txt",
+          "sha256": "67228a9f7c5f9b67c58f556f1be178f62da4d9e2e6285318d8c74d567255abdf",
+          "bytes": 1576,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/cairo/zip/d3761a8c73a2333f99255df7ed2f77426be4c8a2",
+          "licenseDescription": "Cairo 1.16.0: alternative LGPL-2.1 OR MPL-1.1 terms; auxiliary test/tool GPL terms are not assigned to cairo.dll.",
+          "sourceEvidence": {
+            "sourcePath": "COPYING",
+            "sourceRef": "d3761a8c73a2333f99255df7ed2f77426be4c8a2",
+            "sourceArchiveSha256": "78ea42016f7d5c811aa29816019691f4d4dc006585151c0f38453497dc285ab2",
+            "sourceArchivePath": "cairo-d3761a8c73a2333f99255df7ed2f77426be4c8a2/COPYING",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "cairo"
+            ]
+          }
+        },
+        {
+          "path": "imagick-cairo-COPYING-LGPL-2.1.txt",
+          "sha256": "9e9e8608c4cdda51a78cc3a385f4ec9a2e4c96d5ecad74ac8bca5fca3e563b7d",
+          "bytes": 26533,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/cairo/zip/d3761a8c73a2333f99255df7ed2f77426be4c8a2",
+          "licenseDescription": "Cairo 1.16.0: alternative LGPL-2.1 OR MPL-1.1 terms; auxiliary test/tool GPL terms are not assigned to cairo.dll.",
+          "sourceEvidence": {
+            "sourcePath": "COPYING-LGPL-2.1",
+            "sourceRef": "d3761a8c73a2333f99255df7ed2f77426be4c8a2",
+            "sourceArchiveSha256": "78ea42016f7d5c811aa29816019691f4d4dc006585151c0f38453497dc285ab2",
+            "sourceArchivePath": "cairo-d3761a8c73a2333f99255df7ed2f77426be4c8a2/COPYING-LGPL-2.1",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "cairo"
+            ]
+          }
+        },
+        {
+          "path": "imagick-cairo-COPYING-MPL-1.1.txt",
+          "sha256": "53692a2ed6c6a2c6ec9b32dd0b820dfae91e0a1fcdf625ca9ed0bdf8705fcc4f",
+          "bytes": 25755,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/cairo/zip/d3761a8c73a2333f99255df7ed2f77426be4c8a2",
+          "licenseDescription": "Cairo 1.16.0: alternative LGPL-2.1 OR MPL-1.1 terms; auxiliary test/tool GPL terms are not assigned to cairo.dll.",
+          "sourceEvidence": {
+            "sourcePath": "COPYING-MPL-1.1",
+            "sourceRef": "d3761a8c73a2333f99255df7ed2f77426be4c8a2",
+            "sourceArchiveSha256": "78ea42016f7d5c811aa29816019691f4d4dc006585151c0f38453497dc285ab2",
+            "sourceArchivePath": "cairo-d3761a8c73a2333f99255df7ed2f77426be4c8a2/COPYING-MPL-1.1",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "cairo"
+            ]
+          }
+        },
+        {
+          "path": "imagick-pixman-COPYING.txt",
+          "sha256": "fac9270f0987b96ff4533fca3548c633e02083cbba4a0172a3b149b2e4019793",
+          "bytes": 2087,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/pixman/zip/a4e44a8ce76d36a14bf6ba2fb2bfd65adf349982",
+          "licenseDescription": "Pixman MIT/X11 notices for the implementation incorporated in Cairo; preserve the complete contributor collection.",
+          "sourceEvidence": {
+            "sourcePath": "COPYING",
+            "sourceRef": "a4e44a8ce76d36a14bf6ba2fb2bfd65adf349982",
+            "sourceArchiveSha256": "ba3bf4781bc3504602971b2d9a720c0883dd6b57da66d6c499cadd1ce6e85960",
+            "sourceArchivePath": "pixman-a4e44a8ce76d36a14bf6ba2fb2bfd65adf349982/COPYING",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "pixman"
+            ]
+          }
+        },
+        {
+          "path": "imagick-exr-LICENSE.txt",
+          "sha256": "596e8a96772a53d474f506d62e7808d196b46b2189dc91256ca369790f2c21e2",
+          "bytes": 1517,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/exr/zip/bbb5fbd23adaddf287955d5dcff1cbc67b47de05",
+          "licenseDescription": "OpenEXR/Imath source license and patent material in the historical Windows exr tree; do not merge its distinct copyright texts.",
+          "sourceEvidence": {
+            "sourcePath": "LICENSE",
+            "sourceRef": "bbb5fbd23adaddf287955d5dcff1cbc67b47de05",
+            "sourceArchiveSha256": "eacde00a6e0b9a7fb5ca74799bdff2472ae925dbc5d2b9190bbaf5dd6deca752",
+            "sourceArchivePath": "exr-bbb5fbd23adaddf287955d5dcff1cbc67b47de05/LICENSE",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "openexr"
+            ]
+          }
+        },
+        {
+          "path": "imagick-exr-openexr-LICENSE.md.txt",
+          "sha256": "84853c91d4c2e0310741d4773469d98bb93e61029608e0ba0882a3fffdf330bd",
+          "bytes": 1501,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/exr/zip/bbb5fbd23adaddf287955d5dcff1cbc67b47de05",
+          "licenseDescription": "OpenEXR/Imath source license and patent material in the historical Windows exr tree; do not merge its distinct copyright texts.",
+          "sourceEvidence": {
+            "sourcePath": "openexr/LICENSE.md",
+            "sourceRef": "bbb5fbd23adaddf287955d5dcff1cbc67b47de05",
+            "sourceArchiveSha256": "eacde00a6e0b9a7fb5ca74799bdff2472ae925dbc5d2b9190bbaf5dd6deca752",
+            "sourceArchivePath": "exr-bbb5fbd23adaddf287955d5dcff1cbc67b47de05/openexr/LICENSE.md",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "openexr"
+            ]
+          }
+        },
+        {
+          "path": "imagick-exr-imath-LICENSE.md.txt",
+          "sha256": "c20236d3b39fd20eba8e3d1fb3b892a5483df2e7d8d61bf43f165d3fac22f601",
+          "bytes": 1497,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/exr/zip/bbb5fbd23adaddf287955d5dcff1cbc67b47de05",
+          "licenseDescription": "OpenEXR/Imath source license and patent material in the historical Windows exr tree; do not merge its distinct copyright texts.",
+          "sourceEvidence": {
+            "sourcePath": "imath/LICENSE.md",
+            "sourceRef": "bbb5fbd23adaddf287955d5dcff1cbc67b47de05",
+            "sourceArchiveSha256": "eacde00a6e0b9a7fb5ca74799bdff2472ae925dbc5d2b9190bbaf5dd6deca752",
+            "sourceArchivePath": "exr-bbb5fbd23adaddf287955d5dcff1cbc67b47de05/imath/LICENSE.md",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "openexr"
+            ]
+          }
+        },
+        {
+          "path": "imagick-exr-openexr-PATENTS.txt",
+          "sha256": "7f5dee333a82cab38b3567b85ec52a74487a5b2a8f4097eb8b4071c892c47b12",
+          "bytes": 13721,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/exr/zip/bbb5fbd23adaddf287955d5dcff1cbc67b47de05",
+          "licenseDescription": "OpenEXR/Imath source license and patent material in the historical Windows exr tree; do not merge its distinct copyright texts.",
+          "sourceEvidence": {
+            "sourcePath": "openexr/PATENTS",
+            "sourceRef": "bbb5fbd23adaddf287955d5dcff1cbc67b47de05",
+            "sourceArchiveSha256": "eacde00a6e0b9a7fb5ca74799bdff2472ae925dbc5d2b9190bbaf5dd6deca752",
+            "sourceArchivePath": "exr-bbb5fbd23adaddf287955d5dcff1cbc67b47de05/openexr/PATENTS",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "openexr"
+            ]
+          }
+        },
+        {
+          "path": "imagick-flif-LICENSE.txt",
+          "sha256": "4d5f0a77070ee043f10a154e428b323b0cff70a3306d5f490b0093cfe651ef20",
+          "bytes": 508,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/flif/zip/8754df24579cf9944b7c3e54b34f1df697f341dc",
+          "licenseDescription": "FLIF 0.3: this DLL exports encoder and decoder APIs. LGPL-3.0-or-later applies to the full implementation; Apache-2.0 is the decoder-only alternative, not blanket clearance of this DLL.",
+          "sourceEvidence": {
+            "sourcePath": "LICENSE",
+            "sourceRef": "8754df24579cf9944b7c3e54b34f1df697f341dc",
+            "sourceArchiveSha256": "c87d1b6c545f92d5972b6f77fceb355e1ada1f207db1046e0b75d7a6447f6dae",
+            "sourceArchivePath": "flif-8754df24579cf9944b7c3e54b34f1df697f341dc/LICENSE",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "flif"
+            ]
+          }
+        },
+        {
+          "path": "imagick-flif-LICENSE_LGPL.txt",
+          "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768",
+          "bytes": 7651,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/flif/zip/8754df24579cf9944b7c3e54b34f1df697f341dc",
+          "licenseDescription": "FLIF 0.3: this DLL exports encoder and decoder APIs. LGPL-3.0-or-later applies to the full implementation; Apache-2.0 is the decoder-only alternative, not blanket clearance of this DLL.",
+          "sourceEvidence": {
+            "sourcePath": "LICENSE_LGPL",
+            "sourceRef": "8754df24579cf9944b7c3e54b34f1df697f341dc",
+            "sourceArchiveSha256": "c87d1b6c545f92d5972b6f77fceb355e1ada1f207db1046e0b75d7a6447f6dae",
+            "sourceArchivePath": "flif-8754df24579cf9944b7c3e54b34f1df697f341dc/LICENSE_LGPL",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "flif"
+            ]
+          }
+        },
+        {
+          "path": "imagick-flif-LICENSE_GPL.txt",
+          "sha256": "d62f065830aa3739cc031156b9690805c7b2e811b4a178c8b4acd8725d561c94",
+          "bytes": 35142,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/flif/zip/8754df24579cf9944b7c3e54b34f1df697f341dc",
+          "licenseDescription": "FLIF 0.3: this DLL exports encoder and decoder APIs. LGPL-3.0-or-later applies to the full implementation; Apache-2.0 is the decoder-only alternative, not blanket clearance of this DLL.",
+          "sourceEvidence": {
+            "sourcePath": "LICENSE_GPL",
+            "sourceRef": "8754df24579cf9944b7c3e54b34f1df697f341dc",
+            "sourceArchiveSha256": "c87d1b6c545f92d5972b6f77fceb355e1ada1f207db1046e0b75d7a6447f6dae",
+            "sourceArchivePath": "flif-8754df24579cf9944b7c3e54b34f1df697f341dc/LICENSE_GPL",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "flif"
+            ]
+          }
+        },
+        {
+          "path": "imagick-flif-LICENSE_Apache2.txt",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "bytes": 11358,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/flif/zip/8754df24579cf9944b7c3e54b34f1df697f341dc",
+          "licenseDescription": "FLIF 0.3: this DLL exports encoder and decoder APIs. LGPL-3.0-or-later applies to the full implementation; Apache-2.0 is the decoder-only alternative, not blanket clearance of this DLL.",
+          "sourceEvidence": {
+            "sourcePath": "LICENSE_Apache2",
+            "sourceRef": "8754df24579cf9944b7c3e54b34f1df697f341dc",
+            "sourceArchiveSha256": "c87d1b6c545f92d5972b6f77fceb355e1ada1f207db1046e0b75d7a6447f6dae",
+            "sourceArchivePath": "flif-8754df24579cf9944b7c3e54b34f1df697f341dc/LICENSE_Apache2",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "flif"
+            ]
+          }
+        },
+        {
+          "path": "imagick-freetype-docs-LICENSE.TXT.txt",
+          "sha256": "fd056de4196903a676208ef58cfddafc7d583d1f28fa2e44c309cf84a59e62fb",
+          "bytes": 1743,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/freetype/zip/a18906091cd17c623a6819661589df5566958918",
+          "licenseDescription": "FreeType 2.10.4: FTL option and its credit requirement, plus original BDF/PCF notices. No election of the alternative GPL license is implied.",
+          "sourceEvidence": {
+            "sourcePath": "docs/LICENSE.TXT",
+            "sourceRef": "a18906091cd17c623a6819661589df5566958918",
+            "sourceArchiveSha256": "bdff15e8fccf110a93df5245244a9562c4ad4ee5417f72f067c29453e624cfd3",
+            "sourceArchivePath": "freetype-a18906091cd17c623a6819661589df5566958918/docs/LICENSE.TXT",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "freetype"
+            ]
+          }
+        },
+        {
+          "path": "imagick-freetype-docs-FTL.TXT.txt",
+          "sha256": "08c135755dd589039470f1fdbb400daaabaaa50d0b366d19cebff4d22986baa1",
+          "bytes": 6743,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/freetype/zip/a18906091cd17c623a6819661589df5566958918",
+          "licenseDescription": "FreeType 2.10.4: FTL option and its credit requirement, plus original BDF/PCF notices. No election of the alternative GPL license is implied.",
+          "sourceEvidence": {
+            "sourcePath": "docs/FTL.TXT",
+            "sourceRef": "a18906091cd17c623a6819661589df5566958918",
+            "sourceArchiveSha256": "bdff15e8fccf110a93df5245244a9562c4ad4ee5417f72f067c29453e624cfd3",
+            "sourceArchivePath": "freetype-a18906091cd17c623a6819661589df5566958918/docs/FTL.TXT",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "freetype"
+            ]
+          }
+        },
+        {
+          "path": "imagick-freetype-src-bdf-README.txt",
+          "sha256": "46a6b868ce86a88b7485a0ac88408c1111996ee93172bc7c11219c1af17084fe",
+          "bytes": 5793,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/freetype/zip/a18906091cd17c623a6819661589df5566958918",
+          "licenseDescription": "FreeType 2.10.4: FTL option and its credit requirement, plus original BDF/PCF notices. No election of the alternative GPL license is implied.",
+          "sourceEvidence": {
+            "sourcePath": "src/bdf/README",
+            "sourceRef": "a18906091cd17c623a6819661589df5566958918",
+            "sourceArchiveSha256": "bdff15e8fccf110a93df5245244a9562c4ad4ee5417f72f067c29453e624cfd3",
+            "sourceArchivePath": "freetype-a18906091cd17c623a6819661589df5566958918/src/bdf/README",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "freetype"
+            ]
+          }
+        },
+        {
+          "path": "imagick-freetype-src-pcf-README.txt",
+          "sha256": "18d9782898d9eac04476e2f744678137b2a889689ed3e923e052fc396a86f86b",
+          "bytes": 3311,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/freetype/zip/a18906091cd17c623a6819661589df5566958918",
+          "licenseDescription": "FreeType 2.10.4: FTL option and its credit requirement, plus original BDF/PCF notices. No election of the alternative GPL license is implied.",
+          "sourceEvidence": {
+            "sourcePath": "src/pcf/README",
+            "sourceRef": "a18906091cd17c623a6819661589df5566958918",
+            "sourceArchiveSha256": "bdff15e8fccf110a93df5245244a9562c4ad4ee5417f72f067c29453e624cfd3",
+            "sourceArchivePath": "freetype-a18906091cd17c623a6819661589df5566958918/src/pcf/README",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "freetype"
+            ]
+          }
+        },
+        {
+          "path": "imagick-freetype-src-gzip-zlib.h-notice.txt",
+          "sha256": "240087b0c282695563bd238d47d0d2edb319f9157e55c0b0cddbaf794ddc9353",
+          "bytes": 1336,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/freetype/zip/a18906091cd17c623a6819661589df5566958918",
+          "licenseDescription": "Original zlib notice in FreeType internal gzip implementation; component-specific permissive terms. Exact complete source comment; byte range is recorded.",
+          "sourceEvidence": {
+            "sourcePath": "src/gzip/zlib.h",
+            "sourceRef": "a18906091cd17c623a6819661589df5566958918",
+            "sourceArchiveSha256": "bdff15e8fccf110a93df5245244a9562c4ad4ee5417f72f067c29453e624cfd3",
+            "sourceArchivePath": "freetype-a18906091cd17c623a6819661589df5566958918/src/gzip/zlib.h",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "sourceByteRange": {
+              "offset": 0,
+              "length": 1336
+            },
+            "sourceFileSha256": "cbea6fd5786004f24ffe1ba9897716bdc6e40b7d14229ca7886c21069a9c5f85",
+            "families": [
+              "freetype"
+            ]
+          }
+        },
+        {
+          "path": "imagick-freetype-src-base-fthash.c-notice.txt",
+          "sha256": "3804cf60882fe98d406b7fe78c894d472451ba88633e42e7a6ec8658376a963c",
+          "bytes": 1366,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/freetype/zip/a18906091cd17c623a6819661589df5566958918",
+          "licenseDescription": "FreeType hash implementation: New Mexico State/Francesco Zappa Nardelli permissive copyright and grant. Exact complete source comment; byte range is recorded.",
+          "sourceEvidence": {
+            "sourcePath": "src/base/fthash.c",
+            "sourceRef": "a18906091cd17c623a6819661589df5566958918",
+            "sourceArchiveSha256": "bdff15e8fccf110a93df5245244a9562c4ad4ee5417f72f067c29453e624cfd3",
+            "sourceArchivePath": "freetype-a18906091cd17c623a6819661589df5566958918/src/base/fthash.c",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "sourceByteRange": {
+              "offset": 0,
+              "length": 1366
+            },
+            "sourceFileSha256": "4f5cdba2e32de7d4822bcbe5b652a24941c6ac523244330a1a8925a19552f188",
+            "families": [
+              "freetype"
+            ]
+          }
+        },
+        {
+          "path": "imagick-fribidi-COPYING.txt",
+          "sha256": "32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b",
+          "bytes": 26440,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/fribidi/zip/bbdbbfe9914053e06cfd9febc40576c481d5e0f3",
+          "licenseDescription": "FriBidi 1.0.10 LGPL-2.1-or-later text and original author attribution.",
+          "sourceEvidence": {
+            "sourcePath": "COPYING",
+            "sourceRef": "bbdbbfe9914053e06cfd9febc40576c481d5e0f3",
+            "sourceArchiveSha256": "c2591624bb717e69fdfe9769940c9c4c8853cd33129a66994210862e0264503d",
+            "sourceArchivePath": "fribidi-bbdbbfe9914053e06cfd9febc40576c481d5e0f3/COPYING",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "fribidi"
+            ]
+          }
+        },
+        {
+          "path": "imagick-fribidi-AUTHORS.txt",
+          "sha256": "cb173f55c9514c8f38f4647ac3fedd5f8611358d331e65ab955da931e826861c",
+          "bytes": 1640,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/fribidi/zip/bbdbbfe9914053e06cfd9febc40576c481d5e0f3",
+          "licenseDescription": "FriBidi 1.0.10 LGPL-2.1-or-later text and original author attribution.",
+          "sourceEvidence": {
+            "sourcePath": "AUTHORS",
+            "sourceRef": "bbdbbfe9914053e06cfd9febc40576c481d5e0f3",
+            "sourceArchiveSha256": "c2591624bb717e69fdfe9769940c9c4c8853cd33129a66994210862e0264503d",
+            "sourceArchivePath": "fribidi-bbdbbfe9914053e06cfd9febc40576c481d5e0f3/AUTHORS",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "fribidi"
+            ]
+          }
+        },
+        {
+          "path": "imagick-glib-COPYING.txt",
+          "sha256": "dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551",
+          "bytes": 26530,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/glib/zip/451260500e80fe73a1ef79d52adc71d98acef0e3",
+          "licenseDescription": "GLib 2.64.3 LGPL-2.1-or-later text and original authors; not a license for every dependency.",
+          "sourceEvidence": {
+            "sourcePath": "COPYING",
+            "sourceRef": "451260500e80fe73a1ef79d52adc71d98acef0e3",
+            "sourceArchiveSha256": "5f190e7523354e4aa32116b987526c10a9dc56ea00567874c3bb94047bedd23f",
+            "sourceArchivePath": "glib-451260500e80fe73a1ef79d52adc71d98acef0e3/COPYING",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "glib"
+            ]
+          }
+        },
+        {
+          "path": "imagick-glib-AUTHORS.txt",
+          "sha256": "52ca4a84d8dc412ead87bc3223c2ec2ac819938337cabecb2bd1994e979d1171",
+          "bytes": 1347,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/glib/zip/451260500e80fe73a1ef79d52adc71d98acef0e3",
+          "licenseDescription": "GLib 2.64.3 LGPL-2.1-or-later text and original authors; not a license for every dependency.",
+          "sourceEvidence": {
+            "sourcePath": "AUTHORS",
+            "sourceRef": "451260500e80fe73a1ef79d52adc71d98acef0e3",
+            "sourceArchiveSha256": "5f190e7523354e4aa32116b987526c10a9dc56ea00567874c3bb94047bedd23f",
+            "sourceArchivePath": "glib-451260500e80fe73a1ef79d52adc71d98acef0e3/AUTHORS",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "glib"
+            ]
+          }
+        },
+        {
+          "path": "imagick-glib-glib-pcre-pcre_compile.c-notice.txt",
+          "sha256": "3c1d1de9707ce25785cccebbf3e0458f43682656e4f400d1bcefd29b538eb25a",
+          "bytes": 2043,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/glib/zip/451260500e80fe73a1ef79d52adc71d98acef0e3",
+          "licenseDescription": "PCRE code vendored in GLib: Philip Hazel/University of Cambridge BSD notice. Exact complete source comment; byte range is recorded.",
+          "sourceEvidence": {
+            "sourcePath": "glib/pcre/pcre_compile.c",
+            "sourceRef": "451260500e80fe73a1ef79d52adc71d98acef0e3",
+            "sourceArchiveSha256": "5f190e7523354e4aa32116b987526c10a9dc56ea00567874c3bb94047bedd23f",
+            "sourceArchivePath": "glib-451260500e80fe73a1ef79d52adc71d98acef0e3/glib/pcre/pcre_compile.c",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "sourceByteRange": {
+              "offset": 0,
+              "length": 2043
+            },
+            "sourceFileSha256": "21c939ef2c57da497dc382944de99bb0a8d6661ff91c52f569b85725e13e5152",
+            "families": [
+              "pcre"
+            ]
+          }
+        },
+        {
+          "path": "imagick-ffi-LICENSE.txt",
+          "sha256": "0f4d7a0bfb83c37465d42dc305f124189196cc0cc2cc8d6f8461103682aebbc5",
+          "bytes": 1132,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/ffi/zip/18a302fef39004d7aec3242ba4fad42eebded597",
+          "licenseDescription": "libffi MIT notice for the static implementation selected by the historical GLib build configuration.",
+          "sourceEvidence": {
+            "sourcePath": "LICENSE",
+            "sourceRef": "18a302fef39004d7aec3242ba4fad42eebded597",
+            "sourceArchiveSha256": "4bf6883ba3f82d15f081667a28c8d749826e22c6f93d2248278169bff0ae6a55",
+            "sourceArchivePath": "ffi-18a302fef39004d7aec3242ba4fad42eebded597/LICENSE",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "libffi"
+            ]
+          }
+        },
+        {
+          "path": "imagick-harfbuzz-COPYING.txt",
+          "sha256": "beb3f017ceb41387667f78237a7cecf84defa0ed257c505894663d6a9f13211b",
+          "bytes": 1815,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/harfbuzz/zip/0a25647d4a5f8ba4dfa3d5332792d4850f48131a",
+          "licenseDescription": "HarfBuzz 2.8.1 complete Old MIT copyright and permission notice.",
+          "sourceEvidence": {
+            "sourcePath": "COPYING",
+            "sourceRef": "0a25647d4a5f8ba4dfa3d5332792d4850f48131a",
+            "sourceArchiveSha256": "3dae5c84becfc9522701a7b7b82e39a4ec268326e4cd289d145081d3c6123abc",
+            "sourceArchivePath": "harfbuzz-0a25647d4a5f8ba4dfa3d5332792d4850f48131a/COPYING",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "harfbuzz"
+            ]
+          }
+        },
+        {
+          "path": "imagick-jasper-LICENSE.txt",
+          "sha256": "4ad1bb42aff888c4403d792e6e2c5f1716d6c279fea70b296333c9d577d30b81",
+          "bytes": 2744,
+          "sourceUrl": "https://raw.githubusercontent.com/jasper-software/jasper/version-2.0.16/LICENSE",
+          "licenseDescription": "JasPer 2.0.16 license, including Michael Adams/UBC/Image Power notices, for CORE_RL_jp2_.dll.",
+          "sourceEvidence": {
+            "sourcePath": "LICENSE",
+            "sourceRef": "version-2.0.16",
+            "families": [
+              "jasper"
+            ]
+          }
+        },
+        {
+          "path": "imagick-jpeg-turbo-LICENSE.md.txt",
+          "sha256": "7d8683a7f048e715e08b4cada8b7f0d9a6ab8afad88ed09c1143ef764ecbc0f2",
+          "bytes": 5213,
+          "sourceUrl": "https://raw.githubusercontent.com/libjpeg-turbo/libjpeg-turbo/2.1.1/LICENSE.md",
+          "licenseDescription": "libjpeg-turbo 2.1.1 licenses: IJG attribution plus BSD and SIMD zlib terms. Preserve IJG original README, not a generic BSD replacement.",
+          "sourceEvidence": {
+            "sourcePath": "LICENSE.md",
+            "sourceRef": "2.1.1",
+            "families": [
+              "jpeg-turbo"
+            ]
+          }
+        },
+        {
+          "path": "imagick-jpeg-turbo-README.ijg.txt",
+          "sha256": "4b7b9f8c03bb8d60270dfd12684e70ab21e4abfd27e73905cd1a7c4cae6f5cdb",
+          "bytes": 12732,
+          "sourceUrl": "https://raw.githubusercontent.com/libjpeg-turbo/libjpeg-turbo/2.1.1/README.ijg",
+          "licenseDescription": "libjpeg-turbo 2.1.1 licenses: IJG attribution plus BSD and SIMD zlib terms. Preserve IJG original README, not a generic BSD replacement.",
+          "sourceEvidence": {
+            "sourcePath": "README.ijg",
+            "sourceRef": "2.1.1",
+            "families": [
+              "jpeg-turbo"
+            ]
+          }
+        },
+        {
+          "path": "imagick-jpeg-xl-LICENSE.txt",
+          "sha256": "8405932022a556380c2d8c272eff154a923feb197233f348ce5f7334fb0a5ede",
+          "bytes": 1508,
+          "sourceUrl": "https://raw.githubusercontent.com/libjxl/libjxl/v0.6.0/LICENSE",
+          "licenseDescription": "JPEG XL 0.6.0 BSD-3-Clause, project authors and patent grant; separate dependencies retain their own terms.",
+          "sourceEvidence": {
+            "sourcePath": "LICENSE",
+            "sourceRef": "v0.6.0",
+            "families": [
+              "jpeg-xl"
+            ]
+          }
+        },
+        {
+          "path": "imagick-jpeg-xl-PATENTS.txt",
+          "sha256": "91915f8ae056a68a3c5bdf05d9f6f78bb6903e27a8ca3a8434c9e4ac87300575",
+          "bytes": 1333,
+          "sourceUrl": "https://raw.githubusercontent.com/libjxl/libjxl/v0.6.0/PATENTS",
+          "licenseDescription": "JPEG XL 0.6.0 BSD-3-Clause, project authors and patent grant; separate dependencies retain their own terms.",
+          "sourceEvidence": {
+            "sourcePath": "PATENTS",
+            "sourceRef": "v0.6.0",
+            "families": [
+              "jpeg-xl"
+            ]
+          }
+        },
+        {
+          "path": "imagick-jpeg-xl-AUTHORS.txt",
+          "sha256": "b87e1e8486020586e00af974151b4e39c9fba2ff5509b437cd3ccca2ddca58d4",
+          "bytes": 771,
+          "sourceUrl": "https://raw.githubusercontent.com/libjxl/libjxl/v0.6.0/AUTHORS",
+          "licenseDescription": "JPEG XL 0.6.0 BSD-3-Clause, project authors and patent grant; separate dependencies retain their own terms.",
+          "sourceEvidence": {
+            "sourcePath": "AUTHORS",
+            "sourceRef": "v0.6.0",
+            "families": [
+              "jpeg-xl"
+            ]
+          }
+        },
+        {
+          "path": "imagick-brotli-LICENSE.txt",
+          "sha256": "3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94",
+          "bytes": 1084,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/brotli/zip/94ead6d89dae2dd893f33ed46a638a345a28bdf7",
+          "licenseDescription": "Brotli MIT license for the implementation linked into JPEG XL by the historical Windows configuration.",
+          "sourceEvidence": {
+            "sourcePath": "LICENSE",
+            "sourceRef": "94ead6d89dae2dd893f33ed46a638a345a28bdf7",
+            "sourceArchiveSha256": "bafb8cca599d4b05bb90e80384596169383fbc5e969f7681341cac7208f59816",
+            "sourceArchivePath": "brotli-94ead6d89dae2dd893f33ed46a638a345a28bdf7/LICENSE",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "brotli"
+            ]
+          }
+        },
+        {
+          "path": "imagick-highway-LICENSE.txt",
+          "sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+          "bytes": 11356,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/highway/zip/a5b6622c32b01e7c2f5b21fd0d39f24110e8a689",
+          "licenseDescription": "Highway 0.14.2 Apache-2.0 terms for code present in the JPEG XL DLL; this is not a GPL dependency.",
+          "sourceEvidence": {
+            "sourcePath": "LICENSE",
+            "sourceRef": "a5b6622c32b01e7c2f5b21fd0d39f24110e8a689",
+            "sourceArchiveSha256": "439b1c758277095cf92ffe9bd848a4bd44a40a740e73273d5cab87e5c52134c3",
+            "sourceArchivePath": "highway-a5b6622c32b01e7c2f5b21fd0d39f24110e8a689/LICENSE",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "highway"
+            ]
+          }
+        },
+        {
+          "path": "imagick-jpeg-xl-color-management-source.txt",
+          "sha256": "97e99efbbe9180abc02c4bdba3a461bb2fd76039209076e0c36cfa4759c4e688",
+          "bytes": 18155,
+          "sourceUrl": "https://raw.githubusercontent.com/libjxl/libjxl/v0.6.0/lib/jxl/color_management.cc",
+          "licenseDescription": "Complete original JPEG XL color_management.cc, retained to preserve the exact Google 2019 CC-BY-SA-3.0 notice for generated ICC profiles. The source code itself has the project BSD header; the ICC profile designation does not relicense the whole DLL.",
+          "sourceEvidence": {
+            "sourcePath": "lib/jxl/color_management.cc",
+            "sourceRef": "v0.6.0",
+            "families": [
+              "jxl-generated-icc-profiles"
+            ]
+          }
+        },
+        {
+          "path": "imagick-jpeg-xl-ICC-CC-BY-SA-3.0.txt",
+          "sha256": "3f941b3b89cf7b8370ceb83cc76d2120d471b58735d8ca60238a751a48d7f72f",
+          "bytes": 22240,
+          "sourceUrl": "https://creativecommons.org/licenses/by-sa/3.0/legalcode.txt",
+          "licenseDescription": "Official complete CC-BY-SA-3.0 Unported legal code referenced by the embedded generated-ICC copyright notice; scoped to those profiles, not the desktop application.",
+          "sourceEvidence": {
+            "sourcePath": "legalcode.txt",
+            "sourceRef": "CC-BY-SA-3.0",
+            "families": [
+              "jxl-generated-icc-profiles"
+            ]
+          }
+        },
+        {
+          "path": "imagick-lcms-COPYING.txt",
+          "sha256": "46d4e05af3bce75332a12d01f19bcce7e32b6bac544be28a64043d0231291e31",
+          "bytes": 1083,
+          "sourceUrl": "https://raw.githubusercontent.com/mm2/Little-CMS/lcms2.12/COPYING",
+          "licenseDescription": "Little CMS 2.12 MIT notice, Marti Maria Saguer, for CORE_RL_lcms_.dll.",
+          "sourceEvidence": {
+            "sourcePath": "COPYING",
+            "sourceRef": "lcms2.12",
+            "families": [
+              "lcms"
+            ]
+          }
+        },
+        {
+          "path": "imagick-libheif-COPYING.txt",
+          "sha256": "b2eb4f6588b005bebac44cfb2dfd23f6a16c5ca9b8a619a315158b0215a917a3",
+          "bytes": 44338,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/libheif/zip/e106504e3bf32882c8fc89972e22bcdc816a11b4",
+          "licenseDescription": "libheif 1.12.0 complete upstream COPYING with LGPL-3.0 and GPL-3.0 texts and separately scoped sample MIT terms; does not make all DLLs GPL.",
+          "sourceEvidence": {
+            "sourcePath": "COPYING",
+            "sourceRef": "e106504e3bf32882c8fc89972e22bcdc816a11b4",
+            "sourceArchiveSha256": "903e1260f0591fdc4163db51875fbb49e3acdb4b4441cb60fdbd80194bb78270",
+            "sourceArchivePath": "heif-e106504e3bf32882c8fc89972e22bcdc816a11b4/COPYING",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "libheif"
+            ]
+          }
+        },
+        {
+          "path": "imagick-libde265-COPYING.txt",
+          "sha256": "02cc1585a20677992e0ba578fa692635dc193735f2691dc81de924b51c4e8020",
+          "bytes": 44339,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/libde265/zip/58ccddd4a8e5c86045630fda733c3b398f72267c",
+          "licenseDescription": "libde265 LGPL-3.0-or-later complete upstream COPYING, including incorporated GPL-3.0 text and scoped sample terms; decoder is statically incorporated in HEIF.",
+          "sourceEvidence": {
+            "sourcePath": "COPYING",
+            "sourceRef": "58ccddd4a8e5c86045630fda733c3b398f72267c",
+            "sourceArchiveSha256": "46aab203799de4fb4f2b9bbd0aa9c96e7d9462e0719b8910b9d29bb5251d2462",
+            "sourceArchivePath": "de265-58ccddd4a8e5c86045630fda733c3b398f72267c/COPYING",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "libde265"
+            ]
+          }
+        },
+        {
+          "path": "imagick-aom-LICENSE.txt",
+          "sha256": "4764a286d8b2faeaf42f4418e7d7a28d58fc8fd4d00a3d0a7f44b0a4099de7f2",
+          "bytes": 1316,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/aom/zip/6c5b8bb6b845bda65a70fbc5eb40010d42999323",
+          "licenseDescription": "AOMedia 3.1.3 BSD-2-Clause/patent grant and Fastfeat BSD / vector MIT texts from the source directories selected by the historical HEIF/AOM build. No libwebm/libyuv/x265 inclusion is inferred.",
+          "sourceEvidence": {
+            "sourcePath": "LICENSE",
+            "sourceRef": "6c5b8bb6b845bda65a70fbc5eb40010d42999323",
+            "sourceArchiveSha256": "224db7e9808bcdfecafdd0b5d1aee373beab273bd10e7a1b12c341577c13cbf2",
+            "sourceArchivePath": "aom-6c5b8bb6b845bda65a70fbc5eb40010d42999323/LICENSE",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "aom"
+            ]
+          }
+        },
+        {
+          "path": "imagick-aom-PATENTS.txt",
+          "sha256": "f094e0f3b851a25fd80f177c07065214007adf128538c1178c257233b582844f",
+          "bytes": 5702,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/aom/zip/6c5b8bb6b845bda65a70fbc5eb40010d42999323",
+          "licenseDescription": "AOMedia 3.1.3 BSD-2-Clause/patent grant and Fastfeat BSD / vector MIT texts from the source directories selected by the historical HEIF/AOM build. No libwebm/libyuv/x265 inclusion is inferred.",
+          "sourceEvidence": {
+            "sourcePath": "PATENTS",
+            "sourceRef": "6c5b8bb6b845bda65a70fbc5eb40010d42999323",
+            "sourceArchiveSha256": "224db7e9808bcdfecafdd0b5d1aee373beab273bd10e7a1b12c341577c13cbf2",
+            "sourceArchivePath": "aom-6c5b8bb6b845bda65a70fbc5eb40010d42999323/PATENTS",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "aom"
+            ]
+          }
+        },
+        {
+          "path": "imagick-aom-third_party-fastfeat-LICENSE.txt",
+          "sha256": "043dcfd059386f9facd376351b2bd79325778744aa442177390cdfcca54babed",
+          "bytes": 1506,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/aom/zip/6c5b8bb6b845bda65a70fbc5eb40010d42999323",
+          "licenseDescription": "AOMedia 3.1.3 BSD-2-Clause/patent grant and Fastfeat BSD / vector MIT texts from the source directories selected by the historical HEIF/AOM build. No libwebm/libyuv/x265 inclusion is inferred.",
+          "sourceEvidence": {
+            "sourcePath": "third_party/fastfeat/LICENSE",
+            "sourceRef": "6c5b8bb6b845bda65a70fbc5eb40010d42999323",
+            "sourceArchiveSha256": "224db7e9808bcdfecafdd0b5d1aee373beab273bd10e7a1b12c341577c13cbf2",
+            "sourceArchivePath": "aom-6c5b8bb6b845bda65a70fbc5eb40010d42999323/third_party/fastfeat/LICENSE",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "aom"
+            ]
+          }
+        },
+        {
+          "path": "imagick-aom-third_party-vector-LICENSE.txt",
+          "sha256": "ff6c857ce2708e87701323078aef115c1872a1f80a9649f86dc899b48083bc60",
+          "bytes": 1084,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/aom/zip/6c5b8bb6b845bda65a70fbc5eb40010d42999323",
+          "licenseDescription": "AOMedia 3.1.3 BSD-2-Clause/patent grant and Fastfeat BSD / vector MIT texts from the source directories selected by the historical HEIF/AOM build. No libwebm/libyuv/x265 inclusion is inferred.",
+          "sourceEvidence": {
+            "sourcePath": "third_party/vector/LICENSE",
+            "sourceRef": "6c5b8bb6b845bda65a70fbc5eb40010d42999323",
+            "sourceArchiveSha256": "224db7e9808bcdfecafdd0b5d1aee373beab273bd10e7a1b12c341577c13cbf2",
+            "sourceArchivePath": "aom-6c5b8bb6b845bda65a70fbc5eb40010d42999323/third_party/vector/LICENSE",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "aom"
+            ]
+          }
+        },
+        {
+          "path": "imagick-liblzma-COPYING.txt",
+          "sha256": "bcb02973ef6e87ea73d331b3a80df7748407f17efdb784b61b47e0e610d3bb5c",
+          "bytes": 2775,
+          "sourceUrl": "https://raw.githubusercontent.com/tukaani-project/xz/v5.2.5/COPYING",
+          "licenseDescription": "XZ Utils 5.2.5 licensing summary: liblzma source is public domain; GPL tools/build/test files do not make the library GPL. Toolchain-added code is a separate issue.",
+          "sourceEvidence": {
+            "sourcePath": "COPYING",
+            "sourceRef": "v5.2.5",
+            "families": [
+              "liblzma"
+            ]
+          }
+        },
+        {
+          "path": "imagick-libraw-COPYRIGHT.txt",
+          "sha256": "d6ed03c89e25fcda5db454c1badc2c321f241799aab2062418a7fb3742c935ce",
+          "bytes": 1153,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/libraw/zip/944d5ed7758f04a6b11419b510dabc3d206f58e4",
+          "licenseDescription": "LibRaw 0.21.0-Snapshot202101 historical source: LGPL-2.1 OR CDDL-1.0 alternatives, original dcraw/DCB/X3F/Adobe credits; not GPL-only.",
+          "sourceEvidence": {
+            "sourcePath": "COPYRIGHT",
+            "sourceRef": "944d5ed7758f04a6b11419b510dabc3d206f58e4",
+            "sourceArchiveSha256": "c4237231e7bcc791c9129bdbf2c5f9b6f9b6ae45a992ef2fd25151945eac9c2d",
+            "sourceArchivePath": "raw-944d5ed7758f04a6b11419b510dabc3d206f58e4/COPYRIGHT",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "libraw"
+            ]
+          }
+        },
+        {
+          "path": "imagick-libraw-LICENSE.LGPL.txt",
+          "sha256": "eea173a556abac0370461e57e12aab266894ea6be3874c2be05fd87871f75449",
+          "bytes": 24389,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/libraw/zip/944d5ed7758f04a6b11419b510dabc3d206f58e4",
+          "licenseDescription": "LibRaw 0.21.0-Snapshot202101 historical source: LGPL-2.1 OR CDDL-1.0 alternatives, original dcraw/DCB/X3F/Adobe credits; not GPL-only.",
+          "sourceEvidence": {
+            "sourcePath": "LICENSE.LGPL",
+            "sourceRef": "944d5ed7758f04a6b11419b510dabc3d206f58e4",
+            "sourceArchiveSha256": "c4237231e7bcc791c9129bdbf2c5f9b6f9b6ae45a992ef2fd25151945eac9c2d",
+            "sourceArchivePath": "raw-944d5ed7758f04a6b11419b510dabc3d206f58e4/LICENSE.LGPL",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "libraw"
+            ]
+          }
+        },
+        {
+          "path": "imagick-libraw-LICENSE.CDDL.txt",
+          "sha256": "0e3098d2d54a12434715f6679ea408d57da5e8d613c385c58ecc6fe5d30cc81f",
+          "bytes": 16906,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/libraw/zip/944d5ed7758f04a6b11419b510dabc3d206f58e4",
+          "licenseDescription": "LibRaw 0.21.0-Snapshot202101 historical source: LGPL-2.1 OR CDDL-1.0 alternatives, original dcraw/DCB/X3F/Adobe credits; not GPL-only.",
+          "sourceEvidence": {
+            "sourcePath": "LICENSE.CDDL",
+            "sourceRef": "944d5ed7758f04a6b11419b510dabc3d206f58e4",
+            "sourceArchiveSha256": "c4237231e7bcc791c9129bdbf2c5f9b6f9b6ae45a992ef2fd25151945eac9c2d",
+            "sourceArchivePath": "raw-944d5ed7758f04a6b11419b510dabc3d206f58e4/LICENSE.CDDL",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "libraw"
+            ]
+          }
+        },
+        {
+          "path": "imagick-libraw-src-demosaic-dcb_demosaic.cpp-notice.txt",
+          "sha256": "708af09f21a8722dc79730bd264468d932059ac9a68c3a213724b8efa8ebe0cb",
+          "bytes": 1720,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/libraw/zip/944d5ed7758f04a6b11419b510dabc3d206f58e4",
+          "licenseDescription": "LibRaw DCB/FBDD Jacek Gozdz BSD-3-Clause notice. Exact complete source comment; byte range is recorded.",
+          "sourceEvidence": {
+            "sourcePath": "src/demosaic/dcb_demosaic.cpp",
+            "sourceRef": "944d5ed7758f04a6b11419b510dabc3d206f58e4",
+            "sourceArchiveSha256": "c4237231e7bcc791c9129bdbf2c5f9b6f9b6ae45a992ef2fd25151945eac9c2d",
+            "sourceArchivePath": "raw-944d5ed7758f04a6b11419b510dabc3d206f58e4/src/demosaic/dcb_demosaic.cpp",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "sourceByteRange": {
+              "offset": 0,
+              "length": 1720
+            },
+            "sourceFileSha256": "e3f6470e78fee9399cb50dccb388b4501e1f925d28f2168d3dfc675348f1d80a",
+            "families": [
+              "libraw-dcb"
+            ]
+          }
+        },
+        {
+          "path": "imagick-libraw-src-x3f-x3f_utils_patched.cpp-notice.txt",
+          "sha256": "b57f71dfced30bfc871b43262ebd2a684260d1b1aac343abe688755a531c52b8",
+          "bytes": 1728,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/libraw/zip/944d5ed7758f04a6b11419b510dabc3d206f58e4",
+          "licenseDescription": "LibRaw X3F Roland Karlsson BSD notice; no substitution with a generic LGPL text. Exact complete source comment; byte range is recorded.",
+          "sourceEvidence": {
+            "sourcePath": "src/x3f/x3f_utils_patched.cpp",
+            "sourceRef": "944d5ed7758f04a6b11419b510dabc3d206f58e4",
+            "sourceArchiveSha256": "c4237231e7bcc791c9129bdbf2c5f9b6f9b6ae45a992ef2fd25151945eac9c2d",
+            "sourceArchivePath": "raw-944d5ed7758f04a6b11419b510dabc3d206f58e4/src/x3f/x3f_utils_patched.cpp",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "sourceByteRange": {
+              "offset": 21,
+              "length": 1728
+            },
+            "sourceFileSha256": "dfce891f43ab4c70d82654035988714b8cdeeb370ab14841f37d2a53f8bc68fa",
+            "families": [
+              "libraw-x3f"
+            ]
+          }
+        },
+        {
+          "path": "imagick-librsvg-COPYING.LIB.txt",
+          "sha256": "d7bf9d064ac3e5840f9dd02422b7eeec4f1fd03f37fadbd043602be5e882304f",
+          "bytes": 25283,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/librsvg/zip/dbea2156a5a533e772b7d4b6de044bf2bd1f549e",
+          "licenseDescription": "librsvg 2.40.20 library terms: GNU Library General Public License v2 (LGPL historical name), distinct from GPL COPYING for auxiliary code.",
+          "sourceEvidence": {
+            "sourcePath": "COPYING.LIB",
+            "sourceRef": "dbea2156a5a533e772b7d4b6de044bf2bd1f549e",
+            "sourceArchiveSha256": "5cf26f0443555a2ec2048cc5f995bfe43319f3b3552ba4557b69b6d501d72028",
+            "sourceArchivePath": "rsvg-dbea2156a5a533e772b7d4b6de044bf2bd1f549e/COPYING.LIB",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "librsvg"
+            ]
+          }
+        },
+        {
+          "path": "imagick-librsvg-gdk-pixbuf-COPYING.txt",
+          "sha256": "d245807f90032872d1438d741ed21e2490e1175dc8aa3afa5ddb6c8e529b58e5",
+          "bytes": 25292,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/librsvg/zip/dbea2156a5a533e772b7d4b6de044bf2bd1f549e",
+          "licenseDescription": "GdkPixbuf in the historical RSVG tree: GNU Library General Public License v2, the LGPL predecessor; not the ordinary GPLv2 merely because the file is named COPYING.",
+          "sourceEvidence": {
+            "sourcePath": "gdk-pixbuf/COPYING",
+            "sourceRef": "dbea2156a5a533e772b7d4b6de044bf2bd1f549e",
+            "sourceArchiveSha256": "5cf26f0443555a2ec2048cc5f995bfe43319f3b3552ba4557b69b6d501d72028",
+            "sourceArchivePath": "rsvg-dbea2156a5a533e772b7d4b6de044bf2bd1f549e/gdk-pixbuf/COPYING",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "gdk-pixbuf"
+            ]
+          }
+        },
+        {
+          "path": "imagick-croco-COPYING.LIB.txt",
+          "sha256": "94b03f1a60a7fd5007149530626a895a6ef5a8b9342abfd56860c5f3956f5d23",
+          "bytes": 25265,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/croco/zip/31d07566601c1df52d3318b1489486c2309db057",
+          "licenseDescription": "Original libcroco COPYING.LIB contains the historical GNU Library GPL v2 text; cr-statement.c specifies LGPL-2.1. Both the original file and exact LGPL-2.1 text supplied in this bundle must be retained; this mismatch is not ordinary GPL-only licensing.",
+          "sourceEvidence": {
+            "sourcePath": "COPYING.LIB",
+            "sourceRef": "31d07566601c1df52d3318b1489486c2309db057",
+            "sourceArchiveSha256": "9d7fcdafc05089863e1f063f023894803c5127babc51c371848a0ee77d5313dd",
+            "sourceArchivePath": "croco-31d07566601c1df52d3318b1489486c2309db057/COPYING.LIB",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "croco"
+            ]
+          }
+        },
+        {
+          "path": "imagick-croco-COPYRIGHTS.txt",
+          "sha256": "09e476bf7510430cab344ae41a40e28864a5df5ef0edd6de68f9a8b3187b5c2e",
+          "bytes": 132,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/croco/zip/31d07566601c1df52d3318b1489486c2309db057",
+          "licenseDescription": "libcroco original Dodji Seketeli copyright attribution.",
+          "sourceEvidence": {
+            "sourcePath": "COPYRIGHTS",
+            "sourceRef": "31d07566601c1df52d3318b1489486c2309db057",
+            "sourceArchiveSha256": "9d7fcdafc05089863e1f063f023894803c5127babc51c371848a0ee77d5313dd",
+            "sourceArchivePath": "croco-31d07566601c1df52d3318b1489486c2309db057/COPYRIGHTS",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "croco"
+            ]
+          }
+        },
+        {
+          "path": "imagick-croco-src-cr-statement.c-notice.txt",
+          "sha256": "aa53df5e8c22a8ec42e7a3d45ab9740a33271bcb1c047072c071ce315a8a60aa",
+          "bytes": 866,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/croco/zip/31d07566601c1df52d3318b1489486c2309db057",
+          "licenseDescription": "libcroco original source comment explicitly selecting LGPL-2.1; resolves the misleading older COPYING.LIB text without rewriting it. Exact complete source comment; byte range is recorded.",
+          "sourceEvidence": {
+            "sourcePath": "src/cr-statement.c",
+            "sourceRef": "31d07566601c1df52d3318b1489486c2309db057",
+            "sourceArchiveSha256": "9d7fcdafc05089863e1f063f023894803c5127babc51c371848a0ee77d5313dd",
+            "sourceArchivePath": "croco-31d07566601c1df52d3318b1489486c2309db057/src/cr-statement.c",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "sourceByteRange": {
+              "offset": 0,
+              "length": 866
+            },
+            "sourceFileSha256": "3deb0f80978608dcf9c165b6493c649ed4d6deda8ff87706802e913f30e14ee1",
+            "families": [
+              "croco"
+            ]
+          }
+        },
+        {
+          "path": "imagick-libxml-Copyright.txt",
+          "sha256": "c5c63674f8a83c4d2e385d96d1c670a03cb871ba2927755467017317878574bd",
+          "bytes": 1289,
+          "sourceUrl": "https://raw.githubusercontent.com/GNOME/libxml2/v2.9.10/Copyright",
+          "licenseDescription": "libxml2 2.9.10 MIT license with Daniel Veillard copyright.",
+          "sourceEvidence": {
+            "sourcePath": "Copyright",
+            "sourceRef": "v2.9.10",
+            "families": [
+              "libxml"
+            ]
+          }
+        },
+        {
+          "path": "imagick-libzip-LICENSE.txt",
+          "sha256": "deae392de70503672793ee784d603bfa8069dcd5974a325dfbf91160f3a147d6",
+          "bytes": 1452,
+          "sourceUrl": "https://raw.githubusercontent.com/nih-at/libzip/v1.7.3/LICENSE",
+          "licenseDescription": "libzip 1.7.3 BSD-3-Clause copyright and conditions.",
+          "sourceEvidence": {
+            "sourcePath": "LICENSE",
+            "sourceRef": "v1.7.3",
+            "families": [
+              "libzip"
+            ]
+          }
+        },
+        {
+          "path": "imagick-lqr-COPYING.LESSER.txt",
+          "sha256": "a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c",
+          "bytes": 7639,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/lqr/zip/4881b63c9786a5ba674d51721c94bfce2bef6260",
+          "licenseDescription": "LiquidRescale 0.4.2 library is LGPL-3.0; include the LGPL and incorporated GPL-3.0 text together, retaining the additional LGPL permissions.",
+          "sourceEvidence": {
+            "sourcePath": "COPYING.LESSER",
+            "sourceRef": "4881b63c9786a5ba674d51721c94bfce2bef6260",
+            "sourceArchiveSha256": "91ef61581687ad08de9226c41acb50189d1e7a5ed2b1d580a5854f33bcc40de9",
+            "sourceArchivePath": "lqr-4881b63c9786a5ba674d51721c94bfce2bef6260/COPYING.LESSER",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "lqr"
+            ]
+          }
+        },
+        {
+          "path": "imagick-lqr-COPYING.txt",
+          "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+          "bytes": 35147,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/lqr/zip/4881b63c9786a5ba674d51721c94bfce2bef6260",
+          "licenseDescription": "LiquidRescale 0.4.2 library is LGPL-3.0; include the LGPL and incorporated GPL-3.0 text together, retaining the additional LGPL permissions.",
+          "sourceEvidence": {
+            "sourcePath": "COPYING",
+            "sourceRef": "4881b63c9786a5ba674d51721c94bfce2bef6260",
+            "sourceArchiveSha256": "91ef61581687ad08de9226c41acb50189d1e7a5ed2b1d580a5854f33bcc40de9",
+            "sourceArchivePath": "lqr-4881b63c9786a5ba674d51721c94bfce2bef6260/COPYING",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "lqr"
+            ]
+          }
+        },
+        {
+          "path": "imagick-openjpeg-LICENSE.txt",
+          "sha256": "a6af136f3e15038a666b61f376612a07d9a4e48cb7c01adbf3e33b3f14ab49b6",
+          "bytes": 2112,
+          "sourceUrl": "https://raw.githubusercontent.com/uclouvain/openjpeg/v2.3.1/LICENSE",
+          "licenseDescription": "OpenJPEG 2.3.1 complete BSD-2-Clause copyright collection for CORE_RL_openjpeg_.dll.",
+          "sourceEvidence": {
+            "sourcePath": "LICENSE",
+            "sourceRef": "v2.3.1",
+            "families": [
+              "openjpeg"
+            ]
+          }
+        },
+        {
+          "path": "imagick-pango-COPYING.txt",
+          "sha256": "d245807f90032872d1438d741ed21e2490e1175dc8aa3afa5ddb6c8e529b58e5",
+          "bytes": 25292,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/pango/zip/30df8db265a687ba463ca1f42b25ba924994c905",
+          "licenseDescription": "Pango historical 1.45.3/resource and 1.45.2/generated-header tree: GNU Library General Public License v2 text; upstream source declares LGPL-2.1-or-later. Both upstream 1.45.2/1.45.3 COPYING files are byte-identical.",
+          "sourceEvidence": {
+            "sourcePath": "COPYING",
+            "sourceRef": "30df8db265a687ba463ca1f42b25ba924994c905",
+            "sourceArchiveSha256": "d77e8c99de10cbe62623b8928721e761e17f76f783a58a99236b38a086381156",
+            "sourceArchivePath": "pango-30df8db265a687ba463ca1f42b25ba924994c905/COPYING",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "pango"
+            ]
+          }
+        },
+        {
+          "path": "imagick-pango-pango-pango-utils.c-notice.txt",
+          "sha256": "27029481e731c14f7161ab18f35f80c036d055704539b2f0dd985ed0bc34494d",
+          "bytes": 861,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/pango/zip/30df8db265a687ba463ca1f42b25ba924994c905",
+          "licenseDescription": "Pango original source copyright and LGPL-2-or-later grant; meson declares LGPL-2.1-or-later. Original historical Library GPL v2 and bundle LGPL-2.1 texts remain intact. Exact complete source comment; byte range is recorded.",
+          "sourceEvidence": {
+            "sourcePath": "pango/pango-utils.c",
+            "sourceRef": "30df8db265a687ba463ca1f42b25ba924994c905",
+            "sourceArchiveSha256": "d77e8c99de10cbe62623b8928721e761e17f76f783a58a99236b38a086381156",
+            "sourceArchivePath": "pango-30df8db265a687ba463ca1f42b25ba924994c905/pango/pango-utils.c",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "sourceByteRange": {
+              "offset": 0,
+              "length": 861
+            },
+            "sourceFileSha256": "ec1efcb3bf53c47f164486617d325180976469e51828be1cc3eee8e86bcbbcd2",
+            "families": [
+              "pango"
+            ]
+          }
+        },
+        {
+          "path": "imagick-png-LICENSE.txt",
+          "sha256": "bf5e22b9dce8464064ae17a48ea1133c3369ac9e1d80ef9e320e5219aa14ea9b",
+          "bytes": 5345,
+          "sourceUrl": "https://raw.githubusercontent.com/pnggroup/libpng/v1.6.37/LICENSE",
+          "licenseDescription": "libpng 1.6.37 complete libpng license including historic contributors and disclaimers.",
+          "sourceEvidence": {
+            "sourcePath": "LICENSE",
+            "sourceRef": "v1.6.37",
+            "families": [
+              "png"
+            ]
+          }
+        },
+        {
+          "path": "imagick-tiff-COPYRIGHT.txt",
+          "sha256": "fbd6fed7938541d2c809c0826225fc85e551fdbfa8732b10f0c87e0847acafd7",
+          "bytes": 1146,
+          "sourceUrl": "https://gitlab.com/libtiff/libtiff/-/raw/v4.3.0/COPYRIGHT",
+          "licenseDescription": "libtiff 4.3.0 Sam Leffler/Silicon Graphics permission and warranty notice.",
+          "sourceEvidence": {
+            "sourcePath": "COPYRIGHT",
+            "sourceRef": "v4.3.0",
+            "families": [
+              "tiff"
+            ]
+          }
+        },
+        {
+          "path": "imagick-webp-COPYING.txt",
+          "sha256": "5aec868f669e384a22372a4e8a1a6cd7d44c64cd451f960ca69cc170d1e13acf",
+          "bytes": 1496,
+          "sourceUrl": "https://raw.githubusercontent.com/webmproject/libwebp/v1.2.0/COPYING",
+          "licenseDescription": "WebP 1.2.0 BSD-3-Clause copyright/conditions and Google patent grant; preserve both original files.",
+          "sourceEvidence": {
+            "sourcePath": "COPYING",
+            "sourceRef": "v1.2.0",
+            "families": [
+              "webp"
+            ]
+          }
+        },
+        {
+          "path": "imagick-webp-PATENTS.txt",
+          "sha256": "cc3273e0694ea5896145e0677699b53471b03ea43021ddc50e7923fbb9f5023c",
+          "bytes": 1436,
+          "sourceUrl": "https://raw.githubusercontent.com/webmproject/libwebp/v1.2.0/PATENTS",
+          "licenseDescription": "WebP 1.2.0 BSD-3-Clause copyright/conditions and Google patent grant; preserve both original files.",
+          "sourceEvidence": {
+            "sourcePath": "PATENTS",
+            "sourceRef": "v1.2.0",
+            "families": [
+              "webp"
+            ]
+          }
+        },
+        {
+          "path": "imagick-zlib-README.txt",
+          "sha256": "7960b6b1cc63e619abb77acaea5427159605afee8c8b362664f4effc7d7f7d15",
+          "bytes": 5187,
+          "sourceUrl": "https://raw.githubusercontent.com/madler/zlib/v1.2.11/README",
+          "licenseDescription": "zlib 1.2.11 original README with Jean-loup Gailly/Mark Adler zlib license, not GPL.",
+          "sourceEvidence": {
+            "sourcePath": "README",
+            "sourceRef": "v1.2.11",
+            "families": [
+              "zlib"
+            ]
+          }
+        },
+        {
+          "path": "imagick-raqm-COPYING.txt",
+          "sha256": "bd20511a077235fa2c2eb45c0bc79da29f1f300bb2506faf26b1c6bd6246fd0c",
+          "bytes": 1177,
+          "sourceUrl": "https://codeload.github.com/ImageMagick/raqm/zip/90ad2f543cd88544946035472244ad5d80622eaf",
+          "licenseDescription": "Raqm 0.7.1 MIT license: Information Technology Authority and Khaled Hosny; statically linked into MagickCore, independent of FriBidi/HarfBuzz/FreeType terms.",
+          "sourceEvidence": {
+            "sourcePath": "COPYING",
+            "sourceRef": "90ad2f543cd88544946035472244ad5d80622eaf",
+            "sourceArchiveSha256": "1151249aa3faa095180521784caa8f36d58f5d5744ba06da3007ccff57a07cb2",
+            "sourceArchivePath": "raqm-90ad2f543cd88544946035472244ad5d80622eaf/COPYING",
+            "sourceSelection": "immutable historical cutoff candidate; does not alone prove binary/source correspondence",
+            "families": [
+              "raqm"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

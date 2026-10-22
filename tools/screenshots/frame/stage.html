@@ -1,0 +1,348 @@
+<!doctype html>
+<meta charset="utf-8">
+<!--
+  The video stage. video.mjs loads this page, calls setup() once with the
+  tour and its captures, then seek(t) once per frame and screenshots it.
+
+  seek(t) is a pure function of t: nothing here keeps state between frames,
+  nothing runs on a clock, and no CSS transition is involved. The same t always
+  paints the same pixels, which is what lets the renderer be a plain loop.
+-->
+<style>
+  html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #05030f; }
+  body {
+    position: relative;
+    font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+    color: #fff;
+  }
+  /* Same sky as frame.html so the video sits next to the banners. */
+  .bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(48% 42% at 14% 10%, rgba(150, 92, 255, 0.62), transparent 72%),
+      radial-gradient(40% 34% at 30% 4%, rgba(214, 96, 220, 0.34), transparent 70%),
+      radial-gradient(52% 44% at 88% 88%, rgba(120, 70, 235, 0.50), transparent 72%),
+      radial-gradient(34% 30% at 70% 100%, rgba(31, 107, 255, 0.34), transparent 70%),
+      linear-gradient(160deg, #1a0c33 0%, #0b0a22 55%, #05030f 100%);
+  }
+  .stars {
+    position: absolute; inset: -40px 0 0 0; pointer-events: none;
+    background-image:
+      radial-gradient(1.6px 1.6px at 12% 22%, #fff 50%, transparent 52%),
+      radial-gradient(1.2px 1.2px at 78% 12%, #fff 50%, transparent 52%),
+      radial-gradient(1.8px 1.8px at 35% 78%, #fff 50%, transparent 52%),
+      radial-gradient(1.1px 1.1px at 92% 62%, #fff 50%, transparent 52%),
+      radial-gradient(1.4px 1.4px at 58% 40%, #fff 50%, transparent 52%),
+      radial-gradient(1.0px 1.0px at 5% 68%, #fff 50%, transparent 52%);
+    background-repeat: repeat;
+    background-size: 340px 300px, 260px 240px, 420px 380px, 300px 280px, 380px 340px, 220px 200px;
+    opacity: 0.9;
+  }
+
+  /* One layer per scene, stacked in storyboard order. */
+  .scene {
+    position: absolute; left: 0; top: 0;
+    transform-origin: 0 0;
+    opacity: 0;
+  }
+  .scene img {
+    display: block; width: 100%; height: 100%;
+    border-radius: 16px;
+    box-shadow:
+      0 40px 90px -30px rgba(0, 0, 0, 0.85),
+      0 0 0 1px rgba(255, 255, 255, 0.08);
+  }
+  .hl {
+    position: absolute;
+    border: 2.5px solid #67e8f9;
+    border-radius: 10px;
+    background: rgba(103, 232, 249, 0.07);
+    box-shadow: 0 0 0 4px rgba(103, 232, 249, 0.16), 0 0 26px rgba(103, 232, 249, 0.45);
+    opacity: 0;
+  }
+
+  /* Everything that is not a scene sits above every scene. */
+  #icon, #iconLabel, #caption, #cursor, .ripple, #fade { z-index: 100; }
+
+  /* The app icon the tour double-clicks to "open LaraEnv". */
+  #icon {
+    position: absolute; left: 960px; top: 500px;
+    width: 168px; height: 168px;
+    margin: -84px 0 0 -84px;
+    opacity: 0;
+    filter: drop-shadow(0 20px 40px rgba(60, 120, 255, 0.45));
+  }
+  #icon img { width: 100%; height: 100%; display: block; }
+  #iconLabel {
+    position: absolute; left: 960px; top: 604px;
+    transform: translateX(-50%);
+    font-size: 26px; font-weight: 600; letter-spacing: 0.02em;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+  }
+
+  #caption {
+    position: absolute; left: 96px; bottom: 72px;
+    display: flex; align-items: center; gap: 16px;
+    padding: 18px 30px 18px 24px;
+    border-radius: 18px;
+    background: rgba(10, 8, 24, 0.74);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.8);
+    font-size: 34px; font-weight: 600; letter-spacing: -0.005em;
+    opacity: 0;
+  }
+  #caption i {
+    width: 12px; height: 12px; border-radius: 50%;
+    background: #67e8f9;
+    box-shadow: 0 0 14px rgba(103, 232, 249, 0.8);
+  }
+
+  #cursor {
+    position: absolute; left: 0; top: 0;
+    width: 30px; height: 36px;
+    transform-origin: 3px 3px;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.55));
+    opacity: 0;
+  }
+  .ripple {
+    position: absolute; left: 0; top: 0;
+    width: 70px; height: 70px; margin: -35px 0 0 -35px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    opacity: 0;
+  }
+  #fade { position: absolute; inset: 0; background: #000; opacity: 0; }
+</style>
+
+<div class="bg"></div>
+<div class="stars" id="stars"></div>
+<div id="scenes"></div>
+<div id="icon"><img id="iconImg" alt=""></div>
+<div id="iconLabel">LaraEnv</div>
+<div id="caption"><i></i><span id="captionText"></span></div>
+<div class="ripple" id="ripple0"></div>
+<div class="ripple" id="ripple1"></div>
+<svg id="cursor" viewBox="0 0 30 36">
+  <path d="M3 3 L3 28 L9.5 22 L14 33 L19.5 30.5 L15 19.5 L24 19.5 Z"
+        fill="#fff" stroke="#111" stroke-width="2.2" stroke-linejoin="round"/>
+</svg>
+<div id="fade"></div>
+
+<script>
+  const W = 1920, H = 1080;
+  // Captures are 1334x871 CSS px (capture.mjs VIEWPORT); the window is shown
+  // at 1500px wide so the starfield reads as a border, as in the banners.
+  const CAP = { w: 1334, h: 871 };
+  const BW = 1500, B = BW / CAP.w, BH = CAP.h * B;
+  const X0 = (W - BW) / 2, Y0 = (H - BH) / 2;
+  const ICON = { x: 960, y: 500 };
+
+  const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+  const clamp01 = (v) => clamp(v, 0, 1);
+  const prog = (t, a, b) => (b <= a ? (t >= b ? 1 : 0) : clamp01((t - a) / (b - a)));
+  const lerp = (a, b, p) => a + (b - a) * p;
+  const expoOut = (p) => (p >= 1 ? 1 : 1 - Math.pow(2, -10 * p));
+  const power2InOut = (p) => (p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2);
+  const power3Out = (p) => 1 - Math.pow(1 - p, 3);
+  const backOut = (p) => { const c = 1.70158; return 1 + (c + 1) * Math.pow(p - 1, 3) + c * Math.pow(p - 1, 2); };
+
+  let tour, scenes, els;
+
+  window.setup = async ({ tour: t, captures, icon }) => {
+    tour = t;
+    document.getElementById("iconImg").src = icon;
+    const host = document.getElementById("scenes");
+    host.innerHTML = "";
+    scenes = tour.scenes.map((sc, i) => {
+      const cap = captures[sc.capture];
+      const el = document.createElement("div");
+      el.className = "scene";
+      el.style.width = `${BW}px`;
+      el.style.height = `${BH}px`;
+      el.style.zIndex = String(10 + i);
+      const img = document.createElement("img");
+      img.src = cap.src;
+      el.appendChild(img);
+      const hls = (sc.highlights || []).map((h) => {
+        const b = cap.boxes[h.box];
+        const d = document.createElement("div");
+        d.className = "hl";
+        const pad = 7;
+        d.style.left = `${(b.x - pad) * B}px`;
+        d.style.top = `${(b.y - pad) * B}px`;
+        d.style.width = `${(b.width + pad * 2) * B}px`;
+        d.style.height = `${(b.height + pad * 2) * B}px`;
+        el.appendChild(d);
+        return { spec: h, el: d };
+      });
+      host.appendChild(el);
+      const end = i + 1 < tour.scenes.length ? tour.scenes[i + 1].start : tour.duration;
+      return { spec: sc, boxes: cap.boxes, el, img, hls, end };
+    });
+    els = {
+      caption: document.getElementById("caption"),
+      captionText: document.getElementById("captionText"),
+      cursor: document.getElementById("cursor"),
+      ripples: [document.getElementById("ripple0"), document.getElementById("ripple1")],
+      icon: document.getElementById("icon"),
+      iconLabel: document.getElementById("iconLabel"),
+      fade: document.getElementById("fade"),
+      stars: document.getElementById("stars"),
+    };
+    await Promise.all([...scenes.map((s) => s.img.decode()), document.getElementById("iconImg").decode()]);
+    await document.fonts.ready;
+  };
+
+  function centerOf(boxes, names) {
+    let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+    for (const n of names) {
+      const b = boxes[n];
+      x0 = Math.min(x0, b.x); y0 = Math.min(y0, b.y);
+      x1 = Math.max(x1, b.x + b.width); y1 = Math.max(y1, b.y + b.height);
+    }
+    return { x: (x0 + x1) / 2, y: (y0 + y1) / 2 };
+  }
+
+  // Where the window sits at time t: its top-left on the stage and its scale.
+  // The zoom interpolates between the resting rect and a fully-zoomed rect that
+  // has already been clamped to cover the stage, so the motion is continuous
+  // instead of snapping the moment the window becomes wide enough to clamp.
+  function transformAt(s, t) {
+    const sc = s.spec;
+    let left = X0, top = Y0, scale = 1, opacity = 1;
+
+    if (sc.launch) {
+      const [a, b] = sc.launch.window;
+      const p = expoOut(prog(t, a, b));
+      scale = lerp(0.86, 1, p);
+      left = X0 + (BW * (1 - scale)) / 2;
+      top = Y0 + (BH * (1 - scale)) / 2;
+      opacity = t < a ? 0 : prog(t, a, a + 0.35);
+    }
+
+    if (sc.zoom) {
+      const z = sc.zoom;
+      const f = centerOf(s.boxes, z.focus);
+      const sw = BW * z.scale, sh = BH * z.scale;
+      let l1 = X0 + f.x * B * (1 - z.scale), t1 = Y0 + f.y * B * (1 - z.scale);
+      if (sw >= W) l1 = clamp(l1, W - sw, 0);
+      if (sh >= H) t1 = clamp(t1, H - sh, 0);
+      const p = power2InOut(prog(t, z.from, z.to));
+      left = lerp(left, l1, p); top = lerp(top, t1, p); scale = lerp(scale, z.scale, p);
+    }
+    return { left, top, scale, opacity };
+  }
+
+  // A named point (box centre, or the icon) in stage coordinates at time t.
+  function stagePoint(s, name, t) {
+    if (name === "icon") return ICON;
+    const b = s.boxes[name];
+    const tr = transformAt(s, t);
+    return { x: tr.left + (b.x + b.width / 2) * B * tr.scale, y: tr.top + (b.y + b.height / 2) * B * tr.scale };
+  }
+
+  function cursorEvents() {
+    const out = [];
+    for (const s of scenes) for (const ev of s.spec.cursor || []) out.push({ ...ev, scene: s });
+    return out.sort((a, b) => a.at - b.at);
+  }
+
+  window.seek = (t) => {
+    const fade = tour.fade;
+
+    // Scenes. A later scene fades in on top of the previous one, which stays
+    // put underneath until the fade is over.
+    scenes.forEach((s, i) => {
+      const sc = s.spec;
+      const until = i + 1 < scenes.length ? scenes[i + 1].spec.start + fade : tour.duration + 1;
+      let op = 0;
+      if (t >= sc.start && t <= until) op = i === 0 ? 1 : prog(t, sc.start, sc.start + fade);
+      const tr = transformAt(s, t);
+      op *= tr.opacity;
+      s.el.style.opacity = op.toFixed(4);
+      s.el.style.transform = `translate(${tr.left.toFixed(3)}px, ${tr.top.toFixed(3)}px) scale(${tr.scale.toFixed(5)})`;
+
+      for (const h of s.hls) {
+        const p = prog(t, h.spec.at, h.spec.at + 0.45);
+        const e = backOut(p);
+        const pulse = p >= 1 ? 1 + 0.012 * Math.sin((t - h.spec.at) * 5) : lerp(1.3, 1, e);
+        h.el.style.opacity = (op > 0 ? p : 0).toFixed(3);
+        h.el.style.transform = `scale(${pulse.toFixed(4)})`;
+      }
+    });
+
+    // Launch: the icon waits, gets double-clicked, and gives way to the window.
+    const first = scenes[0].spec;
+    if (first.launch) {
+      const [ia, ib] = first.launch.icon;
+      const [wa] = first.launch.window;
+      const inP = prog(t, ia, ia + 0.3);
+      const outP = expoOut(prog(t, ib, wa + 0.25));
+      const op = inP * (1 - outP);
+      els.icon.style.opacity = op.toFixed(3);
+      els.icon.style.transform = `scale(${lerp(0.9, 1, expoOut(inP)) * lerp(1, 1.5, outP)})`;
+      els.iconLabel.style.opacity = op.toFixed(3);
+    }
+
+    // Caption of the scene that owns t.
+    let cap = null;
+    scenes.forEach((s, i) => {
+      const c = s.spec.caption;
+      if (!c) return;
+      const until = i + 1 < scenes.length ? scenes[i + 1].spec.start + fade : tour.duration;
+      const outFrom = i + 1 < scenes.length ? scenes[i + 1].spec.start : tour.fadeOutAt;
+      if (t >= c.at && t <= until) cap = { c, outFrom, until };
+    });
+    if (cap) {
+      const inP = expoOut(prog(t, cap.c.at, cap.c.at + 0.5));
+      const outP = prog(t, cap.outFrom, cap.until);
+      els.captionText.textContent = cap.c.text;
+      els.caption.style.opacity = (inP * (1 - outP)).toFixed(3);
+      els.caption.style.transform = `translateY(${lerp(26, 0, inP).toFixed(2)}px)`;
+    } else {
+      els.caption.style.opacity = "0";
+    }
+
+    // Cursor: rests, then moves to each event's target in turn. Targets are
+    // resolved at time t, so the pointer rides along with a zooming window.
+    const events = cursorEvents();
+    const START = { x: 1180, y: 760 };
+    let pos = START;
+    let prev = null;
+    for (const ev of events) {
+      const t0 = ev.at - ev.move, t1 = ev.at - 0.06;
+      if (t < t0) break;
+      const dest = stagePoint(ev.scene, ev.target, t);
+      if (t < t1) {
+        const from = prev ? stagePoint(prev.scene, prev.target, t0) : START;
+        const p = power2InOut(prog(t, t0, t1));
+        pos = { x: lerp(from.x, dest.x, p), y: lerp(from.y, dest.y, p) };
+        break;
+      }
+      pos = dest;
+      prev = ev;
+    }
+    // A press: the arrow dips for a few frames.
+    let press = 0;
+    for (const ev of events) if (ev.click && t >= ev.at && t < ev.at + 0.12) press = 1 - prog(t, ev.at, ev.at + 0.12);
+    els.cursor.style.opacity = prog(t, 0.05, 0.3).toFixed(3);
+    els.cursor.style.transform = `translate(${(pos.x - 3).toFixed(2)}px, ${(pos.y - 3).toFixed(2)}px) scale(${lerp(1, 0.86, press).toFixed(3)})`;
+
+    // Click ripples; two elements so a double-click can overlap.
+    const live = events.filter((ev) => ev.click && t >= ev.at && t <= ev.at + 0.45);
+    els.ripples.forEach((r, i) => {
+      const ev = live[i];
+      if (!ev) { r.style.opacity = "0"; return; }
+      const p = power3Out(prog(t, ev.at, ev.at + 0.45));
+      const at = stagePoint(ev.scene, ev.target, t);
+      r.style.opacity = (0.85 * (1 - p)).toFixed(3);
+      r.style.transform = `translate(${at.x.toFixed(2)}px, ${at.y.toFixed(2)}px) scale(${lerp(0.15, 1, p).toFixed(3)})`;
+    });
+
+    // Slow star drift and the closing fade.
+    els.stars.style.transform = `translateY(${(t * 2.5).toFixed(2)}px)`;
+    els.fade.style.opacity = prog(t, tour.fadeOutAt, tour.duration).toFixed(3);
+  };
+</script>

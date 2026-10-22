@@ -1,0 +1,10 @@
+{
+  "$meta": { "code": "en", "name": "English", "nativeName": "English" },
+  "projects": {
+    "title": "Projects",
+    "created": "Project {{name}} created",
+    "count": { "one": "{{count}} project", "other": "{{count}} projects" }
+  },
+  "only": { "inEnglish": "Fallback me" },
+  "server": { "port": "Serving on {{port}}" }
+}

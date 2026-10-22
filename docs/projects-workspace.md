@@ -1,55 +1,55 @@
-# Projects
+# Área de projetos
 
-Projects uses a compact list for your local sites and a separate panel for the selected project's tools. Each row shows its name, path, stack and tags. Row shortcuts launch your preferred tools; selecting the row opens its details.
+A página **Projetos** reúne os sites locais em uma lista compacta e mostra as ferramentas do projeto selecionado em um painel de detalhes. Cada linha informa o nome, o caminho, a stack e as tags do projeto. Os botões da linha executam seus atalhos preferidos; selecionar a linha abre seus detalhes.
 
-![Projects list with client-tag filtering and a selected project's tools](screenshots/projects-workspace.png)
+## Busca, tags e páginas
 
-## Find a project
+Use a busca para encontrar projetos pelo nome, pelo caminho ou pelas tags. O filtro **Tags de clientes** é a principal forma de agrupar os projetos e mostra a quantidade de projetos associada a cada tag. **Todas as tags** inclui todos os projetos; **Sem tags** mostra os que ainda não receberam uma tag. Também é possível buscar uma tag no seletor ou usar uma tag da lista como filtro.
 
-Search by name, path or tag. **Client tags** is the main grouping filter and shows the number of projects associated with each tag. **All tags** includes every project; **Untagged** finds projects without a tag. Tags remain free-form labels, so you can use them for clients, teams or other categories. Search inside the tag picker or select a tag shown in the list.
+A busca e o filtro de tag podem ser combinados. **Limpar filtros** volta à lista completa. Quando nenhum projeto corresponde aos filtros, a página informa que não há resultados.
 
-Search and tag filters can be combined. **Clear filters** restores the complete list. Choose 10, 20 or 50 projects per page; the footer shows the visible range and matching total. Changing the search, tag or page size adjusts pagination.
+A lista mostra 10 projetos por página por padrão, com opções de 20 ou 50 em **Projetos por página**. A paginação informa o intervalo visível, o total de resultados e a página atual. Ao mudar a busca, o filtro ou a quantidade por página, a lista ajusta a paginação. Se uma atualização ou exclusão reduzir o número de páginas, a página atual também é ajustada.
 
-The details panel follows one project visible on the current page. Filtering it out, moving to another page or deleting it clears the selection.
+O painel acompanha apenas um projeto visível na página atual. Se uma mudança de filtro ou de página tirar o projeto selecionado da lista visível, a seleção é limpa. O mesmo acontece quando o projeto deixa de existir após uma atualização ou exclusão.
 
-## Choose your row shortcuts
+## Atalhos da lista e tema
 
-Use **Customize actions** to select the two row shortcuts: editor, browser, terminal or folder. Select **Hidden** to leave either slot empty. The order and choices apply to all projects and are saved on this device. They do not create new project runtime or application preferences: editor and terminal shortcuts use your existing choices.
+Use **Personalizar ações** para escolher os dois atalhos exibidos em cada linha: editor, navegador, terminal ou pasta. Se preferir apenas um atalho, ou nenhum, escolha **Oculto** nos espaços que não deseja usar. A escolha vale para todos os projetos e fica salva neste dispositivo; não é uma preferência sincronizada na nuvem. O editor e o terminal respeitam suas preferências existentes de aplicativo e comandos personalizados.
 
-Choosing an action already used in the other slot swaps the slots. **Restore defaults** returns to editor and browser. If saving is unavailable, the interface reports that the current preference could not be saved.
+Os atalhos aparecem na ordem escolhida. Escolher um atalho que já está no outro espaço troca suas posições. **Restaurar padrão** volta à combinação editor e navegador.
 
-The list, selected row, buttons and details panel follow the theme selected in Settings.
+As cores da lista, do painel e do projeto selecionado acompanham o tema definido nas configurações do LaraEnv. Ao mudar o tema, a tela de Projetos usa as mesmas cores de superfície e destaque das outras telas.
 
-![Customize actions menu with two configurable shortcut slots](screenshots/project-actions.png)
+## Painel do projeto
 
-## Use the details panel
+Selecione um projeto para ver suas configurações de runtime e ferramentas. O painel organiza as ações em **Acesso rápido**, **Desenvolvimento** (incluindo o worker de fila do Laravel), **Scripts do projeto**, runtimes, **Ferramentas do projeto** e **Informações do projeto**, conforme os recursos disponíveis. O caminho e o domínio têm controles para copiar seus valores.
 
-The panel groups **Quick launch**, **Development**, **Project scripts**, **Runtime**, **Project tools** and **Project information**, according to the project's available features. Copy the project path or domain, open its browser, folder, editor, terminal or agents, and use the editor and terminal menus to change their existing preferences.
+As ações já disponíveis continuam no painel e nos seus menus:
 
-Runtime selectors show effective PHP and Node versions, the source of each choice and declared requirements. Choose **Automatic** or an installed version. When a compatible runtime is missing, open the filtered Downloads page. See [runtime detection](project-runtime-detection.md).
+- Abrir o navegador, a pasta, o editor, o terminal e os agentes, respeitando as preferências salvas e os seletores de editor e terminal.
+- Usar comandos personalizados, ajustar os comandos padrão e escolher PHP e Node automaticamente ou por versão, com acesso aos Downloads quando necessário.
+- Iniciar, parar e consultar os logs do servidor Dev, configurar seu comando e iniciar, parar ou reiniciar o worker de fila com argumentos próprios.
+- Configurar tags, HTTPS e proxy, editar o virtual host, acessar cron e histórico e executar o [Site Doctor](site-doctor.md).
+- Criar novos projetos e excluir projetos pelas ações existentes.
 
-Development controls start or stop the selected project's Dev server and queue worker, show logs and expose the existing proxy, command and queue-argument settings. Project tools include SSL, virtual-host configuration, cron/history, tags and [Site Doctor](site-doctor.md). New-project creation, domain suffix selection, reload and deletion remain available.
+Em janelas largas, a lista e os detalhes aparecem lado a lado. Em janelas mais estreitas, como 900 ou 720 pixels de largura, os detalhes aparecem sobre a lista. Use **Fechar detalhes do projeto** ou **Escape** para fechar esse painel. O foco permanece no painel enquanto ele está aberto e retorna à lista ao fechar.
 
-In wide windows the panel sits beside the list. In narrower windows it opens over the list. Close it with **Close project details** or Escape; keyboard focus stays inside the open overlay and returns to the list when it closes.
+## Desenvolvimento, scripts e comandos
 
-## Development, scripts and commands
+**Desenvolvimento** também está disponível para projetos que usam apenas `package.json`, mesmo sem um framework reconhecido. Use **Iniciar Dev** e **Parar Dev** para controlar o processo gerenciado pelo LaraEnv e **Logs** para acompanhar sua saída. **Configurar comando** permite ajustar o comando usado por esse processo, por exemplo, para escolher o script de desenvolvimento do projeto.
 
-**Development** is also available for projects that use `package.json` without a recognized framework. Use **Start Dev** and **Stop Dev** to control the process managed by LaraEnv and **Logs** to follow its output. **Configure command** changes the command used by that managed process, for example to choose the project's development script.
+**Scripts do projeto** lê os scripts declarados no `package.json`. O seletor mostra `dev`, `watch`, `build` e nomes personalizados somente quando esses scripts existem no arquivo. Use **Atualizar scripts** depois de editar o `package.json` ou **Tentar novamente** caso a leitura falhe. Ao executar um script, o LaraEnv usa o gerenciador de pacotes resolvido para o projeto, como npm, pnpm, Yarn ou Bun.
 
-**Project scripts** reads the scripts declared in `package.json`. The selector includes `dev`, `watch`, `build` and custom names only when the file declares them. Use **Refresh scripts** after editing `package.json`, or **Try again** if reading the file fails. Running a script uses the package manager resolved for the project: npm, pnpm, Yarn or Bun.
+O campo **Comando personalizado** permite executar outro comando na pasta do projeto. Tanto os scripts quanto os comandos personalizados abrem um novo terminal integrado, respeitando o shell e as versões de PHP e Node do projeto. A saída permanece no terminal quando uma tarefa, como `build`, termina. Para encerrar comandos contínuos, como `dev` e `watch`, use **Ctrl+C** nesse terminal.
 
-The **Custom command** field runs another command in the project directory. Scripts and custom commands open a new integrated terminal, respecting the project's saved shell and PHP/Node versions. Output remains available after a task such as `build` finishes. Use **Ctrl+C** in that terminal to stop a continuous command such as `dev` or `watch`.
+Executar um script ou um comando personalizado não altera o comando Dev salvo. Essa execução também não adiciona argumentos de servidor, como `--port`, a tarefas como `build`.
 
-Running a script or custom command does not change the saved Dev command. It also does not append server arguments such as `--port` to tasks such as `build`.
+## Filas do Laravel
 
-![Project panel with development controls, package scripts and a custom command](screenshots/project-commands.png)
+Projetos Laravel mostram **Worker de fila**, com os controles para iniciar, parar e reiniciar o worker. O menu da fila permite configurar seus argumentos. Esses controles e os parâmetros salvos continuam disponíveis independentemente dos scripts Node do projeto.
 
-## Laravel queues
+## Serviços compartilhados e processos do projeto
 
-Laravel projects show **Queue worker**, with controls to start, stop and restart the worker. Its menu lets you configure worker arguments. These controls and saved parameters remain available independently of the project's Node scripts.
+O estado **Servidor web em execução** ou **Servidor web parado** informa o estado global do processo do servidor web. Os pools PHP também são compartilhados por versão e podem atender vários projetos. As configurações de PHP e Node continuam sendo específicas de cada projeto.
 
-## Understand the status
-
-**Web server running/stopped** describes the shared web-server process. PHP pools are also shared by version and can serve several projects. PHP and Node version choices remain per-project configuration.
-
-The **Dev** server and queue worker belong to the selected project. Their Start and Stop buttons control those specific processes. For configuration health, run **Doctor**; its report distinguishes findings requiring attention, optional suggestions and checks that could not be completed. Web-server availability does not by itself prove that an individual application is healthy.
+O servidor **Dev** e o worker de fila pertencem ao projeto selecionado. Seus controles de iniciar e parar operam esses processos específicos. Para verificar a configuração de um site, use **Diagnóstico**; os resultados de saúde do Site Doctor são apresentados no seu próprio modal.
