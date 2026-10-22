@@ -11,7 +11,11 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/thayronarrais/laraenv/releases/latest"><img src="https://img.shields.io/github/v/release/thayronarrais/laraenv?style=flat-square&amp;color=7c5cff" alt="Latest release" /></a>
   <a href="https://github.com/thayronarrais/laraenv/releases"><img src="https://img.shields.io/github/downloads/thayronarrais/laraenv/total?style=flat-square&amp;color=22d3ee" alt="Total downloads on GitHub" /></a>
+  <img src="https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-0078d6?style=flat-square" alt="Platform" />
+  <img src="https://img.shields.io/badge/built%20with-Wails%20%2B%20Go%20%2B%20React-34d399?style=flat-square" alt="Stack" />
+  <img src="https://img.shields.io/badge/repository-source%20%2B%20releases%20%2B%20docs-f59e0b?style=flat-square" alt="Repository contains source, releases and documentation" />
 </p>
 
 <p align="center">

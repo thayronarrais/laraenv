@@ -59,4 +59,4 @@ Se o comando remoto terminar e a gravação local falhar, a interface informa os
 
 O uso dos recursos já instalados não depende da API LaraEnv. Downloads de runtimes, Git remoto, SSH, emissão de certificados, atualizações e provedores externos continuam dependendo das redes e credenciais correspondentes.
 
-Esta implementação prepara o desktop para a abertura do código. A escolha da licença, a revisão final de dependências e o processo de publicação do código continuam sendo etapas separadas.
+O código do desktop está publicado no [repositório oficial](https://github.com/thayronarrais/laraenv) sob [Apache-2.0](../LICENSE). O backend hospedado permanece privado. Dependências e runtimes conservam suas próprias licenças e condições de redistribuição; consulte o [guia de licenciamento](licensing.md).
