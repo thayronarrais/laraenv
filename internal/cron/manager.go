@@ -5,9 +5,11 @@ package cron
 
 import (
 	"context"
+	"errors"
 	"os"
 	"os/exec"
 	"sort"
+	"strconv"
 	"strings"
 	"sync"
 	"syscall"
@@ -334,18 +336,13 @@ func (m *Manager) execute(j *Job) {
 		extra = m.pathFor(j.ProjectName, j.PhpVersion)
 	}
 
-	cmdLine := j.Command
-	cmd := exec.Command("cmd.exe", "/C", cmdLine)
-	cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true, CreationFlags: createNoWindow}
-
-	cmd.Dir = workDir
-	cmd.Env = os.Environ()
+	env := os.Environ()
 	if len(extra) > 0 {
-		cmd.Env = augmentPATH(extra)
+		env = augmentPATH(extra)
 	}
 	if resolveEnvironment != nil {
 		var err error
-		cmd.Env, err = resolveEnvironment(j.ProjectName, workDir, cmd.Env)
+		env, err = resolveEnvironment(j.ProjectName, workDir, env)
 		if err != nil {
 			m.markStatus(j.ID, "error", "", err.Error())
 			return
@@ -354,22 +351,7 @@ func (m *Manager) execute(j *Job) {
 
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Minute)
 	defer cancel()
-	doneCh := make(chan error, 1)
-	var output []byte
-	var runErr error
-
-	go func() {
-		out, err := cmd.CombinedOutput()
-		output = out
-		doneCh <- err
-	}()
-	select {
-	case runErr = <-doneCh:
-	case <-ctx.Done():
-		_ = cmd.Process.Kill()
-		runErr = i18n.Errorf("errors.cron.executionTimedOut", nil)
-		<-doneCh
-	}
+	output, runErr := runCommand(ctx, j.Command, workDir, env)
 
 	out := output
 	if len(out) > maxOutputBytes {
@@ -380,8 +362,40 @@ func (m *Manager) execute(j *Job) {
 	if runErr != nil {
 		status = "error"
 		errMsg = runErr.Error()
+		if errors.Is(runErr, context.DeadlineExceeded) {
+			errMsg = i18n.T("errors.cron.executionTimedOut", nil)
+		}
 	}
 	m.markStatus(j.ID, status, string(out), errMsg)
+}
+
+func runCommand(ctx context.Context, command, workDir string, env []string) ([]byte, error) {
+	cmd := exec.CommandContext(ctx, "cmd.exe", "/C", command)
+	cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true, CreationFlags: createNoWindow}
+	cmd.Dir = workDir
+	cmd.Env = env
+	// Terminate descendants before the shell, while Windows can still resolve
+	// their ancestry. Killing only cmd.exe leaves PHP alive holding output pipes.
+	cmd.Cancel = func() error {
+		if cmd.Process == nil {
+			return nil
+		}
+		killCtx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+		defer cancel()
+		kill := exec.CommandContext(killCtx, "taskkill.exe", "/T", "/F", "/PID", strconv.Itoa(cmd.Process.Pid))
+		kill.SysProcAttr = &syscall.SysProcAttr{HideWindow: true, CreationFlags: createNoWindow}
+		_ = kill.Run()
+		// Retain the process handle fallback if taskkill fails or times out.
+		_ = cmd.Process.Kill()
+		return nil
+	}
+	// Bound inherited-pipe cleanup even when a launcher exits before its child.
+	cmd.WaitDelay = 2 * time.Second
+	output, err := cmd.CombinedOutput()
+	if ctx.Err() != nil {
+		return output, ctx.Err()
+	}
+	return output, err
 }
 
 func (m *Manager) markStatus(id, status, out, errMsg string) {

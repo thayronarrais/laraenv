@@ -1,12 +1,12 @@
 {
   "fixed": {
-    "file_version": "0.5.7.0",
-    "product_version": "0.5.7.0"
+    "file_version": "0.5.8.0",
+    "product_version": "0.5.8.0"
   },
   "info": {
     "0409": {
-      "FileVersion": "0.5.7.0",
-      "ProductVersion": "0.5.7.0",
+      "FileVersion": "0.5.8.0",
+      "ProductVersion": "0.5.8.0",
       "CompanyName": "LaraEnv",
       "FileDescription": "LaraEnv — Local PHP development environment for Windows",
       "LegalCopyright": "Copyright 2026 Thayron Arrais",

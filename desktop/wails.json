@@ -14,7 +14,7 @@
   "info": {
     "companyName": "LaraEnv",
     "productName": "LaraEnv",
-    "productVersion": "0.5.7",
+    "productVersion": "0.5.8",
     "copyright": "Copyright 2026 Thayron Arrais",
     "comments": "All-in-one local PHP development environment for Windows: PHP, Composer, web servers and databases from a single GUI."
   }
